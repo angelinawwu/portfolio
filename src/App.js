@@ -58,7 +58,7 @@ export default function App() {
       <spotLight decay={0} position={[5, 5, -10]} angle={0.15} penumbra={1} />
       <pointLight decay={0} position={[-10, -10, -10]} />
       <Diamond rotation={[0, 0, 0.715]} position={[0, -0.175 + 0.5, 0]} />
-      <Caustics color="#FF8F20" position={[0, -0.5, 0]} lightSource={[5, 5, -10]} worldRadius={0.01} ior={1.2} intensity={0.005}>
+      {/* <Caustics color="#FF8F20" position={[0, -0.5, 0]} lightSource={[5, 5, -10]} worldRadius={0.01} ior={1.2} intensity={0.005}>
         <mesh castShadow receiveShadow position={[-2, 0.5, -1]} scale={0.5}>
           <sphereGeometry args={[1, 64, 64]} />
           <MeshTransmissionMaterial resolution={1024} distortion={0.25} color="#FF8F20" thickness={1} anisotropy={1} />
@@ -67,7 +67,7 @@ export default function App() {
       <mesh castShadow receiveShadow position={[1.75, 0.25, 1]} scale={0.75}>
         <sphereGeometry args={[1, 64, 64]} />
         <meshStandardMaterial color="hotpink" />
-      </mesh>
+      </mesh> */}
       <AccumulativeShadows
         temporal
         frames={100}
