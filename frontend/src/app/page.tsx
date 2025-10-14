@@ -1,6 +1,6 @@
 import Navigation from '@/components/Navigation';
 import ProjectCard from '@/components/ProjectCard';
-import { projects } from '@/data/projects';
+import { caseStudies, playgroundProjects } from '@/data/projects';
 
 export default function Home() {
   return (
@@ -18,20 +18,41 @@ export default function Home() {
             </h1>
             <p className="text-lg md:text-lg text-white/70 max-w-xl mx-0">
               Currently at UCLA studying Design and Statistics/Data Science. 
-              I'm a designer who codes. I believe in the power of designing to delight.
+              Designing to delight.
             </p>
-            <div className="pt-8">
-              <span className="inline-block px-4 py-2 bg-white/5 border border-white/20 rounded-full text-white/80 font-mono text-sm">
-                Featured Work
-              </span>
-            </div>
+            
           </div>
         </section>
 
-        {/* Projects Grid */}
-        <section className="max-w-7xl mx-auto px-6 pb-20">
+        {/* Case Studies Section */}
+        <section className="max-w-7xl mx-auto px-6 pb-16">
+          <div className="text-left mb-8">
+            <h2 className="text-2xl md:text-3xl font-medium text-white mb-4">
+              Case Studies
+            </h2>
+            <p className="text-white/70 max-w-2xl">
+              Experimental projects and side explorations where I play with new technologies and creative ideas.
+            </p>
+          </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {projects.map((project) => (
+            {caseStudies.map((project) => (
+              <ProjectCard key={project.slug} project={project} />
+            ))}
+          </div>
+        </section>
+
+        {/* Playground Section */}
+        <section className="max-w-7xl mx-auto px-6 pb-20">
+          <div className="text-left mb-8">
+            <h2 className="text-2xl md:text-3xl font-medium text-white mb-4">
+              Playground
+            </h2>
+            <p className="text-white/70 max-w-2xl">
+              Experimental projects and side explorations where I play with new technologies and creative ideas.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {playgroundProjects.map((project) => (
               <ProjectCard key={project.slug} project={project} />
             ))}
           </div>
@@ -48,7 +69,7 @@ export default function Home() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href="mailto:hello@angelinawwu.com"
+                href="mailto:angelinawu05@gmail.com"
                 className="px-8 py-3 bg-white text-black font-medium rounded-lg hover:bg-white/90 transition-colors duration-200"
               >
                 Get in touch

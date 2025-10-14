@@ -4,17 +4,17 @@ export type Project = {
   description: string;
   thumbnail: string;
   tags: string[];
-  type: 'case-study' | 'side-project';
-  // For side projects:
+  type: 'case-study' | 'playground';
+  // For playground projects:
   demoUrl?: string;
   githubUrl?: string;
 };
 
-export const projects: Project[] = [
+export const caseStudies: Project[] = [
   {
     slug: 'workup',
     title: 'Workup',
-    description: 'UX Research || Web Design - Restructuring an AI-powered interview tool to empower students to prepare with confidence',
+    description: 'Restructuring an AI-powered interview tool to empower students to prepare with confidence',
     thumbnail: '/projects/workup-thumbnail.jpg',
     tags: ['UX Research', 'Web Design', 'AI', 'User Testing', 'Figma', 'Prototyping'],
     type: 'case-study'
@@ -22,7 +22,7 @@ export const projects: Project[] = [
   {
     slug: 'manifesto-market',
     title: 'Manifesto Market',
-    description: 'Web Design || Conversion Rate Optimization - A mobile-first redesign to streamline booking and drive reservations',
+    description: 'A mobile-first redesign to streamline booking and drive reservations',
     thumbnail: '/projects/manifesto-thumbnail.jpg',
     tags: ['Web Design', 'CRO', 'Mobile-First', 'Booking System', 'Conversion Optimization', 'UI/UX'],
     type: 'case-study'
@@ -30,19 +30,35 @@ export const projects: Project[] = [
   {
     slug: 'bookish',
     title: 'Bookish',
-    description: 'Web Design || E-commerce - A comprehensive redesign of a book discovery and shopping platform',
+    description: 'Redesigning the reading experience with accessibility and sustainability in mind',
     thumbnail: '/projects/bookish-thumbnail.jpg',
     tags: ['Web Design', 'E-commerce', 'User Research', 'Figma', 'Prototyping'],
     type: 'case-study'
-  },
-  {
-    slug: 'diamond-refraction',
-    title: 'Diamond Refraction',
-    description: 'A 3D WebGL experience showcasing realistic diamond light refraction using Three.js and custom shaders',
-    thumbnail: '/projects/diamond-thumbnail.jpg',
-    tags: ['Three.js', 'WebGL', '3D Graphics', 'Shaders', 'React', 'TypeScript'],
-    type: 'side-project',
-    demoUrl: 'https://diamond-refraction.vercel.app',
-    githubUrl: 'https://github.com/angelinawwu/diamond-refraction'
   }
 ];
+
+export const playgroundProjects: Project[] = [
+  {
+    slug: 'typewriter',
+    title: 'Typewriter',
+    description: 'A minimalist typing experience that captures the nostalgic feel of mechanical typewriters. Built with vanilla JavaScript and CSS animations, this project explores the intersection of nostalgia and modern web design.',
+    thumbnail: '/projects/typewriter-thumbnail.jpg',
+    tags: ['JavaScript', 'CSS Animations', 'Vanilla JS', 'Typography', 'Nostalgia'],
+    type: 'playground',
+    demoUrl: 'https://typewriter-demo.vercel.app',
+    githubUrl: 'https://github.com/angelinawwu/typewriter'
+  },
+  {
+    slug: 'goodreads-wrapped',
+    title: 'Goodreads Wrapped',
+    description: 'A personal reading analytics dashboard inspired by Spotify Wrapped. Visualizes reading habits, favorite genres, and reading streaks with beautiful data visualizations and interactive charts.',
+    thumbnail: '/projects/goodreads-wrapped-thumbnail.jpg',
+    tags: ['Data Visualization', 'D3.js', 'Reading Analytics', 'Personal Dashboard', 'Charts'],
+    type: 'playground',
+    demoUrl: 'https://goodreads-wrapped.vercel.app',
+    githubUrl: 'https://github.com/angelinawwu/goodreads-wrapped'
+  }
+];
+
+// Combined projects for backward compatibility
+export const projects: Project[] = [...caseStudies, ...playgroundProjects];

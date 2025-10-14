@@ -3,7 +3,7 @@ import Navigation from '@/components/Navigation';
 
 export const metadata = {
   title: 'Bookish - Angelina Wu',
-  description: 'A comprehensive redesign of a book discovery and shopping platform',
+  description: 'Redesigning the reading experience with accessibility and sustainability in mind',
 };
 
 export default function BookishPage() {
@@ -19,37 +19,37 @@ export default function BookishPage() {
               href="/" 
               className="text-white/60 hover:text-white transition-colors duration-200"
             >
-              ← Back to projects
+              ← Back to Home
             </Link>
           </div>
 
           {/* Hero Section */}
           <section className="py-12">
-            <h1 className="text-4xl md:text-5xl font-medium text-white mb-8">
+            <h1 className="text-4xl md:text-5xl font-medium text-white mb-4">
               Bookish
             </h1>
             
-            <p className="text-xl text-white/70 leading-relaxed mb-12">
-              A comprehensive redesign of a book discovery and shopping platform
+            <p className="text-xl text-white/70 leading-relaxed mb-12 max-w-3xl">
+              Redesigning the reading experience with accessibility and sustainability in mind
             </p>
 
             {/* Metadata Cards */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
               <div className="border border-white/10 rounded-lg p-6">
                 <h3 className="text-white/60 text-sm font-medium mb-2">My Role</h3>
-                <p className="text-white font-medium">UX/UI Designer</p>
+                <p className="text-white font-medium">Lead Product Designer</p>
               </div>
               <div className="border border-white/10 rounded-lg p-6">
                 <h3 className="text-white/60 text-sm font-medium mb-2">Timeline</h3>
-                <p className="text-white font-medium">4 months</p>
+                <p className="text-white font-medium">Mar – May 2024</p>
               </div>
               <div className="border border-white/10 rounded-lg p-6">
                 <h3 className="text-white/60 text-sm font-medium mb-2">Team</h3>
-                <p className="text-white font-medium">Design Team<br />Engineering Team</p>
+                <p className="text-white font-medium">1 Designer<br />3 Developers</p>
               </div>
               <div className="border border-white/10 rounded-lg p-6">
                 <h3 className="text-white/60 text-sm font-medium mb-2">Tools</h3>
-                <p className="text-white font-medium">Figma, User Research</p>
+                <p className="text-white font-medium">Figma, Illustrator</p>
               </div>
             </div>
           </section>
@@ -57,12 +57,12 @@ export default function BookishPage() {
           {/* Overview */}
           <section className="py-12 border-t border-white/10">
             <h2 className="text-3xl md:text-4xl font-medium text-white mb-8">Overview</h2>
-            <div className="space-y-6 text-white/80 leading-relaxed">
+            <div className="space-y-6 text-white/80 leading-relaxed max-w-3xl">
               <p>
-                Bookish is an e-commerce platform focused on book discovery and online shopping. The platform needed a complete redesign to improve user experience, increase book discovery, and boost sales conversion rates.
+                Bookish's mission is to connect readers in local communities and to increase the accessibility and sustainability of reading physical books. In the app, users can submit books they own into a personal catalog, which other readers can then borrow. Users are also recommended books located near them, forming a decentralized quasi-library that exists both online and in person.
               </p>
               <p>
-                My role involved conducting user research, redesigning the information architecture, and creating a new visual design system that would make book discovery more intuitive and shopping more enjoyable for users.
+                In the project, I was responsible for creating Bookish's brand identity, including logos, colors, and typography. I also designed the app's user interface, taking feedback from both the engineers and user research to create an optimal iteration.
               </p>
             </div>
           </section>
@@ -73,349 +73,126 @@ export default function BookishPage() {
             
             <div className="space-y-8">
               <div>
-                <h3 className="text-2xl md:text-3xl font-medium text-white mb-6">Book discovery was difficult and shopping experience was frustrating.</h3>
-                <div className="space-y-6 text-white/80 leading-relaxed">
+                <h3 className="text-2xl md:text-3xl font-medium text-white mb-6">Reading physical books is financially and environmentally unsustainable.</h3>
+                <div className="space-y-6 text-white/80 leading-relaxed max-w-3xl">
                   <p>
-                    Users were struggling to find books that matched their interests due to poor categorization, limited search functionality, and lack of personalized recommendations. The existing interface felt outdated and didn't provide the engaging experience that modern book lovers expected.
-                  </p>
-                  <p>
-                    Additionally, the shopping cart and checkout process had usability issues that led to cart abandonment. Users found it difficult to compare books, read reviews, and make informed purchasing decisions.
+                    Avid bookworms know that books can be purchased in the spur of the moment to be read once and never again. Then, they are either left to gather dust on bookshelves, or thrown out (gasp!) as waste. At the same time, books are becoming increasingly more expensive, making it harder to read without turning to digital options.
                   </p>
                 </div>
               </div>
 
               <div className="bg-white/5 border border-white/10 rounded-lg p-8">
                 <p className="text-white/90 font-medium">
-                  → The solution: A complete platform redesign that prioritizes book discovery, improves the shopping experience, and creates a more engaging interface for book enthusiasts.
+                  → The solution: An app where readers can share their favorite books and form communities, allowing books to be reused by multiple readers.
                 </p>
               </div>
             </div>
           </section>
 
-          {/* Research */}
+          {/* User Research */}
           <section className="py-12 border-t border-white/10">
-            <h2 className="text-3xl md:text-4xl font-medium text-white mb-8">Research</h2>
-            
-            <div className="space-y-12">
+            <h2 className="text-3xl md:text-4xl font-medium text-white mb-8">User Research</h2>
+            <div className="space-y-6 text-white/80 leading-relaxed max-w-3xl">
+              <p>
+                To understand what potential users would be seeking in an app like Bookish, we conducted surveys through the "Book Enjoyers" Discord server, where we were able to reach out to 70+ individuals to discuss their reading habits and goals. From our research, we drew the following conclusions:
+              </p>
+              <ol className="list-decimal list-inside space-y-3">
+                <li>Almost all (96%) respondents have unused books lying around their home, with many (32%) respondents owning more than 100 unused books.</li>
+                <li>A substantial majority (78%) of respondents expressed a desire to read books more often.</li>
+                <li>Respondents generally expressed discontentment with obtaining access to books, with many believing that purchasing books was too expensive (62%) or that borrowing books from the library was inconvenient (36%).</li>
+              </ol>
+            </div>
+          </section>
+
+          {/* Project Goals */}
+          <section className="py-12 border-t border-white/10">
+            <h2 className="text-3xl md:text-4xl font-medium text-white mb-8">Project Goals</h2>
+            <div className="space-y-8 max-w-3xl">
               <div>
-                <h3 className="text-2xl md:text-3xl font-medium text-white mb-6">User Research & Analysis</h3>
-                <p className="text-white/80 leading-relaxed mb-6">
-                  I conducted comprehensive research to understand how users discover and purchase books online, identifying key pain points and opportunities for improvement.
-                </p>
+                <h3 className="text-xl font-medium text-white mb-3">Encourage local <span className="rainbow-text">connection</span>.</h3>
+                <p className="text-white/80 leading-relaxed">Allow users to connect with other local readers, cultivating a community beyond the digital.</p>
+              </div>
+              <div>
+                <h3 className="text-xl font-medium text-white mb-3">Nurture genuine <span className="rainbow-text">discovery</span>.</h3>
+                <p className="text-white/80 leading-relaxed">Limit algorithmic recommendations and encourage users to discover new favorites naturally.</p>
+              </div>
+              <div>
+                <h3 className="text-xl font-medium text-white mb-3">Increase literary <span className="rainbow-text">accessibility</span>.</h3>
+                <p className="text-white/80 leading-relaxed">Create a decentralized and community-driven library without emphasizing any monetary exchange.</p>
+              </div>
+            </div>
+          </section>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-                  <div className="border border-white/10 rounded-lg p-6">
-                    <h4 className="text-xl font-medium text-white mb-3">User Interviews</h4>
-                    <p className="text-white/80 leading-relaxed">
-                      Conducted 20+ interviews with book enthusiasts to understand their discovery and purchasing behaviors.
-                    </p>
-                  </div>
-                  <div className="border border-white/10 rounded-lg p-6">
-                    <h4 className="text-xl font-medium text-white mb-3">Competitive Analysis</h4>
-                    <p className="text-white/80 leading-relaxed">
-                      Analyzed leading book platforms to identify best practices and opportunities for differentiation.
-                    </p>
-                  </div>
-                </div>
+          {/* Mid-Fidelity Prototype */}
+          <section className="py-12 border-t border-white/10">
+            <h2 className="text-3xl md:text-4xl font-medium text-white mb-8">Mid-Fidelity Prototype</h2>
+            <p className="text-white/80 leading-relaxed mb-6 max-w-3xl">Mid-fi wireframes created from initial ideations.</p>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {[1,2,3,4].map((n) => (
+                <div key={n} className="w-full h-60 bg-white/5 border border-white/10 rounded-lg"></div>
+              ))}
+            </div>
+          </section>
 
+          {/* Usability Testing and Modifications */}
+          <section className="py-12 border-t border-white/10">
+            <h2 className="text-3xl md:text-4xl font-medium text-white mb-8">Usability Testing and Modifications</h2>
+            <div className="space-y-8 max-w-3xl">
+              <div>
+                <p className="text-white/80 mb-3">"The pure black and white color scheme hurts my eyes."</p>
                 <div className="bg-white/5 border border-white/10 rounded-lg p-6">
-                  <h4 className="text-xl font-medium text-white mb-4">Key Research Insights</h4>
-                  <div className="space-y-4">
-                    <div className="flex items-start space-x-3">
-                      <div className="w-2 h-2 bg-white/40 rounded-full mt-2"></div>
-                      <p className="text-white/80">Users rely heavily on recommendations and reviews when choosing books</p>
-                    </div>
-                    <div className="flex items-start space-x-3">
-                      <div className="w-2 h-2 bg-white/40 rounded-full mt-2"></div>
-                      <p className="text-white/80">Genre-based browsing is preferred over complex search filters</p>
-                    </div>
-                    <div className="flex items-start space-x-3">
-                      <div className="w-2 h-2 bg-white/40 rounded-full mt-2"></div>
-                      <p className="text-white/80">Visual book covers are crucial for initial interest and decision-making</p>
-                    </div>
-                    <div className="flex items-start space-x-3">
-                      <div className="w-2 h-2 bg-white/40 rounded-full mt-2"></div>
-                      <p className="text-white/80">Users want to easily compare books and read sample content</p>
-                    </div>
-                  </div>
+                  <p className="text-white/90 font-medium">→</p>
+                  <p className="text-white/80 leading-relaxed">Slight color adjustment to off-white and dark grey</p>
                 </div>
               </div>
-
               <div>
-                <h3 className="text-2xl md:text-3xl font-medium text-white mb-6">User Personas</h3>
-                <p className="text-white/80 leading-relaxed mb-6">
-                  Based on research findings, I developed detailed user personas to guide design decisions and ensure the solution addressed real user needs.
-                </p>
-
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div className="border border-white/10 rounded-lg p-6">
-                    <h4 className="text-xl font-medium text-white mb-4">Avid Reader - Emma</h4>
-                    <div className="space-y-3 text-white/80">
-                      <p><span className="font-medium">Age:</span> 32</p>
-                      <p><span className="font-medium">Occupation:</span> Teacher</p>
-                      <p><span className="font-medium">Goals:</span> Discover new authors and genres, build reading list</p>
-                      <p><span className="font-medium">Pain Points:</span> Wants better recommendations and easier book comparison</p>
-                    </div>
-                  </div>
-                  <div className="border border-white/10 rounded-lg p-6">
-                    <h4 className="text-xl font-medium text-white mb-4">Casual Reader - David</h4>
-                    <div className="space-y-3 text-white/80">
-                      <p><span className="font-medium">Age:</span> 28</p>
-                      <p><span className="font-medium">Occupation:</span> Marketing Manager</p>
-                      <p><span className="font-medium">Goals:</span> Find popular books quickly, read reviews</p>
-                      <p><span className="font-medium">Pain Points:</span> Needs simple browsing and clear book information</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div>
-                <h3 className="text-2xl md:text-3xl font-medium text-white mb-6">Current State Analysis</h3>
-                <p className="text-white/80 leading-relaxed mb-6">
-                  I analyzed the existing platform to identify specific usability issues and areas for improvement in the book discovery and shopping experience.
-                </p>
-                
-                <div className="w-full h-64 bg-white/5 border border-white/10 rounded-lg flex items-center justify-center">
-                  <span className="text-white/40">Current platform analysis showing usability issues and pain points</span>
+                <p className="text-white/80 mb-3">"I want have more context for my messaging contacts."</p>
+                <div className="bg-white/5 border border-white/10 rounded-lg p-6">
+                  <p className="text-white/90 font-medium">→</p>
+                  <p className="text-white/80 leading-relaxed">Added conversation previews and dates to messaging screen</p>
                 </div>
               </div>
             </div>
           </section>
 
-          {/* Design Process */}
+          {/* Final Product */}
           <section className="py-12 border-t border-white/10">
-            <h2 className="text-3xl md:text-4xl font-medium text-white mb-8">Design Process</h2>
-            
+            <h2 className="text-3xl md:text-4xl font-medium text-white mb-8">Final Product</h2>
+            <p className="text-white/80 leading-relaxed mb-6">Take a look at our final deliverable below!</p>
             <div className="space-y-12">
-              <div>
-                <h3 className="text-2xl md:text-3xl font-medium text-white mb-6">Information Architecture Redesign</h3>
-                <p className="text-white/80 leading-relaxed mb-6">
-                  I restructured the platform's information architecture to make book discovery more intuitive and logical for users.
-                </p>
-
-                <div className="space-y-6">
-                  <div className="border border-white/10 rounded-lg p-6">
-                    <h4 className="text-xl font-medium text-white mb-3">Improved Navigation</h4>
-                    <p className="text-white/80">Created clear, hierarchical navigation that prioritizes genre-based browsing and popular categories</p>
-                  </div>
-                  <div className="border border-white/10 rounded-lg p-6">
-                    <h4 className="text-xl font-medium text-white mb-3">Enhanced Search</h4>
-                    <p className="text-white/80">Implemented intelligent search with autocomplete, filters, and sorting options</p>
-                  </div>
-                  <div className="border border-white/10 rounded-lg p-6">
-                    <h4 className="text-xl font-medium text-white mb-3">Personalized Recommendations</h4>
-                    <p className="text-white/80">Added recommendation engine based on reading history and preferences</p>
+              {[
+                { title: 'Home and profile screens' },
+                { title: 'Natural discovery' },
+                { title: 'Community building' },
+              ].map((s) => (
+                <div key={s.title}>
+                  <h3 className="text-2xl md:text-3xl font-medium text-white mb-6">{s.title}</h3>
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    {[1,2,3].map((n) => (
+                      <div key={n} className="w-full h-56 bg-white/5 border border-white/10 rounded-lg"></div>
+                    ))}
                   </div>
                 </div>
-              </div>
-
-              <div>
-                <h3 className="text-2xl md:text-3xl font-medium text-white mb-6">Visual Design System</h3>
-                <p className="text-white/80 leading-relaxed mb-6">
-                  I created a comprehensive design system that would provide a cohesive, modern experience across all platform touchpoints.
-                </p>
-
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                  <div className="w-full h-48 bg-white/5 border border-white/10 rounded-lg flex items-center justify-center">
-                    <span className="text-white/40">Color palette</span>
-                  </div>
-                  <div className="w-full h-48 bg-white/5 border border-white/10 rounded-lg flex items-center justify-center">
-                    <span className="text-white/40">Typography system</span>
-                  </div>
-                  <div className="w-full h-48 bg-white/5 border border-white/10 rounded-lg flex items-center justify-center">
-                    <span className="text-white/40">Component library</span>
-                  </div>
-                </div>
-              </div>
-
-              <div>
-                <h3 className="text-2xl md:text-3xl font-medium text-white mb-6">Book Discovery Interface</h3>
-                <p className="text-white/80 leading-relaxed mb-6">
-                  I designed an engaging book discovery interface that makes it easy for users to find books they'll love.
-                </p>
-
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div className="w-full h-64 bg-white/5 border border-white/10 rounded-lg flex items-center justify-center">
-                    <span className="text-white/40">Book grid layout with enhanced covers</span>
-                  </div>
-                  <div className="w-full h-64 bg-white/5 border border-white/10 rounded-lg flex items-center justify-center">
-                    <span className="text-white/40">Book detail page with reviews and samples</span>
-                  </div>
-                </div>
-              </div>
-
-              <div>
-                <h3 className="text-2xl md:text-3xl font-medium text-white mb-6">Shopping Experience</h3>
-                <p className="text-white/80 leading-relaxed mb-6">
-                  I redesigned the shopping cart and checkout process to reduce friction and increase conversion rates.
-                </p>
-
-                <div className="space-y-6">
-                  <div className="border border-white/10 rounded-lg p-6">
-                    <h4 className="text-xl font-medium text-white mb-3">Streamlined Cart</h4>
-                    <p className="text-white/80">Simplified cart interface with easy quantity adjustment and book comparison features</p>
-                  </div>
-                  <div className="border border-white/10 rounded-lg p-6">
-                    <h4 className="text-xl font-medium text-white mb-3">One-Click Checkout</h4>
-                    <p className="text-white/80">Optimized checkout flow with saved payment methods and address auto-completion</p>
-                  </div>
-                  <div className="border border-white/10 rounded-lg p-6">
-                    <h4 className="text-xl font-medium text-white mb-3">Order Confirmation</h4>
-                    <p className="text-white/80">Clear confirmation page with order details and tracking information</p>
-                  </div>
-                </div>
-              </div>
+              ))}
             </div>
           </section>
 
-          {/* Final Solution */}
+          {/* Closing Remarks and Takeaways */}
           <section className="py-12 border-t border-white/10">
-            <h2 className="text-3xl md:text-4xl font-medium text-white mb-8">Final Solution</h2>
-            
-            <div className="space-y-8">
-              <div>
-                <h3 className="text-2xl md:text-3xl font-medium text-white mb-6">Enhanced Book Discovery</h3>
-                <p className="text-white/80 leading-relaxed mb-6">
-                  The redesigned platform features an intuitive book discovery experience with improved categorization, personalized recommendations, and engaging visual presentation.
-                </p>
-                <div className="w-full h-64 bg-white/5 border border-white/10 rounded-lg flex items-center justify-center">
-                  <span className="text-white/40">Book discovery homepage interface</span>
-                </div>
-              </div>
-
-              <div>
-                <h3 className="text-2xl md:text-3xl font-medium text-white mb-6">Improved Book Details</h3>
-                <p className="text-white/80 leading-relaxed mb-6">
-                  Enhanced book detail pages provide comprehensive information including reviews, sample content, and related recommendations to help users make informed decisions.
-                </p>
-                <div className="w-full h-64 bg-white/5 border border-white/10 rounded-lg flex items-center justify-center">
-                  <span className="text-white/40">Book detail page with reviews and samples</span>
-                </div>
-              </div>
-
-              <div>
-                <h3 className="text-2xl md:text-3xl font-medium text-white mb-6">Streamlined Shopping</h3>
-                <p className="text-white/80 leading-relaxed mb-6">
-                  The shopping experience has been simplified with an intuitive cart interface and optimized checkout process that reduces friction and increases conversion rates.
-                </p>
-                <div className="w-full h-64 bg-white/5 border border-white/10 rounded-lg flex items-center justify-center">
-                  <span className="text-white/40">Shopping cart and checkout interface</span>
-                </div>
-              </div>
-
-              <div>
-                <h3 className="text-2xl md:text-3xl font-medium text-white mb-6">Mobile Optimization</h3>
-                <p className="text-white/80 leading-relaxed mb-6">
-                  The entire platform has been optimized for mobile devices, ensuring a seamless experience across all screen sizes and devices.
-                </p>
-                <div className="w-full h-64 bg-white/5 border border-white/10 rounded-lg flex items-center justify-center">
-                  <span className="text-white/40">Mobile-optimized book browsing interface</span>
-                </div>
-              </div>
-            </div>
-          </section>
-
-          {/* Impact */}
-          <section className="py-12 border-t border-white/10">
-            <h2 className="text-3xl md:text-4xl font-medium text-white mb-8">Impact</h2>
-            
-            <div className="space-y-6">
-              <div className="border border-white/10 rounded-lg p-6">
-                <div className="flex items-start space-x-4">
-                  <div className="flex-shrink-0 w-8 h-8 bg-white/10 border border-white/20 rounded-full flex items-center justify-center">
-                    <span className="text-white/80 font-mono text-sm">1</span>
-                  </div>
-                  <div>
-                    <h4 className="text-xl font-medium text-white mb-2">Increased Book Discovery by 40%</h4>
-                    <p className="text-white/80 leading-relaxed">
-                      The improved categorization and recommendation system led to users discovering and exploring more books on the platform.
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="border border-white/10 rounded-lg p-6">
-                <div className="flex items-start space-x-4">
-                  <div className="flex-shrink-0 w-8 h-8 bg-white/10 border border-white/20 rounded-full flex items-center justify-center">
-                    <span className="text-white/80 font-mono text-sm">2</span>
-                  </div>
-                  <div>
-                    <h4 className="text-xl font-medium text-white mb-2">Improved Conversion Rate by 35%</h4>
-                    <p className="text-white/80 leading-relaxed">
-                      The streamlined shopping experience and enhanced book information helped more users complete their purchases.
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="border border-white/10 rounded-lg p-6">
-                <div className="flex items-start space-x-4">
-                  <div className="flex-shrink-0 w-8 h-8 bg-white/10 border border-white/20 rounded-full flex items-center justify-center">
-                    <span className="text-white/80 font-mono text-sm">3</span>
-                  </div>
-                  <div>
-                    <h4 className="text-xl font-medium text-white mb-2">Reduced Cart Abandonment by 25%</h4>
-                    <p className="text-white/80 leading-relaxed">
-                      The simplified checkout process and clear pricing information reduced the number of users who abandoned their carts.
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="border border-white/10 rounded-lg p-6">
-                <div className="flex items-start space-x-4">
-                  <div className="flex-shrink-0 w-8 h-8 bg-white/10 border border-white/20 rounded-full flex items-center justify-center">
-                    <span className="text-white/80 font-mono text-sm">4</span>
-                  </div>
-                  <div>
-                    <h4 className="text-xl font-medium text-white mb-2">Increased User Engagement by 50%</h4>
-                    <p className="text-white/80 leading-relaxed">
-                      The improved user experience and personalized recommendations led to longer session times and more frequent visits.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
-
-          {/* Key Takeaways */}
-          <section className="py-12 border-t border-white/10">
-            <h2 className="text-3xl md:text-4xl font-medium text-white mb-8">Key Takeaways</h2>
-            
+            <h2 className="text-3xl md:text-4xl font-medium text-white mb-8">Closing Remarks and Takeaways</h2>
             <div className="space-y-8">
               <div className="border border-white/10 rounded-lg p-8">
-                <h3 className="text-xl font-medium text-white mb-4">
-                  <span className="rainbow-text">User research</span> drives better design decisions.
-                </h3>
+                <h3 className="text-xl font-medium text-white mb-4">Design with a <span className="rainbow-text">product mindset</span>.</h3>
                 <div className="bg-white/5 border border-white/10 rounded-lg p-6">
                   <p className="text-white/90 font-medium mb-4">→</p>
-                  <p className="text-white/80 leading-relaxed">
-                    Understanding how users actually discover and purchase books provided crucial insights that shaped every design decision, from information architecture to visual presentation.
-                  </p>
+                  <p className="text-white/80 leading-relaxed max-w-3xl">This was my first time working with engineers on a working product. The experience taught me the importance of designing with the programming and development process in mind. Instead of focusing on aesthetics, I found it crucial to have a product mindset and think critically about how my designs would be implemented into the app.</p>
                 </div>
               </div>
-
               <div className="border border-white/10 rounded-lg p-8">
-                <h3 className="text-xl font-medium text-white mb-4">
-                  <span className="rainbow-text">Visual hierarchy</span> is crucial for e-commerce.
-                </h3>
+                <h3 className="text-xl font-medium text-white mb-4">Practice <span className="rainbow-text">iteration</span> and <span className="rainbow-text">modification</span>.</h3>
                 <div className="bg-white/5 border border-white/10 rounded-lg p-6">
                   <p className="text-white/90 font-medium mb-4">→</p>
-                  <p className="text-white/80 leading-relaxed">
-                    Clear visual hierarchy helps users quickly scan and understand product information, making it easier for them to make purchasing decisions and complete transactions.
-                  </p>
-                </div>
-              </div>
-
-              <div className="border border-white/10 rounded-lg p-8">
-                <h3 className="text-xl font-medium text-white mb-4">
-                  <span className="rainbow-text">Personalization</span> enhances user experience.
-                </h3>
-                <div className="bg-white/5 border border-white/10 rounded-lg p-6">
-                  <p className="text-white/90 font-medium mb-4">→</p>
-                  <p className="text-white/80 leading-relaxed">
-                    Providing personalized recommendations and tailored content helps users discover relevant products more easily and creates a more engaging shopping experience.
-                  </p>
+                  <p className="text-white/80 leading-relaxed max-w-3xl">It was very important for me to be able to adjust my designs accordingly as I received constructive feedback. In the future, I'd like to work on drafting multiple iterations of a design in the ideation stage, rather than solely making adjustments in later stages.</p>
                 </div>
               </div>
             </div>
@@ -432,10 +209,10 @@ export default function BookishPage() {
                 <span>Manifesto Market</span>
               </Link>
               <Link
-                href="/projects/diamond-refraction"
+                href="/"
                 className="flex items-center space-x-2 text-white/60 hover:text-white transition-colors duration-200"
               >
-                <span>Diamond Refraction</span>
+                <span>Back to Home</span>
                 <span>→</span>
               </Link>
             </div>
