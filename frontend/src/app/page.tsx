@@ -17,8 +17,8 @@ export default function Home() {
               .
             </h1>
             <p className="text-lg md:text-lg text-white/70 max-w-xl mx-0">
-              Currently at UCLA studying Design and Statistics/Data Science. 
-              Designing to delight.
+              Currently at UCLA studying Design Media Arts and Statistics/Data Science. 
+              Always designing to delight.
             </p>
             
           </div>
@@ -31,7 +31,7 @@ export default function Home() {
               Case Studies
             </h2>
             <p className="text-white/70 max-w-2xl">
-              Experimental projects and side explorations where I play with new technologies and creative ideas.
+              Deep dives into projects where I’ve designed not just for function, but for feeling.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -48,7 +48,7 @@ export default function Home() {
               Playground
             </h2>
             <p className="text-white/70 max-w-2xl">
-              Experimental projects and side explorations where I play with new technologies and creative ideas.
+              Experimental projects and side explorations that I build for fun.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">

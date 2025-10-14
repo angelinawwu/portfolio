@@ -82,9 +82,11 @@ export default function BookishPage() {
               </div>
 
               <div className="bg-white/5 border border-white/10 rounded-lg p-8">
-                <p className="text-white/90 font-medium">
-                  → The solution: An app where readers can share their favorite books and form communities, allowing books to be reused by multiple readers.
-                </p>
+                <ul className="arrow-list">
+                  <li className="text-white/90 font-medium">
+                    The solution: An app where readers can share their favorite books and form communities, allowing books to be reused by multiple readers.
+                  </li>
+                </ul>
               </div>
             </div>
           </section>
@@ -131,7 +133,7 @@ export default function BookishPage() {
               {[1,2,3,4].map((n) => (
                 <div key={n} className="w-full h-60 bg-white/5 border border-white/10 rounded-lg"></div>
               ))}
-            </div>
+                </div>
           </section>
 
           {/* Usability Testing and Modifications */}
@@ -141,15 +143,17 @@ export default function BookishPage() {
               <div>
                 <p className="text-white/80 mb-3">"The pure black and white color scheme hurts my eyes."</p>
                 <div className="bg-white/5 border border-white/10 rounded-lg p-6">
-                  <p className="text-white/90 font-medium">→</p>
-                  <p className="text-white/80 leading-relaxed">Slight color adjustment to off-white and dark grey</p>
+                  <ul className="arrow-list">
+                    <li className="text-white/80 leading-relaxed">Slight color adjustment to off-white and dark grey</li>
+                  </ul>
                 </div>
               </div>
               <div>
                 <p className="text-white/80 mb-3">"I want have more context for my messaging contacts."</p>
                 <div className="bg-white/5 border border-white/10 rounded-lg p-6">
-                  <p className="text-white/90 font-medium">→</p>
-                  <p className="text-white/80 leading-relaxed">Added conversation previews and dates to messaging screen</p>
+                  <ul className="arrow-list">
+                    <li className="text-white/80 leading-relaxed">Added conversation previews and dates to messaging screen</li>
+                  </ul>
                 </div>
               </div>
             </div>
@@ -184,15 +188,17 @@ export default function BookishPage() {
               <div className="border border-white/10 rounded-lg p-8">
                 <h3 className="text-xl font-medium text-white mb-4">Design with a <span className="rainbow-text">product mindset</span>.</h3>
                 <div className="bg-white/5 border border-white/10 rounded-lg p-6">
-                  <p className="text-white/90 font-medium mb-4">→</p>
-                  <p className="text-white/80 leading-relaxed max-w-3xl">This was my first time working with engineers on a working product. The experience taught me the importance of designing with the programming and development process in mind. Instead of focusing on aesthetics, I found it crucial to have a product mindset and think critically about how my designs would be implemented into the app.</p>
+                  <ul className="arrow-list">
+                    <li className="text-white/80 leading-relaxed">This was my first time working with engineers on a working product. The experience taught me the importance of designing with the programming and development process in mind. Instead of focusing on aesthetics, I found it crucial to have a product mindset and think critically about how my designs would be implemented into the app.</li>
+                  </ul>
                 </div>
               </div>
               <div className="border border-white/10 rounded-lg p-8">
                 <h3 className="text-xl font-medium text-white mb-4">Practice <span className="rainbow-text">iteration</span> and <span className="rainbow-text">modification</span>.</h3>
                 <div className="bg-white/5 border border-white/10 rounded-lg p-6">
-                  <p className="text-white/90 font-medium mb-4">→</p>
-                  <p className="text-white/80 leading-relaxed max-w-3xl">It was very important for me to be able to adjust my designs accordingly as I received constructive feedback. In the future, I'd like to work on drafting multiple iterations of a design in the ideation stage, rather than solely making adjustments in later stages.</p>
+                  <ul className="arrow-list">
+                    <li className="text-white/80 leading-relaxed">It was very important for me to be able to adjust my designs accordingly as I received constructive feedback. In the future, I'd like to work on drafting multiple iterations of a design in the ideation stage, rather than solely making adjustments in later stages.</li>
+                  </ul>
                 </div>
               </div>
             </div>

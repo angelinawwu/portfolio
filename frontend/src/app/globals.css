@@ -97,6 +97,25 @@ body {
   width: 100%;
 }
 
+/* Arrow bullet points */
+.arrow-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.arrow-list li {
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.arrow-list li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: rgba(255, 255, 255, 0.6);
+  font-weight: 500;
+}
+
 /* Custom scrollbar for dark theme */
 ::-webkit-scrollbar {
   width: 8px;
