@@ -8,6 +8,8 @@ export type Project = {
   // For playground projects:
   demoUrl?: string;
   githubUrl?: string;
+  // For case studies with video:
+  videoUrl?: string;
 };
 
 export const caseStudies: Project[] = [
@@ -24,6 +26,7 @@ export const caseStudies: Project[] = [
     title: 'Manifesto Market',
     description: 'A mobile-first redesign to streamline booking and drive reservations',
     thumbnail: '/projects/manifesto-thumbnail.jpg',
+    videoUrl: '/assets/projects/manifesto-demo.mp4',
     tags: ['Web Design', 'CRO', 'Mobile-First', 'Booking System', 'Conversion Optimization', 'UI/UX'],
     type: 'case-study'
   },

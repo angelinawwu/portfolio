@@ -3,12 +3,27 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { Project } from '@/data/projects';
+import { useRef } from 'react';
 
 interface ProjectCardProps {
   project: Project;
 }
 
 export default function ProjectCard({ project }: ProjectCardProps) {
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  const handleMouseEnter = () => {
+    if (videoRef.current) {
+      videoRef.current.play();
+    }
+  };
+
+  const handleMouseLeave = () => {
+    if (videoRef.current) {
+      videoRef.current.pause();
+      videoRef.current.currentTime = 0;
+    }
+  };
   // For playground projects, render as external links
   if (project.type === 'playground') {
     return (
@@ -104,7 +119,11 @@ export default function ProjectCard({ project }: ProjectCardProps) {
   // For case studies, render as internal links
   return (
     <Link href={`/projects/${project.slug}`}>
-      <div className="group relative bg-black border border-white/10 rounded-lg overflow-hidden hover:border-white/30 transition-all duration-300 hover:shadow-2xl hover:shadow-white/5">
+      <div 
+        className="group relative bg-black border border-white/10 rounded-lg overflow-hidden hover:border-white/30 transition-all duration-300 hover:shadow-2xl hover:shadow-white/5"
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
+      >
         {/* Rainbow border on hover */}
         <div className="absolute inset-0 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300">
           <div className="rainbow-border rounded-lg p-[1px] h-full w-full">
@@ -114,15 +133,26 @@ export default function ProjectCard({ project }: ProjectCardProps) {
 
         {/* Content */}
         <div className="relative z-10 p-6">
-          {/* Thumbnail */}
+          {/* Thumbnail or Video */}
           <div className="relative w-full h-48 mb-4 rounded-lg overflow-hidden bg-white/5">
-            <Image
-              src={project.thumbnail}
-              alt={project.title}
-              fill
-              className="object-cover group-hover:scale-105 transition-transform duration-300"
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-            />
+            {project.videoUrl ? (
+              <video
+                ref={videoRef}
+                src={project.videoUrl}
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                muted
+                loop
+                playsInline
+              />
+            ) : (
+              <Image
+                src={project.thumbnail}
+                alt={project.title}
+                fill
+                className="object-cover group-hover:scale-105 transition-transform duration-300"
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              />
+            )}
             {/* Iridescent overlay on hover */}
             <div className="absolute inset-0 iridescent-glow opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
           </div>

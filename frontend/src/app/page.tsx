@@ -31,7 +31,7 @@ export default function Home() {
               Case Studies
             </h2>
             <p className="text-white/70 max-w-2xl">
-              Deep dives into projects where I’ve designed not just for function, but for feeling.
+              Deep dives into long-term, team-based projects.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

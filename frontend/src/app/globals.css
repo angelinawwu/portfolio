@@ -41,7 +41,7 @@ body {
 .rainbow-text {
   background: linear-gradient(45deg, 
     #F98BC7, #E29D63, #C4E263, 
-    #97FFFF, #3C67FF, #A754DE
+    #97FFFF, #7694FF, #A754DE
   );
   background-size: 400% 400%;
   -webkit-background-clip: text;
@@ -88,7 +88,7 @@ body {
   height: 2px;
   background: linear-gradient(90deg, 
   #F98BC7, #E29D63, #C4E263, 
-  #97FFFF, #3C67FF, #A754DE
+  #97FFFF, #7694FF, #A754DE
   );
   transition: width 0.3s ease;
 }
@@ -128,7 +128,7 @@ body {
 ::-webkit-scrollbar-thumb {
   background: linear-gradient(45deg, 
   #F98BC7, #E29D63, #C4E263, 
-  #97FFFF, #3C67FF, #A754DE
+  #97FFFF, #7694FF, #A754DE
   );
   border-radius: 4px;
 }
@@ -136,6 +136,6 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   background: linear-gradient(45deg, 
   #F98BC7, #E29D63, #C4E263, 
-  #97FFFF, #3C67FF, #A754DE
+  #97FFFF, #7694FF, #A754DE
   );
 }
