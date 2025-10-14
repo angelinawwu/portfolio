@@ -9,7 +9,7 @@ export default function About() {
         {/* Hero Section */}
         <section className="max-w-4xl mx-auto px-6 py-20">
           <div className="text-center space-y-6">
-            <h1 className="text-5xl md:text-6xl font-bold text-white">
+            <h1 className="text-5xl md:text-6xl font-medium text-white">
               About <span className="rainbow-text">Me</span>
             </h1>
             <p className="text-xl text-white/70 max-w-2xl mx-auto">
@@ -44,11 +44,11 @@ export default function About() {
 
         {/* Skills Section */}
         <section className="max-w-4xl mx-auto px-6 pb-16">
-          <h2 className="text-3xl font-bold text-white mb-8">Skills & Tools</h2>
+          <h2 className="text-3xl font-medium text-white mb-8">Skills & Tools</h2>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="space-y-4">
-              <h3 className="text-xl font-semibold text-white rainbow-text">Design</h3>
+              <h3 className="text-xl font-medium text-white rainbow-text">Design</h3>
               <div className="space-y-2">
                 {[
                   'User Experience Research',
@@ -67,7 +67,7 @@ export default function About() {
             </div>
 
             <div className="space-y-4">
-              <h3 className="text-xl font-semibold text-white rainbow-text">Development</h3>
+              <h3 className="text-xl font-medium text-white rainbow-text">Development</h3>
               <div className="space-y-2">
                 {[
                   'React, Next.js, TypeScript',
@@ -89,12 +89,12 @@ export default function About() {
 
         {/* Experience Section */}
         <section className="max-w-4xl mx-auto px-6 pb-16">
-          <h2 className="text-3xl font-bold text-white mb-8">Experience</h2>
+          <h2 className="text-3xl font-medium text-white mb-8">Experience</h2>
           
           <div className="space-y-6">
             <div className="border border-white/10 rounded-lg p-6 hover:border-white/20 transition-colors duration-200">
               <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-3">
-                <h3 className="text-xl font-semibold text-white">UX Research & Design</h3>
+                <h3 className="text-xl font-medium text-white">UX Research & Design</h3>
                 <span className="text-white/60 text-sm font-mono">2023 - Present</span>
               </div>
               <p className="text-white/70">
@@ -106,7 +106,7 @@ export default function About() {
 
             <div className="border border-white/10 rounded-lg p-6 hover:border-white/20 transition-colors duration-200">
               <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-3">
-                <h3 className="text-xl font-semibold text-white">Frontend Development</h3>
+                <h3 className="text-xl font-medium text-white">Frontend Development</h3>
                 <span className="text-white/60 text-sm font-mono">2022 - Present</span>
               </div>
               <p className="text-white/70">
@@ -117,7 +117,7 @@ export default function About() {
 
             <div className="border border-white/10 rounded-lg p-6 hover:border-white/20 transition-colors duration-200">
               <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-3">
-                <h3 className="text-xl font-semibold text-white">Data Analysis</h3>
+                <h3 className="text-xl font-medium text-white">Data Analysis</h3>
                 <span className="text-white/60 text-sm font-mono">2021 - Present</span>
               </div>
               <p className="text-white/70">
@@ -130,7 +130,7 @@ export default function About() {
 
         {/* Contact Section */}
         <section className="max-w-4xl mx-auto px-6 pb-20">
-          <h2 className="text-3xl font-bold text-white mb-8">Let's Connect</h2>
+          <h2 className="text-3xl font-medium text-white mb-8">Let's Connect</h2>
           
           <div className="text-center space-y-6">
             <p className="text-xl text-white/70">

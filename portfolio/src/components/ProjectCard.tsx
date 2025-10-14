@@ -37,7 +37,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
           {/* Project Info */}
           <div className="space-y-3">
             <div className="flex items-center justify-between">
-              <h3 className="text-xl font-bold text-white group-hover:rainbow-text transition-all duration-300">
+              <h3 className="text-xl font-medium text-white group-hover:rainbow-text transition-all duration-300">
                 {project.title}
               </h3>
               {project.type === 'case-study' && (

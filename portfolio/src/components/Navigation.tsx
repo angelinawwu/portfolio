@@ -23,7 +23,7 @@ export default function Navigation() {
           {/* Logo/Brand */}
           <Link 
             href="/" 
-            className="text-xl font-bold rainbow-text hover:opacity-80 transition-opacity"
+            className="text-xl font-medium rainbow-text hover:opacity-80 transition-opacity"
           >
             Angelina Wu
           </Link>

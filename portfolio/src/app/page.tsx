@@ -10,12 +10,13 @@ export default function Home() {
       <main className="pt-20">
         {/* Hero Section */}
         <section className="max-w-7xl mx-auto px-6 py-20">
-          <div className="text-center space-y-6">
-            <h1 className="text-6xl md:text-8xl font-bold text-white">
+          <div className="text-left space-y-6">
+            <h1 className="text-xl md:text-2xl font-medium text-white">
               Hi, I'm{' '}
               <span className="rainbow-text">Angelina Wu</span>
+              .
             </h1>
-            <p className="text-xl md:text-2xl text-white/70 max-w-2xl mx-auto">
+            <p className="text-lg md:text-lg text-white/70 max-w-xl mx-0">
               Currently at UCLA studying Design and Statistics/Data Science. 
               I'm a designer who codes. I believe in the power of designing to delight.
             </p>
@@ -39,7 +40,7 @@ export default function Home() {
         {/* CTA Section */}
         <section className="max-w-7xl mx-auto px-6 pb-20 text-center">
           <div className="border-t border-white/10 pt-20">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+            <h2 className="text-3xl md:text-4xl font-medium text-white mb-6">
               Like what you see?
             </h2>
             <p className="text-xl text-white/70 mb-8">
