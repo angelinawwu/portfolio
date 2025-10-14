@@ -139,7 +139,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
               <video
                 ref={videoRef}
                 src={project.videoUrl}
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                className="object-cover group-hover:scale-105 transition-transform duration-300"
                 muted
                 loop
                 playsInline

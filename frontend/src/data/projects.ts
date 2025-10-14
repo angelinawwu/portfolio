@@ -25,8 +25,8 @@ export const caseStudies: Project[] = [
     slug: 'manifesto-market',
     title: 'Manifesto Market',
     description: 'A mobile-first redesign to streamline booking and drive reservations',
-    thumbnail: '/projects/manifesto-thumbnail.jpg',
-    videoUrl: '/assets/projects/manifesto-demo.mp4',
+    thumbnail: '/assets/projects/Manifesto-CMSMockup.jpg',
+    // videoUrl: '/assets/projects/manifesto-demo.mp4',
     tags: ['Web Design', 'CRO', 'Mobile-First', 'Booking System', 'Conversion Optimization', 'UI/UX'],
     type: 'case-study'
   },
@@ -34,7 +34,7 @@ export const caseStudies: Project[] = [
     slug: 'bookish',
     title: 'Bookish',
     description: 'Redesigning the reading experience with accessibility and sustainability in mind',
-    thumbnail: '/projects/bookish-thumbnail.jpg',
+    thumbnail: '/assets/projects/Bookish-CMSMockup.png',
     tags: ['Web Design', 'E-commerce', 'User Research', 'Figma', 'Prototyping'],
     type: 'case-study'
   }
