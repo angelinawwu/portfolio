@@ -28,7 +28,7 @@ export default function Home() {
         </section> */}
 
         {/* Case Studies Section */}
-        <section className="max-w-7xl mx-auto px-6 pb-16">
+        <section className="max-w-[1290px] mx-auto md:px-6 px-4 pb-16">
           <div className="text-left mb-8">
             <h2 className="text-2xl md:text-3xl font-medium text-white mb-4">
               Case Studies
@@ -45,7 +45,7 @@ export default function Home() {
         </section>
 
         {/* Playground Section */}
-        <section className="max-w-7xl mx-auto px-6 pb-20">
+        <section className="max-w-[1290px] mx-auto px-6 pb-20">
           <div className="text-left mb-8">
             <h2 className="text-2xl md:text-3xl font-medium text-white mb-4">
               Playground
@@ -62,7 +62,7 @@ export default function Home() {
         </section>
 
         {/* CTA Section */}
-        <section className="max-w-7xl mx-auto px-6 pb-20 text-center">
+        <section className="max-w-[1290px] mx-auto px-6 pb-20 text-center">
           <div className="border-t border-white/10 pt-20">
             <h2 className="text-3xl md:text-4xl font-medium text-white mb-6">
               Like what you see?

@@ -15,7 +15,7 @@ export default function ManifestoMarketPage() {
       <Navigation />
       
       <main className="pt-20">
-        <div className="max-w-4xl mx-auto px-6">
+        <div className="max-w-4xl mx-auto md:px-6 px-4">
           {/* Back Button */}
           <div className="py-8">
             <Link 
