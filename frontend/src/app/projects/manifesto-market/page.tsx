@@ -2,6 +2,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
+import { LanguageChart, DeviceChart, ReservationFunnelChart } from '@/components/ManifestoCharts';
 
 export const metadata = {
   title: 'Manifesto Market - Angelina Wu',
@@ -106,12 +107,23 @@ export default function ManifestoMarketPage() {
                 <p className="text-white/80 leading-relaxed mb-6">
                   One of my specific concerns was how users interacted with the reservation system. ResDiary, the widget that Manifesto Market used for reservations, helpfully offered linked analytics with Google, which allowed me to track the percentage of users that interacted with each step of the process.
                 </p>
+
+                {/* Charts Grid */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                  <div className="bg-white/5 border border-white/10 rounded-lg p-6">
+                    <LanguageChart />
+                  </div>
+                  <div className="bg-white/5 border border-white/10 rounded-lg p-6">
+                    <DeviceChart />
+                  </div>
+                </div>
+
                 <p className="text-white/60 text-sm mb-6">
                   Note: Step 3 was omitted because it is a optional step.
                 </p>
                 
-                <div className="w-full h-64 bg-white/5 border border-white/10 rounded-lg flex items-center justify-center">
-                  <span className="text-white/40">Reservation funnel analytics showing user drop-off at each step</span>
+                <div className="bg-white/5 border border-white/10 rounded-lg p-6">
+                  <ReservationFunnelChart />
                 </div>
               </div>
 
