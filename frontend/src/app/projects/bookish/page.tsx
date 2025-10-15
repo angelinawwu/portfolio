@@ -62,10 +62,10 @@ export default function BookishPage() {
             <h2 className="text-3xl md:text-4xl font-medium text-white mb-8">Overview</h2>
             <div className="space-y-6 text-white/80 leading-relaxed max-w-3xl">
               <p>
-                Bookish's mission is to connect readers in local communities and to increase the accessibility and sustainability of reading physical books. In the app, users can submit books they own into a personal catalog, which other readers can then borrow. Users are also recommended books located near them, forming a decentralized quasi-library that exists both online and in person.
+                Bookish&apos;s mission is to connect readers in local communities and to increase the accessibility and sustainability of reading physical books. In the app, users can submit books they own into a personal catalog, which other readers can then borrow. Users are also recommended books located near them, forming a decentralized quasi-library that exists both online and in person.
               </p>
               <p>
-                In the project, I was responsible for creating Bookish's brand identity, including logos, colors, and typography. I also designed the app's user interface, taking feedback from both the engineers and user research to create an optimal iteration.
+                In the project, I was responsible for creating Bookish&apos;s brand identity, including logos, colors, and typography. I also designed the app&apos;s user interface, taking feedback from both the engineers and user research to create an optimal iteration.
               </p>
             </div>
           </section>
@@ -99,7 +99,7 @@ export default function BookishPage() {
             <h2 className="text-3xl md:text-4xl font-medium text-white mb-8">User Research</h2>
             <div className="space-y-6 text-white/80 leading-relaxed max-w-3xl">
               <p>
-                To understand what potential users would be seeking in an app like Bookish, we conducted surveys through the "Book Enjoyers" Discord server, where we were able to reach out to 70+ individuals to discuss their reading habits and goals. From our research, we drew the following conclusions:
+                To understand what potential users would be seeking in an app like Bookish, we conducted surveys through the &quot;Book Enjoyers&quot; Discord server, where we were able to reach out to 70+ individuals to discuss their reading habits and goals. From our research, we drew the following conclusions:
               </p>
               <ol className="list-decimal list-inside space-y-3">
                 <li>Almost all (96%) respondents have unused books lying around their home, with many (32%) respondents owning more than 100 unused books.</li>
@@ -147,7 +147,7 @@ export default function BookishPage() {
             <h2 className="text-3xl md:text-4xl font-medium text-white mb-8">Usability Testing and Modifications</h2>
             <div className="space-y-8 max-w-4xl">
                   <div>
-                <p className="text-white/80 mb-3">"The pure black and white color scheme hurts my eyes."</p>
+                <p className="text-white/80 mb-3">&quot;The pure black and white color scheme hurts my eyes.&quot;</p>
                 <div className="bg-white/5 border border-white/10 rounded-lg p-6">
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                     <Image
@@ -167,7 +167,7 @@ export default function BookishPage() {
                 </div>
                   </div>
                   <div>
-                <p className="text-white/80 mb-3">"I want have more context for my messaging contacts."</p>
+                <p className="text-white/80 mb-3">&quot;I want have more context for my messaging contacts.&quot;</p>
                 <div className="bg-white/5 border border-white/10 rounded-lg p-6">
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                     <Image
@@ -231,7 +231,7 @@ export default function BookishPage() {
                 <h3 className="text-xl font-medium text-white mb-4">Practice <span className="rainbow-text">iteration</span> and <span className="rainbow-text">modification</span>.</h3>
                 <div className="bg-white/5 border border-white/10 rounded-lg p-6">
                   <ul className="arrow-list">
-                    <li className="text-white/80 leading-relaxed">It was very important for me to be able to adjust my designs accordingly as I received constructive feedback. In the future, I'd like to work on drafting multiple iterations of a design in the ideation stage, rather than solely making adjustments in later stages.</li>
+                    <li className="text-white/80 leading-relaxed">It was very important for me to be able to adjust my designs accordingly as I received constructive feedback. In the future, I&apos;d like to work on drafting multiple iterations of a design in the ideation stage, rather than solely making adjustments in later stages.</li>
                   </ul>
                 </div>
               </div>

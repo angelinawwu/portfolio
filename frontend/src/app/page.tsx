@@ -68,7 +68,7 @@ export default function Home() {
               Like what you see?
             </h2>
             <p className="text-xl text-white/70 mb-8">
-              Let's make something cool together.
+              Let&apos;s make something cool together.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a

@@ -4,7 +4,6 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Project } from '@/data/projects';
 import { useRef, useState } from 'react';
-import GlareHover from './GlareHover';
 import ProjectModal from './ProjectModal';
 
 interface ProjectCardProps {

@@ -65,7 +65,7 @@ export default function WorkupPage() {
                 Workup is an AI-powered professional networking app that aims to combine social media and job searching. With a feed that highlights career-centered content, and numerous AI-powered tools to prepare users for recruitment, Workup makes it easy to land a dream job. On the website, users can tailor their resume, conduct practice interviews with AI assistants, and connect with recruiters and other job seekers.
               </p>
               <p>
-                My specific role in the project was to improve the usability of Workup's AI interview feature. Although the feature had great potential and strong use cases, the confusing UI was prone to causing frustration for the user. My goal was to streamline the user flow and reduce friction when navigating the tool.
+                My specific role in the project was to improve the usability of Workup&apos;s AI interview feature. Although the feature had great potential and strong use cases, the confusing UI was prone to causing frustration for the user. My goal was to streamline the user flow and reduce friction when navigating the tool.
               </p>
             </div>
           </section>
@@ -79,10 +79,10 @@ export default function WorkupPage() {
                 <h3 className="text-2xl md:text-3xl font-medium text-white mb-6">Preparing for interviews can feel overwhelming.</h3>
                 <div className="space-y-6 text-white/80 leading-relaxed">
                   <p>
-                    For college students or new graduates, it can be intimidating trying to craft the perfect responses, especially when you don't know what to expect. By allowing users to conduct industry-tailored mock interviews and receive AI-assisted feedback, Workup's AI Interview feature provides students with clear guidance on how to refine their responses and build confidence for the real conversation.
+                    For college students or new graduates, it can be intimidating trying to craft the perfect responses, especially when you don&apos;t know what to expect. By allowing users to conduct industry-tailored mock interviews and receive AI-assisted feedback, Workup&apos;s AI Interview feature provides students with clear guidance on how to refine their responses and build confidence for the real conversation.
                   </p>
                   <p>
-                    However, although this feature's capabilities were impressive, users found it difficult to navigate. Many users reported feeling discouraged or frustrated by the cluttered interface, which distracted from its full potential. For students already facing the stress of preparing for their first interviews, this added friction could make an already challenging process feel more overwhelming than it needed to be.
+                    However, although this feature&apos;s capabilities were impressive, users found it difficult to navigate. Many users reported feeling discouraged or frustrated by the cluttered interface, which distracted from its full potential. For students already facing the stress of preparing for their first interviews, this added friction could make an already challenging process feel more overwhelming than it needed to be.
                   </p>
                 </div>
               </div>
@@ -119,7 +119,7 @@ export default function WorkupPage() {
               <div>
                 <h3 className="text-2xl md:text-3xl font-medium text-white mb-6">Understanding Users</h3>
                 <p className="text-white/80 leading-relaxed mb-6">
-                   To understand user perspectives, we administered 50+ surveys and conducted 20+ interviews for Workup's target audience, job-seeking college students. The responses we received helped guide us throughout the design process.
+                   To understand user perspectives, we administered 50+ surveys and conducted 20+ interviews for Workup&apos;s target audience, job-seeking college students. The responses we received helped guide us throughout the design process.
                 </p>
                   {/* Left column with two images */}
                   <div className="flex flex-row gap-6 items-center space-y-6">
@@ -139,10 +139,10 @@ export default function WorkupPage() {
                         </p>
                       <div className="space-y-4 italic text-white/80">
                       <ul className="arrow-list space-y-4">
-                        <li>"I use ChatGPT's voice function to do mock interviews. My main issue is that it seems more like a list of technical questions rather than an actual organic interview process."</li>
-                        <li>"[AI's] answers are too general [...]. It mainly helps with generating questions."</li>
-                        <li>"[AI interview questions] either are too broad in their questions or too niche."</li>
-                        <li>"I don't know if AI questions will be representative of what will actually be asked. They may be unreliable or biased."</li>
+                        <li>&quot;I use ChatGPT&apos;s voice function to do mock interviews. My main issue is that it seems more like a list of technical questions rather than an actual organic interview process.&quot;</li>
+                        <li>&quot;[AI&apos;s] answers are too general [...]. It mainly helps with generating questions.&quot;</li>
+                        <li>&quot;[AI interview questions] either are too broad in their questions or too niche.&quot;</li>
+                        <li>&quot;I don&apos;t know if AI questions will be representative of what will actually be asked. They may be unreliable or biased.&quot;</li>
                         </ul>
                       </div>
                     </div>
@@ -306,7 +306,7 @@ export default function WorkupPage() {
               <div>
                 <h3 className="text-2xl md:text-3xl font-medium text-white mb-6">Putting it all together...</h3>
                 <p className="text-white/80 leading-relaxed mb-6">
-                  With insights from research, the audit, and user personas, my team began the design process. We began with a thorough analysis of Workup's current AI Interview feature, sorting key issues into three problem groups.
+                  With insights from research, the audit, and user personas, my team began the design process. We began with a thorough analysis of Workup&apos;s current AI Interview feature, sorting key issues into three problem groups.
                 </p>
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6 space-y-6">
@@ -349,7 +349,7 @@ export default function WorkupPage() {
               <div>
                 <h3 className="text-2xl md:text-3xl font-medium text-white mb-6">Low-Fidelity Designs</h3>
                 <p className="text-white/80 leading-relaxed mb-6">
-                  The primary challenge with Workup's interface was the lack of a clear user flow. For our lo-fi designs, my team aimed to create interfaces that felt effortless to interact with.
+                  The primary challenge with Workup&apos;s interface was the lack of a clear user flow. For our lo-fi designs, my team aimed to create interfaces that felt effortless to interact with.
                 </p>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -377,7 +377,7 @@ export default function WorkupPage() {
               <div>
                 <h3 className="text-2xl md:text-3xl font-medium text-white mb-6">Creating a Design Language</h3>
                 <p className="text-white/80 leading-relaxed mb-6">
-                  One of the key issues with Workup's interface was its lack of a consistent design system. Based on its existing UI, our team revamped Workup's design system bringing consistency and modernity to user interactions across the website.
+                  One of the key issues with Workup&apos;s interface was its lack of a consistent design system. Based on its existing UI, our team revamped Workup&apos;s design system bringing consistency and modernity to user interactions across the website.
                 </p>
                 
                 <div className="w-full h-auto bg-white/5 border border-white/10 rounded-lg flex items-center justify-center">
@@ -421,7 +421,7 @@ export default function WorkupPage() {
               <div>
                 <h3 className="text-2xl md:text-3xl font-medium text-white mb-8">Final Product</h3>
                 <p className="text-white/80 leading-relaxed mb-8">
-                  The final design for Workup's AI Interview streamlines the user journey, making every step clear and intuitive. By eliminating unnecessary friction, the redesigned interface empowers users to focus on interview preparation and confidently leverage the feature to its full capabilities.
+                  The final design for Workup&apos;s AI Interview streamlines the user journey, making every step clear and intuitive. By eliminating unnecessary friction, the redesigned interface empowers users to focus on interview preparation and confidently leverage the feature to its full capabilities.
                 </p>
 
                 <div className="space-y-8">
@@ -460,7 +460,7 @@ export default function WorkupPage() {
                   <div>
                     <h4 className="text-xl font-medium text-white mb-4">All in one place</h4>
                     <p className="text-white/80 leading-relaxed mb-6">
-                      Our team built a single "hub" for practice question sets, helping users track progress, stay organized, and prepare for interviews with purpose.
+                      Our team built a single &quot;hub&quot; for practice question sets, helping users track progress, stay organized, and prepare for interviews with purpose.
                     </p>
                     <div className="w-full h-auto bg-white/5 border border-white/10 rounded-lg flex items-center justify-center">
                       <Image
@@ -564,7 +564,7 @@ export default function WorkupPage() {
                 <div className="bg-white/5 border border-white/10 rounded-lg p-6">
                   <ul className="arrow-list">
                     <li className="text-white/80 leading-relaxed">
-                      Simplifying the user flow made a bigger difference than any flashy features designs. When users aren't overwhelmed by options or dense text, they can more easily focus on what matters.
+                      Simplifying the user flow made a bigger difference than any flashy features designs. When users aren&apos;t overwhelmed by options or dense text, they can more easily focus on what matters.
                     </li>
                   </ul>
                 </div>

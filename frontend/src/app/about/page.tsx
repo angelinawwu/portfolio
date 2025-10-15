@@ -52,7 +52,7 @@ export default function About() {
                 Powerpoint by my second-grade teacher. Enamored by WordArt, 
                 dramatic animations, and maximalist display fonts (Algerian was 
                 my fave), I immediately fell in love with the whole practice 
-                of designing. I would spend hours on my dad's Microsoft account 
+                of designing. I would spend hours on my dad&apos;s Microsoft account 
                 creating slide presentations on every topic I could think of.
               </p>
               
@@ -245,10 +245,10 @@ export default function About() {
         <section className="max-w-7xl mx-auto px-6 pb-8">
           <div className="text-left">
             <h2 className="text-2xl md:text-3xl font-medium text-white mb-4">
-              Okay, that's all the serious stuff...
+              Okay, that&apos;s all the serious stuff...
             </h2>
             <p className="text-lg text-white/70">
-              Here are some other things I'm into
+              Here are some other things I&apos;m into
             </p>
           </div>
         </section>
@@ -354,7 +354,7 @@ export default function About() {
               Like what you see?
             </h2>
             <p className="text-xl text-white/70 mb-8">
-              Let's make something cool together.
+              Let&apos;s make something cool together.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
@@ -363,12 +363,12 @@ export default function About() {
               >
                 Get in touch
               </a>
-              <a
+              <Link
                 href="/"
                 className="px-8 py-3 border border-white/30 text-white font-medium rounded-lg hover:border-white/50 hover:bg-white/5 transition-all duration-200"
               >
                 See my work
-              </a>
+              </Link>
             </div>
           </div>
         </section>

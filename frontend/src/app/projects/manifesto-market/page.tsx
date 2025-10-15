@@ -75,10 +75,10 @@ export default function ManifestoMarketPage() {
             
             <div className="space-y-8">
               <div>
-                <h3 className="text-2xl md:text-3xl font-medium text-white mb-6">Users aren't being driven towards reservations.</h3>
+                <h3 className="text-2xl md:text-3xl font-medium text-white mb-6">Users aren&apos;t being driven towards reservations.</h3>
                 <div className="space-y-6 text-white/80 leading-relaxed">
                   <p>
-                    Manifesto's old website was primarily constructed with aesthetics in mind. With bold block-shapes and an eccentric menu bar, usability and accessibility were sacrificed for style. While the website's uniqueness made it stand out in the sea of generic hospitality homepages, its mobile-unfriendly layout and unintuitive navigation structure created a series of roadblocks for the user, making it difficult to make reservations, view menus, or find location information.
+                    Manifesto&apos;s old website was primarily constructed with aesthetics in mind. With bold block-shapes and an eccentric menu bar, usability and accessibility were sacrificed for style. While the website&apos;s uniqueness made it stand out in the sea of generic hospitality homepages, its mobile-unfriendly layout and unintuitive navigation structure created a series of roadblocks for the user, making it difficult to make reservations, view menus, or find location information.
                   </p>
                 </div>
               </div>
@@ -174,7 +174,7 @@ export default function ManifestoMarketPage() {
                       <div>
                         <h4 className="text-xl font-medium text-white mb-4">Conversion is lost in the reservation process.</h4>
                         <p className="text-white/80 leading-relaxed">
-                          While more than a quarter of users land on the reservation widget, more than 80% of those users exit the page immediately. The sharp decline suggests that call-to-actions are either misleading or confusing, pushing users into a flow they didn't intend to enter. Improving clarity around CTAs could reduce drop-offs and create stronger conversion outcomes.
+                          While more than a quarter of users land on the reservation widget, more than 80% of those users exit the page immediately. The sharp decline suggests that call-to-actions are either misleading or confusing, pushing users into a flow they didn&apos;t intend to enter. Improving clarity around CTAs could reduce drop-offs and create stronger conversion outcomes.
                         </p>
                       </div>
                     </div>
@@ -188,7 +188,7 @@ export default function ManifestoMarketPage() {
                       <div>
                         <h4 className="text-xl font-medium text-white mb-4">User diversity reflects an international audience.</h4>
                         <p className="text-white/80 leading-relaxed">
-                          The analytics showed that visitors engage with the site in a wide range of languages. The dominance of non-Czech languages (70.7%) suggests that tourism is a large driving force for Manifesto's audience, indicating that optimizing multilingual support is critical for improving usability and inclusivity across the site.
+                          The analytics showed that visitors engage with the site in a wide range of languages. The dominance of non-Czech languages (70.7%) suggests that tourism is a large driving force for Manifesto&apos;s audience, indicating that optimizing multilingual support is critical for improving usability and inclusivity across the site.
                         </p>
                       </div>
                     </div>
@@ -237,7 +237,7 @@ export default function ManifestoMarketPage() {
                 <div>
                 <h3 className="text-xl md:text-2xl font-medium text-white mb-6">CTAs built for conversion</h3>
                 <p className="text-white/80 leading-relaxed mb-6">
-                  For the hero section's CTAs, I focused on intentional, actionable language. The user is immediately presented with two options, allowing them to first survey the menu options before committing to paying for a reservation.
+                  For the hero section&apos;s CTAs, I focused on intentional, actionable language. The user is immediately presented with two options, allowing them to first survey the menu options before committing to paying for a reservation.
                 </p>
                 <div className="w-full h-auto bg-white/5 border border-white/10 rounded-lg flex items-center justify-center">
                   <Image
@@ -252,7 +252,7 @@ export default function ManifestoMarketPage() {
               <div>
                 <h3 className="text-xl md:text-2xl font-medium text-white mb-6">Intuitive navigation</h3>
                 <p className="text-white/80 leading-relaxed mb-6">
-                  I reorganized the website's navigation menu, minimizing content obstruction and highlighting the most relevant pages as permanent presences in the navbar.
+                  I reorganized the website&apos;s navigation menu, minimizing content obstruction and highlighting the most relevant pages as permanent presences in the navbar.
                 </p>
 
                 <div className="w-full h-auto bg-white/5 border border-white/10 rounded-lg flex items-center justify-center">
@@ -268,13 +268,13 @@ export default function ManifestoMarketPage() {
               <div>
                 <h3 className="text-2xl md:text-3xl font-medium text-white mb-6">Unexpected limitations...</h3>
                 <p className="text-white/80 leading-relaxed mb-6">
-                  Because my supervisor had been away and recovering from illness, communication had been limited. Once I shared my redesign proposal, I came to understand that several of my ideas weren't possible within the constraints of the company's website builder.
+                  Because my supervisor had been away and recovering from illness, communication had been limited. Once I shared my redesign proposal, I came to understand that several of my ideas weren&apos;t possible within the constraints of the company&apos;s website builder.
                 </p>
                 <p className="text-white/80 leading-relaxed mb-6">
-                  Since the original website had been built by a non-inactive third-party company, Manifesto's employees were only able to edit very basic components, such as changing text and image content. Any greater layout updates would be impossible without completely rebuilding the site from scratch.
+                  Since the original website had been built by a non-inactive third-party company, Manifesto&apos;s employees were only able to edit very basic components, such as changing text and image content. Any greater layout updates would be impossible without completely rebuilding the site from scratch.
                 </p>
                 <p className="text-white/80 leading-relaxed mb-6">
-                  With this in mind, I refocused my goal to what I could improve: call-to-action text. I shortened my pitch, highlighting UX writing issues and identifying problematic button text to improve reservation conversion. Although not every aspect of my proposal could be implemented, I'm happy with the meaningful improvements that were made.
+                  With this in mind, I refocused my goal to what I could improve: call-to-action text. I shortened my pitch, highlighting UX writing issues and identifying problematic button text to improve reservation conversion. Although not every aspect of my proposal could be implemented, I&apos;m happy with the meaningful improvements that were made.
                 </p>
 
                 <div className="w-full h-auto bg-white/5 border border-white/10 rounded-lg flex items-center justify-center">
@@ -317,7 +317,7 @@ export default function ManifestoMarketPage() {
                   <div>
                     <h4 className="text-xl font-medium text-white mb-2">Adapting the project for a new vision.</h4>
                     <p className="text-white/80 leading-relaxed">
-                      The way that Manifesto's website was constructed limited the ability to modify its layout or create significant UI changes. However, Martin Barry Group, the organization behind Manifesto, recently launched another unique food-and-beverage concept: Kalle Halle. With this new company's website being built in-house from scratch, many of my ideas involving CTAs and navigation will be utilized—stay tuned!
+                      The way that Manifesto&apos;s website was constructed limited the ability to modify its layout or create significant UI changes. However, Martin Barry Group, the organization behind Manifesto, recently launched another unique food-and-beverage concept: Kalle Halle. With this new company&apos;s website being built in-house from scratch, many of my ideas involving CTAs and navigation will be utilized—stay tuned!
                     </p>
                   </div>
                 </div>
