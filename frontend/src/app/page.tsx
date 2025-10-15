@@ -20,7 +20,7 @@ export default function Home() {
               Designing to delight
             </p>
             <p className="text-lg md:text-lg text-white/70 max-w-2xl mx-0">
-              Currently at UCLA studying Design Media Arts and Statistics/Data Science.
+              Design + Statistics/Data Science @ UCLA
             </p>
             
           </div>

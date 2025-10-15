@@ -4,6 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Project } from '@/data/projects';
 import { useRef } from 'react';
+import GlareHover from './GlareHover';
 
 interface ProjectCardProps {
   project: Project;
@@ -27,11 +28,13 @@ export default function ProjectCard({ project }: ProjectCardProps) {
   // For playground projects, render as external links
   if (project.type === 'playground') {
     return (
-      <div className="group relative bg-black border border-white/10 rounded-lg overflow-hidden hover:border-white/30 transition-all duration-300 hover:shadow-2xl hover:shadow-white/5">
+      <div className="group relative bg-black border border-white/10 rounded-lg hover:border-white/30 transition-all duration-300 hover:shadow-2xl hover:shadow-white/5 card-glow project-card-with-glare">
         {/* Rainbow border on hover */}
+        
         <div className="absolute inset-0 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+        
           <div className="rainbow-border rounded-lg p-[1px] h-full w-full">
-            <div className="bg-black rounded-lg h-full w-full"></div>
+            <div className="bg-black opacity-80 rounded-lg h-full w-full"></div>
           </div>
         </div>
 
@@ -107,12 +110,15 @@ export default function ProjectCard({ project }: ProjectCardProps) {
                 </a>
               )}
             </div>
+            
           </div>
         </div>
 
         {/* Hover effect overlay */}
         <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+        
       </div>
+      
     );
   }
 
@@ -120,14 +126,14 @@ export default function ProjectCard({ project }: ProjectCardProps) {
   return (
     <Link href={`/projects/${project.slug}`}>
       <div 
-        className="group relative bg-black border border-white/10 rounded-lg overflow-hidden hover:border-white/30 transition-all duration-300 hover:shadow-2xl hover:shadow-white/5"
+        className="group relative border border-white/10 rounded-lg overflow-hidden hover:border-white/30 transition-all duration-300 hover:shadow-2xl hover:shadow-white/5 project-card-with-glare"
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
       >
         {/* Rainbow border on hover */}
-        <div className="absolute inset-0 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+        <div className="absolute inset-0 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 card-glow">
           <div className="rainbow-border rounded-lg p-[1px] h-full w-full">
-            <div className="bg-black rounded-lg h-full w-full"></div>
+            <div className="bg-black opacity-80 rounded-lg h-full w-full"></div>
           </div>
         </div>
 
