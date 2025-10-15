@@ -21,12 +21,16 @@ export default function Navigation() {
       <div className="max-w-7xl mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           {/* Logo/Brand */}
-          <Link 
-            href="/" 
-            className="text-xl font-medium rainbow-text hover:opacity-80 transition-opacity"
-          >
-            Angelina Wu
-          </Link>
+          <div className="flex items-center space-x-4">
+            <Link 
+              href="/" 
+              className="text-xl font-medium rainbow-text hover:opacity-100 transition-opacity"
+            >
+              Angelina Wu
+            </Link>
+
+            <p className="text-white/70 text-sm">Designing to delight</p>
+          </div>
 
           {/* Navigation Links */}
           <div className="flex items-center space-x-8">
@@ -34,7 +38,7 @@ export default function Navigation() {
               <Link
                 key={item.href}
                 href={item.href}
-                className={`rainbow-underline font-medium transition-opacity hover:opacity-80 ${
+                className={`rainbow-text font-medium transition-opacity hover:opacity-100 ${
                   pathname === item.href ? 'opacity-100' : 'opacity-70'
                 }`}
               >
@@ -50,7 +54,7 @@ export default function Navigation() {
                   href={link.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="rainbow-underline text-sm font-medium opacity-70 hover:opacity-100 transition-opacity"
+                  className="rainbow-text text-sm font-medium opacity-70 hover:opacity-100 transition-opacity"
                 >
                   {link.label}
                 </a>

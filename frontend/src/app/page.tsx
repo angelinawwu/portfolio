@@ -10,15 +10,17 @@ export default function Home() {
       <main className="pt-20">
         {/* Hero Section */}
         <section className="max-w-7xl mx-auto px-6 py-20">
-          <div className="text-left space-y-6">
-            <h1 className="text-xl md:text-2xl font-medium text-white">
+          <div className="text-left">
+            <h1 className="text-xl md:text-2xl font-medium text-white mb-6">
               Hi, I'm{' '}
               <span className="rainbow-text">Angelina Wu</span>
               .
             </h1>
             <p className="text-lg md:text-lg text-white/70 max-w-xl mx-0">
-              Currently at UCLA studying Design Media Arts and Statistics/Data Science. 
-              Always designing to delight.
+              Designing to delight
+            </p>
+            <p className="text-lg md:text-lg text-white/70 max-w-2xl mx-0">
+              Currently at UCLA studying Design Media Arts and Statistics/Data Science.
             </p>
             
           </div>

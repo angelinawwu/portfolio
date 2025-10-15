@@ -38,16 +38,59 @@ body {
   50% { background-position: 100% 50%; }
 }
 
+/* Iridescent text hover effect */
 .rainbow-text {
-  background: linear-gradient(45deg, 
-    #F98BC7, #E29D63, #C4E263, 
-    #97FFFF, #7694FF, #A754DE
+  position: relative;
+  display: inline-block;
+  color: white;
+  transition: filter 0.3s ease;
+}
+
+.rainbow-text::before,
+.rainbow-text::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.rainbow-text::before {
+  background: conic-gradient(
+    from 90deg,
+    #F98BC7 0%,
+    #EE9495 8%,
+    #E29D63 16%,
+    #C4E263 35%,
+    #B9E98A 39.832%,
+    #AEF1B1 44.663%,
+    #97FFFF 54.327%,
+    #9BD4F7 58.745%,
+    #9FAAEF 63.163%,
+    #A37FE6 67.582%,
+    #A754DE 72%,
+    #8374ED 79.75%,
+    #5E93FB 87.5%,
+    #8591EE 90.625%,
+    #AC8FE1 93.75%,
+    #F98BC7 100%
   );
-  background-size: 400% 400%;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  animation: rainbow-shift 10s ease-in-out infinite;
+  filter: blur(15px);
+  z-index: -1;
+}
+
+.rainbow-text:hover::before {
+  opacity: 0.8;
+}
+
+.rainbow-text:hover {
+  filter: blur(0.5px);
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
 }
 
 .iridescent-glow {
