@@ -51,7 +51,7 @@ export const playgroundProjects: Project[] = [
     thumbnail: '/assets/projects/Typewriter-Cover.png',
     tags: ['Typescript', 'CSS Animations', 'React/Vite'],
     type: 'playground',
-    timeline: 'Fall 2024',
+    timeline: 'October 2025',
     demoUrl: 'https://typewriter-blush.vercel.app/',
     githubUrl: 'https://github.com/angelinawwu/typewriter'
   },
@@ -63,7 +63,7 @@ export const playgroundProjects: Project[] = [
     thumbnail: '/assets/projects/Goodreads-Cover.png',
     tags: ['Data Visualization', 'Web Scraping', 'React/Vite'],
     type: 'playground',
-    timeline: 'Winter 2024',
+    timeline: 'August 2025 - in progress',
     demoUrl: 'https://goodreadswrapped.com',
     githubUrl: 'https://github.com/angelinawwu/goodreads-wrapped'
   },
@@ -75,7 +75,7 @@ export const playgroundProjects: Project[] = [
     thumbnail: '/assets/projects/DreamJournal-Cover.png',
     tags: ['Next.js', 'Tailwind CSS', 'Supabase'],
     type: 'playground',
-    timeline: 'Fall 2024',
+    timeline: 'October 2025',
     demoUrl: 'https://dream-journal-one.vercel.app/',
     githubUrl: 'https://github.com/angelinawwu/dream-journal'
   }
