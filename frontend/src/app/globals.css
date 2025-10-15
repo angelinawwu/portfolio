@@ -177,7 +177,7 @@ body {
 
 .arrow-list li {
   position: relative;
-  padding-left: 1.5rem;
+  padding-left: 2rem;
 }
 
 .arrow-list li::before {
@@ -258,12 +258,14 @@ body {
 
 ::-webkit-scrollbar-track {
   background: #000000;
+  margin: 5px 0;
 }
 
 ::-webkit-scrollbar-thumb {
   background: white;
   border-radius: 5px;
   position: relative;
+  margin: 0 -5px;
 }
 
 ::-webkit-scrollbar-thumb:hover {

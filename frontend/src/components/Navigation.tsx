@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { Github, Linkedin, Twitter } from 'lucide-react';
 
 export default function Navigation() {
   const pathname = usePathname();
@@ -12,8 +13,9 @@ export default function Navigation() {
   ];
 
   const externalLinks = [
-    { href: 'https://github.com/angelinawwu', label: 'GitHub' },
-    { href: 'https://linkedin.com/in/angelinawwu', label: 'LinkedIn' },
+    { href: 'https://github.com/angelinawwu', label: 'GitHub', icon: Github },
+    { href: 'https://linkedin.com/in/angelinawwu', label: 'LinkedIn', icon: Linkedin },
+    { href: 'https://x.com/angelinawuuu', label: 'Twitter', icon: Twitter },
   ];
 
   return (
@@ -39,7 +41,7 @@ export default function Navigation() {
                 key={item.href}
                 href={item.href}
                 className={`rainbow-text font-medium transition-opacity hover:opacity-100 ${
-                  pathname === item.href ? 'opacity-100' : 'opacity-70'
+                  pathname === item.href ? 'opacity-100' : 'opacity-100'
                 }`}
               >
                 {item.label}
@@ -47,18 +49,22 @@ export default function Navigation() {
             ))}
 
             {/* External Links */}
-            <div className="flex items-center space-x-4 pl-4 border-l border-white/20">
-              {externalLinks.map((link) => (
-                <a
-                  key={link.href}
-                  href={link.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="rainbow-text text-sm font-medium opacity-70 hover:opacity-100 transition-opacity"
-                >
-                  {link.label}
-                </a>
-              ))}
+            <div className="flex items-center space-x-3 pl-4 border-l border-white/20">
+              {externalLinks.map((link) => {
+                const Icon = link.icon;
+                return (
+                  <a
+                    key={link.href}
+                    href={link.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-2 text-white/70 hover:text-white transition-colors duration-200"
+                    aria-label={link.label}
+                  >
+                    <Icon className="w-5 h-5" />
+                  </a>
+                );
+              })}
             </div>
           </div>
         </div>

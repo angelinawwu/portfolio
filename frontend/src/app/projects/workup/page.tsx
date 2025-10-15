@@ -1,5 +1,8 @@
 import Link from 'next/link';
 import Navigation from '@/components/Navigation';
+import Footer from '@/components/Footer';
+import Image from 'next/image';
+import { ArrowRight } from 'lucide-react';
 
 export const metadata = {
   title: 'Workup - Angelina Wu',
@@ -17,7 +20,7 @@ export default function WorkupPage() {
           <div className="py-8">
             <Link 
               href="/" 
-              className="text-white/60 hover:text-white transition-colors duration-200"
+              className="text-white/60 hover:text-white transition-colors duration-200 rainbow-text"
             >
               ← Back to projects
             </Link>
@@ -85,9 +88,11 @@ export default function WorkupPage() {
               </div>
 
               <div className="bg-white/5 border border-white/10 rounded-lg p-8">
-                <p className="text-white/90 font-medium">
-                  → The solution: A restructured user flow to minimize friction in the interview practice experience, allowing students to focus on growth rather than navigation.
-                </p>
+                <ul className="arrow-list">
+                  <li className="text-white/90 font-medium">
+                    The solution: A restructured user flow to minimize friction in the interview practice experience, allowing students to focus on growth rather than navigation.
+                  </li>
+                </ul>
               </div>
             </div>
           </section>
@@ -102,33 +107,69 @@ export default function WorkupPage() {
                 <p className="text-white/80 leading-relaxed">
                   We started with competitive analysis to compare existing platforms that also offered social networking and career development features.
                 </p>
+                <div className="w-full h-auto bg-white/5 border border-white/10 rounded-lg overflow-hidden mt-2 mb-6">
+                  <Image
+                    src="/assets/projects/Workup/Workup-CompetitiveAnalysis.png"
+                    alt="Workup Demo"
+                    width={1000}
+                    height={1000}
+                  />
+                </div>
               </div>
-
               <div>
                 <h3 className="text-2xl md:text-3xl font-medium text-white mb-6">Understanding Users</h3>
                 <p className="text-white/80 leading-relaxed mb-6">
-                  To understand user perspectives, we administered 50+ surveys and conducted 20+ interviews for Workup's target audience, job-seeking college students. The responses we received helped guide us throughout the design process.
+                   To understand user perspectives, we administered 50+ surveys and conducted 20+ interviews for Workup's target audience, job-seeking college students. The responses we received helped guide us throughout the design process.
                 </p>
-
-                <div className="bg-white/5 border border-white/10 rounded-lg p-6 mb-6">
-                  <p className="text-white/90 font-medium mb-4">
-                    → The user survey gave us a preliminary understanding of how college students interacted with AI tools in the job search process.
-                  </p>
-                  <div className="space-y-4 italic text-white/80">
-                    <p>"I use ChatGPT's voice function to do mock interviews. My main issue is that it seems more like a list of technical questions rather than an actual organic interview process."</p>
-                    <p>"[AI's] answers are too general [...]. It mainly helps with generating questions."</p>
-                    <p>"[AI interview questions] either are too broad in their questions or too niche."</p>
-                    <p>"I don't know if AI questions will be representative of what will actually be asked. They may be unreliable or biased."</p>
+                  {/* Left column with two images */}
+                  <div className="flex flex-row gap-6 items-center space-y-6">
+                    <div className="w-full max-w-[300px] max-h-[500px] overflow-hidden">
+                      <Image
+                        src="/assets/projects/Workup/Workup-UserSurvey.png"
+                        alt="Workup User Survey"
+                        width={1000}
+                        height={1000}
+                        className="w-full h-full object-contain"
+                      />
+                    </div>
+                    <ArrowRight className="text-white h-10 w-10 m-auto" />
+                    <div className="bg-white/5 border border-white/10 rounded-lg p-6">
+                     <p className="text-white/80 leading-relaxed mb-4">
+                          The user survey gave us a preliminary understanding of how college students interacted with AI tools in the job search process.
+                        </p>
+                      <div className="space-y-4 italic text-white/80">
+                      <ul className="arrow-list space-y-4">
+                        <li>"I use ChatGPT's voice function to do mock interviews. My main issue is that it seems more like a list of technical questions rather than an actual organic interview process."</li>
+                        <li>"[AI's] answers are too general [...]. It mainly helps with generating questions."</li>
+                        <li>"[AI interview questions] either are too broad in their questions or too niche."</li>
+                        <li>"I don't know if AI questions will be representative of what will actually be asked. They may be unreliable or biased."</li>
+                        </ul>
+                      </div>
+                    </div>
+                    
                   </div>
-                </div>
 
-                <div className="bg-white/5 border border-white/10 rounded-lg p-6">
-                  <p className="text-white/90 font-medium mb-4">
-                    → The user interviews gave us an understanding of how a user would actually interact with the site.
-                  </p>
-                  <p className="text-white/80 leading-relaxed">
-                    With each interviewee, I walked through a typical flow on Workup. The interview helped me identify high-friction areas in real time.
-                  </p>
+                  {/* Right column with text (unchanged copy) */}
+                  <div className="flex flex-row gap-6 items-start space-y-6">
+                  <div className="w-full max-w-[300px] max-h-[500px] overflow-hidden">
+                      <Image
+                        src="/assets/projects/Workup/Workup-UserInterview2.png"
+                        alt="Workup User Interview"
+                        width={1000}
+                        height={1000}
+                        className="w-full h-full object-contain"
+                      />
+                    </div>
+                    <ArrowRight className="text-white h-10 w-10 m-auto" />
+                    <div className="bg-white/5 border border-white/10 rounded-lg p-6">
+                      <p className="text-white/80 leading-relaxed mb-4">
+                          The user interviews gave us an understanding of how a user would actually interact with the site.
+                        </p>
+                      <ul className="arrow-list italic text-white/80 leading-relaxed space-y-4">
+                        <li>With each interviewee, I walked through a typical flow on Workup. The interview helped me identify high-friction areas in real time.</li>
+                      </ul>
+                  </div>
+
                 </div>
               </div>
 
@@ -139,8 +180,13 @@ export default function WorkupPage() {
                 </p>
                 
                 {/* Placeholder for website audit image */}
-                <div className="mt-8 w-full h-64 bg-white/5 border border-white/10 rounded-lg flex items-center justify-center">
-                  <span className="text-white/40">Website audit screenshot showing the old Workup interface with usability issues highlighted</span>
+                <div className="mt-8 w-full h-auto bg-white/5 border border-white/10 rounded-lg flex items-center justify-center">
+                  <Image
+                    src="/assets/projects/Workup/Workup-Audit.jpg"
+                    alt="Website audit"
+                    width={1000}
+                    height={1000}
+                  />
                 </div>
               </div>
 
@@ -203,11 +249,23 @@ export default function WorkupPage() {
                 
                 {/* Placeholder for user personas */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div className="w-full h-48 bg-white/5 border border-white/10 rounded-lg flex items-center justify-center">
-                    <span className="text-white/40">User persona illustration showing a job-seeking student profile</span>
+                  <div className="w-full h-auto bg-white/5 border border-white/10 rounded-lg flex items-center justify-center">
+                    <Image
+                      src="/assets/projects/Workup/Workup-UserPersona1.png"
+                      alt="User persona 1"
+                      width={1000}
+                      height={1000}
+                      className="w-full h-full object-contain"
+                    />
                   </div>
-                  <div className="w-full h-48 bg-white/5 border border-white/10 rounded-lg flex items-center justify-center">
-                    <span className="text-white/40">User persona illustration showing a career-focused graduate profile</span>
+                  <div className="w-full h-auto bg-white/5 border border-white/10 rounded-lg flex items-center justify-center">
+                    <Image
+                      src="/assets/projects/Workup/Workup-UserPersona2.png"
+                      alt="User persona 2"
+                      width={1000}
+                      height={1000}
+                      className="w-full h-full object-contain"
+                    />
                   </div>
                 </div>
               </div>
@@ -251,18 +309,39 @@ export default function WorkupPage() {
                   With insights from research, the audit, and user personas, my team began the design process. We began with a thorough analysis of Workup's current AI Interview feature, sorting key issues into three problem groups.
                 </p>
 
-                <div className="space-y-6">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 space-y-6">
                   <div className="border border-white/10 rounded-lg p-6">
                     <h4 className="text-xl font-medium text-white mb-3">Problem Group 1</h4>
                     <p className="text-white/80">Redundant empty pages disrupt interview setup and add unnecessary steps</p>
+                    <Image
+                      src="/assets/projects/Workup/Workup-ProblemGroup-1.png"
+                      alt="Problem Group 1"
+                      width={1000}
+                      height={1000}
+                      className="w-full h-auto object-contain mt-4"
+                    />
                   </div>
                   <div className="border border-white/10 rounded-lg p-6">
                     <h4 className="text-xl font-medium text-white mb-3">Problem Group 2</h4>
                     <p className="text-white/80">Customization features and video call interface feel disconnected</p>
+                    <Image
+                      src="/assets/projects/Workup/Workup-ProblemGroup-2.png"
+                      alt="Problem Group 2"
+                      width={1000}
+                      height={1000}
+                      className="w-full h-auto object-contain mt-4"
+                    />
                   </div>
                   <div className="border border-white/10 rounded-lg p-6">
                     <h4 className="text-xl font-medium text-white mb-3">Problem Group 3</h4>
                     <p className="text-white/80">Lengthy offboarding process creates friction and delays completion</p>
+                    <Image
+                      src="/assets/projects/Workup/Workup-ProblemGroup-3.png"
+                      alt="Problem Group 3"
+                      width={1000}
+                      height={1000}
+                      className="w-full h-auto object-contain mt-4"
+                    />
                   </div>
                 </div>
               </div>
@@ -274,11 +353,23 @@ export default function WorkupPage() {
                 </p>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div className="w-full h-64 bg-white/5 border border-white/10 rounded-lg flex items-center justify-center">
-                    <span className="text-white/40">Intuitive interview creation screen acts as a one-stop shop to customize all AI interview aspects</span>
+                  <div className="w-full h-auto bg-white/5 border border-white/10 rounded-lg flex items-center justify-center">
+                    <Image
+                      src="/assets/projects/Workup/Workup-Lofis-2.jpg"
+                      alt="Low-Fi 1"
+                      width={1000}
+                      height={1000}
+                      className="w-full h-auto object-contain"
+                    />
                   </div>
-                  <div className="w-full h-64 bg-white/5 border border-white/10 rounded-lg flex items-center justify-center">
-                    <span className="text-white/40">Interview feedback is separated by question and evaluated across multiple criteria</span>
+                  <div className="w-full h-auto bg-white/5 border border-white/10 rounded-lg flex items-center justify-center">
+                    <Image
+                      src="/assets/projects/Workup/Workup-Lofis-3.jpg"
+                      alt="Low-Fi 2"
+                      width={1000}
+                      height={1000}
+                      className="w-full h-auto object-contain"
+                    />
                   </div>
                 </div>
               </div>
@@ -289,8 +380,14 @@ export default function WorkupPage() {
                   One of the key issues with Workup's interface was its lack of a consistent design system. Based on its existing UI, our team revamped Workup's design system bringing consistency and modernity to user interactions across the website.
                 </p>
                 
-                <div className="w-full h-64 bg-white/5 border border-white/10 rounded-lg flex items-center justify-center">
-                  <span className="text-white/40">Design system components and guidelines</span>
+                <div className="w-full h-auto bg-white/5 border border-white/10 rounded-lg flex items-center justify-center">
+                  <Image
+                    src="/assets/projects/Workup/Workup-DesignSystem.png"
+                    alt="Design System"
+                    width={1000}
+                    height={1000}
+                    className="w-full h-auto object-contain"
+                  />
                 </div>
               </div>
 
@@ -299,16 +396,24 @@ export default function WorkupPage() {
                 <p className="text-white/80 leading-relaxed mb-6">
                   The design system made it easier to create mid- and hi-fi designs. Our team iterated our designs for the website through several rounds of feedback, brainstorming, and group design sessions.
                 </p>
-                
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                  <div className="w-full h-48 bg-white/5 border border-white/10 rounded-lg flex items-center justify-center">
-                    <span className="text-white/40">Mid-fi wireframes</span>
-                  </div>
-                  <div className="w-full h-48 bg-white/5 border border-white/10 rounded-lg flex items-center justify-center">
-                    <span className="text-white/40">High-fi mockups</span>
-                  </div>
-                  <div className="w-full h-48 bg-white/5 border border-white/10 rounded-lg flex items-center justify-center">
-                    <span className="text-white/40">Interactive prototypes</span>
+                <div className="w-full h-auto bg-white/5 border border-white/10 rounded-lg flex items-center justify-center">
+                  <Image
+                    src="/assets/projects/Workup/Workup-DesignFeedback.png"
+                    alt="Design Feedback"
+                    width={1000}
+                    height={1000}
+                    className="w-full h-auto object-contain"
+                  />
+                </div>
+                <div className="grid grid-cols-1 md:grid-cols-1 gap-6 mt-6">
+                  <div className="w-full h-48 bg-white/5 flex items-center justify-center">
+                    <Image
+                      src="/assets/projects/Workup/Workup-Process.png"
+                      alt="Design Process"
+                      width={1000}
+                      height={1000}
+                      className="w-full h-auto object-contain"
+                    />
                   </div>
                 </div>
               </div>
@@ -325,8 +430,14 @@ export default function WorkupPage() {
                     <p className="text-white/80 leading-relaxed mb-6">
                       To make the interview creation process as intuitive as possible, I took inspiration from video calling platforms such as Zoom and Google Meet to create an interface that felt like second nature. For the user, this helps make the practice round feel as close as possible to the real thing.
                     </p>
-                    <div className="w-full h-64 bg-white/5 border border-white/10 rounded-lg flex items-center justify-center">
-                      <span className="text-white/40">Interview creation interface mockup</span>
+                    <div className="w-full h-auto bg-white/5 border border-white/10 rounded-lg flex items-center justify-center">
+                      <Image
+                        src="/assets/projects/Workup/Workup-CreateInterview.png"
+                        alt="Interview Creation"
+                        width={1000}
+                        height={1000}
+                        className="w-full h-auto object-contain"
+                      />
                     </div>
                   </div>
 
@@ -335,9 +446,15 @@ export default function WorkupPage() {
                     <p className="text-white/80 leading-relaxed mb-6">
                       By replacing uncertainty with structure, we turned interview scheduling into a feature that actually supports both candidates and recruiters.
                     </p>
-                    <div className="w-full h-64 bg-white/5 border border-white/10 rounded-lg flex items-center justify-center">
-                      <span className="text-white/40">Scheduling interface design</span>
-                    </div>
+                    <div className="w-full h-auto bg-white/5 border border-white/10 rounded-lg flex items-center justify-center">
+                      <Image
+                        src="/assets/projects/Workup/Workup-InterviewSched.jpg"
+                        alt="Interview Scheduling"
+                        width={1000}
+                        height={1000}
+                        className="w-full h-auto object-contain"
+                      />                    
+                      </div>
                   </div>
 
                   <div>
@@ -345,8 +462,14 @@ export default function WorkupPage() {
                     <p className="text-white/80 leading-relaxed mb-6">
                       Our team built a single "hub" for practice question sets, helping users track progress, stay organized, and prepare for interviews with purpose.
                     </p>
-                    <div className="w-full h-64 bg-white/5 border border-white/10 rounded-lg flex items-center justify-center">
-                      <span className="text-white/40">Question hub interface</span>
+                    <div className="w-full h-auto bg-white/5 border border-white/10 rounded-lg flex items-center justify-center">
+                      <Image
+                        src="/assets/projects/Workup/Workup-QuestionSets.jpg"
+                        alt="Question Sets Hub"
+                        width={1000}
+                        height={1000}
+                        className="w-full h-auto object-contain"
+                      />
                     </div>
                   </div>
 
@@ -355,8 +478,14 @@ export default function WorkupPage() {
                     <p className="text-white/80 leading-relaxed mb-6">
                       I reorganized the structure of the AI-generated feedback page, categorizing feedback into different facets of proficiency. Segmenting the feedback improved readability and provided the user with a more precise metric to empower growth.
                     </p>
-                    <div className="w-full h-64 bg-white/5 border border-white/10 rounded-lg flex items-center justify-center">
-                      <span className="text-white/40">Feedback interface design</span>
+                    <div className="w-full h-auto bg-white/5 border border-white/10 rounded-lg flex items-center justify-center">
+                      <Image
+                        src="/assets/projects/Workup/Workup-InterviewFeedback.jpg"
+                        alt="Interview Feedback"
+                        width={1000}
+                        height={1000}
+                        className="w-full h-auto object-contain"
+                      />
                     </div>
                   </div>
                 </div>
@@ -420,10 +549,11 @@ export default function WorkupPage() {
                   <span className="rainbow-text">User empathy</span> is foundational.
                 </h3>
                 <div className="bg-white/5 border border-white/10 rounded-lg p-6">
-                  <p className="text-white/90 font-medium mb-4">→</p>
-                  <p className="text-white/80 leading-relaxed">
-                    Spending time with real users, hearing their frustrations, and observing their interactions with the website firsthand shaped every major decision. User interviews revealed friction points that would have been invisible otherwise, reminding me that successful solutions start with listening.
-                  </p>
+                  <ul className="arrow-list">
+                    <li className="text-white/80 leading-relaxed">
+                      Spending time with real users, hearing their frustrations, and observing their interactions with the website firsthand shaped every major decision. User interviews revealed friction points that would have been invisible otherwise, reminding me that successful solutions start with listening.
+                    </li>
+                  </ul>
                 </div>
               </div>
 
@@ -432,10 +562,11 @@ export default function WorkupPage() {
                   Sometimes the answer is <span className="rainbow-text">simplicity</span>.
                 </h3>
                 <div className="bg-white/5 border border-white/10 rounded-lg p-6">
-                  <p className="text-white/90 font-medium mb-4">→</p>
-                  <p className="text-white/80 leading-relaxed">
-                    Simplifying the user flow made a bigger difference than any flashy features designs. When users aren't overwhelmed by options or dense text, they can more easily focus on what matters.
-                  </p>
+                  <ul className="arrow-list">
+                    <li className="text-white/80 leading-relaxed">
+                      Simplifying the user flow made a bigger difference than any flashy features designs. When users aren't overwhelmed by options or dense text, they can more easily focus on what matters.
+                    </li>
+                  </ul>
                 </div>
               </div>
             </div>
@@ -456,6 +587,8 @@ export default function WorkupPage() {
           </nav>
         </div>
       </main>
+
+      <Footer />
     </div>
   );
 }

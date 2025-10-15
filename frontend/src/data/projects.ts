@@ -1,6 +1,7 @@
 export type Project = {
   slug: string;
   title: string;
+  paragraph?: string;
   description: string;
   thumbnail: string;
   tags: string[];
@@ -8,6 +9,7 @@ export type Project = {
   // For playground projects:
   demoUrl?: string;
   githubUrl?: string;
+  timeline?: string;
   // For case studies with video:
   videoUrl?: string;
 };
@@ -44,22 +46,38 @@ export const playgroundProjects: Project[] = [
   {
     slug: 'typewriter',
     title: 'Typewriter',
-    description: 'A minimalist typing experience that captures the nostalgic feel of mechanical typewriters. Built with vanilla JavaScript and CSS animations, this project explores the intersection of nostalgia and modern web design.',
+    description: 'A typing experience that captures the nostalgic feel of mechanical typewriters',
+    paragraph: 'Typewriter is a typing experience that captures the nostalgic feel of mechanical typewriters. It is a web application that allows users to type text on a virtual typewriter, whether by typing on their physical keyboard or by using the virtual keyboard.',
     thumbnail: '/assets/projects/Typewriter-Cover.png',
-    tags: ['JavaScript', 'CSS Animations', 'Vanilla JS', 'Typography', 'Nostalgia'],
+    tags: ['Typescript', 'CSS Animations', 'React/Vite'],
     type: 'playground',
+    timeline: 'Fall 2024',
     demoUrl: 'https://typewriter-blush.vercel.app/',
     githubUrl: 'https://github.com/angelinawwu/typewriter'
   },
   {
     slug: 'goodreads-wrapped',
     title: 'Goodreads Wrapped',
-    description: 'A personal reading analytics dashboard inspired by Spotify Wrapped. Visualizes reading habits, favorite genres, and reading streaks with beautiful data visualizations and interactive charts.',
+    description: 'Shareable and engaging reading analytics inspired by Spotify Wrapped',
+    paragraph: 'Goodreads Wrapped is a web application that allows users to visualize their reading data from Goodreads. It scrapes data from the user\'s Goodreads profile and displays it in a visually appealing way, with fun animations and in a shareable format.',
     thumbnail: '/assets/projects/Goodreads-Cover.png',
-    tags: ['Data Visualization', 'D3.js', 'Reading Analytics', 'Personal Dashboard', 'Charts'],
+    tags: ['Data Visualization', 'Web Scraping', 'React/Vite'],
     type: 'playground',
+    timeline: 'Winter 2024',
     demoUrl: 'https://goodreadswrapped.com',
     githubUrl: 'https://github.com/angelinawwu/goodreads-wrapped'
+  },
+  {
+    slug: 'dream-journal',
+    title: 'Dream Journal',
+    description: 'A minimal journal that allows you to quickly record dreams and reflect on past dreams',
+    paragraph: 'Dream Journal is a minimal journal that allows you to quickly record dreams and reflect on past dreams. With a focus on simplicity and ease of use, it allows you to record your dreams easily the instant you wake up, so you don\'t forget them.',
+    thumbnail: '/assets/projects/DreamJournal-Cover.png',
+    tags: ['Next.js', 'Tailwind CSS', 'Supabase'],
+    type: 'playground',
+    timeline: 'Fall 2024',
+    demoUrl: 'https://dream-journal-one.vercel.app/',
+    githubUrl: 'https://github.com/angelinawwu/dream-journal'
   }
 ];
 

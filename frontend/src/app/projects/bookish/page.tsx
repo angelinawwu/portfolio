@@ -1,5 +1,8 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import Navigation from '@/components/Navigation';
+import Footer from '@/components/Footer';
+import { ArrowRight } from 'lucide-react';
 
 export const metadata = {
   title: 'Bookish - Angelina Wu',
@@ -17,7 +20,7 @@ export default function BookishPage() {
           <div className="py-8">
             <Link 
               href="/" 
-              className="text-white/60 hover:text-white transition-colors duration-200"
+              className="text-white/60 hover:text-white transition-colors duration-200 rainbow-text"
             >
               ← Back to Home
             </Link>
@@ -129,52 +132,83 @@ export default function BookishPage() {
           <section className="py-12 border-t border-white/10">
             <h2 className="text-3xl md:text-4xl font-medium text-white mb-8">Mid-Fidelity Prototype</h2>
             <p className="text-white/80 leading-relaxed mb-6 max-w-3xl">Mid-fi wireframes created from initial ideations.</p>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {[1,2,3,4].map((n) => (
-                <div key={n} className="w-full h-60 bg-white/5 border border-white/10 rounded-lg"></div>
-              ))}
-                </div>
+            <div className="grid grid-cols-1 md:grid-cols-1 gap-6">
+              <Image
+                src="/assets/projects/Bookish/Bookish-Midfis.png"
+                alt="Mid-Fidelity Prototype"
+                width={1000}
+                height={1000}
+              />
+            </div>
           </section>
 
           {/* Usability Testing and Modifications */}
           <section className="py-12 border-t border-white/10">
             <h2 className="text-3xl md:text-4xl font-medium text-white mb-8">Usability Testing and Modifications</h2>
-            <div className="space-y-8 max-w-3xl">
-              <div>
+            <div className="space-y-8 max-w-4xl">
+                  <div>
                 <p className="text-white/80 mb-3">"The pure black and white color scheme hurts my eyes."</p>
                 <div className="bg-white/5 border border-white/10 rounded-lg p-6">
-                  <ul className="arrow-list">
-                    <li className="text-white/80 leading-relaxed">Slight color adjustment to off-white and dark grey</li>
-                  </ul>
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <Image
+                      src="/assets/projects/Bookish/Bookish-Feedback1A.png"
+                      alt="Usability Testing and Modifications"
+                      width={1000}
+                      height={1000}
+                    />
+                    <ArrowRight className="text-white h-10 w-10 m-auto" />
+                    <Image
+                      src="/assets/projects/Bookish/Bookish-Feedback1B.png"
+                      alt="Usability Testing and Modifications"
+                      width={1000}
+                      height={1000}
+                    />
+                  </div>
                 </div>
-              </div>
-              <div>
+                  </div>
+                  <div>
                 <p className="text-white/80 mb-3">"I want have more context for my messaging contacts."</p>
                 <div className="bg-white/5 border border-white/10 rounded-lg p-6">
-                  <ul className="arrow-list">
-                    <li className="text-white/80 leading-relaxed">Added conversation previews and dates to messaging screen</li>
-                  </ul>
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <Image
+                      src="/assets/projects/Bookish/Bookish-Feedback2A.png"
+                      alt="Usability Testing and Modifications"
+                      width={1000}
+                      height={1000}
+                    />
+                    <ArrowRight className="text-white h-10 w-10 m-auto" />
+                    <Image
+                      src="/assets/projects/Bookish/Bookish-Feedback2B.png"
+                      alt="Usability Testing and Modifications"
+                      width={1000}
+                      height={1000}
+                    />
+                  </div>
                 </div>
               </div>
-            </div>
+
+                </div>
           </section>
 
           {/* Final Product */}
           <section className="py-12 border-t border-white/10">
             <h2 className="text-3xl md:text-4xl font-medium text-white mb-8">Final Product</h2>
-            <p className="text-white/80 leading-relaxed mb-6">Take a look at our final deliverable below!</p>
-            <div className="space-y-12">
+            <p className="text-white/80 leading-relaxed mb-6">Take a look at my final deliverable below!</p>
+            <div className="space-y-12 text-center">
               {[
-                { title: 'Home and profile screens' },
-                { title: 'Natural discovery' },
-                { title: 'Community building' },
-              ].map((s) => (
-                <div key={s.title}>
-                  <h3 className="text-2xl md:text-3xl font-medium text-white mb-6">{s.title}</h3>
-                  <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    {[1,2,3].map((n) => (
-                      <div key={n} className="w-full h-56 bg-white/5 border border-white/10 rounded-lg"></div>
-                    ))}
+                { title: 'Home and profile screens', src: '/assets/projects/Bookish/Bookish-Final1.png' },
+                { title: 'Natural discovery', src: '/assets/projects/Bookish/Bookish-Final2.png' },
+                { title: 'Community building', src: '/assets/projects/Bookish/Bookish-Final3.png' },
+              ].map((item) => (
+                <div key={item.title}>
+                  <h3 className="text-xl md:text-2xl font-medium text-white mb-6">{item.title}</h3>
+                  <div className="grid grid-cols-1 md:grid-cols-1 gap-6">
+                    <Image
+                      src={item.src}
+                      alt={`${item.title} - Final Product`}
+                      width={1000}
+                      height={1000}
+                    />
                   </div>
                 </div>
               ))}
@@ -225,6 +259,8 @@ export default function BookishPage() {
           </nav>
         </div>
       </main>
+
+      <Footer />
     </div>
   );
 }

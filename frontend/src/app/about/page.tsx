@@ -1,6 +1,8 @@
 import Navigation from '@/components/Navigation';
+import Footer from '@/components/Footer';
 import Link from 'next/link';
 import Image from 'next/image';
+import { ArrowUpRight } from 'lucide-react';
 
 export default function About() {
   return (
@@ -35,7 +37,7 @@ export default function About() {
 
             {/* Bio Content */}
             <div className="lg:col-span-2 space-y-8">
-              <div className="prose prose-lg prose-invert max-w-none">
+            <div className="prose prose-lg prose-invert max-w-none">
               <p className="text-white/80 leading-relaxed text-lg mb-4">
                 Hey, I’m Angelina, a second-year student at UCLA studying 
                 Design Media Arts and Statistics/Data Science. I’ve always 
@@ -66,18 +68,18 @@ export default function About() {
                 Feel free to shoot me an email at{' '}
                 <a 
                   href="mailto:angelinawu05@gmail.com" 
-                  className="text-white hover:rainbow-text transition-colors duration-200"
+                  className="text-white rainbow-text transition-colors underline duration-200"
                 >
-                  angelinawu05@gmail.com
+                  angelinawu05@gmail.com <ArrowUpRight className="w-4 h-4 inline-block" />
                 </a>{' '}
                 or take a peek at my{' '}
                 <a 
                   href="https://drive.google.com/file/d/1WeWkogMivRgkEvFLcxmGzKZMQ-LXbjwd/view?usp=sharing"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-white hover:rainbow-text transition-colors duration-200"
+                  className="text-white rainbow-text transition-colors underline duration-200"
                 >
-                  resume
+                  resume <ArrowUpRight className="w-4 h-4 inline-block" />
                 </a>.
               </p>
               </div>
@@ -88,7 +90,7 @@ export default function About() {
         {/* Skills & Tools */}
         <section className="max-w-7xl mx-auto px-6 pb-16">
           <h2 className="text-3xl font-medium text-white mb-8">Skills & Tools</h2>
-
+          
           <div className="flex flex-wrap gap-2">
             {[
               // Design
@@ -103,7 +105,7 @@ export default function About() {
               'Git/GitHub', 'Vercel',
               // Data
               'R',
-            ].map((skill) => (
+                ].map((skill) => (
               <span
                 key={skill}
                 className="px-3 py-1 rounded-full text-xs font-mono bg-white/5 text-white/70 border border-white/10 hover:border-white/30 transition-colors"
@@ -177,7 +179,7 @@ export default function About() {
                     <h3 className="text-xl font-medium text-white">VEST at UCLA</h3>
                     <span className="text-white/60 text-sm font-mono">Jan 2025 – Present</span>
                   </div>
-                  <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-3">
+              <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-3">
                     <p className="text-white/80">Head of Design</p>
                     <span className="text-white/60 text-sm">Los Angeles, CA</span>
                   </div>
@@ -201,7 +203,7 @@ export default function About() {
                     <h3 className="text-xl font-medium text-white">ACM at UCLA</h3>
                     <span className="text-white/60 text-sm font-mono">Jan 2025 – Present</span>
                   </div>
-                  <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-3">
+              <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-3">
                     <p className="text-white/80">Design Director</p>
                     <span className="text-white/60 text-sm">Los Angeles, CA</span>
                   </div>
@@ -224,7 +226,7 @@ export default function About() {
                     <h3 className="text-xl font-medium text-white">Manifesto Market</h3>
                     <span className="text-white/60 text-sm font-mono">Jun 2025 – Aug 2025</span>
                   </div>
-                  <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-3">
+              <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-3">
                     <p className="text-white/80">UX Intern</p>
                     <span className="text-white/60 text-sm">Prague, Czechia</span>
                   </div>
@@ -312,61 +314,60 @@ export default function About() {
         <section className="max-w-7xl mx-auto px-6 pb-16">
           <h2 className="text-3xl font-medium text-white mb-8">In my free time I can be found...</h2>
           
-          <div className="max-w-2xl">
-            <ul className="space-y-3">
-              {[
-                'Collecting stickers',
-                'Reading tearjerker novels about friendship and family',
-                'Going down Wikipedia rabbit holes',
-                'Studying dead languages',
-                'Studying alive languages',
-                'Writing emails to myself',
-                'Making spreadsheets',
-                'People-watching',
-                'Organizing my bookmarks bar in rainbow order',
-                '(Unsuccessfully) trying to learn how to whistle'
-              ].map((activity) => (
-                <li key={activity} className="flex items-start space-x-3">
-                  <div className="w-2 h-2 bg-white/40 rounded-full mt-2 flex-shrink-0"></div>
-                  <span className="text-white/70">{activity}</span>
-                </li>
-              ))}
-            </ul>
+          <div className="max-w-5xl">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+              <ul className="arrow-list space-y-3">
+                {[
+                  'Collecting stickers',
+                  'Reading tearjerker novels about friendship and family',
+                  'Going down Wikipedia rabbit holes',
+                  'Studying dead languages',
+                  'Studying alive languages'
+                ].map((activity) => (
+                  <li key={activity}>
+                    <span className="text-white/70">{activity}</span>
+                  </li>
+                ))}
+              </ul>
+              <ul className="arrow-list space-y-3">
+                {[
+                  'Writing emails to myself',
+                  'Making spreadsheets',
+                  'People-watching',
+                  'Organizing my bookmarks bar in rainbow order',
+                  '(Unsuccessfully) trying to learn how to whistle'
+                ].map((activity) => (
+                  <li key={activity}>
+                    <span className="text-white/70">{activity}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
         </section>
 
         {/* Contact Section */}
-        <section className="max-w-7xl mx-auto px-6 pb-20">
-          <h2 className="text-3xl font-medium text-white mb-8">Let's Connect</h2>
-          
-          <div className="text-center space-y-6">
-            <p className="text-xl text-white/70">
-              I'm always excited to discuss new opportunities, collaborate on interesting projects, 
-              or just chat about design and technology.
+        {/* CTA Section */}
+        <section className="max-w-7xl mx-auto px-6 pb-20 text-center">
+          <div className="border-t border-white/10 pt-20">
+            <h2 className="text-3xl md:text-4xl font-medium text-white mb-6">
+              Like what you see?
+            </h2>
+            <p className="text-xl text-white/70 mb-8">
+              Let's make something cool together.
             </p>
-            
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
                 href="mailto:angelinawu05@gmail.com"
                 className="px-8 py-3 bg-white text-black font-medium rounded-lg hover:bg-white/90 transition-colors duration-200"
               >
-                Send me an email
+                Get in touch
               </a>
               <a
-                href="https://linkedin.com/in/angelinawwu"
-                target="_blank"
-                rel="noopener noreferrer"
+                href="/"
                 className="px-8 py-3 border border-white/30 text-white font-medium rounded-lg hover:border-white/50 hover:bg-white/5 transition-all duration-200"
               >
-                Connect on LinkedIn
-              </a>
-              <a
-                href="https://github.com/angelinawwu"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="px-8 py-3 border border-white/30 text-white font-medium rounded-lg hover:border-white/50 hover:bg-white/5 transition-all duration-200"
-              >
-                View my code
+                See my work
               </a>
             </div>
           </div>
@@ -377,13 +378,15 @@ export default function About() {
           <div className="text-center">
             <Link 
               href="/" 
-              className="text-white/70 hover:text-white rainbow-underline transition-colors duration-200"
+              className="text-white/70 hover:text-white rainbow-text transition-colors duration-200"
             >
               ← Back to Home
             </Link>
           </div>
         </section>
       </main>
+
+      <Footer />
     </div>
   );
 }

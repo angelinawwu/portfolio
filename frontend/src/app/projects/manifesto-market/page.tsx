@@ -1,5 +1,7 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import Navigation from '@/components/Navigation';
+import Footer from '@/components/Footer';
 
 export const metadata = {
   title: 'Manifesto Market - Angelina Wu',
@@ -17,7 +19,7 @@ export default function ManifestoMarketPage() {
           <div className="py-8">
             <Link 
               href="/" 
-              className="text-white/60 hover:text-white transition-colors duration-200"
+              className="text-white/60 hover:text-white transition-colors duration-200 rainbow-text"
             >
               ← Back to projects
             </Link>
@@ -82,9 +84,11 @@ export default function ManifestoMarketPage() {
               </div>
 
               <div className="bg-white/5 border border-white/10 rounded-lg p-8">
-                <p className="text-white/90 font-medium">
-                  → The solution: An overhauled, usability-focused site with the goal of translating site visits into eventual sales.
-                </p>
+                <ul className="arrow-list">
+                  <li className="text-white/90 font-medium">
+                    The solution: An overhauled, usability-focused site with the goal of translating site visits into eventual sales.
+                  </li>
+                </ul>
               </div>
             </div>
           </section>
@@ -118,11 +122,23 @@ export default function ManifestoMarketPage() {
                 </p>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div className="w-full h-48 bg-white/5 border border-white/10 rounded-lg flex items-center justify-center">
-                    <span className="text-white/40">User persona illustration showing a local resident profile with demographics and behavioral patterns for Manifesto Market</span>
+                  <div className="w-full h-auto bg-white/5 border border-white/10 rounded-lg flex items-center justify-center overflow-hidden">
+                    <Image
+                      src="/assets/projects/Manifesto/Manifesto-UserPersona-1.png"
+                      alt="User persona 1"
+                      width={1000}
+                      height={1000}
+                      className="w-full h-full object-contain"
+                    />
                   </div>
-                  <div className="w-full h-48 bg-white/5 border border-white/10 rounded-lg flex items-center justify-center">
-                    <span className="text-white/40">User persona illustration showing a tourist visitor profile with demographics and behavioral patterns for Manifesto Market</span>
+                  <div className="w-full h-auto bg-white/5 border border-white/10 rounded-lg flex items-center justify-center overflow-hidden">
+                    <Image
+                      src="/assets/projects/Manifesto/Manifesto-UserPersona-2.png"
+                      alt="User persona 2"
+                      width={1000}
+                      height={1000}
+                      className="w-full h-full object-contain"
+                    />
                   </div>
                 </div>
               </div>
@@ -133,8 +149,13 @@ export default function ManifestoMarketPage() {
                   I performed a comprehensive website audit through a UX lens. Every touchpoint was scrutinized for usability, accessibility, and alignment with user goals. This audit exposed high-friction areas: ambiguous CTAs, a convoluted reservation path, and a lack of responsive design. These insights clarified where the user journey was breaking down and where intervention was most urgent.
                 </p>
                 
-                <div className="w-full h-64 bg-white/5 border border-white/10 rounded-lg flex items-center justify-center">
-                  <span className="text-white/40">Website audit screenshot showing the old Manifesto Market homepage with usability issues highlighted</span>
+                <div className="w-full h-auto bg-white/5 border border-white/10 rounded-lg flex items-center justify-center">
+                  <Image
+                    src="/assets/projects/Manifesto/Manifesto-Analysis.png"
+                    alt="Website audit"
+                    width={1000}
+                    height={1000}
+                  />
                 </div>
               </div>
 
@@ -201,27 +222,46 @@ export default function ManifestoMarketPage() {
                 <p className="text-white/80 leading-relaxed mb-6">
                   With insights from research, personas, and audit findings, I moved into ideation and prototyping. My design approach was conversion-driven, removing obstacles discovered in earlier stages. I prioritized a mobile-first interface and reimagined CTAs to be contextually relevant and visually distinct.
                 </p>
-
-                <div className="w-full h-64 bg-white/5 border border-white/10 rounded-lg flex items-center justify-center">
-                  <span className="text-white/40">Design mockup showing improved call-to-action buttons and hero section layout for Manifesto Market</span>
+                <div className="w-full h-auto bg-white/5 border border-white/10 rounded-lg overflow-hidden mb-6">
+                  <video
+                    src="/assets/projects/Manifesto/manifesto-demo.mp4"
+                    className="w-full h-auto"
+                    controls
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    preload="metadata"
+                  />
                 </div>
-              </div>
-
-              <div>
-                <h3 className="text-2xl md:text-3xl font-medium text-white mb-6">CTAs built for conversion</h3>
+                <div>
+                <h3 className="text-xl md:text-2xl font-medium text-white mb-6">CTAs built for conversion</h3>
                 <p className="text-white/80 leading-relaxed mb-6">
                   For the hero section's CTAs, I focused on intentional, actionable language. The user is immediately presented with two options, allowing them to first survey the menu options before committing to paying for a reservation.
                 </p>
+                <div className="w-full h-auto bg-white/5 border border-white/10 rounded-lg flex items-center justify-center">
+                  <Image
+                    src="/assets/projects/Manifesto/Manifesto-DP-1.png"
+                    alt="Wireframe"
+                    width={1000}
+                    height={1000}
+                  />
+                </div>
               </div>
-
+              </div>
               <div>
-                <h3 className="text-2xl md:text-3xl font-medium text-white mb-6">Intuitive navigation</h3>
+                <h3 className="text-xl md:text-2xl font-medium text-white mb-6">Intuitive navigation</h3>
                 <p className="text-white/80 leading-relaxed mb-6">
                   I reorganized the website's navigation menu, minimizing content obstruction and highlighting the most relevant pages as permanent presences in the navbar.
                 </p>
 
-                <div className="w-full h-64 bg-white/5 border border-white/10 rounded-lg flex items-center justify-center">
-                  <span className="text-white/40">Navigation design comparison showing the old complex navigation menu versus the new simplified navigation structure</span>
+                <div className="w-full h-auto bg-white/5 border border-white/10 rounded-lg flex items-center justify-center">
+                  <Image
+                    src="/assets/projects/Manifesto/Manifesto-DP-2.png"
+                    alt="Wireframe"
+                    width={1000}
+                    height={1000}
+                  />
                 </div>
               </div>
 
@@ -237,59 +277,18 @@ export default function ManifestoMarketPage() {
                   With this in mind, I refocused my goal to what I could improve: call-to-action text. I shortened my pitch, highlighting UX writing issues and identifying problematic button text to improve reservation conversion. Although not every aspect of my proposal could be implemented, I'm happy with the meaningful improvements that were made.
                 </p>
 
-                <div className="w-full h-64 bg-white/5 border border-white/10 rounded-lg flex items-center justify-center">
-                  <span className="text-white/40">Design mockup showing improvements in call-to-action text from "Tap in. Drink up." to "Grab your seat!", improving clarity and intentionality.</span>
+                <div className="w-full h-auto bg-white/5 border border-white/10 rounded-lg flex items-center justify-center">
+                  <Image
+                    src="/assets/projects/Manifesto/Manifesto-DP-3.png"
+                    alt="Wireframe"
+                    width={1000}
+                    height={1000}
+                  />
                 </div>
               </div>
             </div>
           </section>
 
-          {/* Final Solution */}
-          <section className="py-12 border-t border-white/10">
-            <h2 className="text-3xl md:text-4xl font-medium text-white mb-8">Final Solution</h2>
-            
-            <div className="space-y-8">
-              <div>
-                <h3 className="text-2xl md:text-3xl font-medium text-white mb-6">Mobile-Optimized Booking Experience</h3>
-                <p className="text-white/80 leading-relaxed mb-6">
-                  The redesigned booking flow prioritizes mobile users with a simplified, step-by-step process that guides users through each stage of their reservation.
-                </p>
-                <div className="w-full h-64 bg-white/5 border border-white/10 rounded-lg flex items-center justify-center">
-                  <span className="text-white/40">Mobile booking flow interface</span>
-                </div>
-              </div>
-
-              <div>
-                <h3 className="text-2xl md:text-3xl font-medium text-white mb-6">Progressive Form Completion</h3>
-                <p className="text-white/80 leading-relaxed mb-6">
-                  Implemented progressive form completion with smart defaults and auto-complete features to reduce user effort and minimize errors.
-                </p>
-                <div className="w-full h-64 bg-white/5 border border-white/10 rounded-lg flex items-center justify-center">
-                  <span className="text-white/40">Progressive form design</span>
-                </div>
-              </div>
-
-              <div>
-                <h3 className="text-2xl md:text-3xl font-medium text-white mb-6">Real-Time Availability</h3>
-                <p className="text-white/80 leading-relaxed mb-6">
-                  Added real-time availability checking to prevent booking conflicts and provide users with accurate, up-to-date information.
-                </p>
-                <div className="w-full h-64 bg-white/5 border border-white/10 rounded-lg flex items-center justify-center">
-                  <span className="text-white/40">Availability calendar interface</span>
-                </div>
-              </div>
-
-              <div>
-                <h3 className="text-2xl md:text-3xl font-medium text-white mb-6">Clear Progress Indicators</h3>
-                <p className="text-white/80 leading-relaxed mb-6">
-                  Implemented clear progress indicators and confirmation messages to keep users informed throughout the booking process.
-                </p>
-                <div className="w-full h-64 bg-white/5 border border-white/10 rounded-lg flex items-center justify-center">
-                  <span className="text-white/40">Progress indicator design</span>
-                </div>
-              </div>
-            </div>
-          </section>
 
           {/* Impact */}
           <section className="py-12 border-t border-white/10">
@@ -350,10 +349,11 @@ export default function ManifestoMarketPage() {
                   Data is <span className="rainbow-text">everything</span>.
                 </h3>
                 <div className="bg-white/5 border border-white/10 rounded-lg p-6">
-                  <p className="text-white/90 font-medium mb-4">→</p>
-                  <p className="text-white/80 leading-relaxed">
-                    Using Google Analytics was pivotal in understanding how users were actually interacting with the site. The insights uncovered pain points and revealed which pages truly mattered to visitors. This was my first time using Google Analytics extensively, and I was wowed by all of its capabilities.
-                  </p>
+                  <ul className="arrow-list">
+                    <li className="text-white/80 leading-relaxed">
+                      Using Google Analytics was pivotal in understanding how users were actually interacting with the site. The insights uncovered pain points and revealed which pages truly mattered to visitors. This was my first time using Google Analytics extensively, and I was wowed by all of its capabilities.
+                    </li>
+                  </ul>
                 </div>
               </div>
 
@@ -362,10 +362,11 @@ export default function ManifestoMarketPage() {
                   Understand the <span className="rainbow-text">limitations first</span>.
                 </h3>
                 <div className="bg-white/5 border border-white/10 rounded-lg p-6">
-                  <p className="text-white/90 font-medium mb-4">→</p>
-                  <p className="text-white/80 leading-relaxed">
-                    I jumped into this project head-on, excited to completely revamp the site without a complete understanding of what was plausible within the confines of the pre-made website builder. In the future, fully comprehending the limitations of the project is a top priority!
-                  </p>
+                  <ul className="arrow-list">
+                    <li className="text-white/80 leading-relaxed">
+                      I jumped into this project head-on, excited to completely revamp the site without a complete understanding of what was plausible within the confines of the pre-made website builder. In the future, fully comprehending the limitations of the project is a top priority!
+                    </li>
+                  </ul>
                 </div>
               </div>
             </div>
@@ -392,6 +393,8 @@ export default function ManifestoMarketPage() {
           </nav>
         </div>
       </main>
+
+      <Footer />
     </div>
   );
 }

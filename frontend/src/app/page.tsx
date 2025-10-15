@@ -1,4 +1,5 @@
 import Navigation from '@/components/Navigation';
+import Footer from '@/components/Footer';
 import ProjectCard from '@/components/ProjectCard';
 import { caseStudies, playgroundProjects } from '@/data/projects';
 
@@ -7,9 +8,9 @@ export default function Home() {
     <div className="min-h-screen bg-black">
       <Navigation />
       
-      <main className="pt-20">
+      <main className="pt-32">
         {/* Hero Section */}
-        <section className="max-w-7xl mx-auto px-6 py-20">
+        {/* <section className="max-w-7xl mx-auto px-6 py-20">
           <div className="text-left">
             <h1 className="text-xl md:text-2xl font-medium text-white mb-6">
               Hi, I'm{' '}
@@ -24,7 +25,7 @@ export default function Home() {
             </p>
             
           </div>
-        </section>
+        </section> */}
 
         {/* Case Studies Section */}
         <section className="max-w-7xl mx-auto px-6 pb-16">
@@ -33,7 +34,7 @@ export default function Home() {
               Case Studies
             </h2>
             <p className="text-white/70 max-w-2xl">
-              Deep dives into long-term, team-based projects.
+              Deep dives into long-term, team-based projects
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -50,10 +51,10 @@ export default function Home() {
               Playground
             </h2>
             <p className="text-white/70 max-w-2xl">
-              Experimental projects and side explorations that I build for fun.
+              Experimental projects and side explorations that I build for fun
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {playgroundProjects.map((project) => (
               <ProjectCard key={project.slug} project={project} />
             ))}
@@ -87,17 +88,7 @@ export default function Home() {
         </section>
       </main>
 
-      {/* Footer */}
-      <footer className="border-t border-white/10 py-8">
-        <div className="max-w-7xl mx-auto px-6 text-center">
-          <p className="text-white/50 text-sm">
-            Last updated: {new Date().toLocaleDateString('en-US', { month: '2-digit', day: '2-digit', year: '2-digit' }).replace(/\//g, '.')}
-          </p>
-          <p className="text-white/30 text-xs mt-2">
-            Created with ❤️ by Angelina Wu (me!)
-          </p>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }
