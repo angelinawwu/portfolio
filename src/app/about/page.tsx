@@ -11,7 +11,7 @@ export default function About() {
       
       <main className="pt-20">
         {/* Bio Section */}
-        <section className="max-w-7xl mx-auto px-6 py-16">
+        <section className="max-w-[1290px] mx-auto px-6 py-16">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 items-center">
             {/* Image Section */}
             <div className="lg:col-span-1">
@@ -27,11 +27,7 @@ export default function About() {
                   />
                 </div>
                 {/* Rainbow border on hover */}
-                <div className="absolute inset-0 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <div className="rainbow-border rounded-lg p-[1px] h-full w-full">
-                    <div className="bg-black rounded-lg h-full w-full"></div>
-                  </div>
-                </div>
+                
               </div>
             </div>
 
@@ -88,7 +84,7 @@ export default function About() {
         </section>
 
         {/* Skills & Tools */}
-        <section className="max-w-7xl mx-auto px-6 pb-16">
+        <section className="max-w-[1290px] mx-auto px-6 pb-16">
           <h2 className="text-3xl font-medium text-white mb-8">Skills & Tools</h2>
           
           <div className="flex flex-wrap gap-2">
@@ -118,7 +114,7 @@ export default function About() {
 
         {/* Experience Section */}
         {/* Experience Section */}
-        <section className="max-w-7xl mx-auto px-6 pb-16">
+        <section className="max-w-[1290px] mx-auto px-6 pb-16">
           <h2 className="text-3xl font-medium text-white mb-8">Experience</h2>
           
           <div className="space-y-6">
@@ -242,7 +238,7 @@ export default function About() {
         </section>
 
         {/* Divider Section */}
-        <section className="max-w-7xl mx-auto px-6 pb-8">
+        <section className="max-w-[1290px] mx-auto px-6 pb-8">
           <div className="text-left">
             <h2 className="text-2xl md:text-3xl font-medium text-white mb-4">
               Okay, that&apos;s all the serious stuff...
@@ -254,7 +250,7 @@ export default function About() {
         </section>
 
         {/* Books Section */}
-        <section className="max-w-7xl mx-auto px-6 pb-16">
+        <section className="max-w-[1290px] mx-auto px-6 pb-16">
           <h2 className="text-3xl font-medium text-white mb-8">Books that made me</h2>
           
           <div className="grid grid-cols-2 md:grid-cols-5 gap-6">
@@ -281,7 +277,7 @@ export default function About() {
         </section>
 
         {/* Albums Section */}
-        <section className="max-w-7xl mx-auto px-6 pb-16">
+        <section className="max-w-[1290px] mx-auto px-6 pb-16">
           <h2 className="text-3xl font-medium text-white mb-8">Albums on repeat</h2>
           
           <div className="grid grid-cols-2 md:grid-cols-5 gap-6">
@@ -311,7 +307,7 @@ export default function About() {
         </section>
 
         {/* Fun Facts Section */}
-        <section className="max-w-7xl mx-auto px-6 pb-16">
+        <section className="max-w-[1290px] mx-auto px-6 pb-16">
           <h2 className="text-3xl font-medium text-white mb-8">In my free time I can be found...</h2>
           
           <div className="max-w-5xl">
@@ -348,7 +344,7 @@ export default function About() {
 
         {/* Contact Section */}
         {/* CTA Section */}
-        <section className="max-w-7xl mx-auto px-6 pb-20 text-center">
+        <section className="max-w-[1290px] mx-auto px-6 pb-20 text-center">
           <div className="border-t border-white/10 pt-20">
             <h2 className="text-3xl md:text-4xl font-medium text-white mb-6">
               Like what you see?
@@ -374,7 +370,7 @@ export default function About() {
         </section>
 
         {/* Back to Home */}
-        <section className="max-w-7xl mx-auto px-6 pb-20">
+        <section className="max-w-[1290px] mx-auto px-6 pb-20">
           <div className="text-center">
             <Link 
               href="/" 
