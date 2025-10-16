@@ -5,7 +5,7 @@ import Footer from '@/components/Footer';
 import { LanguageChart, DeviceChart, ReservationFunnelChart } from '@/components/ManifestoCharts';
 
 export const metadata = {
-  title: 'Manifesto Market - Angelina Wu',
+  title: 'Manifesto Market ＊ Angelina Wu',
   description: 'A mobile-first redesign to streamline booking and drive reservations',
 };
 
@@ -15,7 +15,7 @@ export default function ManifestoMarketPage() {
       <Navigation />
       
       <main className="pt-20">
-        <div className="max-w-4xl mx-auto md:px-6 px-4">
+        <div className="max-w-4xl mx-auto px-6">
           {/* Back Button */}
           <div className="py-8">
             <Link 

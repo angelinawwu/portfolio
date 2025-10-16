@@ -13,23 +13,23 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Angelina Wu - Designer & Developer",
-  description: "Designer who codes. Currently at UCLA studying Design and Statistics/Data Science. Passionate about creating meaningful experiences through design and technology.",
+  title: "Angelina Wu's Portfolio",
+  description: "Designing to delight. Currently at UCLA studying Design and Statistics/Data Science. Passionate about creating meaningful experiences through design and technology.",
   keywords: ["design", "development", "UX", "UI", "frontend", "data science", "UCLA", "portfolio"],
   authors: [{ name: "Angelina Wu" }],
   creator: "Angelina Wu",
   openGraph: {
-    title: "Angelina Wu - Designer & Developer",
-    description: "Designer who codes. Currently at UCLA studying Design and Statistics/Data Science.",
+    title: "Angelina Wu's Portfolio",
+    description: "Designing to delight. Currently at UCLA studying Design and Statistics/Data Science.",
     url: "https://angelinawwu.com",
-    siteName: "Angelina Wu",
+    siteName: "Angelina Wu's Portfolio",
     locale: "en_US",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Angelina Wu - Designer & Developer",
-    description: "Designer who codes. Currently at UCLA studying Design and Statistics/Data Science.",
+    title: "Angelina Wu's Portfolio",
+    description: "Designing to delight. Currently at UCLA studying Design and Statistics/Data Science.",
   },
   robots: {
     index: true,

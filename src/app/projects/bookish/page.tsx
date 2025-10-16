@@ -5,7 +5,7 @@ import Footer from '@/components/Footer';
 import { ArrowRight } from 'lucide-react';
 
 export const metadata = {
-  title: 'Bookish - Angelina Wu',
+  title: 'Bookish ＊ Angelina Wu',
   description: 'Redesigning the reading experience with accessibility and sustainability in mind',
 };
 
