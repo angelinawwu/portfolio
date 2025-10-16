@@ -5,7 +5,7 @@ import Image from 'next/image';
 import { ArrowRight } from 'lucide-react';
 
 export const metadata = {
-  title: 'Workup - Angelina Wu',
+  title: 'Workup ＊ Angelina Wu',
   description: 'Restructuring an AI-powered interview tool to empower students to prepare with confidence',
 };
 
