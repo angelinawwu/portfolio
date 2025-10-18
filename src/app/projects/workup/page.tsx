@@ -37,7 +37,7 @@ export default function WorkupPage() {
             </p>
 
             {/* Metadata Cards */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
               <div className="border border-white/10 rounded-lg p-6">
                 <h3 className="text-white/60 text-sm font-medium mb-2">My Role</h3>
                 <p className="text-white font-medium">Product Designer</p>
@@ -76,7 +76,7 @@ export default function WorkupPage() {
             
             <div className="space-y-8">
               <div>
-                <h3 className="text-2xl md:text-3xl font-medium text-white mb-6">Preparing for interviews can feel overwhelming.</h3>
+                <h3 className="permanent-rainbow-text text-2xl md:text-3xl font-medium text-white mb-6">Preparing for interviews can feel overwhelming.</h3>
                 <div className="space-y-6 text-white/80 leading-relaxed">
                   <p>
                     For college students or new graduates, it can be intimidating trying to craft the perfect responses, especially when you don&apos;t know what to expect. By allowing users to conduct industry-tailored mock interviews and receive AI-assisted feedback, Workup&apos;s AI Interview feature provides students with clear guidance on how to refine their responses and build confidence for the real conversation.
@@ -121,18 +121,20 @@ export default function WorkupPage() {
                 <p className="text-white/80 leading-relaxed mb-6">
                    To understand user perspectives, we administered 50+ surveys and conducted 20+ interviews for Workup&apos;s target audience, job-seeking college students. The responses we received helped guide us throughout the design process.
                 </p>
-                  {/* Left column with two images */}
-                  <div className="flex flex-row gap-6 items-center space-y-6">
-                    <div className="w-full max-w-[300px] max-h-[500px] overflow-hidden">
+
+                  {/* USER SURVEY SECTION */}
+                  <div className="flex flex-col md:flex-row gap-6 items-center space-y-6 mb-8">
+                    {/* USER SURVEY IMAGE */}
+                    <div className="w-full max-w-[300px] md:max-w-[500px] max-h-[400px] overflow-hidden mb-0">
                       <Image
                         src="/assets/projects/Workup/Workup-UserSurvey.png"
                         alt="Workup User Survey"
-                        width={1000}
-                        height={1000}
+                        width={300}
+                        height={500}
                         className="w-full h-full object-contain"
                       />
                     </div>
-                    <ArrowRight className="text-white h-10 w-10 m-auto" />
+                    <ArrowRight className="text-white h-10 w-10 m-auto transform rotate-90 md:rotate-0" />
                     <div className="bg-white/5 border border-white/10 rounded-lg p-6">
                      <p className="text-white/80 leading-relaxed mb-4">
                           The user survey gave us a preliminary understanding of how college students interacted with AI tools in the job search process.
@@ -149,18 +151,19 @@ export default function WorkupPage() {
                     
                   </div>
 
-                  {/* Right column with text (unchanged copy) */}
-                  <div className="flex flex-row gap-6 items-start space-y-6">
-                  <div className="w-full max-w-[300px] max-h-[500px] overflow-hidden">
+                  {/* USER INTERVIEW SECTION */}
+                  <div className="flex flex-col md:flex-row gap-6 items-center space-y-6 mb-8 md:mb-0">
+                    {/* USER INTERVIEW IMAGE */}
+                    <div className="w-full max-w-[300px] max-h-[500px] overflow-hidden mb-0">
                       <Image
                         src="/assets/projects/Workup/Workup-UserInterview2.png"
                         alt="Workup User Interview"
-                        width={1000}
-                        height={1000}
+                        width={300}
+                        height={500}
                         className="w-full h-full object-contain"
                       />
                     </div>
-                    <ArrowRight className="text-white h-10 w-10 m-auto" />
+                    <ArrowRight className="text-white h-10 w-10 m-auto transform rotate-90 md:rotate-0" />
                     <div className="bg-white/5 border border-white/10 rounded-lg p-6">
                       <p className="text-white/80 leading-relaxed mb-4">
                           The user interviews gave us an understanding of how a user would actually interact with the site.
@@ -504,8 +507,8 @@ export default function WorkupPage() {
                     <span className="text-white/80 font-mono text-sm">1</span>
                   </div>
                   <div>
-                    <p className="text-white/80 leading-relaxed">
-                      Users were 50% more likely to engage with the AI interview feature. Simplifying the user journey prevented users from becoming frustrated with the site, keeping them engaged and focused on their interview preparation.
+                    <h4 className="text-xl font-medium text-white mb-4">Users were 50% more likely to engage with the AI interview feature.</h4> 
+                    <p className="text-white/80 leading-relaxed">Simplifying the user journey prevented users from becoming frustrated with the site, keeping them engaged and focused on their interview preparation.
                     </p>
                   </div>
                 </div>
@@ -517,8 +520,9 @@ export default function WorkupPage() {
                     <span className="text-white/80 font-mono text-sm">2</span>
                   </div>
                   <div>
-                    <p className="text-white/80 leading-relaxed">
-                      Feedback comprehension improved dramatically. By restructuring AI-generated feedback into clear, actionable sections, users reported they could more easily identify strengths and areas for growth, leading to more focused and confident interview preparation.
+                    
+                    <h4 className="text-xl font-medium text-white mb-4">Feedback comprehension improved dramatically.</h4> 
+                    <p className="text-white/80 leading-relaxed">By restructuring AI-generated feedback into clear, actionable sections, users reported they could more easily identify strengths and areas for growth, leading to more focused and confident interview preparation.
                     </p>
                   </div>
                 </div>
@@ -530,8 +534,8 @@ export default function WorkupPage() {
                     <span className="text-white/80 font-mono text-sm">3</span>
                   </div>
                   <div>
-                    <p className="text-white/80 leading-relaxed">
-                      Organizational features increased ongoing learning by 90%. The addition of options to save question sets and review past interviews enabled users to track their progress over time, encouraging users to return to the feature continuously throughout their career development journey.
+                    <h4 className="text-xl font-medium text-white mb-4">Organizational features increased ongoing learning by 90%.</h4> 
+                    <p className="text-white/80 leading-relaxed">The addition of options to save question sets and review past interviews enabled users to track their progress over time, encouraging users to return to the feature continuously throughout their career development journey.
                     </p>
                   </div>
                 </div>
@@ -546,7 +550,7 @@ export default function WorkupPage() {
             <div className="space-y-8">
               <div className="border border-white/10 rounded-lg p-8">
                 <h3 className="text-xl font-medium text-white mb-4">
-                  <span className="rainbow-text">User empathy</span> is foundational.
+                  <span className="permanent-rainbow-text">User empathy</span> is foundational.
                 </h3>
                 <div className="bg-white/5 border border-white/10 rounded-lg p-6">
                   <ul className="arrow-list">
@@ -559,7 +563,7 @@ export default function WorkupPage() {
 
               <div className="border border-white/10 rounded-lg p-8">
                 <h3 className="text-xl font-medium text-white mb-4">
-                  Sometimes the answer is <span className="rainbow-text">simplicity</span>.
+                  Sometimes the answer is <span className="permanent-rainbow-text">simplicity</span>.
                 </h3>
                 <div className="bg-white/5 border border-white/10 rounded-lg p-6">
                   <ul className="arrow-list">

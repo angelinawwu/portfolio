@@ -33,10 +33,10 @@ export default function ProjectCard({ project }: ProjectCardProps) {
       <>
         <button
           onClick={() => setIsModalOpen(true)}
-          className="group relative bg-black border border-white/10 rounded-xl hover:border-white/30 transition-all duration-300 hover:shadow-2xl hover:shadow-white/5 card-glow project-card-with-glare w-full text-left cursor-pointer h-full"
+          className="group relative bg-black border border-white/10 rounded-xl hover:border-white/30 transition-all duration-100 hover:shadow-2xl hover:shadow-white/5 card-glow project-card-with-glare w-full text-left cursor-pointer h-full"
         >
           {/* Rainbow border on hover */}
-          <div className="absolute inset-0 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+          <div className="absolute inset-0 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-100">
             <div className="rainbow-border rounded-lg p-[1px] h-full w-full">
               <div className="bg-black opacity-80 rounded-lg h-full w-full"></div>
             </div>
@@ -50,17 +50,17 @@ export default function ProjectCard({ project }: ProjectCardProps) {
                 src={project.thumbnail}
                 alt={project.title}
                 fill
-                className="object-cover group-hover:scale-105 transition-transform duration-300"
+                className="object-cover group-hover:scale-105 transition-transform duration-100"
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               />
               {/* Iridescent overlay on hover */}
-              <div className="absolute inset-0 iridescent-glow opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <div className="absolute inset-0 iridescent-glow opacity-0 group-hover:opacity-100 transition-opacity duration-100"></div>
             </div>
 
           {/* Project Info */}
           <div className="space-y-3">
             <div className="flex items-center justify-between">
-              <h3 className="text-xl font-medium text-white group-hover:rainbow-text transition-all duration-300">
+              <h3 className="text-xl font-medium text-white group-hover:rainbow-text transition-all duration-100">
                 {project.title}
               </h3>
               <span className="px-2 py-1 text-xs font-medium bg-white/10 text-white/80 rounded-full border border-white/20">
@@ -98,7 +98,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
         </div>
 
           {/* Hover effect overlay */}
-          <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-100 pointer-events-none"></div>
         </button>
         
         <ProjectModal 
@@ -114,12 +114,12 @@ export default function ProjectCard({ project }: ProjectCardProps) {
   return (
     <Link href={`/projects/${project.slug}`}>
       <div 
-        className="group relative border border-white/10 rounded-xl overflow-hidden hover:border-white/30 transition-all duration-300 hover:shadow-2xl hover:shadow-white/5 project-card-with-glare"
+        className="group relative border border-white/10 rounded-xl overflow-hidden hover:border-white/30 transition-all duration-100 hover:shadow-2xl hover:shadow-white/5 project-card-with-glare"
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
       >
         {/* Rainbow border on hover */}
-        <div className="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 card-glow">
+        <div className="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-100 card-glow">
           <div className="rainbow-border rounded-xl p-[1px] h-full w-full">
             <div className="bg-black opacity-80 rounded-xl h-full w-full"></div>
           </div>
@@ -133,7 +133,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
               <video
                 ref={videoRef}
                 src={project.videoUrl}
-                className="object-cover group-hover:scale-105 transition-transform duration-300"
+                className="object-cover group-hover:scale-105 transition-transform duration-100"
                 muted
                 loop
                 playsInline
@@ -143,18 +143,18 @@ export default function ProjectCard({ project }: ProjectCardProps) {
                 src={project.thumbnail}
                 alt={project.title}
                 fill
-                className="object-cover group-hover:scale-105 transition-transform duration-300"
+                className="object-cover group-hover:scale-105 transition-transform duration-100"
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               />
             )}
             {/* Iridescent overlay on hover */}
-            <div className="absolute inset-0 iridescent-glow opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            <div className="absolute inset-0 iridescent-glow opacity-0 group-hover:opacity-100 transition-opacity duration-100"></div>
           </div>
 
           {/* Project Info */}
           <div className="space-y-3">
             <div className="flex items-center justify-between">
-              <h3 className="text-xl font-medium text-white group-hover:rainbow-text transition-all duration-300">
+              <h3 className="text-xl font-medium text-white group-hover:rainbow-text transition-all duration-100">
                 {project.title}
               </h3>
               <span className="px-2 py-1 text-xs font-medium bg-white/10 text-white/80 rounded-full border border-white/20">
@@ -186,7 +186,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
         </div>
 
         {/* Hover effect overlay */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-100 pointer-events-none"></div>
       </div>
     </Link>
   );

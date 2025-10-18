@@ -358,7 +358,7 @@ export default function ManifestoMarketPage() {
             <div className="space-y-8">
               <div className="border border-white/10 rounded-lg p-8">
                 <h3 className="text-xl font-medium text-white mb-4">
-                  Data is <span className="rainbow-text">everything</span>.
+                  Data is <span className="permanent-rainbow-text">everything</span>.
                 </h3>
                 <div className="bg-white/5 border border-white/10 rounded-lg p-6">
                   <ul className="arrow-list">
@@ -371,7 +371,7 @@ export default function ManifestoMarketPage() {
 
               <div className="border border-white/10 rounded-lg p-8">
                 <h3 className="text-xl font-medium text-white mb-4">
-                  Understand the <span className="rainbow-text">limitations first</span>.
+                  Understand the <span className="permanent-rainbow-text">limitations first</span>.
                 </h3>
                 <div className="bg-white/5 border border-white/10 rounded-lg p-6">
                   <ul className="arrow-list">

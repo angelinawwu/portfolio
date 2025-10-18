@@ -30,7 +30,7 @@ export default function Home() {
         {/* Case Studies Section */}
         <section className="max-w-[1290px] mx-auto md:px-6 px-4 pb-16">
           <div className="text-left mb-8">
-            <h2 className="text-2xl md:text-3xl font-medium text-white mb-4">
+            <h2 className="permanent-rainbow-text text-2xl md:text-3xl font-medium text-white mb-4">
               Case Studies
             </h2>
             <p className="text-white/70 max-w-2xl">
@@ -47,7 +47,7 @@ export default function Home() {
         {/* Playground Section */}
         <section className="max-w-[1290px] mx-auto px-6 pb-20">
           <div className="text-left mb-8">
-            <h2 className="text-2xl md:text-3xl font-medium text-white mb-4">
+            <h2 className="permanent-rainbow-text text-2xl md:text-3xl font-medium text-white mb-4">
               Playground
             </h2>
             <p className="text-white/70 max-w-2xl">
@@ -64,7 +64,7 @@ export default function Home() {
         {/* CTA Section */}
         <section className="max-w-[1290px] mx-auto px-6 pb-20 text-center">
           <div className="border-t border-white/10 pt-20">
-            <h2 className="text-3xl md:text-4xl font-medium text-white mb-6">
+            <h2 className="permanent-rainbow-text text-3xl md:text-4xl font-medium text-white mb-6">
               Like what you see?
             </h2>
             <p className="text-xl text-white/70 mb-8">

@@ -43,7 +43,7 @@ export default function Navigation() {
                 key={item.href}
                 href={item.href}
                 className={`rainbow-text font-medium transition-opacity hover:opacity-100 ${
-                  pathname === item.href ? 'opacity-100' : 'opacity-100'
+                  pathname === item.href ? 'opacity-100' : 'opacity-70'
                 }`}
               >
                 {item.label}

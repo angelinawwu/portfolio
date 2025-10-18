@@ -37,7 +37,7 @@ export default function About() {
               <p className="text-white/80 leading-relaxed text-lg mb-4">
                 Hey, I’m Angelina, a second-year student at UCLA studying 
                 Design Media Arts and Statistics/Data Science. I’ve always 
-                believed in designing to delight: creating things that 
+                believed in <span className="permanent-rainbow-text">designing to delight</span>: creating things that 
                 spark curiosity, joy, and connection. For me, design is a 
                 way to build tiny bridges between people, and help them see 
                 the otherworldly in the ordinary.
@@ -130,7 +130,7 @@ export default function About() {
                     <span className="text-white/60 text-sm font-mono">Oct 2025 – Present</span>
                   </div>
                   <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-3">
-                    <p className="text-white/80">Student Designer in Residence</p>
+                    <p className="text-white/80">Student Designer in Residence (Part-time)</p>
                     <span className="text-white/60 text-sm">Los Angeles, CA</span>
                   </div>
                   <ul className="list-disc list-inside space-y-2 text-white/70">
@@ -153,7 +153,7 @@ export default function About() {
                     <span className="text-white/60 text-sm font-mono">Aug 2025 – Present</span>
                   </div>
                   <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-3">
-                    <p className="text-white/80">Student Website Designer</p>
+                    <p className="text-white/80">Student Website Designer (Part-time)</p>
                     <span className="text-white/60 text-sm">Los Angeles, CA</span>
                   </div>
                   <ul className="list-disc list-inside space-y-2 text-white/70">
