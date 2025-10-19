@@ -120,8 +120,8 @@ export default function About() {
           <div className="space-y-6">
             {/* UCLA Arts */}
             <div className="border border-white/10 rounded-lg p-6 hover:border-white/20 transition-colors duration-200">
-              <div className="flex gap-4">
-                <div className="hidden sm:block w-12 h-12 relative flex-shrink-0 rounded bg-white/5 border border-white/10 overflow-hidden">
+              <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
+                <div className="block w-12 h-12 relative flex-shrink-0 rounded bg-white/5 border border-white/10 overflow-hidden">
                   <Image src="/assets/About/CompanyLogo-UCLAArts.jpg" alt="UCLA Arts logo" fill className="object-contain p-1" sizes="48px" />
                 </div>
                 <div className="flex-1">
@@ -133,7 +133,7 @@ export default function About() {
                     <p className="text-white/80">Student Designer in Residence (Part-time)</p>
                     <span className="text-white/60 text-sm">Los Angeles, CA</span>
                   </div>
-                  <ul className="list-disc list-inside space-y-2 text-white/70">
+                  <ul className="list-disc list-outside space-y-2 text-white/70 ml-3">  
                     <li>Designing posters, social media assets, and motion graphics for UCLA Arts’ strategic communications team.</li>
                     <li>Supporting community-building, original storytelling, and event production within UCLA Arts brand guidelines.</li>
                   </ul>
@@ -143,8 +143,8 @@ export default function About() {
 
             {/* UCLA Latino Policy Institute */}
             <div className="border border-white/10 rounded-lg p-6 hover:border-white/20 transition-colors duration-200">
-              <div className="flex gap-4">
-                <div className="hidden sm:block w-12 h-12 relative flex-shrink-0 rounded bg-white/5 border border-white/10 overflow-hidden">
+              <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
+                <div className="block w-12 h-12 relative flex-shrink-0 rounded bg-white/5 border border-white/10 overflow-hidden">
                   <Image src="/assets/About/CompanyLogo-UCLALatino.jpg" alt="UCLA Latino Policy Institute logo" fill className="object-contain p-1" sizes="48px" />
                 </div>
                 <div className="flex-1">
@@ -156,7 +156,7 @@ export default function About() {
                     <p className="text-white/80">Student Website Designer (Part-time)</p>
                     <span className="text-white/60 text-sm">Los Angeles, CA</span>
                   </div>
-                  <ul className="list-disc list-inside space-y-2 text-white/70">
+                  <ul className="list-disc list-outside space-y-2 text-white/70 ml-3">
                     <li>Updating and maintaining a WordPress site (22,000+ monthly viewers) to enhance usability and visual consistency within UCLA brand guidelines.</li>
                     <li>Translating complex research publications into accessible, engaging designs.</li>
                   </ul>
@@ -166,8 +166,8 @@ export default function About() {
 
             {/* VEST at UCLA */}
             <div className="border border-white/10 rounded-lg p-6 hover:border-white/20 transition-colors duration-200">
-              <div className="flex gap-4">
-                <div className="hidden sm:block w-12 h-12 relative flex-shrink-0 rounded bg-white/5 border border-white/10 overflow-hidden">
+              <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
+                <div className="block w-12 h-12 relative flex-shrink-0 rounded bg-white/5 border border-white/10 overflow-hidden">
                   <Image src="/assets/About/CompanyLogo-VEST.png" alt="VEST at UCLA logo" fill className="object-contain p-1" sizes="48px" />
                 </div>
                 <div className="flex-1">
@@ -179,7 +179,7 @@ export default function About() {
                     <p className="text-white/80">Head of Design</p>
                     <span className="text-white/60 text-sm">Los Angeles, CA</span>
                   </div>
-                  <ul className="list-disc list-inside space-y-2 text-white/70">
+                  <ul className="list-disc list-outside space-y-2 text-white/70 ml-3">
                     <li>Cultivating a startup culture on campus and growing a community of 2,000+ ambitious builders.</li>
                     <li>Designing and engineering frontend components for early‑stage tech startups.</li>
                     <li>Led the end‑to‑end design and development of the organization’s website with Next.js and Tailwind.</li>
@@ -190,8 +190,8 @@ export default function About() {
 
             {/* ACM at UCLA */}
             <div className="border border-white/10 rounded-lg p-6 hover:border-white/20 transition-colors duration-200">
-              <div className="flex gap-4">
-                <div className="hidden sm:block w-12 h-12 relative flex-shrink-0 rounded bg-white/5 border border-white/10 overflow-hidden">
+              <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
+                <div className="block w-12 h-12 relative flex-shrink-0 rounded bg-white/5 border border-white/10 overflow-hidden">
                   <Image src="/assets/About/CompanyLogo-ACM.png" alt="ACM at UCLA logo" fill className="object-contain p-1" sizes="48px" />
                 </div>
                 <div className="flex-1">
@@ -199,11 +199,11 @@ export default function About() {
                     <h3 className="text-xl font-medium text-white">ACM at UCLA</h3>
                     <span className="text-white/60 text-sm font-mono">Jan 2025 – Present</span>
                   </div>
-              <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-3">
+                  <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-3">
                     <p className="text-white/80">Design Director</p>
                     <span className="text-white/60 text-sm">Los Angeles, CA</span>
                   </div>
-                  <ul className="list-disc list-inside space-y-2 text-white/70">
+                  <ul className="list-disc list-outside space-y-2 text-white/70 ml-3">
                     <li>Leading design initiatives for 200+ officers across 9 committees at the largest CS student org in SoCal.</li>
                     <li>Collaborated with Workup (NVIDIA‑incubated) to redesign and relaunch its website informed by 20+ interviews and 50+ survey responses.</li>
                   </ul>
@@ -213,8 +213,8 @@ export default function About() {
 
             {/* Manifesto Market */}
             <div className="border border-white/10 rounded-lg p-6 hover:border-white/20 transition-colors duration-200">
-              <div className="flex gap-4">
-                <div className="hidden sm:block w-12 h-12 relative flex-shrink-0 rounded bg-white/5 border border-white/10 overflow-hidden">
+              <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
+                <div className="block w-12 h-12 relative flex-shrink-0 rounded bg-white/5 border border-white/10 overflow-hidden">
                   <Image src="/assets/About/CompanyLogo-Manifesto.jpg" alt="Manifesto Market logo" fill className="object-contain p-1" sizes="48px" />
                 </div>
                 <div className="flex-1">
@@ -226,7 +226,7 @@ export default function About() {
                     <p className="text-white/80">UX Intern</p>
                     <span className="text-white/60 text-sm">Prague, Czechia</span>
                   </div>
-                  <ul className="list-disc list-inside space-y-2 text-white/70">
+                  <ul className="list-disc list-outside space-y-2 text-white/70 ml-3">
                     <li>Conducted a comprehensive UX audit and redesign (14,000+ monthly viewers), improving reservation conversion by 121%.</li>
                     <li>Designed and launched a WordPress site for sister brand KalleHalle, optimizing content for conversion.</li>
                     <li>Leveraged Google Analytics to uncover user behavior trends and set redesign priorities.</li>
@@ -311,7 +311,7 @@ export default function About() {
           <h2 className="text-3xl font-medium text-white mb-8">In my free time I can be found...</h2>
           
           <div className="max-w-5xl">
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-8">
               <ul className="arrow-list space-y-3">
                 {[
                   'Collecting stickers',
