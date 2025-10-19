@@ -85,7 +85,7 @@ export default function About() {
 
         {/* Skills & Tools */}
         <section className="max-w-[1290px] mx-auto px-6 pb-16">
-          <h2 className="text-3xl font-medium text-white mb-8">Skills & Tools</h2>
+          <h2 className="text-3xl font-medium text-white mb-4 md:mb-8">Skills & Tools</h2>
           
           <div className="flex flex-wrap gap-2">
             {[
@@ -113,9 +113,8 @@ export default function About() {
         </section>
 
         {/* Experience Section */}
-        {/* Experience Section */}
         <section className="max-w-[1290px] mx-auto px-6 pb-16">
-          <h2 className="text-3xl font-medium text-white mb-8">Experience</h2>
+          <h2 className="text-3xl font-medium text-white mb-4 md:mb-8">Experience</h2>
           
           <div className="space-y-6">
             {/* UCLA Arts */}
@@ -240,7 +239,7 @@ export default function About() {
         {/* Divider Section */}
         <section className="max-w-[1290px] mx-auto px-6 pb-8">
           <div className="text-left">
-            <h2 className="text-2xl md:text-3xl font-medium text-white mb-4">
+            <h2 className="text-2xl md:text-3xl font-medium text-white mb-3 md:mb-4">
               Okay, that&apos;s all the serious stuff...
             </h2>
             <p className="text-lg text-white/70">
@@ -251,9 +250,9 @@ export default function About() {
 
         {/* Books Section */}
         <section className="max-w-[1290px] mx-auto px-6 pb-16">
-          <h2 className="text-3xl font-medium text-white mb-8">Books that made me</h2>
+          <h2 className="text-3xl font-medium text-white mb-4 md:mb-8">Books that made me</h2>
           
-          <div className="grid grid-cols-2 md:grid-cols-5 gap-6">
+          <div className="grid grid-cols-5 gap-2 md:gap-6">
             {[1, 2, 3, 4, 5].map((num) => (
               <div key={num} className="group">
                 <div className="relative aspect-[2/3] bg-white/5 border border-white/10 rounded-lg overflow-hidden hover:border-white/30 transition-all duration-300">
@@ -278,9 +277,9 @@ export default function About() {
 
         {/* Albums Section */}
         <section className="max-w-[1290px] mx-auto px-6 pb-16">
-          <h2 className="text-3xl font-medium text-white mb-8">Albums on repeat</h2>
+          <h2 className="text-3xl font-medium text-white mb-4 md:mb-8">Albums on repeat</h2>
           
-          <div className="grid grid-cols-2 md:grid-cols-5 gap-6">
+          <div className="grid grid-cols-5 gap-2 md:gap-6">
             {[1, 2, 3, 4, 5].map((num) => (
               <div key={num} className="group">
                 <div className="relative aspect-square bg-white/5 border border-white/10 rounded-lg overflow-hidden hover:border-white/30 transition-all duration-300">
@@ -308,7 +307,7 @@ export default function About() {
 
         {/* Fun Facts Section */}
         <section className="max-w-[1290px] mx-auto px-6 pb-16">
-          <h2 className="text-3xl font-medium text-white mb-8">In my free time I can be found...</h2>
+          <h2 className="text-3xl font-medium text-white mb-4 md:mb-8">In my free time I can be found...</h2>
           
           <div className="max-w-5xl">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-8">
