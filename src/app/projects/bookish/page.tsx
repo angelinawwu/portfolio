@@ -37,7 +37,7 @@ export default function BookishPage() {
             </p>
 
             {/* Metadata Cards */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
               <div className="border border-white/10 rounded-lg p-6">
                 <h3 className="text-white/60 text-sm font-medium mb-2">My Role</h3>
                 <p className="text-white font-medium">Lead Product Designer</p>
@@ -220,7 +220,7 @@ export default function BookishPage() {
             <h2 className="text-3xl md:text-4xl font-medium text-white mb-8">Closing Remarks and Takeaways</h2>
             <div className="space-y-8">
               <div className="border border-white/10 rounded-lg p-8">
-                <h3 className="text-xl font-medium text-white mb-4">Design with a <span className="rainbow-text">product mindset</span>.</h3>
+                <h3 className="text-xl font-medium text-white mb-4">Design with a <span className="permanent-rainbow-text">product mindset</span>.</h3>
                 <div className="bg-white/5 border border-white/10 rounded-lg p-6">
                   <ul className="arrow-list">
                     <li className="text-white/80 leading-relaxed">This was my first time working with engineers on a working product. The experience taught me the importance of designing with the programming and development process in mind. Instead of focusing on aesthetics, I found it crucial to have a product mindset and think critically about how my designs would be implemented into the app.</li>
@@ -228,7 +228,7 @@ export default function BookishPage() {
                 </div>
               </div>
               <div className="border border-white/10 rounded-lg p-8">
-                <h3 className="text-xl font-medium text-white mb-4">Practice <span className="rainbow-text">iteration</span> and <span className="rainbow-text">modification</span>.</h3>
+                <h3 className="text-xl font-medium text-white mb-4">Practice <span className="permanent-rainbow-text">iteration</span> and <span className="permanent-rainbow-text">modification</span>.</h3>
                 <div className="bg-white/5 border border-white/10 rounded-lg p-6">
                   <ul className="arrow-list">
                     <li className="text-white/80 leading-relaxed">It was very important for me to be able to adjust my designs accordingly as I received constructive feedback. In the future, I&apos;d like to work on drafting multiple iterations of a design in the ideation stage, rather than solely making adjustments in later stages.</li>

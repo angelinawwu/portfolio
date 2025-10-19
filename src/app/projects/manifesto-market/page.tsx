@@ -37,7 +37,7 @@ export default function ManifestoMarketPage() {
             </p>
 
             {/* Metadata Cards */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
               <div className="border border-white/10 rounded-lg p-6">
                 <h3 className="text-white/60 text-sm font-medium mb-2">My Role</h3>
                 <p className="text-white font-medium">UX Intern</p>
