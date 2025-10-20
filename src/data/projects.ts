@@ -16,20 +16,20 @@ export type Project = {
 
 export const caseStudies: Project[] = [
   {
-    slug: 'workup',
-    title: 'Workup',
-    description: 'Restructuring an AI-powered interview tool to empower students to prepare with confidence',
-    thumbnail: '/assets/projects/Workup-Cover.png',
-    tags: ['UX Research', 'User Testing', 'Design System'],
-    type: 'case-study'
-  },
-  {
     slug: 'manifesto-market',
     title: 'Manifesto Market',
     description: 'A mobile-first redesign to streamline booking and drive reservations',
     thumbnail: '/assets/projects/Manifesto-Cover.jpg',
     // videoUrl: '/assets/projects/manifesto-demo.mp4',
     tags: ['Product Design', 'CTA', 'Google Analytics'],
+    type: 'case-study'
+  },
+  {
+    slug: 'workup',
+    title: 'Workup',
+    description: 'Restructuring an AI-powered interview tool to empower students to prepare with confidence',
+    thumbnail: '/assets/projects/Workup-Cover.png',
+    tags: ['UX Research', 'User Testing', 'Design System'],
     type: 'case-study'
   },
   {
