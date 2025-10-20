@@ -207,31 +207,21 @@ body {
 .card-glow::before {
   content: '';
   position: absolute;
-  inset: -40px;
+  inset: -20px;
   background: conic-gradient(
     from 90deg,
-    #F98BC7 0%,
-    #EE9495 8%,
-    #E29D63 16%,
-    #C4E263 35%,
-    #B9E98A 39.832%,
-    #AEF1B1 44.663%,
-    #97FFFF 54.327%,
-    #9BD4F7 58.745%,
-    #9FAAEF 63.163%,
-    #A37FE6 67.582%,
-    #A754DE 72%,
-    #8374ED 79.75%,
-    #5E93FB 87.5%,
-    #8591EE 90.625%,
-    #AC8FE1 93.75%,
+    #F98BC7 0%, 
+    #E29D63 16.67%, 
+    #C4E263 33.33%, 
+    #97FFFF 50%, 
+    #7694FF 66.67%, 
+    #A754DE 83.33%,
     #F98BC7 100%
   );
   filter: blur(30px);
   opacity: 0;
   transition: opacity 0.25s ease-out;
-  z-index: -1;
-  border-radius: 20px;
+  border-radius: 50px;
 }
 
 .card-glow:hover::before {

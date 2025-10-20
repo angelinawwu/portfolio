@@ -33,7 +33,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
       <>
         <button
           onClick={() => setIsModalOpen(true)}
-          className="group relative bg-black border border-white/10 rounded-xl hover:border-white/30 transition-all duration-100 hover:shadow-2xl hover:shadow-white/5 card-glow project-card-with-glare w-full text-left cursor-pointer h-full"
+          className="group relative bg-black border border-white/10 rounded-xl hover:border-white/30 transition-all duration-100 hover:shadow-2xl hover:shadow-white/5 card-glow project-card-with-glare w-full text-left cursor-pointer h-full z-99"
         >
           {/* Rainbow border on hover */}
           <div className="absolute inset-0 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-100">
@@ -114,7 +114,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
   return (
     <Link href={`/projects/${project.slug}`}>
       <div 
-        className="group relative border border-white/10 rounded-xl overflow-hidden hover:border-white/30 transition-all duration-100 hover:shadow-2xl hover:shadow-white/5 project-card-with-glare"
+        className="group relative bg-black border border-white/10 rounded-xl hover:border-white/30 transition-all duration-100 hover:shadow-2xl hover:shadow-white/5 card-glow project-card-with-glare w-full text-left cursor-pointer h-full z-99"
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
       >
