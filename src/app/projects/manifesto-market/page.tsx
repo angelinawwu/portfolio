@@ -76,7 +76,7 @@ export default function ManifestoMarketPage() {
             
             <div className="space-y-8">
               <div>
-                <h3 className="text-2xl md:text-3xl font-medium text-white mb-6">Users aren&apos;t being driven towards reservations.</h3>
+                <h3 className="permanent-rainbow-text text-2xl md:text-3xl font-medium text-white mb-6">Users aren&apos;t being driven towards reservations.</h3>
                 <div className="space-y-6 text-white/80 leading-relaxed">
                   <p>
                     Manifesto&apos;s old website was primarily constructed with aesthetics in mind. With bold block-shapes and an eccentric menu bar, usability and accessibility were sacrificed for style. While the website&apos;s uniqueness made it stand out in the sea of generic hospitality homepages, its mobile-unfriendly layout and unintuitive navigation structure created a series of roadblocks for the user, making it difficult to make reservations, view menus, or find location information.

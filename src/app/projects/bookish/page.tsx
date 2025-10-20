@@ -76,7 +76,7 @@ export default function BookishPage() {
             
             <div className="space-y-8">
               <div>
-                <h3 className="text-2xl md:text-3xl font-medium text-white mb-6">Reading physical books is financially and environmentally unsustainable.</h3>
+                <h3 className="permanent-rainbow-text text-2xl md:text-3xl font-medium text-white mb-6">Reading physical books is financially and environmentally unsustainable.</h3>
                 <div className="space-y-6 text-white/80 leading-relaxed max-w-3xl">
                   <p>
                     Avid bookworms know that books can be purchased in the spur of the moment to be read once and never again. Then, they are either left to gather dust on bookshelves, or thrown out (gasp!) as waste. At the same time, books are becoming increasingly more expensive, making it harder to read without turning to digital options.
