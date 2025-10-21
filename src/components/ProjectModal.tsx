@@ -32,7 +32,7 @@ export default function ProjectModal({ project, isOpen, onClose }: ProjectModalP
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm">
+    <div className="fixed inset-0 z-10000 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm">
       {/* Modal Container */}
       <div className="relative w-full max-w-2xl max-h-[85vh] bg-black border border-white/20 rounded-lg overflow-hidden">
         {/* Close Button */}
