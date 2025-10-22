@@ -3,10 +3,12 @@ import Footer from '@/components/Footer';
 import ProjectCard from '@/components/ProjectCard';
 import { caseStudies, playgroundProjects } from '@/data/projects';
 import LiquidEther from '@/components/LiquidEther';
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 export default function Home() {
   return (
     <div className="min-h-screen bg-black">
+      <SpeedInsights />
       <div className="fixed top-0 left-0 w-full h-full">
         <LiquidEther
           colors={[ '#A754DE', '#7694FF', '#97FFFF', '#C4E263', '#E29D63', '#F98BC7']}
