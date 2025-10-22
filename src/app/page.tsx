@@ -12,7 +12,7 @@ export default function Home() {
           colors={[ '#A754DE', '#7694FF', '#97FFFF', '#C4E263', '#E29D63', '#F98BC7']}
           mouseForce={20}
           cursorSize={70}
-          isViscous={false}
+          isViscous={true}
           viscous={30}
           iterationsViscous={32}
           iterationsPoisson={32}

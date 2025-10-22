@@ -5,3 +5,10 @@
   height: 100%;
   touch-action: none;
 }
+
+/* Disable interactions on mobile/tablet devices */
+@media (max-width: 1023px) {
+  .liquid-ether-container {
+    pointer-events: none;
+  }
+}
