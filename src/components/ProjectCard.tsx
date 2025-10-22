@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { Project } from '@/data/projects';
 import { useRef, useState } from 'react';
 import ProjectModal from './ProjectModal';
+import { motion, useInView } from 'framer-motion';
 
 interface ProjectCardProps {
   project: Project;
@@ -13,6 +14,19 @@ interface ProjectCardProps {
 export default function ProjectCard({ project }: ProjectCardProps) {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const buttonRef = useRef<HTMLButtonElement>(null);
+  const divRef = useRef<HTMLDivElement>(null);
+  
+  // Track when card is in the center focus zone of viewport (for mobile scroll effect)
+  const buttonInView = useInView(buttonRef, { 
+    amount: 0.5, // 50% of card needs to be visible
+    margin: "-25% 0px -25% 0px" // Creates center focus zone
+  });
+  
+  const divInView = useInView(divRef, { 
+    amount: 0.5,
+    margin: "-25% 0px -25% 0px"
+  });
 
   const handleMouseEnter = () => {
     if (videoRef.current) {
@@ -31,9 +45,10 @@ export default function ProjectCard({ project }: ProjectCardProps) {
   if (project.type === 'playground') {
     return (
       <>
-        <button
+        <motion.button
+          ref={buttonRef}
           onClick={() => setIsModalOpen(true)}
-          className="group relative bg-black border border-white/10 rounded-xl hover:border-white/30 transition-all duration-100 hover:shadow-2xl hover:shadow-white/5 card-glow project-card-with-glare w-full text-left cursor-pointer h-full z-99"
+          className={`group relative bg-black border border-white/10 rounded-xl hover:border-white/30 transition-all duration-100 hover:shadow-2xl hover:shadow-white/5 card-glow project-card-with-glare w-full text-left cursor-pointer h-full z-99 ${buttonInView ? 'card-glow-active' : ''}`}
         >
           {/* Rainbow border on hover */}
           <div className="absolute inset-0 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-100">
@@ -98,8 +113,8 @@ export default function ProjectCard({ project }: ProjectCardProps) {
         </div>
 
           {/* Hover effect overlay */}
-          <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-100 pointer-events-none"></div>
-        </button>
+          <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-100 pointer-events-none"></div>
+        </motion.button>
         
         <ProjectModal 
           project={project}
@@ -113,8 +128,9 @@ export default function ProjectCard({ project }: ProjectCardProps) {
   // For case studies, render as internal links
   return (
     <Link href={`/projects/${project.slug}`}>
-      <div 
-        className="group relative bg-black border border-white/10 rounded-xl hover:border-white/30 transition-all duration-100 hover:shadow-2xl hover:shadow-white/5 card-glow project-card-with-glare w-full text-left cursor-pointer h-full z-99"
+      <motion.div 
+        ref={divRef}
+        className={`group relative bg-black border border-white/10 rounded-xl hover:border-white/30 transition-all duration-100 hover:shadow-2xl hover:shadow-white/5 card-glow project-card-with-glare w-full text-left cursor-pointer h-full z-99 ${divInView ? 'card-glow-active' : ''}`}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
       >
@@ -186,8 +202,8 @@ export default function ProjectCard({ project }: ProjectCardProps) {
         </div>
 
         {/* Hover effect overlay */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-100 pointer-events-none"></div>
-      </div>
+        <div className="absolute inset-0 sm:bg-black/50 rounded-xl opacity-100 group-hover:opacity-100 transition-opacity duration-100 pointer-events-none"></div>
+      </motion.div>
     </Link>
   );
 }

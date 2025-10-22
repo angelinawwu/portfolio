@@ -205,6 +205,8 @@ body {
 
 /* Iridescent card glow effect */
 .card-glow::before {
+  z-index: 0;            /* <--- ensure it's below content */
+  pointer-events: none;  /* <--- keep it non-interactive */
   content: '';
   position: absolute;
   inset: -20px;
@@ -220,12 +222,22 @@ body {
   );
   filter: blur(30px);
   opacity: 0;
-  transition: opacity 0.25s ease-out;
+  transition: opacity 0.3s cubic-bezier(.215, .61, .355, 1);
   border-radius: 50px;
 }
 
-.card-glow:hover::before {
-  opacity: 0.4;
+/* Desktop: Hover effect only */
+@media (hover: hover) and (pointer: fine) {
+  .card-glow:hover::before {
+    opacity: 0.4;
+  }
+}
+
+/* Mobile/Tablet: Scroll-triggered effect only (touch devices below 1024px) */
+@media (max-width: 1023px) and (hover: none) and (pointer: coarse) {
+  .card-glow-active::before {
+    opacity: 0.4;
+  }
 }
 
 /* Custom scrollbar for dark theme with iridescent effect */
