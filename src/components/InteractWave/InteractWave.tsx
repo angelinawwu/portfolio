@@ -66,7 +66,8 @@ export default function InteractWave() {
         attributes: {
           depth: false,
         },
-        onDone: (err: any, reglInstance: any) => {
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
+        onDone: (err: any, _reglInstance: any) => {
           if (err) {
             console.error('InteractWave: REGL initialization error:', err);
           } else {
