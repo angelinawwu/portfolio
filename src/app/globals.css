@@ -59,7 +59,7 @@ body {
     #97FFFF, #3C67FF, #A754DE, #F98BC7
   ); */
   background-size: 400% 400%;
-  animation: rainbow-shift 10s ease-in-out infinite;
+  animation: rainbow-shift 10s ease-out infinite;
   border-image: linear-gradient(45deg, 
     #F98BC7, #E29D63, #C4E263, 
     #97FFFF, #3C67FF, #A754DE, #F98BC7
