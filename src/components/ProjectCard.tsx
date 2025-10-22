@@ -53,7 +53,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
           {/* Rainbow border on hover */}
           <div className="absolute inset-0 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-100">
             <div className="rainbow-border rounded-lg p-[1px] h-full w-full">
-              <div className="bg-black opacity-80 rounded-lg h-full w-full"></div>
+              <div className="bg-black opacity-50 rounded-lg h-full w-full"></div>
             </div>
           </div>
 
@@ -113,7 +113,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
         </div>
 
           {/* Hover effect overlay */}
-          <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-100 pointer-events-none"></div>
+          <div className="absolute inset-0 bg-black/50 lg:bg-transparent rounded-xl opacity-100 group-hover:opacity-100 transition-opacity duration-100 pointer-events-none"></div>
         </motion.button>
         
         <ProjectModal 
@@ -137,7 +137,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
         {/* Rainbow border on hover */}
         <div className="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-100 card-glow">
           <div className="rainbow-border rounded-xl p-[1px] h-full w-full">
-            <div className="bg-black opacity-80 rounded-xl h-full w-full"></div>
+            <div className="bg-black opacity-50 rounded-xl h-full w-full"></div>
           </div>
         </div>
 
@@ -202,7 +202,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
         </div>
 
         {/* Hover effect overlay */}
-        <div className="absolute inset-0 sm:bg-black/50 rounded-xl opacity-100 group-hover:opacity-100 transition-opacity duration-100 pointer-events-none"></div>
+        <div className="absolute inset-0 bg-black/50 rounded-xl opacity-100 group-hover:opacity-100 transition-opacity duration-100 pointer-events-none"></div>
       </motion.div>
     </Link>
   );

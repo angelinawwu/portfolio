@@ -54,12 +54,16 @@ body {
 
 /* Rainbow gradient utilities */
 .rainbow-border {
-  background: linear-gradient(45deg, 
+  /* background: linear-gradient(45deg, 
     #F98BC7, #E29D63, #C4E263, 
     #97FFFF, #3C67FF, #A754DE, #F98BC7
-  );
+  ); */
   background-size: 400% 400%;
   animation: rainbow-shift 10s ease-in-out infinite;
+  border-image: linear-gradient(45deg, 
+    #F98BC7, #E29D63, #C4E263, 
+    #97FFFF, #3C67FF, #A754DE, #F98BC7
+  ) 1;
 }
 
 @keyframes rainbow-shift {
@@ -204,6 +208,13 @@ body {
 }
 
 /* Iridescent card glow effect */
+.card-glow {
+  position: relative;    /* already true, but ensure it exists */
+  z-index: 1;            /* content above ::before */
+  overflow: visible;     /* so the glow isn't clipped */
+}
+
+
 .card-glow::before {
   z-index: 0;            /* <--- ensure it's below content */
   pointer-events: none;  /* <--- keep it non-interactive */
@@ -234,7 +245,7 @@ body {
 }
 
 /* Mobile/Tablet: Scroll-triggered effect only (touch devices below 1024px) */
-@media (max-width: 1023px) and (hover: none) and (pointer: coarse) {
+@media (max-width: 768px) and (hover: none) and (pointer: coarse) {
   .card-glow-active::before {
     opacity: 0.4;
   }
