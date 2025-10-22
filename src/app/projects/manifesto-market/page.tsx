@@ -355,7 +355,7 @@ export default function ManifestoMarketPage() {
           <section className="py-12 border-t border-white/10">
             <h2 className="text-3xl md:text-4xl font-medium text-white mb-8">Closing Remarks and Takeaways</h2>
             
-            <div className="space-y-8">
+            <div className="space-y-6">
               <div className="border border-white/10 rounded-lg p-8">
                 <h3 className="text-xl font-medium text-white mb-4">
                   Data is <span className="permanent-rainbow-text">everything</span>.

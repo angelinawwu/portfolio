@@ -64,7 +64,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
                 {project.title}
               </h3>
               <span className="px-2 py-1 text-xs font-medium bg-white/10 text-white/80 rounded-full border border-white/20">
-                Playground
+                {project.timeline}
               </span>
             </div>
 
@@ -158,7 +158,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
                 {project.title}
               </h3>
               <span className="px-2 py-1 text-xs font-medium bg-white/10 text-white/80 rounded-full border border-white/20">
-                Case Study
+                {project.timeline}
               </span>
             </div>
 

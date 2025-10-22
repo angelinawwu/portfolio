@@ -2,8 +2,8 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Github, Linkedin, Twitter, Menu, X } from 'lucide-react';
 import { useState } from 'react';
+import { Envelope, GithubLogo,LinkedinLogo, XLogo, List, X } from "@phosphor-icons/react";
 
 export default function Navigation() {
   const pathname = usePathname();
@@ -15,9 +15,10 @@ export default function Navigation() {
   ];
 
   const externalLinks = [
-    { href: 'https://github.com/angelinawwu', label: 'GitHub', icon: Github },
-    { href: 'https://linkedin.com/in/angelinawwu', label: 'LinkedIn', icon: Linkedin },
-    { href: 'https://x.com/angelinawuuu', label: 'Twitter', icon: Twitter },
+    { href: 'mailto:angelinawu05@gmail.com', label: 'Email', icon: Envelope },
+    { href: 'https://linkedin.com/in/angelinawwu', label: 'LinkedIn', icon: LinkedinLogo },
+    { href: 'https://github.com/angelinawwu', label: 'GitHub', icon: GithubLogo },
+    { href: 'https://x.com/angelinawuuu', label: 'Twitter', icon: XLogo },
   ];
 
   return (
@@ -76,7 +77,7 @@ export default function Navigation() {
             className="md:hidden p-2 text-white/70 hover:text-white transition-colors"
             aria-label="Toggle menu"
           >
-            {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            {isMenuOpen ? <X className="w-6 h-6" /> : <List className="w-6 h-6" />}
           </button>
         </div>
 

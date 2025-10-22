@@ -61,31 +61,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* CTA Section */}
-        <section className="max-w-[1290px] mx-auto px-6 pb-20 text-center">
-          <div className="border-t border-white/10 pt-20">
-            <h2 className="permanent-rainbow-text text-3xl md:text-4xl font-medium text-white mb-6">
-              Like what you see?
-            </h2>
-            <p className="text-xl text-white/70 mb-8">
-              Let&apos;s make something cool together.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a
-                href="mailto:angelinawu05@gmail.com"
-                className="px-8 py-3 bg-white text-black font-medium rounded-lg hover:bg-white/90 transition-colors duration-200"
-              >
-                Get in touch
-              </a>
-              <a
-                href="/about"
-                className="px-8 py-3 border border-white/30 text-white font-medium rounded-lg hover:border-white/50 hover:bg-white/5 transition-all duration-200"
-              >
-                Learn more about me
-              </a>
-            </div>
-          </div>
-        </section>
+        
       </main>
 
       <Footer />

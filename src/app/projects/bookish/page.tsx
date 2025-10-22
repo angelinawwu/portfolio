@@ -218,7 +218,7 @@ export default function BookishPage() {
           {/* Closing Remarks and Takeaways */}
           <section className="py-12 border-t border-white/10">
             <h2 className="text-3xl md:text-4xl font-medium text-white mb-8">Closing Remarks and Takeaways</h2>
-            <div className="space-y-8">
+            <div className="space-y-6">
               <div className="border border-white/10 rounded-lg p-8">
                 <h3 className="text-xl font-medium text-white mb-4">Design with a <span className="permanent-rainbow-text">product mindset</span>.</h3>
                 <div className="bg-white/5 border border-white/10 rounded-lg p-6">

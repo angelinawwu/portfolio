@@ -18,8 +18,9 @@ export const caseStudies: Project[] = [
   {
     slug: 'manifesto-market',
     title: 'Manifesto Market',
-    description: 'A mobile-first redesign to streamline booking and drive reservations',
+    description: 'A mobile-first redesign to streamline booking and drive reservations by 121%',
     thumbnail: '/assets/projects/Manifesto-Cover.jpg',
+    timeline: 'Summer 2025',
     // videoUrl: '/assets/projects/manifesto-demo.mp4',
     tags: ['Product Design', 'CTA', 'Google Analytics'],
     type: 'case-study'
@@ -29,6 +30,7 @@ export const caseStudies: Project[] = [
     title: 'Workup',
     description: 'Restructuring an AI-powered interview tool to empower students to prepare with confidence',
     thumbnail: '/assets/projects/Workup-Cover.png',
+    timeline: 'Winter - Summer 2025',
     tags: ['UX Research', 'User Testing', 'Design System'],
     type: 'case-study'
   },
@@ -37,6 +39,7 @@ export const caseStudies: Project[] = [
     title: 'Bookish',
     description: 'Redesigning the reading experience with accessibility and sustainability in mind',
     thumbnail: '/assets/projects/Bookish-Cover.png',
+    timeline: 'Spring 2024',
     tags: ['Mobile Design', 'UX Research', 'Figma'],
     type: 'case-study'
   }
@@ -63,22 +66,23 @@ export const playgroundProjects: Project[] = [
     thumbnail: '/assets/projects/Goodreads-Cover.png',
     tags: ['Data Visualization', 'Web Scraping', 'React/Vite'],
     type: 'playground',
-    timeline: 'August 2025 - in progress',
+    timeline: 'In progress',
     demoUrl: 'https://goodreadswrapped.com',
     githubUrl: 'https://github.com/angelinawwu/goodreads-wrapped'
-  },
-  {
-    slug: 'dream-journal',
-    title: 'Dream Journal',
-    description: 'A minimal journal that allows you to quickly record dreams and reflect on past dreams',
-    paragraph: 'Dream Journal is a minimal journal that allows you to quickly record dreams and reflect on past dreams. With a focus on simplicity and ease of use, it allows you to record your dreams easily the instant you wake up, so you don\'t forget them.',
-    thumbnail: '/assets/projects/DreamJournal-Cover.png',
-    tags: ['Next.js', 'Tailwind CSS', 'Supabase'],
-    type: 'playground',
-    timeline: 'October 2025',
-    demoUrl: 'https://dream-journal-one.vercel.app/',
-    githubUrl: 'https://github.com/angelinawwu/dream-journal'
   }
+  // ,
+  // {
+  //   slug: 'dream-journal',
+  //   title: 'Dream Journal',
+  //   description: 'A minimal journal that allows you to quickly record dreams and reflect on past dreams',
+  //   paragraph: 'Dream Journal is a minimal journal that allows you to quickly record dreams and reflect on past dreams. With a focus on simplicity and ease of use, it allows you to record your dreams easily the instant you wake up, so you don\'t forget them.',
+  //   thumbnail: '/assets/projects/DreamJournal-Cover.png',
+  //   tags: ['Next.js', 'Tailwind CSS', 'Supabase'],
+  //   type: 'playground',
+  //   timeline: 'October 2025',
+  //   demoUrl: 'https://dream-journal-one.vercel.app/',
+  //   githubUrl: 'https://github.com/angelinawwu/dream-journal'
+  // }
 ];
 
 // Combined projects for backward compatibility
