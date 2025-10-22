@@ -5,7 +5,7 @@ export default function Footer() {
         <p className="text-white/50 text-sm">
           Last updated: {new Date().toLocaleDateString('en-US', { month: '2-digit', day: '2-digit', year: '2-digit' }).replace(/\//g, '.')}
         </p>
-        <p className="text-white/30 text-xs mt-2">
+        <p className="text-white/50 text-xs mt-2">
           Made with ❤️ by Angelina Wu (me!)
         </p>
       </div>

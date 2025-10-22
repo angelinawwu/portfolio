@@ -48,7 +48,7 @@ export default function Home() {
         </section> */}
 
         {/* Case Studies Section */}
-        <section className="max-w-[1290px] mx-auto md:px-6 px-4 pb-16">
+        <section className="max-w-[1290px] mx-auto md:px-6 px-4 pb-20">
           <div className="text-left mb-8">
             <h2 className="permanent-rainbow-text text-2xl md:text-3xl font-medium text-white mb-4">
               Case Studies
@@ -65,7 +65,7 @@ export default function Home() {
         </section>
 
         {/* Playground Section */}
-        <section className="max-w-[1290px] mx-auto px-6 pb-20">
+        <section className="max-w-[1290px] mx-auto md:px-6 px-4 pb-20">
           <div className="text-left mb-8">
             <h2 className="permanent-rainbow-text text-2xl md:text-3xl font-medium text-white mb-4">
               Playground
