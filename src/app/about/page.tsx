@@ -179,9 +179,9 @@ export default function About() {
                     <span className="text-white/60 text-sm">Los Angeles, CA</span>
                   </div>
                   <ul className="list-disc list-outside space-y-2 text-white/70 ml-3">
-                    <li>Cultivating a startup culture on campus and growing a community of 2,000+ ambitious builders.</li>
+                    <li>Cultivating a startup culture on the UCLA campus, creating a tight-knit community of ambitious builders who care about high-impact work.</li>
                     <li>Designing and engineering frontend components for early‑stage tech startups.</li>
-                    <li>Led the end‑to‑end design and development of the organization’s website with Next.js and Tailwind.</li>
+                    <li>Led a team to complete the end‑to‑end design and development of the organization’s website with Next.js and Tailwind.</li>
                   </ul>
                 </div>
               </div>
@@ -205,6 +205,7 @@ export default function About() {
                   <ul className="list-disc list-outside space-y-2 text-white/70 ml-3">
                     <li>Leading design initiatives for 200+ officers across 9 committees at the largest CS student org in SoCal.</li>
                     <li>Collaborated with Workup (NVIDIA‑incubated) to redesign and relaunch its website informed by 20+ interviews and 50+ survey responses.</li>
+                    <li>Making design education more accessible through workshops and mentorship.</li>
                   </ul>
                 </div>
               </div>
