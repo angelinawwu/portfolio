@@ -215,7 +215,7 @@ body {
   .card-glow-active::before {
     opacity: 0.3;
     filter: saturate(1.4);
-    transition: opacity 0.2s ease-out;
+    transition: opacity 0.1s ease;
 
 
   }
