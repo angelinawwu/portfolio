@@ -212,7 +212,7 @@ body {
 /* Mobile/Tablet: Scroll-triggered effect only (touch devices below 1024px) */
 @media (max-width: 768px) and (hover: none) and (pointer: coarse) {
   .card-glow-active::before {
-    opacity: 0.4;
+    opacity: 0.2;
   }
 }
 
@@ -245,6 +245,13 @@ body {
 .project-card-with-glare:hover::after {
   background-position: 100% 100%;
   opacity: 0.8;
+}
+
+@media (max-width: 768px) and (hover: none) and (pointer: coarse) {
+  .project-card-with-glare::after {
+    background-position: 100% 100%;
+    opacity: 0.8;
+  }
 }
 
 ::-webkit-scrollbar {
