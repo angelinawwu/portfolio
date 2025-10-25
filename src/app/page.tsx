@@ -13,7 +13,7 @@ export default function Home() {
       <Analytics />
       <div className="fixed top-0 left-0 w-full h-full">
         <LiquidEther
-          colors={[ '#A754DE', '#7694FF', '#97FFFF', '#C4E263', '#E29D63', '#F98BC7']}
+          colors={[ '#A754DE', '#7694FF', '#97FFFF', '#C4E263', '#E29D63', '#F98BC7', '#f2b3ff']}
           mouseForce={20}
           cursorSize={70}
           isViscous={true}

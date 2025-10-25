@@ -20,7 +20,7 @@ export default function ManifestoMarketPage() {
           <div className="py-8">
             <Link 
               href="/" 
-              className="text-white/60 hover:text-white transition-colors duration-200 rainbow-text"
+              className="text-white/60 hover:text-white transition-all ease-out duration-200 rainbow-text hover:scale-105 "
             >
               ← Back to projects
             </Link>

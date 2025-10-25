@@ -71,33 +71,19 @@ body {
   50% { background-position: 100% 50%; }
 }
 
-.permanent-rainbow-text{
+.permanent-rainbow-text {
   position: relative;
   display: inline-block;
   color: white;
   filter: blur(0.5px);
-  text-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
-}
-.permanent-rainbow-text::before,
-.permanent-rainbow-text::after {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  opacity: 0.4;
-}
-.permanent-rainbow-text::before {
-  background: linear-gradient(
-    45deg,
-    #F98BC7, #B8E263, 
-    #3C67FF
-  );
-  filter: blur(10px);
-  z-index: -1;
+  mix-blend-mode: hard-light;
+  text-shadow: 
+    0 0 0.1em rgba(255, 76, 174, 0.8),
+    0 0 0.5em rgb(255, 173, 10),
+    0 0 1em rgba(196, 253, 8, 1),
+    0 0 1.5em rgb(54, 255, 255),
+    0 0 2em rgb(57, 100, 255),
+    0 0 2.5em rgb(182, 76, 253);
 }
 
 /* Iridescent text hover effect */
@@ -105,40 +91,20 @@ body {
   position: relative;
   display: inline-block;
   color: white;
-  transition: filter 0.3s ease;
-}
-
-.rainbow-text::before,
-.rainbow-text::after {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  opacity: 0;
-  transition: opacity 0.15s ease-out;
-}
-
-.rainbow-text::before {
-  background: linear-gradient(
-    45deg,
-    #F98BC7, #B8E263, 
-    #3C67FF
-  );
-  filter: blur(10px);
-  z-index: -1;
-}
-
-.rainbow-text:hover::before {
-  opacity: 0.4;
+  transition: filter 0.15s ease-out, text-shadow 0.15s ease-out, scale 0.15s ease-out;
 }
 
 .rainbow-text:hover {
   filter: blur(0.5px);
-  text-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+  mix-blend-mode: hard-light;
+  text-shadow: 
+    0 0 0.1em rgba(255, 76, 174, 0.8),
+    0 0 0.5em rgb(255, 173, 10),
+    0 0 1em rgba(196, 253, 8, 1),
+    0 0 1.5em rgb(54, 255, 255),
+    0 0 2em rgb(57, 100, 255),
+    0 0 2.5em rgb(182, 76, 253);
+  transform: scale(1.01);
 }
 
 .iridescent-glow {
@@ -216,31 +182,30 @@ body {
 
 
 .card-glow::before {
-  z-index: 0;            /* <--- ensure it's below content */
   pointer-events: none;  /* <--- keep it non-interactive */
   content: '';
   position: absolute;
-  inset: -20px;
-  background: conic-gradient(
-    from 90deg,
-    #F98BC7 0%, 
-    #E29D63 16.67%, 
-    #C4E263 33.33%, 
-    #97FFFF 50%, 
-    #7694FF 66.67%, 
-    #A754DE 83.33%,
-    #F98BC7 100%
-  );
-  filter: blur(30px);
+  inset: 0px;
+  mix-blend-mode: hard-light;
+  background: rgba(255, 76, 174, 0.65);
+  box-shadow: 
+    0 0 1rem rgba(255, 76, 174, 1),
+    0 0 3rem rgba(255, 173, 10, 1),
+    0 0 4rem rgba(196, 253, 8, 1),
+    0 0 5rem rgba(54, 255, 255, 1),
+    0 0 6rem rgba(57, 100, 255, 1),
+    0 0 8rem rgba(182, 76, 253, 1);
+  /* filter: blur(15px); */
   opacity: 0;
-  transition: opacity 0.3s cubic-bezier(.215, .61, .355, 1);
-  border-radius: 50px;
+  transition: opacity 0.2s ease-out;
+  border-radius: 1rem;
+  filter: saturate(1.8);
 }
 
 /* Desktop: Hover effect only */
 @media (hover: hover) and (pointer: fine) {
   .card-glow:hover::before {
-    opacity: 0.4;
+    opacity: 0.3;
   }
 }
 
@@ -274,10 +239,12 @@ body {
   pointer-events: none;
   z-index: 50;
   border-radius: 0.5rem;
+  opacity: 1;
 }
 
 .project-card-with-glare:hover::after {
   background-position: 100% 100%;
+  opacity: 0.8;
 }
 
 ::-webkit-scrollbar {
