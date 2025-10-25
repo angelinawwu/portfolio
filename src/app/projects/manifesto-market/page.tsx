@@ -6,7 +6,7 @@ import { LanguageChart, DeviceChart, ReservationFunnelChart } from '@/components
 
 export const metadata = {
   title: 'Manifesto Market ＊ Angelina Wu',
-  description: 'A mobile-first redesign to streamline booking and drive reservations',
+  description: 'A mobile-first redesign to streamline booking and drive reservations by 121%',
 };
 
 export default function ManifestoMarketPage() {
@@ -33,7 +33,7 @@ export default function ManifestoMarketPage() {
             </h1>
             
             <p className="text-xl text-white/70 leading-relaxed mb-12">
-              A mobile-first redesign to streamline booking and drive reservations
+              A mobile-first redesign to streamline booking and drive reservations by 121%
             </p>
 
             {/* Metadata Cards */}
