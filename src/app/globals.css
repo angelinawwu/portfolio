@@ -212,7 +212,7 @@ body {
 
 /* Mobile/Tablet: Scroll-triggered effect only (touch devices below 1024px) */
 @media (max-width: 768px) and (hover: none) and (pointer: coarse) {
-  .card-glow-active::before {
+  .card-glow::before {
     opacity: 0.3;
     filter: saturate(1.4);
     transition: opacity 0.1s ease;
