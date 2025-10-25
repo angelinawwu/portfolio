@@ -197,7 +197,6 @@ body {
     0 0 8rem rgba(182, 76, 253, 1);
   /* filter: blur(15px); */
   opacity: 0;
-  transition: opacity 0.2s ease-out;
   border-radius: 1rem;
   filter: saturate(1.8);
 }
@@ -206,6 +205,8 @@ body {
 @media (hover: hover) and (pointer: fine) {
   .card-glow:hover::before {
     opacity: 0.3;
+    filter: saturate(1.8);
+    transition: opacity 0.2s ease-out;
   }
 }
 
@@ -213,6 +214,10 @@ body {
 @media (max-width: 768px) and (hover: none) and (pointer: coarse) {
   .card-glow-active::before {
     opacity: 0.3;
+    filter: saturate(1.4);
+    transition: opacity 0.2s ease-out;
+
+
   }
 }
 
