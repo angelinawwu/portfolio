@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import Script from "next/script";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -17,7 +18,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Angelina Wu's Portfolio",
   description: "Designing to delight. Currently at UCLA studying Design and Statistics/Data Science. Passionate about creating meaningful experiences through design and technology.",
-  keywords: ["design", "development", "UX", "UI", "frontend", "data science", "UCLA", "portfolio"],
+  keywords: ["design", "development", "UX", "UI", "frontend", "data science", "UCLA", "portfolio", "design engineer", "product design", "design media arts"],
   authors: [{ name: "Angelina Wu" }],
   creator: "Angelina Wu",
   openGraph: {
@@ -60,6 +61,11 @@ export default function RootLayout({
         {children}
         <Analytics />
         <SpeedInsights />
+        <Script
+          src="https://app.rybbit.io/api/script.js"
+          data-site-id="726cda46b399"
+          strategy="afterInteractive"
+        />
       </body>
     </html>
   );
