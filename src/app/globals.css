@@ -78,12 +78,13 @@ body {
   filter: blur(0.5px);
   mix-blend-mode: hard-light;
   text-shadow: 
-    0 0 0.1em rgba(255, 76, 174, 0.8),
-    0 0 0.5em rgb(255, 173, 10),
-    0 0 1em rgba(196, 253, 8, 1),
-    0 0 1.5em rgb(54, 255, 255),
-    0 0 2em rgb(57, 100, 255),
-    0 0 2.5em rgb(182, 76, 253);
+    0 0 0.1em rgba(255, 255, 255, 0.8),
+    0 0 0.15em rgba(255, 76, 174, 0.8),
+    0 0 0.25em rgb(255, 173, 10),
+    0 0 0.5em rgba(196, 253, 8, 1),
+    0 0 0.75em rgb(54, 255, 255),
+    0 0 1em rgb(57, 100, 255),
+    0 0 1.5em rgb(182, 76, 253);
 }
 
 /* Iridescent text hover effect */
@@ -98,12 +99,13 @@ body {
   filter: blur(0.5px);
   mix-blend-mode: hard-light;
   text-shadow: 
-    0 0 0.1em rgba(255, 76, 174, 0.8),
-    0 0 0.5em rgb(255, 173, 10),
-    0 0 1em rgba(196, 253, 8, 1),
-    0 0 1.5em rgb(54, 255, 255),
-    0 0 2em rgb(57, 100, 255),
-    0 0 2.5em rgb(182, 76, 253);
+    0 0 0.1em rgba(255, 255, 255, 0.8),
+    0 0 0.15em rgba(255, 76, 174, 0.8),
+    0 0 0.25em rgb(255, 173, 10),
+    0 0 0.5em rgba(196, 253, 8, 1),
+    0 0 0.75em rgb(54, 255, 255),
+    0 0 1em rgb(57, 100, 255),
+    0 0 1.5em rgb(182, 76, 253);
   transform: scale(1.01);
 }
 
