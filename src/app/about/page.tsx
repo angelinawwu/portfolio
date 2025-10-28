@@ -3,6 +3,7 @@ import Footer from '@/components/Footer';
 import Link from 'next/link';
 import Image from 'next/image';
 import { ArrowUpRight } from 'lucide-react';
+import { books, albums } from '@/data/about';
 
 export default function About() {
   return (
@@ -254,17 +255,19 @@ export default function About() {
           <h2 className="text-3xl font-medium text-white mb-4 md:mb-8">Books that made me</h2>
           
           <div className="grid grid-cols-5 gap-2 md:gap-6">
-            {[1, 2, 3, 4, 5].map((num) => (
-              <div key={num} className="group">
+            {books.map((book) => (
+              <div key={book.id} className="group">
+                <a href={book.url} target="_blank" rel="noopener noreferrer" className="block">
                 <div className="relative aspect-[2/3] bg-white/5 border border-white/10 rounded-lg overflow-hidden hover:border-white/30 transition-all duration-300">
                   <Image
-                    src={`/assets/About/Book-${num}.jpg`}
-                    alt={`Book ${num}`}
+                    src={book.image}
+                    alt={book.title}
                     fill
                     className= "object-cover group-hover:scale-105 transition-transform duration-100 ease-out"
                     sizes="(max-width: 768px) 50vw, 20vw"
                   />
                 </div>
+                </a>
               </div>
             ))}
           </div>
@@ -275,20 +278,22 @@ export default function About() {
           <h2 className="text-3xl font-medium text-white mb-4 md:mb-8">Albums on repeat</h2>
           
           <div className="grid grid-cols-5 gap-2 md:gap-6">
-            {[1, 2, 3, 4, 5].map((num) => (
-              <div key={num} className="group">
+            {albums.map((album) => (
+              <div key={album.id} className="group">
+                <a href={album.url} target="_blank" rel="noopener noreferrer" className="block">
                 <div className="relative aspect-square bg-white/5 border border-white/10 rounded-lg overflow-hidden hover:border-white/30 transition-all duration-300">
                   {/* Placeholder for album artwork */}
                   <div className="w-full h-full flex items-center justify-center text-white/40">
                     <Image
-                      src={`/assets/About/Song-${num}.jpg`}
-                      alt={`Song ${num}`}
+                      src={album.image}
+                      alt={album.title}
                       fill
                       className="object-cover group-hover:scale-105 transition-transform duration-100 ease-out"
                       sizes="(max-width: 768px) 50vw, 20vw"
                     />
                   </div>
                 </div>
+                </a>
               </div>
             ))}
           </div>
