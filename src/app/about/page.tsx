@@ -261,15 +261,9 @@ export default function About() {
                     src={`/assets/About/Book-${num}.jpg`}
                     alt={`Book ${num}`}
                     fill
-                    className="object-cover"
+                    className= "object-cover group-hover:scale-105 transition-transform duration-100 ease-out"
                     sizes="(max-width: 768px) 50vw, 20vw"
                   />
-                  {/* Rainbow border on hover */}
-                  <div className="absolute inset-0 rounded-lg opacity-0 group-hover:opacity-20 transition-opacity duration-300">
-                    <div className="rainbow-border border-2 rounded-lg p-[1px] h-full w-full">
-                      <div className="bg-transparent rounded-lg h-full w-full"></div>
-                    </div>
-                  </div>
                 </div>
               </div>
             ))}
@@ -290,15 +284,9 @@ export default function About() {
                       src={`/assets/About/Song-${num}.jpg`}
                       alt={`Song ${num}`}
                       fill
-                      className="object-cover"
+                      className="object-cover group-hover:scale-105 transition-transform duration-100 ease-out"
                       sizes="(max-width: 768px) 50vw, 20vw"
                     />
-                  </div>
-                  {/* Rainbow border on hover */}
-                  <div className="absolute inset-0 rounded-lg opacity-0 group-hover:opacity-20 transition-opacity duration-300">
-                    <div className="rainbow-border border-2 rounded-lg p-[1px] h-full w-full">
-                      <div className="bg-transparent rounded-lg h-full w-full"></div>
-                    </div>
                   </div>
                 </div>
               </div>
