@@ -321,13 +321,13 @@ export default function About() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
                 href="mailto:angelinawu05@gmail.com"
-                className="px-8 py-3 bg-[#0000ff] text-[#f6fafd] font-medium rounded-lg gentle-hover hover:bg-[#0000ff]/90 z-999999 ease-in-out transition-all duration-200 ease-in-out hover:bg-[#ff00ff]"
+                className="px-6 py-3 bg-[#0000ff] text-[#f6fafd] font-medium rounded-lg gentle-hover hover:bg-[#0000ff]/90 ease-in-out transition-all duration-200 ease-in-out hover:bg-[#ff00ff]"
               >
                 Get in touch
               </a>
               <Link
                 href="/"
-                className="px-8 py-3 border border-[#0000ff] text-[#0000ff] font-medium rounded-lg blue-hover-magenta-text hover:border-[#ff00ff]/50 hover:bg-[#ff00ff]/5 transition-all duration-200"
+                className="px-6 py-3 border border-[#0000ff] text-[#0000ff] font-medium rounded-lg blue-hover-magenta-text hover:border-[#ff00ff]/50 hover:bg-[#ff00ff]/5 transition-all duration-200"
               >
                 See my work
               </Link>

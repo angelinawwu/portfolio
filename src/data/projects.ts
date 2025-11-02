@@ -64,25 +64,12 @@ export const playgroundProjects: Project[] = [
     description: 'Shareable and engaging reading analytics inspired by Spotify Wrapped',
     paragraph: 'Goodreads Wrapped is a web application that allows users to visualize their reading data from Goodreads. It scrapes data from the user\'s Goodreads profile and displays it in a visually appealing way, with fun animations and in a shareable format.',
     thumbnail: '/assets/projects/Goodreads-Cover.png',
-    tags: ['Data Visualization', 'Web Scraping', 'React/Vite'],
+    tags: ['shadcn/ui', 'Web Scraping', 'React/Vite'],
     type: 'playground',
     timeline: 'In progress',
     demoUrl: 'https://goodreadswrapped.com',
     githubUrl: 'https://github.com/angelinawwu/goodreads-wrapped'
   }
-  // ,
-  // {
-  //   slug: 'dream-journal',
-  //   title: 'Dream Journal',
-  //   description: 'A minimal journal that allows you to quickly record dreams and reflect on past dreams',
-  //   paragraph: 'Dream Journal is a minimal journal that allows you to quickly record dreams and reflect on past dreams. With a focus on simplicity and ease of use, it allows you to record your dreams easily the instant you wake up, so you don\'t forget them.',
-  //   thumbnail: '/assets/projects/DreamJournal-Cover.png',
-  //   tags: ['Next.js', 'Tailwind CSS', 'Supabase'],
-  //   type: 'playground',
-  //   timeline: 'October 2025',
-  //   demoUrl: 'https://dream-journal-one.vercel.app/',
-  //   githubUrl: 'https://github.com/angelinawwu/dream-journal'
-  // }
 ];
 
 // Combined projects for backward compatibility

@@ -78,7 +78,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
               <h3 className="text-xl font-medium text-[#0000ff] group-hover:rainbow-text transition-all duration-100">
                 {project.title}
               </h3>
-              <span className="px-2 py-1 text-xs font-medium bg-[#0000ff]/10 text-[#0000ff]/80 rounded-full border border-[#0000ff]/20">
+              <span className="px-2 py-1 text-xs font-medium bg-[#0000ff]/5 text-[#0000ff] rounded-full border border-[#0000ff]/20">
                 {project.timeline}
               </span>
             </div>
@@ -92,7 +92,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
               {project.tags.slice(0, 3).map((tag) => (
                 <span
                   key={tag}
-                  className="px-2 py-1 text-xs font-mono bg-[#0000ff]/5 text-[#0000ff]/60 rounded border border-[#0000ff]/10"
+                  className="px-2 py-1 text-xs font-mono bg-[#0000ff]/5 text-[#0000ff] rounded border border-[#0000ff]/20"
                 >
                   {tag}
                 </span>
@@ -173,7 +173,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
               <h3 className="text-xl font-medium text-[#0000ff] group-hover:rainbow-text transition-all duration-100">
                 {project.title}
               </h3>
-              <span className="px-2 py-1 text-xs font-medium bg-[#0000ff]/10 text-[#0000ff]/80 rounded-full border border-[#0000ff]/20">
+              <span className="px-2 py-1 text-xs font-medium bg-[#0000ff]/5 text-[#0000ff] rounded-full border border-[#0000ff]/20">
                 {project.timeline}
               </span>
             </div>
@@ -187,7 +187,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
               {project.tags.slice(0, 4).map((tag) => (
                 <span
                   key={tag}
-                  className="px-2 py-1 text-xs font-mono bg-[#f6fafd]/5 text-[#0000ff]/60 rounded border border-[#0000ff]/10 hover:border-[#0000ff]/30 transition-colors duration-200"
+                  className="px-2 py-1 text-xs font-mono bg-[#0000ff]/5 text-[#0000ff] rounded border border-[#0000ff]/20 hover:border-[#0000ff]/30 transition-colors duration-200"
                 >
                   {tag}
                 </span>
