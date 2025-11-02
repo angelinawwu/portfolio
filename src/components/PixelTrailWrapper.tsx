@@ -5,12 +5,19 @@ import PixelTrail from './PixelTrail';
 
 export default function PixelTrailWrapper() {
   const [mounted, setMounted] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
     setMounted(true);
-  }, []);
-
-  if (!mounted) return null;
+    const checkMobile = () => {
+        setIsMobile(window.innerWidth < 768 || window.matchMedia('(pointer: coarse)').matches);
+      };
+      checkMobile();
+      window.addEventListener('resize', checkMobile);
+      return () => window.removeEventListener('resize', checkMobile);
+    }, []);
+  
+    if (!mounted || isMobile) return null;
 
   return (
     <div className="fixed top-0 left-0 w-full h-full pointer-events-none">

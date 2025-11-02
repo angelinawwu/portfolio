@@ -235,7 +235,7 @@ canvas.pixel-canvas {
   content: '';
   position: absolute;
   inset: 0px;
-  mix-blend-mode: hard-light;
+  mix-blend-mode: normal;
   background: rgba(0, 0, 255, 0.4);
   box-shadow: 
     0 0 2rem rgba(0, 0, 255, 1);
