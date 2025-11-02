@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useState } from 'react';
 import { Envelope, GithubLogo,LinkedinLogo, XLogo, List, X } from "@phosphor-icons/react";
+import ShinyText from '@/components/ShinyText';
 
 export default function Navigation() {
   const pathname = usePathname();
@@ -22,19 +23,23 @@ export default function Navigation() {
   ];
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-md border-b border-white/10">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-[#f6fafd] text-[#0000ff] backdrop-blur-md border-b border-[#0000ff]/10">
       <div className="max-w-7xl mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           {/* Logo/Brand */}
           <div className="flex items-center space-x-4">
             <Link 
               href="/" 
-              className="text-xl font-medium rainbow-text hover:opacity-100 transition-opacity"
+              className="text-xl blue-hover-magenta-text font-medium"
             >
               Angelina Wu
             </Link>
 
-            <p className="text-white/70 text-sm hidden sm:block">Designing to delight</p>
+            <div className="h-9 border-l border-[#0000ff]/20 hidden sm:block" />
+
+            <div className="hidden sm:block">
+              <ShinyText text="Designing to delight" className="text-sm font-normal" />
+            </div>
           </div>
 
           {/* Desktop Navigation Links */}
@@ -43,8 +48,8 @@ export default function Navigation() {
               <Link
                 key={item.href}
                 href={item.href}
-                className={`rainbow-text font-medium transition-opacity hover:opacity-100 ${
-                  pathname === item.href ? 'opacity-100' : 'opacity-70'
+                className={`font-medium ease-in-out ${
+                  pathname === item.href ? 'text-[#ff00ff]' : 'text-[#0000ff] blue-hover-magenta-text'
                 }`}
               >
                 {item.label}
@@ -52,7 +57,7 @@ export default function Navigation() {
             ))}
 
             {/* External Links */}
-            <div className="flex items-center space-x-3 pl-4 border-l border-white/20">
+            <div className="flex items-center space-x-3 pl-4 border-l border-[#0000ff]/20">
               {externalLinks.map((link) => {
                 const Icon = link.icon;
                 return (
@@ -61,7 +66,7 @@ export default function Navigation() {
                     href={link.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="p-2 text-white/70 hover:text-white transition-colors duration-200"
+                    className="p-2 text-[#ff00ff] blue-hover-magenta-text transition-colors duration-200"
                     aria-label={link.label}
                   >
                     <Icon className="w-5 h-5" />
@@ -74,7 +79,7 @@ export default function Navigation() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="md:hidden p-2 text-white/70 hover:text-white transition-colors"
+            className="md:hidden p-2 text-[#0000ff]/70 hover:text-[#0000ff] transition-colors"
             aria-label="Toggle menu"
           >
             {isMenuOpen ? <X className="w-6 h-6" /> : <List className="w-6 h-6" />}
@@ -89,7 +94,7 @@ export default function Navigation() {
                 key={item.href}
                 href={item.href}
                 onClick={() => setIsMenuOpen(false)}
-                className={`block rainbow-text font-medium transition-opacity hover:opacity-100 ${
+                className={`block text-[#0000ff] font-medium transition-opacity hover:opacity-100 ${
                   pathname === item.href ? 'opacity-100' : 'opacity-70'
                 }`}
               >
@@ -98,7 +103,7 @@ export default function Navigation() {
             ))}
 
             {/* Mobile External Links */}
-            <div className="flex items-center space-x-4 pt-4 border-t border-white/20">
+            <div className="flex items-center space-x-4 pt-4 border-t border-[#0000ff]/20">
               {externalLinks.map((link) => {
                 const Icon = link.icon;
                 return (
@@ -107,7 +112,7 @@ export default function Navigation() {
                     href={link.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="p-2 text-white/70 hover:text-white transition-colors duration-200"
+                    className="p-2 text-[#0000ff]/70 hover:text-[#0000ff] transition-colors duration-200"
                     aria-label={link.label}
                   >
                     <Icon className="w-5 h-5" />

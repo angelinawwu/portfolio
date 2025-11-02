@@ -80,7 +80,7 @@ export function LanguageChart() {
       title: {
         display: true,
         text: '30-Day Active Users by Browser Language',
-        color: '#e3ebee',
+        color: '#0000ff',
         font: {
           size: 14,
         },
@@ -136,7 +136,7 @@ export function DeviceChart() {
       title: {
         display: true,
         text: '30-Day Active Users by Device Type',
-        color: '#e3ebee',
+        color: '#0000ff',
         font: {
           size: 14,
         },
@@ -194,7 +194,7 @@ export function ReservationFunnelChart() {
       title: {
         display: true,
         text: '30-Day Reservation Widget Interactions by Step',
-        color: '#e3ebee',
+        color: '#0000ff',
         font: {
           size: 14,
         },
@@ -205,7 +205,7 @@ export function ReservationFunnelChart() {
         title: {
           display: true,
           text: 'Percentage of Total Users',
-          color: '#e3ebee',
+          color: '#0000ff',
           font: {
             size: 12,
           },
@@ -227,7 +227,7 @@ export function ReservationFunnelChart() {
         title: {
           display: true,
           text: 'Step in Reservation Widget Interaction',
-          color: '#e3ebee',
+          color: '#0000ff',
           font: {
             size: 12,
           },

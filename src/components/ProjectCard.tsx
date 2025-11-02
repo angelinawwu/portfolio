@@ -48,12 +48,12 @@ export default function ProjectCard({ project }: ProjectCardProps) {
         <motion.button
           ref={buttonRef}
           onClick={() => setIsModalOpen(true)}
-          className={`group relative bg-black border border-white/10 rounded-xl hover:border-white/30 transition-all duration-100 hover:shadow-2xl hover:shadow-white/5 card-glow project-card-with-glare w-full text-left cursor-pointer h-full z-99 ${buttonInView ? 'card-glow-active' : ''}`}
+          className={`group relative bg-[#f6fafd] border border-[#0000ff]/50 rounded-xl hover:border-[#0000ff]/30 transition-all duration-100 hover:shadow-2xl hover:shadow-[#0000ff]/5 card-glow project-card-with-glare w-full text-left cursor-pointer h-full z-99 ${buttonInView ? 'card-glow-active' : ''}`}
         >
           {/* Rainbow border on hover */}
           <div className="absolute inset-0 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-100">
             <div className="rainbow-border rounded-lg p-[1px] h-full w-full">
-              <div className="bg-black opacity-50 rounded-lg h-full w-full"></div>
+              <div className="bg-[#f6fafd] opacity-50 rounded-lg h-full w-full"></div>
             </div>
           </div>
 
@@ -75,15 +75,15 @@ export default function ProjectCard({ project }: ProjectCardProps) {
           {/* Project Info */}
           <div className="space-y-3">
             <div className="flex items-center justify-between">
-              <h3 className="text-xl font-medium text-white group-hover:rainbow-text transition-all duration-100">
+              <h3 className="text-xl font-medium text-[#0000ff] group-hover:rainbow-text transition-all duration-100">
                 {project.title}
               </h3>
-              <span className="px-2 py-1 text-xs font-medium bg-white/10 text-white/80 rounded-full border border-white/20">
+              <span className="px-2 py-1 text-xs font-medium bg-[#0000ff]/10 text-[#0000ff]/80 rounded-full border border-[#0000ff]/20">
                 {project.timeline}
               </span>
             </div>
 
-            <p className="text-white/70 text-sm leading-relaxed">
+            <p className="text-[#0000ff]/70 text-sm leading-relaxed">
               {project.description}
             </p>
 
@@ -92,13 +92,13 @@ export default function ProjectCard({ project }: ProjectCardProps) {
               {project.tags.slice(0, 3).map((tag) => (
                 <span
                   key={tag}
-                  className="px-2 py-1 text-xs font-mono bg-white/5 text-white/60 rounded border border-white/10"
+                  className="px-2 py-1 text-xs font-mono bg-[#0000ff]/5 text-[#0000ff]/60 rounded border border-[#0000ff]/10"
                 >
                   {tag}
                 </span>
               ))}
               {project.tags.length > 3 && (
-                <span className="px-2 py-1 text-xs font-mono text-white/40">
+                <span className="px-2 py-1 text-xs font-mono text-[#0000ff]/40">
                   +{project.tags.length - 3} more
                 </span>
               )}
@@ -106,14 +106,14 @@ export default function ProjectCard({ project }: ProjectCardProps) {
 
             {/* View Details Hint */}
             <div className="pt-2">
-              <span className="text-xs text-white/50">Click to view details →</span>
+              <span className="text-xs text-[#0000ff]/50">Click to view details →</span>
             </div>
             
           </div>
         </div>
 
           {/* Hover effect overlay */}
-          <div className="absolute inset-0 bg-black/50 lg:bg-transparent rounded-xl opacity-100 group-hover:opacity-100 transition-opacity duration-100 pointer-events-none"></div>
+          <div className="absolute inset-0 bg-[#f6fafd]/50 lg:bg-transparent rounded-xl opacity-100 group-hover:opacity-100 transition-opacity duration-100 pointer-events-none"></div>
         </motion.button>
         
         <ProjectModal 
@@ -130,26 +130,26 @@ export default function ProjectCard({ project }: ProjectCardProps) {
     <Link href={`/projects/${project.slug}`}>
       <motion.div 
         ref={divRef}
-        className={`group relative bg-black border border-white/10 rounded-xl hover:border-white/30 transition-all duration-100 hover:shadow-2xl hover:shadow-white/5 card-glow project-card-with-glare w-full text-left cursor-pointer h-full z-99 ${divInView ? 'card-glow-active' : ''}`}
+        className={`group relative bg-[#f6fafd] border border-[#0000ff]/50 rounded-2xl hover:border-[#0000ff]/30 transition-all duration-100 hover:shadow-2xl hover:shadow-[#0000ff]/5 card-glow project-card-with-glare w-full text-left cursor-pointer h-full z-99 ${divInView ? 'card-glow-active' : ''}`}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
       >
         {/* Rainbow border on hover */}
-        <div className="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-100 card-glow">
-          <div className="rainbow-border rounded-xl p-[1px] h-full w-full">
-            <div className="bg-black opacity-50 rounded-xl h-full w-full"></div>
+        <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-100 card-glow">
+          <div className="rainbow-border rounded-2xl p-[1px] h-full w-full">
+            <div className="bg-[#f6fafd] opacity-50 rounded-2xl h-full w-full"></div>
           </div>
         </div>
 
         {/* Content */}
         <div className="relative z-10 p-6">
           {/* Thumbnail or Video */}
-          <div className="relative w-full h-48 mb-4 rounded-lg overflow-hidden bg-white/5">
+          <div className="relative w-full h-48 mb-4 rounded-lg overflow-hidden bg-[#f6fafd]/5">
             {project.videoUrl ? (
               <video
                 ref={videoRef}
                 src={project.videoUrl}
-                className="object-cover group-hover:scale-105 transition-transform duration-100"
+                className="object-cover group-hover:scale-105 transition-transform duration-100 ease-out"
                 muted
                 loop
                 playsInline
@@ -170,15 +170,15 @@ export default function ProjectCard({ project }: ProjectCardProps) {
           {/* Project Info */}
           <div className="space-y-3">
             <div className="flex items-center justify-between">
-              <h3 className="text-xl font-medium text-white group-hover:rainbow-text transition-all duration-100">
+              <h3 className="text-xl font-medium text-[#0000ff] group-hover:rainbow-text transition-all duration-100">
                 {project.title}
               </h3>
-              <span className="px-2 py-1 text-xs font-medium bg-white/10 text-white/80 rounded-full border border-white/20">
+              <span className="px-2 py-1 text-xs font-medium bg-[#0000ff]/10 text-[#0000ff]/80 rounded-full border border-[#0000ff]/20">
                 {project.timeline}
               </span>
             </div>
 
-            <p className="text-white/70 text-sm leading-relaxed line-clamp-3">
+            <p className="text-[#0000ff]/70 text-sm leading-relaxed line-clamp-3">
               {project.description}
             </p>
 
@@ -187,13 +187,13 @@ export default function ProjectCard({ project }: ProjectCardProps) {
               {project.tags.slice(0, 4).map((tag) => (
                 <span
                   key={tag}
-                  className="px-2 py-1 text-xs font-mono bg-white/5 text-white/60 rounded border border-white/10 hover:border-white/30 transition-colors duration-200"
+                  className="px-2 py-1 text-xs font-mono bg-[#f6fafd]/5 text-[#0000ff]/60 rounded border border-[#0000ff]/10 hover:border-[#0000ff]/30 transition-colors duration-200"
                 >
                   {tag}
                 </span>
               ))}
               {project.tags.length > 4 && (
-                <span className="px-2 py-1 text-xs font-mono text-white/40">
+                <span className="px-2 py-1 text-xs font-mono text-[#0000ff]/40">
                   +{project.tags.length - 4} more
                 </span>
               )}
@@ -202,7 +202,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
         </div>
 
         {/* Hover effect overlay */}
-        <div className="absolute inset-0 bg-black/50 rounded-xl opacity-100 group-hover:opacity-100 transition-opacity duration-100 pointer-events-none"></div>
+        <div className="absolute inset-0 bg-[#f6fafd]/50 rounded-xl opacity-100 group-hover:opacity-100 transition-opacity duration-100 pointer-events-none"></div>
       </motion.div>
     </Link>
   );

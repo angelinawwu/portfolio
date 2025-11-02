@@ -2,30 +2,13 @@ import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import ProjectCard from '@/components/ProjectCard';
 import { caseStudies, playgroundProjects } from '@/data/projects';
-import LiquidEther from '@/components/LiquidEther';
+import PixelTrailWrapper from '@/components/PixelTrailWrapper';
+import Link from 'next/link';
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-black">
-      <div className="fixed top-0 left-0 w-full h-full">
-        <LiquidEther
-          colors={[ '#A754DE', '#7694FF', '#97FFFF', '#C4E263', '#E29D63', '#F98BC7', '#f2b3ff']}
-          mouseForce={20}
-          cursorSize={70}
-          isViscous={true}
-          viscous={30}
-          iterationsViscous={32}
-          iterationsPoisson={32}
-          resolution={0.5}
-          isBounce={false}
-          autoDemo={true}
-          autoSpeed={0.5}
-          autoIntensity={2.2}
-          takeoverDuration={0.25}
-          autoResumeDelay={3000}
-          autoRampDuration={0.6}
-        />
-      </div>
+    <div className="min-h-screen bg-[#EDF1FB]">
+      <PixelTrailWrapper />
       <Navigation />
       
       <main className="pt-32">
@@ -51,10 +34,10 @@ export default function Home() {
         <section className="max-w-[1290px] mx-auto md:px-6 px-4 pb-20">
           {/* Header */}
           <div className="text-left md:mb-8 mb-4">
-            <h2 className="permanent-rainbow-text text-2xl md:text-3xl font-medium text-white mb-4">
+            <h2 className="text-[#0000ff] text-2xl md:text-3xl font-medium mb-4">
               Case Studies
             </h2>
-            <p className="text-white/70 max-w-2xl">
+            <p className="text-[#0000ff]/70 max-w-2xl">
               Deep dives into long-term, team-based projects
             </p>
           </div>
@@ -67,13 +50,13 @@ export default function Home() {
         </section>
 
         {/* Playground Section */}
-        <section className="max-w-[1290px] mx-auto md:px-6 px-4 pb-20">
+        <section className="max-w-[1290px] mx-auto md:px-6 px-4 pb-12">
           {/* Header */}
           <div className="text-left md:mb-8 mb-4">
-            <h2 className="permanent-rainbow-text text-2xl md:text-3xl font-medium text-white mb-4">
+            <h2 className="text-[#0000ff] text-2xl md:text-3xl font-medium mb-4">
               Playground
             </h2>
-            <p className="text-white/70 max-w-2xl">
+            <p className="text-[#0000ff]/70 max-w-2xl">
               Experimental projects and side explorations that I build for fun
             </p>
           </div>
@@ -85,7 +68,31 @@ export default function Home() {
           </div>
         </section>
 
-        
+        {/* CTA Section */}
+        <section className="max-w-[1290px] mx-auto px-6 pb-20 text-center ">
+          <div className="border-t border-white/10 pt-20">
+            <h2 className="text-3xl md:text-4xl font-medium text-[#0000ff] mb-6">
+              Like what you see?
+            </h2>
+            <p className="text-xl text-[#0000ff] mb-8">
+              Let&apos;s make something cool together.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <a
+                href="mailto:angelinawu05@gmail.com"
+                className="px-8 py-3 bg-[#0000ff] text-[#f6fafd] font-medium rounded-lg gentle-hover hover:bg-[#0000ff]/90 z-999999 ease-in-out transition-all duration-200 ease-in-out hover:bg-[#ff00ff]"
+              >
+                Get in touch
+              </a>
+              <Link
+                href="/about"
+                className="px-8 py-3 border border-[#0000ff] text-[#0000ff] font-medium rounded-lg blue-hover-magenta-text hover:border-[#ff00ff]/50 hover:bg-[#ff00ff]/5 transition-all duration-200"
+              >
+                Learn more about me
+              </Link>
+            </div>
+          </div>
+        </section>
       </main>
 
       <Footer />

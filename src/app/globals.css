@@ -52,6 +52,12 @@ body {
   min-height: 100vh;
 }
 
+/* If PixelTrail renders a <canvas>, this will make it transparent and non-interactive */
+canvas.pixel-canvas { 
+  background-color: transparent !important; 
+  pointer-events: none !important;
+}
+
 /* Rainbow gradient utilities */
 .rainbow-border {
   /* background: linear-gradient(45deg, 
@@ -69,6 +75,47 @@ body {
 @keyframes rainbow-shift {
   0%, 100% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
+}
+
+.magenta-hover-text {
+  position: relative;
+  display: inline-block;
+  color: #ff00ff;
+  transition: all 0.2s ease-in-out;
+}
+
+.magenta-hover-text:hover {
+  color: #ff88ff;
+  scale: 1.01;
+}
+
+.blue-hover-magenta-text {
+  position: relative;
+  display: inline-block;
+  color: #0000ff;
+  transition: all 0.2s ease-in-out;
+}
+
+.blue-hover-magenta-text:hover {
+  color: #ff00ff;
+  scale: 1.02;
+}
+
+.gentle-hover {
+  position: relative;
+  display: inline-block;
+  transition: all 0.2s ease-in-out;
+}
+
+.gentle-hover:hover {
+  scale: 1.02;
+}
+
+.blue-glow-text {
+  position: relative;
+  display: inline-block;
+  -webkit-text-stroke: 1px #0000ffa4;
+  color: #f6fafd;
 }
 
 .permanent-rainbow-text {
@@ -171,7 +218,7 @@ body {
   content: '→';
   position: absolute;
   left: 0;
-  color: rgba(255, 255, 255, 0.6);
+  color: rgba(0, 0, 255, 0.6);
   font-weight: 500;
 }
 
@@ -189,14 +236,9 @@ body {
   position: absolute;
   inset: 0px;
   mix-blend-mode: hard-light;
-  background: rgba(255, 76, 174, 0.4);
+  background: rgba(0, 0, 255, 0.4);
   box-shadow: 
-    0 0 1rem rgba(255, 76, 174, 1),
-    0 0 3rem rgba(255, 173, 10, 1),
-    0 0 4rem rgba(196, 253, 8, 1),
-    0 0 5rem rgba(54, 255, 255, 1),
-    0 0 6rem rgba(57, 100, 255, 1),
-    0 0 8rem rgba(182, 76, 253, 1);
+    0 0 2rem rgba(0, 0, 255, 1);
   /* filter: blur(15px); */
   opacity: 0;
   border-radius: 1rem;
@@ -266,13 +308,14 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: #000000;
-  margin: 5px 0;
+  background: #ccccff;
+  margin: 0;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: white;
+  background: #8888ff;
   border-radius: 5px;
+  border: 1px solid #0000ff;
   position: relative;
   margin: 0 -5px;
 }

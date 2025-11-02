@@ -4,10 +4,13 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { ArrowUpRight } from 'lucide-react';
 import { books, albums } from '@/data/about';
+import ShinyText from '@/components/ShinyText';
+import PixelTrailWrapper from '@/components/PixelTrailWrapper';
 
 export default function About() {
   return (
-    <div className="min-h-screen bg-black">
+    <div className="min-h-screen bg-[#EDF1FB]">
+      <PixelTrailWrapper />
       <Navigation />
       
       <main className="pt-20">
@@ -17,7 +20,7 @@ export default function About() {
             {/* Image Section */}
             <div className="lg:col-span-1">
               <div className="relative w-full aspect-3/4 max-w-sm mx-auto lg:mx-0 group">
-                <div className="w-full h-full bg-white/5 border border-white/10 rounded-lg overflow-hidden">
+                <div className="w-full h-full bg-[#8888ff]/5 border border-[#8888ff]/10 rounded-lg overflow-hidden">
                   <Image
                     src="/assets/About/Headshot.jpg"
                     alt="Angelina Wu Headshot"
@@ -35,16 +38,20 @@ export default function About() {
             {/* Bio Content */}
             <div className="lg:col-span-2 space-y-8">
             <div className="prose prose-lg prose-invert max-w-none">
-              <p className="text-white/80 leading-relaxed text-lg mb-4">
+              <p className="text-[#0000ff] leading-relaxed text-lg mb-4">
                 Hey, I’m Angelina, a second-year student at UCLA studying 
                 Design Media Arts and Statistics/Data Science. I’ve always 
-                believed in <span className="permanent-rainbow-text">designing to delight</span>: creating things that 
+                believed in <ShinyText 
+                  text="designing to delight:" 
+                  disabled={false} 
+                  speed={3} 
+                /> creating things that 
                 spark curiosity, joy, and connection. For me, design is a 
                 way to build tiny bridges between people, and help them see 
                 the otherworldly in the ordinary.
               </p>
               
-              <p className="text-white/80 leading-relaxed text-lg mb-4">
+              <p className="text-[#0000ff] leading-relaxed text-lg mb-4">
                 My love for design began early when I was introduced to 
                 Powerpoint by my second-grade teacher. Enamored by WordArt, 
                 dramatic animations, and maximalist display fonts (Algerian was 
@@ -53,7 +60,7 @@ export default function About() {
                 creating slide presentations on every topic I could think of.
               </p>
               
-              <p className="text-white/80 leading-relaxed text-lg mb-4">
+              <p className="text-[#0000ff] leading-relaxed text-lg mb-4">
                 Back then, I didn’t know what design was: I just knew I loved 
                 making things look exciting on screen. That early obsession with 
                 typography, color, and movement stuck with me, slowly evolving 
@@ -61,22 +68,22 @@ export default function About() {
                 interfaces that inspire and delight.
               </p>
 
-              <p className="text-white/80 leading-relaxed text-lg mb-4">
+              <p className="text-[#00ff] leading-relaxed text-lg mb-4">
                 Feel free to shoot me an email at{' '}
                 <a 
                   href="mailto:angelinawu05@gmail.com" 
-                  className="text-white rainbow-text transition-colors underline duration-200"
+                  className="magenta-hover-text hover:scale-101 transition-colors underline duration-200"
                 >
-                  angelinawu05@gmail.com <ArrowUpRight className="w-4 h-4 inline-block" />
+                  angelinawu05@gmail.com <ArrowUpRight className="magenta-hover-text w-4 h-4 inline-block" />
                 </a>{' '}
                 or take a peek at my{' '}
                 <a 
                   href="https://drive.google.com/file/d/1WeWkogMivRgkEvFLcxmGzKZMQ-LXbjwd/view?usp=sharing"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-white rainbow-text transition-colors underline duration-200"
+                  className="magenta-hover-text hover:scale-101 transition-colors underline duration-200"
                 >
-                  resume <ArrowUpRight className="w-4 h-4 inline-block" />
+                  resume <ArrowUpRight className="magenta-hover-text w-4 h-4 inline-block" />
                 </a>.
               </p>
               </div>
@@ -86,7 +93,7 @@ export default function About() {
 
         {/* Skills & Tools */}
         <section className="max-w-[1290px] mx-auto px-6 pb-16">
-          <h2 className="text-3xl font-medium text-white mb-4 md:mb-8">Skills & Tools</h2>
+          <h2 className="text-3xl font-medium text-[#0000ff] mb-4 md:mb-8">Skills & Tools</h2>
           
           <div className="flex flex-wrap gap-2">
             {[
@@ -105,7 +112,7 @@ export default function About() {
                 ].map((skill) => (
               <span
                 key={skill}
-                className="px-3 py-1 rounded-full text-xs font-mono bg-white/5 text-white/70 border border-white/10 hover:border-white/30 transition-colors"
+                className="px-3 py-1 rounded-full text-xs font-mono bg-[#0000ff]/5 text-[#0000ff]/70 border border-[#0000ff]/10 hover:border-[#0000ff]/30 transition-colors"
               >
                 {skill}
               </span>
@@ -115,150 +122,116 @@ export default function About() {
 
         {/* Experience Section */}
         <section className="max-w-[1290px] mx-auto px-6 pb-16">
-          <h2 className="text-3xl font-medium text-white mb-4 md:mb-8">Experience</h2>
+          <h2 className="text-3xl font-medium text-[#0000ff] mb-4 md:mb-8">Experience</h2>
           
           <div className="space-y-6">
             {/* UCLA Arts */}
-            <div className="border border-white/10 rounded-lg p-6 hover:border-white/20 transition-colors duration-200">
+            <div className="border border-[#8888ff]/50 rounded-lg p-6 hover:border-[#0000ff]/20 transition-colors duration-200">
               <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
                 <div className="block w-12 h-12 relative flex-shrink-0 rounded bg-white/5 border border-white/10 overflow-hidden">
                   <Image src="/assets/About/CompanyLogo-UCLAArts.jpg" alt="UCLA Arts logo" fill className="object-contain p-1" sizes="48px" />
                 </div>
                 <div className="flex-1">
                   <div className="mb-2 flex flex-col md:flex-row md:items-center md:justify-between">
-                    <h3 className="text-xl font-medium text-white">UCLA Arts</h3>
-                    <span className="text-white/60 text-sm font-mono">Oct 2025 – Present</span>
+                    <h3 className="text-xl font-medium text-[#0000ff]">UCLA Arts</h3>
+                    <span className="text-[#8888ff] text-sm font-mono">Oct 2025 – Present</span>
                   </div>
-                  <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-3">
-                    <p className="text-white/80">Student Designer in Residence (Part-time)</p>
-                    <span className="text-white/60 text-sm">Los Angeles, CA</span>
+                  <div className="flex flex-col md:flex-row md:items-center md:justify-between">
+                    <p className="text-[#0000ff]">Student Designer in Residence (Part-time)</p>
+                    <span className="text-[#8888ff] text-sm">Los Angeles, CA</span>
                   </div>
-                  <ul className="list-disc list-outside space-y-2 text-white/70 ml-3">  
-                    <li>Designing posters, social media assets, and motion graphics for UCLA Arts’ strategic communications team.</li>
-                    <li>Supporting community-building, original storytelling, and event production within UCLA Arts brand guidelines.</li>
-                  </ul>
                 </div>
               </div>
             </div>
 
             {/* UCLA Latino Policy Institute */}
-            <div className="border border-white/10 rounded-lg p-6 hover:border-white/20 transition-colors duration-200">
+            <div className="border border-[#8888ff]/50 rounded-lg p-6 hover:border-[#0000ff]/20 transition-colors duration-200">
               <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
                 <div className="block w-12 h-12 relative flex-shrink-0 rounded bg-white/5 border border-white/10 overflow-hidden">
                   <Image src="/assets/About/CompanyLogo-UCLALatino.jpg" alt="UCLA Latino Policy Institute logo" fill className="object-contain p-1" sizes="48px" />
                 </div>
                 <div className="flex-1">
                   <div className="mb-2 flex flex-col md:flex-row md:items-center md:justify-between">
-                    <h3 className="text-xl font-medium text-white">UCLA Latino Policy Institute</h3>
-                    <span className="text-white/60 text-sm font-mono">Aug 2025 – Present</span>
+                    <h3 className="text-xl font-medium text-[#0000ff]">UCLA Latino Policy Institute</h3>
+                    <span className="text-[#8888ff] text-sm font-mono">Aug 2025 – Present</span>
                   </div>
-                  <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-3">
-                    <p className="text-white/80">Student Website Designer (Part-time)</p>
-                    <span className="text-white/60 text-sm">Los Angeles, CA</span>
+                  <div className="flex flex-col md:flex-row md:items-center md:justify-between">
+                    <p className="text-[#0000ff]">Student Website Designer (Part-time)</p>
+                    <span className="text-[#8888ff] text-sm">Los Angeles, CA</span>
                   </div>
-                  <ul className="list-disc list-outside space-y-2 text-white/70 ml-3">
-                    <li>Updating and maintaining a WordPress site (22,000+ monthly viewers) to enhance usability and visual consistency within UCLA brand guidelines.</li>
-                    <li>Translating complex research publications into accessible, engaging designs.</li>
-                  </ul>
                 </div>
               </div>
             </div>
 
             {/* VEST at UCLA */}
-            <div className="border border-white/10 rounded-lg p-6 hover:border-white/20 transition-colors duration-200">
+            <div className="border border-[#8888ff]/50 rounded-lg p-6 hover:border-[#0000ff]/20 transition-colors duration-200">
               <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
                 <div className="block w-12 h-12 relative flex-shrink-0 rounded bg-white/5 border border-white/10 overflow-hidden">
                   <Image src="/assets/About/CompanyLogo-VEST.png" alt="VEST at UCLA logo" fill className="object-contain p-1" sizes="48px" />
                 </div>
                 <div className="flex-1">
                   <div className="mb-2 flex flex-col md:flex-row md:items-center md:justify-between">
-                    <h3 className="text-xl font-medium text-white">VEST at UCLA</h3>
-                    <span className="text-white/60 text-sm font-mono">Jan 2025 – Present</span>
+                    <h3 className="text-xl font-medium text-[#0000ff]">VEST at UCLA</h3>
+                    <span className="text-[#8888ff] text-sm font-mono">Jan 2025 – Present</span>
                   </div>
-              <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-3">
-                    <p className="text-white/80">Head of Design</p>
-                    <span className="text-white/60 text-sm">Los Angeles, CA</span>
+              <div className="flex flex-col md:flex-row md:items-center md:justify-between">
+                    <p className="text-[#0000ff]">Head of Design</p>
+                    <span className="text-[#8888ff] text-sm">Los Angeles, CA</span>
                   </div>
-                  <ul className="list-disc list-outside space-y-2 text-white/70 ml-3">
-                    <li>Cultivating a startup culture on the UCLA campus, creating a tight-knit community of ambitious builders who care about high-impact work.</li>
-                    <li>Designing and engineering frontend components for early‑stage tech startups.</li>
-                    <li>Led a team to complete the end‑to‑end design and development of the organization’s website with Next.js and Tailwind.</li>
-                  </ul>
                 </div>
               </div>
             </div>
 
             {/* ACM at UCLA */}
-            <div className="border border-white/10 rounded-lg p-6 hover:border-white/20 transition-colors duration-200">
+            <div className="border border-[#8888ff]/50 rounded-lg p-6 hover:border-[#0000ff]/20 transition-colors duration-200">
               <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
                 <div className="block w-12 h-12 relative flex-shrink-0 rounded bg-white/5 border border-white/10 overflow-hidden">
                   <Image src="/assets/About/CompanyLogo-ACM.png" alt="ACM at UCLA logo" fill className="object-contain p-1" sizes="48px" />
                 </div>
                 <div className="flex-1">
                   <div className="mb-2 flex flex-col md:flex-row md:items-center md:justify-between">
-                    <h3 className="text-xl font-medium text-white">ACM at UCLA</h3>
-                    <span className="text-white/60 text-sm font-mono">Jan 2025 – Present</span>
+                    <h3 className="text-xl font-medium text-[#0000ff]">ACM at UCLA</h3>
+                    <span className="text-[#8888ff] text-sm font-mono">Jan 2025 – Present</span>
                   </div>
-                  <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-3">
-                    <p className="text-white/80">Design Director</p>
-                    <span className="text-white/60 text-sm">Los Angeles, CA</span>
+                  <div className="flex flex-col md:flex-row md:items-center md:justify-between">
+                    <p className="text-[#0000ff]">Design Director</p>
+                    <span className="text-[#8888ff] text-sm">Los Angeles, CA</span>
                   </div>
-                  <ul className="list-disc list-outside space-y-2 text-white/70 ml-3">
-                    <li>Leading design initiatives for 200+ officers across 9 committees at the largest CS student org in SoCal.</li>
-                    <li>Collaborated with Workup (NVIDIA‑incubated) to redesign and relaunch its website informed by 20+ interviews and 50+ survey responses.</li>
-                    <li>Making design education more accessible through workshops and mentorship.</li>
-                  </ul>
                 </div>
               </div>
             </div>
 
             {/* Manifesto Market */}
-            <div className="border border-white/10 rounded-lg p-6 hover:border-white/20 transition-colors duration-200">
+            <div className="border border-[#8888ff]/50 rounded-lg p-6 hover:border-[#0000ff]/20 transition-colors duration-200">
               <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
                 <div className="block w-12 h-12 relative flex-shrink-0 rounded bg-white/5 border border-white/10 overflow-hidden">
                   <Image src="/assets/About/CompanyLogo-Manifesto.jpg" alt="Manifesto Market logo" fill className="object-contain p-1" sizes="48px" />
                 </div>
                 <div className="flex-1">
                   <div className="mb-2 flex flex-col md:flex-row md:items-center md:justify-between">
-                    <h3 className="text-xl font-medium text-white">Manifesto Market</h3>
-                    <span className="text-white/60 text-sm font-mono">Jun 2025 – Aug 2025</span>
+                    <h3 className="text-xl font-medium text-[#0000ff]">Manifesto Market</h3>
+                    <span className="text-[#8888ff] text-sm font-mono">Jun 2025 – Aug 2025</span>
                   </div>
-              <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-3">
-                    <p className="text-white/80">UX Intern</p>
-                    <span className="text-white/60 text-sm">Prague, Czechia</span>
+              <div className="flex flex-col md:flex-row md:items-center md:justify-between">
+                    <p className="text-[#0000ff]">UX Intern</p>
+                    <span className="text-[#8888ff] text-sm">Prague, Czechia</span>
                   </div>
-                  <ul className="list-disc list-outside space-y-2 text-white/70 ml-3">
-                    <li>Conducted a comprehensive UX audit and redesign (14,000+ monthly viewers), improving reservation conversion by 121%.</li>
-                    <li>Designed and launched a WordPress site for sister brand KalleHalle, optimizing content for conversion.</li>
-                    <li>Leveraged Google Analytics to uncover user behavior trends and set redesign priorities.</li>
-                  </ul>
                 </div>
               </div>
             </div>
           </div>
         </section>
 
-        {/* Divider Section */}
-        <section className="max-w-[1290px] mx-auto px-6 pb-8">
-          <div className="text-left">
-            <h2 className="text-2xl md:text-3xl font-medium text-white mb-3 md:mb-4">
-              Okay, that&apos;s all the serious stuff...
-            </h2>
-            <p className="text-lg text-white/70">
-              Here are some other things I&apos;m into
-            </p>
-          </div>
-        </section>
 
         {/* Books Section */}
         <section className="max-w-[1290px] mx-auto px-6 pb-16">
-          <h2 className="text-3xl font-medium text-white mb-4 md:mb-8">Books that made me</h2>
+          <h2 className="text-3xl font-medium text-[#0000ff] mb-4 md:mb-8">Books that made me</h2>
           
           <div className="grid grid-cols-5 gap-2 md:gap-6">
             {books.map((book) => (
               <div key={book.id} className="group">
                 <a href={book.url} target="_blank" rel="noopener noreferrer" className="block">
-                <div className="relative aspect-[2/3] bg-white/5 border border-white/10 rounded-lg overflow-hidden hover:border-white/30 transition-all duration-300">
+                <div className="relative aspect-[2/3] bg-[#8888ff]/50 border border-[#8888ff]/10 rounded-lg overflow-hidden hover:border-[#8888ff]/30 transition-all duration-300">
                   <Image
                     src={book.image}
                     alt={book.title}
@@ -275,7 +248,7 @@ export default function About() {
 
         {/* Albums Section */}
         <section className="max-w-[1290px] mx-auto px-6 pb-16">
-          <h2 className="text-3xl font-medium text-white mb-4 md:mb-8">Albums on repeat</h2>
+          <h2 className="text-3xl font-medium text-[#0000ff] mb-4 md:mb-8">Albums on repeat</h2>
           
           <div className="grid grid-cols-5 gap-2 md:gap-6">
             {albums.map((album) => (
@@ -301,7 +274,7 @@ export default function About() {
 
         {/* Fun Facts Section */}
         <section className="max-w-[1290px] mx-auto px-6 pb-16">
-          <h2 className="text-3xl font-medium text-white mb-4 md:mb-8">In my free time I can be found...</h2>
+          <h2 className="text-3xl font-medium text-[#0000ff] mb-4 md:mb-8">In my free time I can be found...</h2>
           
           <div className="max-w-5xl">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-8">
@@ -314,7 +287,7 @@ export default function About() {
                   'Studying alive languages'
                 ].map((activity) => (
                   <li key={activity}>
-                    <span className="text-white/70">{activity}</span>
+                    <span className="text-[#0000ff]">{activity}</span>
                   </li>
                 ))}
               </ul>
@@ -327,7 +300,7 @@ export default function About() {
                   '(Unsuccessfully) trying to learn how to whistle'
                 ].map((activity) => (
                   <li key={activity}>
-                    <span className="text-white/70">{activity}</span>
+                    <span className="text-[#0000ff]">{activity}</span>
                   </li>
                 ))}
               </ul>
@@ -337,24 +310,24 @@ export default function About() {
 
         {/* Contact Section */}
         {/* CTA Section */}
-        <section className="max-w-[1290px] mx-auto px-6 pb-20 text-center">
+        <section className="max-w-[1290px] mx-auto px-6 pb-20 text-center ">
           <div className="border-t border-white/10 pt-20">
-            <h2 className="text-3xl md:text-4xl font-medium text-white mb-6">
+            <h2 className="text-3xl md:text-4xl font-medium text-[#0000ff] mb-6">
               Like what you see?
             </h2>
-            <p className="text-xl text-white/70 mb-8">
+            <p className="text-xl text-[#0000ff] mb-8">
               Let&apos;s make something cool together.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
                 href="mailto:angelinawu05@gmail.com"
-                className="px-8 py-3 bg-white text-black font-medium rounded-lg hover:bg-white/90 transition-colors duration-200"
+                className="px-8 py-3 bg-[#0000ff] text-[#f6fafd] font-medium rounded-lg gentle-hover hover:bg-[#0000ff]/90 z-999999 ease-in-out transition-all duration-200 ease-in-out hover:bg-[#ff00ff]"
               >
                 Get in touch
               </a>
               <Link
                 href="/"
-                className="px-8 py-3 border border-white/30 text-white font-medium rounded-lg hover:border-white/50 hover:bg-white/5 transition-all duration-200"
+                className="px-8 py-3 border border-[#0000ff] text-[#0000ff] font-medium rounded-lg blue-hover-magenta-text hover:border-[#ff00ff]/50 hover:bg-[#ff00ff]/5 transition-all duration-200"
               >
                 See my work
               </Link>
@@ -367,7 +340,7 @@ export default function About() {
           <div className="text-center">
             <Link 
               href="/" 
-              className="text-white/70 hover:text-white rainbow-text transition-colors duration-200"
+                className="blue-hover-magenta-text"
             >
               ← Back to Home
             </Link>
