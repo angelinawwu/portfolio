@@ -49,8 +49,8 @@ export const playgroundProjects: Project[] = [
   {
     slug: 'typewriter',
     title: 'Typewriter',
-    description: 'A typing experience that captures the nostalgic feel of mechanical typewriters',
-    paragraph: 'Typewriter is a typing experience that captures the nostalgic feel of mechanical typewriters. It is a web application that allows users to type text on a virtual typewriter, whether by typing on their physical keyboard or by using the virtual keyboard.',
+    description: 'nostalgia for what i never knew',
+    paragraph: 'Typewriter captures the nostalgic feel of mechanical typewriters. No backspace, no copy-paste, no takebacks. Type anything and publish it to the gallery.',
     thumbnail: '/assets/projects/Typewriter-Cover.png',
     tags: ['Typescript', 'CSS Animations', 'React/Vite'],
     type: 'playground',
@@ -61,7 +61,7 @@ export const playgroundProjects: Project[] = [
   {
     slug: 'goodreads-wrapped',
     title: 'Goodreads Wrapped',
-    description: 'Shareable and engaging reading analytics inspired by Spotify Wrapped',
+    description: 'spotify wrapped for books',
     paragraph: 'Goodreads Wrapped is a web application that allows users to visualize their reading data from Goodreads. It scrapes data from the user\'s Goodreads profile and displays it in a visually appealing way, with fun animations and in a shareable format.',
     thumbnail: '/assets/projects/Goodreads-Cover.png',
     tags: ['shadcn/ui', 'Web Scraping', 'React/Vite'],
