@@ -20,7 +20,7 @@ export default function Home() {
             Hi, I&apos;m Angelina Wu.
           </h1>
           <p className="text-xl leading-relaxed md:mb-12 mb-2">
-            I&apos;m a designer who is passionate about creating channels for delight 
+            I&apos;m a designer who&apos;s passionate about creating channels for delight 
             and human connection. You can find me coding cute websites, reading 
             speculative fiction, or obsessing over the color #0000FF. Check out 
             my work below or {' '}
