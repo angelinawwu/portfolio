@@ -38,7 +38,7 @@ export default function Navigation() {
             <div className="h-9 border-l border-[#0000ff]/20 hidden sm:block" />
 
             <div className="hidden sm:block">
-              <ShinyText text="Designing to delight" className="text-sm font-normal" />
+              <ShinyText text="Designing to delight" className="text-sm font-normal geist-mono-font" />
             </div>
           </div>
 
@@ -86,9 +86,12 @@ export default function Navigation() {
           </button>
         </div>
 
+
+
         {/* Mobile Menu */}
         {isMenuOpen && (
           <div className="md:hidden flex flex-col items-start pt-4 pb-2 space-y-4">
+
             {navItems.map((item) => (
               <Link
                 key={item.href}
@@ -102,8 +105,10 @@ export default function Navigation() {
               </Link>
             ))}
 
+
             {/* Mobile External Links */}
             <div className="flex items-center space-x-4 pt-4 border-t border-[#0000ff]/20">
+            
               {externalLinks.map((link) => {
                 const Icon = link.icon;
                 return (

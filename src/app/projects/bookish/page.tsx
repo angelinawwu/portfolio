@@ -42,19 +42,19 @@ export default function BookishPage() {
             {/* Metadata Cards */}
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
               <div className="border border-[#0000ff]/10 rounded-lg p-6 bg-[#f6fafd]">
-                <h3 className="text-[#8888ff] text-sm font-medium mb-2">My Role</h3>
+                <h3 className="text-[#8888ff] text-sm font-medium mb-2 geist-mono-font">My Role</h3>
                 <p className="text-[#0000ff] font-medium">Lead Product Designer</p>
               </div>
               <div className="border border-[#0000ff]/10 rounded-lg p-6 bg-[#f6fafd]">
-                <h3 className="text-[#8888ff] text-sm font-medium mb-2">Timeline</h3>
+                <h3 className="text-[#8888ff] text-sm font-medium mb-2 geist-mono-font">Timeline</h3>
                 <p className="text-[#0000ff] font-medium">Mar – May 2024</p>
               </div>
               <div className="border border-[#0000ff]/10 rounded-lg p-6 bg-[#f6fafd]">
-                <h3 className="text-[#8888ff] text-sm font-medium mb-2">Team</h3>
+                <h3 className="text-[#8888ff] text-sm font-medium mb-2 geist-mono-font">Team</h3>
                 <p className="text-[#0000ff] font-medium">1 Designer<br />3 Developers</p>
               </div>
               <div className="border border-[#0000ff]/10 rounded-lg p-6 bg-[#f6fafd]">
-                <h3 className="text-[#8888ff] text-sm font-medium mb-2">Tools</h3>
+                <h3 className="text-[#8888ff] text-sm font-medium mb-2 geist-mono-font">Tools</h3>
                 <p className="text-[#0000ff] font-medium">Figma, Illustrator</p>
               </div>
             </div>

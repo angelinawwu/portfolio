@@ -12,7 +12,8 @@
   background-clip: text;
   display: inline-block;
   animation: shine 3s linear infinite;
-  font-weight: 500;
+  font-weight: 400;
+  font-family: var(--font-geist-mono), monospace;
 }
 
 @keyframes shine {

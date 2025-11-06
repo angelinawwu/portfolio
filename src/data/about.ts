@@ -30,8 +30,8 @@ export const books: About[] = [
   },
   { 
     id: 4, 
-    title: "Out of My Mind", 
-    url: "https://www.goodreads.com/book/show/6609765-out-of-my-mind", 
+    title: "Immaculate Conception", 
+    url: "https://www.goodreads.com/book/show/217453576-immaculate-conception", 
     image: "/assets/About/Book-4.jpg",
     type: 'book'
   },

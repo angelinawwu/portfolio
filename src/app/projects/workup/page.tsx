@@ -40,19 +40,19 @@ export default function WorkupPage() {
             {/* Metadata Cards */}
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
               <div className="border border-[#0000ff]/10 rounded-lg p-6 bg-[#f6fafd]">
-                <h3 className="text-[#8888ff] text-sm font-medium mb-2">My Role</h3>
+                <h3 className="text-[#8888ff] text-sm font-medium mb-2 geist-mono-font">My Role</h3>
                 <p className="text-[#0000ff] font-medium">Product Designer</p>
               </div>
               <div className="border border-[#0000ff]/10 rounded-lg p-6 bg-[#f6fafd]">
-                <h3 className="text-[#8888ff] text-sm font-medium mb-2">Timeline</h3>
+                <h3 className="text-[#8888ff] text-sm font-medium mb-2 geist-mono-font">Timeline</h3>
                 <p className="text-[#0000ff] font-medium">Jan - Jun 2025</p>
               </div>
               <div className="border border-[#0000ff]/10 rounded-lg p-6 bg-[#f6fafd]">
-                <h3 className="text-[#8888ff] text-sm font-medium mb-2">Team</h3>
+                <h3 className="text-[#8888ff] text-sm font-medium mb-2 geist-mono-font">Team</h3>
                 <p className="text-[#0000ff] font-medium">14 Designers<br />1 Product Team</p>
               </div>
               <div className="border border-[#0000ff]/10 rounded-lg p-6 bg-[#f6fafd]">
-                <h3 className="text-[#8888ff] text-sm font-medium mb-2">Tools</h3>
+                <h3 className="text-[#8888ff] text-sm font-medium mb-2 geist-mono-font">Tools</h3>
                 <p className="text-[#0000ff] font-medium">Figma</p>
               </div>
             </div>
@@ -77,7 +77,7 @@ export default function WorkupPage() {
             
             <div className="space-y-8">
               <div>
-                <h3 className="text-2xl md:text-3xl font-medium text-[#0000ff] mb-6"><ShinyText text="Preparing for interviews can feel overwhelming." /></h3>
+                <h3 className="text-2xl md:text-3xl font-medium text-[#0000ff] mb-6 geist-mono-font"><ShinyText text="Preparing for interviews can feel overwhelming." /></h3>
                 <div className="space-y-6 text-[#0000ff] leading-relaxed">
                   <p>
                     For college students or new graduates, it can be intimidating trying to craft the perfect responses, especially when you don&apos;t know what to expect. By allowing users to conduct industry-tailored mock interviews and receive AI-assisted feedback, Workup&apos;s AI Interview feature provides students with clear guidance on how to refine their responses and build confidence for the real conversation.
