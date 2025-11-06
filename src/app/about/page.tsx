@@ -9,11 +9,11 @@ import PixelTrailWrapper from '@/components/PixelTrailWrapper';
 
 export default function About() {
   return (
-    <div className="min-h-screen bg-[#EDF1FB]">
+    <div className="min-h-screen bg-[#EDF1FB] mb-0">
       <PixelTrailWrapper />
       <Navigation />
       
-      <main className="pt-20">
+      <main className="pt-20 mb-0">
         {/* Bio Section */}
         <section className="max-w-[1290px] mx-auto px-6 pt-8 pb-12 md:pt-12 md:pb-16">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 md:gap-12 items-center">
@@ -29,9 +29,7 @@ export default function About() {
                     sizes="(max-width: 1024px) 100vw, 33vw"
 
                   />
-                </div>
-                {/* Rainbow border on hover */}
-                
+                </div>                
               </div>
             </div>
 
@@ -46,13 +44,13 @@ export default function About() {
                   disabled={false} 
                   speed={3} 
                 /> creating things that 
-                spark curiosity, joy, and connection. For me, design is a 
+                spark curiosity, joy, and connection. I see design as a 
                 way to build tiny bridges between people.
               </p>
               
               <p className="text-[#0000ff] leading-relaxed text-lg">
                 My love for design began early when I was introduced to 
-                Powerpoint by my second-grade teacher. Enamored by WordArt, 
+                Powerpoint in second grade. Enamored by WordArt, 
                 dramatic animations, and maximalist display fonts (Algerian was 
                 my fave), I immediately fell in love with the whole practice 
                 of designing. I would spend hours on my dad&apos;s Microsoft account 
@@ -320,9 +318,9 @@ export default function About() {
             <div className="flex flex-row sm:flex-row gap-4 text-white">
               <a
                 href="mailto:angelinawu05@gmail.com"
-                className="inline-flex self-start gap-2 px-6 py-3 geist-mono-font bg-[#0000ff] border border-white text-[#f6fafd] font-medium rounded-lg gentle-hover hover:bg-[#0000ff]/90 ease-in-out transition-all duration-200 ease-in-out hover:bg-[#ff00ff]"
+                className="inline-flex items-center self-start gap-2 px-6 py-3 geist-mono-font bg-[#0000ff] border border-white text-[#f6fafd] font-medium rounded-lg gentle-hover hover:bg-[#0000ff]/90 ease-in-out transition-all duration-200 ease-in-out hover:bg-[#ff00ff]"
               >
-                Get in touch
+                Get in touch <ArrowUpRight className="w-4 h-4 inline-block align-middle" />
               </a>
               <Link
                 href="/"

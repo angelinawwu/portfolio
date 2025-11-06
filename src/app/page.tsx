@@ -4,7 +4,7 @@ import ProjectCard from '@/components/ProjectCard';
 import { caseStudies, playgroundProjects } from '@/data/projects';
 import PixelTrailWrapper from '@/components/PixelTrailWrapper';
 import Link from 'next/link';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, ArrowUpRight } from 'lucide-react';
 
 export default function Home() {
   return (
@@ -16,12 +16,13 @@ export default function Home() {
         {/* Hero Section */}
         <section className="pt-20 md:pt-32 w-full bg-[#0000ff] mb-12 md:mb-20">
         <div className="max-w-7xl mx-auto px-6 py-12 md:py-20 text-left text-white relative z-10">
-          <h1 className="text-6xl md:text-9xl font-medium mb-6 bit-apple-font">
+          <h1 className="text-6xl md:text-9xl font-medium mb-6 md:mb-8 bit-apple-font">
             Hi, I&apos;m Angelina Wu.
           </h1>
-          <p className="text-xl leading-relaxed md:mb-12 mb-2">
+          <p className="max-w-3xl text-xl leading-relaxed md:mb-12 mb-2">
+            Welcome to my little corner of the internet! 
             I&apos;m a designer who&apos;s passionate about creating channels for delight 
-            and human connection. You can find me coding cute websites, reading 
+            and human connection. You can find me building cute websites, reading 
             speculative fiction, or obsessing over the color #0000FF. Check out 
             my work below or {' '}
             <Link href="/about" className="gentle-hover underline transition-colors hover:text-[#ff00ff]">
@@ -81,9 +82,9 @@ export default function Home() {
             <div className="flex flex-col sm:flex-row items-start gap-4 text-white">
               <a
                 href="mailto:angelinawu05@gmail.com"
-                className="inline-flex self-start px-6 py-3 geist-mono-font bg-[#0000ff] border border-white text-[#f6fafd] font-medium rounded-lg gentle-hover hover:bg-[#0000ff]/90 ease-in-out transition-all duration-200 ease-in-out hover:bg-[#ff00ff]"
+                className="inline-flex items-center gap-2 self-start px-6 py-3 geist-mono-font bg-[#0000ff] border border-white text-[#f6fafd] font-medium rounded-lg gentle-hover hover:bg-[#0000ff]/90 ease-in-out transition-all duration-200 ease-in-out hover:bg-[#ff00ff]"
               >
-                Get in touch
+                Get in touch <ArrowUpRight className="w-4 h-4 inline-block align-middle" />
               </a>
               <Link
                 href="/about"
