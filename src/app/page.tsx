@@ -6,6 +6,7 @@ import ProjectCard from '@/components/ProjectCard';
 import { caseStudies, playgroundProjects } from '@/data/projects';
 import PixelTrailWrapper from '@/components/PixelTrailWrapper';
 import AsciiAnimation from '@/components/AsciiAnimation';
+import FooterGraphic from '@/components/FooterGraphic';
 import Link from 'next/link';
 import { ArrowRight, ArrowUpRight } from '@phosphor-icons/react';
 
@@ -112,7 +113,16 @@ export default function Home() {
         </section>
       </main>
 
-      <Footer />
+      <div className="relative">
+        <Footer />
+        
+        {/* Footer Graphic - Below footer on mobile, absolute positioned on desktop */}
+        <div className="relative md:absolute md:bottom-0 md:right-0 w-auto h-auto pointer-events-none z-10 bg-[#0000ff]">
+          <div className="flex justify-end px-6 md:pr-12 md:pb-0">
+            <FooterGraphic />
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
