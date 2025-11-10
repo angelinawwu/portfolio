@@ -1,10 +1,14 @@
+'use client';
+
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import ProjectCard from '@/components/ProjectCard';
 import { caseStudies, playgroundProjects } from '@/data/projects';
 import PixelTrailWrapper from '@/components/PixelTrailWrapper';
+import AsciiAnimation from '@/components/AsciiAnimation';
 import Link from 'next/link';
-import { ArrowRight, ArrowUpRight } from 'lucide-react';
+import { ArrowRight, ArrowUpRight } from '@phosphor-icons/react';
+
 
 export default function Home() {
   return (
@@ -14,22 +18,33 @@ export default function Home() {
       
       <main className="">
         {/* Hero Section */}
-        <section className="pt-20 md:pt-32 w-full bg-[#0000ff] mb-12 md:mb-20">
-        <div className="max-w-7xl mx-auto px-6 py-12 md:py-20 text-left text-white relative z-10">
-          <h1 className="text-6xl md:text-9xl font-medium mb-6 md:mb-8 bit-apple-font">
-            Hi, I&apos;m Angelina Wu.
-          </h1>
-          <p className="max-w-3xl text-xl leading-relaxed md:mb-12 mb-2">
-            Welcome to my little corner of the internet! 
-            I&apos;m a designer who&apos;s passionate about creating channels for delight 
-            and human connection. You can find me building cute websites, reading 
-            speculative fiction, or obsessing over the color #0000FF. Check out 
-            my work below or {' '}
-            <Link href="/about" className="gentle-hover underline transition-colors hover:text-[#ff00ff]">
-              learn more about me <ArrowRight className="w-4 h-4 inline-block align-middle" />
-            </Link>
-          </p>
-        </div>
+        <section className="pt-20 pb-0 md:pt-24 bg-[#0000ff] w-full mb-12 md:mb-16 md:relative overflow-hidden">
+          {/* ASCII Animations - Above text on mobile, background on desktop */}
+          <div className="md:absolute md:inset-0 relative h-80 md:h-auto">
+            {/* ASCII Animation Background - Left */}
+            <AsciiAnimation />
+            {/* ASCII Animation Background - Right (Mirrored) */}
+            <AsciiAnimation mirror />
+          </div>
+          
+          {/* Text Content */}
+          <div className="max-w-7xl mx-auto px-6 -mt-24 md:mt-0 pt-0 pb-12 md:pt-20 md:pb-20 text-left text-[#EDF1FB] relative z-10">            <h1 className="text-6xl md:text-9xl font-medium md:mb-4 mb-2 bit-apple-font text-center">
+              Hey, I&apos;m
+            </h1>
+            <h1 className="text-6xl md:text-9xl font-medium mb-6 md:mb-8 bit-apple-font text-center">
+              Angelina Wu.
+            </h1>
+            <p className="max-w-3xl text-xl mx-auto leading-relaxed md:mb-12 mb-0 text-[#EDF1FB]">
+              Welcome to my little corner of the internet! 
+              I&apos;m a designer who&apos;s passionate about creating channels for delight 
+              and human connection. You can find me building cute websites, reading 
+              speculative fiction, or obsessing over the color #0000FF. Check out 
+              my work below or {' '}
+              <Link href="/about" className="gentle-hover underline transition-colors hover:text-[#ff00ff]">
+                learn more about me <ArrowRight className="w-4 h-4 inline-block align-middle" />
+              </Link>
+            </p>
+          </div>
         </section>
 
         {/* Case Studies Section */}

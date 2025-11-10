@@ -6,6 +6,7 @@ import { Project } from '@/data/projects';
 import { useRef, useState } from 'react';
 import ProjectModal from './ProjectModal';
 import { motion, useInView } from 'framer-motion';
+import { ArrowRight } from '@phosphor-icons/react';
 
 interface ProjectCardProps {
   project: Project;
@@ -106,7 +107,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
 
             {/* View Details Hint */}
             <div className="pt-2">
-              <span className="text-xs text-[#0000ff]/50">Click to view details →</span>
+              <span className="text-xs text-[#0000ff]/50">Click to view details <ArrowRight className="w-4 h-4 inline-block align-middle" /></span>
             </div>
             
           </div>

@@ -1,3 +1,7 @@
+'use client';
+
+import { Heart } from '@phosphor-icons/react';
+
 export default function Footer() {
   return (
     <footer className="pb-10 md:pb-20 bg-[#0000ff]">
@@ -6,7 +10,7 @@ export default function Footer() {
           Last updated: {new Date().toLocaleDateString('en-US', { month: '2-digit', day: '2-digit', year: '2-digit' }).replace(/\//g, '.')}
         </p>
         <p className="text-white/70 text-xs mt-2">
-          Made with ❤️ by Angelina Wu (me!)
+          Made with <Heart className="w-4 h-4 inline-block align-middle" /> by Angelina Wu (me!)
         </p>
       </div>
     </footer>

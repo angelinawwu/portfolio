@@ -95,7 +95,7 @@ export default function ProjectModal({ project, isOpen, onClose }: ProjectModalP
                 href={project.githubUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-8 py-3 border border-[#0000ff] text-[#0000ff] geist-mono-font font-medium rounded-lg blue-hover-magenta-text hover:border-[#ff00ff]/50 hover:bg-[#ff00ff]/5 transition-all duration-200"
+                className="px-6 py-3 border border-[#0000ff] text-[#0000ff] geist-mono-font font-medium rounded-lg blue-hover-magenta-text hover:border-[#ff00ff]/50 hover:bg-[#ff00ff]/5 transition-all duration-200"
               >
                 View Code <ArrowUpRight className="w-4 h-4 inline-block align-middle" />
               </a>
