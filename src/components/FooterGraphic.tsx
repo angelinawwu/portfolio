@@ -133,20 +133,14 @@ export default function FooterGraphic() {
         const normalizedFrame = frames[0]?.replace(/^\n+/, '') ?? '';
         const width = window.innerWidth;
         
-        // Smooth responsive scaling based on screen width
+        // Simple 3 breakpoints
         let charRatio: number;
-        if (width < 640) {
-          // Small mobile
-          charRatio = 0.36;
-        } else if (width < 768) {
-          // Large mobile / small tablet
-          charRatio = 0.42;
+        if (width < 768) {
+          charRatio = 0.36; // Mobile
         } else if (width < 1024) {
-          // Tablet
-          charRatio = 0.5;
+          charRatio = 0.5; // Tablet
         } else {
-          // Desktop
-          charRatio = 0.6;
+          charRatio = 0.6; // Desktop
         }
         
         const lineHeightRatio = 0.65;
@@ -166,7 +160,7 @@ export default function FooterGraphic() {
 
     const debouncedUpdateSize = () => {
       clearTimeout(timeoutId);
-      timeoutId = setTimeout(updateSize, 100);
+      timeoutId = setTimeout(updateSize, 150);
     };
 
     updateSize();
@@ -186,7 +180,7 @@ export default function FooterGraphic() {
   return (
     <pre
       ref={preRef}
-      className="text-right font-mono text-white opacity-100 pointer-events-none overflow-visible m-0 p-0 whitespace-pre transition-all duration-300 ease-out"
+      className="text-right font-mono text-white opacity-100 pointer-events-none overflow-visible m-0 p-0 whitespace-pre"
       style={{
         fontSize: `${fontSize}px`,
         lineHeight: `${lineHeight}px`,
