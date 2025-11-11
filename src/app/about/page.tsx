@@ -6,6 +6,7 @@ import { ArrowUpRight, ArrowRight } from 'lucide-react';
 import { books, albums } from '@/data/about';
 import ShinyText from '@/components/ShinyText';
 import PixelTrailWrapper from '@/components/PixelTrailWrapper';
+import FooterGraphic from '@/components/FooterGraphic';
 
 export default function About() {
   return (
@@ -315,7 +316,7 @@ export default function About() {
             <p className="text-xl mb-20">
               Let&apos;s make something cool together.
             </p>
-            <div className="flex flex-row sm:flex-row gap-4 text-white">
+            <div className="flex flex-col sm:flex-row gap-4 text-white">
               <a
                 href="mailto:angelinawu05@gmail.com"
                 className="inline-flex items-center self-start gap-2 px-6 py-3 geist-mono-font bg-[#0000ff] border border-white text-[#f6fafd] font-medium rounded-lg gentle-hover hover:bg-[#0000ff]/90 ease-in-out transition-all duration-200 ease-in-out hover:bg-[#ff00ff]"
@@ -333,7 +334,16 @@ export default function About() {
         </section>
       </main>
 
-      <Footer />
+      <div className="relative">
+        <Footer />
+        
+        {/* Footer Graphic - Below footer on mobile, absolute positioned on desktop */}
+        <div className="relative md:absolute md:bottom-0 md:right-0 w-auto h-auto pointer-events-none z-10 bg-[#0000ff]">
+          <div className="flex justify-end px-6 md:pr-12 md:pb-0">
+            <FooterGraphic />
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
