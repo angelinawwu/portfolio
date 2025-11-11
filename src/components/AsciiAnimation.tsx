@@ -87,7 +87,7 @@ export default function AsciiAnimation({ mirror = false }: AsciiAnimationProps) 
     const [canAnimate, setCanAnimate] = useState(false);
     const animationRef = useRef<number | undefined>(undefined);
   
-  const fps = 8; // Increased FPS for smoother animation with fewer frames
+  const fps = 10; // Increased FPS for smoother animation with fewer frames
   const fpsInterval = 1000 / fps;
   const maxFrames = frames?.length || 0;
 
