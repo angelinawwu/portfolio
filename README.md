@@ -1,6 +1,6 @@
-# Angelina Wu's Portfolio
+# 🌀 Angelina Wu's portfolio
 
-welcome! this the repository for my portfolio @ [angelinawwu.com](https://angelinawwu.com).
+welcome! this the repository for my portfolio @ [angelinawwu.com](https://angelinawwu.com). 
 
 
 if you insist on poking around locally, you can:
@@ -10,5 +10,5 @@ npm install
 npm run dev
 ```
 
-## Keep in touch
-questions, collaborations, or secret handshakes go to [angelinawu05@gmail.com](mailto:hello@angelinawwu.com).
+## 🌀 keep in touch
+questions, collaborations, or secret handshakes go to [angelinawu05@gmail.com](mailto:hello@angelinawwu.com)
