@@ -76,7 +76,7 @@ export default function About() {
                 </a>{' '}
                 or take a peek at my{' '}
                 <a 
-                  href="https://drive.google.com/file/d/1WeWkogMivRgkEvFLcxmGzKZMQ-LXbjwd/view?usp=sharing"
+                  href="https://drive.google.com/file/d/16XvgLKsnpMBX21SeO_V3wavg2BaGio-2/view?usp=sharing"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="magenta-hover-text hover:scale-101 transition-colors underline duration-200"
