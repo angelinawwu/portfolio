@@ -189,7 +189,7 @@ export default function About() {
                 <div className="flex-1">
                   <div className="mb-2 flex flex-col md:flex-row md:items-center md:justify-between">
                     <h3 className="text-xl font-medium text-[#0000ff]">ACM at UCLA</h3>
-                    <span className="text-[#8888ff] text-sm font-mono">Jan 2025 – Present</span>
+                    <span className="text-[#8888ff] text-sm font-mono">October 2024 – Present</span>
                   </div>
                   <div className="flex flex-col md:flex-row md:items-center md:justify-between">
                     <p className="text-[#0000ff]">Design Director</p>
