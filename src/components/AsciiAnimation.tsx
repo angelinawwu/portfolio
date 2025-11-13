@@ -215,7 +215,7 @@ export default function AsciiAnimation({ mirror = false }: AsciiAnimationProps) 
   return (
       <pre
         ref={preRef}
-        className={`absolute inset-0 w-full h-full font-mono text-white opacity-100 pointer-events-none overflow-hidden m-0 p-0 whitespace-pre flex items-end md:items-center justify-start z-0`}
+        className={`absolute inset-0 w-full h-full font-mono text-white opacity-100 overflow-hidden m-0 p-0 whitespace-pre flex items-end md:items-center justify-start z-0`}
         style={{
           fontSize: `${fontSize}px`,
           lineHeight: `${lineHeight}px`,
