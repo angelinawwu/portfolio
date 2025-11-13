@@ -32,9 +32,9 @@ export default function ProjectModal({ project, isOpen, onClose }: ProjectModalP
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-10000 flex items-center justify-center p-4 bg-[#f6fafd]/30 backdrop-blur-sm">
+    <div className="fixed inset-0 z-10000 flex items-center justify-center p-4 bg-[#8888ff]/30 backdrop-blur-sm" onClick={onClose}>
       {/* Modal Container */}
-      <div className="relative w-full max-w-2xl max-h-[85vh] bg-[#f6fafd] border border-[#0000ff]/20 rounded-lg overflow-hidden">
+      <div className="relative w-full max-w-2xl max-h-[85vh] bg-[#f6fafd] border border-[#0000ff]/50 rounded-lg overflow-hidden" onClick={(e) => e.stopPropagation()}>
         {/* Close Button */}
         <button
           onClick={onClose}
@@ -66,7 +66,7 @@ export default function ProjectModal({ project, isOpen, onClose }: ProjectModalP
           {/* Timeline */}
           {project.timeline && (
             <div className="mb-6">
-              <p className="text-[#8888ff] text-sm font-medium mb-1">Timeline</p>
+              <p className="text-[#8888ff] text-sm font-medium mb-1 geist-mono-font">Timeline</p>
               <p className="text-[#0000ff]">{project.timeline}</p>
             </div>
           )}

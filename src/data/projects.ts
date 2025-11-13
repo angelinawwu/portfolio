@@ -47,6 +47,18 @@ export const caseStudies: Project[] = [
 
 export const playgroundProjects: Project[] = [
   {
+    slug: 'voyager',
+    title: 'Voyager Golden Record',
+    description: 'humanity\'s message to the universe',
+    paragraph: 'A love letter to the Voyager Golden Record, and what it means to be human and alive on Earth. Turn your sound on!',
+    thumbnail: '/assets/projects/Voyager-Cover.png',
+    tags: ['Next.js', 'Framer Motion', 'Web Animations'],
+    type: 'playground',
+    timeline: 'November 2025',
+    demoUrl: 'https://thegoldenrecord.vercel.app/',
+    githubUrl: 'https://github.com/angelinawwu/voyager'
+  },
+  {
     slug: 'typewriter',
     title: 'Typewriter',
     description: 'nostalgia for what i never knew',
