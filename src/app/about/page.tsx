@@ -338,7 +338,7 @@ export default function About() {
         <Footer />
         
         {/* Footer Graphic - Below footer on mobile, absolute positioned on desktop */}
-        <div className="relative md:absolute md:bottom-0 md:right-0 w-auto h-auto pointer-events-none z-10 bg-[#0000ff]">
+        <div className="relative md:absolute md:bottom-0 md:right-0 w-auto h-auto z-10">
           <div className="flex justify-end px-6 md:pr-12 md:pb-0">
             <FooterGraphic />
           </div>
