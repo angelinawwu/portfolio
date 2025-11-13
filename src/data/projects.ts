@@ -55,7 +55,7 @@ export const playgroundProjects: Project[] = [
     tags: ['Typescript', 'CSS Animations', 'React/Vite'],
     type: 'playground',
     timeline: 'October 2025',
-    demoUrl: 'https://typewriter-blush.vercel.app/',
+    demoUrl: 'https://digitaltypewriter.vercel.app/',
     githubUrl: 'https://github.com/angelinawwu/typewriter'
   },
   {
