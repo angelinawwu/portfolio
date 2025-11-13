@@ -229,7 +229,7 @@ export default function About() {
             {books.map((book) => (
               <div key={book.id} className="group">
                 <a href={book.url} target="_blank" rel="noopener noreferrer" className="block">
-                <div className="relative aspect-[2/3] bg-[#8888ff]/50 border rounded-lg overflow-hidden hover:border-[#8888ff]/30 transition-all duration-300">
+                <div className="relative aspect-[2/3] bg-[#8888ff]/50 border rounded-lg overflow-hidden transition-all duration-300">
                   <Image
                     src={book.image}
                     alt={book.title}
@@ -252,7 +252,7 @@ export default function About() {
             {albums.map((album) => (
               <div key={album.id} className="group">
                 <a href={album.url} target="_blank" rel="noopener noreferrer" className="block">
-                <div className="relative aspect-square bg-white/5 border rounded-lg overflow-hidden hover:border-white/30 transition-all duration-300">
+                <div className="relative aspect-square bg-white/5 border rounded-lg overflow-hidden transition-all duration-300">
                   {/* Placeholder for album artwork */}
                   <div className="w-full h-full flex items-center justify-center text-white/40">
                     <Image
