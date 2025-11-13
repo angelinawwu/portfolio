@@ -61,8 +61,8 @@ export const albums: About[] = [
   },
   { 
     id: 3, 
-    title: "SUCKERPUNCH", 
-    url: "https://open.spotify.com/album/3plGf9mIlywpBlDLEap7Cz?si=3aIuOnx_Q4W44rOnV7DMWA", 
+    title: "i feel everything", 
+    url: "https://open.spotify.com/album/2WbgQIggT3i5OUr94vlcUT?si=AsDBpduDQAmptgtKvR6aJg", 
     image: "/assets/About/Song-3.jpg",
     type: 'album'
   },
