@@ -120,7 +120,7 @@ export default function About() {
 
         {/* Experience Section */}
         <section className="max-w-[1290px] mx-auto px-6 pb-12 md:pb-16">
-          <h2 className="text-3xl font-medium text-[#0000ff] mb-4 md:mb-8">Where I've been</h2>
+          <h2 className="text-3xl font-medium text-[#0000ff] mb-4 md:mb-8">Where I&apos;ve been</h2>
           
           <div className="space-y-3">
             {/* UCLA Arts */}
