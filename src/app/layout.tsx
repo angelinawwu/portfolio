@@ -22,6 +22,10 @@ export const metadata: Metadata = {
   keywords: ["design", "development", "UX", "UI", "frontend", "data science", "UCLA", "portfolio", "design engineer", "product design", "design media arts"],
   authors: [{ name: "Angelina Wu" }],
   creator: "Angelina Wu",
+  icons: {
+    icon: '/icon.png', // Explicitly declare the icon
+    apple: '/icon.png', // For Apple devices
+  },
   openGraph: {
     title: "Angelina Wu's Portfolio",
     description: "Designing to delight. Currently at UCLA studying Design and Statistics/Data Science.",
