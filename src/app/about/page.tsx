@@ -38,7 +38,7 @@ export default function About() {
             <div className="lg:col-span-2 space-y-8">
             <div className="flex flex-col gap-4 prose prose-lg prose-invert max-w-none">
               <p className="text-[#0000ff] leading-relaxed text-lg">
-                Hey, I’m Angelina, a second-year student at UCLA studying 
+                Hey, I’m Angelina, a student at UCLA studying 
                 Design Media Arts and Statistics/Data Science. I’ve always 
                 believed in <ShinyText 
                   text="designing to delight:" 
