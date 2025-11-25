@@ -17,17 +17,6 @@ export default function ProjectCard({ project }: ProjectCardProps) {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const buttonRef = useRef<HTMLButtonElement>(null);
   const divRef = useRef<HTMLDivElement>(null);
-  
-  // Track when card is in the center focus zone of viewport (for mobile scroll effect)
-  const buttonInView = useInView(buttonRef, { 
-    amount: 0.5, // 50% of card needs to be visible
-    margin: "-25% 0px -25% 0px" // Creates center focus zone
-  });
-  
-  const divInView = useInView(divRef, { 
-    amount: 0.5,
-    margin: "-25% 0px -25% 0px"
-  });
 
   const handleMouseEnter = () => {
     if (videoRef.current) {
@@ -131,7 +120,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
     <Link href={`/projects/${project.slug}`}>
       <motion.div 
         ref={divRef}
-        className={`group relative bg-[#f6fafd] border border-[#0000ff]/50 rounded-2xl hover:border-[#0000ff]/100 transition-all duration-100 hover:shadow-2xl hover:shadow-[#0000ff]/5 card-glow project-card-with-glare w-full text-left cursor-pointer z-99 ${divInView ? 'card-glow-active' : ''}`}
+        className={"group relative bg-[#f6fafd] border border-[#0000ff]/50 rounded-2xl hover:border-[#0000ff]/100 transition-all duration-100 hover:shadow-2xl hover:shadow-[#0000ff]/5 card-glow project-card-with-glare w-full text-left cursor-pointer z-99"}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
       >

@@ -52,16 +52,18 @@ export default function ProjectModal({ project, isOpen, onClose }: ProjectModalP
           </h2>
 
           {/* Tags */}
-          <div className="flex flex-wrap gap-2 mb-6">
-            {project.tags.map((tag) => (
-              <span
-                key={tag}
-                className="px-3 py-1 text-xs font-mono bg-[#0000ff]/5 text-[#0000ff] rounded border border-[#0000ff]/20"
-              >
-                {tag}
-              </span>
-            ))}
-          </div>
+          {project.tags && project.tags.length > 0 && (
+            <div className="flex flex-wrap gap-2 mb-6">
+              {project.tags.map((tag) => (
+                <span
+                  key={tag}
+                  className="px-3 py-1 text-xs font-mono bg-[#0000ff]/5 text-[#0000ff] rounded border border-[#0000ff]/20"
+                >
+                  {tag}
+                </span>
+              ))}
+            </div>
+          )}
 
           {/* Timeline */}
           {project.timeline && (
@@ -103,15 +105,17 @@ export default function ProjectModal({ project, isOpen, onClose }: ProjectModalP
           </div>
 
           {/* Cover Image */}
-          <div className="w-full bg-[#0000ff]/5 border border-[#0000ff]/10 rounded-lg overflow-hidden">
-            <Image
-              src={project.thumbnail}
-              alt={`${project.title} cover`}
-              width={1200}
-              height={800}
-              className="w-full h-auto"
-            />
-          </div>
+          {project.thumbnail && (
+            <div className="w-full bg-[#0000ff]/5 border border-[#0000ff]/10 rounded-lg overflow-hidden">
+              <Image
+                src={project.thumbnail}
+                alt={`${project.title} cover`}
+                width={1200}
+                height={800}
+                className="w-full h-auto"
+              />
+            </div>
+          )}
         </div>
       </div>
     </div>

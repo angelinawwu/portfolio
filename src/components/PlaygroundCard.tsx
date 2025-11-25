@@ -117,10 +117,13 @@ export default function PlaygroundCard({ project }: PlaygroundCardProps) {
       )}
 
       {/* Title Caption - Slides in from bottom on hover */}
-      <div className="absolute bottom-0 left-0 right-0 bg-[#f6fafd] px-4 py-3 opacity-0 translate-y-full group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-200 ease-out z-10">
+      <div className="absolute bottom-0 left-0 right-0 bg-[#f6fafd] flex items-center justify-between px-4 py-3 opacity-0 translate-y-full group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-200 ease-out z-10">
         <h3 className="text-[#0000ff] text-sm">
           {project.title}
         </h3>
+        <span className="px-2 py-1 text-xs font-mono bg-[#0000ff]/5 text-[#0000ff] rounded border border-[#0000ff]/20 hover:border-[#0000ff]/30 transition-colors duration-200 whitespace-nowrap flex-shrink-0">
+          {project.context}
+        </span>
       </div>
     </motion.div>
   );
