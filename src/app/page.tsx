@@ -63,9 +63,9 @@ export default function Home() {
             <h2 className="text-[#0000ff] text-2xl md:text-3xl font-medium mb-4">
               Featured Work
             </h2>
-            {/* <p className="text-[#0000ff]/70 max-w-2xl">
+            <p className="text-[#0000ff]/70 max-w-2xl">
               Deep dives into long-term, team-based projects
-            </p> */}
+            </p>
           </div>
           {/* Projects */}
           <div className="flex flex-col gap-4 md:gap-4">
@@ -83,7 +83,10 @@ export default function Home() {
               Playground
             </h2>
             <p className="text-[#0000ff]/70 max-w-2xl">
-              Things I build for fun (hover for more info!)
+              Things I build for fun (
+              <span className="hidden sm:inline">hover</span>
+              <span className="inline sm:hidden">tap</span>
+              {' '}for more info!)
             </p>
           </div>
 

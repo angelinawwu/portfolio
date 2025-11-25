@@ -3,7 +3,7 @@
 import Image from 'next/image';
 import { Project } from '@/data/projects';
 import { motion } from 'framer-motion';
-import { useRef, useEffect, useState, MouseEvent } from 'react';
+import { useRef, useEffect, useState, MouseEvent as ReactMouseEvent } from 'react';
 import { ArrowUpRight } from '@phosphor-icons/react';
 
 interface PlaygroundCardProps {
@@ -16,6 +16,7 @@ export default function PlaygroundCard({ project }: PlaygroundCardProps) {
   const [supportsHover, setSupportsHover] = useState(false);
   const [isHovering, setIsHovering] = useState(false);
   const [cursorPos, setCursorPos] = useState({ x: 0, y: 0 });
+  const [isMobileActive, setIsMobileActive] = useState(false);
 
   useEffect(() => {
     // Check if device supports hover (desktop)
@@ -29,6 +30,12 @@ export default function PlaygroundCard({ project }: PlaygroundCardProps) {
     mediaQuery.addEventListener('change', handleChange);
     return () => mediaQuery.removeEventListener('change', handleChange);
   }, []);
+
+  useEffect(() => {
+    if (supportsHover) {
+      setIsMobileActive(false);
+    }
+  }, [supportsHover]);
 
   const handleMouseEnter = () => {
     if (videoRef.current && supportsHover) {
@@ -49,7 +56,7 @@ export default function PlaygroundCard({ project }: PlaygroundCardProps) {
     }
   };
 
-  const handleMouseMove = (event: MouseEvent<HTMLDivElement>) => {
+  const handleMouseMove = (event: ReactMouseEvent<HTMLDivElement>) => {
     if (!supportsHover) return;
     const rect = event.currentTarget.getBoundingClientRect();
     setCursorPos({
@@ -57,6 +64,31 @@ export default function PlaygroundCard({ project }: PlaygroundCardProps) {
       y: event.clientY - rect.top,
     });
   };
+
+  const handleCardClick = () => {
+    if (!supportsHover) {
+      setIsMobileActive((prev) => !prev);
+    }
+  };
+
+  const handleMobileLinkTap = (event: ReactMouseEvent<HTMLButtonElement>) => {
+    event.stopPropagation();
+    if (project.demoUrl) {
+      window.open(project.demoUrl, '_blank', 'noopener,noreferrer');
+    }
+  };
+
+  const overlayVisibility = supportsHover
+    ? 'opacity-0 group-hover:opacity-100'
+    : isMobileActive
+      ? 'opacity-100'
+      : 'opacity-0';
+
+  const captionVisibility = supportsHover
+    ? 'opacity-0 translate-y-full group-hover:opacity-100 group-hover:translate-y-0'
+    : isMobileActive
+      ? 'opacity-100 translate-y-0'
+      : 'opacity-0 translate-y-full';
   
   const cardContent = (
     <motion.div 
@@ -64,6 +96,7 @@ export default function PlaygroundCard({ project }: PlaygroundCardProps) {
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
       onMouseMove={handleMouseMove}
+      onClick={handleCardClick}
     >
       {/* Image/Video Container */}
       <div className="relative w-full rounded-lg overflow-hidden bg-[#f6fafd]/5">
@@ -90,7 +123,7 @@ export default function PlaygroundCard({ project }: PlaygroundCardProps) {
           />
         ) : null}
         {/* Iridescent overlay on hover */}
-        <div className="absolute inset-0 iridescent-glow opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none"></div>
+        <div className={`absolute inset-0 iridescent-glow ${overlayVisibility} transition-opacity duration-200 pointer-events-none`}></div>
       </div>
 
       {/* Desktop custom cursor icon */}
@@ -109,27 +142,34 @@ export default function PlaygroundCard({ project }: PlaygroundCardProps) {
         </div>
       )}
 
-      {/* Mobile static icon */}
-      {hasLink && !supportsHover && (
-        <div className="absolute top-3 right-3 z-20 w-9 h-9 rounded-full bg-white text-[#0000ff] flex items-center justify-center border border-[#0000ff]/50">
+      {/* Mobile action icon */}
+      {hasLink && !supportsHover && isMobileActive && (
+        <button
+          type="button"
+          onClick={handleMobileLinkTap}
+          className="absolute top-3 right-3 z-20 w-9 h-9 rounded-full bg-white text-[#0000ff] flex items-center justify-center border border-[#0000ff]/50 shadow-md focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0000ff]/60"
+          aria-label="Open project website"
+        >
           <ArrowUpRight className="w-4 h-4" weight="bold" />
-        </div>
+        </button>
       )}
 
       {/* Title Caption - Slides in from bottom on hover */}
-      <div className="absolute bottom-0 left-0 right-0 bg-[#f6fafd] flex items-center justify-between px-4 py-3 opacity-0 translate-y-full group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-200 ease-out z-10">
-        <h3 className="text-[#0000ff] text-sm">
+      <div className={`absolute bottom-0 left-0 right-0 bg-[#f6fafd] flex items-center justify-between px-4 py-3 ${captionVisibility} transition-all duration-200 ease-out z-10 border-t border-[#0000ff]/50`}>
+        <h3 className="text-[#0000ff] text-sm font-medium">
           {project.title}
         </h3>
-        <span className="px-2 py-1 text-xs font-mono bg-[#0000ff]/5 text-[#0000ff] rounded border border-[#0000ff]/20 hover:border-[#0000ff]/30 transition-colors duration-200 whitespace-nowrap flex-shrink-0">
-          {project.context}
-        </span>
+        {project.context && (
+          <span className="px-2 py-1 text-xs font-mono bg-[#0000ff]/5 text-[#0000ff] rounded border border-[#0000ff]/20 whitespace-nowrap flex-shrink-0">
+            {project.context}
+          </span>
+        )}
       </div>
     </motion.div>
   );
 
-  // If demoUrl exists, wrap in a link
-  if (hasLink) {
+  // Desktop link behavior
+  if (hasLink && supportsHover) {
     return (
       <a
         href={project.demoUrl}
