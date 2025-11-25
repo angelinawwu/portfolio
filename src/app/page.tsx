@@ -3,13 +3,21 @@
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import ProjectCard from '@/components/ProjectCard';
+import PlaygroundCard from '@/components/PlaygroundCard';
 import { caseStudies, playgroundProjects } from '@/data/projects';
 import PixelTrailWrapper from '@/components/PixelTrailWrapper';
 import AsciiAnimation from '@/components/AsciiAnimation';
 import FooterGraphic from '@/components/FooterGraphic';
 import Link from 'next/link';
 import { ArrowRight, ArrowUpRight } from '@phosphor-icons/react';
+import Masonry from "react-masonry-css";
 
+{/* Masonry Grid Breakpoints */}
+const breakpointColumnsObj = {
+  default: 3,   // 3 columns by default (md and up)
+  1024: 2,      // 2 columns on tablet (between md and lg)
+  768: 1        // 1 column on mobile (less than 768px)
+};
 
 export default function Home() {
   return (
@@ -49,18 +57,18 @@ export default function Home() {
         </section>
 
         {/* Case Studies Section */}
-        <section className="max-w-[1290px] mx-auto md:px-6 px-4 pb-20">
+        <section className="max-w-[1290px] mx-auto md:px-6 px-4 mt-28">
           {/* Header */}
           <div className="text-left md:mb-8 mb-4">
             <h2 className="text-[#0000ff] text-2xl md:text-3xl font-medium mb-4">
-              Case Studies
+              Featured Work
             </h2>
-            <p className="text-[#0000ff]/70 max-w-2xl">
+            {/* <p className="text-[#0000ff]/70 max-w-2xl">
               Deep dives into long-term, team-based projects
-            </p>
+            </p> */}
           </div>
           {/* Projects */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 md:gap-8 gap-4">
+          <div className="flex flex-col gap-4 md:gap-4">
             {caseStudies.map((project) => (
               <ProjectCard key={project.slug} project={project} />
             ))}
@@ -68,22 +76,29 @@ export default function Home() {
         </section>
 
         {/* Playground Section */}
-        <section className="max-w-[1290px] mx-auto md:px-6 px-4 pb-12">
+        <section className="max-w-[1290px] mx-auto md:px-6 px-4 pb-12 mt-28">
           {/* Header */}
           <div className="text-left md:mb-8 mb-4">
             <h2 className="text-[#0000ff] text-2xl md:text-3xl font-medium mb-4">
               Playground
             </h2>
             <p className="text-[#0000ff]/70 max-w-2xl">
-              Experimental projects and side explorations that I build for fun
+              Things I build for fun (hover for more info!)
             </p>
           </div>
-          {/* Projects */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 md:gap-8 gap-4">
-            {playgroundProjects.map((project) => (
-              <ProjectCard key={project.slug} project={project} />
+
+          {/* Projects - Masonry Grid */}
+          <Masonry
+            breakpointCols={breakpointColumnsObj}
+            className="flex w-auto -ml-4" // -ml-4 counters the padding-left in the column
+            columnClassName="pl-4 bg-clip-padding" // pl-4 creates the gap between columns
+          >
+            {playgroundProjects.map((project, index) => (
+              <div key={project.slug || index} className="mb-4">
+                <PlaygroundCard project={project} />
+              </div>
             ))}
-          </div>
+          </Masonry>
         </section>
 
         {/* CTA Section */}

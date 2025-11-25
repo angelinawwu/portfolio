@@ -1,16 +1,17 @@
 export type Project = {
-  slug: string;
+  slug?: string;
   title: string;
   paragraph?: string;
-  description: string;
-  thumbnail: string;
-  tags: string[];
+  description?: string;
+  context?: string;
+  thumbnail?: string;
+  tags?: string[];
   type: 'case-study' | 'playground';
   // For playground projects:
   demoUrl?: string;
   githubUrl?: string;
   timeline?: string;
-  // For case studies with video:
+  // For projects with video (case studies or playground):
   videoUrl?: string;
 };
 
@@ -47,23 +48,11 @@ export const caseStudies: Project[] = [
 
 export const playgroundProjects: Project[] = [
   {
-    slug: 'voyager',
-    title: 'Voyager Golden Record',
-    description: 'humanity\'s message to the universe',
-    paragraph: 'A love letter to the Voyager Golden Record, and what it means to be human and alive on Earth. Turn your sound on!',
-    thumbnail: '/assets/projects/Voyager-Cover.png',
-    tags: ['Next.js', 'Framer Motion', 'Web Animations'],
-    type: 'playground',
-    timeline: 'November 2025',
-    demoUrl: 'https://thegoldenrecord.vercel.app/',
-    githubUrl: 'https://github.com/angelinawwu/voyager'
-  },
-  {
-    slug: 'typewriter',
     title: 'Typewriter',
     description: 'nostalgia for what i never knew',
     paragraph: 'Typewriter captures the nostalgic feel of mechanical typewriters. No backspace, no copy-paste, no takebacks. Type anything and publish it to the gallery.',
-    thumbnail: '/assets/projects/Typewriter-Cover.png',
+    thumbnail: '/assets/playground/Typewriter-Cover.png',
+    videoUrl: '/assets/playground/Typewriter-Video.mov',
     tags: ['Typescript', 'CSS Animations', 'React/Vite'],
     type: 'playground',
     timeline: 'October 2025',
@@ -71,16 +60,52 @@ export const playgroundProjects: Project[] = [
     githubUrl: 'https://github.com/angelinawwu/typewriter'
   },
   {
-    slug: 'goodreads-wrapped',
+    title: 'Voyager Golden Record',
+    description: 'humanity\'s message to the universe',
+    paragraph: 'A love letter to the Voyager Golden Record, and what it means to be human and alive on Earth. Turn your sound on!',
+    thumbnail: '/assets/playground/Voyager-Cover.png',
+    videoUrl: '/assets/playground/Voyager-Video.mov',
+    tags: ['Next.js', 'Framer Motion', 'Web Animations'],
+    type: 'playground',
+    timeline: 'November 2025',
+    demoUrl: 'https://thegoldenrecord.vercel.app/',
+    githubUrl: 'https://github.com/angelinawwu/voyager'
+  },
+  {
     title: 'Goodreads Wrapped',
     description: 'spotify wrapped for books',
     paragraph: 'Goodreads Wrapped is a web application that allows users to visualize their reading data from Goodreads. It scrapes data from the user\'s Goodreads profile and displays it in a visually appealing way, with fun animations and in a shareable format.',
-    thumbnail: '/assets/projects/Goodreads-Cover.png',
+    videoUrl: '/assets/playground/Goodreads-Video.mov',
     tags: ['shadcn/ui', 'Web Scraping', 'React/Vite'],
     type: 'playground',
     timeline: 'In progress',
     demoUrl: 'https://goodreadswrapped.com',
     githubUrl: 'https://github.com/angelinawwu/goodreads-wrapped'
+  },
+  {
+    title: 'E-Commerce Site',
+    context: 'Figma + Google AI Studio',
+    videoUrl: '/assets/playground/Rug-Video.mov',
+    type: 'playground',
+  },
+  {
+    title: 'VEST Glass Experiment',
+    context: 'Figma',
+    thumbnail: '/assets/playground/VESTGlass-Cover.png',
+    type: 'playground',
+  },
+  {
+    title: 'VEST Marketing Graphic',
+    context: 'Figma and Photoshop',
+    thumbnail: '/assets/playground/VESTKeyboard-Cover.jpg',
+    type: 'playground',
+  },
+
+  {
+    title: 'MedTech Site',
+    context: 'Figma + Google AI Studio',
+    thumbnail: '/assets/playground/Thistle-Cover.png',
+    type: 'playground',
   }
 ];
 
