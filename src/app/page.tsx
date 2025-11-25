@@ -57,7 +57,7 @@ export default function Home() {
         </section>
 
         {/* Case Studies Section */}
-        <section className="max-w-[1290px] mx-auto md:px-6 px-4 mt-28">
+        <section className="max-w-[1290px] mx-auto md:px-6 px-4 mt-12 md:mt-28">
           {/* Header */}
           <div className="text-left md:mb-8 mb-4">
             <h2 className="text-[#0000ff] text-2xl md:text-3xl font-medium mb-4">
@@ -76,7 +76,7 @@ export default function Home() {
         </section>
 
         {/* Playground Section */}
-        <section className="max-w-[1290px] mx-auto md:px-6 px-4 pb-12 mt-28">
+        <section className="max-w-[1290px] mx-auto md:px-6 px-4 pb-12 mt-12 md:mt-28">
           {/* Header */}
           <div className="text-left md:mb-8 mb-4">
             <h2 className="text-[#0000ff] text-2xl md:text-3xl font-medium mb-4">
