@@ -419,4 +419,11 @@ canvas.pixel-canvas {
   body {
     @apply bg-background text-foreground;
   }
+  
+  /* Hide default cursor on desktop */
+  @media (hover: hover) {
+    * {
+      cursor: none !important;
+    }
+  }
 }

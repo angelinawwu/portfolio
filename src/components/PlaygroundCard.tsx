@@ -14,8 +14,6 @@ export default function PlaygroundCard({ project }: PlaygroundCardProps) {
   const hasLink = !!project.demoUrl;
   const videoRef = useRef<HTMLVideoElement>(null);
   const [supportsHover, setSupportsHover] = useState(false);
-  const [isHovering, setIsHovering] = useState(false);
-  const [cursorPos, setCursorPos] = useState({ x: 0, y: 0 });
   const [isMobileActive, setIsMobileActive] = useState(false);
 
   useEffect(() => {
@@ -41,9 +39,6 @@ export default function PlaygroundCard({ project }: PlaygroundCardProps) {
     if (videoRef.current && supportsHover) {
       videoRef.current.play();
     }
-    if (supportsHover) {
-      setIsHovering(true);
-    }
   };
 
   const handleMouseLeave = () => {
@@ -51,18 +46,6 @@ export default function PlaygroundCard({ project }: PlaygroundCardProps) {
       videoRef.current.pause();
       videoRef.current.currentTime = 0;
     }
-    if (supportsHover) {
-      setIsHovering(false);
-    }
-  };
-
-  const handleMouseMove = (event: ReactMouseEvent<HTMLDivElement>) => {
-    if (!supportsHover) return;
-    const rect = event.currentTarget.getBoundingClientRect();
-    setCursorPos({
-      x: event.clientX - rect.left,
-      y: event.clientY - rect.top,
-    });
   };
 
   const handleCardClick = () => {
@@ -92,14 +75,14 @@ export default function PlaygroundCard({ project }: PlaygroundCardProps) {
   
   const cardContent = (
     <motion.div 
-      className={`group relative w-full rounded-lg border border-[#0000ff]/50 overflow-hidden ${hasLink ? 'cursor-pointer' : ''} ${supportsHover && hasLink && isHovering ? 'cursor-none' : ''}`}
+      className={`group relative w-full rounded-lg border border-[#0000ff]/50 overflow-hidden ${hasLink ? 'cursor-none' : ''}`}
+      data-cursor={hasLink ? 'playground-link' : undefined}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
-      onMouseMove={handleMouseMove}
       onClick={handleCardClick}
     >
       {/* Image/Video Container */}
-      <div className="relative w-full rounded-lg overflow-hidden bg-[#f6fafd]/5">
+      <div className="relative w-full overflow-hidden bg-[#f6fafd]/5">
         {project.videoUrl ? (
           <video
             ref={videoRef}
@@ -125,22 +108,6 @@ export default function PlaygroundCard({ project }: PlaygroundCardProps) {
         {/* Iridescent overlay on hover */}
         <div className={`absolute inset-0 iridescent-glow ${overlayVisibility} transition-opacity duration-200 pointer-events-none`}></div>
       </div>
-
-      {/* Desktop custom cursor icon */}
-      {hasLink && supportsHover && (
-        <div
-          className={`pointer-events-none absolute z-20 transition-opacity duration-150 ease-out ${isHovering ? 'opacity-100' : 'opacity-0'}`}
-          style={{
-            left: cursorPos.x,
-            top: cursorPos.y,
-            transform: 'translate(-50%, -50%)',
-          }}
-        >
-          <div className="w-8 h-8 rounded-full bg-[#0000ff] flex items-center justify-center shadow-lg">
-            <ArrowUpRight className="w-4 h-4 text-white" weight="bold" />
-          </div>
-        </div>
-      )}
 
       {/* Mobile action icon */}
       {hasLink && !supportsHover && isMobileActive && (

@@ -120,7 +120,8 @@ export default function ProjectCard({ project }: ProjectCardProps) {
     <Link href={`/projects/${project.slug}`}>
       <motion.div 
         ref={divRef}
-        className={"group relative bg-[#f6fafd] border border-[#0000ff]/50 rounded-2xl hover:border-[#0000ff]/100 transition-all duration-100 hover:shadow-2xl hover:shadow-[#0000ff]/5 card-glow project-card-with-glare w-full text-left cursor-pointer z-99"}
+        className={"group relative bg-[#f6fafd] border border-[#0000ff]/50 rounded-2xl hover:border-[#0000ff]/100 transition-all duration-100 hover:shadow-2xl hover:shadow-[#0000ff]/5 card-glow project-card-with-glare w-full text-left cursor-none z-99"}
+        data-cursor="project-card"
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
       >

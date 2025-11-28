@@ -86,6 +86,19 @@ export const playgroundProjects: Project[] = [
     githubUrl: 'https://github.com/angelinawwu/goodreads-wrapped'
   },
   {
+    title: 'MedTech Site',
+    context: 'Figma + Google AI Studio',
+    thumbnail: '/assets/playground/Thistle-Cover.png',
+    type: 'playground',
+  },
+  {
+    title: 'poems-i-love',
+    videoUrl: '/assets/playground/Poems-Video.mov',
+    context: 'Next.js + Framer Motion',
+    type: 'playground',
+    demoUrl: 'https://poems-i-love.vercel.app/',
+  },
+  {
     title: 'E-Commerce Site',
     context: 'Figma + Google AI Studio',
     videoUrl: '/assets/playground/Rug-Video.mov',
@@ -103,13 +116,6 @@ export const playgroundProjects: Project[] = [
     thumbnail: '/assets/playground/VESTKeyboard-Cover.jpg',
     type: 'playground',
   },
-
-  {
-    title: 'MedTech Site',
-    context: 'Figma + Google AI Studio',
-    thumbnail: '/assets/playground/Thistle-Cover.png',
-    type: 'playground',
-  }
 ];
 
 // Combined projects for backward compatibility
