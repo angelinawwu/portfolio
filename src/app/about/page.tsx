@@ -23,7 +23,7 @@ export default function About() {
               <div className="relative w-full aspect-3/4 max-w-sm mx-auto lg:mx-0 group">
                 <div className="w-full h-full bg-[#8888ff]/5 border border-[#8888ff]/10 rounded-lg overflow-hidden">
                   <Image
-                    src="/assets/About/Headshot.jpg"
+                    src="/assets/About/Headshot.webp"
                     alt="Angelina Wu Headshot"
                     fill
                     className="object-cover object-[center_bottom] rounded-xl"
@@ -123,11 +123,30 @@ export default function About() {
           <h2 className="text-3xl font-medium text-[#0000ff] mb-4 md:mb-8">Where I&apos;ve been</h2>
           
           <div className="space-y-3">
-            {/* UCLA Arts */}
-            <div className="border border-[#8888ff]/50 rounded-lg p-4 md:p-6 hover:border-[#0000ff]/20 transition-colors duration-200">
+            {/* SEPHORA */}
+            <div className="bg-[#f6fafd] border border-[#8888ff]/50 rounded-lg p-4 md:p-6 hover:border-[#0000ff]/20 transition-colors duration-200">
               <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-2 md:gap-4">
                 <div className="block w-12 h-12 relative flex-shrink-0 rounded bg-white/5 border border-white/10 overflow-hidden">
-                  <Image src="/assets/About/CompanyLogo-UCLAArts.jpg" alt="UCLA Arts logo" fill className="object-contain p-0.5" sizes="48px" />
+                  <Image src="/assets/About/CompanyLogo-Sephora.png" alt="Sephora logo" fill className="object-contain p-0.5" sizes="48px" />
+                </div>
+                <div className="flex-1">
+                  <div className="mb-2 flex flex-col md:flex-row md:items-center md:justify-between">
+                    <h3 className="text-xl font-medium text-[#0000ff]">Sephora</h3>
+                    <span className="text-[#8888ff] text-sm font-mono">Incoming</span>
+                  </div>
+                  <div className="flex flex-col md:flex-row md:items-center md:justify-between">
+                    <p className="text-[#0000ff]">Product Design Intern</p>
+                    <span className="text-[#8888ff] text-sm">San Francisco, CA</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* UCLA Arts */}
+            <div className="bg-[#f6fafd] border border-[#8888ff]/50 rounded-lg p-4 md:p-6 hover:border-[#0000ff]/20 transition-colors duration-200">
+              <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-2 md:gap-4">
+                <div className="block w-12 h-12 relative flex-shrink-0 rounded bg-white/5 border border-white/10 overflow-hidden">
+                  <Image src="/assets/About/CompanyLogo-UCLAArts.webp" alt="UCLA Arts logo" fill className="object-contain p-0.5" sizes="48px" />
                 </div>
                 <div className="flex-1">
                   <div className="mb-2 flex flex-col md:flex-row md:items-center md:justify-between">
@@ -143,10 +162,10 @@ export default function About() {
             </div>
 
             {/* UCLA Latino Policy Institute */}
-            <div className="border border-[#8888ff]/50 rounded-lg p-4 md:p-6 hover:border-[#0000ff]/20 transition-colors duration-200">
+            <div className="bg-[#f6fafd] border border-[#8888ff]/50 rounded-lg p-4 md:p-6 hover:border-[#0000ff]/20 transition-colors duration-200">
               <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-2 md:gap-4">
                 <div className="block w-12 h-12 relative flex-shrink-0 rounded bg-white/5 border border-white/10 overflow-hidden">
-                  <Image src="/assets/About/CompanyLogo-UCLALatino.jpg" alt="UCLA Latino Policy Institute logo" fill className="object-contain p-0.5" sizes="48px" />
+                  <Image src="/assets/About/CompanyLogo-UCLALatino.webp" alt="UCLA Latino Policy Institute logo" fill className="object-contain p-0.5" sizes="48px" />
                 </div>
                 <div className="flex-1">
                   <div className="mb-2 flex flex-col md:flex-row md:items-center md:justify-between">
@@ -161,49 +180,11 @@ export default function About() {
               </div>
             </div>
 
-            {/* VEST at UCLA */}
-            <div className="border border-[#8888ff]/50 rounded-lg p-4 md:p-6 hover:border-[#0000ff]/20 transition-colors duration-200">
-              <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-2 md:gap-4">
-                <div className="block w-12 h-12 relative flex-shrink-0 rounded bg-white/5 border border-white/10 overflow-hidden">
-                  <Image src="/assets/About/CompanyLogo-VEST.png" alt="VEST at UCLA logo" fill className="object-contain p-0.5" sizes="48px" />
-                </div>
-                <div className="flex-1">
-                  <div className="mb-2 flex flex-col md:flex-row md:items-center md:justify-between">
-                    <h3 className="text-xl font-medium text-[#0000ff]">VEST at UCLA</h3>
-                    <span className="text-[#8888ff] text-sm font-mono">Jan 2025 – Present</span>
-                  </div>
-              <div className="flex flex-col md:flex-row md:items-center md:justify-between">
-                    <p className="text-[#0000ff]">Head of Design</p>
-                    <span className="text-[#8888ff] text-sm">Los Angeles, CA</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* ACM at UCLA */}
-            <div className="border border-[#8888ff]/50 rounded-lg p-4 md:p-6 hover:border-[#0000ff]/20 transition-colors duration-200">
-              <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-2 md:gap-4">
-                <div className="block w-12 h-12 relative flex-shrink-0 rounded bg-white/5 border border-white/10 overflow-hidden">
-                  <Image src="/assets/About/CompanyLogo-ACM.png" alt="ACM at UCLA logo" fill className="object-contain p-0.5" sizes="48px" />
-                </div>
-                <div className="flex-1">
-                  <div className="mb-2 flex flex-col md:flex-row md:items-center md:justify-between">
-                    <h3 className="text-xl font-medium text-[#0000ff]">ACM at UCLA</h3>
-                    <span className="text-[#8888ff] text-sm font-mono">October 2024 – Present</span>
-                  </div>
-                  <div className="flex flex-col md:flex-row md:items-center md:justify-between">
-                    <p className="text-[#0000ff]">Design Director</p>
-                    <span className="text-[#8888ff] text-sm">Los Angeles, CA</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-
             {/* Manifesto Market */}
-            <div className="border border-[#8888ff]/50 rounded-lg p-4 md:p-6 hover:border-[#0000ff]/20 transition-colors duration-200">
+            <div className="bg-[#f6fafd] border border-[#8888ff]/50 rounded-lg p-4 md:p-6 hover:border-[#0000ff]/20 transition-colors duration-200">
               <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-2 md:gap-4">
                 <div className="block w-12 h-12 relative flex-shrink-0 rounded bg-white/5 border border-white/10 overflow-hidden">
-                  <Image src="/assets/About/CompanyLogo-Manifesto.jpg" alt="Manifesto Market logo" fill className="object-contain p-0.5" sizes="48px" />
+                  <Image src="/assets/About/CompanyLogo-Manifesto.webp" alt="Manifesto Market logo" fill className="object-contain p-0.5" sizes="48px" />
                 </div>
                 <div className="flex-1">
                   <div className="mb-2 flex flex-col md:flex-row md:items-center md:justify-between">
