@@ -76,12 +76,9 @@ export const playgroundProjects: Project[] = [
   {
     title: 'Goodreads Wrapped',
     description: 'spotify wrapped for books',
-    paragraph: 'Goodreads Wrapped is a web application that allows users to visualize their reading data from Goodreads. It scrapes data from the user\'s Goodreads profile and displays it in a visually appealing way, with fun animations and in a shareable format.',
     videoUrl: '/assets/playground/Goodreads-Video.mov',
-    context: 'React/Vite + Web Scraping',
-    tags: ['shadcn/ui', 'Web Scraping', 'React/Vite'],
+    context: 'Next.js + Web Scraping',
     type: 'playground',
-    timeline: 'In progress',
     demoUrl: 'https://goodreadswrapped.com',
     githubUrl: 'https://github.com/angelinawwu/goodreads-wrapped'
   },
