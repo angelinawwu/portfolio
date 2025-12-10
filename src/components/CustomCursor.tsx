@@ -77,7 +77,7 @@ export default function CustomCursor() {
   if (!supportsHover) return null;
 
   const isDefault = cursorState === 'default';
-  const text = cursorState === 'playground-link' ? 'VIEW WEBSITE' : cursorState === 'project-card' ? 'VIEW PROJECT' : '';
+  const text = cursorState === 'playground-link' ? 'OPEN WEBSITE' : cursorState === 'project-card' ? 'VIEW PROJECT' : '';
 
   // 1. ADDED: Instant transition for cursor movement
   const moveTransition = { duration: 0 }; 
@@ -103,7 +103,7 @@ export default function CustomCursor() {
       >
         {cursorState === 'playground-link' && (
           <>
-            <span className="text-xs font-mono geist-mono-font">VIEW WEBSITE</span>
+            <span className="text-xs font-mono geist-mono-font">OPEN WEBSITE</span>
             <ArrowUpRight className="w-3.5 h-3.5 flex-shrink-0" weight="bold" />
           </>
         )}
