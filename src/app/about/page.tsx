@@ -16,7 +16,7 @@ export default function About() {
       
       <main className="pt-20 mb-0">
         {/* Bio Section */}
-        <section className="max-w-[1290px] mx-auto px-6 pt-8 pb-12 md:pt-12 md:pb-16">
+        <section className="max-w-[1290px] mx-auto px-6 pt-8 pb-12 md:pt-12 md:pb-32">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 md:gap-12 items-center">
             {/* Image Section */}
             <div className="lg:col-span-1">
@@ -70,7 +70,7 @@ export default function About() {
                 Feel free to shoot me an email at{' '}
                 <a 
                   href="mailto:angelinawu05@gmail.com" 
-                  className="magenta-hover-text hover:scale-101 transition-colors underline duration-200"
+                  className="magenta-hover-text relative z-10 cursor-pointer pointer-events-auto"
                 >
                   angelinawu05@gmail.com <ArrowUpRight className="magenta-hover-text w-4 h-4 inline-block" />
                 </a>{' '}
@@ -79,7 +79,7 @@ export default function About() {
                   href="https://drive.google.com/file/d/16XvgLKsnpMBX21SeO_V3wavg2BaGio-2/view?usp=sharing"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="magenta-hover-text hover:scale-101 transition-colors underline duration-200"
+                  className="magenta-hover-text relative z-10 cursor-pointer pointer-events-auto"
                 >
                   resume <ArrowUpRight className="magenta-hover-text w-4 h-4 inline-block" />
                 </a>.
@@ -118,82 +118,114 @@ export default function About() {
           </div>
         </section> */}
 
-        {/* Experience Section */}
-        <section className="max-w-[1290px] mx-auto px-6 pb-12 md:pb-16">
-          <h2 className="text-3xl font-medium text-[#0000ff] mb-4 md:mb-8">Where I&apos;ve been</h2>
-          
-          <div className="space-y-3">
-            {/* SEPHORA */}
-            <div className="bg-[#f6fafd] border border-[#8888ff]/50 rounded-lg p-4 md:p-6 hover:border-[#0000ff]/20 transition-colors duration-200">
-              <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-2 md:gap-4">
-                <div className="block w-12 h-12 relative flex-shrink-0 rounded bg-white/5 border border-white/10 overflow-hidden">
-                  <Image src="/assets/About/CompanyLogo-Sephora.png" alt="Sephora logo" fill className="object-contain p-0.5" sizes="48px" />
-                </div>
-                <div className="flex-1">
-                  <div className="mb-2 flex flex-col md:flex-row md:items-center md:justify-between">
+        {/* Experience & Communities Sections */}
+        <section className="max-w-[1290px] mx-auto px-6 pb-12 md:pb-32">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-24">
+            {/* Where I've worked */}
+            <div>
+              <h2 className="text-3xl font-medium text-[#0000ff] mb-2 md:mb-4">Where I&apos;ve worked</h2>
+              
+              <div className="flex flex-col gap-y-4 gap-x-16">
+                {/* SEPHORA */}
+                <div className="py-1 grid grid-cols-2 gap-4">
+                  <div className="flex flex-col md:flex-col md:items-start md:justify-between">
                     <h3 className="text-xl font-medium text-[#0000ff]">Sephora</h3>
-                    <span className="text-[#8888ff] text-sm font-mono">Incoming</span>
+                    <span className="text-[#8888ff] text-sm font-mono"><a href="https://www.sephora.com/" target="_blank" rel="noopener noreferrer" data-cursor="playground-link" className="text-[#8888ff] relative z-10 cursor-pointer pointer-events-auto">sephora.com</a></span>
                   </div>
-                  <div className="flex flex-col md:flex-row md:items-center md:justify-between">
+                  <div className="flex flex-col md:flex-col md:items-start md:justify-between">
                     <p className="text-[#0000ff]">Product Design Intern</p>
-                    <span className="text-[#8888ff] text-sm">San Francisco, CA</span>
+                    <span className="text-[#8888ff] text-sm">Incoming Summer 2026</span>
                   </div>
                 </div>
-              </div>
-            </div>
 
-            {/* UCLA Arts */}
-            <div className="bg-[#f6fafd] border border-[#8888ff]/50 rounded-lg p-4 md:p-6 hover:border-[#0000ff]/20 transition-colors duration-200">
-              <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-2 md:gap-4">
-                <div className="block w-12 h-12 relative flex-shrink-0 rounded bg-white/5 border border-white/10 overflow-hidden">
-                  <Image src="/assets/About/CompanyLogo-UCLAArts.webp" alt="UCLA Arts logo" fill className="object-contain p-0.5" sizes="48px" />
-                </div>
-                <div className="flex-1">
-                  <div className="mb-2 flex flex-col md:flex-row md:items-center md:justify-between">
+                {/* UCLA Arts */}
+                <div className="py-1 grid grid-cols-2 gap-4">
+                  <div className="flex flex-col md:flex-col md:items-start md:justify-top">
                     <h3 className="text-xl font-medium text-[#0000ff]">UCLA Arts</h3>
-                    <span className="text-[#8888ff] text-sm font-mono">Oct 2025 – Present</span>
+                    <span className="text-[#8888ff] text-sm font-mono"><a href="https://arts.ucla.edu/" target="_blank" rel="noopener noreferrer" data-cursor="playground-link" className="text-[#8888ff] relative z-10 cursor-pointer pointer-events-auto">arts.ucla.edu</a></span>
                   </div>
-                  <div className="flex flex-col md:flex-row md:items-center md:justify-between">
+                  <div className="flex flex-col md:flex-col md:items-start md:justify-top">
                     <p className="text-[#0000ff]">Student Designer in Residence (Part-time)</p>
-                    <span className="text-[#8888ff] text-sm">Los Angeles, CA</span>
+                    <span className="text-[#8888ff] text-sm">Oct 2025 – Present</span>
                   </div>
                 </div>
-              </div>
-            </div>
 
-            {/* UCLA Latino Policy Institute */}
-            <div className="bg-[#f6fafd] border border-[#8888ff]/50 rounded-lg p-4 md:p-6 hover:border-[#0000ff]/20 transition-colors duration-200">
-              <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-2 md:gap-4">
-                <div className="block w-12 h-12 relative flex-shrink-0 rounded bg-white/5 border border-white/10 overflow-hidden">
-                  <Image src="/assets/About/CompanyLogo-UCLALatino.webp" alt="UCLA Latino Policy Institute logo" fill className="object-contain p-0.5" sizes="48px" />
-                </div>
-                <div className="flex-1">
-                  <div className="mb-2 flex flex-col md:flex-row md:items-center md:justify-between">
+                {/* UCLA Latino Policy Institute */}
+                <div className="py-1 grid grid-cols-2 gap-4">
+                  <div className="flex flex-col md:flex-col md:items-start md:justify-top">
                     <h3 className="text-xl font-medium text-[#0000ff]">UCLA Latino Policy Institute</h3>
-                    <span className="text-[#8888ff] text-sm font-mono">Aug 2025 – Present</span>
+                    <span className="text-[#8888ff] text-sm font-mono"><a href="https://latino.ucla.edu/" target="_blank" rel="noopener noreferrer" data-cursor="playground-link" className="text-[#8888ff] relative z-10 cursor-pointer pointer-events-auto">latino.ucla.edu</a></span>
                   </div>
-                  <div className="flex flex-col md:flex-row md:items-center md:justify-between">
+                  <div className="flex flex-col md:flex-col md:items-start md:justify-top">
                     <p className="text-[#0000ff]">Student Website Designer (Part-time)</p>
-                    <span className="text-[#8888ff] text-sm">Los Angeles, CA</span>
+                    <span className="text-[#8888ff] text-sm">Aug 2025 – Present</span>
+                  </div>
+                </div>
+
+                {/* Manifesto Market */}
+                <div className="py-1 grid grid-cols-2 gap-4">
+                  <div className="flex flex-col md:flex-col md:items-start md:justify-top">
+                    <h3 className="text-xl font-medium text-[#0000ff]">Manifesto Market</h3>
+                    <span className="text-[#8888ff] text-sm font-mono"><a href="https://manifestomarket.com/" target="_blank" rel="noopener noreferrer" data-cursor="playground-link" className="text-[#8888ff] relative z-10 cursor-pointer pointer-events-auto">manifestomarket.com</a></span>
+                  </div>
+                  <div className="flex flex-col md:flex-col md:items-start md:justify-top">
+                    <p className="text-[#0000ff]">UX Intern</p>
+                    <span className="text-[#8888ff] text-sm">Jun 2025 – Aug 2025</span>
+                  </div>
+                </div>
+
+                {/* Workup */}
+                <div className="py-1 grid grid-cols-2 gap-4">
+                  <div className="flex flex-col md:flex-col md:items-start md:justify-top">
+                    <h3 className="text-xl font-medium text-[#0000ff]">Workup</h3>
+                    <span className="text-[#8888ff] text-sm font-mono"><a href="https://joinworkup.com/" target="_blank" rel="noopener noreferrer" data-cursor="playground-link" className="text-[#8888ff] relative z-10 cursor-pointer pointer-events-auto">joinworkup.com</a></span>
+                  </div>
+                  <div className="flex flex-col md:flex-col md:items-start md:justify-top">
+                    <p className="text-[#0000ff]">Product Designer</p>
+                    <span className="text-[#8888ff] text-sm">Jan 2025 – Jun 2025</span>
                   </div>
                 </div>
               </div>
             </div>
 
-            {/* Manifesto Market */}
-            <div className="bg-[#f6fafd] border border-[#8888ff]/50 rounded-lg p-4 md:p-6 hover:border-[#0000ff]/20 transition-colors duration-200">
-              <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-2 md:gap-4">
-                <div className="block w-12 h-12 relative flex-shrink-0 rounded bg-white/5 border border-white/10 overflow-hidden">
-                  <Image src="/assets/About/CompanyLogo-Manifesto.webp" alt="Manifesto Market logo" fill className="object-contain p-0.5" sizes="48px" />
-                </div>
-                <div className="flex-1">
-                  <div className="mb-2 flex flex-col md:flex-row md:items-center md:justify-between">
-                    <h3 className="text-xl font-medium text-[#0000ff]">Manifesto Market</h3>
-                    <span className="text-[#8888ff] text-sm font-mono">Jun 2025 – Aug 2025</span>
+            {/* Communities & Involvements */}
+            <div>
+              <h2 className="text-3xl font-medium text-[#0000ff] mb-2 md:mb-4">Communities & Involvements</h2>
+              
+              <div className="flex flex-col gap-y-4 gap-x-8">
+                {/* VEST at UCLA */}
+                <div className="py-1 grid grid-cols-2 gap-4">
+                  <div className="flex flex-col md:flex-col md:items-start md:justify-top">
+                    <h3 className="text-xl font-medium text-[#0000ff]">VEST</h3>
+                    <span className="text-[#8888ff] text-sm font-mono"><a href="https://www.vestucla.com/" target="_blank" rel="noopener noreferrer" data-cursor="playground-link" className="text-[#8888ff] relative z-10 cursor-pointer pointer-events-auto">vestucla.com</a></span>
                   </div>
-              <div className="flex flex-col md:flex-row md:items-center md:justify-between">
-                    <p className="text-[#0000ff]">UX Intern</p>
-                    <span className="text-[#8888ff] text-sm">Prague, Czechia</span>
+                  <div className="flex flex-col md:flex-col md:items-start md:justify-top">
+                    <p className="text-[#0000ff]">Head of Design</p>
+                    <span className="text-[#8888ff] text-sm">Jan 2025 – Present</span>
+                  </div>
+                </div>
+
+                {/* ACM at UCLA */}
+                <div className="py-1 grid grid-cols-2 gap-4">
+                  <div className="flex flex-col md:flex-col md:items-start md:justify-top">
+                    <h3 className="text-xl font-medium text-[#0000ff]">ACM at UCLA</h3>
+                    <span className="text-[#8888ff] text-sm font-mono"><a href="https://uclaacm.com/" target="_blank" rel="noopener noreferrer" data-cursor="playground-link" className="text-[#8888ff] relative z-10 cursor-pointer pointer-events-auto">uclaacm.com</a></span>
+                  </div>
+                  <div className="flex flex-col md:flex-col md:items-start md:justify-top">
+                    <p className="text-[#0000ff]">Design Director</p>
+                    <span className="text-[#8888ff] text-sm">Oct 2024 – Present</span>
+                  </div>
+                </div>
+
+                {/* UCLA Campus Events Commission */}
+                <div className="py-1 grid grid-cols-2 gap-4">
+                    <div className="flex flex-col md:flex-col md:items-start md:justify-top">
+                    <h3 className="text-xl font-medium text-[#0000ff]">UCLA Campus Events Commission</h3>
+                    <span className="text-[#8888ff] text-sm font-mono"><a href="https://uclacec.com/" target="_blank" rel="noopener noreferrer" data-cursor="playground-link" className="text-[#8888ff] relative z-10 cursor-pointer pointer-events-auto">uclacec.com</a></span>
+                  </div>
+                  <div className="flex flex-col md:flex-col md:items-start md:justify-top">
+                    <p className="text-[#0000ff]">Designer</p>
+                    <span className="text-[#8888ff] text-sm">Oct 2024 – Present</span>
                   </div>
                 </div>
               </div>
@@ -203,7 +235,7 @@ export default function About() {
 
 
         {/* Books Section */}
-        <section className="max-w-[1290px] mx-auto px-6 pb-12 md:pb-16">
+        <section className="max-w-[1290px] mx-auto px-6 pb-12 md:pb-32">
           <h2 className="text-3xl font-medium text-[#0000ff] mb-4 md:mb-8">Books that made me</h2>
           
           <div className="grid grid-cols-5 gap-2 md:gap-6">
@@ -226,7 +258,7 @@ export default function About() {
         </section>
 
         {/* Albums Section */}
-        <section className="max-w-[1290px] mx-auto px-6 pb-12 md:pb-16">
+        <section className="max-w-[1290px] mx-auto px-6 pb-12 md:pb-32">
           <h2 className="text-3xl font-medium text-[#0000ff] mb-4 md:mb-8">Albums on repeat</h2>
           
           <div className="grid grid-cols-5 gap-2 md:gap-6">
@@ -319,8 +351,8 @@ export default function About() {
         <Footer />
         
         {/* Footer Graphic - Below footer on mobile, absolute positioned on desktop */}
-        <div className="relative md:absolute md:bottom-0 md:right-0 w-auto h-auto z-10">
-          <div className="flex justify-end px-6 md:pr-12 md:pb-0">
+        <div className="relative md:absolute md:bottom-0 md:right-0 w-auto h-auto z-10 bg-[#0000ff]">
+          <div className="flex justify-end px-6 md:pr-12 md:pb-0 bg-[#0000ff]">
             <FooterGraphic />
           </div>
         </div>

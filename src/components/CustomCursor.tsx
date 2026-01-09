@@ -83,13 +83,13 @@ export default function CustomCursor() {
   const moveTransition = { duration: 0 }; 
 
   // Container size transition (Duration set to 0.3s for synchronization)
-  const sizeTransition = { duration: 0.3, ease: [0.215, 0.61, 0.355, 1] as const };
+  const sizeTransition = { duration: 0.2, ease: [0.215, 0.61, 0.355, 1] as const };
   
   // Content transition (Delay set to 0.15s)
   const contentTransition = { 
-    duration: 0.15, 
+    duration: 0.2, 
     ease: [0.215, 0.61, 0.355, 1] as const, 
-    delay: 0.15 
+    delay: 0.01 
   };
 
 
