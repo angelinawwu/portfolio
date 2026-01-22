@@ -90,7 +90,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
             )}
 
             {project.description && (
-              <p className="text-[#0000ff] text-md leading-tight">
+              <p className="text-[#0000ff] text-base leading-tight">
                 {project.description}
               </p>
             )}

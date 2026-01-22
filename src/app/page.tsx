@@ -63,7 +63,7 @@ export default function Home() {
             <h2 className="text-[#0000ff] text-2xl md:text-3xl font-medium mb-2">
               Featured Work
             </h2>
-            <p className="text-[#0000ff] text-md max-w-2xl">
+            <p className="text-[#0000ff] text-base max-w-2xl">
               Deep dives into long-term, team-based projects
             </p>
           </div>
@@ -82,7 +82,7 @@ export default function Home() {
             <h2 className="text-[#0000ff] text-2xl md:text-3xl font-medium mb-2">
               Playground
             </h2>
-            <p className="text-[#0000ff] text-md max-w-2xl">
+            <p className="text-[#0000ff] text-base max-w-2xl">
               Things I build for fun (
               <span className="hidden sm:inline">hover</span>
               <span className="inline sm:hidden">tap</span>

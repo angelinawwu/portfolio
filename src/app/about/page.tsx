@@ -19,7 +19,7 @@ export default function About() {
         <section className="max-w-[1290px] mx-auto px-6 pt-8 pb-8 md:pt-12 md:pb-20">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
             {/* Left Column: Bio */}
-            <div className="flex flex-col gap-4 prose prose-lg prose-invert text-md">
+            <div className="flex flex-col gap-4 prose prose-lg prose-invert text-base">
               <p className="text-[#0000ff] leading-relaxed">
                 Hey, I'm Angelina! I'm a designer who's passionate about 
                 creating channels for{' '}
