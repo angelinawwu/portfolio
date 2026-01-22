@@ -160,40 +160,23 @@ export default function ProjectCard({ project }: ProjectCardProps) {
 
           {/* Project Info - Right Side */}
           <div className="flex-1 space-y-3">
-            <div className="flex items-center justify-between">
-              <h3 className="text-4xl md:text-6xl font-medium bit-apple-font text-[#0000ff] transition-all duration-100">
-                {project.title}
-              </h3>
-              {project.timeline && (
-                <span className="px-2 py-1 text-xs font-mono bg-[#0000ff]/5 text-[#0000ff] rounded border border-[#0000ff]/20 hover:border-[#0000ff]/30 transition-colors duration-200 whitespace-nowrap flex-shrink-0">
-                  {project.timeline}
-                </span>
-              )}
-            </div>
-
-            {project.description && (
-              <p className="text-[#0000ff]/70 text-sm leading-relaxed line-clamp-3">
-                {project.description}
-              </p>
+            {project.timeline && (
+              <span className="text-sm font-mono uppercase text-[#8888ff] transition-colors duration-200 whitespace-nowrap flex-shrink-0">
+                {project.timeline}
+              </span>
+            )}
+            {project.title && (
+              <div className="flex items-center justify-between">
+                <h3 className="text-4xl md:text-6xl pt-2 font-medium bit-apple-font text-[#0000ff]">
+                  {project.title}
+                </h3>
+              </div>
             )}
 
-            {/* Tech Stack Tags */}
-            {project.tags && project.tags.length > 0 && (
-              <div className="flex flex-wrap gap-2">
-                {project.tags.slice(0, 4).map((tag) => (
-                  <span
-                    key={tag}
-                    className="px-2 py-1 text-xs font-mono bg-[#0000ff]/5 text-[#0000ff] rounded border border-[#0000ff]/20 hover:border-[#0000ff]/30 transition-colors duration-200"
-                  >
-                    {tag}
-                  </span>
-                ))}
-                {project.tags.length > 4 && (
-                  <span className="px-2 py-1 text-xs font-mono text-[#0000ff]/40">
-                    +{project.tags.length - 4} more
-                  </span>
-                )}
-              </div>
+            {project.description && (
+              <p className="text-[#0000ff] text-md leading-tight">
+                {project.description}
+              </p>
             )}
           </div>
         </div>

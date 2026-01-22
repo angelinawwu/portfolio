@@ -60,10 +60,10 @@ export default function Home() {
         <section className="max-w-[1290px] mx-auto md:px-6 px-4 mt-12 md:mt-28">
           {/* Header */}
           <div className="text-left md:mb-8 mb-4">
-            <h2 className="text-[#0000ff] text-2xl md:text-3xl font-medium mb-4">
+            <h2 className="text-[#0000ff] text-2xl md:text-3xl font-medium mb-2">
               Featured Work
             </h2>
-            <p className="text-[#0000ff]/70 max-w-2xl">
+            <p className="text-[#0000ff] text-md max-w-2xl">
               Deep dives into long-term, team-based projects
             </p>
           </div>
@@ -79,10 +79,10 @@ export default function Home() {
         <section className="max-w-[1290px] mx-auto md:px-6 px-4 pb-12 mt-12 md:mt-28">
           {/* Header */}
           <div className="text-left md:mb-8 mb-4">
-            <h2 className="text-[#0000ff] text-2xl md:text-3xl font-medium mb-4">
+            <h2 className="text-[#0000ff] text-2xl md:text-3xl font-medium mb-2">
               Playground
             </h2>
-            <p className="text-[#0000ff]/70 max-w-2xl">
+            <p className="text-[#0000ff] text-md max-w-2xl">
               Things I build for fun (
               <span className="hidden sm:inline">hover</span>
               <span className="inline sm:hidden">tap</span>
