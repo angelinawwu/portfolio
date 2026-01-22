@@ -3,7 +3,7 @@ import Footer from '@/components/Footer';
 import Link from 'next/link';
 import Image from 'next/image';
 import { ArrowUpRight, ArrowRight } from 'lucide-react';
-import { books, albums } from '@/data/about';
+import { books, albums, images } from '@/data/about';
 import ShinyText from '@/components/ShinyText';
 import PixelTrailWrapper from '@/components/PixelTrailWrapper';
 import FooterGraphic from '@/components/FooterGraphic';
@@ -15,64 +15,39 @@ export default function About() {
       <Navigation />
       
       <main className="pt-20 mb-0">
-        {/* Bio Section */}
+        {/* Bio & Experience Section */}
         <section className="max-w-[1290px] mx-auto px-6 pt-8 pb-12 md:pt-12 md:pb-32">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 md:gap-12 items-center">
-            {/* Image Section */}
-            <div className="lg:col-span-1">
-              <div className="relative w-full aspect-3/4 max-w-sm mx-auto lg:mx-0 group">
-                <div className="w-full h-full bg-[#8888ff]/5 border border-[#8888ff]/10 rounded-lg overflow-hidden">
-                  <Image
-                    src="/assets/About/Headshot.webp"
-                    alt="Angelina Wu Headshot"
-                    fill
-                    className="object-cover object-[center_bottom] rounded-xl"
-                    sizes="(max-width: 1024px) 100vw, 33vw"
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
+            {/* Left Column: Bio */}
+            <div className="flex flex-col gap-4 prose prose-lg prose-invert text-md">
+              <p className="text-[#0000ff] leading-relaxed">
+                Hey, I'm Angelina! I'm a designer who's passionate about 
+                creating channels for 
+                <ShinyText text="delight" /> and <ShinyText text="connection" />. I see design as a 
+                way to build tiny bridges between people. I'm currently at UCLA studying 
+                Design Media Arts and Statistics/Data Science.
+              </p>
+              
+              <div>
+                <p className="text-[#0000ff] leading-relaxed mb-0">
+                  When I'm not designing, I can be found:
+                </p>
 
-                  />
-                </div>                
+                <ul className="list-disc list-inside text-[#0000ff] leading-relaxed mt-0">
+                  <li>Reading tearjerker novels about friendship and family</li>
+                  <li>Going down Wikipedia rabbit holes</li>
+                  <li>Arranging my bookmarks bar in rainbow order</li>
+                  <li>(Unsuccessfully) learning how to whistle</li>
+                </ul>
               </div>
-            </div>
 
-            {/* Bio Content */}
-            <div className="lg:col-span-2 space-y-8">
-            <div className="flex flex-col gap-4 prose prose-lg prose-invert max-w-none">
-              <p className="text-[#0000ff] leading-relaxed text-lg">
-                Hey, I’m Angelina, a student at UCLA studying 
-                Design Media Arts and Statistics/Data Science. I’ve always 
-                believed in <ShinyText 
-                  text="designing to delight:" 
-                  disabled={false} 
-                  speed={3} 
-                /> creating things that 
-                spark curiosity, joy, and connection. I see design as a 
-                way to build tiny bridges between people.
-              </p>
-              
-              <p className="text-[#0000ff] leading-relaxed text-lg">
-                My love for design began early when I was introduced to 
-                Powerpoint in second grade. Enamored by WordArt, 
-                dramatic animations, and maximalist display fonts (Algerian was 
-                my fave), I immediately fell in love with the whole practice 
-                of designing. I would spend hours on my dad&apos;s Microsoft account 
-                creating slide presentations on every topic I could think of.
-              </p>
-              
-              <p className="text-[#0000ff] leading-relaxed text-lg">
-                Back then, I didn’t know what design was: I just knew I loved 
-                making things look exciting on screen. That early obsession with 
-                typography, color, and movement stuck with me, slowly evolving 
-                from silly slideshows into a real passion for designing thoughtful 
-                interfaces that inspire and delight.
-              </p>
-
-              <p className="text-[#00ff] leading-relaxed text-lg">
-                Feel free to shoot me an email at{' '}
+              <p className="text-[#00ff] leading-relaxed">
+                Say hi at{' '}
                 <a 
                   href="mailto:angelinawu05@gmail.com" 
                   className="magenta-hover-text relative z-10 cursor-pointer pointer-events-auto"
                 >
-                  angelinawu05@gmail.com <ArrowUpRight className="magenta-hover-text w-4 h-4 inline-block" />
+                  angelinawwu@ucla.edu <ArrowUpRight className="magenta-hover-text w-4 h-4 inline-block" />
                 </a>{' '}
                 or take a peek at my{' '}
                 <a 
@@ -84,165 +59,110 @@ export default function About() {
                   resume <ArrowUpRight className="magenta-hover-text w-4 h-4 inline-block" />
                 </a>.
               </p>
+            </div>
+
+            {/* Right Column: Experience & Communities */}
+            <div className="flex flex-col gap-8 md:gap-12">
+              {/* Experience */}
+              <div>
+                <h2 className="text-2xl font-medium text-[#0000ff] mb-2">Experience</h2>
+                
+                <div className="flex flex-col text-md gap-0">
+                  {/* SEPHORA */}
+                  <div className="py-1 grid grid-cols-2 gap-4">
+                    <div className="flex flex-row items-center gap-2">
+                      <h3 className="text-[#0000ff]">Sephora</h3>
+                      <span className="text-[#8888ff]">Product Design Intern</span>
+                    </div>
+                    <div className="flex flex-col md:flex-col md:items-end md:justify-between">
+                      <span className="text-[#8888ff] font-mono uppercase">Incoming Summer 2026</span>
+                    </div>
+                  </div>
+
+                  {/* Manifesto Market */}
+                  <div className="py-1 grid grid-cols-2 gap-4">
+                    <div className="flex flex-row items-center gap-2">
+                      <h3 className="text-[#0000ff]">Manifesto Market</h3>
+                      <span className="text-[#8888ff]">UX Intern</span>
+                    </div>
+                    <div className="flex flex-col md:flex-col md:items-end md:justify-between">
+                      <span className="text-[#8888ff] font-mono uppercase">Summer 2025</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Communities & Involvements */}
+              <div>
+                <h2 className="text-2xl font-medium text-[#0000ff] mb-2">Orgs & Leadership</h2>
+                
+                <div className="flex flex-col text-md gap-0">
+                  {/* VEST at UCLA */}
+                  <div className="py-1 grid grid-cols-2 gap-4">
+                    <div className="flex flex-row items-center gap-2">
+                      <h3 className="text-[#0000ff]">VEST</h3>
+                      <span className="text-[#8888ff]">Head of Design</span>
+                    </div>
+                    <div className="flex flex-col md:flex-col md:items-end md:justify-between">
+                      <span className="text-[#8888ff] font-mono uppercase">Jan 2025 – Present</span>
+                    </div>
+                  </div>
+
+                  {/* ACM at UCLA */}
+                  <div className="py-1 grid grid-cols-2 gap-4">
+                    <div className="flex flex-row items-center gap-2">
+                      <h3 className="text-[#0000ff]">ACM at UCLA</h3>
+                      <span className="text-[#8888ff]">Design Director</span>
+                    </div>
+                    <div className="flex flex-col md:flex-col md:items-end md:justify-between">
+                      <span className="text-[#8888ff] font-mono uppercase">Oct 2024 – Present</span>
+                    </div>
+                  </div>
+
+                  {/* UCLA Campus Events Commission */}
+                  <div className="py-1 grid grid-cols-2 gap-4">
+                    <div className="flex flex-row items-center gap-2">
+                      <h3 className="text-[#0000ff]">Campus Events Commission</h3>
+                      <span className="text-[#8888ff]">Designer</span>
+                    </div>
+                    <div className="flex flex-col md:flex-col md:items-end md:justify-between">
+                      <span className="text-[#8888ff] font-mono uppercase">Oct 2024 – Present</span>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </section>
 
-        {/* Skills & Tools */}
-        {/* <section className="max-w-[1290px] mx-auto px-6 pb-12 md:pb-16">
-          <h2 className="text-3xl font-medium text-[#0000ff] mb-4 md:mb-8">Skills & Tools</h2>
-          
-          <div className="flex flex-wrap gap-2">
-            {[
-              // Design
-              'Figma', 'Adobe CC','UX Research', 'UI Design', 'Interaction Design', 'Design Systems',
-              'Prototyping', 'Web Design + Development',
-              // Frontend
-              'HTML/CSS', 'JavaScript', 'TypeScript', 'React', 'Vite', 'Next.js',
-              'Framer Motion', 'Tailwind CSS',
-              // Backend & APIs
-              'Node.js',
-              // Tooling & Quality
-              'Git/GitHub', 'Vercel',
-              // Data
-              'R',
-                ].map((skill) => (
-              <span
-                key={skill}
-                className="px-3 py-1 rounded-full text-xs font-mono bg-[#0000ff]/5 text-[#0000ff]/70 border border-[#0000ff]/10 hover:border-[#0000ff]/30 transition-colors"
-              >
-                {skill}
-              </span>
+        {/* Images Section */}
+        <section className="mx-auto px-6">
+          <div className="grid grid-cols-5 gap-2">
+            {images.map((image) => (
+              <div key={image.id}>
+                <div className="relative aspect-square bg-white/5 border overflow-hidden">
+                  <Image
+                    src={image.image}
+                    alt={image.alt}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 25vw, 20vw"
+                  />
+                </div>
+              </div>
             ))}
           </div>
-        </section> */}
-
-        {/* Experience & Communities Sections */}
-        <section className="max-w-[1290px] mx-auto px-6 pb-12 md:pb-32">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-24">
-            {/* Where I've worked */}
-            <div>
-              <h2 className="text-3xl font-medium text-[#0000ff] mb-2 md:mb-4">Where I&apos;ve worked</h2>
-              
-              <div className="flex flex-col gap-y-4 gap-x-16">
-                {/* SEPHORA */}
-                <div className="py-1 grid grid-cols-2 gap-4">
-                  <div className="flex flex-col md:flex-col md:items-start md:justify-between">
-                    <h3 className="text-xl font-medium text-[#0000ff]">Sephora</h3>
-                    <span className="text-[#8888ff] text-sm font-mono"><a href="https://www.sephora.com/" target="_blank" rel="noopener noreferrer" data-cursor="playground-link" className="text-[#8888ff] relative z-10 cursor-pointer pointer-events-auto">sephora.com</a></span>
-                  </div>
-                  <div className="flex flex-col md:flex-col md:items-start md:justify-between">
-                    <p className="text-[#0000ff]">Product Design Intern</p>
-                    <span className="text-[#8888ff] text-sm">Incoming Summer 2026</span>
-                  </div>
-                </div>
-
-                {/* UCLA Arts */}
-                <div className="py-1 grid grid-cols-2 gap-4">
-                  <div className="flex flex-col md:flex-col md:items-start md:justify-top">
-                    <h3 className="text-xl font-medium text-[#0000ff]">UCLA Arts</h3>
-                    <span className="text-[#8888ff] text-sm font-mono"><a href="https://arts.ucla.edu/" target="_blank" rel="noopener noreferrer" data-cursor="playground-link" className="text-[#8888ff] relative z-10 cursor-pointer pointer-events-auto">arts.ucla.edu</a></span>
-                  </div>
-                  <div className="flex flex-col md:flex-col md:items-start md:justify-top">
-                    <p className="text-[#0000ff]">Student Designer in Residence (Part-time)</p>
-                    <span className="text-[#8888ff] text-sm">Oct 2025 – Present</span>
-                  </div>
-                </div>
-
-                {/* UCLA Latino Policy Institute */}
-                <div className="py-1 grid grid-cols-2 gap-4">
-                  <div className="flex flex-col md:flex-col md:items-start md:justify-top">
-                    <h3 className="text-xl font-medium text-[#0000ff]">UCLA Latino Policy Institute</h3>
-                    <span className="text-[#8888ff] text-sm font-mono"><a href="https://latino.ucla.edu/" target="_blank" rel="noopener noreferrer" data-cursor="playground-link" className="text-[#8888ff] relative z-10 cursor-pointer pointer-events-auto">latino.ucla.edu</a></span>
-                  </div>
-                  <div className="flex flex-col md:flex-col md:items-start md:justify-top">
-                    <p className="text-[#0000ff]">Student Website Designer (Part-time)</p>
-                    <span className="text-[#8888ff] text-sm">Aug 2025 – Present</span>
-                  </div>
-                </div>
-
-                {/* Manifesto Market */}
-                <div className="py-1 grid grid-cols-2 gap-4">
-                  <div className="flex flex-col md:flex-col md:items-start md:justify-top">
-                    <h3 className="text-xl font-medium text-[#0000ff]">Manifesto Market</h3>
-                    <span className="text-[#8888ff] text-sm font-mono"><a href="https://manifestomarket.com/" target="_blank" rel="noopener noreferrer" data-cursor="playground-link" className="text-[#8888ff] relative z-10 cursor-pointer pointer-events-auto">manifestomarket.com</a></span>
-                  </div>
-                  <div className="flex flex-col md:flex-col md:items-start md:justify-top">
-                    <p className="text-[#0000ff]">UX Intern</p>
-                    <span className="text-[#8888ff] text-sm">Jun 2025 – Aug 2025</span>
-                  </div>
-                </div>
-
-                {/* Workup */}
-                <div className="py-1 grid grid-cols-2 gap-4">
-                  <div className="flex flex-col md:flex-col md:items-start md:justify-top">
-                    <h3 className="text-xl font-medium text-[#0000ff]">Workup</h3>
-                    <span className="text-[#8888ff] text-sm font-mono"><a href="https://joinworkup.com/" target="_blank" rel="noopener noreferrer" data-cursor="playground-link" className="text-[#8888ff] relative z-10 cursor-pointer pointer-events-auto">joinworkup.com</a></span>
-                  </div>
-                  <div className="flex flex-col md:flex-col md:items-start md:justify-top">
-                    <p className="text-[#0000ff]">Product Designer</p>
-                    <span className="text-[#8888ff] text-sm">Jan 2025 – Jun 2025</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Communities & Involvements */}
-            <div>
-              <h2 className="text-3xl font-medium text-[#0000ff] mb-2 md:mb-4">Communities & Involvements</h2>
-              
-              <div className="flex flex-col gap-y-4 gap-x-8">
-                {/* VEST at UCLA */}
-                <div className="py-1 grid grid-cols-2 gap-4">
-                  <div className="flex flex-col md:flex-col md:items-start md:justify-top">
-                    <h3 className="text-xl font-medium text-[#0000ff]">VEST</h3>
-                    <span className="text-[#8888ff] text-sm font-mono"><a href="https://www.vestucla.com/" target="_blank" rel="noopener noreferrer" data-cursor="playground-link" className="text-[#8888ff] relative z-10 cursor-pointer pointer-events-auto">vestucla.com</a></span>
-                  </div>
-                  <div className="flex flex-col md:flex-col md:items-start md:justify-top">
-                    <p className="text-[#0000ff]">Head of Design</p>
-                    <span className="text-[#8888ff] text-sm">Jan 2025 – Present</span>
-                  </div>
-                </div>
-
-                {/* ACM at UCLA */}
-                <div className="py-1 grid grid-cols-2 gap-4">
-                  <div className="flex flex-col md:flex-col md:items-start md:justify-top">
-                    <h3 className="text-xl font-medium text-[#0000ff]">ACM at UCLA</h3>
-                    <span className="text-[#8888ff] text-sm font-mono"><a href="https://uclaacm.com/" target="_blank" rel="noopener noreferrer" data-cursor="playground-link" className="text-[#8888ff] relative z-10 cursor-pointer pointer-events-auto">uclaacm.com</a></span>
-                  </div>
-                  <div className="flex flex-col md:flex-col md:items-start md:justify-top">
-                    <p className="text-[#0000ff]">Design Director</p>
-                    <span className="text-[#8888ff] text-sm">Oct 2024 – Present</span>
-                  </div>
-                </div>
-
-                {/* UCLA Campus Events Commission */}
-                <div className="py-1 grid grid-cols-2 gap-4">
-                    <div className="flex flex-col md:flex-col md:items-start md:justify-top">
-                    <h3 className="text-xl font-medium text-[#0000ff]">UCLA Campus Events Commission</h3>
-                    <span className="text-[#8888ff] text-sm font-mono"><a href="https://uclacec.com/" target="_blank" rel="noopener noreferrer" data-cursor="playground-link" className="text-[#8888ff] relative z-10 cursor-pointer pointer-events-auto">uclacec.com</a></span>
-                  </div>
-                  <div className="flex flex-col md:flex-col md:items-start md:justify-top">
-                    <p className="text-[#0000ff]">Designer</p>
-                    <span className="text-[#8888ff] text-sm">Oct 2024 – Present</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
         </section>
 
-
         {/* Books Section */}
-        <section className="max-w-[1290px] mx-auto px-6 pb-12 md:pb-32">
+        {/* <section className="max-w-[1290px] mx-auto px-6 pb-12 md:pb-32">
           <h2 className="text-3xl font-medium text-[#0000ff] mb-4 md:mb-8">Books that made me</h2>
           
-          <div className="grid grid-cols-5 gap-2 md:gap-6">
+          <div className="grid grid-cols-5 gap-2 m">
             {books.map((book) => (
               <div key={book.id} className="group">
                 <a href={book.url} target="_blank" rel="noopener noreferrer" className="block">
-                <div className="relative aspect-[2/3] bg-[#8888ff]/50 border rounded-lg overflow-hidden transition-all duration-300">
+                <div className="relative aspect-[2/3] bg-[#8888ff]/50 border overflow-hidden transition-all duration-300">
                   <Image
                     src={book.image}
                     alt={book.title}
@@ -255,18 +175,17 @@ export default function About() {
               </div>
             ))}
           </div>
-        </section>
+        </section> */}
 
         {/* Albums Section */}
-        <section className="max-w-[1290px] mx-auto px-6 pb-12 md:pb-32">
+        {/* <section className="max-w-[1290px] mx-auto px-6 pb-12 md:pb-32">
           <h2 className="text-3xl font-medium text-[#0000ff] mb-4 md:mb-8">Albums on repeat</h2>
           
-          <div className="grid grid-cols-5 gap-2 md:gap-6">
+          <div className="grid grid-cols-5 gap-2">
             {albums.map((album) => (
               <div key={album.id} className="group">
                 <a href={album.url} target="_blank" rel="noopener noreferrer" className="block">
-                <div className="relative aspect-square bg-white/5 border rounded-lg overflow-hidden transition-all duration-300">
-                  {/* Placeholder for album artwork */}
+                <div className="relative aspect-square bg-white/5 border overflow-hidden transition-all duration-300">
                   <div className="w-full h-full flex items-center justify-center text-white/40">
                     <Image
                       src={album.image}
@@ -281,47 +200,11 @@ export default function About() {
               </div>
             ))}
           </div>
-        </section>
-
-        {/* Fun Facts Section */}
-        <section className="max-w-[1290px] mx-auto px-6 pb-8 md:pb-16">
-          <h2 className="text-3xl font-medium text-[#0000ff] mb-4 md:mb-8">In my free time I can be found...</h2>
-          
-          <div className="max-w-5xl">
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-15">
-              <ul className="arrow-list text-lg space-y-3">
-                {[
-                  'Collecting stickers',
-                  'Reading tearjerker novels about friendship and family',
-                  'Going down Wikipedia rabbit holes',
-                  'Studying dead languages',
-                  'Studying alive languages'
-                ].map((activity) => (
-                  <li key={activity}>
-                    <span className="text-[#0000ff]">{activity}</span>
-                  </li>
-                ))}
-              </ul>
-              <ul className="arrow-list text-lg space-y-3">
-                {[
-                  'Writing emails to myself',
-                  'Making spreadsheets',
-                  'People-watching',
-                  'Organizing my bookmarks bar in rainbow order',
-                  '(Unsuccessfully) trying to learn how to whistle'
-                ].map((activity) => (
-                  <li key={activity}>
-                    <span className="text-[#0000ff]">{activity}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-        </section>
+        </section> */}
 
         {/* Contact Section */}
         {/* CTA Section */}
-        <section className="w-full bg-[#0000ff] text-center mt-8 md:mt-20">
+        <section className="w-full bg-[#0000ff] text-center mt-6">
           <div className="max-w-7xl mx-auto px-6 pt-10 md:pt-20 pb-10 md:pb-12 text-left text-white relative z-10">
             <h2 className="text-7xl md:text-9xl font-medium mb-6 bit-apple-font">
               Like what you see?
