@@ -14,16 +14,16 @@ export default function About() {
       <PixelTrailWrapper />
       <Navigation />
       
-      <main className="pt-20 mb-0">
+      <main className="pt-16 md:pt-20 mb-0">
         {/* Bio & Experience Section */}
-        <section className="max-w-[1290px] mx-auto px-6 pt-8 pb-12 md:pt-12 md:pb-32">
+        <section className="max-w-[1290px] mx-auto px-6 pt-8 pb-12 md:pt-12 md:pb-20">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
             {/* Left Column: Bio */}
             <div className="flex flex-col gap-4 prose prose-lg prose-invert text-md">
               <p className="text-[#0000ff] leading-relaxed">
                 Hey, I'm Angelina! I'm a designer who's passionate about 
-                creating channels for 
-                <ShinyText text="delight" /> and <ShinyText text="connection" />. I see design as a 
+                creating channels for{' '}
+                <ShinyText text="delight" /> and <ShinyText text="connection"/>. I see design as a 
                 way to build tiny bridges between people. I'm currently at UCLA studying 
                 Design Media Arts and Statistics/Data Science.
               </p>
@@ -65,69 +65,104 @@ export default function About() {
             <div className="flex flex-col gap-8 md:gap-12">
               {/* Experience */}
               <div>
-                <h2 className="text-2xl font-medium text-[#0000ff] mb-2">Experience</h2>
+                <h2 className="text-xl font-medium text-[#0000ff] mb-2">Experience</h2>
                 
-                <div className="flex flex-col text-md gap-0">
+                <div className="flex flex-col text-base gap-2">
                   {/* SEPHORA */}
-                  <div className="py-1 grid grid-cols-2 gap-4">
-                    <div className="flex flex-row items-center gap-2">
+                  <div className="flex flex-col md:flex-row md:items-center md:justify-between">
+                    {/* Mobile: Top row - Company name and date */}
+                    <div className="flex flex-row items-center justify-between md:hidden">
+                      <h3 className="text-[#0000ff]">Sephora</h3>
+                      <span className="text-[#8888ff] font-mono uppercase">Incoming</span>
+                    </div>
+                    {/* Mobile: Bottom row - Job title */}
+                    <span className="text-[#8888ff] md:hidden">Product Design Intern</span>
+                    {/* Desktop: Left side - Company name and job title */}
+                    <div className="hidden md:flex md:flex-row md:items-center md:gap-2">
                       <h3 className="text-[#0000ff]">Sephora</h3>
                       <span className="text-[#8888ff]">Product Design Intern</span>
                     </div>
-                    <div className="flex flex-col md:flex-col md:items-end md:justify-between">
-                      <span className="text-[#8888ff] font-mono uppercase">Incoming Summer 2026</span>
-                    </div>
+                    {/* Desktop: Right side - Date */}
+                    <span className="hidden md:inline text-[#8888ff] font-mono uppercase">Incoming</span>
                   </div>
 
                   {/* Manifesto Market */}
-                  <div className="py-1 grid grid-cols-2 gap-4">
-                    <div className="flex flex-row items-center gap-2">
+                  <div className="flex flex-col md:flex-row md:items-center md:justify-between">
+                    {/* Mobile: Top row - Company name and date */}
+                    <div className="flex flex-row items-center justify-between md:hidden">
+                      <h3 className="text-[#0000ff]">Manifesto Market</h3>
+                      <span className="text-[#8888ff] font-mono uppercase">Summer 2025</span>
+                    </div>
+                    {/* Mobile: Bottom row - Job title */}
+                    <span className="text-[#8888ff] md:hidden">UX Intern</span>
+                    {/* Desktop: Left side - Company name and job title */}
+                    <div className="hidden md:flex md:flex-row md:items-center md:gap-2">
                       <h3 className="text-[#0000ff]">Manifesto Market</h3>
                       <span className="text-[#8888ff]">UX Intern</span>
                     </div>
-                    <div className="flex flex-col md:flex-col md:items-end md:justify-between">
-                      <span className="text-[#8888ff] font-mono uppercase">Summer 2025</span>
-                    </div>
+                    {/* Desktop: Right side - Date */}
+                    <span className="hidden md:inline text-[#8888ff] font-mono uppercase">Summer 2025</span>
                   </div>
                 </div>
               </div>
 
-              {/* Communities & Involvements */}
+              {/* Orgs & Leadership */}
               <div>
-                <h2 className="text-2xl font-medium text-[#0000ff] mb-2">Orgs & Leadership</h2>
+                <h2 className="text-xl font-medium text-[#0000ff] mb-2">Orgs & Leadership</h2>
                 
-                <div className="flex flex-col text-md gap-0">
+                <div className="flex flex-col text-base gap-2">
                   {/* VEST at UCLA */}
-                  <div className="py-1 grid grid-cols-2 gap-4">
-                    <div className="flex flex-row items-center gap-2">
+                  <div className="flex flex-col md:flex-row md:items-center md:justify-between">
+                    {/* Mobile: Top row - Company name and date */}
+                    <div className="flex flex-row items-center justify-between md:hidden">
+                      <h3 className="text-[#0000ff]">VEST</h3>
+                      <span className="text-[#8888ff] font-mono uppercase">2025–Present</span>
+                    </div>
+                    {/* Mobile: Bottom row - Job title */}
+                    <span className="text-[#8888ff] md:hidden">Head of Design</span>
+                    {/* Desktop: Left side - Company name and job title */}
+                    <div className="hidden md:flex md:flex-row md:items-center md:gap-2">
                       <h3 className="text-[#0000ff]">VEST</h3>
                       <span className="text-[#8888ff]">Head of Design</span>
                     </div>
-                    <div className="flex flex-col md:flex-col md:items-end md:justify-between">
-                      <span className="text-[#8888ff] font-mono uppercase">Jan 2025 – Present</span>
-                    </div>
+                    {/* Desktop: Right side - Date */}
+                    <span className="hidden md:inline text-[#8888ff] font-mono uppercase">2025–Present</span>
                   </div>
 
                   {/* ACM at UCLA */}
-                  <div className="py-1 grid grid-cols-2 gap-4">
-                    <div className="flex flex-row items-center gap-2">
+                  <div className="flex flex-col md:flex-row md:items-center md:justify-between">
+                    {/* Mobile: Top row - Company name and date */}
+                    <div className="flex flex-row items-center justify-between md:hidden">
+                      <h3 className="text-[#0000ff]">ACM at UCLA</h3>
+                      <span className="text-[#8888ff] font-mono uppercase">2024–Present</span>
+                    </div>
+                    {/* Mobile: Bottom row - Job title */}
+                    <span className="text-[#8888ff] md:hidden">Design Director</span>
+                    {/* Desktop: Left side - Company name and job title */}
+                    <div className="hidden md:flex md:flex-row md:items-center md:gap-2">
                       <h3 className="text-[#0000ff]">ACM at UCLA</h3>
                       <span className="text-[#8888ff]">Design Director</span>
                     </div>
-                    <div className="flex flex-col md:flex-col md:items-end md:justify-between">
-                      <span className="text-[#8888ff] font-mono uppercase">Oct 2024 – Present</span>
-                    </div>
+                    {/* Desktop: Right side - Date */}
+                    <span className="hidden md:inline text-[#8888ff] font-mono uppercase">2024–Present</span>
                   </div>
 
                   {/* UCLA Campus Events Commission */}
-                  <div className="py-1 grid grid-cols-2 gap-4">
-                    <div className="flex flex-row items-center gap-2">
+                  <div className="flex flex-col md:flex-row md:items-center md:justify-between">
+                    {/* Mobile: Top row - Company name and date */}
+                    <div className="flex flex-row items-center justify-between md:hidden">
+                      <h3 className="text-[#0000ff]">Campus Events Commission</h3>
+                      <span className="text-[#8888ff] font-mono uppercase">2024–Present</span>
+                    </div>
+                    {/* Mobile: Bottom row - Job title */}
+                    <span className="text-[#8888ff] md:hidden">Designer</span>
+                    {/* Desktop: Left side - Company name and job title */}
+                    <div className="hidden md:flex md:flex-row md:items-center md:gap-2">
                       <h3 className="text-[#0000ff]">Campus Events Commission</h3>
                       <span className="text-[#8888ff]">Designer</span>
                     </div>
-                    <div className="flex flex-col md:flex-col md:items-end md:justify-between">
-                      <span className="text-[#8888ff] font-mono uppercase">Oct 2024 – Present</span>
-                    </div>
+                    {/* Desktop: Right side - Date */}
+                    <span className="hidden md:inline text-[#8888ff] font-mono uppercase">2024–Present</span>
                   </div>
                 </div>
               </div>
@@ -137,7 +172,7 @@ export default function About() {
 
         {/* Images Section */}
         <section className="mx-auto px-6">
-          <div className="grid grid-cols-5 gap-2">
+          <div className="grid grid-cols-2 md:grid-cols-5 gap-2">
             {images.map((image) => (
               <div key={image.id}>
                 <div className="relative aspect-square bg-white/5 border overflow-hidden">
