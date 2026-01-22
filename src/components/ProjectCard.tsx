@@ -31,111 +31,27 @@ export default function ProjectCard({ project }: ProjectCardProps) {
     }
   };
   
-  // For playground projects, render with modal
-//   if (project.type === 'playground') {
-//     return (
-//       <>
-//         <motion.button
-//           ref={buttonRef}
-//           onClick={() => setIsModalOpen(true)}
-//           className={`group relative bg-[#f6fafd] border border-[#0000ff]/50 rounded-xl hover:border-[#0000ff]/100 transition-all duration-100 hover:shadow-2xl hover:shadow-[#0000ff]/5 card-glow project-card-with-glare w-full text-left cursor-pointer h-full z-99 ${buttonInView ? 'card-glow-active' : ''}`}
-//         >
-//           {/* Rainbow border on hover */}
-//           <div className="absolute inset-0 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-100">
-//             <div className="rounded-lg p-[1px] h-full w-full">
-//               <div className="bg-[#f6fafd] opacity-50 rounded-lg h-full w-full"></div>
-//             </div>
-//           </div>
-
-//           {/* Content */}
-//           <div className="relative z-10 p-6 flex flex-col h-full">
-//             {/* Thumbnail */}
-//             <div className="relative w-full h-48 mb-4 rounded-lg overflow-hidden bg-white/5 flex-shrink-0">
-//               <Image
-//                 src={project.thumbnail}
-//                 alt={project.title}
-//                 fill
-//                 className="object-cover group-hover:scale-105 transition-transform duration-100"
-//                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-//               />
-//               {/* Iridescent overlay on hover */}
-//               <div className="absolute inset-0 iridescent-glow opacity-0 group-hover:opacity-100 transition-opacity duration-100"></div>
-//             </div>
-
-//           {/* Project Info */}
-//           <div className="space-y-3">
-//             <div className="flex items-center justify-between">
-//               <h3 className="text-xl font-medium text-[#0000ff] transition-all duration-100">
-//                 {project.title}
-//               </h3>
-//               <span className="px-2 py-1 text-xs font-medium bg-[#0000ff]/5 text-[#0000ff] rounded-full border border-[#0000ff]/20">
-//                 {project.timeline}
-//               </span>
-//             </div>
-
-//             <p className="text-[#0000ff]/70 text-sm leading-relaxed">
-//               {project.description}
-//             </p>
-
-//             {/* Tech Stack Tags */}
-//             <div className="flex flex-wrap gap-2">
-//               {project.tags.slice(0, 3).map((tag) => (
-//                 <span
-//                   key={tag}
-//                   className="px-2 py-1 text-xs font-mono bg-[#0000ff]/5 text-[#0000ff] rounded border border-[#0000ff]/20"
-//                 >
-//                   {tag}
-//                 </span>
-//               ))}
-//               {project.tags.length > 3 && (
-//                 <span className="px-2 py-1 text-xs font-mono text-[#0000ff]/40">
-//                   +{project.tags.length - 3} more
-//                 </span>
-//               )}
-//             </div>
-
-//             {/* View Details Hint */}
-//             <div className="pt-2">
-//               <span className="text-xs text-[#0000ff]/50">Click to view details <ArrowRight className="w-4 h-4 inline-block align-middle" /></span>
-//             </div>
-            
-//           </div>
-//         </div>
-
-//           {/* Hover effect overlay */}
-//           <div className="absolute inset-0 bg-[#f6fafd]/50 lg:bg-transparent rounded-xl opacity-100 group-hover:opacity-100 transition-opacity duration-100 pointer-events-none"></div>
-//         </motion.button>
-        
-//         <ProjectModal 
-//           project={project}
-//           isOpen={isModalOpen}
-//           onClose={() => setIsModalOpen(false)}
-//         />
-//       </>
-//     );
-//   }
-
 //   // For case studies, render as internal links
   return (
     <Link href={`/projects/${project.slug}`}>
       <motion.div 
         ref={divRef}
-        className={"group relative bg-[#f6fafd] border border-[#0000ff]/50 rounded-2xl hover:border-[#0000ff]/100 transition-all duration-100 hover:shadow-2xl hover:shadow-[#0000ff]/5 card-glow project-card-with-glare w-full text-left cursor-none z-99"}
+        className={"group relative bg-[#f6fafd] border border-[#0000ff]/50 hover:border-[#0000ff]/100 transition-all duration-100 hover:shadow-2xl hover:shadow-[#0000ff]/5 card-glow project-card-with-glare w-full text-left cursor-none z-99"}
         data-cursor="project-card"
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
       >
         {/* Rainbow border on hover */}
-        <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-100 card-glow">
-          <div className="rounded-2xl p-[1px] h-full w-full">
-            <div className="bg-[#f6fafd] opacity-50 rounded-2xl h-full w-full"></div>
+        <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-100 card-glow">
+          <div className="p-[1px] h-full w-full">
+            <div className="bg-[#f6fafd] opacity-50 h-full w-full"></div>
           </div>
         </div>
 
         {/* Content - Horizontal Layout */}
         <div className="relative z-10 p-4 md:p-6 flex flex-col md:flex-row md:items-center gap-4 md:gap-8">
           {/* Thumbnail or Video - Left Side */}
-          <div className="relative w-full md:w-80 md:flex-shrink-0 h-64 rounded-lg overflow-hidden bg-[#f6fafd]/5">
+          <div className="relative w-full md:w-80 md:flex-shrink-0 h-64 overflow-hidden bg-[#f6fafd]/5">
             {project.videoUrl ? (
               <video
                 ref={videoRef}
@@ -182,7 +98,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
         </div>
 
         {/* Hover effect overlay */}
-        <div className="absolute inset-0 bg-[#f6fafd]/50 rounded-xl opacity-100 group-hover:opacity-100 transition-opacity duration-100 pointer-events-none"></div>
+        <div className="absolute inset-0 bg-[#f6fafd]/50 opacity-100 group-hover:opacity-100 transition-opacity duration-100 pointer-events-none"></div>
       </motion.div>
     </Link>
   );

@@ -16,7 +16,7 @@ export default function About() {
       
       <main className="pt-16 md:pt-20 mb-0">
         {/* Bio & Experience Section */}
-        <section className="max-w-[1290px] mx-auto px-6 pt-8 pb-12 md:pt-12 md:pb-20">
+        <section className="max-w-[1290px] mx-auto px-6 pt-8 pb-8 md:pt-12 md:pb-20">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
             {/* Left Column: Bio */}
             <div className="flex flex-col gap-4 prose prose-lg prose-invert text-md">
@@ -33,7 +33,7 @@ export default function About() {
                   When I'm not designing, I can be found:
                 </p>
 
-                <ul className="list-disc list-inside text-[#0000ff] leading-relaxed mt-0">
+                <ul className="arrow-list text-[#0000ff] leading-relaxed mt-0">
                   <li>Reading tearjerker novels about friendship and family</li>
                   <li>Going down Wikipedia rabbit holes</li>
                   <li>Arranging my bookmarks bar in rainbow order</li>
@@ -173,8 +173,8 @@ export default function About() {
         {/* Images Section */}
         <section className="mx-auto px-6">
           <div className="grid grid-cols-2 md:grid-cols-5 gap-2">
-            {images.map((image) => (
-              <div key={image.id}>
+            {images.map((image, index) => (
+              <div key={image.id} className={index === 4 ? 'hidden md:block' : ''}>
                 <div className="relative aspect-square bg-white/5 border overflow-hidden">
                   <Image
                     src={image.image}

@@ -75,7 +75,7 @@ export default function PlaygroundCard({ project }: PlaygroundCardProps) {
   
   const cardContent = (
     <motion.div 
-      className={`group relative w-full rounded-lg border border-[#0000ff]/50 overflow-hidden ${hasLink ? 'cursor-none' : ''}`}
+      className={`group relative w-full border border-[#0000ff]/50 overflow-hidden ${hasLink ? 'cursor-none' : ''}`}
       data-cursor={hasLink ? 'playground-link' : undefined}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
@@ -114,7 +114,7 @@ export default function PlaygroundCard({ project }: PlaygroundCardProps) {
         <button
           type="button"
           onClick={handleMobileLinkTap}
-          className="absolute top-3 right-3 z-20 w-9 h-9 rounded-full bg-white text-[#0000ff] flex items-center justify-center border border-[#0000ff]/50 shadow-md focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0000ff]/60"
+          className="absolute top-3 right-3 z-20 w-9 h-9 bg-white text-[#0000ff] flex items-center justify-center border border-[#0000ff]/50 shadow-md focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0000ff]/60"
           aria-label="Open project website"
         >
           <ArrowUpRight className="w-4 h-4" weight="bold" />
@@ -127,7 +127,7 @@ export default function PlaygroundCard({ project }: PlaygroundCardProps) {
           {project.title}
         </h3>
         {project.context && (
-          <span className="px-2 py-1 text-xs font-mono bg-[#0000ff]/5 text-[#0000ff] rounded border border-[#0000ff]/20 whitespace-nowrap flex-shrink-0">
+          <span className="px-2 py-1 text-xs font-mono text-[#8888ff] font-mono uppercase whitespace-nowrap flex-shrink-0">
             {project.context}
           </span>
         )}

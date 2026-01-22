@@ -43,7 +43,7 @@ export default function Home() {
             <h1 className="text-6xl md:text-9xl font-medium mb-6 md:mb-8 bit-apple-font text-center">
               Angelina Wu.
             </h1>
-            <p className="max-w-3xl text-xl mx-auto leading-relaxed md:mb-12 mb-0 text-[#EDF1FB]">
+            <p className="max-w-3xl text-base md:text-xl mx-auto leading-relaxed md:mb-12 mb-0 text-[#EDF1FB]">
               Welcome to my little corner of the internet! 
               I&apos;m a designer who&apos;s passionate about creating channels for delight 
               and human connection. You can find me building cute websites, reading 
@@ -68,7 +68,7 @@ export default function Home() {
             </p>
           </div>
           {/* Projects */}
-          <div className="flex flex-col gap-4 md:gap-4">
+          <div className="flex flex-col gap-4 md:gap-6">
             {caseStudies.map((project) => (
               <ProjectCard key={project.slug} project={project} />
             ))}
