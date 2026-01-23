@@ -86,32 +86,38 @@ export type ImageItem = {
   id: number;
   image: string;
   alt: string;
+  caption?: string;
 }
 
 export const images: ImageItem[] = [
   {
     id: 1,
     image: "/assets/About/ImageRow/ImageRow-1.JPG",
-    alt: "Image 1"
+    alt: "Image 1",
+    caption: "HI, IT'S ME!"
   },
   {
     id: 2,
     image: "/assets/About/ImageRow/ImageRow-2.JPG",
-    alt: "Image 2"
+    alt: "Image 2",
+    caption: "MATCHING JACKETS >:)"
   },
   {
     id: 3,
     image: "/assets/About/ImageRow/ImageRow-3.jpg",
-    alt: "Image 3"
+    alt: "Image 3",
+    caption: "DOG!"
   },
   {
     id: 4,
     image: "/assets/About/ImageRow/ImageRow-4.jpg",
-    alt: "Image 4"
+    alt: "Image 4",
+    caption: "SOME OF MY FAV PEOPLE"
   },
   {
     id: 5,
     image: "/assets/About/ImageRow/ImageRow-5.JPG",
-    alt: "Image 5"
+    alt: "Image 5",
+    caption: "ME AGAIN, BUT ON A ROOFTOP"
   },
 ]

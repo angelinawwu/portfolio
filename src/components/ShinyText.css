@@ -1,11 +1,11 @@
 .shiny-text {
-  color: #ff00ff90; /* Adjust this color to change intensity/style */
-  /* -webkit-text-stroke: 1px #0000ff; */
+  color: color-mix(in srgb, var(--magenta) 56%, transparent); /* Adjust this color to change intensity/style */
+  /* -webkit-text-stroke: 1px var(--blue); */
   background: linear-gradient(
     120deg,
-    rgba(0, 0, 255, 1) 30%,
+    var(--blue) 30%,
     rgb(250, 115, 255) 50%,
-    rgba(0, 0, 255, 1) 70%
+    var(--blue) 70%
   );
   background-size: 200% 100%;
   -webkit-background-clip: text;

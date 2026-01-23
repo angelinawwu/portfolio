@@ -32,22 +32,22 @@ export default function ProjectModal({ project, isOpen, onClose }: ProjectModalP
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-10000 flex items-center justify-center p-4 bg-[#8888ff]/30 backdrop-blur-sm" onClick={onClose}>
+    <div className="fixed inset-0 z-10000 flex items-center justify-center p-4 bg-lavender/30 backdrop-blur-sm" onClick={onClose}>
       {/* Modal Container */}
-      <div className="relative w-full max-w-2xl max-h-[85vh] bg-[#f6fafd] border border-[#0000ff]/50 rounded-lg overflow-hidden" onClick={(e) => e.stopPropagation()}>
+      <div className="relative w-full max-w-2xl max-h-[85vh] bg-surface border border-blue/50 rounded-lg overflow-hidden" onClick={(e) => e.stopPropagation()}>
         {/* Close Button */}
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 z-10 p-2 bg-[#0000ff] border border-[#0000ff]/20 rounded-lg hover:bg-[#8888ff] hover:scale-102 ease-in-out transition-all duration-200"
+          className="absolute top-4 right-4 z-10 p-2 bg-blue border border-blue/20 rounded-lg hover:bg-lavender hover:scale-102 ease-in-out transition-all duration-200"
           aria-label="Close modal"
         >
-          <X className="w-5 h-5 text-[#f6fafd]" />
+          <X className="w-5 h-5 text-surface" />
         </button>
 
         {/* Scrollable Content */}
         <div className="overflow-y-auto max-h-[85vh] p-8">
           {/* Title */}
-          <h2 className="text-3xl md:text-4xl font-medium text-[#0000ff] mb-6 pr-12">
+          <h2 className="text-3xl md:text-4xl font-medium text-blue mb-6 pr-12">
             {project.title}
           </h2>
 
@@ -57,7 +57,7 @@ export default function ProjectModal({ project, isOpen, onClose }: ProjectModalP
               {project.tags.map((tag) => (
                 <span
                   key={tag}
-                  className="px-3 py-1 text-xs font-mono bg-[#0000ff]/5 text-[#0000ff] rounded border border-[#0000ff]/20"
+                  className="px-3 py-1 text-xs font-mono bg-blue/5 text-blue rounded border border-blue/20"
                 >
                   {tag}
                 </span>
@@ -68,14 +68,14 @@ export default function ProjectModal({ project, isOpen, onClose }: ProjectModalP
           {/* Timeline */}
           {project.timeline && (
             <div className="mb-6">
-              <p className="text-[#8888ff] text-sm font-medium mb-1 geist-mono-font">Timeline</p>
-              <p className="text-[#0000ff]">{project.timeline}</p>
+              <p className="text-lavender text-sm font-medium mb-1 geist-mono-font">Timeline</p>
+              <p className="text-blue">{project.timeline}</p>
             </div>
           )}
 
           {/* Paragraph */}
           <div className="mb-8">
-            <p className="text-[#0000ff] leading-relaxed">
+            <p className="text-blue leading-relaxed">
               {project.paragraph}
             </p>
           </div>
@@ -87,7 +87,7 @@ export default function ProjectModal({ project, isOpen, onClose }: ProjectModalP
                 href={project.demoUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-6 py-3 bg-[#0000ff] text-[#f6fafd] geist-mono-font font-medium rounded-lg gentle-hover hover:bg-[#0000ff]/90 ease-in-out transition-all duration-200 ease-in-out hover:bg-[#ff00ff]"
+                className="px-6 py-3 bg-blue text-surface geist-mono-font font-medium rounded-lg gentle-hover hover:bg-blue/90 ease-in-out transition-all duration-200 ease-in-out hover:bg-magenta"
               >
                 View Website <ArrowUpRight className="w-4 h-4 inline-block align-middle" />
               </a>
@@ -97,7 +97,7 @@ export default function ProjectModal({ project, isOpen, onClose }: ProjectModalP
                 href={project.githubUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-6 py-3 border border-[#0000ff] text-[#0000ff] geist-mono-font font-medium rounded-lg blue-hover-magenta-text hover:border-[#ff00ff]/50 hover:bg-[#ff00ff]/5 transition-all duration-200"
+                className="px-6 py-3 border border-blue text-blue geist-mono-font font-medium rounded-lg blue-hover-magenta-text hover:border-magenta/50 hover:bg-magenta/5 transition-all duration-200"
               >
                 View Code <ArrowUpRight className="w-4 h-4 inline-block align-middle" />
               </a>
@@ -106,7 +106,7 @@ export default function ProjectModal({ project, isOpen, onClose }: ProjectModalP
 
           {/* Cover Image */}
           {project.thumbnail && (
-            <div className="w-full bg-[#0000ff]/5 border border-[#0000ff]/10 rounded-lg overflow-hidden">
+            <div className="w-full bg-blue/5 border border-blue/10 rounded-lg overflow-hidden">
               <Image
                 src={project.thumbnail}
                 alt={`${project.title} cover`}

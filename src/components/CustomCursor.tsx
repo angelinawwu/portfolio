@@ -4,7 +4,7 @@ import { useEffect, useState, useRef } from 'react';
 import { ArrowRight, ArrowUpRight } from '@phosphor-icons/react';
 import { motion } from 'framer-motion';
 
-type CursorState = 'default' | 'playground-link' | 'project-card';
+type CursorState = 'default' | 'playground-link' | 'project-card' | 'image';
 
 export default function CustomCursor() {
   const [cursorState, setCursorState] = useState<CursorState>('default');
@@ -12,6 +12,7 @@ export default function CustomCursor() {
   const [position, setPosition] = useState({ x: -100, y: -100 }); 
   const measureRef = useRef<HTMLDivElement>(null);
   const [contentWidth, setContentWidth] = useState(16);
+  const [imageCaption, setImageCaption] = useState('');
 
   // ... (useEffect setup for supportsHover, mouse events, and measuring - remains unchanged) ...
   
@@ -39,13 +40,21 @@ export default function CustomCursor() {
       const target = e.target as HTMLElement;
       const playgroundLink = target.closest('[data-cursor="playground-link"]');
       const projectCard = target.closest('[data-cursor="project-card"]');
+      const imageElement = target.closest('[data-cursor="image"]');
       
       if (playgroundLink) {
         setCursorState('playground-link');
+        setImageCaption('');
       } else if (projectCard) {
         setCursorState('project-card');
+        setImageCaption('');
+      } else if (imageElement) {
+        const caption = imageElement.getAttribute('data-caption') || '';
+        setCursorState('image');
+        setImageCaption(caption);
       } else {
         setCursorState('default');
+        setImageCaption('');
       }
     };
 
@@ -71,13 +80,16 @@ export default function CustomCursor() {
         setContentWidth(measuredWidth);
       }
     });
-  }, [cursorState]);
+  }, [cursorState, imageCaption]);
 
 
   if (!supportsHover) return null;
 
   const isDefault = cursorState === 'default';
-  const text = cursorState === 'playground-link' ? 'OPEN WEBSITE' : cursorState === 'project-card' ? 'VIEW PROJECT' : '';
+  const text = cursorState === 'playground-link' ? 'OPEN WEBSITE' 
+    : cursorState === 'project-card' ? 'VIEW PROJECT' 
+    : cursorState === 'image' ? imageCaption 
+    : '';
 
   // 1. ADDED: Instant transition for cursor movement
   const moveTransition = { duration: 0 }; 
@@ -113,6 +125,9 @@ export default function CustomCursor() {
             <ArrowRight className="w-3.5 h-3.5 flex-shrink-0" weight="bold" />
           </>
         )}
+        {cursorState === 'image' && (
+          <span className="text-xs font-mono uppercase geist-mono-font">{imageCaption}</span>
+        )}
       </div>
       
       {/* Outer motion.div for screen movement */}
@@ -125,7 +140,7 @@ export default function CustomCursor() {
       >
         {/* Inner motion.div for size change */}
         <motion.div
-          className="bg-[#ff00ff] text-white flex items-center gap-2 overflow-hidden"
+          className="bg-magenta text-white flex items-center gap-2 overflow-hidden"
           animate={{
             width: contentWidth,
             height: isDefault ? 16 : 28, 

@@ -21,13 +21,13 @@ const breakpointColumnsObj = {
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-[#EDF1FB]">
+    <div className="min-h-screen bg-bg">
       <PixelTrailWrapper />
       <Navigation />
       
       <main className="">
         {/* Hero Section */}
-        <section className="pt-20 pb-0 md:pt-24 bg-[#0000ff] w-full mb-12 md:mb-16 md:relative overflow-hidden">
+        <section className="pt-20 pb-0 md:pt-24 bg-blue w-full mb-12 md:mb-16 md:relative overflow-hidden">
           {/* ASCII Animations - Above text on mobile, background on desktop */}
           <div className="md:absolute md:inset-0 relative h-80 md:h-auto">
             {/* ASCII Animation Background - Left */}
@@ -37,19 +37,19 @@ export default function Home() {
           </div>
           
           {/* Text Content */}
-          <div className="max-w-7xl mx-auto px-6 -mt-24 md:mt-0 pt-0 pb-12 md:pt-20 md:pb-20 text-left text-[#EDF1FB] relative z-10">            <h1 className="text-6xl md:text-9xl font-medium md:mb-4 mb-2 bit-apple-font text-center">
+          <div className="max-w-7xl mx-auto px-6 -mt-24 md:mt-0 pt-0 pb-12 md:pt-20 md:pb-20 text-left text-bg relative z-10">            <h1 className="text-6xl md:text-9xl font-medium md:mb-4 mb-2 bit-apple-font text-center">
               Hey, I&apos;m
             </h1>
             <h1 className="text-6xl md:text-9xl font-medium mb-6 md:mb-8 bit-apple-font text-center">
               Angelina Wu.
             </h1>
-            <p className="max-w-3xl text-base md:text-xl mx-auto leading-relaxed md:mb-12 mb-0 text-[#EDF1FB]">
+            <p className="max-w-3xl text-base md:text-xl mx-auto leading-relaxed md:mb-12 mb-0 text-bg">
               Welcome to my little corner of the internet! 
               I&apos;m a designer who&apos;s passionate about creating channels for delight 
               and human connection. You can find me building cute websites, reading 
               speculative fiction, or obsessing over the color #0000FF. Check out 
               my work below or {' '}
-              <Link href="/about" className="gentle-hover underline transition-colors hover:text-[#ff00ff]">
+              <Link href="/about" className="gentle-hover underline transition-colors hover:text-magenta">
                 learn more about me <ArrowRight className="w-4 h-4 inline-block align-middle" />
               </Link>
             </p>
@@ -60,10 +60,10 @@ export default function Home() {
         <section className="max-w-[1290px] mx-auto md:px-6 px-4 mt-12 md:mt-28">
           {/* Header */}
           <div className="text-left md:mb-8 mb-4">
-            <h2 className="text-[#0000ff] text-2xl md:text-3xl font-medium mb-2">
+            <h2 className="text-blue text-2xl md:text-3xl font-medium mb-2">
               Featured Work
             </h2>
-            <p className="text-[#0000ff] text-base max-w-2xl">
+            <p className="text-blue text-base max-w-2xl">
               Deep dives into long-term, team-based projects
             </p>
           </div>
@@ -79,10 +79,10 @@ export default function Home() {
         <section className="max-w-[1290px] mx-auto md:px-6 px-4 pb-12 mt-12 md:mt-28">
           {/* Header */}
           <div className="text-left md:mb-8 mb-4">
-            <h2 className="text-[#0000ff] text-2xl md:text-3xl font-medium mb-2">
+            <h2 className="text-blue text-2xl md:text-3xl font-medium mb-2">
               Playground
             </h2>
-            <p className="text-[#0000ff] text-base max-w-2xl">
+            <p className="text-blue text-base max-w-2xl">
               Things I build for fun (
               <span className="hidden sm:inline">hover</span>
               <span className="inline sm:hidden">tap</span>
@@ -105,7 +105,7 @@ export default function Home() {
         </section>
 
         {/* CTA Section */}
-        <section className="w-full bg-[#0000ff] text-center mt-8 md:mt-20">
+        <section className="w-full bg-blue text-center mt-8 md:mt-20">
           <div className="max-w-7xl mx-auto px-6 pt-10 md:pt-20 pb-10 md:pb-12 text-left text-white relative z-10">
             <h2 className="text-7xl md:text-9xl font-medium mb-6 bit-apple-font">
               Like what you see?
@@ -116,13 +116,13 @@ export default function Home() {
             <div className="flex flex-col sm:flex-row items-start gap-4 text-white">
               <a
                 href="mailto:angelinawu05@gmail.com"
-                className="inline-flex items-center gap-2 self-start px-6 py-3 geist-mono-font bg-[#0000ff] border border-white text-[#f6fafd] font-medium rounded-lg gentle-hover hover:bg-[#0000ff]/90 ease-in-out transition-all duration-200 ease-in-out hover:bg-[#ff00ff]"
+                className="inline-flex items-center gap-2 self-start px-6 py-3 geist-mono-font bg-blue border border-white text-surface font-medium rounded-lg gentle-hover hover:bg-blue/90 ease-in-out transition-all duration-200 ease-in-out hover:bg-magenta"
               >
                 Get in touch <ArrowUpRight className="w-4 h-4 inline-block align-middle" />
               </a>
               <Link
                 href="/about"
-                className="inline-flex items-center self-start gap-2 px-6 py-3 geist-mono-font bg-[#0000ff] border border-white text-[#f6fafd] font-medium rounded-lg gentle-hover hover:bg-[#0000ff]/90 ease-in-out transition-all duration-200 ease-in-out hover:bg-[#ff00ff]"
+                className="inline-flex items-center self-start gap-2 px-6 py-3 geist-mono-font bg-blue border border-white text-surface font-medium rounded-lg gentle-hover hover:bg-blue/90 ease-in-out transition-all duration-200 ease-in-out hover:bg-magenta"
               >
                 Learn more about me <ArrowRight className="w-4 h-4 inline-block align-middle" />
               </Link>
@@ -136,7 +136,7 @@ export default function Home() {
         
         {/* Footer Graphic - Below footer on mobile, absolute positioned on desktop */}
         <div className="relative md:absolute md:bottom-0 md:right-0 w-auto h-auto z-10">
-          <div className="flex justify-end px-6 md:pr-12 md:pb-0 bg-[#0000ff]">
+          <div className="flex justify-end px-6 md:pr-12 md:pb-0 bg-blue">
             <FooterGraphic />
           </div>
         </div>

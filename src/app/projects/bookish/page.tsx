@@ -13,7 +13,7 @@ export const metadata = {
 
 export default function BookishPage() {
   return (
-    <div className="min-h-screen bg-[#EDF1FB]">
+    <div className="min-h-screen bg-bg">
       <PixelTrailWrapper />
       <Navigation />
       
@@ -31,39 +31,39 @@ export default function BookishPage() {
 
           {/* Hero Section */}
           <section className="py-12">
-            <h1 className="text-4xl md:text-5xl font-medium text-[#0000ff] mb-4">
+            <h1 className="text-4xl md:text-5xl font-medium text-blue mb-4">
               Bookish
             </h1>
             
-            <p className="text-xl text-[#0000ff] leading-relaxed mb-12 max-w-3xl">
+            <p className="text-xl text-blue leading-relaxed mb-12 max-w-3xl">
               Redesigning the reading experience with accessibility and sustainability in mind
             </p>
 
             {/* Metadata Cards */}
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-              <div className="border border-[#0000ff]/10 rounded-lg p-6 bg-[#f6fafd]">
-                <h3 className="text-[#8888ff] text-sm font-medium mb-2 geist-mono-font">My Role</h3>
-                <p className="text-[#0000ff] font-medium">Lead Product Designer</p>
+              <div className="border border-blue/10 rounded-lg p-6 bg-surface">
+                <h3 className="text-lavender text-sm font-medium mb-2 geist-mono-font">My Role</h3>
+                <p className="text-blue font-medium">Lead Product Designer</p>
               </div>
-              <div className="border border-[#0000ff]/10 rounded-lg p-6 bg-[#f6fafd]">
-                <h3 className="text-[#8888ff] text-sm font-medium mb-2 geist-mono-font">Timeline</h3>
-                <p className="text-[#0000ff] font-medium">Mar – May 2024</p>
+              <div className="border border-blue/10 rounded-lg p-6 bg-surface">
+                <h3 className="text-lavender text-sm font-medium mb-2 geist-mono-font">Timeline</h3>
+                <p className="text-blue font-medium">Mar – May 2024</p>
               </div>
-              <div className="border border-[#0000ff]/10 rounded-lg p-6 bg-[#f6fafd]">
-                <h3 className="text-[#8888ff] text-sm font-medium mb-2 geist-mono-font">Team</h3>
-                <p className="text-[#0000ff] font-medium">1 Designer<br />3 Developers</p>
+              <div className="border border-blue/10 rounded-lg p-6 bg-surface">
+                <h3 className="text-lavender text-sm font-medium mb-2 geist-mono-font">Team</h3>
+                <p className="text-blue font-medium">1 Designer<br />3 Developers</p>
               </div>
-              <div className="border border-[#0000ff]/10 rounded-lg p-6 bg-[#f6fafd]">
-                <h3 className="text-[#8888ff] text-sm font-medium mb-2 geist-mono-font">Tools</h3>
-                <p className="text-[#0000ff] font-medium">Figma, Illustrator</p>
+              <div className="border border-blue/10 rounded-lg p-6 bg-surface">
+                <h3 className="text-lavender text-sm font-medium mb-2 geist-mono-font">Tools</h3>
+                <p className="text-blue font-medium">Figma, Illustrator</p>
               </div>
             </div>
           </section>
 
           {/* Overview */}
-          <section className="py-12 border-t border-[#0000ff]/10">
-            <h2 className="text-3xl md:text-4xl font-medium text-[#0000ff] mb-8">Overview</h2>
-            <div className="space-y-6 text-[#0000ff] leading-relaxed max-w-3xl">
+          <section className="py-12 border-t border-blue/10">
+            <h2 className="text-3xl md:text-4xl font-medium text-blue mb-8">Overview</h2>
+            <div className="space-y-6 text-blue leading-relaxed max-w-3xl">
               <p>
                 Bookish&apos;s mission is to connect readers in local communities and to increase the accessibility and sustainability of reading physical books. In the app, users can submit books they own into a personal catalog, which other readers can then borrow. Users are also recommended books located near them, forming a decentralized quasi-library that exists both online and in person.
               </p>
@@ -74,22 +74,22 @@ export default function BookishPage() {
           </section>
 
           {/* The Problem */}
-          <section className="py-12 border-t border-[#0000ff]/10">
-            <h2 className="text-3xl md:text-4xl font-medium text-[#0000ff] mb-8">The Problem</h2>
+          <section className="py-12 border-t border-blue/10">
+            <h2 className="text-3xl md:text-4xl font-medium text-blue mb-8">The Problem</h2>
             
             <div className="space-y-8">
               <div>
-                <h3 className="text-2xl md:text-3xl font-medium text-[#0000ff] mb-6"><ShinyText text="Reading physical books is financially and environmentally unsustainable." /></h3>
-                <div className="space-y-6 text-[#0000ff] leading-relaxed max-w-3xl">
+                <h3 className="text-2xl md:text-3xl font-medium text-blue mb-6"><ShinyText text="Reading physical books is financially and environmentally unsustainable." /></h3>
+                <div className="space-y-6 text-blue leading-relaxed max-w-3xl">
                   <p>
                     Avid bookworms know that books can be purchased in the spur of the moment to be read once and never again. Then, they are either left to gather dust on bookshelves, or thrown out (gasp!) as waste. At the same time, books are becoming increasingly more expensive, making it harder to read without turning to digital options.
                   </p>
                 </div>
               </div>
 
-              <div className="bg-[#f6fafd] border border-[#0000ff]/10 rounded-lg p-8">
+              <div className="bg-surface border border-blue/10 rounded-lg p-8">
                 <ul className="arrow-list">
-                  <li className="text-[#0000ff] font-medium">
+                  <li className="text-blue font-medium">
                     The solution: An app where readers can share their favorite books and form communities, allowing books to be reused by multiple readers.
                   </li>
                 </ul>
@@ -98,9 +98,9 @@ export default function BookishPage() {
           </section>
 
           {/* User Research */}
-          <section className="py-12 border-t border-[#0000ff]/10">
-            <h2 className="text-3xl md:text-4xl font-medium text-[#0000ff] mb-8">User Research</h2>
-            <div className="space-y-6 text-[#0000ff] leading-relaxed max-w-3xl">
+          <section className="py-12 border-t border-blue/10">
+            <h2 className="text-3xl md:text-4xl font-medium text-blue mb-8">User Research</h2>
+            <div className="space-y-6 text-blue leading-relaxed max-w-3xl">
               <p>
                 To understand what potential users would be seeking in an app like Bookish, we conducted surveys through the &quot;Book Enjoyers&quot; Discord server, where we were able to reach out to 70+ individuals to discuss their reading habits and goals. From our research, we drew the following conclusions:
               </p>
@@ -113,28 +113,28 @@ export default function BookishPage() {
           </section>
 
           {/* Project Goals */}
-          <section className="py-12 border-t border-[#0000ff]/10">
-            <h2 className="text-3xl md:text-4xl font-medium text-[#0000ff] mb-8">Project Goals</h2>
+          <section className="py-12 border-t border-blue/10">
+            <h2 className="text-3xl md:text-4xl font-medium text-blue mb-8">Project Goals</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <div className="bg-[#f6fafd] border border-[#0000ff]/10 rounded-lg p-8">
-                <h3 className="text-xl font-medium text-[#0000ff] mb-3">Encourage local <ShinyText text="connection." /></h3>
-                <p className="text-[#0000ff] leading-relaxed">Allow users to connect with other local readers, cultivating a community beyond the digital.</p>
+              <div className="bg-surface border border-blue/10 rounded-lg p-8">
+                <h3 className="text-xl font-medium text-blue mb-3">Encourage local <ShinyText text="connection." /></h3>
+                <p className="text-blue leading-relaxed">Allow users to connect with other local readers, cultivating a community beyond the digital.</p>
               </div>
-              <div className="bg-[#f6fafd] border border-[#0000ff]/10 rounded-lg p-8">
-                <h3 className="text-xl font-medium text-[#0000ff] mb-3">Nurture genuine <ShinyText text="discovery." /></h3>
-                <p className="text-[#0000ff] leading-relaxed">Limit algorithmic recommendations and encourage users to discover new favorites naturally.</p>
+              <div className="bg-surface border border-blue/10 rounded-lg p-8">
+                <h3 className="text-xl font-medium text-blue mb-3">Nurture genuine <ShinyText text="discovery." /></h3>
+                <p className="text-blue leading-relaxed">Limit algorithmic recommendations and encourage users to discover new favorites naturally.</p>
               </div>
-              <div className="bg-[#f6fafd] border border-[#0000ff]/10 rounded-lg p-8">
-                <h3 className="text-xl font-medium text-[#0000ff] mb-3">Increase literary <ShinyText text="accessibility." /></h3>
-                <p className="text-[#0000ff] leading-relaxed">Create a decentralized and community-driven library without emphasizing any monetary exchange.</p>
+              <div className="bg-surface border border-blue/10 rounded-lg p-8">
+                <h3 className="text-xl font-medium text-blue mb-3">Increase literary <ShinyText text="accessibility." /></h3>
+                <p className="text-blue leading-relaxed">Create a decentralized and community-driven library without emphasizing any monetary exchange.</p>
               </div>
             </div>
           </section>
 
           {/* Mid-Fidelity Prototype */}
-          <section className="py-12 border-t border-[#0000ff]/10">
-            <h2 className="text-3xl md:text-4xl font-medium text-[#0000ff] mb-8">Mid-Fidelity Prototype</h2>
-            <p className="text-[#0000ff] leading-relaxed mb-6 max-w-3xl">Mid-fi wireframes created from initial ideations.</p>
+          <section className="py-12 border-t border-blue/10">
+            <h2 className="text-3xl md:text-4xl font-medium text-blue mb-8">Mid-Fidelity Prototype</h2>
+            <p className="text-blue leading-relaxed mb-6 max-w-3xl">Mid-fi wireframes created from initial ideations.</p>
             <div className="grid grid-cols-1 md:grid-cols-1 gap-6">
               <Image
                 src="/assets/projects/Bookish/Bookish-Midfis.png"
@@ -146,11 +146,11 @@ export default function BookishPage() {
           </section>
 
           {/* Usability Testing and Modifications */}
-          <section className="py-12 border-t border-[#0000ff]/10">
-            <h2 className="text-3xl md:text-4xl font-medium text-[#0000ff] mb-8">Usability Testing and Modifications</h2>
+          <section className="py-12 border-t border-blue/10">
+            <h2 className="text-3xl md:text-4xl font-medium text-blue mb-8">Usability Testing and Modifications</h2>
             <div className="space-y-8 max-w-4xl">
                   <div>
-                <p className="text-[#0000ff] mb-3">&quot;The pure black and white color scheme strains my eyes.&quot;</p>
+                <p className="text-blue mb-3">&quot;The pure black and white color scheme strains my eyes.&quot;</p>
                 <div className="p-6">
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                     <Image
@@ -159,7 +159,7 @@ export default function BookishPage() {
                       width={1000}
                       height={1000}
                     />
-                    <ArrowRight className="text-[#0000ff] h-10 w-10 m-auto" />
+                    <ArrowRight className="text-blue h-10 w-10 m-auto" />
                     <Image
                       src="/assets/projects/Bookish/Bookish-Feedback1B.png"
                       alt="Usability Testing and Modifications"
@@ -170,7 +170,7 @@ export default function BookishPage() {
                 </div>
                   </div>
                   <div>
-                <p className="text-[#0000ff] mb-3">&quot;I want have more context for my messaging contacts.&quot;</p>
+                <p className="text-blue mb-3">&quot;I want have more context for my messaging contacts.&quot;</p>
                 <div className="p-6">
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                     <Image
@@ -179,7 +179,7 @@ export default function BookishPage() {
                       width={1000}
                       height={1000}
                     />
-                    <ArrowRight className="text-[#0000ff] h-10 w-10 m-auto" />
+                    <ArrowRight className="text-blue h-10 w-10 m-auto" />
                     <Image
                       src="/assets/projects/Bookish/Bookish-Feedback2B.png"
                       alt="Usability Testing and Modifications"
@@ -194,9 +194,9 @@ export default function BookishPage() {
           </section>
 
           {/* Final Product */}
-          <section className="py-12 border-t border-[#0000ff]/10">
-            <h2 className="text-3xl md:text-4xl font-medium text-[#0000ff] mb-8">Final Product</h2>
-            <p className="text-[#0000ff] leading-relaxed mb-6">Take a look at my final deliverable below!</p>
+          <section className="py-12 border-t border-blue/10">
+            <h2 className="text-3xl md:text-4xl font-medium text-blue mb-8">Final Product</h2>
+            <p className="text-blue leading-relaxed mb-6">Take a look at my final deliverable below!</p>
             <div className="space-y-12 text-center">
               {[
                 { title: 'Home and profile screens', src: '/assets/projects/Bookish/Bookish-Final1.png' },
@@ -204,7 +204,7 @@ export default function BookishPage() {
                 { title: 'Community building', src: '/assets/projects/Bookish/Bookish-Final3.png' },
               ].map((item) => (
                 <div key={item.title}>
-                  <h3 className="text-xl md:text-2xl font-medium text-[#0000ff] mb-6">{item.title}</h3>
+                  <h3 className="text-xl md:text-2xl font-medium text-blue mb-6">{item.title}</h3>
                   <div className="grid grid-cols-1 md:grid-cols-1 gap-6">
                     <Image
                       src={item.src}
@@ -219,26 +219,26 @@ export default function BookishPage() {
           </section>
 
           {/* Closing Remarks and Takeaways */}
-          <section className="py-12 border-t border-[#0000ff]/10">
-            <h2 className="text-3xl md:text-4xl font-medium text-[#0000ff] mb-8">Closing Remarks and Takeaways</h2>
+          <section className="py-12 border-t border-blue/10">
+            <h2 className="text-3xl md:text-4xl font-medium text-blue mb-8">Closing Remarks and Takeaways</h2>
             <div className="space-y-6">
-              <div className="bg-[#f6fafd] border border-[#0000ff]/10 rounded-lg p-8">
-                <h3 className="text-xl font-medium text-[#0000ff] mb-4">Design with a <ShinyText text="product mindset" />.</h3>
+              <div className="bg-surface border border-blue/10 rounded-lg p-8">
+                <h3 className="text-xl font-medium text-blue mb-4">Design with a <ShinyText text="product mindset" />.</h3>
                   <ul className="arrow-list">
-                    <li className="text-[#0000ff] leading-relaxed">This was my first time working with engineers on a working product. The experience taught me the importance of designing with the programming and development process in mind. Instead of focusing on aesthetics, I found it crucial to have a product mindset and think critically about how my designs would be implemented into the app.</li>
+                    <li className="text-blue leading-relaxed">This was my first time working with engineers on a working product. The experience taught me the importance of designing with the programming and development process in mind. Instead of focusing on aesthetics, I found it crucial to have a product mindset and think critically about how my designs would be implemented into the app.</li>
                   </ul>
               </div>
-              <div className="bg-[#f6fafd] border border-[#0000ff]/10 rounded-lg p-8">
-                <h3 className="text-xl font-medium text-[#0000ff] mb-4">Practice <ShinyText text="iteration" /> and <ShinyText text="modification" />.</h3>
+              <div className="bg-surface border border-blue/10 rounded-lg p-8">
+                <h3 className="text-xl font-medium text-blue mb-4">Practice <ShinyText text="iteration" /> and <ShinyText text="modification" />.</h3>
                   <ul className="arrow-list">
-                    <li className="text-[#0000ff] leading-relaxed">It was very important for me to be able to adjust my designs accordingly as I received constructive feedback. In the future, I&apos;d like to work on drafting multiple iterations of a design in the ideation stage, rather than solely making adjustments in later stages.</li>
+                    <li className="text-blue leading-relaxed">It was very important for me to be able to adjust my designs accordingly as I received constructive feedback. In the future, I&apos;d like to work on drafting multiple iterations of a design in the ideation stage, rather than solely making adjustments in later stages.</li>
                   </ul>
               </div>
             </div>
           </section>
 
           {/* Navigation */}
-          <nav className="py-16 border-t border-[#0000ff]/10">
+          <nav className="py-16 border-t border-blue/10">
             <div className="flex justify-between items-center">
               <Link
                 href="/projects/manifesto-market"

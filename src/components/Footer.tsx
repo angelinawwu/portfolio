@@ -4,7 +4,7 @@ import { Heart } from '@phosphor-icons/react';
 
 export default function Footer() {
   return (
-    <footer className="pb-10 md:pb-20 bg-[#0000ff] relative">
+    <footer className="pb-10 md:pb-20 bg-blue relative">
       <div className="max-w-7xl mx-auto px-6 text-left geist-mono-font relative z-20">
         <p className="text-white/70 text-xs">
           Last updated: 12.10.25

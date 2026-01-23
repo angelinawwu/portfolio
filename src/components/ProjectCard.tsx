@@ -36,7 +36,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
     <Link href={`/projects/${project.slug}`}>
       <motion.div 
         ref={divRef}
-        className={"group relative bg-[#f6fafd] border border-[#0000ff]/50 hover:border-[#0000ff]/100 transition-all duration-100 hover:shadow-2xl hover:shadow-[#0000ff]/5 card-glow project-card-with-glare w-full text-left cursor-none z-99"}
+        className={"group relative bg-surface border border-blue/50 hover:border-blue/100 transition-all duration-100 hover:shadow-2xl hover:shadow-blue/5 card-glow project-card-with-glare w-full text-left cursor-none z-99"}
         data-cursor="project-card"
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
@@ -44,14 +44,14 @@ export default function ProjectCard({ project }: ProjectCardProps) {
         {/* Rainbow border on hover */}
         <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-100 card-glow">
           <div className="p-[1px] h-full w-full">
-            <div className="bg-[#f6fafd] opacity-50 h-full w-full"></div>
+            <div className="bg-surface opacity-50 h-full w-full"></div>
           </div>
         </div>
 
         {/* Content - Horizontal Layout */}
         <div className="relative z-10 p-4 md:p-6 flex flex-col md:flex-row md:items-center gap-4 md:gap-8">
           {/* Thumbnail or Video - Left Side */}
-          <div className="relative w-full md:w-80 md:flex-shrink-0 h-64 overflow-hidden bg-[#f6fafd]/5">
+          <div className="relative w-full md:w-80 md:flex-shrink-0 h-64 overflow-hidden bg-surface/5">
             {project.videoUrl ? (
               <video
                 ref={videoRef}
@@ -77,20 +77,20 @@ export default function ProjectCard({ project }: ProjectCardProps) {
           {/* Project Info - Right Side */}
           <div className="flex-1 space-y-3">
             {project.timeline && (
-              <span className="text-sm font-mono uppercase text-[#8888ff] transition-colors duration-200 whitespace-nowrap flex-shrink-0">
+              <span className="text-sm font-mono uppercase text-lavender transition-colors duration-200 whitespace-nowrap flex-shrink-0">
                 {project.timeline}
               </span>
             )}
             {project.title && (
               <div className="flex items-center justify-between">
-                <h3 className="text-4xl md:text-6xl pt-2 font-medium bit-apple-font text-[#0000ff]">
+                <h3 className="text-4xl md:text-6xl pt-2 font-medium bit-apple-font text-blue">
                   {project.title}
                 </h3>
               </div>
             )}
 
             {project.description && (
-              <p className="text-[#0000ff] text-base leading-tight">
+              <p className="text-blue text-base leading-tight">
                 {project.description}
               </p>
             )}
@@ -98,7 +98,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
         </div>
 
         {/* Hover effect overlay */}
-        <div className="absolute inset-0 bg-[#f6fafd]/50 opacity-100 group-hover:opacity-100 transition-opacity duration-100 pointer-events-none"></div>
+        <div className="absolute inset-0 bg-surface/50 opacity-100 group-hover:opacity-100 transition-opacity duration-100 pointer-events-none"></div>
       </motion.div>
     </Link>
   );

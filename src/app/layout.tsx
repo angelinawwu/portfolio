@@ -19,7 +19,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Angelina Wu's Portfolio",
-  description: "Designing to delight. Currently at UCLA studying Design and Statistics/Data Science. Passionate about creating meaningful experiences through design and technology.",
+  description: "designing to delight",
   keywords: ["design", "development", "UX", "UI", "frontend", "data science", "UCLA", "portfolio", "design engineer", "product design", "design media arts"],
   authors: [{ name: "Angelina Wu" }],
   creator: "Angelina Wu",
@@ -29,16 +29,25 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "Angelina Wu's Portfolio",
-    description: "Designing to delight. Currently at UCLA studying Design and Statistics/Data Science.",
+    description: "designing to delight",
     url: "https://angelinawwu.com",
     siteName: "Angelina Wu's Portfolio",
     locale: "en_US",
     type: "website",
+    images: [
+      {
+        url: "/OpenGraph-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Angelina Wu's Portfolio",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Angelina Wu's Portfolio",
-    description: "Designing to delight. Currently at UCLA studying Design and Statistics/Data Science.",
+    description: "designing to delight",
+    images: ["/OpenGraph-image.jpg"],
   },
   robots: {
     index: true,

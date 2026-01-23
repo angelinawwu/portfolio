@@ -75,14 +75,14 @@ export default function PlaygroundCard({ project }: PlaygroundCardProps) {
   
   const cardContent = (
     <motion.div 
-      className={`group relative w-full border border-[#0000ff]/50 overflow-hidden ${hasLink ? 'cursor-none' : ''}`}
+      className={`group relative w-full border border-blue/50 overflow-hidden ${hasLink ? 'cursor-none' : ''}`}
       data-cursor={hasLink ? 'playground-link' : undefined}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
       onClick={handleCardClick}
     >
       {/* Image/Video Container */}
-      <div className="relative w-full overflow-hidden bg-[#f6fafd]/5">
+      <div className="relative w-full overflow-hidden bg-surface/5">
         {project.videoUrl ? (
           <video
             ref={videoRef}
@@ -114,7 +114,7 @@ export default function PlaygroundCard({ project }: PlaygroundCardProps) {
         <button
           type="button"
           onClick={handleMobileLinkTap}
-          className="absolute top-3 right-3 z-20 w-9 h-9 bg-white text-[#0000ff] flex items-center justify-center border border-[#0000ff]/50 shadow-md focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0000ff]/60"
+          className="absolute top-3 right-3 z-20 w-9 h-9 bg-white text-blue flex items-center justify-center border border-blue/50 shadow-md focus:outline-none focus-visible:ring-2 focus-visible:ring-blue/60"
           aria-label="Open project website"
         >
           <ArrowUpRight className="w-4 h-4" weight="bold" />
@@ -122,12 +122,12 @@ export default function PlaygroundCard({ project }: PlaygroundCardProps) {
       )}
 
       {/* Title Caption - Slides in from bottom on hover */}
-      <div className={`absolute bottom-0 left-0 right-0 bg-[#f6fafd] flex items-center justify-between px-4 py-3 ${captionVisibility} transition-all duration-200 ease-out z-10 border-t border-[#0000ff]/50`}>
-        <h3 className="text-[#0000ff] text-sm font-medium">
+      <div className={`absolute bottom-0 left-0 right-0 bg-surface flex items-center justify-between px-4 py-3 ${captionVisibility} transition-all duration-200 ease-out z-10 border-t border-blue/50`}>
+        <h3 className="text-blue text-sm font-medium">
           {project.title}
         </h3>
         {project.context && (
-          <span className="px-2 py-1 text-xs font-mono text-[#8888ff] font-mono uppercase whitespace-nowrap flex-shrink-0">
+          <span className="px-2 py-1 text-xs font-mono text-lavender font-mono uppercase whitespace-nowrap flex-shrink-0">
             {project.context}
           </span>
         )}

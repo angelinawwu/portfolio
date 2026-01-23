@@ -4,6 +4,16 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
+  /* Brand colors for Tailwind utilities */
+  --color-blue: var(--blue);
+  --color-magenta: var(--magenta);
+  --color-lavender: var(--lavender);
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-magenta-light: var(--magenta-light);
+  --color-lavender-light: var(--lavender-light);
+  --color-blue-muted: var(--blue-muted);
+  
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
@@ -89,24 +99,24 @@ canvas.pixel-canvas {
 .magenta-hover-text {
   position: relative;
   display: inline-block;
-  color: #ff00ff;
+  color: var(--magenta);
   transition: all 0.2s ease-in-out;
 }
 
 .magenta-hover-text:hover {
-  color: #ff88ff;
+  color: var(--magenta-light);
   scale: 1.01;
 }
 
 .blue-hover-magenta-text {
   position: relative;
   display: inline-block;
-  color: #0000ff;
+  color: var(--blue);
   transition: all 0.2s ease-in-out;
 }
 
 .blue-hover-magenta-text:hover {
-  color: #ff00ff;
+  color: var(--magenta);
   scale: 1.02;
 }
 
@@ -130,8 +140,8 @@ canvas.pixel-canvas {
 .blue-glow-text {
   position: relative;
   display: inline-block;
-  -webkit-text-stroke: 1px #0000ffa4;
-  color: #f6fafd;
+  -webkit-text-stroke: 1px color-mix(in srgb, var(--blue) 65%, transparent);
+  color: var(--surface);
 }
 
 .permanent-rainbow-text {
@@ -234,7 +244,7 @@ canvas.pixel-canvas {
   content: '→';
   position: absolute;
   left: 0;
-  color: rgba(0, 0, 255, 0.6);
+  color: var(--blue-muted);
   font-weight: 500;
 }
 
@@ -252,9 +262,9 @@ canvas.pixel-canvas {
   position: absolute;
   inset: 0px;
   mix-blend-mode: normal;
-  background: rgba(0, 0, 255, 0.4);
+  background: color-mix(in srgb, var(--blue) 40%, transparent);
   box-shadow: 
-    0 0 2rem rgba(0, 0, 255, 1);
+    0 0 2rem var(--blue);
   /* filter: blur(15px); */
   opacity: 0;
   border-radius: 1rem;
@@ -324,26 +334,47 @@ canvas.pixel-canvas {
 }
 
 ::-webkit-scrollbar-track {
-  background: #ccccff;
+  background: var(--lavender-light);
   margin: 0;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #8888ff;
+  background: var(--lavender);
   border-radius: 5px;
-  border: 1px solid #0000ff;
+  border: 1px solid var(--blue);
   position: relative;
   margin: 0 -5px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: white;
+  background: var(--white);
   box-shadow: 0 0 20px rgba(249, 139, 199, 0.6),
               0 0 30px rgba(226, 157, 99, 0.5),
               0 0 40px rgba(151, 255, 255, 0.4);
 }
 
 :root {
+  /* ========== COLOR SYSTEM ========== */
+  /* Primary brand colors */
+  --blue: #0000ff;
+  --magenta: #ff00ff;
+  --lavender: #8888ff;
+  
+  /* Background colors */
+  --bg: #EDF1FB;
+  --surface: #f6fafd;
+  
+  /* Neutrals */
+  --white: #ffffff;
+  --black: #000000;
+  
+  /* Derived/variant colors */
+  --magenta-light: #ff88ff;
+  --lavender-light: #ccccff;
+  --blue-muted: rgba(0, 0, 255, 0.6);
+  
+  /* ========== END COLOR SYSTEM ========== */
+  
   --radius: 0.625rem;
   --background: oklch(1 0 0);
   --foreground: oklch(0.145 0 0);

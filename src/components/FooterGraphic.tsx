@@ -108,7 +108,7 @@ export default function FooterGraphic() {
   return (
     <pre
       ref={preRef}
-      className="w-fulltext-right font-mono text-white bg-[#0000ff] md:bg-transparent opacity-100 md:opacity-100 overflow-visible m-0 p-0 whitespace-pre"
+      className="w-fulltext-right font-mono text-white bg-blue md:bg-transparent opacity-100 md:opacity-100 overflow-visible m-0 p-0 whitespace-pre"
       style={{
         fontSize: `${fontSize}px`,
         lineHeight: `${lineHeight}px`,
