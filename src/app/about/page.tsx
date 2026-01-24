@@ -7,6 +7,7 @@ import { books, albums, images } from '@/data/about';
 import ShinyText from '@/components/ShinyText';
 import PixelTrailWrapper from '@/components/PixelTrailWrapper';
 import FooterGraphic from '@/components/FooterGraphic';
+import AboutGraphic from '@/components/AboutGraphic';
 
 export default function About() {
   return (
@@ -14,9 +15,34 @@ export default function About() {
       <PixelTrailWrapper />
       <Navigation />
       
-      <main className="pt-16 md:pt-20 mb-0">
+      <main className="pt-[calc(4rem+1.5rem+6px)] md:pt-[calc(4rem+1.5rem+6px)] mb-0">
+        {/* Images Section */}
+        <section className="mx-auto px-6">
+          <div className="grid grid-cols-2 md:grid-cols-5 gap-2">
+            {images.map((image, index) => (
+              <div key={image.id} className={index === 4 ? 'hidden md:block' : ''}>
+                <div 
+                  className="relative aspect-square bg-white/5 border overflow-hidden cursor-pointer"
+                  data-cursor="image"
+                  data-caption={image.caption}
+                >
+                  <Image
+                    src={image.image}
+                    alt={image.alt}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 25vw, 20vw"
+                  />
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+
         {/* Bio & Experience Section */}
-        <section className="max-w-[1290px] mx-auto px-6 pt-8 pb-8 md:pt-12 md:pb-20">
+        <section className="max-w-[1290px] mx-auto px-6 pt-8 pb-8 md:pt-20 md:pb-24">
+        <h2 className="text-3xl md:text-5xl font-medium text-blue bit-apple-font mb-4 md:mb-12">Designing to delight...</h2>
+
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
             {/* Left Column: Bio */}
             <div className="flex flex-col gap-4 prose prose-lg prose-invert text-base">
@@ -65,7 +91,9 @@ export default function About() {
             <div className="flex flex-col gap-8 md:gap-12">
               {/* Experience */}
               <div>
-                <h2 className="text-xl font-medium text-blue mb-2">Experience</h2>
+                <div className="w-full border-b border-lavender mb-2">
+                  <h2 className="text-xl font-medium text-blue">Experience</h2>
+                </div> 
                 
                 <div className="flex flex-col text-base gap-2">
                   {/* SEPHORA */}
@@ -108,7 +136,9 @@ export default function About() {
 
               {/* Orgs & Leadership */}
               <div>
-                <h2 className="text-xl font-medium text-blue mb-2">Orgs & Leadership</h2>
+                <div className="w-full border-b border-lavender mb-2">
+                  <h2 className="text-xl font-medium text-blue">Orgs & Leadership</h2>
+                </div> 
                 
                 <div className="flex flex-col text-base gap-2">
                   {/* VEST at UCLA */}
@@ -170,34 +200,17 @@ export default function About() {
           </div>
         </section>
 
-        {/* Images Section */}
-        <section className="mx-auto px-6">
-          <div className="grid grid-cols-2 md:grid-cols-5 gap-2">
-            {images.map((image, index) => (
-              <div key={image.id} className={index === 4 ? 'hidden md:block' : ''}>
-                <div 
-                  className="relative aspect-square bg-white/5 border overflow-hidden cursor-pointer"
-                  data-cursor="image"
-                  data-caption={image.caption}
-                >
-                  <Image
-                    src={image.image}
-                    alt={image.alt}
-                    fill
-                    className="object-cover"
-                    sizes="(max-width: 768px) 25vw, 20vw"
-                  />
-                </div>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        {/* Books Section */}
-        {/* <section className="max-w-[1290px] mx-auto px-6 pb-12 md:pb-32">
-          <h2 className="text-3xl font-medium text-blue mb-4 md:mb-8">Books that made me</h2>
+        {/* <div className="h-24 md:h-36 w-full flex justify-center items-center mx-auto"> <AboutGraphic /></div>  */}
+        {/* Life Outside Design Section */}
+        <section className="max-w-[1290px] mx-auto px-6 pb-2 md:pb-24">
+          <h2 className="text-3xl md:text-5xl font-medium text-blue bit-apple-font mb-4 md:mb-12">...with my life's delights</h2>
           
-          <div className="grid grid-cols-5 gap-2 m">
+          
+        {/* Books Section */}
+        <section className="max-w-[1290px] mx-auto pb-12 md:pb-16">
+          <h2 className="text-2xl font-medium text-blue mb-4">Books that changed me</h2>
+          
+          <div className="grid grid-cols-5 gap-2">
             {books.map((book) => (
               <div key={book.id} className="group">
                 <a href={book.url} target="_blank" rel="noopener noreferrer" className="block">
@@ -214,11 +227,11 @@ export default function About() {
               </div>
             ))}
           </div>
-        </section> */}
+        </section>
 
         {/* Albums Section */}
-        {/* <section className="max-w-[1290px] mx-auto px-6 pb-12 md:pb-32">
-          <h2 className="text-3xl font-medium text-blue mb-4 md:mb-8">Albums on repeat</h2>
+        <section className="max-w-[1290px] mx-auto">
+          <h2 className="text-2xl font-medium text-blue mb-4">Albums on repeat</h2>
           
           <div className="grid grid-cols-5 gap-2">
             {albums.map((album) => (
@@ -239,28 +252,28 @@ export default function About() {
               </div>
             ))}
           </div>
-        </section> */}
-
+        </section>
+        </section>
         {/* Contact Section */}
         {/* CTA Section */}
         <section className="w-full bg-blue text-center mt-6">
-          <div className="max-w-7xl mx-auto px-6 pt-10 md:pt-20 pb-10 md:pb-12 text-left text-white relative z-10">
-            <h2 className="text-7xl md:text-9xl font-medium mb-6 bit-apple-font">
+          <div className="max-w-7xl mx-auto pt-6 md:pt-20 px-6 pb-6 md:pb-12 text-left text-white relative z-10">
+            <h2 className="text-7xl md:text-9xl font-medium mb-4 bit-apple-font">
               Like what you see?
             </h2>
-            <p className="text-xl mb-20">
+            <p className="text-xl mb-12 md:mb-20">
               Let&apos;s make something cool together.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 text-white">
               <a
-                href="mailto:angelinawu05@gmail.com"
-                className="inline-flex items-center self-start gap-2 px-6 py-3 geist-mono-font bg-blue border border-white text-surface font-medium rounded-lg gentle-hover hover:bg-blue/90 ease-in-out transition-all duration-200 ease-in-out hover:bg-magenta"
+                href="mailto:angelinawwu@ucla.edu"
+                className="inline-flex items-center uppercase self-start gap-2 px-4 py-2 geist-mono-font bg-blue border border-white text-surface text-sm font-medium gentle-hover hover:bg-blue/90 ease-in-out transition-all duration-200 ease-in-out hover:bg-magenta"
               >
                 Get in touch <ArrowUpRight className="w-4 h-4 inline-block align-middle" />
               </a>
               <Link
                 href="/"
-                className="inline-flex items-center self-start gap-2 px-6 py-3 geist-mono-font bg-blue border border-white text-surface font-medium rounded-lg gentle-hover hover:bg-blue/90 ease-in-out transition-all duration-200 ease-in-out hover:bg-magenta"
+                className="inline-flex items-center uppercase self-start gap-2 px-4 py-2 geist-mono-font bg-blue border border-white text-surface text-sm font-medium gentle-hover hover:bg-blue/90 ease-in-out transition-all duration-200 ease-in-out hover:bg-magenta"
               >
                 See my work <ArrowRight className="w-4 h-4 inline-block align-middle" />
               </Link>
@@ -273,7 +286,7 @@ export default function About() {
         <Footer />
         
         {/* Footer Graphic - Below footer on mobile, absolute positioned on desktop */}
-        <div className="relative md:absolute md:bottom-0 md:right-0 w-auto h-auto z-10 bg-blue">
+        <div className="relative md:absolute md:bottom-0 md:right-0 w-auto h-auto z-10 bg-blue md:bg-transparent">
           <div className="flex justify-end px-6 md:pr-12 md:pb-0 bg-blue">
             <FooterGraphic />
           </div>

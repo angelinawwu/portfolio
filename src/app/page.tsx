@@ -105,12 +105,12 @@ export default function Home() {
         </section>
 
         {/* CTA Section */}
-        <section className="w-full bg-blue text-center mt-8 md:mt-20">
-          <div className="max-w-7xl mx-auto px-6 pt-10 md:pt-20 pb-10 md:pb-12 text-left text-white relative z-10">
-            <h2 className="text-7xl md:text-9xl font-medium mb-6 bit-apple-font">
+        <section className="w-full bg-blue text-center mt-6">
+          <div className="max-w-7xl mx-auto pt-6 md:pt-20 px-6 pb-6 md:pb-12 text-left text-white relative z-10">
+            <h2 className="text-7xl md:text-9xl font-medium mb-4 bit-apple-font">
               Like what you see?
             </h2>
-            <p className="text-xl mb-20">
+            <p className="text-xl mb-12 md:mb-20">
               Let&apos;s make something cool together.
             </p>
             <div className="flex flex-col sm:flex-row items-start gap-4 text-white">
