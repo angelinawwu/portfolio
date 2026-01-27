@@ -116,13 +116,13 @@ export default function Home() {
             <div className="flex flex-col sm:flex-row items-start gap-4 text-white">
               <a
                 href="mailto:angelinawu05@gmail.com"
-                className="inline-flex items-center gap-2 self-start px-6 py-3 geist-mono-font bg-blue border border-white text-surface font-medium rounded-lg gentle-hover hover:bg-blue/90 ease-in-out transition-all duration-200 ease-in-out hover:bg-magenta"
+                className="inline-flex items-center uppercase self-start gap-2 px-4 py-2 geist-mono-font bg-blue border border-white text-surface text-sm font-medium gentle-hover hover:bg-blue/90 ease-in-out transition-all duration-200 ease-in-out hover:bg-magenta"
               >
                 Get in touch <ArrowUpRight className="w-4 h-4 inline-block align-middle" />
               </a>
               <Link
                 href="/about"
-                className="inline-flex items-center self-start gap-2 px-6 py-3 geist-mono-font bg-blue border border-white text-surface font-medium rounded-lg gentle-hover hover:bg-blue/90 ease-in-out transition-all duration-200 ease-in-out hover:bg-magenta"
+                className="inline-flex items-center uppercase self-start gap-2 px-4 py-2 geist-mono-font bg-blue border border-white text-surface text-sm font-medium gentle-hover hover:bg-blue/90 ease-in-out transition-all duration-200 ease-in-out hover:bg-magenta"
               >
                 Learn more about me <ArrowRight className="w-4 h-4 inline-block align-middle" />
               </Link>

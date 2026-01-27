@@ -40,7 +40,7 @@ export default function About() {
         </section>
 
         {/* Bio & Experience Section */}
-        <section className="max-w-[1290px] mx-auto px-6 pt-8 pb-8 md:pt-20 md:pb-24">
+        <section className="max-w-[1290px] mx-auto px-6 pt-8 pb-12 md:pb-8 md:pt-20 md:pb-24">
         <h2 className="text-3xl md:text-5xl font-medium text-blue bit-apple-font mb-4 md:mb-12">Designing to delight...</h2>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
@@ -77,7 +77,7 @@ export default function About() {
                 </a>{' '}
                 or take a peek at my{' '}
                 <a 
-                  href="https://drive.google.com/file/d/16XvgLKsnpMBX21SeO_V3wavg2BaGio-2/view?usp=sharing"
+                  href="https://drive.google.com/file/d/1urDhFh8q3HmATT-XVZU7RXP-TAt2BeXs/view?usp=sharing"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="magenta-hover-text relative z-10 cursor-pointer pointer-events-auto"
@@ -202,7 +202,7 @@ export default function About() {
 
         {/* <div className="h-24 md:h-36 w-full flex justify-center items-center mx-auto"> <AboutGraphic /></div>  */}
         {/* Life Outside Design Section */}
-        <section className="max-w-[1290px] mx-auto px-6 pb-2 md:pb-24">
+        <section className="max-w-[1290px] mx-auto px-6 pb-8 md:pb-24">
           <h2 className="text-3xl md:text-5xl font-medium text-blue bit-apple-font mb-4 md:mb-12">...with my life's delights</h2>
           
           
@@ -210,7 +210,7 @@ export default function About() {
         <section className="max-w-[1290px] mx-auto pb-12 md:pb-16">
           <h2 className="text-2xl font-medium text-blue mb-4">Books that changed me</h2>
           
-          <div className="grid grid-cols-5 gap-2">
+          <div className="grid grid-cols-5 gap-1 md:gap-2">
             {books.map((book) => (
               <div key={book.id} className="group">
                 <a href={book.url} target="_blank" rel="noopener noreferrer" className="block">
@@ -233,7 +233,7 @@ export default function About() {
         <section className="max-w-[1290px] mx-auto">
           <h2 className="text-2xl font-medium text-blue mb-4">Albums on repeat</h2>
           
-          <div className="grid grid-cols-5 gap-2">
+          <div className="grid grid-cols-5 gap-1 md:gap-2">
             {albums.map((album) => (
               <div key={album.id} className="group">
                 <a href={album.url} target="_blank" rel="noopener noreferrer" className="block">
