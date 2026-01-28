@@ -5,7 +5,7 @@ import { ArrowRight, ArrowUpRight } from '@phosphor-icons/react';
 import { motion } from 'framer-motion';
 import { useTheme } from './ThemeProvider';
 
-type CursorState = 'default' | 'playground-link' | 'project-card' | 'image';
+type CursorState = 'default' | 'playground-link' | 'project-card' | 'coming-soon' | 'image';
 
 export default function CustomCursor() {
   const [cursorState, setCursorState] = useState<CursorState>('default');
@@ -41,12 +41,13 @@ export default function CustomCursor() {
       const playgroundLink = target.closest('[data-cursor="playground-link"]');
       const projectCard = target.closest('[data-cursor="project-card"]');
       const imageElement = target.closest('[data-cursor="image"]');
+      const isComingSoon = projectCard?.getAttribute('data-coming-soon') === 'true';
       
       if (playgroundLink) {
         setCursorState('playground-link');
         setImageCaption('');
       } else if (projectCard) {
-        setCursorState('project-card');
+        setCursorState(isComingSoon ? ('coming-soon' as CursorState) : ('project-card' as CursorState));
         setImageCaption('');
       } else if (imageElement) {
         const caption = imageElement.getAttribute('data-caption') || '';
@@ -87,6 +88,7 @@ export default function CustomCursor() {
   const isDefault = cursorState === 'default';
   const text = cursorState === 'playground-link' ? 'OPEN WEBSITE' 
     : cursorState === 'project-card' ? 'VIEW PROJECT' 
+    : cursorState === 'coming-soon' ? 'COMING SOON'
     : cursorState === 'image' ? imageCaption 
     : '';
 
@@ -122,6 +124,9 @@ export default function CustomCursor() {
             <span className="text-xs font-mono geist-mono-font">VIEW PROJECT</span>
             <ArrowRight className="w-3.5 h-3.5 flex-shrink-0" weight="bold" />
           </>
+        )}
+        {cursorState === 'coming-soon' && (
+          <span className="text-xs font-mono geist-mono-font">COMING SOON</span>
         )}
         {cursorState === 'image' && (
           <span className="text-xs font-mono uppercase geist-mono-font">{imageCaption}</span>

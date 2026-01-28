@@ -10,8 +10,8 @@
   --surface: #212123;
   
   /* Derived colors */
-  --white-muted: rgba(243, 237, 245, 0.7);
-  --accent-muted: rgba(243, 237, 245, 0.6);
+  --white-muted: rgba(243, 237, 245, 0.5);
+  --accent-muted: rgba(243, 237, 245, 0.5);
 }
 
 /* Green theme */
@@ -21,8 +21,8 @@
   --black: #0E2309;
   --accent: #D4EC21;
   --surface: #29351C;
-  --white-muted: rgba(248, 250, 233, 0.7);
-  --accent-muted: rgba(212, 236, 33, 0.6);
+  --white-muted: rgba(248, 250, 233, 0.5);
+  --accent-muted: rgba(212, 236, 33, 0.5);
 }
 
 /* Blue theme */
@@ -32,8 +32,8 @@
   --black: #071327;
   --accent: #6FA7E7;
   --surface: #182233;
-  --white-muted: rgba(227, 234, 246, 0.7);
-  --accent-muted: rgba(111, 167, 231, 0.6);
+  --white-muted: rgba(227, 234, 246, 0.5);
+  --accent-muted: rgba(111, 167, 231, 0.5);
 }
 
 /* Magenta theme */
@@ -43,8 +43,8 @@
   --black: #270726;
   --accent: #EC6CF1;
   --surface: #391B38;
-  --white-muted: rgba(246, 227, 245, 0.7);
-  --accent-muted: rgba(236, 108, 241, 0.6);
+  --white-muted: rgba(246, 227, 245, 0.5);
+  --accent-muted: rgba(236, 108, 241, 0.5);
 }
 
 /* Orange theme */
@@ -54,8 +54,8 @@
   --black: #271507;
   --accent: #E3743D;
   --surface: #36231A;
-  --white-muted: rgba(246, 236, 227, 0.7);
-  --accent-muted: rgba(227, 116, 61, 0.6);
+  --white-muted: rgba(246, 236, 227, 0.5);
+  --accent-muted: rgba(227, 116, 61, 0.5);
 }
 
 /* ========== TAILWIND THEME MAPPING ========== */
@@ -162,7 +162,6 @@ body {
 /* ========== ACCENT TEXT ========== */
 .accent-text {
   color: var(--accent);
-  font-weight: 500;
 }
 
 /* ========== PROJECT CARD STYLES ========== */

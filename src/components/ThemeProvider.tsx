@@ -38,7 +38,7 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
 
   // Apply theme to document
   useEffect(() => {
-    if (mounted) {
+    if (mounted && typeof document !== 'undefined') {
       if (theme === 'default') {
         document.documentElement.removeAttribute('data-theme');
       } else {
@@ -49,16 +49,14 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
 
   const setTheme = (newTheme: Theme) => {
     setThemeState(newTheme);
-    localStorage.setItem(THEME_STORAGE_KEY, newTheme);
+    if (typeof window !== 'undefined') {
+      localStorage.setItem(THEME_STORAGE_KEY, newTheme);
+    }
   };
 
   const accentColor = themeAccentColors[theme];
 
-  // Prevent flash of wrong theme
-  if (!mounted) {
-    return null;
-  }
-
+  // Always render the Provider to ensure context is available
   return (
     <ThemeContext.Provider value={{ theme, setTheme, accentColor }}>
       {children}

@@ -1,11 +1,8 @@
+'use client';
+
 import Link from 'next/link';
 import Image from 'next/image';
-import { ArrowRight } from 'lucide-react';
-
-export const metadata = {
-  title: 'Bookish ＊ Angelina Wu',
-  description: 'Redesigning the reading experience with accessibility and sustainability in mind',
-};
+import { ArrowRight } from '@phosphor-icons/react';
 
 export default function BookishPage() {
   return (
@@ -13,7 +10,7 @@ export default function BookishPage() {
       <div className="max-w-4xl mx-auto">
         {/* Back Button */}
         <div className="mb-8">
-          <Link href="/" className="text-white-muted hover:text-accent transition-colors">
+          <Link href="/" className="sidebar-link">
             ← Back to projects
           </Link>
         </div>
@@ -124,7 +121,7 @@ export default function BookishPage() {
         <section className="mb-12 pt-8 border-t border-faded-white">
           <h2 className="text-2xl md:text-3xl bit-apple-font text-white mb-6">Mid-Fidelity Prototype</h2>
           <p className="text-white-muted leading-relaxed mb-6">Mid-fi wireframes created from initial ideations.</p>
-          <div className="border border-faded-white overflow-hidden">
+          <div className="overflow-hidden">
             <Image
               src="/assets/projects/Bookish/Bookish-Midfis.png"
               alt="Mid-Fidelity Prototype"
@@ -137,23 +134,24 @@ export default function BookishPage() {
         {/* Usability Testing and Modifications */}
         <section className="mb-12 pt-8 border-t border-faded-white">
           <h2 className="text-2xl md:text-3xl bit-apple-font text-white mb-6">Usability Testing</h2>
-          <div className="space-y-8">
-            <div>
-              <p className="text-white mb-4">&quot;The pure black and white color scheme strains my eyes.&quot;</p>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 items-center">
-                <div className="border border-faded-white overflow-hidden">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {/* Card 1 */}
+            <div className="bg-surface p-6 rounded-lg">
+              <p className="text-white mb-4 italic">&quot;The pure black and white color scheme strains my eyes.&quot;</p>
+              <div className="flex flex-row gap-3">
+                <div className="overflow-hidden rounded">
                   <Image
                     src="/assets/projects/Bookish/Bookish-Feedback1A.png"
-                    alt="Before feedback 1"
+                    alt="Before: black and white color scheme"
                     width={1000}
                     height={1000}
                   />
                 </div>
-                <ArrowRight className="text-white-muted h-8 w-8 mx-auto transform rotate-90 md:rotate-0" />
-                <div className="border border-faded-white overflow-hidden">
+                <ArrowRight className="text-white-muted h-36 w-36 mx-auto self-center" />
+                <div className="overflow-hidden rounded">
                   <Image
                     src="/assets/projects/Bookish/Bookish-Feedback1B.png"
-                    alt="After feedback 1"
+                    alt="After: softer color scheme"
                     width={1000}
                     height={1000}
                   />
@@ -161,22 +159,23 @@ export default function BookishPage() {
               </div>
             </div>
 
-            <div>
-              <p className="text-white mb-4">&quot;I want to have more context for my messaging contacts.&quot;</p>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 items-center">
-                <div className="border border-faded-white overflow-hidden">
+            {/* Card 2 */}
+            <div className="bg-surface p-6 rounded-lg">
+              <p className="text-white mb-4 italic">&quot;I want to have more context for my messaging contacts.&quot;</p>
+              <div className="flex flex-row gap-3">
+                <div className="overflow-hidden rounded">
                   <Image
                     src="/assets/projects/Bookish/Bookish-Feedback2A.png"
-                    alt="Before feedback 2"
+                    alt="Before: minimal messaging context"
                     width={1000}
                     height={1000}
                   />
                 </div>
-                <ArrowRight className="text-white-muted h-8 w-8 mx-auto transform rotate-90 md:rotate-0" />
-                <div className="border border-faded-white overflow-hidden">
+                <ArrowRight className="text-white-muted h-36 w-36 mx-auto self-center" />
+                <div className="overflow-hidden rounded">
                   <Image
                     src="/assets/projects/Bookish/Bookish-Feedback2B.png"
-                    alt="After feedback 2"
+                    alt="After: more messaging context"
                     width={1000}
                     height={1000}
                   />
@@ -198,7 +197,7 @@ export default function BookishPage() {
             ].map((item) => (
               <div key={item.title} className="text-center">
                 <h3 className="text-xl text-white mb-4">{item.title}</h3>
-                <div className="border border-faded-white overflow-hidden">
+                <div className="overflow-hidden">
                   <Image
                     src={item.src}
                     alt={`${item.title} - Final Product`}
@@ -237,10 +236,9 @@ export default function BookishPage() {
         {/* Navigation */}
         <nav className="pt-8 border-t border-faded-white">
           <div className="flex justify-between items-center">
-            <Link href="/projects/manifesto-market" className="text-white-muted hover:text-accent transition-colors">
-              ← Manifesto Market
+            <Link href="/projects/workup" className="sidebar-link">
+              ← Workup
             </Link>
-            <div></div>
           </div>
         </nav>
       </div>

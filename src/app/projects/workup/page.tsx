@@ -13,7 +13,7 @@ export default function WorkupPage() {
       <div className="max-w-4xl mx-auto">
         {/* Back Button */}
         <div className="mb-8">
-          <Link href="/" className="text-white-muted hover:text-accent transition-colors">
+          <Link href="/" className="sidebar-link">
             ← Back to projects
           </Link>
         </div>
@@ -99,7 +99,7 @@ export default function WorkupPage() {
               <p className="text-white-muted leading-relaxed mb-4">
                 We started with competitive analysis to compare existing platforms that also offered social networking and career development features.
               </p>
-              <div className="border border-faded-white overflow-hidden">
+              <div className="overflow-hidden">
                 <Image
                   src="/assets/projects/Workup/Workup-CompetitiveAnalysis.png"
                   alt="Competitive Analysis"
@@ -112,31 +112,45 @@ export default function WorkupPage() {
             <div>
               <h3 className="text-xl md:text-2xl text-white mb-4">Understanding Users</h3>
               <p className="text-white-muted leading-relaxed mb-6">
-                To understand user perspectives, we administered 50+ surveys and conducted 20+ interviews for Workup&apos;s target audience, job-seeking college students.
+                To understand user perspectives, we administered 50+ surveys and conducted 20+ interviews for Workup&apos;s target audience, job-seeking college students. Our research gave us a preliminary understanding of how college students interacted with AI tools in the job search process.
               </p>
 
-              <div className="grid grid-cols-1 md:grid-cols-[auto_auto_1fr] gap-4 items-center">
-                <div className="border border-faded-white overflow-hidden">
-                  <Image
-                    src="/assets/projects/Workup/Workup-UserSurvey.png"
-                    alt="User Survey"
-                    width={300}
-                    height={500}
-                    className="w-full h-full object-contain"
-                  />
+              <div className="space-y-4">
+                <div className="border border-faded-white p-6 bg-surface">
+                  <div className="flex items-start gap-4">
+                    <div>
+                      <p className="text-white-muted leading-relaxed">
+                      "I use ChatGPT's voice function to do mock interviews. My main issue is that it seems more like a list of technical questions rather than an actual organic interview process."
+                      </p>
+                    </div>
+                  </div>
                 </div>
-                <div className="flex items-center justify-center">
-                  <ArrowRight className="text-white-muted h-8 w-8 transform rotate-90 md:rotate-0" />
+                <div className="border border-faded-white p-6 bg-surface">
+                  <div className="flex items-start gap-4">
+                    <div>
+                      <p className="text-white-muted leading-relaxed">
+                      "[AI's] answers are too general [...]. It mainly helps with generating questions."
+                      </p>
+                    </div>
+                  </div>
                 </div>
-                <div className="border border-faded-white p-4 bg-surface">
-                  <p className="text-white-muted leading-relaxed mb-3">
-                    The user survey gave us a preliminary understanding of how college students interacted with AI tools.
-                  </p>
-                  <ul className="arrow-list space-y-2 text-white-muted italic text-sm">
-                    <li>&quot;I use ChatGPT&apos;s voice function to do mock interviews...&quot;</li>
-                    <li>&quot;[AI&apos;s] answers are too general...&quot;</li>
-                    <li>&quot;I don&apos;t know if AI questions will be representative...&quot;</li>
-                  </ul>
+                <div className="border border-faded-white p-6 bg-surface">
+                  <div className="flex items-start gap-4">
+                    <div>
+                      <p className="text-white-muted leading-relaxed">
+                      "[AI interview questions] either are too broad in their questions or too niche."
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div className="border border-faded-white p-6 bg-surface">
+                  <div className="flex items-start gap-4">
+                    <div>
+                      <p className="text-white-muted leading-relaxed">
+                      "I don't know if AI questions will be representative of what will actually be asked. They may be unreliable or biased."
+                      </p>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -147,7 +161,7 @@ export default function WorkupPage() {
                 With a newfound understanding of user motivations and challenges, our team put together a detailed design audit of the current Workup website.
               </p>
               
-              <div className="border border-faded-white overflow-hidden">
+              <div className="overflow-hidden">
                 <Image
                   src="/assets/projects/Workup/Workup-Audit.jpg"
                   alt="Website audit"
@@ -212,7 +226,7 @@ export default function WorkupPage() {
               </p>
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div className="border border-faded-white overflow-hidden">
+                <div className="overflow-hidden">
                   <Image
                     src="/assets/projects/Workup/Workup-UserPersona1.png"
                     alt="User persona 1"
@@ -221,7 +235,7 @@ export default function WorkupPage() {
                     className="w-full h-full object-contain"
                   />
                 </div>
-                <div className="border border-faded-white overflow-hidden">
+                <div className="overflow-hidden">
                   <Image
                     src="/assets/projects/Workup/Workup-UserPersona2.png"
                     alt="User persona 2"
@@ -316,7 +330,7 @@ export default function WorkupPage() {
               </p>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div className="border border-faded-white overflow-hidden">
+                <div className="overflow-hidden">
                   <Image
                     src="/assets/projects/Workup/Workup-Lofis-2.jpg"
                     alt="Low-Fi 1"
@@ -324,7 +338,7 @@ export default function WorkupPage() {
                     height={1000}
                   />
                 </div>
-                <div className="border border-faded-white overflow-hidden">
+                <div className="overflow-hidden">
                   <Image
                     src="/assets/projects/Workup/Workup-Lofis-3.jpg"
                     alt="Low-Fi 2"
@@ -341,7 +355,7 @@ export default function WorkupPage() {
                 One of the key issues with Workup&apos;s interface was its lack of a consistent design system. Based on its existing UI, our team revamped Workup&apos;s design system.
               </p>
               
-              <div className="border border-faded-white overflow-hidden">
+              <div className="overflow-hidden">
                 <Image
                   src="/assets/projects/Workup/Workup-DesignSystem.png"
                   alt="Design System"
@@ -350,64 +364,74 @@ export default function WorkupPage() {
                 />
               </div>
             </div>
+          </div>
+        </section>
+
+        {/* Final Product */}
+        <section className="mb-12 pt-8 border-t border-faded-white">
+          <h2 className="text-2xl md:text-3xl bit-apple-font text-white mb-6">Final Product</h2>
+          <p className="text-white-muted leading-relaxed mb-6">
+            The final design for Workup&apos;s AI Interview streamlines the user journey, making every step clear and intuitive.
+          </p>
+
+          <div className="space-y-8">
+            <div>
+              <h3 className="text-lg text-white mb-4">Practice built for perfect</h3>
+              <p className="text-white-muted leading-relaxed mb-4">
+                To make the interview creation process as intuitive as possible, I took inspiration from video calling platforms such as Zoom and Google Meet to create an interface that felt like second nature. For the user, this helps make the practice round feel as close as possible to the real thing.
+              </p>
+              <div className="overflow-hidden">
+                <Image
+                  src="/assets/projects/Workup/Workup-CreateInterview.png"
+                  alt="Interview Creation"
+                  width={1000}
+                  height={1000}
+                />
+              </div>
+            </div>
 
             <div>
-              <h3 className="text-xl md:text-2xl text-white mb-6">Final Product</h3>
-              <p className="text-white-muted leading-relaxed mb-6">
-                The final design for Workup&apos;s AI Interview streamlines the user journey, making every step clear and intuitive.
+              <h3 className="text-lg text-white mb-4">Scheduling that feels seamless</h3>
+              <p className="text-white-muted leading-relaxed mb-4">
+                By replacing uncertainty with structure, we turned interview scheduling into a feature that actually supports both candidates and recruiters. For the user, this helps make the practice round feel as close as possible to the real thing.
               </p>
+              <div className="overflow-hidden">
+                <Image
+                  src="/assets/projects/Workup/Workup-InterviewSched.jpg"
+                  alt="Interview Scheduling"
+                  width={1000}
+                  height={1000}
+                />
+              </div>
+            </div>
 
-              <div className="space-y-8">
-                <div>
-                  <h4 className="text-lg text-white mb-4">Practice built for perfect</h4>
-                  <p className="text-white-muted leading-relaxed mb-4">
-                    To make the interview creation process as intuitive as possible, I took inspiration from video calling platforms.
-                  </p>
-                  <div className="border border-faded-white overflow-hidden">
-                    <Image
-                      src="/assets/projects/Workup/Workup-CreateInterview.png"
-                      alt="Interview Creation"
-                      width={1000}
-                      height={1000}
-                    />
-                  </div>
-                </div>
+            <div>
+              <h3 className="text-lg text-white mb-4">All in one place</h3>
+              <p className="text-white-muted leading-relaxed mb-4">
+                Our team built a single "hub" for practice question sets, helping users track progress, stay organized, and prepare for interviews with purpose.
+              </p>
+              <div className="overflow-hidden">
+                <Image
+                  src="/assets/projects/Workup/Workup-QuestionSets.jpg"
+                  alt="Question Sets Hub"
+                  width={1000}
+                  height={1000}
+                />
+              </div>
+            </div>
 
-                <div>
-                  <h4 className="text-lg text-white mb-4">Scheduling that feels seamless</h4>
-                  <div className="border border-faded-white overflow-hidden">
-                    <Image
-                      src="/assets/projects/Workup/Workup-InterviewSched.jpg"
-                      alt="Interview Scheduling"
-                      width={1000}
-                      height={1000}
-                    />
-                  </div>
-                </div>
-
-                <div>
-                  <h4 className="text-lg text-white mb-4">All in one place</h4>
-                  <div className="border border-faded-white overflow-hidden">
-                    <Image
-                      src="/assets/projects/Workup/Workup-QuestionSets.jpg"
-                      alt="Question Sets Hub"
-                      width={1000}
-                      height={1000}
-                    />
-                  </div>
-                </div>
-
-                <div>
-                  <h4 className="text-lg text-white mb-4">Feedback that drives improvement</h4>
-                  <div className="border border-faded-white overflow-hidden">
-                    <Image
-                      src="/assets/projects/Workup/Workup-InterviewFeedback.jpg"
-                      alt="Interview Feedback"
-                      width={1000}
-                      height={1000}
-                    />
-                  </div>
-                </div>
+            <div>
+              <h3 className="text-lg text-white mb-4">Feedback that drives improvement</h3>
+              <p className="text-white-muted leading-relaxed mb-4">
+                I reorganized the structure of the AI-generated feedback page, categorizing feedback into different facets of proficiency. Segmenting the feedback improved readability and provided the user with a more precise metric to empower growth.
+              </p>
+              <div className="overflow-hidden">
+                <Image
+                  src="/assets/projects/Workup/Workup-InterviewFeedback.jpg"
+                  alt="Interview Feedback"
+                  width={1000}
+                  height={1000}
+                />
               </div>
             </div>
           </div>
@@ -494,9 +518,11 @@ export default function WorkupPage() {
         {/* Navigation */}
         <nav className="pt-8 border-t border-faded-white">
           <div className="flex justify-between items-center">
-            <div></div>
-            <Link href="/projects/manifesto-market" className="text-white-muted hover:text-accent transition-colors">
-              Manifesto Market →
+            <Link href="/projects/manifesto-market" className="sidebar-link">
+              ← Manifesto Market
+            </Link>
+            <Link href="/projects/bookish" className="sidebar-link">
+              Bookish →
             </Link>
           </div>
         </nav>

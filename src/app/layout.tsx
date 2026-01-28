@@ -3,7 +3,6 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
-import Script from "next/script";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import Sidebar from "@/components/Sidebar";
 import CustomCursor from "@/components/CustomCursor";
@@ -89,11 +88,6 @@ export default function RootLayout({
           
           <Analytics />
           <SpeedInsights />
-          <Script
-            src="https://app.rybbit.io/api/script.js"
-            data-site-id="726cda46b399"
-            strategy="afterInteractive"
-          />
         </ThemeProvider>
       </body>
     </html>

@@ -126,7 +126,7 @@ export default function PlaygroundCard({ project, index }: PlaygroundCardProps) 
 
       {/* Title Caption - Slides in from bottom on hover */}
       <div className={`absolute bottom-0 left-0 right-0 bg-surface flex items-center justify-between px-4 py-3 ${captionVisibility} transition-all duration-200 ease-out z-10 border-t border-faded-white`}>
-        <h3 className="text-white text-sm font-medium">
+        <h3 className="text-white text-sm">
           {project.title}
         </h3>
         {project.context && (

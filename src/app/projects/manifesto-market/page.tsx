@@ -13,7 +13,7 @@ export default function ManifestoMarketPage() {
       <div className="max-w-4xl mx-auto">
         {/* Back Button */}
         <div className="mb-8">
-          <Link href="/" className="text-white-muted hover:text-accent transition-colors">
+          <Link href="/" className="sidebar-link">
             ← Back to projects
           </Link>
         </div>
@@ -126,7 +126,7 @@ export default function ManifestoMarketPage() {
               </p>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div className="border border-faded-white overflow-hidden">
+                <div className="overflow-hidden">
                   <Image
                     src="/assets/projects/Manifesto/Manifesto-UserPersona-1.png"
                     alt="User persona 1"
@@ -135,7 +135,7 @@ export default function ManifestoMarketPage() {
                     className="w-full h-full object-contain"
                   />
                 </div>
-                <div className="border border-faded-white overflow-hidden">
+                <div className="overflow-hidden">
                   <Image
                     src="/assets/projects/Manifesto/Manifesto-UserPersona-2.png"
                     alt="User persona 2"
@@ -153,7 +153,7 @@ export default function ManifestoMarketPage() {
                 I performed a comprehensive website audit through a UX lens. Every touchpoint was scrutinized for usability, accessibility, and alignment with user goals. This audit exposed high-friction areas: ambiguous CTAs, a convoluted reservation path, and a lack of responsive design.
               </p>
               
-              <div className="border border-faded-white overflow-hidden">
+              <div className="overflow-hidden">
                 <Image
                   src="/assets/projects/Manifesto/Manifesto-Analysis.png"
                   alt="Website audit"
@@ -226,7 +226,7 @@ export default function ManifestoMarketPage() {
               <p className="text-white-muted leading-relaxed mb-6">
                 With insights from research, personas, and audit findings, I moved into ideation and prototyping. My design approach was conversion-driven, removing obstacles discovered in earlier stages.
               </p>
-              <div className="border border-faded-white overflow-hidden mb-6">
+              <div className="overflow-hidden mb-6">
                 <video
                   src="/assets/projects/Manifesto/manifesto-demo.mp4"
                   className="w-full h-auto"
@@ -243,7 +243,7 @@ export default function ManifestoMarketPage() {
               <p className="text-white-muted leading-relaxed mb-4">
                 For the hero section&apos;s CTAs, I focused on intentional, actionable language.
               </p>
-              <div className="border border-faded-white overflow-hidden">
+              <div className="overflow-hidden">
                 <Image
                   src="/assets/projects/Manifesto/Manifesto-DP-1.png"
                   alt="CTA Design"
@@ -258,7 +258,7 @@ export default function ManifestoMarketPage() {
               <p className="text-white-muted leading-relaxed mb-4">
                 I reorganized the website&apos;s navigation menu, minimizing content obstruction and highlighting the most relevant pages.
               </p>
-              <div className="border border-faded-white overflow-hidden">
+              <div className="overflow-hidden">
                 <Image
                   src="/assets/projects/Manifesto/Manifesto-DP-2.png"
                   alt="Navigation Design"
@@ -276,7 +276,7 @@ export default function ManifestoMarketPage() {
               <p className="text-white-muted leading-relaxed mb-4">
                 With this in mind, I refocused my goal to what I could improve: call-to-action text. I shortened my pitch, highlighting UX writing issues and identifying problematic button text to improve reservation conversion.
               </p>
-              <div className="border border-faded-white overflow-hidden">
+              <div className="overflow-hidden">
                 <Image
                   src="/assets/projects/Manifesto/Manifesto-DP-3.png"
                   alt="UX Writing"
@@ -368,13 +368,11 @@ export default function ManifestoMarketPage() {
 
         {/* Navigation */}
         <nav className="pt-8 border-t border-faded-white">
-          <div className="flex justify-between items-center">
-            <Link href="/projects/workup" className="text-white-muted hover:text-accent transition-colors">
-              ← Workup
+          <div className="flex justify-end items-center">
+            <Link href="/projects/workup" className="sidebar-link">
+              Workup →
             </Link>
-            <Link href="/projects/bookish" className="text-white-muted hover:text-accent transition-colors">
-              Bookish →
-            </Link>
+            
           </div>
         </nav>
       </div>

@@ -6,12 +6,12 @@ export default function About() {
   return (
     <div className="min-h-screen bg-black">
       {/* Images Section */}
-      <section className="p-4 md:p-6 lg:p-8">
+      <section className="p-4 md:p-6 lg:p-8 mb-4">
         <div className="grid grid-cols-2 md:grid-cols-5 gap-2">
           {images.map((image, index) => (
             <div key={image.id} className={index === 4 ? 'hidden md:block' : ''}>
               <div 
-                className="relative aspect-square overflow-hidden border border-faded-white"
+                className="relative aspect-square overflow-hidden"
                 data-cursor="image"
                 data-caption={image.caption}
               >
@@ -19,7 +19,7 @@ export default function About() {
                   src={image.image}
                   alt={image.alt}
                   fill
-                  className="object-cover hover:scale-105 transition-transform duration-200 ease-out"
+                  className="object-cover"
                   sizes="(max-width: 768px) 50vw, 20vw"
                 />
               </div>
@@ -29,7 +29,7 @@ export default function About() {
       </section>
 
       {/* Bio & Experience Section */}
-      <section className="p-4 md:p-6 lg:p-8">
+      <section className="p-4 md:p-6 lg:p-8 mb-4">
         <h2 className="text-3xl md:text-5xl bit-apple-font text-white mb-8 md:mb-12">
           Designing to delight...
         </h2>
@@ -37,7 +37,7 @@ export default function About() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
           {/* Left Column: Bio */}
           <div className="flex flex-col gap-4">
-            <p className="text-white-muted leading-relaxed">
+            <p className="text-sm leading-relaxed text-white-muted">
               Hey, I&apos;m Angelina! I&apos;m a designer who&apos;s passionate about 
               creating channels for{' '}
               <span className="accent-text">delight</span> and{' '}
@@ -47,7 +47,7 @@ export default function About() {
             </p>
             
             <div>
-              <p className="text-white-muted leading-relaxed mb-2">
+              <p className="text-sm leading-relaxed text-white-muted">
                 When I&apos;m not designing, I can be found:
               </p>
               <ul className="arrow-list text-white-muted leading-relaxed">
@@ -58,7 +58,7 @@ export default function About() {
               </ul>
             </div>
 
-            <p className="text-white-muted leading-relaxed">
+            <p className="text-sm leading-relaxed text-white-muted">
               Say hi at{' '}
               <a 
                 href="mailto:angelinawwu@ucla.edu" 
@@ -82,63 +82,68 @@ export default function About() {
           <div className="flex flex-col gap-8 md:gap-12">
             {/* Experience */}
             <div>
-              <div className="w-full border-b border-faded-white mb-4">
-                <h3 className="text-lg geist-mono-font text-white mb-2">EXPERIENCE</h3>
+              <div className="w-full border-b border-faded-white mb-2">
+                <h3 className="text-xs geist-mono-font text-white mb-2 tracking-wider">EXPERIENCE</h3>
               </div>
               
-              <div className="flex flex-col gap-3">
+              <div className="flex flex-col gap-2">
                 {/* SEPHORA */}
-                <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-1">
-                  <div className="flex items-center gap-2">
-                    <span className="text-white">Sephora</span>
+                <div className="flex flex-row md:items-center justify-between gap-1">
+                  <div className="flex flex-col md:flex-row justify-between md:justify-start md:gap-2">
+                    <span className="text-white text-sm">Sephora</span>
+                    <span className="hidden md:block text-white-muted text-sm">✱</span>
                     <span className="text-white-muted text-sm">Product Design Intern</span>
                   </div>
-                  <span className="text-white-muted text-xs geist-mono-font">INCOMING</span>
+                  <span className="text-white-muted text-sm geist-mono-font">INCOMING</span>
                 </div>
 
                 {/* Manifesto Market */}
-                <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-1">
-                  <div className="flex items-center gap-2">
-                    <span className="text-white">Manifesto Market</span>
+                <div className="flex flex-row md:items-center justify-between gap-1">
+                  <div className="flex flex-col md:flex-row justify-between md:justify-start md:gap-2">
+                    <span className="text-white text-sm">Manifesto Market</span>
+                    <span className="hidden md:block text-white-muted text-sm">✱</span>
                     <span className="text-white-muted text-sm">UX Intern</span>
                   </div>
-                  <span className="text-white-muted text-xs geist-mono-font">SUMMER 2025</span>
+                  <span className="text-white-muted text-sm geist-mono-font">SUMMER 2025</span>
                 </div>
               </div>
             </div>
 
             {/* Orgs & Leadership */}
             <div>
-              <div className="w-full border-b border-faded-white mb-4">
-                <h3 className="text-lg geist-mono-font text-white mb-2">ORGS & LEADERSHIP</h3>
+              <div className="w-full border-b border-faded-white mb-2">
+                <h3 className="text-xs geist-mono-font text-white mb-2 tracking-wider">ORGS & LEADERSHIP</h3>
               </div>
               
-              <div className="flex flex-col gap-3">
+              <div className="flex flex-col gap-2">
                 {/* VEST */}
-                <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-1">
-                  <div className="flex items-center gap-2">
-                    <span className="text-white">VEST</span>
+                <div className="flex flex-row md:items-center justify-between gap-1">
+                  <div className="flex flex-col md:flex-row justify-between md:justify-start md:gap-2">
+                    <span className="text-white text-sm">VEST</span>
+                    <span className="hidden md:block text-white-muted text-sm">✱</span>
                     <span className="text-white-muted text-sm">Head of Design</span>
                   </div>
-                  <span className="text-white-muted text-xs geist-mono-font">2025–PRESENT</span>
+                  <span className="text-white-muted text-sm geist-mono-font">2025–PRESENT</span>
                 </div>
 
                 {/* ACM at UCLA */}
-                <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-1">
-                  <div className="flex items-center gap-2">
-                    <span className="text-white">ACM at UCLA</span>
+                <div className="flex flex-row md:items-center justify-between gap-1">
+                  <div className="flex flex-col md:flex-row justify-between md:justify-start md:gap-2">
+                    <span className="text-white text-sm">ACM at UCLA</span>
+                    <span className="hidden md:block text-white-muted text-sm">✱</span>
                     <span className="text-white-muted text-sm">Design Director</span>
                   </div>
-                  <span className="text-white-muted text-xs geist-mono-font">2024–PRESENT</span>
+                  <span className="text-white-muted text-sm geist-mono-font">2024–PRESENT</span>
                 </div>
 
                 {/* Campus Events Commission */}
-                <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-1">
-                  <div className="flex items-center gap-2">
-                    <span className="text-white">Campus Events Commission</span>
+                <div className="flex flex-row md:items-center justify-between gap-1">
+                  <div className="flex flex-col md:flex-row justify-between md:justify-start md:gap-2">
+                    <span className="text-white text-sm">Campus Events Commission</span>
+                    <span className="hidden md:block text-white-muted text-sm">✱</span>
                     <span className="text-white-muted text-sm">Designer</span>
                   </div>
-                  <span className="text-white-muted text-xs geist-mono-font">2024–PRESENT</span>
+                  <span className="text-white-muted text-sm geist-mono-font">2024–PRESENT</span>
                 </div>
               </div>
             </div>
@@ -165,7 +170,7 @@ export default function About() {
                 rel="noopener noreferrer" 
                 className="group block"
               >
-                <div className="relative aspect-[2/3] overflow-hidden border border-faded-white">
+                <div className="relative aspect-[2/3] overflow-hidden">
                   <Image
                     src={book.image}
                     alt={book.title}
@@ -192,7 +197,7 @@ export default function About() {
                 rel="noopener noreferrer" 
                 className="group block"
               >
-                <div className="relative aspect-square overflow-hidden border border-faded-white">
+                <div className="relative aspect-square overflow-hidden">
                   <Image
                     src={album.image}
                     alt={album.title}

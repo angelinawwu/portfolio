@@ -20,6 +20,19 @@ export type Project = {
 
 export const caseStudies: Project[] = [
   {
+    slug: 'goodreads-wrapped',
+    title: 'Goodreads Wrapped',
+    description: 'A playful reading year summary, delivered to 5000+ users.',
+    videoUrl: '/assets/playground/Goodreads-Video.mov',
+    context: 'Next.js + Web Scraping',
+    type: 'case-study',
+    projectType: 'PERSONAL PROJECT',
+    timeline: 'AUG-DEC 2025',
+    tags: ['Next.js', 'Web Scraping', 'Data Visualization'],
+    demoUrl: 'https://goodreadswrapped.com',
+    githubUrl: 'https://github.com/angelinawwu/goodreads-wrapped'
+  },
+  {
     slug: 'manifesto-market',
     title: 'Manifesto Market',
     description: 'A mobile-first redesign to streamline booking, driving reservations by 121%.',
@@ -52,17 +65,7 @@ export const caseStudies: Project[] = [
 ];
 
 export const playgroundProjects: Project[] = [
-  {
-    title: 'Goodreads Wrapped',
-    description: 'A playful reading year summary, delivered to 5000+ users.',
-    videoUrl: '/assets/playground/Goodreads-Video.mov',
-    context: 'Next.js + Web Scraping',
-    type: 'playground',
-    projectType: 'PERSONAL PROJECT',
-    timeline: 'AUG-DEC 2025',
-    demoUrl: 'https://goodreadswrapped.com',
-    githubUrl: 'https://github.com/angelinawwu/goodreads-wrapped'
-  },
+
   {
     title: 'Typewriter',
     description: 'Typewriter captures the nostalgic feel of mechanical typewriters. No backspace, no copy-paste, no takebacks.',
@@ -124,12 +127,13 @@ export const playgroundProjects: Project[] = [
   },
 ];
 
-// All projects for Work page (case studies + featured playground projects)
+// All projects for Work page (all case studies)
+// Order: Goodreads Wrapped -> Manifesto Market -> Workup -> Bookish
 export const workProjects: Project[] = [
-  playgroundProjects[0], // Goodreads Wrapped
-  caseStudies[0], // Manifesto Market
-  caseStudies[1], // Workup
-  caseStudies[2], // Bookish
+  caseStudies[0], // Goodreads Wrapped
+  caseStudies[1], // Manifesto Market
+  caseStudies[2], // Workup
+  caseStudies[3], // Bookish
 ];
 
 // Combined projects for backward compatibility

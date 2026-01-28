@@ -75,8 +75,8 @@ export default function Sidebar() {
       {/* Name & Bio */}
       <div className="mb-8">
         <Link href="/" className="sidebar-link block mb-4">
-          <span className="geist-mono-font text-sm">✱</span>{' '}
-          <span className="geist-mono-font text-sm tracking-wide">ANGELINA WU</span>
+          <span className="geist-mono-font text-sm mr-2 text-white">✱</span>{' '}
+          <span className="geist-mono-font text-sm tracking-wide text-white">ANGELINA WU</span>
         </Link>
         <p className="text-sm leading-relaxed text-white-muted">
           Angelina Wu is a designer, builder, and doer who&apos;s passionate about creating channels for{' '}
@@ -86,14 +86,14 @@ export default function Sidebar() {
       </div>
 
       {/* Navigation */}
-      <div className="mb-8">
-        <h3 className="text-xs geist-mono-font text-white-muted mb-3 tracking-wider">NAVIGATION</h3>
+      <div className="mb-8 border-t border-faded-white pt-8">
+        <h3 className="text-xs geist-mono-font text-white mb-3 tracking-wider">NAVIGATION</h3>
         <nav className="flex flex-col gap-1">
           {navItems.map((item) => (
             <Link
               key={item.href}
               href={item.href}
-              className={`sidebar-link geist-mono-font text-sm py-1 ${
+              className={`sidebar-link geist-mono-font text-sm ${
                 isActive(item.href) ? 'sidebar-link-active' : ''
               }`}
             >
@@ -105,8 +105,8 @@ export default function Sidebar() {
       </div>
 
       {/* Connect */}
-      <div className="mb-8">
-        <h3 className="text-xs geist-mono-font text-white-muted mb-3 tracking-wider">CONNECT</h3>
+      <div className="mb-8 border-t border-faded-white pt-8">
+        <h3 className="text-xs geist-mono-font text-white mb-3 tracking-wider">CONNECT</h3>
         <nav className="flex flex-col gap-1">
           {connectLinks.map((link) => (
             <a
@@ -114,7 +114,7 @@ export default function Sidebar() {
               href={link.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="sidebar-link geist-mono-font text-sm py-1"
+              className="sidebar-link geist-mono-font text-sm"
             >
               <span className="mr-2">✱</span>
               {link.label}

@@ -28,13 +28,15 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
 
   // Determine if this is an internal case study or external link
   const isInternalLink = project.slug && project.type === 'case-study';
+  const isComingSoon = project.slug === 'goodreads-wrapped';
   const href = isInternalLink ? `/projects/${project.slug}` : project.demoUrl || '#';
 
   const CardContent = (
     <div
-      className="project-card group relative overflow-hidden border border-faded-white"
+      className={`project-card group relative overflow-hidden border border-faded-white ${isComingSoon ? 'cursor-default' : ''}`}
       style={{ '--card-index': index } as React.CSSProperties}
       data-cursor="project-card"
+      data-coming-soon={isComingSoon ? 'true' : undefined}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
@@ -93,12 +95,17 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
     </div>
   );
 
-  if (isInternalLink) {
+  if (isInternalLink && !isComingSoon) {
     return (
       <Link href={href} className="block">
         {CardContent}
       </Link>
     );
+  }
+
+  // Render without link if coming soon
+  if (isComingSoon) {
+    return CardContent;
   }
 
   if (project.demoUrl) {
