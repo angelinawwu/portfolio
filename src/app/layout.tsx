@@ -24,13 +24,8 @@ export const metadata: Metadata = {
   authors: [{ name: "Angelina Wu" }],
   creator: "Angelina Wu",
   icons: {
-<<<<<<< Updated upstream
-    icon: '/icon.png', // Explicitly declare the icon
-    apple: '/icon.png', // For Apple devices
-=======
     icon: '/favicon.png',
     apple: '/favicon.png',
->>>>>>> Stashed changes
   },
   openGraph: {
     title: "Angelina Wu's Portfolio",
