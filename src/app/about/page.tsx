@@ -50,7 +50,7 @@ export default function About() {
               <p className="text-sm leading-relaxed text-white-muted">
                 When I&apos;m not designing, I can be found:
               </p>
-              <ul className="arrow-list text-white-muted leading-relaxed">
+              <ul className="arrow-list text-white-muted text-sm leading-relaxed">
                 <li>Reading tearjerker novels about friendship and family</li>
                 <li>Going down Wikipedia rabbit holes</li>
                 <li>Arranging my bookmarks bar in rainbow order</li>
@@ -62,7 +62,7 @@ export default function About() {
               Say hi at{' '}
               <a 
                 href="mailto:angelinawwu@ucla.edu" 
-                className="accent-text hover:underline"
+                className="accent-text sidebar-link"
               >
                 angelinawwu@ucla.edu <ArrowUpRight className="w-4 h-4 inline-block" />
               </a>{' '}
@@ -71,7 +71,7 @@ export default function About() {
                 href="https://drive.google.com/file/d/1urDhFh8q3HmATT-XVZU7RXP-TAt2BeXs/view"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="accent-text hover:underline"
+                className="accent-text sidebar-link"
               >
                 resume <ArrowUpRight className="w-4 h-4 inline-block" />
               </a>.

@@ -71,6 +71,8 @@
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
   --font-bit-apple: var(--font-bit-apple);
+  
+  --font-weight-normal: 300;
 }
 
 /* ========== FONT FACES ========== */
@@ -90,6 +92,7 @@ html {
 
 body {
   font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+  font-weight: 300;
   min-height: 100vh;
   background: var(--black);
   color: var(--white);
@@ -216,6 +219,9 @@ body {
 canvas.pixel-canvas { 
   background-color: transparent !important; 
   pointer-events: none !important;
+  width: 100% !important;
+  height: 100% !important;
+  display: block !important;
 }
 
 /* ========== REDUCED MOTION ========== */
@@ -261,7 +267,7 @@ canvas.pixel-canvas {
   position: absolute;
   left: 0;
   color: var(--accent-muted);
-  font-weight: 500;
+  font-weight: 300;
 }
 
 /* ========== THEME BUTTON ========== */
@@ -279,7 +285,8 @@ canvas.pixel-canvas {
 }
 
 .theme-button.active {
-  border-color: var(--white);
+  border: 2px solid var(--black);
+  box-shadow: 0 0 0 1px var(--white);
 }
 
 /* Theme button colors */

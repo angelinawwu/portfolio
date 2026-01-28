@@ -11,11 +11,13 @@ import PixelTrailWrapper from "@/components/PixelTrailWrapper";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
+  weight: ["300"],
 });
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
+  weight: ["300"],
 });
 
 export const metadata: Metadata = {
@@ -80,7 +82,7 @@ export default function RootLayout({
           <Sidebar />
           
           {/* Main content area - offset by sidebar on desktop */}
-          <main className="lg:ml-72 min-h-screen pt-14 lg:pt-0">
+          <main className="lg:ml-72 min-h-screen pt-14 lg:pt-0 relative z-10">
             <div className="page-transition">
               {children}
             </div>

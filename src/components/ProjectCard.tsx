@@ -81,7 +81,7 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
         )}
 
         {/* Title */}
-        <h3 className="bit-apple-font text-white mb-2 text-2xl md:text-3xl">
+        <h3 className="bit-apple-font text-white mb-2 text-2xl md:text-4xl">
           {project.title}
         </h3>
 
