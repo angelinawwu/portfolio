@@ -44,7 +44,7 @@ export function LanguageChart() {
         ],
         borderWidth: 0,
         borderColor: '#333',
-        hoverBackgroundColor: '#188FFF',
+        hoverBackgroundColor: '#F3EDF5',
       },
     ],
   };
@@ -80,7 +80,7 @@ export function LanguageChart() {
       title: {
         display: true,
         text: '30-Day Active Users by Browser Language',
-        color: '#0000ff',
+        color: '#F3EDF5',
         font: {
           size: 14,
         },
@@ -100,7 +100,7 @@ export function DeviceChart() {
         backgroundColor: ['#60A493', '#E98897', '#8AC7B8'],
         borderWidth: 0,
         borderColor: '#333',
-        hoverBackgroundColor: '#188FFF',
+        hoverBackgroundColor: '#F3EDF5',
       },
     ],
   };
@@ -136,7 +136,7 @@ export function DeviceChart() {
       title: {
         display: true,
         text: '30-Day Active Users by Device Type',
-        color: '#0000ff',
+        color: '#F3EDF5',
         font: {
           size: 14,
         },
@@ -194,7 +194,7 @@ export function ReservationFunnelChart() {
       title: {
         display: true,
         text: '30-Day Reservation Widget Interactions by Step',
-        color: '#0000ff',
+        color: '#F3EDF5',
         font: {
           size: 14,
         },
@@ -205,19 +205,19 @@ export function ReservationFunnelChart() {
         title: {
           display: true,
           text: 'Percentage of Total Users',
-          color: '#0000ff',
+          color: '#F3EDF5',
           font: {
             size: 12,
           },
         },
         grid: {
-          color: '#333',
+          color: 'rgba(243, 237, 245, 0.2)',
         },
         ticks: {
           callback: function (value) {
             return value + '%';
           },
-          color: '#999999',
+          color: 'rgba(243, 237, 245, 0.7)',
           font: {
             size: 11,
           },
@@ -227,16 +227,16 @@ export function ReservationFunnelChart() {
         title: {
           display: true,
           text: 'Step in Reservation Widget Interaction',
-          color: '#0000ff',
+          color: '#F3EDF5',
           font: {
             size: 12,
           },
         },
         grid: {
-          color: '#333',
+          color: 'rgba(243, 237, 245, 0.2)',
         },
         ticks: {
-          color: '#999999',
+          color: 'rgba(243, 237, 245, 0.7)',
           font: {
             size: 11,
           },
@@ -247,4 +247,3 @@ export function ReservationFunnelChart() {
 
   return <Line data={data} options={options} />;
 }
-

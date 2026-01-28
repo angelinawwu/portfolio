@@ -3,18 +3,21 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
-import Script from "next/script";
-import Loader from "@/components/Loader";
+import { ThemeProvider } from "@/components/ThemeProvider";
+import Sidebar from "@/components/Sidebar";
 import CustomCursor from "@/components/CustomCursor";
+import PixelTrailWrapper from "@/components/PixelTrailWrapper";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
+  weight: ["300"],
 });
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
+  weight: ["300"],
 });
 
 export const metadata: Metadata = {
@@ -70,19 +73,24 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-black`}
         suppressHydrationWarning={true}
       >
-        <CustomCursor />
-        <Loader />
-        {children}
-        <Analytics />
-        <SpeedInsights />
-        <Script
-          src="https://app.rybbit.io/api/script.js"
-          data-site-id="726cda46b399"
-          strategy="afterInteractive"
-        />
+        <ThemeProvider>
+          <PixelTrailWrapper />
+          <CustomCursor />
+          <Sidebar />
+          
+          {/* Main content area - offset by sidebar on desktop */}
+          <main className="lg:ml-72 min-h-screen pt-14 lg:pt-0 relative z-10">
+            <div className="page-transition">
+              {children}
+            </div>
+          </main>
+          
+          <Analytics />
+          <SpeedInsights />
+        </ThemeProvider>
       </body>
     </html>
   );

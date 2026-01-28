@@ -3,8 +3,9 @@
 import { useEffect, useState, useRef } from 'react';
 import { ArrowRight, ArrowUpRight } from '@phosphor-icons/react';
 import { motion } from 'framer-motion';
+import { useTheme } from './ThemeProvider';
 
-type CursorState = 'default' | 'playground-link' | 'project-card' | 'image';
+type CursorState = 'default' | 'playground-link' | 'project-card' | 'coming-soon' | 'image';
 
 export default function CustomCursor() {
   const [cursorState, setCursorState] = useState<CursorState>('default');
@@ -13,9 +14,8 @@ export default function CustomCursor() {
   const measureRef = useRef<HTMLDivElement>(null);
   const [contentWidth, setContentWidth] = useState(16);
   const [imageCaption, setImageCaption] = useState('');
+  const { accentColor } = useTheme();
 
-  // ... (useEffect setup for supportsHover, mouse events, and measuring - remains unchanged) ...
-  
   useEffect(() => {
     // Check if device supports hover (desktop)
     const mediaQuery = window.matchMedia('(hover: hover)');
@@ -41,12 +41,13 @@ export default function CustomCursor() {
       const playgroundLink = target.closest('[data-cursor="playground-link"]');
       const projectCard = target.closest('[data-cursor="project-card"]');
       const imageElement = target.closest('[data-cursor="image"]');
+      const isComingSoon = projectCard?.getAttribute('data-coming-soon') === 'true';
       
       if (playgroundLink) {
         setCursorState('playground-link');
         setImageCaption('');
       } else if (projectCard) {
-        setCursorState('project-card');
+        setCursorState(isComingSoon ? ('coming-soon' as CursorState) : ('project-card' as CursorState));
         setImageCaption('');
       } else if (imageElement) {
         const caption = imageElement.getAttribute('data-caption') || '';
@@ -82,32 +83,31 @@ export default function CustomCursor() {
     });
   }, [cursorState, imageCaption]);
 
-
   if (!supportsHover) return null;
 
   const isDefault = cursorState === 'default';
   const text = cursorState === 'playground-link' ? 'OPEN WEBSITE' 
     : cursorState === 'project-card' ? 'VIEW PROJECT' 
+    : cursorState === 'coming-soon' ? 'COMING SOON'
     : cursorState === 'image' ? imageCaption 
     : '';
 
-  // 1. ADDED: Instant transition for cursor movement
+  // Instant transition for cursor movement
   const moveTransition = { duration: 0 }; 
 
-  // Container size transition (Duration set to 0.3s for synchronization)
+  // Container size transition
   const sizeTransition = { duration: 0.2, ease: [0.215, 0.61, 0.355, 1] as const };
   
-  // Content transition (Delay set to 0.15s)
+  // Content transition
   const contentTransition = { 
     duration: 0.2, 
     ease: [0.215, 0.61, 0.355, 1] as const, 
     delay: 0.01 
   };
 
-
   return (
     <>
-      {/* Hidden measurement element (unchanged) */}
+      {/* Hidden measurement element */}
       <div
         ref={measureRef}
         className="absolute invisible whitespace-nowrap flex items-center gap-2 px-3 py-1.5"
@@ -125,6 +125,9 @@ export default function CustomCursor() {
             <ArrowRight className="w-3.5 h-3.5 flex-shrink-0" weight="bold" />
           </>
         )}
+        {cursorState === 'coming-soon' && (
+          <span className="text-xs font-mono geist-mono-font">COMING SOON</span>
+        )}
         {cursorState === 'image' && (
           <span className="text-xs font-mono uppercase geist-mono-font">{imageCaption}</span>
         )}
@@ -134,13 +137,13 @@ export default function CustomCursor() {
       <motion.div
         className="fixed top-0 left-0 pointer-events-none z-[9999]"
         animate={{ x: position.x, y: position.y }}
-        // 2. APPLIED: Instant transition for x and y movement
         transition={{ x: moveTransition, y: moveTransition }} 
         style={{ transform: 'translate(-50%, -50%)' }}
       >
-        {/* Inner motion.div for size change */}
+        {/* Inner motion.div for size change - uses accent color */}
         <motion.div
-          className="bg-magenta text-white flex items-center gap-2 overflow-hidden"
+          className="flex items-center gap-2 overflow-hidden"
+          style={{ backgroundColor: accentColor, color: 'var(--black)' }}
           animate={{
             width: contentWidth,
             height: isDefault ? 16 : 28, 
