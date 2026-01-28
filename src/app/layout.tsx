@@ -4,8 +4,10 @@ import "./globals.css";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import Script from "next/script";
-import Loader from "@/components/Loader";
+import { ThemeProvider } from "@/components/ThemeProvider";
+import Sidebar from "@/components/Sidebar";
 import CustomCursor from "@/components/CustomCursor";
+import PixelTrailWrapper from "@/components/PixelTrailWrapper";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -24,8 +26,8 @@ export const metadata: Metadata = {
   authors: [{ name: "Angelina Wu" }],
   creator: "Angelina Wu",
   icons: {
-    icon: '/icon.png', // Explicitly declare the icon
-    apple: '/icon.png', // For Apple devices
+    icon: '/icon.png',
+    apple: '/icon.png',
   },
   openGraph: {
     title: "Angelina Wu's Portfolio",
@@ -70,19 +72,29 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-black`}
         suppressHydrationWarning={true}
       >
-        <CustomCursor />
-        <Loader />
-        {children}
-        <Analytics />
-        <SpeedInsights />
-        <Script
-          src="https://app.rybbit.io/api/script.js"
-          data-site-id="726cda46b399"
-          strategy="afterInteractive"
-        />
+        <ThemeProvider>
+          <PixelTrailWrapper />
+          <CustomCursor />
+          <Sidebar />
+          
+          {/* Main content area - offset by sidebar on desktop */}
+          <main className="lg:ml-72 min-h-screen pt-14 lg:pt-0">
+            <div className="page-transition">
+              {children}
+            </div>
+          </main>
+          
+          <Analytics />
+          <SpeedInsights />
+          <Script
+            src="https://app.rybbit.io/api/script.js"
+            data-site-id="726cda46b399"
+            strategy="afterInteractive"
+          />
+        </ThemeProvider>
       </body>
     </html>
   );
