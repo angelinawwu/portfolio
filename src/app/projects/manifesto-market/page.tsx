@@ -28,19 +28,19 @@ export default function ManifestoMarketPage() {
 
           {/* Metadata Cards */}
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
-            <div className="border border-faded-white p-4 bg-black">
+            <div className="border border-faded-white p-4 bg-surface">
               <h3 className="text-xs geist-mono-font text-white-muted mb-2">MY ROLE</h3>
               <p className="text-white">UX Intern</p>
             </div>
-            <div className="border border-faded-white p-4 bg-black">
+            <div className="border border-faded-white p-4 bg-surface">
               <h3 className="text-xs geist-mono-font text-white-muted mb-2">TIMELINE</h3>
               <p className="text-white">Jun - Aug 2025</p>
             </div>
-            <div className="border border-faded-white p-4 bg-black">
+            <div className="border border-faded-white p-4 bg-surface">
               <h3 className="text-xs geist-mono-font text-white-muted mb-2">TEAM</h3>
               <p className="text-white">1 Designer<br />1 Developer<br />2 Supervisors</p>
             </div>
-            <div className="border border-faded-white p-4 bg-black">
+            <div className="border border-faded-white p-4 bg-surface">
               <h3 className="text-xs geist-mono-font text-white-muted mb-2">TOOLS</h3>
               <p className="text-white">Figma<br />Wordpress</p>
             </div>
@@ -76,7 +76,7 @@ export default function ManifestoMarketPage() {
               </div>
             </div>
 
-            <div className="border border-faded-white p-6">
+            <div className="border border-faded-white p-6 bg-surface">
               <ul className="arrow-list">
                 <li className="text-white">
                   The solution: An overhauled, usability-focused site with the goal of translating site visits into eventual sales.
@@ -102,10 +102,10 @@ export default function ManifestoMarketPage() {
 
               {/* Charts Grid */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
-                <div className="border border-faded-white p-4">
+                <div className="border border-faded-white p-4 bg-surface">
                   <LanguageChart />
                 </div>
-                <div className="border border-faded-white p-4">
+                <div className="border border-faded-white p-4 bg-surface">
                   <DeviceChart />
                 </div>
               </div>
@@ -114,7 +114,7 @@ export default function ManifestoMarketPage() {
                 Note: Step 3 was omitted because it is an optional step.
               </p>
               
-              <div className="border border-faded-white p-4">
+              <div className="border border-faded-white p-4 bg-surface">
                 <ReservationFunnelChart />
               </div>
             </div>
@@ -170,7 +170,7 @@ export default function ManifestoMarketPage() {
               </p>
 
               <div className="space-y-4">
-                <div className="border border-faded-white p-6">
+                <div className="border border-faded-white p-6 bg-surface">
                   <div className="flex items-start gap-4">
                     <div className="flex-shrink-0 w-8 h-8 border border-faded-white flex items-center justify-center">
                       <span className="text-white geist-mono-font text-sm">1</span>
@@ -184,7 +184,7 @@ export default function ManifestoMarketPage() {
                   </div>
                 </div>
 
-                <div className="border border-faded-white p-6">
+                <div className="border border-faded-white p-6 bg-surface">
                   <div className="flex items-start gap-4">
                     <div className="flex-shrink-0 w-8 h-8 border border-faded-white flex items-center justify-center">
                       <span className="text-white geist-mono-font text-sm">2</span>
@@ -198,7 +198,7 @@ export default function ManifestoMarketPage() {
                   </div>
                 </div>
 
-                <div className="border border-faded-white p-6">
+                <div className="border border-faded-white p-6 bg-surface">
                   <div className="flex items-start gap-4">
                     <div className="flex-shrink-0 w-8 h-8 border border-faded-white flex items-center justify-center">
                       <span className="text-white geist-mono-font text-sm">3</span>
@@ -293,7 +293,7 @@ export default function ManifestoMarketPage() {
           <h2 className="text-2xl md:text-3xl bit-apple-font text-white mb-6">Impact</h2>
           
           <div className="space-y-4">
-            <div className="border border-faded-white p-6">
+            <div className="border border-faded-white p-6 bg-surface">
               <div className="flex items-start gap-4">
                 <div className="flex-shrink-0 w-8 h-8 border border-faded-white flex items-center justify-center">
                   <span className="text-white geist-mono-font text-sm">1</span>
@@ -307,7 +307,7 @@ export default function ManifestoMarketPage() {
               </div>
             </div>
 
-            <div className="border border-faded-white p-6">
+            <div className="border border-faded-white p-6 bg-surface">
               <div className="flex items-start gap-4">
                 <div className="flex-shrink-0 w-8 h-8 border border-faded-white flex items-center justify-center">
                   <span className="text-white geist-mono-font text-sm">2</span>
@@ -321,7 +321,7 @@ export default function ManifestoMarketPage() {
               </div>
             </div>
 
-            <div className="border border-faded-white p-6">
+            <div className="border border-faded-white p-6 bg-surface">
               <div className="flex items-start gap-4">
                 <div className="flex-shrink-0 w-8 h-8 border border-faded-white flex items-center justify-center">
                   <span className="text-white geist-mono-font text-sm">3</span>
@@ -342,7 +342,7 @@ export default function ManifestoMarketPage() {
           <h2 className="text-2xl md:text-3xl bit-apple-font text-white mb-6">Takeaways</h2>
           
           <div className="space-y-4">
-            <div className="border border-faded-white p-6">
+            <div className="border border-faded-white p-6 bg-surface">
               <h3 className="text-lg text-white mb-3">
                 Data is <span className="accent-text">everything</span>.
               </h3>
@@ -353,7 +353,7 @@ export default function ManifestoMarketPage() {
               </ul>
             </div>
 
-            <div className="border border-faded-white p-6">
+            <div className="border border-faded-white p-6 bg-surface">
               <h3 className="text-lg text-white mb-3">
                 Understand the <span className="accent-text">limitations first</span>.
               </h3>

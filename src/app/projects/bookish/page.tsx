@@ -28,19 +28,19 @@ export default function BookishPage() {
 
           {/* Metadata Cards */}
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
-            <div className="border border-faded-white p-4 bg-black">
+            <div className="border border-faded-white p-4 bg-surface">
               <h3 className="text-xs geist-mono-font text-white-muted mb-2">MY ROLE</h3>
               <p className="text-white">Lead Product Designer</p>
             </div>
-            <div className="border border-faded-white p-4 bg-black">
+            <div className="border border-faded-white p-4 bg-surface">
               <h3 className="text-xs geist-mono-font text-white-muted mb-2">TIMELINE</h3>
               <p className="text-white">Mar – May 2024</p>
             </div>
-            <div className="border border-faded-white p-4 bg-black">
+            <div className="border border-faded-white p-4 bg-surface">
               <h3 className="text-xs geist-mono-font text-white-muted mb-2">TEAM</h3>
               <p className="text-white">1 Designer<br />3 Developers</p>
             </div>
-            <div className="border border-faded-white p-4 bg-black">
+            <div className="border border-faded-white p-4 bg-surface">
               <h3 className="text-xs geist-mono-font text-white-muted mb-2">TOOLS</h3>
               <p className="text-white">Figma, Illustrator</p>
             </div>
@@ -76,7 +76,7 @@ export default function BookishPage() {
               </div>
             </div>
 
-            <div className="border border-faded-white p-6">
+            <div className="border border-faded-white p-6 bg-surface">
               <ul className="arrow-list">
                 <li className="text-white">
                   The solution: An app where readers can share their favorite books and form communities, allowing books to be reused by multiple readers.
@@ -105,15 +105,15 @@ export default function BookishPage() {
         <section className="mb-12 pt-8 border-t border-faded-white">
           <h2 className="text-2xl md:text-3xl bit-apple-font text-white mb-6">Project Goals</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            <div className="border border-faded-white p-6">
+            <div className="border border-faded-white p-6 bg-surface">
               <h3 className="text-lg text-white mb-3">Encourage local <span className="accent-text">connection.</span></h3>
               <p className="text-white-muted leading-relaxed">Allow users to connect with other local readers, cultivating a community beyond the digital.</p>
             </div>
-            <div className="border border-faded-white p-6">
+            <div className="border border-faded-white p-6 bg-surface">
               <h3 className="text-lg text-white mb-3">Nurture genuine <span className="accent-text">discovery.</span></h3>
               <p className="text-white-muted leading-relaxed">Limit algorithmic recommendations and encourage users to discover new favorites naturally.</p>
             </div>
-            <div className="border border-faded-white p-6">
+            <div className="border border-faded-white p-6 bg-surface">
               <h3 className="text-lg text-white mb-3">Increase literary <span className="accent-text">accessibility.</span></h3>
               <p className="text-white-muted leading-relaxed">Create a decentralized and community-driven library without emphasizing monetary exchange.</p>
             </div>
@@ -215,7 +215,7 @@ export default function BookishPage() {
         <section className="mb-12 pt-8 border-t border-faded-white">
           <h2 className="text-2xl md:text-3xl bit-apple-font text-white mb-6">Takeaways</h2>
           <div className="space-y-4">
-            <div className="border border-faded-white p-6">
+            <div className="border border-faded-white p-6 bg-surface">
               <h3 className="text-lg text-white mb-3">Design with a <span className="accent-text">product mindset</span>.</h3>
               <ul className="arrow-list">
                 <li className="text-white-muted leading-relaxed">
@@ -223,7 +223,7 @@ export default function BookishPage() {
                 </li>
               </ul>
             </div>
-            <div className="border border-faded-white p-6">
+            <div className="border border-faded-white p-6 bg-surface">
               <h3 className="text-lg text-white mb-3">Practice <span className="accent-text">iteration</span> and <span className="accent-text">modification</span>.</h3>
               <ul className="arrow-list">
                 <li className="text-white-muted leading-relaxed">

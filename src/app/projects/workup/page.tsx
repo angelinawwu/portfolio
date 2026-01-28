@@ -28,19 +28,19 @@ export default function WorkupPage() {
 
           {/* Metadata Cards */}
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
-            <div className="border border-faded-white p-4 bg-black">
+            <div className="border border-faded-white p-4 bg-surface">
               <h3 className="text-xs geist-mono-font text-white-muted mb-2">MY ROLE</h3>
               <p className="text-white">Product Designer</p>
             </div>
-            <div className="border border-faded-white p-4 bg-black">
+            <div className="border border-faded-white p-4 bg-surface">
               <h3 className="text-xs geist-mono-font text-white-muted mb-2">TIMELINE</h3>
               <p className="text-white">Jan - Jun 2025</p>
             </div>
-            <div className="border border-faded-white p-4 bg-black">
+            <div className="border border-faded-white p-4 bg-surface">
               <h3 className="text-xs geist-mono-font text-white-muted mb-2">TEAM</h3>
               <p className="text-white">14 Designers<br />1 Product Team</p>
             </div>
-            <div className="border border-faded-white p-4 bg-black">
+            <div className="border border-faded-white p-4 bg-surface">
               <h3 className="text-xs geist-mono-font text-white-muted mb-2">TOOLS</h3>
               <p className="text-white">Figma</p>
             </div>
@@ -79,7 +79,7 @@ export default function WorkupPage() {
               </div>
             </div>
 
-            <div className="border border-faded-white p-6">
+            <div className="border border-faded-white p-6 bg-surface">
               <ul className="arrow-list">
                 <li className="text-white">
                   The solution: A restructured user flow to minimize friction in the interview practice experience.
@@ -128,7 +128,7 @@ export default function WorkupPage() {
                 <div className="flex items-center justify-center">
                   <ArrowRight className="text-white-muted h-8 w-8 transform rotate-90 md:rotate-0" />
                 </div>
-                <div className="border border-faded-white p-4">
+                <div className="border border-faded-white p-4 bg-surface">
                   <p className="text-white-muted leading-relaxed mb-3">
                     The user survey gave us a preliminary understanding of how college students interacted with AI tools.
                   </p>
@@ -161,7 +161,7 @@ export default function WorkupPage() {
               <h3 className="text-xl md:text-2xl text-white mb-6">Key Findings</h3>
 
               <div className="space-y-4">
-                <div className="border border-faded-white p-6">
+                <div className="border border-faded-white p-6 bg-surface">
                   <div className="flex items-start gap-4">
                     <div className="flex-shrink-0 w-8 h-8 border border-faded-white flex items-center justify-center">
                       <span className="text-white geist-mono-font text-sm">1</span>
@@ -175,7 +175,7 @@ export default function WorkupPage() {
                   </div>
                 </div>
 
-                <div className="border border-faded-white p-6">
+                <div className="border border-faded-white p-6 bg-surface">
                   <div className="flex items-start gap-4">
                     <div className="flex-shrink-0 w-8 h-8 border border-faded-white flex items-center justify-center">
                       <span className="text-white geist-mono-font text-sm">2</span>
@@ -189,7 +189,7 @@ export default function WorkupPage() {
                   </div>
                 </div>
 
-                <div className="border border-faded-white p-6">
+                <div className="border border-faded-white p-6 bg-surface">
                   <div className="flex items-start gap-4">
                     <div className="flex-shrink-0 w-8 h-8 border border-faded-white flex items-center justify-center">
                       <span className="text-white geist-mono-font text-sm">3</span>
@@ -240,19 +240,19 @@ export default function WorkupPage() {
           <h2 className="text-2xl md:text-3xl bit-apple-font text-white mb-6">Project Goals</h2>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            <div className="border border-faded-white p-6">
+            <div className="border border-faded-white p-6 bg-surface">
               <h3 className="text-lg text-white mb-3">Empower <span className="accent-text">confident preparation.</span></h3>
               <p className="text-white-muted leading-relaxed">
                 Enable users to practice interviews and receive actionable AI feedback.
               </p>
             </div>
-            <div className="border border-faded-white p-6">
+            <div className="border border-faded-white p-6 bg-surface">
               <h3 className="text-lg text-white mb-3">Streamline the <span className="accent-text">user journey.</span></h3>
               <p className="text-white-muted leading-relaxed">
                 Design an intuitive user flow that minimizes friction and confusion.
               </p>
             </div>
-            <div className="border border-faded-white p-6">
+            <div className="border border-faded-white p-6 bg-surface">
               <h3 className="text-lg text-white mb-3">Support <span className="accent-text">continuous improvement.</span></h3>
               <p className="text-white-muted leading-relaxed">
                 Provide organizational tools so users can track their progress.
@@ -273,7 +273,7 @@ export default function WorkupPage() {
               </p>
 
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                <div className="border border-faded-white p-4">
+                <div className="border border-faded-white p-4 bg-surface">
                   <h4 className="text-white mb-2">Problem Group 1</h4>
                   <p className="text-white-muted text-sm mb-4">Redundant empty pages disrupt interview setup</p>
                   <Image
@@ -284,7 +284,7 @@ export default function WorkupPage() {
                     className="w-full h-auto object-contain"
                   />
                 </div>
-                <div className="border border-faded-white p-4">
+                <div className="border border-faded-white p-4 bg-surface">
                   <h4 className="text-white mb-2">Problem Group 2</h4>
                   <p className="text-white-muted text-sm mb-4">Customization features feel disconnected</p>
                   <Image
@@ -295,7 +295,7 @@ export default function WorkupPage() {
                     className="w-full h-auto object-contain"
                   />
                 </div>
-                <div className="border border-faded-white p-4">
+                <div className="border border-faded-white p-4 bg-surface">
                   <h4 className="text-white mb-2">Problem Group 3</h4>
                   <p className="text-white-muted text-sm mb-4">Lengthy offboarding creates friction</p>
                   <Image
@@ -418,7 +418,7 @@ export default function WorkupPage() {
           <h2 className="text-2xl md:text-3xl bit-apple-font text-white mb-6">Impact</h2>
           
           <div className="space-y-4">
-            <div className="border border-faded-white p-6">
+            <div className="border border-faded-white p-6 bg-surface">
               <div className="flex items-start gap-4">
                 <div className="flex-shrink-0 w-8 h-8 border border-faded-white flex items-center justify-center">
                   <span className="text-white geist-mono-font text-sm">1</span>
@@ -432,7 +432,7 @@ export default function WorkupPage() {
               </div>
             </div>
 
-            <div className="border border-faded-white p-6">
+            <div className="border border-faded-white p-6 bg-surface">
               <div className="flex items-start gap-4">
                 <div className="flex-shrink-0 w-8 h-8 border border-faded-white flex items-center justify-center">
                   <span className="text-white geist-mono-font text-sm">2</span>
@@ -446,7 +446,7 @@ export default function WorkupPage() {
               </div>
             </div>
 
-            <div className="border border-faded-white p-6">
+            <div className="border border-faded-white p-6 bg-surface">
               <div className="flex items-start gap-4">
                 <div className="flex-shrink-0 w-8 h-8 border border-faded-white flex items-center justify-center">
                   <span className="text-white geist-mono-font text-sm">3</span>
@@ -467,7 +467,7 @@ export default function WorkupPage() {
           <h2 className="text-2xl md:text-3xl bit-apple-font text-white mb-6">Takeaways</h2>
           
           <div className="space-y-4">
-            <div className="border border-faded-white p-6">
+            <div className="border border-faded-white p-6 bg-surface">
               <h3 className="text-lg text-white mb-3">
                 <span className="accent-text">User empathy</span> is foundational.
               </h3>
@@ -478,7 +478,7 @@ export default function WorkupPage() {
               </ul>
             </div>
 
-            <div className="border border-faded-white p-6">
+            <div className="border border-faded-white p-6 bg-surface">
               <h3 className="text-lg text-white mb-3">
                 Sometimes the answer is <span className="accent-text">simplicity</span>.
               </h3>

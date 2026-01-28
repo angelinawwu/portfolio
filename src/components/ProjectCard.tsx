@@ -68,7 +68,7 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
       </div>
 
       {/* Content */}
-      <div className="p-4 bg-black">
+      <div className="p-4 bg-surface">
         {/* Type and Timeline */}
         {(project.projectType || project.timeline) && (
           <div className="flex items-center gap-2 mb-2 text-xs geist-mono-font text-white-muted">

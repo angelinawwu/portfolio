@@ -7,6 +7,7 @@
   --faded-white: rgba(243, 237, 245, 0.5);
   --black: #121213;
   --accent: #F3EDF5;
+  --surface: #212123;
   
   /* Derived colors */
   --white-muted: rgba(243, 237, 245, 0.7);
@@ -19,6 +20,7 @@
   --faded-white: rgba(248, 250, 233, 0.5);
   --black: #0E2309;
   --accent: #D4EC21;
+  --surface: #29351C;
   --white-muted: rgba(248, 250, 233, 0.7);
   --accent-muted: rgba(212, 236, 33, 0.6);
 }
@@ -29,6 +31,7 @@
   --faded-white: rgba(227, 234, 246, 0.5);
   --black: #071327;
   --accent: #6FA7E7;
+  --surface: #182233;
   --white-muted: rgba(227, 234, 246, 0.7);
   --accent-muted: rgba(111, 167, 231, 0.6);
 }
@@ -39,6 +42,7 @@
   --faded-white: rgba(246, 227, 245, 0.5);
   --black: #270726;
   --accent: #EC6CF1;
+  --surface: #391B38;
   --white-muted: rgba(246, 227, 245, 0.7);
   --accent-muted: rgba(236, 108, 241, 0.6);
 }
@@ -49,6 +53,7 @@
   --faded-white: rgba(246, 236, 227, 0.5);
   --black: #271507;
   --accent: #E3743D;
+  --surface: #36231A;
   --white-muted: rgba(246, 236, 227, 0.7);
   --accent-muted: rgba(227, 116, 61, 0.6);
 }
@@ -59,6 +64,7 @@
   --color-faded-white: var(--faded-white);
   --color-black: var(--black);
   --color-accent: var(--accent);
+  --color-surface: var(--surface);
   --color-white-muted: var(--white-muted);
   --color-accent-muted: var(--accent-muted);
   
