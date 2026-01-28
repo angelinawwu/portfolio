@@ -57,8 +57,8 @@ export const caseStudies: Project[] = [
     title: 'Bookish',
     description: 'Redesigning the reading experience with accessibility and sustainability in mind.',
     thumbnail: '/assets/projects/Bookish-Cover.png',
-    timeline: 'SPRING 2024',
-    projectType: 'SCHOOL PROJECT',
+    timeline: 'MAR-MAY 2024',
+    projectType: 'PERSONAL PROJECT',
     tags: ['Mobile Design', 'UX Research', 'Figma'],
     type: 'case-study'
   }
