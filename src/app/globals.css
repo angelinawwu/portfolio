@@ -4,58 +4,58 @@
 /* Default theme (light lavender) */
 :root {
   --white: #F3EDF5;
-  --faded-white: rgba(243, 237, 245, 0.5);
+  --faded-white: rgba(243, 237, 245, 0.6);
   --black: #121213;
   --accent: #F3EDF5;
   --surface: #212123;
   
   /* Derived colors */
-  --white-muted: rgba(243, 237, 245, 0.5);
-  --accent-muted: rgba(243, 237, 245, 0.5);
+  --white-muted: rgba(243, 237, 245, 0.6);
+  --accent-muted: rgba(243, 237, 245, 0.6);
 }
 
 /* Green theme */
 [data-theme="green"] {
   --white: #F8FAE9;
-  --faded-white: rgba(248, 250, 233, 0.5);
+  --faded-white: rgba(248, 250, 233, 0.6);
   --black: #0E2309;
   --accent: #D4EC21;
   --surface: #29351C;
-  --white-muted: rgba(248, 250, 233, 0.5);
+  --white-muted: rgba(248, 250, 233, 0.6);
   --accent-muted: rgba(212, 236, 33, 0.5);
 }
 
 /* Blue theme */
 [data-theme="blue"] {
   --white: #E3EAF6;
-  --faded-white: rgba(227, 234, 246, 0.5);
+  --faded-white: rgba(227, 234, 246, 0.6);
   --black: #071327;
   --accent: #6FA7E7;
   --surface: #182233;
-  --white-muted: rgba(227, 234, 246, 0.5);
+  --white-muted: rgba(227, 234, 246, 0.6);
   --accent-muted: rgba(111, 167, 231, 0.5);
 }
 
 /* Magenta theme */
 [data-theme="magenta"] {
   --white: #F6E3F5;
-  --faded-white: rgba(246, 227, 245, 0.5);
+  --faded-white: rgba(246, 227, 245, 0.6);
   --black: #270726;
   --accent: #EC6CF1;
   --surface: #391B38;
-  --white-muted: rgba(246, 227, 245, 0.5);
+  --white-muted: rgba(246, 227, 245, 0.6);
   --accent-muted: rgba(236, 108, 241, 0.5);
 }
 
 /* Orange theme */
 [data-theme="orange"] {
   --white: #F6ECE3;
-  --faded-white: rgba(246, 236, 227, 0.5);
+  --faded-white: rgba(246, 236, 227, 0.6);
   --black: #271507;
   --accent: #E3743D;
   --surface: #36231A;
-  --white-muted: rgba(246, 236, 227, 0.5);
-  --accent-muted: rgba(227, 116, 61, 0.5);
+  --white-muted: rgba(246, 236, 227, 0.6);
+  --accent-muted: rgba(227, 116, 61, 0.6);
 }
 
 /* ========== TAILWIND THEME MAPPING ========== */
