@@ -10,7 +10,7 @@ export default function WorkPage() {
     workProjects.find(p => p.slug === 'bookish'),
   ].filter(Boolean) as typeof workProjects;
 
-  // Split into two columns for manual masonry control:
+  // Desktop masonry columns
   // Column 1 (left): Goodreads Wrapped, Workup
   // Column 2 (right): Manifesto Market, Bookish
   const leftColumn = [orderedProjects[0], orderedProjects[2]].filter(Boolean);
@@ -18,10 +18,21 @@ export default function WorkPage() {
 
   return (
     <div className="min-h-screen bg-black p-4 md:p-6 lg:p-8">
-      {/* Two-column masonry layout with manual column distribution */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 items-start">
+      {/* Mobile: single column in correct order */}
+      <div className="flex flex-col gap-4 md:hidden">
+        {orderedProjects.map((project, index) => (
+          <ProjectCard
+            key={project.slug || project.title}
+            project={project}
+            index={index}
+          />
+        ))}
+      </div>
+
+      {/* Desktop: two-column masonry layout */}
+      <div className="hidden md:grid md:grid-cols-2 gap-6 items-start">
         {/* Left column */}
-        <div className="flex flex-col gap-4 md:gap-6">
+        <div className="flex flex-col gap-6">
           {leftColumn.map((project, idx) => (
             <ProjectCard
               key={project.slug || project.title}
@@ -31,7 +42,7 @@ export default function WorkPage() {
           ))}
         </div>
         {/* Right column */}
-        <div className="flex flex-col gap-4 md:gap-6">
+        <div className="flex flex-col gap-6">
           {rightColumn.map((project, idx) => (
             <ProjectCard
               key={project.slug || project.title}

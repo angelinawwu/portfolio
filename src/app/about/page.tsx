@@ -3,40 +3,65 @@ import { ArrowUpRight } from 'lucide-react';
 import { books, albums, images } from '@/data/about';
 
 export default function About() {
+  let cardIndex = 0;
+  
   return (
     <div className="min-h-screen bg-black">
       {/* Images Section */}
       <section className="p-4 md:p-6 lg:p-8 mb-4">
         <div className="grid grid-cols-2 md:grid-cols-5 gap-2">
-          {images.map((image, index) => (
-            <div key={image.id} className={index === 4 ? 'hidden md:block' : ''}>
+          {images.map((image, index) => {
+            const currentIndex = cardIndex++;
+            return (
               <div 
-                className="relative aspect-square overflow-hidden"
-                data-cursor="image"
-                data-caption={image.caption}
+                key={image.id} 
+                className={`project-card group ${index === 4 ? 'hidden md:block' : ''}`}
+                style={{ '--card-index': currentIndex } as React.CSSProperties}
               >
-                <Image
-                  src={image.image}
-                  alt={image.alt}
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 768px) 50vw, 20vw"
-                />
+                <div 
+                  className="relative aspect-square overflow-hidden"
+                  data-cursor="image"
+                  data-caption={image.caption}
+                >
+                  <Image
+                    src={image.image}
+                    alt={image.alt}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 50vw, 20vw"
+                  />
+                  {/* Progressive blur overlay on hover */}
+                  <div 
+                    className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none"
+                    style={{
+                      backdropFilter: 'blur(12px)',
+                      WebkitBackdropFilter: 'blur(12px)',
+                      maskImage: 'linear-gradient(to bottom, transparent 0%, transparent 60%, black 100%)',
+                      WebkitMaskImage: 'linear-gradient(to bottom, transparent 0%, transparent 60%, black 100%)',
+                    }}
+                  />
+                </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </section>
 
       {/* Bio & Experience Section */}
       <section className="p-4 md:p-6 lg:p-8 mb-4">
-        <h2 className="text-3xl md:text-5xl bit-apple-font text-white mb-8 md:mb-12">
+        <h2 
+          className="project-card text-3xl md:text-5xl bit-apple-font text-white mb-8 md:mb-12"
+          style={{ '--card-index': cardIndex++ } as React.CSSProperties}
+        >
           Designing to delight...
         </h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
           {/* Left Column: Bio */}
-          <div className="flex flex-col gap-4">
+          <div 
+            className="project-card flex flex-col gap-4"
+            style={{ '--card-index': cardIndex++ } as React.CSSProperties}
+          >
             <p className="text-sm leading-relaxed text-white-muted">
               Hey, I&apos;m Angelina! I&apos;m a designer who&apos;s passionate about 
               creating channels for{' '}
@@ -79,7 +104,10 @@ export default function About() {
           </div>
 
           {/* Right Column: Experience & Communities */}
-          <div className="flex flex-col gap-8 md:gap-12">
+          <div 
+            className="project-card flex flex-col gap-8 md:gap-12"
+            style={{ '--card-index': cardIndex++ } as React.CSSProperties}
+          >
             {/* Experience */}
             <div>
               <div className="w-full border-b border-faded-white mb-2">
@@ -153,61 +181,98 @@ export default function About() {
 
       {/* Life Outside Design Section */}
       <section className="p-4 md:p-6 lg:p-8">
-        <h2 className="text-3xl md:text-5xl bit-apple-font text-white mb-8 md:mb-12">
+        <h2 
+          className="project-card text-3xl md:text-5xl bit-apple-font text-white mb-8 md:mb-12"
+          style={{ '--card-index': cardIndex++ } as React.CSSProperties}
+        >
           ...with my life&apos;s delights
         </h2>
         
         {/* Books Section */}
-        <div className="mb-12">
+        <div 
+          className="project-card mb-12"
+          style={{ '--card-index': cardIndex++ } as React.CSSProperties}
+        >
           <h3 className="text-xl text-white mb-4">Books that changed me</h3>
           
           <div className="grid grid-cols-5 gap-2">
-            {books.map((book) => (
-              <a 
-                key={book.id} 
-                href={book.url} 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                className="group block"
-              >
-                <div className="relative aspect-[2/3] overflow-hidden">
-                  <Image
-                    src={book.image}
-                    alt={book.title}
-                    fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-200 ease-out"
-                    sizes="(max-width: 768px) 20vw, 15vw"
-                  />
-                </div>
-              </a>
-            ))}
+            {books.map((book) => {
+              const currentIndex = cardIndex++;
+              return (
+                <a 
+                  key={book.id} 
+                  href={book.url} 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="project-card group block"
+                  style={{ '--card-index': currentIndex } as React.CSSProperties}
+                >
+                  <div className="relative aspect-[2/3] overflow-hidden">
+                    <Image
+                      src={book.image}
+                      alt={book.title}
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 768px) 20vw, 15vw"
+                    />
+                    {/* Progressive blur overlay on hover */}
+                    <div 
+                      className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none"
+                      style={{
+                        backdropFilter: 'blur(12px)',
+                        WebkitBackdropFilter: 'blur(12px)',
+                        maskImage: 'linear-gradient(to bottom, transparent 0%, transparent 60%, black 100%)',
+                        WebkitMaskImage: 'linear-gradient(to bottom, transparent 0%, transparent 60%, black 100%)',
+                      }}
+                    />
+                  </div>
+                </a>
+              );
+            })}
           </div>
         </div>
 
         {/* Albums Section */}
-        <div>
+        <div 
+          className="project-card"
+          style={{ '--card-index': cardIndex++ } as React.CSSProperties}
+        >
           <h3 className="text-xl text-white mb-4">Albums on repeat</h3>
           
           <div className="grid grid-cols-5 gap-2">
-            {albums.map((album) => (
-              <a 
-                key={album.id} 
-                href={album.url} 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                className="group block"
-              >
-                <div className="relative aspect-square overflow-hidden">
-                  <Image
-                    src={album.image}
-                    alt={album.title}
-                    fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-200 ease-out"
-                    sizes="(max-width: 768px) 20vw, 15vw"
-                  />
-                </div>
-              </a>
-            ))}
+            {albums.map((album) => {
+              const currentIndex = cardIndex++;
+              return (
+                <a 
+                  key={album.id} 
+                  href={album.url} 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="project-card group block"
+                  style={{ '--card-index': currentIndex } as React.CSSProperties}
+                >
+                  <div className="relative aspect-square overflow-hidden">
+                    <Image
+                      src={album.image}
+                      alt={album.title}
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 768px) 20vw, 15vw"
+                    />
+                    {/* Progressive blur overlay on hover */}
+                    <div 
+                      className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none"
+                      style={{
+                        backdropFilter: 'blur(12px)',
+                        WebkitBackdropFilter: 'blur(12px)',
+                        maskImage: 'linear-gradient(to bottom, transparent 0%, transparent 60%, black 100%)',
+                        WebkitMaskImage: 'linear-gradient(to bottom, transparent 0%, transparent 60%, black 100%)',
+                      }}
+                    />
+                  </div>
+                </a>
+              );
+            })}
           </div>
         </div>
       </section>
