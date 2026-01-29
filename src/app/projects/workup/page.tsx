@@ -118,7 +118,7 @@ export default function WorkupPage() {
               </p>
               <div className="overflow-hidden">
                 <Image
-                  src="/assets/projects/Workup/Workup-CompetitiveAnalysis.png"
+                  src="/assets/projects/Workup/Workup-CompetitiveAnalysis.webp"
                   alt="Competitive Analysis"
                   width={1000}
                   height={1000}
@@ -180,7 +180,7 @@ export default function WorkupPage() {
               
               <div className="overflow-hidden">
                 <Image
-                  src="/assets/projects/Workup/Workup-Audit.jpg"
+                  src="/assets/projects/Workup/Workup-Audit.webp"
                   alt="Website audit"
                   width={1000}
                   height={1000}
@@ -245,7 +245,7 @@ export default function WorkupPage() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div className="overflow-hidden">
                   <Image
-                    src="/assets/projects/Workup/Workup-UserPersona1.png"
+                    src="/assets/projects/Workup/Workup-UserPersona1.webp"
                     alt="User persona 1"
                     width={1000}
                     height={1000}
@@ -254,7 +254,7 @@ export default function WorkupPage() {
                 </div>
                 <div className="overflow-hidden">
                   <Image
-                    src="/assets/projects/Workup/Workup-UserPersona2.png"
+                    src="/assets/projects/Workup/Workup-UserPersona2.webp"
                     alt="User persona 2"
                     width={1000}
                     height={1000}
@@ -314,7 +314,7 @@ export default function WorkupPage() {
                   <h4 className="text-white mb-2">Problem Group 1</h4>
                   <p className="text-white-muted text-sm mb-4">Redundant empty pages disrupt interview setup</p>
                   <Image
-                    src="/assets/projects/Workup/Workup-ProblemGroup-1.png"
+                    src="/assets/projects/Workup/Workup-ProblemGroup-1.webp"
                     alt="Problem Group 1"
                     width={1000}
                     height={1000}
@@ -325,7 +325,7 @@ export default function WorkupPage() {
                   <h4 className="text-white mb-2">Problem Group 2</h4>
                   <p className="text-white-muted text-sm mb-4">Customization features feel disconnected</p>
                   <Image
-                    src="/assets/projects/Workup/Workup-ProblemGroup-2.png"
+                    src="/assets/projects/Workup/Workup-ProblemGroup-2.webp"
                     alt="Problem Group 2"
                     width={1000}
                     height={1000}
@@ -336,7 +336,7 @@ export default function WorkupPage() {
                   <h4 className="text-white mb-2">Problem Group 3</h4>
                   <p className="text-white-muted text-sm mb-4">Lengthy offboarding creates friction</p>
                   <Image
-                    src="/assets/projects/Workup/Workup-ProblemGroup-3.png"
+                    src="/assets/projects/Workup/Workup-ProblemGroup-3.webp"
                     alt="Problem Group 3"
                     width={1000}
                     height={1000}
@@ -355,7 +355,7 @@ export default function WorkupPage() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div className="overflow-hidden">
                   <Image
-                    src="/assets/projects/Workup/Workup-Lofis-2.jpg"
+                    src="/assets/projects/Workup/Workup-Lofis-2.webp"
                     alt="Low-Fi 1"
                     width={1000}
                     height={1000}
@@ -363,7 +363,7 @@ export default function WorkupPage() {
                 </div>
                 <div className="overflow-hidden">
                   <Image
-                    src="/assets/projects/Workup/Workup-Lofis-3.jpg"
+                    src="/assets/projects/Workup/Workup-Lofis-3.webp"
                     alt="Low-Fi 2"
                     width={1000}
                     height={1000}
@@ -380,7 +380,7 @@ export default function WorkupPage() {
               
               <div className="overflow-hidden">
                 <Image
-                  src="/assets/projects/Workup/Workup-DesignSystem.png"
+                  src="/assets/projects/Workup/Workup-DesignSystem.webp"
                   alt="Design System"
                   width={1000}
                   height={1000}
@@ -408,7 +408,7 @@ export default function WorkupPage() {
               </p>
               <div className="overflow-hidden">
                 <Image
-                  src="/assets/projects/Workup/Workup-CreateInterview.png"
+                  src="/assets/projects/Workup/Workup-CreateInterview.webp"
                   alt="Interview Creation"
                   width={1000}
                   height={1000}
@@ -423,7 +423,7 @@ export default function WorkupPage() {
               </p>
               <div className="overflow-hidden">
                 <Image
-                  src="/assets/projects/Workup/Workup-InterviewSched.jpg"
+                  src="/assets/projects/Workup/Workup-InterviewSched.webp"
                   alt="Interview Scheduling"
                   width={1000}
                   height={1000}
@@ -438,7 +438,7 @@ export default function WorkupPage() {
               </p>
               <div className="overflow-hidden">
                 <Image
-                  src="/assets/projects/Workup/Workup-QuestionSets.jpg"
+                  src="/assets/projects/Workup/Workup-QuestionSets.webp"
                   alt="Question Sets Hub"
                   width={1000}
                   height={1000}
@@ -453,7 +453,7 @@ export default function WorkupPage() {
               </p>
               <div className="overflow-hidden">
                 <Image
-                  src="/assets/projects/Workup/Workup-InterviewFeedback.jpg"
+                  src="/assets/projects/Workup/Workup-InterviewFeedback.webp"
                   alt="Interview Feedback"
                   width={1000}
                   height={1000}

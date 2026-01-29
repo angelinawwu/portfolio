@@ -145,7 +145,7 @@ export default function ManifestoMarketPage() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div className="overflow-hidden">
                   <Image
-                    src="/assets/projects/Manifesto/Manifesto-UserPersona-1.png"
+                    src="/assets/projects/Manifesto/Manifesto-UserPersona-1.webp"
                     alt="User persona 1"
                     width={1000}
                     height={1000}
@@ -154,7 +154,7 @@ export default function ManifestoMarketPage() {
                 </div>
                 <div className="overflow-hidden">
                   <Image
-                    src="/assets/projects/Manifesto/Manifesto-UserPersona-2.png"
+                    src="/assets/projects/Manifesto/Manifesto-UserPersona-2.webp"
                     alt="User persona 2"
                     width={1000}
                     height={1000}
@@ -172,7 +172,7 @@ export default function ManifestoMarketPage() {
               
               <div className="overflow-hidden">
                 <Image
-                  src="/assets/projects/Manifesto/Manifesto-Analysis.png"
+                  src="/assets/projects/Manifesto/Manifesto-Analysis.webp"
                   alt="Website audit"
                   width={1000}
                   height={1000}
@@ -265,7 +265,7 @@ export default function ManifestoMarketPage() {
               </p>
               <div className="overflow-hidden">
                 <Image
-                  src="/assets/projects/Manifesto/Manifesto-DP-1.png"
+                  src="/assets/projects/Manifesto/Manifesto-DP-1.webp"
                   alt="CTA Design"
                   width={1000}
                   height={1000}
@@ -280,7 +280,7 @@ export default function ManifestoMarketPage() {
               </p>
               <div className="overflow-hidden">
                 <Image
-                  src="/assets/projects/Manifesto/Manifesto-DP-2.png"
+                  src="/assets/projects/Manifesto/Manifesto-DP-2.webp"
                   alt="Navigation Design"
                   width={1000}
                   height={1000}
@@ -298,7 +298,7 @@ export default function ManifestoMarketPage() {
               </p>
               <div className="overflow-hidden">
                 <Image
-                  src="/assets/projects/Manifesto/Manifesto-DP-3.png"
+                  src="/assets/projects/Manifesto/Manifesto-DP-3.webp"
                   alt="UX Writing"
                   width={1000}
                   height={1000}

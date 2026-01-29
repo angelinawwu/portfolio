@@ -146,7 +146,7 @@ export default function BookishPage() {
           <p className="text-white-muted leading-relaxed mb-6">Mid-fi wireframes created from initial ideations.</p>
           <div className="overflow-hidden">
             <Image
-              src="/assets/projects/Bookish/Bookish-Midfis.png"
+              src="/assets/projects/Bookish/Bookish-Midfis.webp"
               alt="Mid-Fidelity Prototype"
               width={1000}
               height={1000}
@@ -167,7 +167,7 @@ export default function BookishPage() {
               <div className="flex flex-row gap-3">
                 <div className="overflow-hidden rounded">
                   <Image
-                    src="/assets/projects/Bookish/Bookish-Feedback1A.png"
+                    src="/assets/projects/Bookish/Bookish-Feedback1A.webp"
                     alt="Before: black and white color scheme"
                     width={1000}
                     height={1000}
@@ -176,7 +176,7 @@ export default function BookishPage() {
                 <ArrowRight className="text-white-muted h-36 w-36 mx-auto self-center" />
                 <div className="overflow-hidden rounded">
                   <Image
-                    src="/assets/projects/Bookish/Bookish-Feedback1B.png"
+                    src="/assets/projects/Bookish/Bookish-Feedback1B.webp"
                     alt="After: softer color scheme"
                     width={1000}
                     height={1000}
@@ -191,7 +191,7 @@ export default function BookishPage() {
               <div className="flex flex-row gap-3">
                 <div className="overflow-hidden rounded">
                   <Image
-                    src="/assets/projects/Bookish/Bookish-Feedback2A.png"
+                    src="/assets/projects/Bookish/Bookish-Feedback2A.webp"
                     alt="Before: minimal messaging context"
                     width={1000}
                     height={1000}
@@ -200,7 +200,7 @@ export default function BookishPage() {
                 <ArrowRight className="text-white-muted h-36 w-36 mx-auto self-center" />
                 <div className="overflow-hidden rounded">
                   <Image
-                    src="/assets/projects/Bookish/Bookish-Feedback2B.png"
+                    src="/assets/projects/Bookish/Bookish-Feedback2B.webp"
                     alt="After: more messaging context"
                     width={1000}
                     height={1000}
@@ -220,9 +220,9 @@ export default function BookishPage() {
           <p className="text-white-muted leading-relaxed mb-6">Take a look at my final deliverable below!</p>
           <div className="space-y-12">
             {[
-              { title: 'Home and profile screens', src: '/assets/projects/Bookish/Bookish-Final1.png' },
-              { title: 'Natural discovery', src: '/assets/projects/Bookish/Bookish-Final2.png' },
-              { title: 'Community building', src: '/assets/projects/Bookish/Bookish-Final3.png' },
+              { title: 'Home and profile screens', src: '/assets/projects/Bookish/Bookish-Final1.webp' },
+              { title: 'Natural discovery', src: '/assets/projects/Bookish/Bookish-Final2.webp' },
+              { title: 'Community building', src: '/assets/projects/Bookish/Bookish-Final3.webp' },
             ].map((item) => (
               <div key={item.title} className="text-center">
                 <h3 className="text-xl text-white mb-4">{item.title}</h3>

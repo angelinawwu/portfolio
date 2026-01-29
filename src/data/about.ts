@@ -92,31 +92,31 @@ export type ImageItem = {
 export const images: ImageItem[] = [
   {
     id: 1,
-    image: "/assets/About/ImageRow/ImageRow-1.JPG",
+    image: "/assets/About/ImageRow/ImageRow-1.webp",
     alt: "Image 1",
     caption: "HI, IT'S ME!"
   },
   {
     id: 2,
-    image: "/assets/About/ImageRow/ImageRow-2.JPG",
+    image: "/assets/About/ImageRow/ImageRow-2.webp",
     alt: "Image 2",
     caption: "MATCHING JACKETS >:)"
   },
   {
     id: 3,
-    image: "/assets/About/ImageRow/ImageRow-3.jpg",
+    image: "/assets/About/ImageRow/ImageRow-3.webp",
     alt: "Image 3",
     caption: "DOG!"
   },
   {
     id: 4,
-    image: "/assets/About/ImageRow/ImageRow-4.jpg",
+    image: "/assets/About/ImageRow/ImageRow-4.webp",
     alt: "Image 4",
     caption: "SOME OF MY FAV PEOPLE"
   },
   {
     id: 5,
-    image: "/assets/About/ImageRow/ImageRow-5.JPG",
+    image: "/assets/About/ImageRow/ImageRow-5.webp",
     alt: "Image 5",
     caption: "ME AGAIN, BUT ON A ROOFTOP"
   },

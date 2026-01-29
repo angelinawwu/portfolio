@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/OpenGraph-image.jpg",
+        url: "/OpenGraph-image.webp",
         width: 1200,
         height: 630,
         alt: "Angelina Wu's Portfolio",
@@ -50,7 +50,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Angelina Wu's Portfolio",
     description: "designing to delight",
-    images: ["/OpenGraph-image.jpg"],
+    images: ["/OpenGraph-image.webp"],
   },
   robots: {
     index: true,
