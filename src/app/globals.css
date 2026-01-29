@@ -313,9 +313,75 @@ canvas.pixel-canvas {
 .theme-button-orange { background-color: #E3743D; }
 
 /* ========== MOBILE MENU ========== */
+@keyframes mobile-menu-overlay-enter {
+  from {
+    opacity: 0;
+    backdrop-filter: blur(0px);
+    -webkit-backdrop-filter: blur(0px);
+  }
+  to {
+    opacity: 1;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
+}
+
+@keyframes mobile-menu-overlay-exit {
+  from {
+    opacity: 1;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
+  to {
+    opacity: 0;
+    backdrop-filter: blur(0px);
+    -webkit-backdrop-filter: blur(0px);
+  }
+}
+
+@keyframes mobile-menu-content-enter {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+    filter: blur(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+@keyframes mobile-menu-content-exit {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+    filter: blur(8px);
+  }
+}
+
 .mobile-menu-overlay {
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  animation: mobile-menu-overlay-enter 0.3s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+}
+
+.mobile-menu-overlay.mobile-menu-exit {
+  animation: mobile-menu-overlay-exit 0.3s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+}
+
+.mobile-menu-content {
+  animation: mobile-menu-content-enter 0.3s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+  animation-delay: 0.05s;
+  opacity: 0;
+}
+
+.mobile-menu-content.mobile-menu-content-exit {
+  animation: mobile-menu-content-exit 0.3s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+  animation-delay: 0s;
 }
 
 /* ========== IRIDESCENT GLOW (for playground cards) ========== */

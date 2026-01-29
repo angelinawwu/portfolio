@@ -8,18 +8,26 @@ export const metadata = {
 };
 
 export default function ManifestoMarketPage() {
+  let cardIndex = 0;
+  
   return (
     <div className="min-h-screen bg-black p-4 md:p-6 lg:p-8">
       <div className="max-w-4xl mx-auto">
         {/* Back Button */}
-        <div className="mb-8">
+        <div 
+          className="project-card mb-8"
+          style={{ '--card-index': cardIndex++ } as React.CSSProperties}
+        >
           <Link href="/" className="sidebar-link">
             ← Back to projects
           </Link>
         </div>
 
         {/* Hero Section */}
-        <section className="mb-12">
+        <section 
+          className="project-card mb-12"
+          style={{ '--card-index': cardIndex++ } as React.CSSProperties}
+        >
           <h1 className="text-4xl md:text-6xl bit-apple-font text-white mb-6">Manifesto Market</h1>
           
           <p className="text-lg text-white-muted leading-relaxed mb-8">
@@ -48,7 +56,10 @@ export default function ManifestoMarketPage() {
         </section>
 
         {/* Overview */}
-        <section className="mb-12 pt-8 border-t border-faded-white">
+        <section 
+          className="project-card mb-12 pt-8 border-t border-faded-white"
+          style={{ '--card-index': cardIndex++ } as React.CSSProperties}
+        >
           <h2 className="text-2xl md:text-3xl bit-apple-font text-white mb-6">Overview</h2>
           <div className="space-y-4 text-white-muted leading-relaxed">
             <p>
@@ -61,7 +72,10 @@ export default function ManifestoMarketPage() {
         </section>
 
         {/* The Problem */}
-        <section className="mb-12 pt-8 border-t border-faded-white">
+        <section 
+          className="project-card mb-12 pt-8 border-t border-faded-white"
+          style={{ '--card-index': cardIndex++ } as React.CSSProperties}
+        >
           <h2 className="text-2xl md:text-3xl bit-apple-font text-white mb-6">The Problem</h2>
           
           <div className="space-y-6">
@@ -87,7 +101,10 @@ export default function ManifestoMarketPage() {
         </section>
 
         {/* Research */}
-        <section className="mb-12 pt-8 border-t border-faded-white">
+        <section 
+          className="project-card mb-12 pt-8 border-t border-faded-white"
+          style={{ '--card-index': cardIndex++ } as React.CSSProperties}
+        >
           <h2 className="text-2xl md:text-3xl bit-apple-font text-white mb-6">Research</h2>
           
           <div className="space-y-12">
@@ -217,7 +234,10 @@ export default function ManifestoMarketPage() {
         </section>
 
         {/* Design */}
-        <section className="mb-12 pt-8 border-t border-faded-white">
+        <section 
+          className="project-card mb-12 pt-8 border-t border-faded-white"
+          style={{ '--card-index': cardIndex++ } as React.CSSProperties}
+        >
           <h2 className="text-2xl md:text-3xl bit-apple-font text-white mb-6">Design</h2>
           
           <div className="space-y-12">
@@ -289,7 +309,10 @@ export default function ManifestoMarketPage() {
         </section>
 
         {/* Impact */}
-        <section className="mb-12 pt-8 border-t border-faded-white">
+        <section 
+          className="project-card mb-12 pt-8 border-t border-faded-white"
+          style={{ '--card-index': cardIndex++ } as React.CSSProperties}
+        >
           <h2 className="text-2xl md:text-3xl bit-apple-font text-white mb-6">Impact</h2>
           
           <div className="space-y-4">
@@ -338,7 +361,10 @@ export default function ManifestoMarketPage() {
         </section>
 
         {/* Closing Remarks */}
-        <section className="mb-12 pt-8 border-t border-faded-white">
+        <section 
+          className="project-card mb-12 pt-8 border-t border-faded-white"
+          style={{ '--card-index': cardIndex++ } as React.CSSProperties}
+        >
           <h2 className="text-2xl md:text-3xl bit-apple-font text-white mb-6">Takeaways</h2>
           
           <div className="space-y-4">
@@ -367,7 +393,10 @@ export default function ManifestoMarketPage() {
         </section>
 
         {/* Navigation */}
-        <nav className="pt-8 border-t border-faded-white">
+        <nav 
+          className="project-card pt-8 border-t border-faded-white"
+          style={{ '--card-index': cardIndex++ } as React.CSSProperties}
+        >
           <div className="flex justify-end items-center">
             <Link href="/projects/workup" className="sidebar-link">
               Workup →

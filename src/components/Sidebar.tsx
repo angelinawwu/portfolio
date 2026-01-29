@@ -47,11 +47,27 @@ function LiveClock() {
 export default function Sidebar() {
   const pathname = usePathname();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isExiting, setIsExiting] = useState(false);
 
   // Close menu on route change
   useEffect(() => {
-    setIsMenuOpen(false);
+    if (isMenuOpen) {
+      handleCloseMenu();
+    }
   }, [pathname]);
+
+  const handleCloseMenu = () => {
+    setIsExiting(true);
+    setTimeout(() => {
+      setIsMenuOpen(false);
+      setIsExiting(false);
+    }, 300); // Match animation duration
+  };
+
+  const handleOpenMenu = () => {
+    setIsMenuOpen(true);
+    setIsExiting(false);
+  };
 
   // Prevent scroll when menu is open
   useEffect(() => {
@@ -74,7 +90,7 @@ export default function Sidebar() {
     <>
       {/* Name & Bio */}
       <div className="mb-8">
-        <Link href="/" className="sidebar-link-name block mb-4">
+        <Link href="/" className="hidden md:block sidebar-link-name block mb-4">
           <span className="geist-mono-font text-sm mr-2 ">✱</span>{' '}
           <span className="geist-mono-font text-sm tracking-wide">ANGELINA WU</span>
         </Link>
@@ -153,7 +169,7 @@ export default function Sidebar() {
       {/* Mobile Header */}
       <header className="lg:hidden fixed top-0 left-0 right-0 h-14 bg-black border-b border-faded-white z-50 flex items-center px-4">
         <button
-          onClick={() => setIsMenuOpen(!isMenuOpen)}
+          onClick={() => isMenuOpen ? handleCloseMenu() : handleOpenMenu()}
           className="p-2 text-white"
           aria-label="Toggle menu"
         >
@@ -167,11 +183,11 @@ export default function Sidebar() {
       {/* Mobile Menu Overlay */}
       {isMenuOpen && (
         <div 
-          className="lg:hidden fixed inset-0 z-40 bg-black/90 mobile-menu-overlay"
-          onClick={() => setIsMenuOpen(false)}
+          className={`lg:hidden fixed inset-0 z-40 bg-black/90 mobile-menu-overlay ${isExiting ? 'mobile-menu-exit' : ''}`}
+          onClick={handleCloseMenu}
         >
           <div 
-            className="absolute top-14 left-0 right-0 bottom-0 bg-black p-6 overflow-y-auto flex flex-col"
+            className={`mobile-menu-content absolute top-14 left-0 right-0 bottom-0 bg-black p-6 overflow-y-auto flex flex-col ${isExiting ? 'mobile-menu-content-exit' : ''}`}
             onClick={(e) => e.stopPropagation()}
           >
             <SidebarContent />

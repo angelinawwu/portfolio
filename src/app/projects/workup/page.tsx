@@ -8,18 +8,26 @@ export const metadata = {
 };
 
 export default function WorkupPage() {
+  let cardIndex = 0;
+  
   return (
     <div className="min-h-screen bg-black p-4 md:p-6 lg:p-8">
       <div className="max-w-4xl mx-auto">
         {/* Back Button */}
-        <div className="mb-8">
+        <div 
+          className="project-card mb-8"
+          style={{ '--card-index': cardIndex++ } as React.CSSProperties}
+        >
           <Link href="/" className="sidebar-link">
             ← Back to projects
           </Link>
         </div>
 
         {/* Hero Section */}
-        <section className="mb-12">
+        <section 
+          className="project-card mb-12"
+          style={{ '--card-index': cardIndex++ } as React.CSSProperties}
+        >
           <h1 className="text-4xl md:text-6xl bit-apple-font text-white mb-6">WorkUp</h1>
           
           <p className="text-lg text-white-muted leading-relaxed mb-8">
@@ -48,7 +56,10 @@ export default function WorkupPage() {
         </section>
 
         {/* Overview */}
-        <section className="mb-12 pt-8 border-t border-faded-white">
+        <section 
+          className="project-card mb-12 pt-8 border-t border-faded-white"
+          style={{ '--card-index': cardIndex++ } as React.CSSProperties}
+        >
           <h2 className="text-2xl md:text-3xl bit-apple-font text-white mb-6">Overview</h2>
           <div className="space-y-4 text-white-muted leading-relaxed">
             <p>
@@ -61,7 +72,10 @@ export default function WorkupPage() {
         </section>
 
         {/* The Problem */}
-        <section className="mb-12 pt-8 border-t border-faded-white">
+        <section 
+          className="project-card mb-12 pt-8 border-t border-faded-white"
+          style={{ '--card-index': cardIndex++ } as React.CSSProperties}
+        >
           <h2 className="text-2xl md:text-3xl bit-apple-font text-white mb-6">The Problem</h2>
           
           <div className="space-y-6">
@@ -90,7 +104,10 @@ export default function WorkupPage() {
         </section>
 
         {/* Research */}
-        <section className="mb-12 pt-8 border-t border-faded-white">
+        <section 
+          className="project-card mb-12 pt-8 border-t border-faded-white"
+          style={{ '--card-index': cardIndex++ } as React.CSSProperties}
+        >
           <h2 className="text-2xl md:text-3xl bit-apple-font text-white mb-6">Research</h2>
           
           <div className="space-y-12">
@@ -250,7 +267,10 @@ export default function WorkupPage() {
         </section>
 
         {/* Project Goals */}
-        <section className="mb-12 pt-8 border-t border-faded-white">
+        <section 
+          className="project-card mb-12 pt-8 border-t border-faded-white"
+          style={{ '--card-index': cardIndex++ } as React.CSSProperties}
+        >
           <h2 className="text-2xl md:text-3xl bit-apple-font text-white mb-6">Project Goals</h2>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
@@ -276,7 +296,10 @@ export default function WorkupPage() {
         </section>
 
         {/* Design */}
-        <section className="mb-12 pt-8 border-t border-faded-white">
+        <section 
+          className="project-card mb-12 pt-8 border-t border-faded-white"
+          style={{ '--card-index': cardIndex++ } as React.CSSProperties}
+        >
           <h2 className="text-2xl md:text-3xl bit-apple-font text-white mb-6">Design</h2>
           
           <div className="space-y-12">
@@ -368,7 +391,10 @@ export default function WorkupPage() {
         </section>
 
         {/* Final Product */}
-        <section className="mb-12 pt-8 border-t border-faded-white">
+        <section 
+          className="project-card mb-12 pt-8 border-t border-faded-white"
+          style={{ '--card-index': cardIndex++ } as React.CSSProperties}
+        >
           <h2 className="text-2xl md:text-3xl bit-apple-font text-white mb-6">Final Product</h2>
           <p className="text-white-muted leading-relaxed mb-6">
             The final design for Workup&apos;s AI Interview streamlines the user journey, making every step clear and intuitive.
@@ -438,7 +464,10 @@ export default function WorkupPage() {
         </section>
 
         {/* Impact */}
-        <section className="mb-12 pt-8 border-t border-faded-white">
+        <section 
+          className="project-card mb-12 pt-8 border-t border-faded-white"
+          style={{ '--card-index': cardIndex++ } as React.CSSProperties}
+        >
           <h2 className="text-2xl md:text-3xl bit-apple-font text-white mb-6">Impact</h2>
           
           <div className="space-y-4">
@@ -487,7 +516,10 @@ export default function WorkupPage() {
         </section>
 
         {/* Closing Remarks */}
-        <section className="mb-12 pt-8 border-t border-faded-white">
+        <section 
+          className="project-card mb-12 pt-8 border-t border-faded-white"
+          style={{ '--card-index': cardIndex++ } as React.CSSProperties}
+        >
           <h2 className="text-2xl md:text-3xl bit-apple-font text-white mb-6">Takeaways</h2>
           
           <div className="space-y-4">
@@ -516,7 +548,10 @@ export default function WorkupPage() {
         </section>
 
         {/* Navigation */}
-        <nav className="pt-8 border-t border-faded-white">
+        <nav 
+          className="project-card pt-8 border-t border-faded-white"
+          style={{ '--card-index': cardIndex++ } as React.CSSProperties}
+        >
           <div className="flex justify-between items-center">
             <Link href="/projects/manifesto-market" className="sidebar-link">
               ← Manifesto Market

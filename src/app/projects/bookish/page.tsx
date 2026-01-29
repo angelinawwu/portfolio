@@ -5,18 +5,26 @@ import Image from 'next/image';
 import { ArrowRight } from '@phosphor-icons/react';
 
 export default function BookishPage() {
+  let cardIndex = 0;
+  
   return (
     <div className="min-h-screen bg-black p-4 md:p-6 lg:p-8">
       <div className="max-w-4xl mx-auto">
         {/* Back Button */}
-        <div className="mb-8">
+        <div 
+          className="project-card mb-8"
+          style={{ '--card-index': cardIndex++ } as React.CSSProperties}
+        >
           <Link href="/" className="sidebar-link">
             ← Back to projects
           </Link>
         </div>
 
         {/* Hero Section */}
-        <section className="mb-12">
+        <section 
+          className="project-card mb-12"
+          style={{ '--card-index': cardIndex++ } as React.CSSProperties}
+        >
           <h1 className="text-4xl md:text-6xl bit-apple-font text-white mb-6">Bookish</h1>
           
           <p className="text-lg text-white-muted leading-relaxed mb-8">
@@ -45,7 +53,10 @@ export default function BookishPage() {
         </section>
 
         {/* Overview */}
-        <section className="mb-12 pt-8 border-t border-faded-white">
+        <section 
+          className="project-card mb-12 pt-8 border-t border-faded-white"
+          style={{ '--card-index': cardIndex++ } as React.CSSProperties}
+        >
           <h2 className="text-2xl md:text-3xl bit-apple-font text-white mb-6">Overview</h2>
           <div className="space-y-4 text-white-muted leading-relaxed">
             <p>
@@ -58,7 +69,10 @@ export default function BookishPage() {
         </section>
 
         {/* The Problem */}
-        <section className="mb-12 pt-8 border-t border-faded-white">
+        <section 
+          className="project-card mb-12 pt-8 border-t border-faded-white"
+          style={{ '--card-index': cardIndex++ } as React.CSSProperties}
+        >
           <h2 className="text-2xl md:text-3xl bit-apple-font text-white mb-6">The Problem</h2>
           
           <div className="space-y-6">
@@ -84,7 +98,10 @@ export default function BookishPage() {
         </section>
 
         {/* User Research */}
-        <section className="mb-12 pt-8 border-t border-faded-white">
+        <section 
+          className="project-card mb-12 pt-8 border-t border-faded-white"
+          style={{ '--card-index': cardIndex++ } as React.CSSProperties}
+        >
           <h2 className="text-2xl md:text-3xl bit-apple-font text-white mb-6">User Research</h2>
           <div className="space-y-4 text-white-muted leading-relaxed">
             <p>
@@ -99,7 +116,10 @@ export default function BookishPage() {
         </section>
 
         {/* Project Goals */}
-        <section className="mb-12 pt-8 border-t border-faded-white">
+        <section 
+          className="project-card mb-12 pt-8 border-t border-faded-white"
+          style={{ '--card-index': cardIndex++ } as React.CSSProperties}
+        >
           <h2 className="text-2xl md:text-3xl bit-apple-font text-white mb-6">Project Goals</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             <div className="border border-faded-white p-6 bg-surface">
@@ -118,7 +138,10 @@ export default function BookishPage() {
         </section>
 
         {/* Mid-Fidelity Prototype */}
-        <section className="mb-12 pt-8 border-t border-faded-white">
+        <section 
+          className="project-card mb-12 pt-8 border-t border-faded-white"
+          style={{ '--card-index': cardIndex++ } as React.CSSProperties}
+        >
           <h2 className="text-2xl md:text-3xl bit-apple-font text-white mb-6">Mid-Fidelity Prototype</h2>
           <p className="text-white-muted leading-relaxed mb-6">Mid-fi wireframes created from initial ideations.</p>
           <div className="overflow-hidden">
@@ -132,7 +155,10 @@ export default function BookishPage() {
         </section>
 
         {/* Usability Testing and Modifications */}
-        <section className="mb-12 pt-8 border-t border-faded-white">
+        <section 
+          className="project-card mb-12 pt-8 border-t border-faded-white"
+          style={{ '--card-index': cardIndex++ } as React.CSSProperties}
+        >
           <h2 className="text-2xl md:text-3xl bit-apple-font text-white mb-6">Usability Testing</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {/* Card 1 */}
@@ -186,7 +212,10 @@ export default function BookishPage() {
         </section>
 
         {/* Final Product */}
-        <section className="mb-12 pt-8 border-t border-faded-white">
+        <section 
+          className="project-card mb-12 pt-8 border-t border-faded-white"
+          style={{ '--card-index': cardIndex++ } as React.CSSProperties}
+        >
           <h2 className="text-2xl md:text-3xl bit-apple-font text-white mb-6">Final Product</h2>
           <p className="text-white-muted leading-relaxed mb-6">Take a look at my final deliverable below!</p>
           <div className="space-y-12">
@@ -211,7 +240,10 @@ export default function BookishPage() {
         </section>
 
         {/* Closing Remarks */}
-        <section className="mb-12 pt-8 border-t border-faded-white">
+        <section 
+          className="project-card mb-12 pt-8 border-t border-faded-white"
+          style={{ '--card-index': cardIndex++ } as React.CSSProperties}
+        >
           <h2 className="text-2xl md:text-3xl bit-apple-font text-white mb-6">Takeaways</h2>
           <div className="space-y-4">
             <div className="border border-faded-white p-6 bg-surface">
@@ -234,7 +266,10 @@ export default function BookishPage() {
         </section>
 
         {/* Navigation */}
-        <nav className="pt-8 border-t border-faded-white">
+        <nav 
+          className="project-card pt-8 border-t border-faded-white"
+          style={{ '--card-index': cardIndex++ } as React.CSSProperties}
+        >
           <div className="flex justify-between items-center">
             <Link href="/projects/workup" className="sidebar-link">
               ← Workup
