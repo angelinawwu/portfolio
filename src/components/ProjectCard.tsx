@@ -65,8 +65,19 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
           <div className="w-full aspect-video bg-faded-white" />
         )}
         
-        {/* Overlay gradient */}
+        {/* Black overlay gradient */}
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
+        
+        {/* Progressive blur overlay on hover */}
+        <div 
+          className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none"
+          style={{
+            backdropFilter: 'blur(12px)',
+            WebkitBackdropFilter: 'blur(12px)',
+            maskImage: 'linear-gradient(to bottom, transparent 0%, transparent 60%, black 100%)',
+            WebkitMaskImage: 'linear-gradient(to bottom, transparent 0%, transparent 60%, black 100%)',
+          }}
+        />
       </div>
 
       {/* Content */}

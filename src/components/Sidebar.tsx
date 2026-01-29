@@ -74,9 +74,9 @@ export default function Sidebar() {
     <>
       {/* Name & Bio */}
       <div className="mb-8">
-        <Link href="/" className="sidebar-link block mb-4">
-          <span className="geist-mono-font text-sm mr-2 text-white">✱</span>{' '}
-          <span className="geist-mono-font text-sm tracking-wide text-white">ANGELINA WU</span>
+        <Link href="/" className="sidebar-link-name block mb-4">
+          <span className="geist-mono-font text-sm mr-2 ">✱</span>{' '}
+          <span className="geist-mono-font text-sm tracking-wide">ANGELINA WU</span>
         </Link>
         <p className="text-sm leading-relaxed text-white-muted">
           Angelina Wu is a designer, builder, and doer who&apos;s passionate about creating channels for{' '}

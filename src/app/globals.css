@@ -162,6 +162,18 @@ body {
   color: var(--accent);
 }
 
+/* Name link - white when inactive, accent on hover */
+.sidebar-link-name {
+  color: var(--white);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .sidebar-link-name:hover {
+    color: var(--accent);
+    filter: blur(1.5px);
+  }
+}
+
 /* ========== ACCENT TEXT ========== */
 .accent-text {
   color: var(--accent);
