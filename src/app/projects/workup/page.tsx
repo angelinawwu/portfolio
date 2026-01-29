@@ -119,7 +119,7 @@ export default function WorkupPage() {
                 <div className="border border-faded-white p-6 bg-surface">
                   <div className="flex items-start gap-4">
                     <div>
-                      <p className="text-white-muted leading-relaxed">
+                      <p className="text-white leading-relaxed">
                       "I use ChatGPT's voice function to do mock interviews. My main issue is that it seems more like a list of technical questions rather than an actual organic interview process."
                       </p>
                     </div>
@@ -128,7 +128,7 @@ export default function WorkupPage() {
                 <div className="border border-faded-white p-6 bg-surface">
                   <div className="flex items-start gap-4">
                     <div>
-                      <p className="text-white-muted leading-relaxed">
+                      <p className="text-white leading-relaxed">
                       "[AI's] answers are too general [...]. It mainly helps with generating questions."
                       </p>
                     </div>
@@ -137,7 +137,7 @@ export default function WorkupPage() {
                 <div className="border border-faded-white p-6 bg-surface">
                   <div className="flex items-start gap-4">
                     <div>
-                      <p className="text-white-muted leading-relaxed">
+                      <p className="text-white leading-relaxed">
                       "[AI interview questions] either are too broad in their questions or too niche."
                       </p>
                     </div>
@@ -146,7 +146,7 @@ export default function WorkupPage() {
                 <div className="border border-faded-white p-6 bg-surface">
                   <div className="flex items-start gap-4">
                     <div>
-                      <p className="text-white-muted leading-relaxed">
+                      <p className="text-white leading-relaxed">
                       "I don't know if AI questions will be representative of what will actually be asked. They may be unreliable or biased."
                       </p>
                     </div>
