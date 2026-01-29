@@ -67,7 +67,7 @@ export const caseStudies: Project[] = [
 export const playgroundProjects: Project[] = [
 
   {
-    title: 'Typewriter',
+    title: 'Communal typewriter',
     description: 'Typewriter captures the nostalgic feel of mechanical typewriters. No backspace, no copy-paste, no takebacks.',
     paragraph: 'Typewriter captures the nostalgic feel of mechanical typewriters. No backspace, no copy-paste, no takebacks. Type anything and publish it to the gallery.',
     thumbnail: '/assets/playground/Typewriter-Cover.png',
@@ -81,7 +81,7 @@ export const playgroundProjects: Project[] = [
     githubUrl: 'https://github.com/angelinawwu/typewriter'
   },
   {
-    title: 'Voyager Golden Record',
+    title: 'A love letter to the Voyager Golden Record',
     description: 'A love letter to the Voyager Golden Record, and what it means to be human.',
     paragraph: 'A love letter to the Voyager Golden Record, and what it means to be human and alive on Earth. Turn your sound on!',
     thumbnail: '/assets/playground/Voyager-Cover.png',
@@ -95,8 +95,8 @@ export const playgroundProjects: Project[] = [
     githubUrl: 'https://github.com/angelinawwu/voyager'
   },
   {
-    title: 'MedTech Site',
-    context: 'Figma + Google AI Studio',
+    title: 'MedTech site',
+    context: 'Figma + Nano Banana',
     thumbnail: '/assets/playground/Thistle-Cover.png',
     type: 'playground',
   },
@@ -108,19 +108,19 @@ export const playgroundProjects: Project[] = [
     demoUrl: 'https://poems-i-love.vercel.app/',
   },
   {
-    title: 'E-Commerce Site',
-    context: 'Figma + Google AI Studio',
+    title: 'E-commerce site',
+    context: 'Figma + Veo',
     videoUrl: '/assets/playground/Rug-Video.mov',
     type: 'playground',
   },
   {
-    title: 'VEST Glass Experiment',
+    title: 'VEST glass experiment',
     context: 'Figma',
     thumbnail: '/assets/playground/VESTGlass-Cover.png',
     type: 'playground',
   },
   {
-    title: 'VEST Marketing Graphic',
+    title: 'VEST recruitment graphic',
     context: 'Figma + Photoshop',
     thumbnail: '/assets/playground/VESTKeyboard-Cover.jpg',
     type: 'playground',

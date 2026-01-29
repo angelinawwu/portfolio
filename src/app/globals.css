@@ -288,12 +288,11 @@ canvas.pixel-canvas {
   height: 24px;
   border-radius: 50%;
   border: 2px solid transparent;
-  transition: transform 0.15s ease-out, border-color 0.15s ease-out;
   cursor: pointer;
 }
 
 .theme-button:hover {
-  transform: scale(1.1);
+  filter: blur(2.5px);
 }
 
 .theme-button.active {

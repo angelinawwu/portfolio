@@ -2,8 +2,7 @@
 
 import Image from 'next/image';
 import { Project } from '@/data/projects';
-import { useRef, useEffect, useState, MouseEvent as ReactMouseEvent } from 'react';
-import { ArrowUpRight } from '@phosphor-icons/react';
+import { useRef } from 'react';
 
 interface PlaygroundCardProps {
   project: Project;
@@ -11,75 +10,30 @@ interface PlaygroundCardProps {
 }
 
 export default function PlaygroundCard({ project, index }: PlaygroundCardProps) {
-  const hasLink = !!project.demoUrl;
   const videoRef = useRef<HTMLVideoElement>(null);
-  const [supportsHover, setSupportsHover] = useState(false);
-  const [isMobileActive, setIsMobileActive] = useState(false);
-
-  useEffect(() => {
-    const mediaQuery = window.matchMedia('(hover: hover)');
-    setSupportsHover(mediaQuery.matches);
-
-    const handleChange = (e: MediaQueryListEvent) => {
-      setSupportsHover(e.matches);
-    };
-
-    mediaQuery.addEventListener('change', handleChange);
-    return () => mediaQuery.removeEventListener('change', handleChange);
-  }, []);
-
-  useEffect(() => {
-    if (supportsHover) {
-      setIsMobileActive(false);
-    }
-  }, [supportsHover]);
+  const hasLink = !!project.demoUrl;
+  const href = project.demoUrl || '#';
 
   const handleMouseEnter = () => {
-    if (videoRef.current && supportsHover) {
+    if (videoRef.current) {
       videoRef.current.play();
     }
   };
 
   const handleMouseLeave = () => {
-    if (videoRef.current && supportsHover) {
+    if (videoRef.current) {
       videoRef.current.pause();
       videoRef.current.currentTime = 0;
     }
   };
 
-  const handleCardClick = () => {
-    if (!supportsHover) {
-      setIsMobileActive((prev) => !prev);
-    }
-  };
-
-  const handleMobileLinkTap = (event: ReactMouseEvent<HTMLButtonElement>) => {
-    event.stopPropagation();
-    if (project.demoUrl) {
-      window.open(project.demoUrl, '_blank', 'noopener,noreferrer');
-    }
-  };
-
-  const overlayVisibility = supportsHover
-    ? 'opacity-0 group-hover:opacity-100'
-    : isMobileActive
-      ? 'opacity-100'
-      : 'opacity-0';
-
-  const captionVisibility = supportsHover
-    ? 'opacity-0 translate-y-full group-hover:opacity-100 group-hover:translate-y-0'
-    : isMobileActive
-      ? 'opacity-100 translate-y-0'
-      : 'opacity-0 translate-y-full';
-
-  const cardContent = (
+  const CardContent = (
     <div
-      className={`project-card group relative w-full overflow-hidden border border-faded-white ${hasLink ? 'cursor-pointer' : ''}`}
+      className="project-card group relative overflow-hidden border border-faded-white"
       style={{ '--card-index': index } as React.CSSProperties}
       data-cursor={hasLink ? 'playground-link' : undefined}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
-      onClick={handleCardClick}
     >
       {/* Image/Video Container */}
       <div className="relative w-full overflow-hidden bg-faded-white">
@@ -91,7 +45,6 @@ export default function PlaygroundCard({ project, index }: PlaygroundCardProps) 
             muted
             loop
             playsInline
-            autoPlay={!supportsHover}
             preload="metadata"
           />
         ) : project.thumbnail ? (
@@ -102,55 +55,50 @@ export default function PlaygroundCard({ project, index }: PlaygroundCardProps) 
             height={600}
             className="object-cover w-full h-auto group-hover:scale-105 transition-transform duration-200 ease-out"
             sizes="(max-width: 768px) 100vw, 50vw"
-            unoptimized
           />
         ) : (
           <div className="w-full aspect-video bg-faded-white" />
         )}
-
-        {/* Iridescent overlay on hover */}
-        <div className={`absolute inset-0 iridescent-glow ${overlayVisibility} transition-opacity duration-200 pointer-events-none`} />
+        
+        {/* Black overlay gradient */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
+        
+        {/* Progressive blur overlay on hover */}
+        <div 
+          className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none"
+          style={{
+            backdropFilter: 'blur(8px)',
+            WebkitBackdropFilter: 'blur(8px)',
+            maskImage: 'linear-gradient(to bottom, transparent 0%, transparent 50%, black 100%)',
+            WebkitMaskImage: 'linear-gradient(to bottom, transparent 0%, transparent 50%, black 100%)',
+          }}
+        />
       </div>
 
-      {/* Mobile action icon */}
-      {hasLink && !supportsHover && isMobileActive && (
-        <button
-          type="button"
-          onClick={handleMobileLinkTap}
-          className="absolute top-3 right-3 z-20 w-9 h-9 bg-accent text-black flex items-center justify-center shadow-md"
-          aria-label="Open project website"
-        >
-          <ArrowUpRight className="w-4 h-4" weight="bold" />
-        </button>
-      )}
-
-      {/* Title Caption - Slides in from bottom on hover */}
-      <div className={`absolute bottom-0 left-0 right-0 bg-surface flex items-center justify-between px-4 py-3 ${captionVisibility} transition-all duration-200 ease-out z-10 border-t border-faded-white`}>
-        <h3 className="text-white text-sm">
+      {/* Content */}
+      <div className="p-4 bg-surface">
+        {/* Title */}
+        <h3 className="bit-apple-font text-white mb-1 text-lg md:text-xl">
           {project.title}
         </h3>
+
+        {/* Context */}
         {project.context && (
-          <span className="px-2 py-1 text-xs geist-mono-font text-white-muted uppercase whitespace-nowrap flex-shrink-0">
+          <p className="text-xs geist-mono-font uppercase text-white-muted">
             {project.context}
-          </span>
+          </p>
         )}
       </div>
     </div>
   );
 
-  // Desktop link behavior
-  if (hasLink && supportsHover) {
+  if (hasLink) {
     return (
-      <a
-        href={project.demoUrl}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="block"
-      >
-        {cardContent}
+      <a href={href} target="_blank" rel="noopener noreferrer" className="block">
+        {CardContent}
       </a>
     );
   }
 
-  return cardContent;
+  return CardContent;
 }
