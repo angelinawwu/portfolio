@@ -93,7 +93,7 @@ export default function About() {
               </a>{' '}
               or take a peek at my{' '}
               <a 
-                href="https://drive.google.com/file/d/1urDhFh8q3HmATT-XVZU7RXP-TAt2BeXs/view"
+                href="https://drive.google.com/file/d/1MM9_woyppaYnxLGiA5FSjqrlQrstwFeN/view?usp=sharing"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="accent-text sidebar-link"
