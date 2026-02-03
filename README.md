@@ -1,4 +1,4 @@
-# 🌀 Angelina Wu's portfolio
+# ✱ Angelina Wu's portfolio ✱
 
 welcome! this the repository for my portfolio @ [angelinawwu.com](https://angelinawwu.com). 
 
@@ -10,5 +10,5 @@ npm install
 npm run dev
 ```
 
-## 🌀 keep in touch
-questions, collaborations, or secret handshakes go to [angelinawu05@gmail.com](mailto:hello@angelinawwu.com)
+## ✱ keep in touch ✱
+say hi or send a funny joke at [angelinawwu@ucla.edu](mailto:angelinawwu@ucla.edu)
