@@ -27,8 +27,14 @@ export const metadata: Metadata = {
   authors: [{ name: "Angelina Wu" }],
   creator: "Angelina Wu",
   icons: {
-    icon: '/favicon.png',
-    apple: '/favicon.png',
+    icon: [
+      { url: '/favicon.png', type: 'image/png', sizes: '32x32' }, // default (light / legacy)
+      { url: '/favicon-white.png', type: 'image/png', sizes: '32x32', media: '(prefers-color-scheme: dark)' },
+    ],
+    apple: [
+      { url: '/favicon.png', type: 'image/png', sizes: '180x180' }, // default (light / legacy)
+      { url: '/favicon-white.png', type: 'image/png', sizes: '180x180', media: '(prefers-color-scheme: dark)' },
+    ],
   },
   openGraph: {
     title: "Angelina Wu's Portfolio",
