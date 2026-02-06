@@ -17,7 +17,7 @@ const connectLinks = [
   { href: 'https://linkedin.com/in/angelinawwu', label: 'LINKEDIN' },
   { href: 'https://x.com/angelinawuuu', label: 'TWITTER/X' },
   { href: 'https://github.com/angelinawwu', label: 'GITHUB' },
-  { href: 'https://drive.google.com/file/d/1urDhFh8q3HmATT-XVZU7RXP-TAt2BeXs/view', label: 'RESUME' },
+  { href: 'https://drive.google.com/file/d/1MM9_woyppaYnxLGiA5FSjqrlQrstwFeN/view?usp=sharing', label: 'RESUME' },
 ];
 
 function LiveClock() {
