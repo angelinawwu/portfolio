@@ -5,6 +5,7 @@ import { usePathname } from 'next/navigation';
 import { useState, useEffect } from 'react';
 import { List, X } from '@phosphor-icons/react';
 import ThemeSwitcher from './ThemeSwitcher';
+import { ArrowUpRight } from '@phosphor-icons/react';
 
 const navItems = [
   { href: '/', label: 'WORK' },
@@ -134,6 +135,7 @@ export default function Sidebar() {
             >
               <span className="mr-2">✱</span>
               {link.label}
+              <ArrowUpRight className="ml-1 w-3 h-3 inline-block" />
             </a>
           ))}
         </nav>
