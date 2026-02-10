@@ -14,6 +14,9 @@ const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
 const THEME_STORAGE_KEY = 'portfolio-theme';
 
+// Track the short-lived theme transition timeout in the browser
+let themeTransitionTimeout: number | null = null;
+
 // Map themes to their accent colors for JS access
 const themeAccentColors: Record<Theme, string> = {
   default: '#F3EDF5',
@@ -51,6 +54,18 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
     setThemeState(newTheme);
     if (typeof window !== 'undefined') {
       localStorage.setItem(THEME_STORAGE_KEY, newTheme);
+
+      const root = document.documentElement;
+      root.classList.add('theme-transition');
+
+      if (themeTransitionTimeout !== null) {
+        window.clearTimeout(themeTransitionTimeout);
+      }
+
+      themeTransitionTimeout = window.setTimeout(() => {
+        root.classList.remove('theme-transition');
+        themeTransitionTimeout = null;
+      }, 250);
     }
   };
 

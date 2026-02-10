@@ -98,6 +98,14 @@ body {
   color: var(--white);
 }
 
+/* ========== THEME TRANSITION ========== */
+html.theme-transition,
+html.theme-transition * {
+  transition-property: background-color, color, border-color, fill, stroke;
+  transition-duration: 0.2s;
+  transition-timing-function: cubic-bezier(.215, .61, .355, 1);
+}
+
 /* ========== FONT UTILITIES ========== */
 .geist-mono-font {
   font-family: var(--font-geist-mono), monospace;
@@ -249,6 +257,11 @@ canvas.pixel-canvas {
     animation: none;
     opacity: 1;
     filter: none;
+  }
+  
+  html.theme-transition,
+  html.theme-transition * {
+    transition: none !important;
   }
   
   html {
