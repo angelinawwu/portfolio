@@ -7,11 +7,13 @@ import { useRef } from 'react';
 interface PlaygroundCardProps {
   project: Project;
   index: number;
+  onExpand?: (project: Project) => void;
 }
 
-export default function PlaygroundCard({ project, index }: PlaygroundCardProps) {
+export default function PlaygroundCard({ project, index, onExpand }: PlaygroundCardProps) {
   const videoRef = useRef<HTMLVideoElement>(null);
   const hasLink = !!project.demoUrl;
+  const hasMedia = !!(project.thumbnail || project.videoUrl);
   const href = project.demoUrl || '#';
 
   const handleMouseEnter = () => {
@@ -27,11 +29,17 @@ export default function PlaygroundCard({ project, index }: PlaygroundCardProps) 
     }
   };
 
+  const cursorType = hasLink
+    ? 'playground-link'
+    : hasMedia
+      ? 'playground-expand'
+      : undefined;
+
   const CardContent = (
     <div
       className="project-card group relative overflow-hidden border border-faded-white"
       style={{ '--card-index': index } as React.CSSProperties}
-      data-cursor={hasLink ? 'playground-link' : undefined}
+      data-cursor={cursorType}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
@@ -97,6 +105,18 @@ export default function PlaygroundCard({ project, index }: PlaygroundCardProps) 
       <a href={href} target="_blank" rel="noopener noreferrer" className="block">
         {CardContent}
       </a>
+    );
+  }
+
+  if (hasMedia && onExpand) {
+    return (
+      <button
+        type="button"
+        className="block w-full text-left"
+        onClick={() => onExpand(project)}
+      >
+        {CardContent}
+      </button>
     );
   }
 
