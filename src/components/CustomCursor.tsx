@@ -125,7 +125,10 @@ export default function CustomCursor() {
           </>
         )}
         {cursorState === 'playground-expand' && (
-          <span className="text-xs font-mono geist-mono-font">VIEW</span>
+          <>
+            <span className="text-xs font-mono geist-mono-font">VIEW</span>
+            <ArrowRight className="w-3.5 h-3.5 flex-shrink-0" weight="bold" />
+          </>
         )}
         {cursorState === 'project-card' && (
           <>
@@ -179,6 +182,17 @@ export default function CustomCursor() {
               className="flex-shrink-0"
             >
               <ArrowUpRight className="w-3.5 h-3.5" weight="bold" />
+            </motion.div>
+          )}
+          {cursorState === 'playground-expand' && (
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={contentTransition}
+              className="flex-shrink-0"
+            >
+              <ArrowRight className="w-3.5 h-3.5" weight="bold" />
             </motion.div>
           )}
           {cursorState === 'project-card' && (
