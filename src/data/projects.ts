@@ -95,7 +95,7 @@ export const playgroundProjects: Project[] = [
     githubUrl: 'https://github.com/angelinawwu/voyager'
   },
   {
-    title: 'MedTech site',
+    title: 'Thistle (healthtech concept)',
     context: 'Figma & Nano Banana',
     thumbnail: '/assets/playground/Thistle-Cover.webp',
     type: 'playground',
