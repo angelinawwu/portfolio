@@ -70,6 +70,9 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
+  other: {
+    "p:domain_verify": "9b3e87a067098291f60693c9d73a3765",
+  },
 };
 
 export default function RootLayout({
