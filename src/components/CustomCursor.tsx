@@ -184,7 +184,7 @@ export default function CustomCursor() {
               {text}
             </motion.span>
           )}
-          {cursorState === 'playground-link' && (
+          {(cursorState === 'playground-link' || cursorState === 'devpost') && (
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
