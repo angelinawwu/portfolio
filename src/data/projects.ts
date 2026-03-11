@@ -12,6 +12,7 @@ export type Project = {
   projectType?: ProjectType;
   // For playground projects:
   demoUrl?: string;
+  devpostUrl?: string;
   githubUrl?: string;
   timeline?: string;
   // For projects with video (case studies or playground):
@@ -66,6 +67,13 @@ export const caseStudies: Project[] = [
 
 export const playgroundProjects: Project[] = [
 
+  {
+    title: 'Hero (Treehacks 2026)',
+    context: 'React Native',
+    thumbnail: '/assets/playground/Hero-Cover.webp',
+    type: 'playground',
+    devpostUrl: 'https://devpost.com/software/organmatch',
+  },
   {
     title: 'Communal typewriter',
     description: 'Typewriter captures the nostalgic feel of mechanical typewriters. No backspace, no copy-paste, no takebacks.',

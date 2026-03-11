@@ -12,9 +12,10 @@ interface PlaygroundCardProps {
 
 export default function PlaygroundCard({ project, index, onExpand }: PlaygroundCardProps) {
   const videoRef = useRef<HTMLVideoElement>(null);
+  const hasDevpost = !!project.devpostUrl;
   const hasLink = !!project.demoUrl;
   const hasMedia = !!(project.thumbnail || project.videoUrl);
-  const href = project.demoUrl || '#';
+  const href = project.devpostUrl || project.demoUrl || '#';
 
   const handleMouseEnter = () => {
     if (videoRef.current) {
@@ -29,11 +30,13 @@ export default function PlaygroundCard({ project, index, onExpand }: PlaygroundC
     }
   };
 
-  const cursorType = hasLink
-    ? 'playground-link'
-    : hasMedia
-      ? 'playground-expand'
-      : undefined;
+  const cursorType = hasDevpost
+    ? 'devpost'
+    : hasLink
+      ? 'playground-link'
+      : hasMedia
+        ? 'playground-expand'
+        : undefined;
 
   const CardContent = (
     <div
@@ -100,7 +103,7 @@ export default function PlaygroundCard({ project, index, onExpand }: PlaygroundC
     </div>
   );
 
-  if (hasLink) {
+  if (hasDevpost || hasLink) {
     return (
       <a href={href} target="_blank" rel="noopener noreferrer" className="block">
         {CardContent}
