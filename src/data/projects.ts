@@ -116,7 +116,7 @@ export const playgroundProjects: Project[] = [
     demoUrl: 'https://poems-i-love.vercel.app/',
   },
   {
-    title: 'E-commerce site',
+    title: 'Rug store (concept)',
     context: 'Figma & Veo',
     videoUrl: '/assets/playground/Rug-Video.mov',
     type: 'playground',
