@@ -212,7 +212,7 @@ export default function About() {
                       src={book.image}
                       alt={book.title}
                       fill
-                      className="object-cover"
+                      className="object-cover group-hover:scale-104 transition-transform duration-200 ease-out"
                       sizes="(max-width: 768px) 20vw, 15vw"
                     />
                     {/* Progressive blur overlay on hover */}
@@ -256,7 +256,7 @@ export default function About() {
                       src={album.image}
                       alt={album.title}
                       fill
-                      className="object-cover"
+                      className="object-cover group-hover:scale-104 transition-transform duration-200 ease-out"
                       sizes="(max-width: 768px) 20vw, 15vw"
                     />
                     {/* Progressive blur overlay on hover */}
