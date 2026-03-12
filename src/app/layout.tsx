@@ -6,7 +6,6 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import Sidebar from "@/components/Sidebar";
 import CustomCursor from "@/components/CustomCursor";
-import PixelTrailWrapper from "@/components/PixelTrailWrapper";
 import Script from "next/script";
 
 const geistSans = Geist({
@@ -100,7 +99,6 @@ export default function RootLayout({
           }}
         />
         <ThemeProvider>
-          <PixelTrailWrapper />
           <CustomCursor />
           <Sidebar />
           
