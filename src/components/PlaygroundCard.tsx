@@ -34,9 +34,9 @@ export default function PlaygroundCard({ project, index, onExpand }: PlaygroundC
     ? 'devpost'
     : hasLink
       ? 'playground-link'
-      : hasMedia
-        ? 'playground-expand'
-        : undefined;
+      // : hasMedia
+      //   ? 'playground-expand'
+      : undefined;
 
   const CardContent = (
     <div

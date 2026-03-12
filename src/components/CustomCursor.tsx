@@ -96,9 +96,9 @@ export default function CustomCursor() {
   const isDefault = cursorState === 'default';
   const text = cursorState === 'playground-link' ? 'OPEN WEBSITE' 
     : cursorState === 'playground-expand' ? 'VIEW'
-    : cursorState === 'project-card' ? 'VIEW PROJECT' 
+    : cursorState === 'project-card' ? 'READ CASE STUDY' 
     : cursorState === 'coming-soon' ? 'COMING SOON'
-    : cursorState === 'devpost' ? 'OPEN DEVPOST'
+    : cursorState === 'devpost' ? 'VIEW DEVPOST'
     : cursorState === 'image' ? imageCaption 
     : '';
 
@@ -131,7 +131,7 @@ export default function CustomCursor() {
         )}
         {cursorState === 'devpost' && (
           <>
-            <span className="text-xs font-mono geist-mono-font">OPEN DEVPOST</span>
+            <span className="text-xs font-mono geist-mono-font">VIEW DEVPOST</span>
             <ArrowUpRight className="w-3.5 h-3.5 flex-shrink-0" weight="bold" />
           </>
         )}
@@ -143,7 +143,7 @@ export default function CustomCursor() {
         )}
         {cursorState === 'project-card' && (
           <>
-            <span className="text-xs font-mono geist-mono-font">VIEW PROJECT</span>
+            <span className="text-xs font-mono geist-mono-font">READ CASE STUDY</span>
             <ArrowRight className="w-3.5 h-3.5 flex-shrink-0" weight="bold" />
           </>
         )}
