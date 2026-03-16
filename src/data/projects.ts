@@ -80,7 +80,7 @@ export const playgroundProjects: Project[] = [
     paragraph: 'Typewriter captures the nostalgic feel of mechanical typewriters. No backspace, no copy-paste, no takebacks. Type anything and publish it to the gallery.',
     thumbnail: '/assets/playground/Typewriter-Cover.webp',
     videoUrl: '/assets/playground/Typewriter-Video.mov',
-    context: 'React/Vite & Supabase',
+    context: 'React/Vite & Google Sheets API',
     tags: ['Typescript', 'CSS Animations', 'React/Vite'],
     type: 'playground',
     projectType: 'PERSONAL PROJECT',
