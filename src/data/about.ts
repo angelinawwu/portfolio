@@ -1,3 +1,41 @@
+export type ExperienceItem = {
+  org: string;
+  role: string;
+  period: string;
+}
+
+export type BioData = {
+  accentWords: string[];
+  paragraph: string;
+  hobbies: string[];
+  email: string;
+  resumeUrl: string;
+}
+
+export const bio: BioData = {
+  accentWords: ['delight', 'connection'],
+  paragraph: "Hey, I'm Angelina! I'm a designer who's passionate about creating channels for {delight} and {connection}. I see design as a way to build tiny bridges between people. I'm currently at UCLA studying Design Media Arts and Statistics/Data Science.",
+  hobbies: [
+    'Reading tearjerker novels about friendship and family',
+    'Going down Wikipedia rabbit holes',
+    'Arranging my bookmarks bar in rainbow order',
+    '(Unsuccessfully) learning how to whistle',
+  ],
+  email: 'angelinawwu@ucla.edu',
+  resumeUrl: 'https://drive.google.com/file/d/1MM9_woyppaYnxLGiA5FSjqrlQrstwFeN/view?usp=sharing',
+}
+
+export const experience: ExperienceItem[] = [
+  { org: 'Sephora', role: 'Product Design Intern', period: 'INCOMING' },
+  { org: 'Manifesto Market', role: 'UX Intern', period: 'SUMMER 2025' },
+]
+
+export const orgs: ExperienceItem[] = [
+  { org: 'VEST', role: 'Head of Design & Media', period: '2025–PRESENT' },
+  { org: 'ACM at UCLA', role: 'Design Committee President', period: '2024–PRESENT' },
+  { org: 'Campus Events Commission', role: 'Designer', period: '2024–PRESENT' },
+]
+
 export type About = {
   id: number;
   title: string;

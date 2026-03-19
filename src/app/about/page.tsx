@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import { ArrowUpRight } from 'lucide-react';
-import { books, albums, images } from '@/data/about';
+import { books, albums, images, bio, experience, orgs } from '@/data/about';
 
 export default function About() {
   let cardIndex = 0;
@@ -63,12 +63,11 @@ export default function About() {
             style={{ '--card-index': cardIndex++ } as React.CSSProperties}
           >
             <p className="text-sm leading-relaxed text-white-muted">
-              Hey, I&apos;m Angelina! I&apos;m a designer who&apos;s passionate about 
-              creating channels for{' '}
-              <span className="accent-text">delight</span> and{' '}
-              <span className="accent-text">connection</span>. I see design as a 
-              way to build tiny bridges between people. I&apos;m currently at UCLA studying 
-              Design Media Arts and Statistics/Data Science.
+              {bio.paragraph.split(/\{(\w+)\}/).map((part, i) =>
+                bio.accentWords.includes(part)
+                  ? <span key={i} className="accent-text">{part}</span>
+                  : part
+              )}
             </p>
             
             <div>
@@ -76,24 +75,23 @@ export default function About() {
                 When I&apos;m not designing, I can be found:
               </p>
               <ul className="arrow-list text-white-muted text-sm leading-relaxed">
-                <li>Reading tearjerker novels about friendship and family</li>
-                <li>Going down Wikipedia rabbit holes</li>
-                <li>Arranging my bookmarks bar in rainbow order</li>
-                <li>(Unsuccessfully) learning how to whistle</li>
+                {bio.hobbies.map((hobby, i) => (
+                  <li key={i}>{hobby}</li>
+                ))}
               </ul>
             </div>
 
             <p className="text-sm leading-relaxed text-white-muted">
               Say hi at{' '}
               <a 
-                href="mailto:angelinawwu@ucla.edu" 
+                href={`mailto:${bio.email}`}
                 className="accent-text sidebar-link"
               >
-                angelinawwu@ucla.edu <ArrowUpRight className="w-4 h-4 inline-block" />
+                {bio.email} <ArrowUpRight className="w-4 h-4 inline-block" />
               </a>{' '}
               or take a peek at my{' '}
               <a 
-                href="https://drive.google.com/file/d/1MM9_woyppaYnxLGiA5FSjqrlQrstwFeN/view?usp=sharing"
+                href={bio.resumeUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="accent-text sidebar-link"
@@ -113,27 +111,17 @@ export default function About() {
               <div className="w-full border-b border-faded-white mb-2">
                 <h3 className="text-xs geist-mono-font text-white mb-2 tracking-wider">EXPERIENCE</h3>
               </div>
-              
               <div className="flex flex-col gap-2">
-                {/* SEPHORA */}
-                <div className="flex flex-row md:items-center justify-between gap-1">
-                  <div className="flex flex-col md:flex-row justify-between md:justify-start md:gap-2">
-                    <span className="text-white text-sm">Sephora</span>
-                    <span className="hidden md:block text-white-muted text-sm">✱</span>
-                    <span className="text-white-muted text-sm">Product Design Intern</span>
+                {experience.map((item, i) => (
+                  <div key={i} className="flex flex-row md:items-center justify-between gap-1">
+                    <div className="flex flex-col md:flex-row justify-between md:justify-start md:gap-2">
+                      <span className="text-white text-sm">{item.org}</span>
+                      <span className="hidden md:block text-white-muted text-sm">✱</span>
+                      <span className="text-white-muted text-sm">{item.role}</span>
+                    </div>
+                    <span className="text-white-muted text-sm geist-mono-font">{item.period}</span>
                   </div>
-                  <span className="text-white-muted text-sm geist-mono-font">INCOMING</span>
-                </div>
-
-                {/* Manifesto Market */}
-                <div className="flex flex-row md:items-center justify-between gap-1">
-                  <div className="flex flex-col md:flex-row justify-between md:justify-start md:gap-2">
-                    <span className="text-white text-sm">Manifesto Market</span>
-                    <span className="hidden md:block text-white-muted text-sm">✱</span>
-                    <span className="text-white-muted text-sm">UX Intern</span>
-                  </div>
-                  <span className="text-white-muted text-sm geist-mono-font">SUMMER 2025</span>
-                </div>
+                ))}
               </div>
             </div>
 
@@ -142,37 +130,17 @@ export default function About() {
               <div className="w-full border-b border-faded-white mb-2">
                 <h3 className="text-xs geist-mono-font text-white mb-2 tracking-wider">ORGS & LEADERSHIP</h3>
               </div>
-              
               <div className="flex flex-col gap-2">
-                {/* VEST */}
-                <div className="flex flex-row md:items-center justify-between gap-1">
-                  <div className="flex flex-col md:flex-row justify-between md:justify-start md:gap-2">
-                    <span className="text-white text-sm">VEST</span>
-                    <span className="hidden md:block text-white-muted text-sm">✱</span>
-                    <span className="text-white-muted text-sm">Head of Design</span>
+                {orgs.map((item, i) => (
+                  <div key={i} className="flex flex-row md:items-center justify-between gap-1">
+                    <div className="flex flex-col md:flex-row justify-between md:justify-start md:gap-2">
+                      <span className="text-white text-sm">{item.org}</span>
+                      <span className="hidden md:block text-white-muted text-sm">✱</span>
+                      <span className="text-white-muted text-sm">{item.role}</span>
+                    </div>
+                    <span className="text-white-muted text-sm geist-mono-font">{item.period}</span>
                   </div>
-                  <span className="text-white-muted text-sm geist-mono-font">2025–PRESENT</span>
-                </div>
-
-                {/* ACM at UCLA */}
-                <div className="flex flex-row md:items-center justify-between gap-1">
-                  <div className="flex flex-col md:flex-row justify-between md:justify-start md:gap-2">
-                    <span className="text-white text-sm">ACM at UCLA</span>
-                    <span className="hidden md:block text-white-muted text-sm">✱</span>
-                    <span className="text-white-muted text-sm">Design Director</span>
-                  </div>
-                  <span className="text-white-muted text-sm geist-mono-font">2024–PRESENT</span>
-                </div>
-
-                {/* Campus Events Commission */}
-                <div className="flex flex-row md:items-center justify-between gap-1">
-                  <div className="flex flex-col md:flex-row justify-between md:justify-start md:gap-2">
-                    <span className="text-white text-sm">Campus Events Commission</span>
-                    <span className="hidden md:block text-white-muted text-sm">✱</span>
-                    <span className="text-white-muted text-sm">Designer</span>
-                  </div>
-                  <span className="text-white-muted text-sm geist-mono-font">2024–PRESENT</span>
-                </div>
+                ))}
               </div>
             </div>
           </div>
