@@ -397,11 +397,13 @@ export default function ManifestoMarketPage() {
           className="project-card pt-8 border-t border-faded-white"
           style={{ '--card-index': cardIndex++ } as React.CSSProperties}
         >
-          <div className="flex justify-end items-center">
+          <div className="flex justify-between items-center">
+            <Link href="/projects/familyfridge" className="sidebar-link">
+              ← FamilyFridge
+            </Link>
             <Link href="/projects/workup" className="sidebar-link">
               Workup →
             </Link>
-            
           </div>
         </nav>
       </div>

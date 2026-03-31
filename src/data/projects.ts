@@ -1,4 +1,4 @@
-export type ProjectType = 'PERSONAL PROJECT' | 'INTERNSHIP' | 'CONTRACT' | 'SCHOOL PROJECT';
+export type ProjectType = 'PERSONAL PROJECT' | 'INTERNSHIP' | 'CONTRACT' | 'SCHOOL PROJECT' | 'HACKATHON';
 
 export type Project = {
   slug?: string;
@@ -20,6 +20,28 @@ export type Project = {
 };
 
 export const caseStudies: Project[] = [
+  {
+    slug: 'familyfridge',
+    title: 'FamilyFridge',
+    description: 'Where everyday moments bring us together — reimagining how families stay connected.',
+    thumbnail: '/assets/projects/FamilyFridge-Cover.webp',
+    timeline: 'JAN 2026',
+    projectType: 'HACKATHON',
+    tags: ['UX Research', 'Mobile Design', 'Figma'],
+    type: 'case-study',
+    devpostUrl: 'https://devpost.com/software/tba-bo8jku'
+  },
+  {
+    slug: 'familyfridge-2',
+    title: 'FamilyFridge 2',
+    description: 'A comprehensive case study — from brainstorming to 2nd place in 36 hours.',
+    thumbnail: '/assets/projects/FamilyFridge-Cover.webp',
+    timeline: 'JAN 2026',
+    projectType: 'HACKATHON',
+    tags: ['UX Research', 'Mobile Design', 'Figma'],
+    type: 'case-study',
+    devpostUrl: 'https://devpost.com/software/tba-bo8jku'
+  },
   {
     slug: 'goodreads-wrapped',
     title: 'Goodreads Wrapped',
@@ -136,12 +158,13 @@ export const playgroundProjects: Project[] = [
 ];
 
 // All projects for Work page (all case studies)
-// Order: Goodreads Wrapped -> Manifesto Market -> Workup -> Bookish
+// Order: FamilyFridge -> Goodreads Wrapped -> Manifesto Market -> Workup -> Bookish
 export const workProjects: Project[] = [
-  caseStudies[0], // Goodreads Wrapped
-  caseStudies[1], // Manifesto Market
-  caseStudies[2], // Workup
-  caseStudies[3], // Bookish
+  caseStudies[0], // FamilyFridge
+  caseStudies[1], // Goodreads Wrapped
+  caseStudies[2], // Manifesto Market
+  caseStudies[3], // Workup
+  caseStudies[4], // Bookish
 ];
 
 // Combined projects for backward compatibility

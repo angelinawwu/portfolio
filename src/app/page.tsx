@@ -2,8 +2,9 @@ import ProjectCard from '@/components/ProjectCard';
 import { workProjects } from '@/data/projects';
 
 export default function WorkPage() {
-  // Get projects in desired order: Goodreads Wrapped, Manifesto Market, Workup, Bookish
+  // Get projects in desired order: FamilyFridge, Goodreads Wrapped, Manifesto Market, Workup, Bookish
   const orderedProjects = [
+    workProjects.find(p => p.slug === 'familyfridge'),
     workProjects.find(p => p.title === 'Goodreads Wrapped'),
     workProjects.find(p => p.slug === 'manifesto-market'),
     workProjects.find(p => p.slug === 'workup'),
@@ -11,9 +12,9 @@ export default function WorkPage() {
   ].filter(Boolean) as typeof workProjects;
 
   // Desktop masonry columns
-  // Column 1 (left): Goodreads Wrapped, Workup
-  // Column 2 (right): Manifesto Market, Bookish
-  const leftColumn = [orderedProjects[0], orderedProjects[2]].filter(Boolean);
+  // Column 1 (left): FamilyFridge, Manifesto Market, Bookish
+  // Column 2 (right): Goodreads Wrapped, Workup
+  const leftColumn = [orderedProjects[0], orderedProjects[2], orderedProjects[4]].filter(Boolean);
   const rightColumn = [orderedProjects[1], orderedProjects[3]].filter(Boolean);
 
   return (
