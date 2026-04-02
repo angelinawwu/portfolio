@@ -114,20 +114,12 @@ export default function FamilyFridge2Page() {
               />
               <div className="space-y-4 text-white-muted leading-relaxed">
                 <p>
-                  When we first approached the prompt, we asked ourselves: what does the generational gap actually look like for people our age? For most of us, the answer wasn&apos;t dramatic. It showed up in phone calls that felt routine, and in text chains that never got past &quot;how are you?&quot; and &quot;I&apos;m fine.&quot;
+                  When we first approached the prompt, we asked ourselves: what does the generational gap actually look like for people our age? For most of us, the answer wasn&apos;t dramatic. It showed up in phone calls and text chains that felt routine, and never got past &quot;how are you?&quot; and &quot;I&apos;m fine.&quot;
                 </p>
                 <p>
                   ~75% of our survey respondents were satisfied with how <span className="italic">often</span> they communicate with family, yet many weren&apos;t content with the <span className="italic">quality</span> of those conversations. At the same time, many preferred their preexisting communication methods — phone calls and texting — since they were already within their routines. Therefore, the best solution would fit into existing habits, instead of asking people to build new ones.
                 </p>
               </div>
-            </div>
-
-            <div className="border border-faded-white p-6 bg-surface">
-              <ul className="arrow-list">
-                <li className="text-white">
-                  How might we create deeper connections from routine phone calls?
-                </li>
-              </ul>
             </div>
           </div>
         </section>
