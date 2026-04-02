@@ -67,7 +67,7 @@ export default function FamilyFridge2Page() {
             </div>
             <div className="border border-faded-white p-4 bg-surface">
               <h3 className="text-xs geist-mono-font text-white-muted mb-2">TOOLS</h3>
-              <p className="text-white">Figma, iMovie</p>
+              <p className="text-white">Figma</p>
             </div>
           </div>
         </section>
@@ -102,22 +102,16 @@ export default function FamilyFridge2Page() {
 
           <div className="space-y-6">
             <div>
-              <h3 className="text-xl md:text-2xl text-white mb-4">
-                <span className="accent-text">Conversations feel like &quot;check-ins&quot; and &quot;status updates.&quot;</span>
-              </h3>
               <Image
                 src="/assets/projects/FamilyFridge/FamilyFridge-ProblemStatement.png"
                 alt="Conversations feel like check-ins and status updates"
-                width={400}
+                width={700}
                 height={200}
                 className="mx-auto mb-4"
               />
               <div className="space-y-4 text-white-muted leading-relaxed">
                 <p>
                   When we first approached the prompt, we asked ourselves: what does the generational gap actually look like for people our age? For most of us, the answer wasn&apos;t dramatic. It showed up in phone calls and text chains that felt routine, and never got past &quot;how are you?&quot; and &quot;I&apos;m fine.&quot;
-                </p>
-                <p>
-                  ~75% of our survey respondents were satisfied with how <span className="italic">often</span> they communicate with family, yet many weren&apos;t content with the <span className="italic">quality</span> of those conversations. At the same time, many preferred their preexisting communication methods — phone calls and texting — since they were already within their routines. Therefore, the best solution would fit into existing habits, instead of asking people to build new ones.
                 </p>
               </div>
             </div>
@@ -157,7 +151,7 @@ export default function FamilyFridge2Page() {
                 When we asked interviewees about their most cherished family moments, a clear theme emerged: the moments that mattered most were often ordinary and spontaneous.
               </p>
 
-              <div className="space-y-4">
+              <div className="space-y-4 mb-4">
                 <div className="border border-faded-white p-6 bg-surface">
                   <p className="text-white leading-relaxed italic">
                     &quot;Some of our best memories were when we went on hikes together and just got to talk.&quot;
@@ -174,6 +168,9 @@ export default function FamilyFridge2Page() {
                   </p>
                 </div>
               </div>
+              <p className="text-white-muted leading-relaxed mb-4">
+                ~75% of our survey respondents were satisfied with how <span className="italic">often</span> they communicate with family, yet many weren&apos;t content with the <span className="italic">quality</span> of those conversations. At the same time, many preferred their preexisting communication methods — phone calls and texting — since they were already within their routines. Therefore, the best solution would fit into existing habits, instead of asking people to build new ones.
+              </p>
             </div>
 
             <div>
