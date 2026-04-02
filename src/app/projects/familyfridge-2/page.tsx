@@ -105,12 +105,19 @@ export default function FamilyFridge2Page() {
               <h3 className="text-xl md:text-2xl text-white mb-4">
                 <span className="accent-text">Conversations feel like &quot;check-ins&quot; and &quot;status updates.&quot;</span>
               </h3>
+              <Image
+                src="/assets/projects/FamilyFridge/FamilyFridge-ProblemStatement.png"
+                alt="Conversations feel like check-ins and status updates"
+                width={400}
+                height={200}
+                className="mx-auto mb-4"
+              />
               <div className="space-y-4 text-white-muted leading-relaxed">
                 <p>
-                  When we first approached the prompt, we asked ourselves: what does the generational gap actually look like for people our age? For most of us, the answer wasn&apos;t dramatic — it was subtle. It showed up in phone calls that felt routine, in conversations that never got past &quot;how are you?&quot; and &quot;I&apos;m fine.&quot;
+                  When we first approached the prompt, we asked ourselves: what does the generational gap actually look like for people our age? For most of us, the answer wasn&apos;t dramatic. It showed up in phone calls that felt routine, and in text chains that never got past &quot;how are you?&quot; and &quot;I&apos;m fine.&quot;
                 </p>
                 <p>
-                  ~75% of our survey respondents were satisfied with how <span className="italic">often</span> they communicate with family, yet many weren&apos;t content with the <span className="italic">quality</span> of those conversations. At the same time, many prefer their preexisting communication methods — phone calls and texting — as they&apos;re &quot;quick and low-effort&quot; and already within their routines. Any solution must fit into existing habits, not ask people to build new ones.
+                  ~75% of our survey respondents were satisfied with how <span className="italic">often</span> they communicate with family, yet many weren&apos;t content with the <span className="italic">quality</span> of those conversations. At the same time, many preferred their preexisting communication methods — phone calls and texting — since they were already within their routines. Therefore, the best solution would fit into existing habits, instead of asking people to build new ones.
                 </p>
               </div>
             </div>
@@ -118,7 +125,7 @@ export default function FamilyFridge2Page() {
             <div className="border border-faded-white p-6 bg-surface">
               <ul className="arrow-list">
                 <li className="text-white">
-                  How might we turn weekly calls into shared memories?
+                  How might we create deeper connections from routine phone calls?
                 </li>
               </ul>
             </div>
@@ -135,7 +142,7 @@ export default function FamilyFridge2Page() {
           <div className="space-y-12">
             <div>
               <p className="text-white-muted leading-relaxed mb-6">
-                We gathered 50 survey responses, conducted 3 user interviews, and performed secondary research to understand how young adults interact with older family members. Our research process was fast and intentional — we needed to move from insight to action within hours, not weeks.
+                We gathered 50 survey responses, conducted 3 user interviews, and performed secondary research to understand how young adults interact with older family members. Our research process was fast and intentional — given the time constraints of the designathon, we needed to move from insight to action within the span of a few hours.
               </p>
 
               <div className="overflow-hidden">
@@ -147,7 +154,7 @@ export default function FamilyFridge2Page() {
                 />
               </div>
               <p className="text-xs geist-mono-font text-white-muted mt-2">
-                Our FigJam brainstorming board — survey data charts, affinity mapping, user flows, and competitive analysis.
+                Our FigJam brainstorming board, including survey data charts, affinity mapping, user flows, and competitive analysis.
               </p>
             </div>
 
@@ -155,7 +162,7 @@ export default function FamilyFridge2Page() {
               <h3 className="text-xl md:text-2xl text-white mb-4">Connection happens in small, shared moments</h3>
 
               <p className="text-white-muted leading-relaxed mb-4">
-                When we asked interviewees about their most cherished family moments, a clear theme emerged: the moments that mattered most weren&apos;t grand or planned — they were ordinary and spontaneous.
+                When we asked interviewees about their most cherished family moments, a clear theme emerged: the moments that mattered most were often ordinary and spontaneous.
               </p>
 
               <div className="space-y-4">
@@ -166,7 +173,7 @@ export default function FamilyFridge2Page() {
                 </div>
                 <div className="border border-faded-white p-6 bg-surface">
                   <p className="text-white leading-relaxed italic">
-                    &quot;My mom screenshots FaceTime calls during special moments — so in 20 years, she can see how silly I was.&quot;
+                    &quot;My mom screenshots FaceTime calls during special moments, so in 20 years, she can see how silly I was.&quot;
                   </p>
                 </div>
                 <div className="border border-faded-white p-6 bg-surface">
@@ -175,18 +182,12 @@ export default function FamilyFridge2Page() {
                   </p>
                 </div>
               </div>
-
-              <div className="mt-6 border border-faded-white p-6 bg-surface">
-                <p className="text-white">
-                  <span className="accent-text">Photos can be more than memories</span> — they are conversation starters.
-                </p>
-              </div>
             </div>
 
             <div>
               <h3 className="text-xl md:text-2xl text-white mb-4">The generational technology gap</h3>
               <p className="text-white-muted leading-relaxed">
-                Pew Research found that ~50% of young adults are &quot;almost constantly online,&quot; compared to just 8% of those 65+. 80% of our survey respondents agreed that their grandparents struggle with technology. Any digital solution must meet older generations where they are, rather than asking them to adapt to unfamiliar interfaces.
+                Pew Research found that ~50% of young adults are &quot;almost constantly online,&quot; compared to just 8% of those 65+ <a href="https://www.pewresearch.org/short-reads/2022/01/13/share-of-those-65-and-older-who-are-tech-users-has-grown-in-the-past-decade/" target="_blank" rel="noopener noreferrer" className="accent-text sidebar-link">(link)</a>. 80% of our survey respondents agreed that their grandparents struggle with technology. Any digital solution must meet older generations where they are, rather than asking them to adapt to unfamiliar interfaces.
               </p>
             </div>
           </div>
@@ -212,7 +213,7 @@ export default function FamilyFridge2Page() {
             </div>
             <div className="border border-faded-white p-6 bg-surface">
               <h3 className="text-lg text-white mb-3">Minimize <span className="accent-text">friction.</span></h3>
-              <p className="text-white-muted leading-relaxed">The app should meet users where they are in effortless, familiar interactions — no one is forced to learn new tools.</p>
+              <p className="text-white-muted leading-relaxed">The app should meet users where they are in effortless, familiar interactions, so no one is forced to learn new tools.</p>
             </div>
           </div>
         </section>
