@@ -59,7 +59,7 @@ export default function FamilyFridge2Page() {
             </div>
             <div className="border border-faded-white p-4 bg-surface">
               <h3 className="text-xs geist-mono-font text-white-muted mb-2">TIMELINE</h3>
-              <p className="text-white">Jan 2026 (36 hrs)</p>
+              <p className="text-white">January 2026 (36 hrs)</p>
             </div>
             <div className="border border-faded-white p-4 bg-surface">
               <h3 className="text-xs geist-mono-font text-white-muted mb-2">TEAM</h3>
@@ -128,7 +128,7 @@ export default function FamilyFridge2Page() {
           <div className="space-y-12">
             <div>
               <p className="text-white-muted leading-relaxed mb-6">
-                We gathered 50 survey responses, conducted 3 user interviews, and performed secondary research to understand how young adults interact with older family members. Our research process was fast and intentional — given the time constraints of the designathon, we needed to move from insight to action within the span of a few hours.
+                We gathered 50 survey responses, conducted 3 user interviews, and performed secondary research to understand how young adults interact with older family members. Our research process was fast and intentional — given the time constraints of the designathon, we needed to move from research to design within the span of a few hours.
               </p>
 
               <div className="overflow-hidden">
@@ -151,28 +151,59 @@ export default function FamilyFridge2Page() {
                 When we asked interviewees about their most cherished family moments, a clear theme emerged: the moments that mattered most were often ordinary and spontaneous.
               </p>
 
-              <div className="space-y-4 mb-4">
-                <div className="border border-faded-white p-6 bg-surface">
-                  <p className="text-white leading-relaxed italic">
-                    &quot;Some of our best memories were when we went on hikes together and just got to talk.&quot;
-                  </p>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
+                <div className="space-y-4">
+                  <Image
+                    src="/assets/projects/FamilyFridge/FamilyFridge-QuotePic-1.jpg"
+                    alt="Family hiking together"
+                    width={400}
+                    height={300}
+                    className="w-full h-auto"
+                  />
+                  <div className="border border-faded-white p-6 bg-surface">
+                    <p className="text-white leading-relaxed italic">
+                      &quot;Some of our best memories were when we went on hikes together and just got to talk.&quot;
+                    </p>
+                  </div>
                 </div>
-                <div className="border border-faded-white p-6 bg-surface">
-                  <p className="text-white leading-relaxed italic">
-                    &quot;My mom screenshots FaceTime calls during special moments, so in 20 years, she can see how silly I was.&quot;
-                  </p>
+                <div className="space-y-4">
+                  <Image
+                    src="/assets/projects/FamilyFridge/FamilyFridge-QuotePic-2.jpg"
+                    alt="FaceTime call screenshot"
+                    width={400}
+                    height={300}
+                    className="w-full h-auto"
+                  />
+                  <div className="border border-faded-white p-6 bg-surface">
+                    <p className="text-white leading-relaxed italic">
+                      &quot;My mom screenshots FaceTime calls during special moments, so in 20 years, she can see how silly I was.&quot;
+                    </p>
+                  </div>
                 </div>
-                <div className="border border-faded-white p-6 bg-surface">
-                  <p className="text-white leading-relaxed italic">
-                    &quot;My grandma had so much fun telling me the stories behind old photos.&quot;
-                  </p>
+                <div className="space-y-4">
+                  <Image
+                    src="/assets/projects/FamilyFridge/FamilyFridge-QuotePic-3.jpg"
+                    alt="Grandma sharing old photos"
+                    width={400}
+                    height={300}
+                    className="w-full h-auto"
+                  />
+                  <div className="border border-faded-white p-6 bg-surface">
+                    <p className="text-white leading-relaxed italic">
+                      &quot;My grandma had so much fun telling me the stories behind old photos.&quot;
+                    </p>
+                  </div>
                 </div>
               </div>
+              
+            </div>
+
+            <div>
+              <h3 className="text-xl md:text-2xl text-white mb-4">A natural extension of an existing routine</h3>
               <p className="text-white-muted leading-relaxed mb-4">
                 ~75% of our survey respondents were satisfied with how <span className="italic">often</span> they communicate with family, yet many weren&apos;t content with the <span className="italic">quality</span> of those conversations. At the same time, many preferred their preexisting communication methods — phone calls and texting — since they were already within their routines. Therefore, the best solution would fit into existing habits, instead of asking people to build new ones.
               </p>
             </div>
-
             <div>
               <h3 className="text-xl md:text-2xl text-white mb-4">The generational technology gap</h3>
               <p className="text-white-muted leading-relaxed">
@@ -230,40 +261,6 @@ export default function FamilyFridge2Page() {
                 </p>
                 <p>
                   Rather than asking everyone to learn new technology — especially older family members who struggle with unfamiliar interfaces — we designed the experience to feel at home within the Apple ecosystem. FamilyFridge doesn&apos;t replace your family&apos;s habits — it enhances them.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Ideation: Low to High Fidelity */}
-        <section
-          className="project-card mb-12 pt-8 border-t border-faded-white"
-          style={{ '--card-index': cardIndex++ } as React.CSSProperties}
-        >
-          <h2 className="text-2xl md:text-3xl bit-apple-font text-white mb-6">Ideation: Low to High Fidelity</h2>
-
-          <div className="space-y-12">
-            <div>
-              <h3 className="text-xl md:text-2xl text-white mb-4">Starting with structure</h3>
-              <div className="space-y-4 text-white-muted leading-relaxed">
-                <p>
-                  Our earliest wireframes focused on establishing the core layout: a fridge view with distinct zones for &quot;Pinned Pictures&quot; and &quot;Notes,&quot; a floating add button, and a gallery tab for archived memories. Even at this stage, we prioritized clarity — the fridge needed to feel immediately familiar, like glancing at a real family fridge.
-                </p>
-                <p>
-                  We initially explored a shared canvas concept where family members could freely place photos and notes anywhere. But through self-critique and revisiting our user interviews, we realized this approach would take too long for users and require too much active participation — especially from older generations. We pivoted to a more structured fridge layout that still felt personal but removed the burden of arrangement.
-                </p>
-              </div>
-            </div>
-
-            <div>
-              <h3 className="text-xl md:text-2xl text-white mb-4">Evolving the experience</h3>
-              <div className="space-y-4 text-white-muted leading-relaxed">
-                <p>
-                  As we moved into mid-fidelity, we refined the information architecture: the fridge edit view gained a clear visual hierarchy, the gallery introduced a timeline organized by month, and the add flow was simplified to just two options — Picture or Note. Every interaction was designed to be completable in seconds.
-                </p>
-                <p>
-                  In high-fidelity, we embraced the new iOS 26 liquid glass aesthetic to make FamilyFridge feel native to Apple&apos;s ecosystem. The post-call capture interface was designed as a translucent overlay that appears on the home screen after a FaceTime call ends — surfacing screenshots taken during the call and prompting for quick notes. This felt natural because it met users exactly where they already were.
                 </p>
               </div>
             </div>

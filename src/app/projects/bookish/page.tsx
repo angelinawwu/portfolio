@@ -39,7 +39,7 @@ export default function BookishPage() {
             </div>
             <div className="border border-faded-white p-4 bg-surface">
               <h3 className="text-xs geist-mono-font text-white-muted mb-2">TIMELINE</h3>
-              <p className="text-white">Mar – May 2024</p>
+              <p className="text-white">March – May 2024</p>
             </div>
             <div className="border border-faded-white p-4 bg-surface">
               <h3 className="text-xs geist-mono-font text-white-muted mb-2">TEAM</h3>

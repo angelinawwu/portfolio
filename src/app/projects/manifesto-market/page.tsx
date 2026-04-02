@@ -42,7 +42,7 @@ export default function ManifestoMarketPage() {
             </div>
             <div className="border border-faded-white p-4 bg-surface">
               <h3 className="text-xs geist-mono-font text-white-muted mb-2">TIMELINE</h3>
-              <p className="text-white">Jun - Aug 2025</p>
+              <p className="text-white">June - August 2025</p>
             </div>
             <div className="border border-faded-white p-4 bg-surface">
               <h3 className="text-xs geist-mono-font text-white-muted mb-2">TEAM</h3>
