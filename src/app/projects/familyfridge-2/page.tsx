@@ -285,7 +285,7 @@ export default function FamilyFridge2Page() {
                   One of the earliest and most consequential decisions we made was whether to design a standalone app or integrate with tools families already use. Our research made this choice clear: the majority of families already use iMessage and FaceTime for their weekly calls and check-ins.
                 </p>
                 <p>
-                  Rather than asking everyone to learn new technology — especially older family members who may struggle with unfamiliar interfaces — we designed the experience to feel at home within the Apple ecosystem. FamilyFridge doesn&apos;t replace your family&apos;s habits; it enhances them.
+                  Rather than asking everyone to learn new technology — especially older family members who may struggle with unfamiliar interfaces — we designed the experience to feel at home within the Apple ecosystem.
                 </p>
               </div>
             </div>
@@ -298,10 +298,7 @@ export default function FamilyFridge2Page() {
           style={{ '--card-index': cardIndex++ } as React.CSSProperties}
         >
           <h2 className="text-2xl md:text-3xl bit-apple-font text-white mb-6">The Solution</h2>
-          <p className="text-white-muted leading-relaxed mb-6">
-            FamilyFridge captures moments worth remembering after calls, then resurfaces them when they&apos;re needed most. Each call builds on the last, turning weekly check-ins into lasting memories.
-          </p>
-
+          
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
             <div className="border border-faded-white p-6 bg-surface">
               <div className="flex-shrink-0 w-8 h-8 border border-faded-white flex items-center justify-center mb-4">
