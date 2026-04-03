@@ -59,7 +59,8 @@ export default function FamilyFridge2Page() {
             </div>
             <div className="border border-faded-white p-4 bg-surface">
               <h3 className="text-xs geist-mono-font text-white-muted mb-2">TIMELINE</h3>
-              <p className="text-white">January 2026 (36 hrs)</p>
+              <p className="text-white">January 2026</p>
+              <p className="text-white">(36 hrs)</p>
             </div>
             <div className="border border-faded-white p-4 bg-surface">
               <h3 className="text-xs geist-mono-font text-white-muted mb-2">TEAM</h3>
@@ -133,7 +134,7 @@ export default function FamilyFridge2Page() {
 
               <div className="overflow-hidden">
                 <Image
-                  src="/assets/projects/FamilyFridge/FamilyFridge-Brainstorming.webp"
+                  src="/assets/projects/FamilyFridge/FamilyFridge-Brainstorming.png"
                   alt="Research synthesis: survey data, affinity mapping, user flows, and feature prioritization"
                   width={1000}
                   height={1000}
@@ -251,6 +252,24 @@ export default function FamilyFridge2Page() {
               <p className="text-white-muted leading-relaxed">
                 In many homes, the fridge door is covered with notes, drawings, and photos that connect the whole family. It&apos;s a space where life accumulates naturally — no one &quot;posts&quot; to their fridge. Our team was inspired by this quiet role of the fridge as a communication medium, a place where everyday moments live without needing attention or effort.
               </p>
+              <div className="overflow-hidden flex flex-row space-x-4 mt-4">
+                <div className="relative w-1/2 aspect-[4/3]">
+                  <Image
+                    src="/assets/projects/FamilyFridge/FamilyFridge-Fridge-1.png"
+                    alt="Fridge door with notes and photos"
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+                <div className="relative w-1/2 aspect-[4/3]">
+                  <Image
+                    src="/assets/projects/FamilyFridge/FamilyFridge-Fridge-2.png"
+                    alt="Fridge door with notes and photos"
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+              </div>
             </div>
 
             <div>
@@ -260,46 +279,9 @@ export default function FamilyFridge2Page() {
                   One of the earliest and most consequential decisions we made was whether to design a standalone app or integrate with tools families already use. Our research made this choice clear: the majority of families already use iMessage and FaceTime for their weekly calls and check-ins.
                 </p>
                 <p>
-                  Rather than asking everyone to learn new technology — especially older family members who struggle with unfamiliar interfaces — we designed the experience to feel at home within the Apple ecosystem. FamilyFridge doesn&apos;t replace your family&apos;s habits — it enhances them.
+                  Rather than asking everyone to learn new technology — especially older family members who struggle with unfamiliar interfaces — we designed the experience to feel at home within the Apple ecosystem. FamilyFridge doesn&apos;t replace your family&apos;s habits; it enhances them.
                 </p>
               </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Key Design Decisions */}
-        <section
-          className="project-card mb-12 pt-8 border-t border-faded-white"
-          style={{ '--card-index': cardIndex++ } as React.CSSProperties}
-        >
-          <h2 className="text-2xl md:text-3xl bit-apple-font text-white mb-6">Key Design Decisions</h2>
-
-          <div className="space-y-4">
-            <div className="border border-faded-white p-6 bg-surface">
-              <h3 className="text-lg text-white mb-3">
-                Comfort with technology <span className="accent-text">doesn&apos;t map cleanly to age.</span>
-              </h3>
-              <p className="text-white-muted leading-relaxed">
-                We initially explored creating separate interfaces for different age groups, but our research showed that levels of interest and ability vary within the same generation. Instead, we designed a shared experience with multiple levels of interaction. &quot;Active Contributors&quot; pin photos, save post-call notes, and share voice memos. &quot;Passive Contributors&quot; tap to view photos, listen to notes, and browse the gallery. No one is forced to learn new tools — everyone participates in the way that feels natural to them.
-              </p>
-            </div>
-
-            <div className="border border-faded-white p-6 bg-surface">
-              <h3 className="text-lg text-white mb-3">
-                <span className="accent-text">Post-call capture,</span> not pre-call posting.
-              </h3>
-              <p className="text-white-muted leading-relaxed">
-                Most photo-sharing apps rely on proactive posting, but our users don&apos;t want another app to maintain. In early concepts, users weren&apos;t sure when or why they&apos;d even add photos, making the experience feel forced. We solved this by having FamilyFridge fill itself through the behaviors families already have. During onboarding, users import existing photos from shared albums so the space feels lived-in from day one. After each call, new moments are captured naturally.
-              </p>
-            </div>
-
-            <div className="border border-faded-white p-6 bg-surface">
-              <h3 className="text-lg text-white mb-3">
-                Gallery as a <span className="accent-text">living archive.</span>
-              </h3>
-              <p className="text-white-muted leading-relaxed">
-                As new memories are added, older ones gradually move to the gallery. Our user interviews highlighted the importance of old photos — they allow younger generations to glimpse into the lives of older family members, creating natural opportunities for storytelling and connection. The gallery makes it easy to say, &quot;Remember when this happened...?&quot;
-              </p>
             </div>
           </div>
         </section>
