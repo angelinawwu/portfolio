@@ -23,19 +23,8 @@ export const caseStudies: Project[] = [
   {
     slug: 'familyfridge',
     title: 'FamilyFridge',
-    description: 'Where everyday moments bring us together — reimagining how families stay connected.',
-    thumbnail: '/assets/projects/FamilyFridge-Cover.webp',
-    timeline: 'JAN 2026',
-    projectType: 'HACKATHON',
-    tags: ['UX Research', 'Mobile Design', 'Figma'],
-    type: 'case-study',
-    devpostUrl: 'https://devpost.com/software/tba-bo8jku'
-  },
-  {
-    slug: 'familyfridge-2',
-    title: 'FamilyFridge 2',
-    description: 'A comprehensive case study — from brainstorming to 2nd place in 36 hours.',
-    thumbnail: '/assets/projects/FamilyFridge-Cover.webp',
+    description: '2nd Place @ Rice Designathon 2026 | Where everyday moments bring us together.',
+    thumbnail: '/assets/projects/FamilyFridge-Cover.png',
     timeline: 'JAN 2026',
     projectType: 'HACKATHON',
     tags: ['UX Research', 'Mobile Design', 'Figma'],

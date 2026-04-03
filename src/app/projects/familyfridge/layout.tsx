@@ -3,7 +3,7 @@ export const metadata = {
   description: '2nd Place @ Rice Designathon 2026 | Where everyday moments bring us together.',
 };
 
-export default function FamilyFridgeLayout({
+export default function FamilyFridge2Layout({
   children,
 }: {
   children: React.ReactNode;
