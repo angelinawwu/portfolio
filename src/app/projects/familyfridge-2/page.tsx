@@ -96,7 +96,7 @@ export default function FamilyFridge2Page() {
 
         {/* Understanding the Problem */}
         <section
-          className="project-card mb-12 pt-8 border-t border-faded-white"
+          className="project-card mb-12 pt-8 border-t border-faded-white space-y-12"
           style={{ '--card-index': cardIndex++ } as React.CSSProperties}
         >
           <h2 className="text-2xl md:text-3xl bit-apple-font text-white mb-6">Understanding the Problem</h2>
@@ -110,13 +110,41 @@ export default function FamilyFridge2Page() {
                 height={200}
                 className="mx-auto mb-4"
               />
-              <div className="space-y-4 text-white-muted leading-relaxed">
+              <div className="space-y-4 text-white-muted leading-relaxed mb-4">
                 <p>
                   When we first approached the prompt, we asked ourselves: what does the generational gap actually look like for people our age? For most of us, the answer wasn&apos;t dramatic. It showed up in phone calls and text chains that felt routine, and never got past &quot;how are you?&quot; and &quot;I&apos;m fine.&quot;
                 </p>
               </div>
             </div>
           </div>
+          
+          <div>
+              <h3 className="text-xl md:text-2xl text-white mb-4">The Fridge Door as a Communication Medium</h3>
+              <p className="text-white-muted leading-relaxed">
+                For many families, the fridge door is the heart of the home. Covered with notes, drawings, and photos that connect the whole family, it&apos;s a space where life accumulates naturally. Our team was inspired by this quiet role of the fridge as a communication medium, a place where everyday moments live without needing attention or effort.
+              </p>
+              <div className="overflow-hidden flex flex-row space-x-4 mt-4">
+                <div className="relative w-1/2 aspect-[4/3]">
+                  <Image
+                    src="/assets/projects/FamilyFridge/FamilyFridge-Fridge-1.png"
+                    alt="Fridge door with notes and photos"
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+                <div className="relative w-1/2 aspect-[4/3]">
+                  <Image
+                    src="/assets/projects/FamilyFridge/FamilyFridge-Fridge-2.png"
+                    alt="Fridge door with notes and photos"
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+              </div>
+              <p className="text-xs geist-font text-white-muted mt-2">
+                Images: Unsplash
+              </p>
+            </div>
         </section>
 
         {/* Research & Discovery */}
@@ -129,7 +157,7 @@ export default function FamilyFridge2Page() {
           <div className="space-y-12">
             <div>
               <p className="text-white-muted leading-relaxed mb-6">
-                We gathered 50 survey responses, conducted 3 user interviews, and performed secondary research to understand how young adults interact with older family members. Our research process was fast and intentional — given the time constraints of the designathon, we needed to move from research to design within the span of a few hours.
+                We gathered 50 survey responses <a href="https://docs.google.com/forms/d/e/1FAIpQLScwCZq-4SF8tR-3VnUmTMufTaVh5ObqB5orauxC5ytzk2XerA/viewform" target="_blank" rel="noopener noreferrer" className="accent-text sidebar-link">(link)</a>, conducted 3 user interviews <a href="https://docs.google.com/document/d/16boHvnQWm6cVXiji85t96WY-uINIT5c1fdZBpGqoe8s/edit?usp=sharing" target="_blank" rel="noopener noreferrer" className="accent-text sidebar-link">(link)</a>, and performed secondary research to understand how young adults interact with older family members. Our research process was fast and intentional — given the time constraints of the designathon, we needed to move from research to design within the span of a few hours.
               </p>
 
               <div className="overflow-hidden">
@@ -140,7 +168,7 @@ export default function FamilyFridge2Page() {
                   height={1000}
                 />
               </div>
-              <p className="text-xs geist-mono-font text-white-muted mt-2">
+              <p className="text-xs geist-font text-white-muted mt-2">
                 Our FigJam brainstorming board, including survey data charts, affinity mapping, user flows, and competitive analysis.
               </p>
             </div>
@@ -161,11 +189,13 @@ export default function FamilyFridge2Page() {
                     height={300}
                     className="w-full h-auto"
                   />
-                  <div className="border border-faded-white p-6 bg-surface">
-                    <p className="text-white leading-relaxed italic">
-                      &quot;Some of our best memories were when we went on hikes together and just got to talk.&quot;
-                    </p>
-                  </div>
+                  <Image
+                    src="/assets/projects/FamilyFridge/FamilyFridge-Quote-1.png"
+                    alt="Some of our best memories were when we went on hikes together and just got to talk."
+                    width={400}
+                    height={300}
+                    className="w-full h-auto"
+                  />
                 </div>
                 <div className="space-y-4">
                   <Image
@@ -175,11 +205,13 @@ export default function FamilyFridge2Page() {
                     height={300}
                     className="w-full h-auto"
                   />
-                  <div className="border border-faded-white p-6 bg-surface">
-                    <p className="text-white leading-relaxed italic">
-                      &quot;My mom screenshots FaceTime calls during special moments, so in 20 years, she can see how silly I was.&quot;
-                    </p>
-                  </div>
+                  <Image
+                    src="/assets/projects/FamilyFridge/FamilyFridge-Quote-2.png"
+                    alt="My mom screenshots FaceTime calls during special moments, so in 20 years, she can see how silly I was."
+                    width={400}
+                    height={300}
+                    className="w-full h-auto"
+                  />
                 </div>
                 <div className="space-y-4">
                   <Image
@@ -189,14 +221,15 @@ export default function FamilyFridge2Page() {
                     height={300}
                     className="w-full h-auto"
                   />
-                  <div className="border border-faded-white p-6 bg-surface">
-                    <p className="text-white leading-relaxed italic">
-                      &quot;My grandma had so much fun telling me the stories behind old photos.&quot;
-                    </p>
-                  </div>
+                  <Image
+                    src="/assets/projects/FamilyFridge/FamilyFridge-Quote-3.png"
+                    alt="My grandma had so much fun telling me the stories behind old photos."
+                    width={400}
+                    height={300}
+                    className="w-full h-auto"
+                  />
                 </div>
               </div>
-              
             </div>
 
             <div>
@@ -244,42 +277,15 @@ export default function FamilyFridge2Page() {
           className="project-card mb-12 pt-8 border-t border-faded-white"
           style={{ '--card-index': cardIndex++ } as React.CSSProperties}
         >
-          <h2 className="text-2xl md:text-3xl bit-apple-font text-white mb-6">From Insight to Concept</h2>
-
+          <h2 className="text-2xl md:text-3xl bit-apple-font text-white mb-6">Build a new app, or integrate with existing ones?</h2>
           <div className="space-y-12">
             <div>
-              <h3 className="text-xl md:text-2xl text-white mb-4">The Fridge Door as a Communication Medium</h3>
-              <p className="text-white-muted leading-relaxed">
-                In many homes, the fridge door is covered with notes, drawings, and photos that connect the whole family. It&apos;s a space where life accumulates naturally — no one &quot;posts&quot; to their fridge. Our team was inspired by this quiet role of the fridge as a communication medium, a place where everyday moments live without needing attention or effort.
-              </p>
-              <div className="overflow-hidden flex flex-row space-x-4 mt-4">
-                <div className="relative w-1/2 aspect-[4/3]">
-                  <Image
-                    src="/assets/projects/FamilyFridge/FamilyFridge-Fridge-1.png"
-                    alt="Fridge door with notes and photos"
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-                <div className="relative w-1/2 aspect-[4/3]">
-                  <Image
-                    src="/assets/projects/FamilyFridge/FamilyFridge-Fridge-2.png"
-                    alt="Fridge door with notes and photos"
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-              </div>
-            </div>
-
-            <div>
-              <h3 className="text-xl md:text-2xl text-white mb-4">Build a new app, or integrate with existing ones?</h3>
               <div className="space-y-4 text-white-muted leading-relaxed">
                 <p>
                   One of the earliest and most consequential decisions we made was whether to design a standalone app or integrate with tools families already use. Our research made this choice clear: the majority of families already use iMessage and FaceTime for their weekly calls and check-ins.
                 </p>
                 <p>
-                  Rather than asking everyone to learn new technology — especially older family members who struggle with unfamiliar interfaces — we designed the experience to feel at home within the Apple ecosystem. FamilyFridge doesn&apos;t replace your family&apos;s habits; it enhances them.
+                  Rather than asking everyone to learn new technology — especially older family members who may struggle with unfamiliar interfaces — we designed the experience to feel at home within the Apple ecosystem. FamilyFridge doesn&apos;t replace your family&apos;s habits; it enhances them.
                 </p>
               </div>
             </div>
