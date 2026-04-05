@@ -1,18 +1,45 @@
 'use client';
 
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback, useRef } from 'react';
 import { createPortal } from 'react-dom';
 import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X } from '@phosphor-icons/react';
+import Masonry from 'masonry-layout';
 import PlaygroundCard from '@/components/PlaygroundCard';
 import { playgroundProjects, Project } from '@/data/projects';
 
 export default function PlayPage() {
   const [expandedProject, setExpandedProject] = useState<Project | null>(null);
   const [mounted, setMounted] = useState(false);
+  const gridRef = useRef<HTMLDivElement>(null);
+  const masonryRef = useRef<Masonry | null>(null);
 
   useEffect(() => { setMounted(true); }, []);
+
+  useEffect(() => {
+    if (!mounted || !gridRef.current) return;
+
+    const masonry = new Masonry(gridRef.current, {
+      itemSelector: '.masonry-item',
+      columnWidth: '.masonry-sizer',
+      percentPosition: true,
+      gutter: 16,
+      horizontalOrder: true,
+    }) as Masonry & { destroy: () => void; layout: () => void };
+
+    masonryRef.current = masonry;
+
+    return () => {
+      masonry.destroy();
+    };
+  }, [mounted]);
+
+  useEffect(() => {
+    if (masonryRef.current) {
+      (masonryRef.current as Masonry & { layout: () => void }).layout();
+    }
+  }, [playgroundProjects]);
 
   const handleClose = useCallback(() => {
     setExpandedProject(null);
@@ -37,10 +64,10 @@ export default function PlayPage() {
   return (
     <>
       <div className="min-h-screen bg-black p-4 md:p-6 lg:p-8">
-        {/* Masonry Grid */}
-        <div className="columns-1 md:columns-2 lg:columns-3 gap-4">
+        <div ref={gridRef}>
+          <div className="masonry-sizer w-full md:w-[calc(50%-8px)] lg:w-[calc(33.333%-11px)]"></div>
           {playgroundProjects.map((project, index) => (
-            <div key={project.title} className="mb-4 break-inside-avoid">
+            <div key={project.title} className="masonry-item w-full md:w-[calc(50%-8px)] lg:w-[calc(33.333%-11px)] mb-4">
               <PlaygroundCard
                 project={project}
                 index={index}

@@ -79,20 +79,12 @@ export const caseStudies: Project[] = [
 export const playgroundProjects: Project[] = [
 
   {
-    title: 'Hero (Treehacks 2026)',
-    context: 'React Native',
-    thumbnail: '/assets/playground/Hero-Cover.webp',
-    type: 'playground',
-    devpostUrl: 'https://devpost.com/software/organmatch',
-  },
-  {
     title: 'Communal typewriter',
     description: 'Typewriter captures the nostalgic feel of mechanical typewriters. No backspace, no copy-paste, no takebacks.',
     paragraph: 'Typewriter captures the nostalgic feel of mechanical typewriters. No backspace, no copy-paste, no takebacks. Type anything and publish it to the gallery.',
     thumbnail: '/assets/playground/Typewriter-Cover.webp',
     videoUrl: '/assets/playground/Typewriter-Video.mov',
     context: 'React/Vite, Google Sheets API',
-    tags: ['Typescript', 'CSS Animations', 'React/Vite'],
     type: 'playground',
     projectType: 'PERSONAL PROJECT',
     timeline: 'OCT 2025',
@@ -106,18 +98,11 @@ export const playgroundProjects: Project[] = [
     thumbnail: '/assets/playground/Voyager-Cover.webp',
     videoUrl: '/assets/playground/Voyager-Video.mov',
     context: 'Next.js, Framer Motion',
-    tags: ['Next.js', 'Framer Motion', 'Web Animations'],
     type: 'playground',
     projectType: 'PERSONAL PROJECT',
     timeline: 'NOV 2025',
     demoUrl: 'https://thegoldenrecord.vercel.app/',
     githubUrl: 'https://github.com/angelinawwu/voyager'
-  },
-  {
-    title: 'Thistle (healthtech concept)',
-    context: 'Figma, Nano Banana',
-    thumbnail: '/assets/playground/Thistle-Cover.webp',
-    type: 'playground',
   },
   {
     title: 'poems-i-love',
@@ -127,10 +112,23 @@ export const playgroundProjects: Project[] = [
     demoUrl: 'https://poems-i-love.vercel.app/',
   },
   {
+    title: 'Thistle (healthtech concept)',
+    context: 'Figma, Nano Banana',
+    thumbnail: '/assets/playground/Thistle-Cover.webp',
+    type: 'playground',
+  },
+  {
     title: 'Rug store (concept)',
     context: 'Figma, Veo',
     videoUrl: '/assets/playground/Rug-Video.mov',
     type: 'playground',
+  },
+  {
+    title: 'Hero (Treehacks 2026)',
+    context: 'React Native',
+    thumbnail: '/assets/playground/Hero-Cover.webp',
+    type: 'playground',
+    devpostUrl: 'https://devpost.com/software/organmatch',
   },
   {
     title: 'VEST glass experiment',

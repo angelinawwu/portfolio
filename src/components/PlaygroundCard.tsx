@@ -52,6 +52,8 @@ export default function PlaygroundCard({ project, index, onExpand }: PlaygroundC
             height={600}
             className="object-cover w-full h-auto group-hover:scale-105 transition-all duration-200 ease-out"
             sizes="(max-width: 768px) 100vw, 50vw"
+            loading={index === 0 ? "eager" : "lazy"}
+            priority={index === 0}
           />
         ) : (
           <div className="w-full aspect-video bg-faded-white" />
