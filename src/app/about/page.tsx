@@ -1,5 +1,7 @@
+'use client';
+
 import Image from 'next/image';
-import { ArrowUpRight } from 'lucide-react';
+import { ArrowUpRight } from '@phosphor-icons/react';
 import { books, albums, images, bio, experience, orgs } from '@/data/about';
 
 export default function About() {

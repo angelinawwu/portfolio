@@ -64,16 +64,16 @@ export const caseStudies: Project[] = [
     tags: ['UX Research', 'User Testing', 'Design System'],
     type: 'case-study'
   },
-  {
-    slug: 'bookish',
-    title: 'Bookish',
-    description: 'Redesigning the reading experience with accessibility and sustainability in mind.',
-    thumbnail: '/assets/projects/Bookish-Cover.webp',
-    timeline: 'MAR-MAY 2024',
-    projectType: 'PERSONAL PROJECT',
-    tags: ['Mobile Design', 'UX Research', 'Figma'],
-    type: 'case-study'
-  }
+  // {
+  //   slug: 'bookish',
+  //   title: 'Bookish',
+  //   description: 'Redesigning the reading experience with accessibility and sustainability in mind.',
+  //   thumbnail: '/assets/projects/Bookish-Cover.webp',
+  //   timeline: 'MAR-MAY 2024',
+  //   projectType: 'PERSONAL PROJECT',
+  //   tags: ['Mobile Design', 'UX Research', 'Figma'],
+  //   type: 'case-study'
+  // }
 ];
 
 export const playgroundProjects: Project[] = [
@@ -91,7 +91,7 @@ export const playgroundProjects: Project[] = [
     paragraph: 'Typewriter captures the nostalgic feel of mechanical typewriters. No backspace, no copy-paste, no takebacks. Type anything and publish it to the gallery.',
     thumbnail: '/assets/playground/Typewriter-Cover.webp',
     videoUrl: '/assets/playground/Typewriter-Video.mov',
-    context: 'React/Vite & Google Sheets API',
+    context: 'React/Vite, Google Sheets API',
     tags: ['Typescript', 'CSS Animations', 'React/Vite'],
     type: 'playground',
     projectType: 'PERSONAL PROJECT',
@@ -105,7 +105,7 @@ export const playgroundProjects: Project[] = [
     paragraph: 'A love letter to the Voyager Golden Record, and what it means to be human and alive on Earth. Turn your sound on!',
     thumbnail: '/assets/playground/Voyager-Cover.webp',
     videoUrl: '/assets/playground/Voyager-Video.mov',
-    context: 'Next.js & Framer Motion',
+    context: 'Next.js, Framer Motion',
     tags: ['Next.js', 'Framer Motion', 'Web Animations'],
     type: 'playground',
     projectType: 'PERSONAL PROJECT',
@@ -115,7 +115,7 @@ export const playgroundProjects: Project[] = [
   },
   {
     title: 'Thistle (healthtech concept)',
-    context: 'Figma & Nano Banana',
+    context: 'Figma, Nano Banana',
     thumbnail: '/assets/playground/Thistle-Cover.webp',
     type: 'playground',
   },
@@ -128,7 +128,7 @@ export const playgroundProjects: Project[] = [
   },
   {
     title: 'Rug store (concept)',
-    context: 'Figma & Veo',
+    context: 'Figma, Veo',
     videoUrl: '/assets/playground/Rug-Video.mov',
     type: 'playground',
   },
@@ -139,9 +139,27 @@ export const playgroundProjects: Project[] = [
     type: 'playground',
   },
   {
+    title: 'Team t-shirt design',
+    context: 'Figma, Photoshop',
+    thumbnail: '/assets/playground/TeddiesTee-Cover.jpg',
+    type: 'playground',
+  },
+  {
+    title: 'Bookish app (concept)',
+    context: 'Figma, Flutter',
+    thumbnail: '/assets/playground/Bookish-Cover.webp',
+    type: 'playground',
+  },
+  {
     title: 'VEST recruitment graphic',
-    context: 'Figma & Photoshop',
+    context: 'Figma, Photoshop',
     thumbnail: '/assets/playground/VESTKeyboard-Cover.webp',
+    type: 'playground',
+  },
+  {
+    title: 'Piece of Cake app (concept)',
+    context: 'Figma',
+    thumbnail: '/assets/playground/PieceOfCake-Cover.jpg',
     type: 'playground',
   },
 ];

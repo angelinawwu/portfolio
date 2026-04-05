@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
+import { ArrowUpRight } from '@phosphor-icons/react';
 
 export default function FamilyFridge2Page() {
   let cardIndex = 0;
@@ -37,13 +38,14 @@ export default function FamilyFridge2Page() {
               rel="noopener noreferrer"
               className="sidebar-link"
             >
-              View on Devpost ↗
+              View on Devpost
+              <ArrowUpRight size={16} className="inline ml-1" />
             </a>
           </p>
 
           <div className="overflow-hidden mb-8">
             <Image
-              src="/assets/projects/FamilyFridge-Cover.webp"
+              src="/assets/projects/FamilyFridge-Cover.png"
               alt="FamilyFridge — three phones showing different family fridges"
               width={1200}
               height={675}
@@ -119,9 +121,9 @@ export default function FamilyFridge2Page() {
           </div>
           
           <div>
-              <h3 className="text-xl md:text-2xl text-white mb-4">The Fridge Door as a Communication Medium</h3>
+              <h3 className="text-xl md:text-2xl text-white mb-4">The fridge door as a communication medium</h3>
               <p className="text-white-muted leading-relaxed">
-                For many families, the fridge door is the heart of the home. Covered with notes, drawings, and photos that connect the whole family, it&apos;s a space where life accumulates naturally. Our team was inspired by this quiet role of the fridge as a communication medium, a place where everyday moments live without needing attention or effort.
+                For many families, the fridge door is the heart of the home. Covered with notes, drawings, and photos that connect the whole family, it&apos;s a space where life accumulates naturally. Our team was inspired by this quiet role of the fridge as a communication medium.
               </p>
               <div className="overflow-hidden flex flex-row space-x-4 mt-4">
                 <div className="relative w-1/2 aspect-[4/3]">

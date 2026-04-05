@@ -1,6 +1,5 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { ArrowRight } from 'lucide-react';
 
 export const metadata = {
   title: 'Workup ＊ Angelina Wu',
