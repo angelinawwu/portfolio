@@ -26,18 +26,29 @@ export default function PlayPage() {
       percentPosition: true,
       gutter: 16,
       horizontalOrder: true,
-    }) as Masonry & { destroy: () => void; layout: () => void };
+      transitionDuration: '0.2s',
+      stagger: 30,
+    }) as Masonry & { destroy: () => void; layout: () => void; reloadItems: () => void };
 
     masonryRef.current = masonry;
 
+    // Use ResizeObserver for immediate responsive adjustments
+    const resizeObserver = new ResizeObserver(() => {
+      masonry.layout();
+    });
+    resizeObserver.observe(gridRef.current);
+
     return () => {
+      resizeObserver.disconnect();
       masonry.destroy();
     };
   }, [mounted]);
 
   useEffect(() => {
     if (masonryRef.current) {
-      (masonryRef.current as Masonry & { layout: () => void }).layout();
+      const masonry = masonryRef.current as Masonry & { reloadItems: () => void; layout: () => void };
+      masonry.reloadItems();
+      masonry.layout();
     }
   }, [playgroundProjects]);
 

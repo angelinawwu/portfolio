@@ -136,12 +136,7 @@ export const playgroundProjects: Project[] = [
     thumbnail: '/assets/playground/VESTGlass-Cover.webp',
     type: 'playground',
   },
-  {
-    title: 'Team t-shirt design',
-    context: 'Figma, Photoshop',
-    thumbnail: '/assets/playground/TeddiesTee-Cover.jpg',
-    type: 'playground',
-  },
+
   {
     title: 'Bookish app (concept)',
     context: 'Figma, Flutter',
@@ -152,6 +147,12 @@ export const playgroundProjects: Project[] = [
     title: 'VEST recruitment graphic',
     context: 'Figma, Photoshop',
     thumbnail: '/assets/playground/VESTKeyboard-Cover.webp',
+    type: 'playground',
+  },
+  {
+    title: 'Team t-shirt design',
+    context: 'Figma, Photoshop',
+    thumbnail: '/assets/playground/TeddiesTee-Cover.jpg',
     type: 'playground',
   },
   {
