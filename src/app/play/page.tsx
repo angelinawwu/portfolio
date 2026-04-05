@@ -5,50 +5,62 @@ import { createPortal } from 'react-dom';
 import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X } from '@phosphor-icons/react';
-import Masonry from 'masonry-layout';
 import PlaygroundCard from '@/components/PlaygroundCard';
 import { playgroundProjects, Project } from '@/data/projects';
+
+type MasonryInstance = {
+  destroy: () => void;
+  layout: () => void;
+  reloadItems: () => void;
+};
 
 export default function PlayPage() {
   const [expandedProject, setExpandedProject] = useState<Project | null>(null);
   const [mounted, setMounted] = useState(false);
   const gridRef = useRef<HTMLDivElement>(null);
-  const masonryRef = useRef<Masonry | null>(null);
+  const masonryRef = useRef<MasonryInstance | null>(null);
 
   useEffect(() => { setMounted(true); }, []);
 
   useEffect(() => {
     if (!mounted || !gridRef.current) return;
 
-    const masonry = new Masonry(gridRef.current, {
-      itemSelector: '.masonry-item',
-      columnWidth: '.masonry-sizer',
-      percentPosition: true,
-      gutter: 16,
-      horizontalOrder: true,
-      transitionDuration: '0.2s',
-      stagger: 30,
-    }) as Masonry & { destroy: () => void; layout: () => void; reloadItems: () => void };
+    let masonry: MasonryInstance | null = null;
+    let resizeObserver: ResizeObserver | null = null;
 
-    masonryRef.current = masonry;
+    import('masonry-layout').then((MasonryModule) => {
+      const Masonry = MasonryModule.default;
+      if (!gridRef.current) return;
 
-    // Use ResizeObserver for immediate responsive adjustments
-    const resizeObserver = new ResizeObserver(() => {
-      masonry.layout();
+      masonry = new Masonry(gridRef.current, {
+        itemSelector: '.masonry-item',
+        columnWidth: '.masonry-sizer',
+        percentPosition: true,
+        gutter: 16,
+        horizontalOrder: true,
+        transitionDuration: '0.2s',
+        stagger: 30,
+      }) as MasonryInstance;
+
+      masonryRef.current = masonry;
+
+      // Use ResizeObserver for immediate responsive adjustments
+      resizeObserver = new ResizeObserver(() => {
+        masonry?.layout();
+      });
+      resizeObserver.observe(gridRef.current);
     });
-    resizeObserver.observe(gridRef.current);
 
     return () => {
-      resizeObserver.disconnect();
-      masonry.destroy();
+      resizeObserver?.disconnect();
+      masonry?.destroy();
     };
   }, [mounted]);
 
   useEffect(() => {
     if (masonryRef.current) {
-      const masonry = masonryRef.current as Masonry & { reloadItems: () => void; layout: () => void };
-      masonry.reloadItems();
-      masonry.layout();
+      masonryRef.current.reloadItems();
+      masonryRef.current.layout();
     }
   }, [playgroundProjects]);
 
