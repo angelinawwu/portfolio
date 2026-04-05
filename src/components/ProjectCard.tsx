@@ -3,7 +3,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { Project } from '@/data/projects';
-import { useRef } from 'react';
+import { useVideoPlayback } from '@/hooks/useVideoPlayback';
 
 interface ProjectCardProps {
   project: Project;
@@ -11,20 +11,7 @@ interface ProjectCardProps {
 }
 
 export default function ProjectCard({ project, index }: ProjectCardProps) {
-  const videoRef = useRef<HTMLVideoElement>(null);
-
-  const handleMouseEnter = () => {
-    if (videoRef.current) {
-      videoRef.current.play();
-    }
-  };
-
-  const handleMouseLeave = () => {
-    if (videoRef.current) {
-      videoRef.current.pause();
-      videoRef.current.currentTime = 0;
-    }
-  };
+  const videoRef = useVideoPlayback();
 
   // Determine if this is an internal case study or external link
   const isInternalLink = project.slug && project.type === 'case-study' && project.slug !== 'goodreads-wrapped';
@@ -35,8 +22,6 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
       className="project-card group relative overflow-hidden border border-faded-white"
       style={{ '--card-index': index } as React.CSSProperties}
       data-cursor={project.demoUrl && !isInternalLink ? 'playground-link' : 'project-card'}
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
     >
       {/* Image/Video Container - natural height */}
       <div className="relative w-full overflow-hidden bg-faded-white">
@@ -49,6 +34,7 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
             loop
             playsInline
             preload="metadata"
+            autoPlay
           />
         ) : project.thumbnail ? (
           <Image

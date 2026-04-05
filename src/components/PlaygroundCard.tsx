@@ -2,7 +2,7 @@
 
 import Image from 'next/image';
 import { Project } from '@/data/projects';
-import { useRef } from 'react';
+import { useVideoPlayback } from '@/hooks/useVideoPlayback';
 
 interface PlaygroundCardProps {
   project: Project;
@@ -11,24 +11,11 @@ interface PlaygroundCardProps {
 }
 
 export default function PlaygroundCard({ project, index, onExpand }: PlaygroundCardProps) {
-  const videoRef = useRef<HTMLVideoElement>(null);
+  const videoRef = useVideoPlayback();
   const hasDevpost = !!project.devpostUrl;
   const hasLink = !!project.demoUrl;
   const hasMedia = !!(project.thumbnail || project.videoUrl);
   const href = project.devpostUrl || project.demoUrl || '#';
-
-  const handleMouseEnter = () => {
-    if (videoRef.current) {
-      videoRef.current.play();
-    }
-  };
-
-  const handleMouseLeave = () => {
-    if (videoRef.current) {
-      videoRef.current.pause();
-      videoRef.current.currentTime = 0;
-    }
-  };
 
   const cursorType = hasDevpost
     ? 'devpost'
@@ -43,8 +30,6 @@ export default function PlaygroundCard({ project, index, onExpand }: PlaygroundC
       className="project-card group relative overflow-hidden border border-faded-white"
       style={{ '--card-index': index } as React.CSSProperties}
       data-cursor={cursorType}
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
     >
       {/* Image/Video Container */}
       <div className="relative w-full overflow-hidden bg-faded-white">
@@ -57,6 +42,7 @@ export default function PlaygroundCard({ project, index, onExpand }: PlaygroundC
             loop
             playsInline
             preload="metadata"
+            autoPlay
           />
         ) : project.thumbnail ? (
           <Image
