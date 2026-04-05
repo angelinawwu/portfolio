@@ -44,7 +44,7 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
           <video
             ref={videoRef}
             src={project.videoUrl}
-            className="object-cover w-full h-auto group-hover:scale-105 transition-transform duration-200 ease-out"
+            className="object-cover w-full h-auto group-hover:scale-105 transition-all duration-200 ease-out"
             muted
             loop
             playsInline
@@ -56,12 +56,15 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
             alt={project.title}
             width={800}
             height={600}
-            className="object-cover w-full h-auto group-hover:scale-105 transition-transform duration-200 ease-out"
+            className="object-cover w-full h-auto group-hover:scale-105 transition-all duration-200 ease-out"
             sizes="(max-width: 768px) 100vw, 50vw"
           />
         ) : (
           <div className="w-full aspect-video bg-faded-white" />
         )}
+        
+        {/* Dimming overlay on hover */}
+        <div className="absolute inset-0 bg-[var(--black)] opacity-0 group-hover:opacity-50 transition-opacity duration-200 pointer-events-none" />
         
         {/* Black overlay gradient */}
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-200" />

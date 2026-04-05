@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { ArrowUpRight } from '@phosphor-icons/react';
+import CaseStudyHero from '@/components/CaseStudyHero';
 
 export default function FamilyFridge2Page() {
   let cardIndex = 0;
@@ -20,60 +21,16 @@ export default function FamilyFridge2Page() {
           </Link>
         </div>
 
-        {/* Hero Section */}
-        <section
-          className="project-card mb-12"
-          style={{ '--card-index': cardIndex++ } as React.CSSProperties}
-        >
-          <h1 className="text-4xl md:text-6xl bit-apple-font text-white mb-6">FamilyFridge</h1>
-
-          <p className="text-lg text-white-muted leading-relaxed mb-4">
-            2nd Place @ Rice Designathon 2026 | Where everyday moments bring us together.
-          </p>
-
-          <p className="text-sm geist-mono-font uppercase text-white-muted mb-8">
-            <a
-              href="https://devpost.com/software/tba-bo8jku"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="sidebar-link"
-            >
-              View on Devpost
-              <ArrowUpRight size={16} className="inline ml-1" />
-            </a>
-          </p>
-
-          <div className="overflow-hidden mb-8">
-            <Image
-              src="/assets/projects/FamilyFridge-Cover.png"
-              alt="FamilyFridge — three phones showing different family fridges"
-              width={1200}
-              height={675}
-              className="w-full h-auto"
-              priority
-            />
-          </div>
-
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
-            <div className="border border-faded-white p-4 bg-surface">
-              <h3 className="text-xs geist-mono-font text-white-muted mb-2">MY ROLE</h3>
-              <p className="text-white">Product Designer</p>
-            </div>
-            <div className="border border-faded-white p-4 bg-surface">
-              <h3 className="text-xs geist-mono-font text-white-muted mb-2">TIMELINE</h3>
-              <p className="text-white">January 2026</p>
-              <p className="text-white">(36 hrs)</p>
-            </div>
-            <div className="border border-faded-white p-4 bg-surface">
-              <h3 className="text-xs geist-mono-font text-white-muted mb-2">TEAM</h3>
-              <p className="text-white">Kathy Guo<br />Tina Chen</p>
-            </div>
-            <div className="border border-faded-white p-4 bg-surface">
-              <h3 className="text-xs geist-mono-font text-white-muted mb-2">TOOLS</h3>
-              <p className="text-white">Figma</p>
-            </div>
-          </div>
-        </section>
+        <CaseStudyHero
+          slug="familyfridge"
+          details={{
+            role: "Product Designer",
+            timeline: ["January 2026", "(36 hrs)"],
+            team: ["Kathy Guo", "Tina Chen"],
+            tools: "Figma"
+          }}
+          cardIndex={cardIndex++}
+        />
 
         {/* The Prompt */}
         <section
@@ -159,7 +116,7 @@ export default function FamilyFridge2Page() {
           <div className="space-y-12">
             <div>
               <p className="text-white-muted leading-relaxed mb-6">
-                We gathered 50 survey responses <a href="https://docs.google.com/forms/d/e/1FAIpQLScwCZq-4SF8tR-3VnUmTMufTaVh5ObqB5orauxC5ytzk2XerA/viewform" target="_blank" rel="noopener noreferrer" className="accent-text sidebar-link">(link)</a>, conducted 3 user interviews <a href="https://docs.google.com/document/d/16boHvnQWm6cVXiji85t96WY-uINIT5c1fdZBpGqoe8s/edit?usp=sharing" target="_blank" rel="noopener noreferrer" className="accent-text sidebar-link">(link)</a>, and performed secondary research to understand how young adults interact with older family members. Our research process was fast and intentional — given the time constraints of the designathon, we needed to move from research to design within the span of a few hours.
+                We gathered 50 <a href="https://docs.google.com/forms/d/e/1FAIpQLScwCZq-4SF8tR-3VnUmTMufTaVh5ObqB5orauxC5ytzk2XerA/viewform" target="_blank" rel="noopener noreferrer" className="accent-text sidebar-link">survey responses<ArrowUpRight size={16} className="inline" /></a>, conducted 3 <a href="https://docs.google.com/document/d/16boHvnQWm6cVXiji85t96WY-uINIT5c1fdZBpGqoe8s/edit?usp=sharing" target="_blank" rel="noopener noreferrer" className="accent-text sidebar-link">user interviews<ArrowUpRight size={16} className="inline" /></a>, and performed secondary research to understand how young adults interact with older family members. Our research process was fast and intentional — given the time constraints of the designathon, we needed to move from research to design within the span of a few hours.
               </p>
 
               <div className="overflow-hidden">
@@ -243,7 +200,7 @@ export default function FamilyFridge2Page() {
             <div>
               <h3 className="text-xl md:text-2xl text-white mb-4">The generational technology gap</h3>
               <p className="text-white-muted leading-relaxed">
-                Pew Research found that ~50% of young adults are &quot;almost constantly online,&quot; compared to just 8% of those 65+ <a href="https://www.pewresearch.org/short-reads/2022/01/13/share-of-those-65-and-older-who-are-tech-users-has-grown-in-the-past-decade/" target="_blank" rel="noopener noreferrer" className="accent-text sidebar-link">(link)</a>. 80% of our survey respondents agreed that their grandparents struggle with technology. Any digital solution must meet older generations where they are, rather than asking them to adapt to unfamiliar interfaces.
+                <a href="https://www.pewresearch.org/short-reads/2022/01/13/share-of-those-65-and-older-who-are-tech-users-has-grown-in-the-past-decade/" target="_blank" rel="noopener noreferrer" className="accent-text sidebar-link">A study by the Pew Research Center<ArrowUpRight size={16} className="inline" /></a> found that ~50% of young adults are &quot;almost constantly online,&quot; compared to just 8% of those 65+. 80% of our survey respondents agreed that their grandparents struggle with technology. Any digital solution must meet older generations where they are, rather than asking them to adapt to unfamiliar interfaces.
               </p>
             </div>
           </div>
@@ -260,15 +217,15 @@ export default function FamilyFridge2Page() {
           </p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             <div className="border border-faded-white p-6 bg-surface">
-              <h3 className="text-lg text-white mb-3">Spontaneous <span className="accent-text">connection.</span></h3>
+              <h3 className="text-lg text-white mb-3">Spontaneous connection.</h3>
               <p className="text-white-muted leading-relaxed">The app should be structured around users&apos; preexisting routines and habits to encourage unintentional but genuine connections.</p>
             </div>
             <div className="border border-faded-white p-6 bg-surface">
-              <h3 className="text-lg text-white mb-3">Bridge distance through <span className="accent-text">photos.</span></h3>
+              <h3 className="text-lg text-white mb-3">Bridge distance through photos.</h3>
               <p className="text-white-muted leading-relaxed">Young adults value physical proximity, but schedules make traveling and visits rare. Photos unlock these moments even from a distance.</p>
             </div>
             <div className="border border-faded-white p-6 bg-surface">
-              <h3 className="text-lg text-white mb-3">Minimize <span className="accent-text">friction.</span></h3>
+              <h3 className="text-lg text-white mb-3">Minimize friction.</h3>
               <p className="text-white-muted leading-relaxed">The app should meet users where they are in effortless, familiar interactions, so no one is forced to learn new tools.</p>
             </div>
           </div>
@@ -457,7 +414,7 @@ export default function FamilyFridge2Page() {
           <div className="space-y-4">
             <div className="border border-faded-white p-6 bg-surface">
               <h3 className="text-lg text-white mb-3">
-                Design for <span className="accent-text">existing routines</span>.
+                Design for existing routines.
               </h3>
               <ul className="arrow-list">
                 <li className="text-white-muted leading-relaxed">
@@ -468,7 +425,7 @@ export default function FamilyFridge2Page() {
 
             <div className="border border-faded-white p-6 bg-surface">
               <h3 className="text-lg text-white mb-3">
-                Good solutions start with <span className="accent-text">listening</span>.
+                Good solutions start with listening.
               </h3>
               <ul className="arrow-list">
                 <li className="text-white-muted leading-relaxed">
@@ -479,7 +436,7 @@ export default function FamilyFridge2Page() {
 
             <div className="border border-faded-white p-6 bg-surface">
               <h3 className="text-lg text-white mb-3">
-                <span className="accent-text">Growth</span> under constraints.
+                Growth under constraints.
               </h3>
               <ul className="arrow-list">
                 <li className="text-white-muted leading-relaxed">

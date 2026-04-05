@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useState, useRef } from 'react';
-import { ArrowRight, ArrowUpRight } from '@phosphor-icons/react';
+import { ArrowRight, ArrowUpRight, BookOpen } from '@phosphor-icons/react';
 import { motion } from 'framer-motion';
 import { useTheme } from './ThemeProvider';
 
@@ -126,25 +126,25 @@ export default function CustomCursor() {
         {cursorState === 'playground-link' && (
           <>
             <span className="text-xs font-mono geist-mono-font">OPEN WEBSITE</span>
-            <ArrowUpRight className="w-3.5 h-3.5 flex-shrink-0" weight="bold" />
+            <ArrowUpRight className="w-3.5 h-3.5 flex-shrink-0" />
           </>
         )}
         {cursorState === 'devpost' && (
           <>
             <span className="text-xs font-mono geist-mono-font">VIEW DEVPOST</span>
-            <ArrowUpRight className="w-3.5 h-3.5 flex-shrink-0" weight="bold" />
+            <ArrowUpRight className="w-3.5 h-3.5 flex-shrink-0" />
           </>
         )}
         {cursorState === 'playground-expand' && (
           <>
             <span className="text-xs font-mono geist-mono-font">VIEW</span>
-            <ArrowRight className="w-3.5 h-3.5 flex-shrink-0" weight="bold" />
+            <ArrowRight className="w-3.5 h-3.5 flex-shrink-0" />
           </>
         )}
         {cursorState === 'project-card' && (
           <>
             <span className="text-xs font-mono geist-mono-font">READ CASE STUDY</span>
-            <ArrowRight className="w-3.5 h-3.5 flex-shrink-0" weight="bold" />
+            <BookOpen className="w-3.5 h-3.5 flex-shrink-0" />
           </>
         )}
         {cursorState === 'coming-soon' && (
@@ -192,7 +192,7 @@ export default function CustomCursor() {
               transition={contentTransition}
               className="flex-shrink-0"
             >
-              <ArrowUpRight className="w-3.5 h-3.5" weight="bold" />
+              <ArrowUpRight className="w-3.5 h-3.5" />
             </motion.div>
           )}
           {cursorState === 'playground-expand' && (
@@ -203,7 +203,7 @@ export default function CustomCursor() {
               transition={contentTransition}
               className="flex-shrink-0"
             >
-              <ArrowRight className="w-3.5 h-3.5" weight="bold" />
+              <ArrowRight className="w-3.5 h-3.5" />
             </motion.div>
           )}
           {cursorState === 'project-card' && (
@@ -214,7 +214,7 @@ export default function CustomCursor() {
               transition={contentTransition}
               className="flex-shrink-0"
             >
-              <ArrowRight className="w-3.5 h-3.5" weight="bold" />
+              <BookOpen className="w-3.5 h-3.5" />
             </motion.div>
           )}
         </motion.div>
