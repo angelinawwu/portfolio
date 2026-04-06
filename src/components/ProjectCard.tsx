@@ -3,7 +3,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { Project } from '@/data/projects';
-import { useRef } from 'react';
+import { useVideoPlayback } from '@/hooks/useVideoPlayback';
 
 interface ProjectCardProps {
   project: Project;
@@ -11,20 +11,7 @@ interface ProjectCardProps {
 }
 
 export default function ProjectCard({ project, index }: ProjectCardProps) {
-  const videoRef = useRef<HTMLVideoElement>(null);
-
-  const handleMouseEnter = () => {
-    if (videoRef.current) {
-      videoRef.current.play();
-    }
-  };
-
-  const handleMouseLeave = () => {
-    if (videoRef.current) {
-      videoRef.current.pause();
-      videoRef.current.currentTime = 0;
-    }
-  };
+  const videoRef = useVideoPlayback();
 
   // Determine if this is an internal case study or external link
   const isInternalLink = project.slug && project.type === 'case-study' && project.slug !== 'goodreads-wrapped';
@@ -35,8 +22,6 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
       className="project-card group relative overflow-hidden border border-faded-white"
       style={{ '--card-index': index } as React.CSSProperties}
       data-cursor={project.demoUrl && !isInternalLink ? 'playground-link' : 'project-card'}
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
     >
       {/* Image/Video Container - natural height */}
       <div className="relative w-full overflow-hidden bg-faded-white">
@@ -44,11 +29,12 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
           <video
             ref={videoRef}
             src={project.videoUrl}
-            className="object-cover w-full h-auto group-hover:scale-105 transition-transform duration-200 ease-out"
+            className="object-cover w-full h-auto group-hover:scale-105 transition-all duration-200 ease-out"
             muted
             loop
             playsInline
             preload="metadata"
+            autoPlay
           />
         ) : project.thumbnail ? (
           <Image
@@ -56,12 +42,15 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
             alt={project.title}
             width={800}
             height={600}
-            className="object-cover w-full h-auto group-hover:scale-105 transition-transform duration-200 ease-out"
+            className="object-cover w-full h-auto group-hover:scale-105 transition-all duration-200 ease-out"
             sizes="(max-width: 768px) 100vw, 50vw"
           />
         ) : (
           <div className="w-full aspect-video bg-faded-white" />
         )}
+        
+        {/* Dimming overlay on hover */}
+        <div className="absolute inset-0 bg-[var(--black)] opacity-0 group-hover:opacity-50 transition-opacity duration-200 pointer-events-none" />
         
         {/* Black overlay gradient */}
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-200" />

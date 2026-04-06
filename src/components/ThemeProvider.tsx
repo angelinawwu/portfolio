@@ -21,7 +21,7 @@ let themeTransitionTimeout: number | null = null;
 const themeAccentColors: Record<Theme, string> = {
   default: '#F3EDF5',
   green: '#D4EC21',
-  blue: '#6FA7E7',
+  blue: '#7ABDF0',
   magenta: '#EC6CF1',
   orange: '#E3743D',
 };
