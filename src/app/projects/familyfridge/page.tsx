@@ -123,8 +123,8 @@ export default function FamilyFridge2Page() {
                 <Image
                   src="/assets/projects/FamilyFridge/FamilyFridge-Brainstorming.png"
                   alt="Research synthesis: survey data, affinity mapping, user flows, and feature prioritization"
-                  width={1000}
-                  height={1000}
+                  width={2000}
+                  height={2000}
                 />
               </div>
               <p className="text-xs geist-font text-white-muted mt-2">
