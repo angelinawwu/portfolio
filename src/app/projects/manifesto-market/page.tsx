@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { LanguageChart, DeviceChart, ReservationFunnelChart } from '@/components/ManifestoCharts';
+import CaseStudyHero from '@/components/CaseStudyHero';
 
 export const metadata = {
   title: 'Manifesto Market ＊ Angelina Wu',
@@ -23,37 +24,16 @@ export default function ManifestoMarketPage() {
           </Link>
         </div>
 
-        {/* Hero Section */}
-        <section 
-          className="project-card mb-12"
-          style={{ '--card-index': cardIndex++ } as React.CSSProperties}
-        >
-          <h1 className="text-4xl md:text-6xl bit-apple-font text-white mb-6">Manifesto Market</h1>
-          
-          <p className="text-lg text-white-muted leading-relaxed mb-8">
-            A mobile-first redesign to streamline booking and drive reservations by 121%
-          </p>
-
-          {/* Metadata Cards */}
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
-            <div className="border border-faded-white p-4 bg-surface">
-              <h3 className="text-xs geist-mono-font text-white-muted mb-2">MY ROLE</h3>
-              <p className="text-white">UX Intern</p>
-            </div>
-            <div className="border border-faded-white p-4 bg-surface">
-              <h3 className="text-xs geist-mono-font text-white-muted mb-2">TIMELINE</h3>
-              <p className="text-white">Jun - Aug 2025</p>
-            </div>
-            <div className="border border-faded-white p-4 bg-surface">
-              <h3 className="text-xs geist-mono-font text-white-muted mb-2">TEAM</h3>
-              <p className="text-white">1 Designer<br />1 Developer<br />2 Supervisors</p>
-            </div>
-            <div className="border border-faded-white p-4 bg-surface">
-              <h3 className="text-xs geist-mono-font text-white-muted mb-2">TOOLS</h3>
-              <p className="text-white">Figma<br />Wordpress</p>
-            </div>
-          </div>
-        </section>
+        <CaseStudyHero
+          slug="manifesto-market"
+          details={{
+            role: "UX Intern",
+            timeline: "June - August 2025",
+            team: ["1 Designer", "1 Developer", "2 Supervisors"],
+            tools: ["Figma", "Wordpress"]
+          }}
+          cardIndex={cardIndex++}
+        />
 
         {/* Overview */}
         <section 
@@ -397,11 +377,13 @@ export default function ManifestoMarketPage() {
           className="project-card pt-8 border-t border-faded-white"
           style={{ '--card-index': cardIndex++ } as React.CSSProperties}
         >
-          <div className="flex justify-end items-center">
+          <div className="flex justify-between items-center">
+            <Link href="/projects/familyfridge" className="sidebar-link">
+              ← FamilyFridge
+            </Link>
             <Link href="/projects/workup" className="sidebar-link">
               Workup →
             </Link>
-            
           </div>
         </nav>
       </div>

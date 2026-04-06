@@ -1,4 +1,4 @@
-export type ProjectType = 'PERSONAL PROJECT' | 'INTERNSHIP' | 'CONTRACT' | 'SCHOOL PROJECT';
+export type ProjectType = 'PERSONAL PROJECT' | 'INTERNSHIP' | 'CONTRACT' | 'SCHOOL PROJECT' | 'HACKATHON';
 
 export type Project = {
   slug?: string;
@@ -20,6 +20,17 @@ export type Project = {
 };
 
 export const caseStudies: Project[] = [
+  {
+    slug: 'familyfridge',
+    title: 'FamilyFridge',
+    description: '2nd Place @ Rice Designathon 2026 | Where everyday moments bring us together.',
+    thumbnail: '/assets/projects/FamilyFridge-Cover.png',
+    timeline: 'JAN 2026',
+    projectType: 'HACKATHON',
+    tags: ['UX Research', 'Mobile Design', 'Figma'],
+    type: 'case-study',
+    devpostUrl: 'https://devpost.com/software/tba-bo8jku'
+  },
   {
     slug: 'goodreads-wrapped',
     title: 'Goodreads Wrapped',
@@ -53,35 +64,27 @@ export const caseStudies: Project[] = [
     tags: ['UX Research', 'User Testing', 'Design System'],
     type: 'case-study'
   },
-  {
-    slug: 'bookish',
-    title: 'Bookish',
-    description: 'Redesigning the reading experience with accessibility and sustainability in mind.',
-    thumbnail: '/assets/projects/Bookish-Cover.webp',
-    timeline: 'MAR-MAY 2024',
-    projectType: 'PERSONAL PROJECT',
-    tags: ['Mobile Design', 'UX Research', 'Figma'],
-    type: 'case-study'
-  }
+  // {
+  //   slug: 'bookish',
+  //   title: 'Bookish',
+  //   description: 'Redesigning the reading experience with accessibility and sustainability in mind.',
+  //   thumbnail: '/assets/projects/Bookish-Cover.webp',
+  //   timeline: 'MAR-MAY 2024',
+  //   projectType: 'PERSONAL PROJECT',
+  //   tags: ['Mobile Design', 'UX Research', 'Figma'],
+  //   type: 'case-study'
+  // }
 ];
 
 export const playgroundProjects: Project[] = [
 
-  {
-    title: 'Hero (Treehacks 2026)',
-    context: 'React Native',
-    thumbnail: '/assets/playground/Hero-Cover.webp',
-    type: 'playground',
-    devpostUrl: 'https://devpost.com/software/organmatch',
-  },
   {
     title: 'Communal typewriter',
     description: 'Typewriter captures the nostalgic feel of mechanical typewriters. No backspace, no copy-paste, no takebacks.',
     paragraph: 'Typewriter captures the nostalgic feel of mechanical typewriters. No backspace, no copy-paste, no takebacks. Type anything and publish it to the gallery.',
     thumbnail: '/assets/playground/Typewriter-Cover.webp',
     videoUrl: '/assets/playground/Typewriter-Video.mov',
-    context: 'React/Vite & Google Sheets API',
-    tags: ['Typescript', 'CSS Animations', 'React/Vite'],
+    context: 'React/Vite, Google Sheets API',
     type: 'playground',
     projectType: 'PERSONAL PROJECT',
     timeline: 'OCT 2025',
@@ -94,19 +97,12 @@ export const playgroundProjects: Project[] = [
     paragraph: 'A love letter to the Voyager Golden Record, and what it means to be human and alive on Earth. Turn your sound on!',
     thumbnail: '/assets/playground/Voyager-Cover.webp',
     videoUrl: '/assets/playground/Voyager-Video.mov',
-    context: 'Next.js & Framer Motion',
-    tags: ['Next.js', 'Framer Motion', 'Web Animations'],
+    context: 'Next.js, Framer Motion',
     type: 'playground',
     projectType: 'PERSONAL PROJECT',
     timeline: 'NOV 2025',
     demoUrl: 'https://thegoldenrecord.vercel.app/',
     githubUrl: 'https://github.com/angelinawwu/voyager'
-  },
-  {
-    title: 'Thistle (healthtech concept)',
-    context: 'Figma & Nano Banana',
-    thumbnail: '/assets/playground/Thistle-Cover.webp',
-    type: 'playground',
   },
   {
     title: 'poems-i-love',
@@ -116,10 +112,23 @@ export const playgroundProjects: Project[] = [
     demoUrl: 'https://poems-i-love.vercel.app/',
   },
   {
+    title: 'Thistle (healthtech concept)',
+    context: 'Figma, Nano Banana',
+    thumbnail: '/assets/playground/Thistle-Cover.webp',
+    type: 'playground',
+  },
+  {
     title: 'Rug store (concept)',
-    context: 'Figma & Veo',
+    context: 'Figma, Veo',
     videoUrl: '/assets/playground/Rug-Video.mov',
     type: 'playground',
+  },
+  {
+    title: 'Hero (Treehacks 2026)',
+    context: 'React Native',
+    thumbnail: '/assets/playground/Hero-Cover.webp',
+    type: 'playground',
+    devpostUrl: 'https://devpost.com/software/organmatch',
   },
   {
     title: 'VEST glass experiment',
@@ -127,21 +136,41 @@ export const playgroundProjects: Project[] = [
     thumbnail: '/assets/playground/VESTGlass-Cover.webp',
     type: 'playground',
   },
+
+  {
+    title: 'Bookish app (concept)',
+    context: 'Figma, Flutter',
+    thumbnail: '/assets/playground/Bookish-Cover.webp',
+    type: 'playground',
+  },
   {
     title: 'VEST recruitment graphic',
-    context: 'Figma & Photoshop',
+    context: 'Figma, Photoshop',
     thumbnail: '/assets/playground/VESTKeyboard-Cover.webp',
+    type: 'playground',
+  },
+  {
+    title: 'Team t-shirt design',
+    context: 'Figma, Photoshop',
+    thumbnail: '/assets/playground/TeddiesTee-Cover.jpg',
+    type: 'playground',
+  },
+  {
+    title: 'Piece of Cake app (concept)',
+    context: 'Figma',
+    thumbnail: '/assets/playground/PieceOfCake-Cover.jpg',
     type: 'playground',
   },
 ];
 
 // All projects for Work page (all case studies)
-// Order: Goodreads Wrapped -> Manifesto Market -> Workup -> Bookish
+// Order: FamilyFridge -> Goodreads Wrapped -> Manifesto Market -> Workup -> Bookish
 export const workProjects: Project[] = [
-  caseStudies[0], // Goodreads Wrapped
-  caseStudies[1], // Manifesto Market
-  caseStudies[2], // Workup
-  caseStudies[3], // Bookish
+  caseStudies[0], // FamilyFridge
+  caseStudies[1], // Goodreads Wrapped
+  caseStudies[2], // Manifesto Market
+  caseStudies[3], // Workup
+  caseStudies[4], // Bookish
 ];
 
 // Combined projects for backward compatibility

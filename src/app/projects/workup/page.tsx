@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { ArrowRight } from 'lucide-react';
+import CaseStudyHero from '@/components/CaseStudyHero';
 
 export const metadata = {
   title: 'Workup ＊ Angelina Wu',
@@ -23,37 +23,16 @@ export default function WorkupPage() {
           </Link>
         </div>
 
-        {/* Hero Section */}
-        <section 
-          className="project-card mb-12"
-          style={{ '--card-index': cardIndex++ } as React.CSSProperties}
-        >
-          <h1 className="text-4xl md:text-6xl bit-apple-font text-white mb-6">WorkUp</h1>
-          
-          <p className="text-lg text-white-muted leading-relaxed mb-8">
-            Restructuring the interview feature for an AI-powered career development startup
-          </p>
-
-          {/* Metadata Cards */}
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
-            <div className="border border-faded-white p-4 bg-surface">
-              <h3 className="text-xs geist-mono-font text-white-muted mb-2">MY ROLE</h3>
-              <p className="text-white">Product Designer</p>
-            </div>
-            <div className="border border-faded-white p-4 bg-surface">
-              <h3 className="text-xs geist-mono-font text-white-muted mb-2">TIMELINE</h3>
-              <p className="text-white">Jan - Jun 2025</p>
-            </div>
-            <div className="border border-faded-white p-4 bg-surface">
-              <h3 className="text-xs geist-mono-font text-white-muted mb-2">TEAM</h3>
-              <p className="text-white">14 Designers<br />1 Product Team</p>
-            </div>
-            <div className="border border-faded-white p-4 bg-surface">
-              <h3 className="text-xs geist-mono-font text-white-muted mb-2">TOOLS</h3>
-              <p className="text-white">Figma</p>
-            </div>
-          </div>
-        </section>
+        <CaseStudyHero
+          slug="workup"
+          details={{
+            role: "Product Designer",
+            timeline: "January - June 2025",
+            team: ["14 Designers", "1 Product Team"],
+            tools: "Figma"
+          }}
+          cardIndex={cardIndex++}
+        />
 
         {/* Overview */}
         <section 
