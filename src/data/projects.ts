@@ -47,7 +47,7 @@ export const caseStudies: Project[] = [
   {
     slug: 'manifesto-market',
     title: 'Manifesto Market',
-    description: 'A mobile-first redesign to streamline booking, driving reservations by 121%.',
+    description: 'A mobile-first website redesign to 2x reservation-booking conversion.',
     thumbnail: '/assets/projects/Manifesto-Cover.webp',
     timeline: 'JUN-AUG 2025',
     projectType: 'INTERNSHIP',

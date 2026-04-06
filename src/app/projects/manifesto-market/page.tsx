@@ -61,7 +61,7 @@ export default function ManifestoMarketPage() {
           <div className="space-y-6">
             <div>
               <h3 className="text-xl md:text-2xl text-white mb-4">
-                <span className="accent-text">Users aren&apos;t being driven towards reservations.</span>
+                <span>Users aren&apos;t being driven towards reservations.</span>
               </h3>
               <div className="space-y-4 text-white-muted leading-relaxed">
                 <p>
