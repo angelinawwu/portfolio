@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect, useCallback, useRef } from 'react';
+import { useState, useEffect, useCallback, useMemo } from 'react';
 import { createPortal } from 'react-dom';
 import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -8,61 +8,49 @@ import { X } from '@phosphor-icons/react';
 import PlaygroundCard from '@/components/PlaygroundCard';
 import { playgroundProjects, Project } from '@/data/projects';
 
-type MasonryInstance = {
-  destroy: () => void;
-  layout: () => void;
-  reloadItems: () => void;
-};
+function useColumnCount() {
+  const [columns, setColumns] = useState(1);
+
+  useEffect(() => {
+    const mqMd = window.matchMedia('(min-width: 768px)');
+    const mqLg = window.matchMedia('(min-width: 1024px)');
+
+    const update = () => {
+      if (mqLg.matches) setColumns(3);
+      else if (mqMd.matches) setColumns(2);
+      else setColumns(1);
+    };
+
+    update();
+    mqMd.addEventListener('change', update);
+    mqLg.addEventListener('change', update);
+    return () => {
+      mqMd.removeEventListener('change', update);
+      mqLg.removeEventListener('change', update);
+    };
+  }, []);
+
+  return columns;
+}
 
 export default function PlayPage() {
   const [expandedProject, setExpandedProject] = useState<Project | null>(null);
   const [mounted, setMounted] = useState(false);
-  const gridRef = useRef<HTMLDivElement>(null);
-  const masonryRef = useRef<MasonryInstance | null>(null);
+  const columnCount = useColumnCount();
 
   useEffect(() => { setMounted(true); }, []);
 
-  useEffect(() => {
-    if (!mounted || !gridRef.current) return;
-
-    let masonry: MasonryInstance | null = null;
-    let resizeObserver: ResizeObserver | null = null;
-
-    import('masonry-layout').then((MasonryModule) => {
-      const Masonry = MasonryModule.default;
-      if (!gridRef.current) return;
-
-      masonry = new Masonry(gridRef.current, {
-        itemSelector: '.masonry-item',
-        columnWidth: '.masonry-sizer',
-        percentPosition: true,
-        gutter: 16,
-        horizontalOrder: true,
-        transitionDuration: '0.2s',
-        stagger: 30,
-      }) as MasonryInstance;
-
-      masonryRef.current = masonry;
-
-      // Use ResizeObserver for immediate responsive adjustments
-      resizeObserver = new ResizeObserver(() => {
-        masonry?.layout();
-      });
-      resizeObserver.observe(gridRef.current);
+  // Distribute items into columns in horizontal (row-first) order
+  const columnBuckets = useMemo(() => {
+    const buckets: { project: Project; index: number }[][] = Array.from(
+      { length: columnCount },
+      () => []
+    );
+    playgroundProjects.forEach((project, index) => {
+      buckets[index % columnCount].push({ project, index });
     });
-
-    return () => {
-      resizeObserver?.disconnect();
-      masonry?.destroy();
-    };
-  }, [mounted]);
-
-  useEffect(() => {
-    if (masonryRef.current) {
-      masonryRef.current.reloadItems();
-      masonryRef.current.layout();
-    }
-  }, [playgroundProjects]);
+    return buckets;
+  }, [columnCount]);
 
   const handleClose = useCallback(() => {
     setExpandedProject(null);
@@ -87,15 +75,19 @@ export default function PlayPage() {
   return (
     <>
       <div className="min-h-screen bg-black p-4 md:p-6 lg:p-8">
-        <div ref={gridRef}>
-          <div className="masonry-sizer w-full md:w-[calc(50%-8px)] lg:w-[calc(33.333%-11px)]"></div>
-          {playgroundProjects.map((project, index) => (
-            <div key={project.title} className="masonry-item w-full md:w-[calc(50%-8px)] lg:w-[calc(33.333%-11px)] mb-4">
-              <PlaygroundCard
-                project={project}
-                index={index}
-                onExpand={setExpandedProject}
-              />
+        {/* Masonry Grid */}
+        <div className="flex gap-4">
+          {columnBuckets.map((column, colIdx) => (
+            <div key={colIdx} className="flex-1 flex flex-col gap-4">
+              {column.map(({ project, index }) => (
+                <div key={project.title}>
+                  <PlaygroundCard
+                    project={project}
+                    index={index}
+                    onExpand={setExpandedProject}
+                  />
+                </div>
+              ))}
             </div>
           ))}
         </div>
