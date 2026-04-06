@@ -50,7 +50,7 @@ export default function CaseStudyHero({
           href={link}
           target="_blank"
           rel="noopener noreferrer"
-          className="sidebar-link"
+          className="sidebar-link !text-white hover:!text-accent"
         >
           {name}
           <ArrowUpRight size={16} className="inline ml-1" />
