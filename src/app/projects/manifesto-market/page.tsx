@@ -350,7 +350,7 @@ export default function ManifestoMarketPage() {
           <div className="space-y-4">
             <div className="border border-faded-white p-6 bg-surface">
               <h3 className="text-lg text-white mb-3">
-                Data is <span className="accent-text">everything</span>.
+                Data is everything.
               </h3>
               <ul className="arrow-list">
                 <li className="text-white-muted leading-relaxed">
@@ -361,7 +361,7 @@ export default function ManifestoMarketPage() {
 
             <div className="border border-faded-white p-6 bg-surface">
               <h3 className="text-lg text-white mb-3">
-                Understand the <span className="accent-text">limitations first</span>.
+                Understand the limitations first.
               </h3>
               <ul className="arrow-list">
                 <li className="text-white-muted leading-relaxed">

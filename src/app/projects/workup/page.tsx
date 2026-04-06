@@ -60,7 +60,7 @@ export default function WorkupPage() {
           <div className="space-y-6">
             <div>
               <h3 className="text-xl md:text-2xl text-white mb-4">
-                <span className="accent-text">Preparing for interviews can feel overwhelming.</span>
+                <span>Preparing for interviews can feel overwhelming.</span>
               </h3>
               <div className="space-y-4 text-white-muted leading-relaxed">
                 <p>
@@ -504,7 +504,7 @@ export default function WorkupPage() {
           <div className="space-y-4">
             <div className="border border-faded-white p-6 bg-surface">
               <h3 className="text-lg text-white mb-3">
-                <span className="accent-text">User empathy</span> is foundational.
+                User empathy is foundational.
               </h3>
               <ul className="arrow-list">
                 <li className="text-white-muted leading-relaxed">
@@ -515,7 +515,7 @@ export default function WorkupPage() {
 
             <div className="border border-faded-white p-6 bg-surface">
               <h3 className="text-lg text-white mb-3">
-                Sometimes the answer is <span className="accent-text">simplicity</span>.
+                Sometimes the answer is simplicity.
               </h3>
               <ul className="arrow-list">
                 <li className="text-white-muted leading-relaxed">
