@@ -26,15 +26,38 @@ export default function CaseStudyHero({
     throw new Error(`Project with slug "${slug}" not found`);
   }
 
-  const renderDetailContent = (content: string | string[]) => {
+  const renderDetailContent = (content: string | string[], isTeam = false) => {
     if (Array.isArray(content)) {
       return content.map((line, index) => (
         <p key={index} className="text-white">
-          {line}
+          {isTeam ? renderTeamMember(line) : line}
         </p>
       ));
     }
-    return <p className="text-white">{content}</p>;
+    return <p className="text-white">{isTeam ? renderTeamMember(content) : content}</p>;
+  };
+
+  const renderTeamMember = (name: string) => {
+    const teamMemberLinks: { [key: string]: string } = {
+      'Kathy Guo': 'https://www.linkedin.com/in/kathy-guo-/',
+      'Tina Chen': 'https://www.linkedin.com/in/tinachen663/'
+    };
+
+    const link = teamMemberLinks[name];
+    if (link) {
+      return (
+        <a
+          href={link}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="sidebar-link"
+        >
+          {name}
+          <ArrowUpRight size={16} className="inline ml-1" />
+        </a>
+      );
+    }
+    return name;
   };
 
   return (
@@ -86,7 +109,7 @@ export default function CaseStudyHero({
         </div>
         <div className="border border-faded-white p-4 bg-surface">
           <h3 className="text-xs geist-mono-font text-white-muted mb-2">TEAM</h3>
-          {renderDetailContent(details.team)}
+          {renderDetailContent(details.team, true)}
         </div>
         <div className="border border-faded-white p-4 bg-surface">
           <h3 className="text-xs geist-mono-font text-white-muted mb-2">TOOLS</h3>

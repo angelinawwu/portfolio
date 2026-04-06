@@ -236,17 +236,45 @@ export default function FamilyFridge2Page() {
           className="project-card mb-12 pt-8 border-t border-faded-white"
           style={{ '--card-index': cardIndex++ } as React.CSSProperties}
         >
-          <h2 className="text-2xl md:text-3xl bit-apple-font text-white mb-6">Build a new app, or integrate with existing ones?</h2>
+          <h2 className="text-2xl md:text-3xl bit-apple-font text-white mb-6">From Research to Concept</h2>
           <div className="space-y-12">
             <div>
-              <div className="space-y-4 text-white-muted leading-relaxed">
+              
+              <h3 className="text-xl md:text-2xl text-white mb-4">Build a new app, or integrate with existing ones?</h3>
+              <div className="space-y-4 text-white-muted leading-relaxed mb-4">
                 <p>
-                  One of the earliest and most consequential decisions we made was whether to design a standalone app or integrate with tools families already use. Our research made this choice clear: the majority of families already use iMessage and FaceTime for their weekly calls and check-ins.
+                  One of the earliest and most consequential decisions we made was whether to design a standalone app or integrate with tools families already use. Our research made this choice clear: the majority of families already use iMessage and FaceTime.
                 </p>
                 <p>
-                  Rather than asking everyone to learn new technology — especially older family members who may struggle with unfamiliar interfaces — we designed the experience to feel at home within the Apple ecosystem.
+                  Rather than asking everyone to learn new technology, especially older family members who may struggle with unfamiliar interfaces, we designed the experience to feel at home within the Apple ecosystem.
                 </p>
               </div>
+
+              <div className="overflow-hidden flex flex-row space-x-4">
+                <div className="flex-1">
+                  <div className="relative w-full aspect-[4/3]">
+                    <Image
+                      src="/assets/projects/FamilyFridge/FamilyFridge-Process-1.png"
+                      alt="Lo-fi wireframes"
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
+                  <p className="text-white-muted text-sm mt-2">Lo-fi wireframes</p>
+                </div>
+                <div className="flex-1">
+                  <div className="relative w-full aspect-[4/3]">
+                    <Image
+                      src="/assets/projects/FamilyFridge/FamilyFridge-Process-2.png"
+                      alt="Prototyping"
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
+                  <p className="text-white-muted text-sm mt-2">Prototyping</p>
+                </div>
+              </div>
+
             </div>
           </div>
         </section>
@@ -292,43 +320,35 @@ export default function FamilyFridge2Page() {
           style={{ '--card-index': cardIndex++ } as React.CSSProperties}
         >
           <h2 className="text-2xl md:text-3xl bit-apple-font text-white mb-6">Final Designs</h2>
-
+          
           <div className="space-y-12">
+            
+
             <div>
-              <h3 className="text-lg text-white mb-4">Your family&apos;s shared space</h3>
+              <h3 className="text-xl md:text-2xl text-white mb-4">Your family&apos;s shared space</h3>
               <p className="text-white-muted leading-relaxed mb-4">
                 Cover your Fridge in moments that build a deeper connection among your family. Pin photos from your day, leave voice or written notes, and see what your family shared.
               </p>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div className="overflow-hidden">
-                  <Image
-                    src="/assets/projects/FamilyFridge/FamilyFridge-HomeScreen.webp"
-                    alt="FamilyFridge home screen — Wu & Wang family"
-                    width={454}
-                    height={920}
-                    className="w-full h-auto"
-                  />
-                </div>
-                <div className="overflow-hidden">
-                  <Image
-                    src="/assets/projects/FamilyFridge/FamilyFridge-HomeScreen2.webp"
-                    alt="FamilyFridge home screen — Roberts family"
-                    width={454}
-                    height={920}
-                    className="w-full h-auto"
-                  />
-                </div>
+              <div className="overflow-hidden">
+                <video
+                  src="/assets/projects/FamilyFridge/FamilyFridge-Final-1.mp4"
+                  className="w-full h-auto"
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                />
               </div>
             </div>
 
             <div>
-              <h3 className="text-lg text-white mb-4">A Fridge for every family</h3>
+              <h3 className="text-xl md:text-2xl text-white mb-4">A Fridge for every family</h3>
               <p className="text-white-muted leading-relaxed mb-4">
                 Customize your Fridge to your own unique family. Each family gets their own color theme, name decorations, and layout — making every Fridge feel like home.
               </p>
               <div className="overflow-hidden">
                 <Image
-                  src="/assets/projects/FamilyFridge/FamilyFridge-Customizations.webp"
+                  src="/assets/projects/FamilyFridge/FamilyFridge-Final-2.png"
                   alt="Three different family fridges showing customization options"
                   width={1000}
                   height={1000}
@@ -337,50 +357,20 @@ export default function FamilyFridge2Page() {
             </div>
 
             <div>
-              <h3 className="text-lg text-white mb-4">Post-call capture</h3>
+              <h3 className="text-xl md:text-2xl text-white mb-4">Post-call capture</h3>
               <p className="text-white-muted leading-relaxed mb-4">
                 After a FaceTime call ends, a translucent liquid glass overlay appears on your home screen. It surfaces screenshots taken during the conversation, lets you select which ones to pin to the Fridge, and prompts for a quick note — like &quot;Ask about grandparents&apos; tomato garden.&quot; The entire flow takes seconds, and the Fridge grows richer with every call.
               </p>
-            </div>
-
-            <div>
-              <h3 className="text-lg text-white mb-4">Demo</h3>
-              <p className="text-white-muted leading-relaxed mb-4">
-                A walkthrough of the full FamilyFridge experience — from onboarding and setting up your fridge, to resurfacing memories during calls.
-              </p>
-              <div className="overflow-hidden">
-                <video
-                  src="/assets/projects/FamilyFridge/FamilyFridge-Demo.mp4"
+              <video
+                  src="/assets/projects/FamilyFridge/FamilyFridge-Final-3.mp4"
                   className="w-full h-auto"
-                  controls
                   autoPlay
                   loop
                   muted
                   playsInline
-                  preload="metadata"
                 />
-              </div>
             </div>
-          </div>
-        </section>
 
-        {/* Figma Prototype Embed */}
-        <section
-          className="project-card mb-12 pt-8 border-t border-faded-white"
-          style={{ '--card-index': cardIndex++ } as React.CSSProperties}
-        >
-          <h2 className="text-2xl md:text-3xl bit-apple-font text-white mb-6">Prototype</h2>
-          <p className="text-white-muted leading-relaxed mb-6">
-            Explore the full interactive prototype in Figma.
-          </p>
-          <div className="overflow-hidden border border-faded-white">
-            <iframe
-              style={{ border: 'none' }}
-              width="100%"
-              height="600"
-              src="https://embed.figma.com/design/TaamijlqGnRQyAhJDDfqFf/Prototype?node-id=399-2341&embed-host=share"
-              allowFullScreen
-            />
           </div>
         </section>
 
@@ -395,13 +385,34 @@ export default function FamilyFridge2Page() {
           </p>
           <div className="overflow-hidden border border-faded-white">
             <iframe
-              style={{ border: 'none' }}
               width="100%"
               height="500"
               src="https://embed.figma.com/slides/t2vbYRiQSlulEEP58FKlr7/Final-Presentation--?node-id=1-578&embed-host=share"
               allowFullScreen
             />
           </div>
+        </section>
+
+        {/* Feedback */}
+        <section
+          className="project-card mb-12 pt-8 border-t border-faded-white"
+          style={{ '--card-index': cardIndex++ } as React.CSSProperties}
+        >
+          <h2 className="text-2xl md:text-3xl bit-apple-font text-white mb-6">Feedback</h2>
+          <p className="text-white-muted leading-relaxed mb-6">
+            After the event, I reached out to the judges to get their thoughts on our project. From this feedback, I gained significant and valuable insight into where we did well, and where we could have potentially done better. Here are some things they said!
+          </p>
+          <Image
+            src="/assets/projects/FamilyFridge/FamilyFridge-Feedback.png"
+            alt="“FamilyFridge stood out because the prompt genuinely shaped the solution, rather than being applied after the fact.” 
+            “There are opportunities for even greater adoption if the product were device-agnostic, rather than tied to iOS devices.”
+            “FamilyFridge is a very compelling product with a clear path to commercial viability.”
+            “Linking to native features was a huge plus to your project.”
+            “The FaceTime‑style call element actively detracts from the experience. It introduces additional complexity that isn’t needed, feels clunky in execution, and pulls attention away from the quieter, more differentiated core idea.”"
+            width={800}
+            height={300}
+            className="w-full h-auto px-24"
+          />
         </section>
 
         {/* Reflections */}
@@ -411,14 +422,14 @@ export default function FamilyFridge2Page() {
         >
           <h2 className="text-2xl md:text-3xl bit-apple-font text-white mb-6">Reflections</h2>
 
-          <div className="space-y-4">
+          <div className="space-y-4 mb-4">
             <div className="border border-faded-white p-6 bg-surface">
               <h3 className="text-lg text-white mb-3">
                 Design for existing routines.
               </h3>
               <ul className="arrow-list">
                 <li className="text-white-muted leading-relaxed">
-                  Users rarely build new habits, so solutions should weave into the ones they already have. FamilyFridge succeeds because it enhances FaceTime calls families are already making — it doesn&apos;t ask anyone to change their behavior, just captures more from it.
+                  Users rarely build new habits, so solutions should weave into the ones they already have. FamilyFridge succeeds because it enhances FaceTime calls families are already making.
                 </li>
               </ul>
             </div>
@@ -429,7 +440,7 @@ export default function FamilyFridge2Page() {
               </h3>
               <ul className="arrow-list">
                 <li className="text-white-muted leading-relaxed">
-                  User interviews and surveys guided every feature we created. The pivot from a shared canvas to a structured fridge layout came directly from hearing that older generations wouldn&apos;t engage with freeform interaction. Sometimes the best design decisions come from what you choose not to build.
+                  User interviews and surveys guided every feature we created. An early pivot from a shared canvas to a structured fridge layout came directly from hearing that older generations wouldn&apos;t engage with freeform interaction. Sometimes the best design decisions come from what you choose not to build.
                 </li>
               </ul>
             </div>
@@ -440,10 +451,23 @@ export default function FamilyFridge2Page() {
               </h3>
               <ul className="arrow-list">
                 <li className="text-white-muted leading-relaxed">
-                  In 36 hours, we grew tremendously as designers, storytellers, and researchers. The time constraint forced us to be decisive and trust our instincts. This process pushed us to connect data, behavior, and technology into a cohesive, human-centered product — and proved that meaningful work can happen fast when the team is aligned.
+                  In 36 hours, we grew tremendously as designers, storytellers, and researchers. The time constraint forced us to be decisive and trust our instincts.
                 </li>
               </ul>
             </div>
+          </div>
+
+          <div>
+            <Image
+              src="/assets/projects/FamilyFridge/FamilyFridge-Team.png"
+              alt="Team photo"
+              width={1000}
+              height={1000}
+              className="w-full h-auto"
+            />
+            <p className="text-sm text-white-muted mt-2">
+              Thank you to Tina and Kathy for being incredible teammates!! :)
+            </p>
           </div>
         </section>
 
