@@ -8,7 +8,6 @@ export default function WorkPage() {
     workProjects.find(p => p.title === 'Goodreads Wrapped'),
     workProjects.find(p => p.slug === 'manifesto-market'),
     workProjects.find(p => p.slug === 'workup'),
-    // workProjects.find(p => p.slug === 'bookish'),
   ].filter(Boolean) as typeof workProjects;
 
   // Desktop masonry columns
