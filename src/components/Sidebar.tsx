@@ -14,7 +14,7 @@ const navItems = [
 ];
 
 const connectLinks = [
-  { href: 'mailto:angelinawu05@gmail.com', label: 'EMAIL' },
+  { href: 'mailto:angelinawwu@ucla.edu', label: 'EMAIL' },
   { href: 'https://linkedin.com/in/angelinawwu', label: 'LINKEDIN' },
   { href: 'https://x.com/angelinawuuu', label: 'TWITTER/X' },
   { href: 'https://github.com/angelinawwu', label: 'GITHUB' },
