@@ -21,6 +21,17 @@ export type Project = {
 
 export const caseStudies: Project[] = [
   {
+    slug: 'reverie',
+    title: 'Reverie',
+    description: 'Honorable Mention @ FigBuild 2026 | Every dream, a revelation.',
+    thumbnail: '/assets/projects/Reverie-Cover.png',
+    timeline: 'MAR 2026',
+    projectType: 'HACKATHON',
+    tags: ['Speculative Design', 'Product Design', 'Figma'],
+    type: 'case-study',
+    devpostUrl: 'https://devpost.com/software/reverie-auf3w8'
+  },
+  {
     slug: 'familyfridge',
     title: 'FamilyFridge',
     description: '2nd Place @ Rice Designathon 2026 | Where everyday moments bring us together.',
@@ -164,13 +175,13 @@ export const playgroundProjects: Project[] = [
 ];
 
 // All projects for Work page (all case studies)
-// Order: FamilyFridge -> Goodreads Wrapped -> Manifesto Market -> Workup -> Bookish
+// Order: Reverie -> FamilyFridge -> Goodreads Wrapped -> Manifesto Market -> Workup
 export const workProjects: Project[] = [
-  caseStudies[0], // FamilyFridge
-  caseStudies[1], // Goodreads Wrapped
-  caseStudies[2], // Manifesto Market
-  caseStudies[3], // Workup
-  caseStudies[4], // Bookish
+  caseStudies[0], // Reverie
+  caseStudies[1], // FamilyFridge
+  caseStudies[2], // Goodreads Wrapped
+  caseStudies[3], // Manifesto Market
+  caseStudies[4], // Workup
 ];
 
 // Combined projects for backward compatibility

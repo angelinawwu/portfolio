@@ -40,7 +40,10 @@ export default function CaseStudyHero({
   const renderTeamMember = (name: string) => {
     const teamMemberLinks: { [key: string]: string } = {
       'Kathy Guo': 'https://www.linkedin.com/in/kathy-guo-/',
-      'Tina Chen': 'https://www.linkedin.com/in/tinachen663/'
+      'Tina Chen': 'https://www.linkedin.com/in/tinachen663/',
+      'Ellie Huang': 'https://www.linkedin.com/in/ellie-huang-/',
+      'Emily Shen': 'https://www.linkedin.com/in/emilyshen-/',
+      'Nancy Rios': 'https://www.linkedin.com/in/nancy-rios-/'
     };
 
     const link = teamMemberLinks[name];

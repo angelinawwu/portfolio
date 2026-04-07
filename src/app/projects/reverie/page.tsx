@@ -1,0 +1,486 @@
+'use client';
+
+import Link from 'next/link';
+import Image from 'next/image';
+import CaseStudyHero from '@/components/CaseStudyHero';
+
+export default function ReveriePage() {
+  let cardIndex = 0;
+
+  return (
+    <div className="min-h-screen bg-black p-4 md:p-6 lg:p-8">
+      <div className="max-w-4xl mx-auto">
+        {/* Back Button */}
+        <div
+          className="project-card mb-8"
+          style={{ '--card-index': cardIndex++ } as React.CSSProperties}
+        >
+          <Link href="/" className="sidebar-link">
+            ← Back to projects
+          </Link>
+        </div>
+
+        <CaseStudyHero
+          slug="reverie"
+          details={{
+            role: "Product Designer",
+            timeline: ["March 2026", "(1 week)"],
+            team: ["Ellie Huang", "Emily Shen", "Nancy Rios"],
+            tools: "Figma"
+          }}
+          cardIndex={cardIndex++}
+        />
+
+        {/* The Problem */}
+        <section
+          className="project-card mb-12 pt-8 border-t border-faded-white"
+          style={{ '--card-index': cardIndex++ } as React.CSSProperties}
+        >
+          <h2 className="text-2xl md:text-3xl bit-apple-font text-white mb-6">The Problem</h2>
+          <div className="space-y-6">
+            <div className="space-y-4 text-white-muted leading-relaxed">
+              <p>
+                We spend roughly a third of our lives asleep. During REM sleep, the brain enters its most unfiltered state — processing emotional memory, forging creative connections, and rehearsing responses to threats. The periodic table, the double helix, the opening of Frankenstein — all originated in dreams.
+              </p>
+              <p>
+                Yet we&apos;ve built an entire industry around optimizing sleep — tracking heart rate, breathing, and sleep stages — while completely ignoring what actually happens inside it. We&apos;ve optimized the container and ignored the contents.
+              </p>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="border border-faded-white p-6 bg-surface">
+                <p className="text-3xl text-white mb-2 geist-mono-font">90%</p>
+                <p className="text-white-muted leading-relaxed">
+                  of dreams are forgotten within 10 minutes of waking up (Mark Solms)
+                </p>
+              </div>
+              <div className="border border-faded-white p-6 bg-surface">
+                <p className="text-3xl text-white mb-2 geist-mono-font">1 in 10</p>
+                <p className="text-white-muted leading-relaxed">
+                  people say they always remember their dreams (CBS News / SSRS, 2021)
+                </p>
+              </div>
+            </div>
+            <div className="border border-faded-white p-6 bg-surface">
+              <p className="text-white text-lg md:text-xl italic text-center">
+                &quot;Individuals lack the tools to access and understand their own dreams, leaving the most honest source of self-knowledge completely unexplored each night.&quot;
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* The Challenge */}
+        <section
+          className="project-card mb-12 pt-8 border-t border-faded-white"
+          style={{ '--card-index': cardIndex++ } as React.CSSProperties}
+        >
+          <h2 className="text-2xl md:text-3xl bit-apple-font text-white mb-6">The Challenge</h2>
+          <div className="space-y-6">
+            <div className="space-y-4 text-white-muted leading-relaxed">
+              <p>
+                For FigBuild 2026, Figma&apos;s annual design hackathon, our team of four was given a speculative design prompt:
+              </p>
+              <div className="border border-faded-white p-6 bg-surface">
+                <p className="text-white text-lg md:text-xl italic text-center">
+                  &quot;Design a tool that tracks, measures, or visualizes an aspect of human sensory experience — and provides the ability to detect, enhance, or manipulate those same sensory inputs.&quot;
+                </p>
+              </div>
+              <p>
+                The challenge asked us to identify something intangible or previously unmeasurable about human experience and design a speculative tool to track and influence it for wellness or behavioral change.
+              </p>
+            </div>
+
+            <div>
+              <h3 className="text-xl md:text-2xl text-white mb-4">Converging on dreams</h3>
+              <div className="space-y-4 text-white-muted leading-relaxed">
+                <p>
+                  We started by brainstorming independently on FigJam. Each team member explored different directions — dream recordings, emotional analytics, lucid dreaming control, VR replay. When we compared notes, a clear pattern emerged: all four of us had gravitated toward the subconscious.
+                </p>
+                <p>
+                  The insight that drove our concept: existing tools track sleep stages and heart rate, but no one has built infrastructure for what your brain actually does while you&apos;re dreaming. Dreams are the most emotionally honest experience we have — and we have zero tools to capture them.
+                </p>
+              </div>
+              <div className="overflow-hidden mt-4">
+                <Image
+                  src="/assets/projects/Reverie/Reverie-Brainstorming.png"
+                  alt="FigJam brainstorming board with sticky notes from all four team members, organized by themes"
+                  width={2000}
+                  height={1000}
+                />
+              </div>
+              <p className="text-xs geist-mono-font text-white-muted mt-2">
+                Our FigJam brainstorming board — each team member&apos;s independent ideation, then grouped by theme.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* The Solution */}
+        <section
+          className="project-card mb-12 pt-8 border-t border-faded-white"
+          style={{ '--card-index': cardIndex++ } as React.CSSProperties}
+        >
+          <h2 className="text-2xl md:text-3xl bit-apple-font text-white mb-6">The Solution</h2>
+          <div className="space-y-6">
+            <p className="text-white-muted leading-relaxed">
+              Reverie is a dream recording and self-discovery platform consisting of two parts: a smart sleep mask and a companion mobile app.
+            </p>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="border border-faded-white p-6 bg-surface">
+                <h3 className="text-lg text-white mb-3">The Reverie Mask</h3>
+                <p className="text-white-muted leading-relaxed">
+                  A sleep wearable that captures physiological proxies for REM sleep — infrared eye tracking, EEG dry electrodes, HRV, and skin conductance — and uses Targeted Memory Reactivation to influence dream content. When you wake, it becomes a VR headset for immersive dream replay.
+                </p>
+              </div>
+              <div className="border border-faded-white p-6 bg-surface">
+                <h3 className="text-lg text-white mb-3">The Reverie App</h3>
+                <p className="text-white-muted leading-relaxed">
+                  A personal dream archive organized like a record collection. Each night becomes a CD. Each month becomes an album. Over time, patterns emerge — emotional themes, recurring imagery, the things your waking mind has been quietly avoiding.
+                </p>
+              </div>
+            </div>
+            <div className="overflow-hidden">
+              <Image
+                src="/assets/projects/Reverie/Reverie-Home.png"
+                alt="Reverie app home screen showing morning recap, monthly insight, and recent dream CDs"
+                width={1000}
+                height={1000}
+              />
+            </div>
+          </div>
+        </section>
+
+        {/* Design Decisions */}
+        <section
+          className="project-card mb-12 pt-8 border-t border-faded-white space-y-12"
+          style={{ '--card-index': cardIndex++ } as React.CSSProperties}
+        >
+          <h2 className="text-2xl md:text-3xl bit-apple-font text-white mb-6">Design Decisions</h2>
+
+          {/* CD Metaphor */}
+          <div>
+            <h3 className="text-xl md:text-2xl text-white mb-4">The CD metaphor</h3>
+            <div className="space-y-4 text-white-muted leading-relaxed">
+              <p>
+                Dreams needed a container that felt personal and collectible — not like health data. We chose a vinyl record library as the organizing metaphor. Each night of dreams is represented as a CD, and each month&apos;s collection becomes an album.
+              </p>
+              <p>
+                The metaphor does real functional work: ring density encodes dream vividness, color encodes the dominant emotion, and an arc around the center hole indicates a lucid dream. You can read a CD at a glance before tapping into it. This visual system — paired with a warm neutral background, serif italic for emotional content, and monospaced type for metadata — creates an interface that feels intimate rather than clinical.
+              </p>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+              <div className="overflow-hidden">
+                <Image
+                  src="/assets/projects/Reverie/Reverie-Album.png"
+                  alt="March Album view showing dream CDs with varying ring density and color"
+                  width={1000}
+                  height={1000}
+                />
+              </div>
+              <div className="overflow-hidden">
+                <Image
+                  src="/assets/projects/Reverie/Reverie-CDDetail.png"
+                  alt="CD detail view for March 12th showing dream summary, tags, and visual replay"
+                  width={1000}
+                  height={1000}
+                />
+              </div>
+            </div>
+          </div>
+
+          {/* Privacy-First Onboarding */}
+          <div>
+            <h3 className="text-xl md:text-2xl text-white mb-4">Privacy-first onboarding</h3>
+            <div className="space-y-4 text-white-muted leading-relaxed">
+              <p>
+                We&apos;re asking users to wear a recording device on their face while they sleep — the most intimate ask any product has ever made. That meant privacy couldn&apos;t be an afterthought or a settings toggle buried three screens deep.
+              </p>
+              <p>
+                We designed the privacy and consent screen to appear <span className="italic">before</span> mask pairing, not after. Users choose their recording level — full recording, emotions only, or minimal — before giving Reverie anything. The copy leads with what matters most: &quot;Your dreams belong to you. Always.&quot;
+              </p>
+            </div>
+            <div className="overflow-hidden mt-4">
+              <Image
+                src="/assets/projects/Reverie/Reverie-Onboarding.png"
+                alt="Onboarding flow showing the Reverie landing screen with sign-up and privacy-first design decisions"
+                width={2000}
+                height={1000}
+              />
+            </div>
+          </div>
+
+          {/* Patterns, Not Diagnoses */}
+          <div>
+            <h3 className="text-xl md:text-2xl text-white mb-4">Patterns, not diagnoses</h3>
+            <div className="space-y-4 text-white-muted leading-relaxed">
+              <p>
+                Dreams are not a direct window into the psyche. A single night tells you almost nothing. But patterns over 6-8 weeks tell you something real. Resisting the temptation to over-interpret — and designing an app that communicates appropriate humility without feeling cold — was a constant tension.
+              </p>
+              <p>
+                Every insight line is carefully worded to describe a pattern without diagnosing a cause. &quot;Anxiety has surfaced 6 times this month — often near familiar places&quot; describes what the data shows. It doesn&apos;t tell you why. That distinction took longer to get right than almost any other part of the app.
+              </p>
+            </div>
+            <div className="overflow-hidden mt-4">
+              <Image
+                src="/assets/projects/Reverie/Reverie-Analytics.png"
+                alt="Analytics screen showing dream emotion analysis, themes and symbols, and sleep cycle insights"
+                width={1000}
+                height={2000}
+              />
+            </div>
+          </div>
+
+          {/* Three Use Cases */}
+          <div>
+            <h3 className="text-xl md:text-2xl text-white mb-4">Designing for three use cases</h3>
+            <p className="text-white-muted leading-relaxed mb-6">
+              We identified three core motivations for dream exploration and designed distinct flows to serve each one.
+            </p>
+
+            <div className="space-y-8">
+              <div className="border border-faded-white p-6 bg-surface">
+                <div className="flex items-start gap-4">
+                  <div className="flex-shrink-0 w-8 h-8 border border-faded-white flex items-center justify-center">
+                    <span className="text-white geist-mono-font text-sm">1</span>
+                  </div>
+                  <div>
+                    <h4 className="text-lg text-white mb-2">Curiosity — Emily, the undergrad</h4>
+                    <p className="text-white-muted leading-relaxed">
+                      Emily frequently wakes up with the feeling that she had a vivid, important dream, but it slips away within minutes. Reverie&apos;s <span className="text-white">Morning Recap</span> gives her immediate insight into the night before with a Spotify-Wrapped-inspired interface — a quick summary of her dreams, dominant emotions, and key imagery.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="border border-faded-white p-6 bg-surface">
+                <div className="flex items-start gap-4">
+                  <div className="flex-shrink-0 w-8 h-8 border border-faded-white flex items-center justify-center">
+                    <span className="text-white geist-mono-font text-sm">2</span>
+                  </div>
+                  <div>
+                    <h4 className="text-lg text-white mb-2">Creative breakthrough — Ryan, the filmmaker</h4>
+                    <p className="text-white-muted leading-relaxed">
+                      Ryan has been stuck on an opening sequence for his short film for three months. He sets an intention before sleep. In the morning, Reverie surfaces a fragment from his <span className="text-white">Dream Gallery</span> — and he films it the next week. The album view lets him browse months of recorded dreams, each tagged with emotions and visual snapshots.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="border border-faded-white p-6 bg-surface">
+                <div className="flex items-start gap-4">
+                  <div className="flex-shrink-0 w-8 h-8 border border-faded-white flex items-center justify-center">
+                    <span className="text-white geist-mono-font text-sm">3</span>
+                  </div>
+                  <div>
+                    <h4 className="text-lg text-white mb-2">Self-discovery — Priya, the therapy patient</h4>
+                    <p className="text-white-muted leading-relaxed">
+                      Priya has been in therapy for a year, struggling to articulate her relationship with her parents. After six weeks of recordings, Reverie&apos;s <span className="text-white">Analytics</span> view shows that 70% of her high-anxiety dreams cluster on Sunday nights — the night before her weekly call home. Her subconscious already knew.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
+              <div className="overflow-hidden">
+                <Image
+                  src="/assets/projects/Reverie/Reverie-Recap.png"
+                  alt="Morning recap screen — Last night, you had 4 dreams"
+                  width={1000}
+                  height={1000}
+                />
+              </div>
+              <div className="overflow-hidden">
+                <Image
+                  src="/assets/projects/Reverie/Reverie-Gallery.png"
+                  alt="Dream Gallery view showing monthly album covers organized chronologically"
+                  width={1000}
+                  height={1000}
+                />
+              </div>
+            </div>
+          </div>
+
+          {/* Lo-fi to Hi-fi */}
+          <div>
+            <h3 className="text-xl md:text-2xl text-white mb-4">From lo-fi to hi-fi</h3>
+            <p className="text-white-muted leading-relaxed mb-4">
+              Each team member owned a different flow — onboarding, home/recap, album, and analytics — and iterated from rough wireframes to polished screens. The lo-fi phase was where we worked out the CD metaphor, the information hierarchy, and the emotional tone of each interaction.
+            </p>
+            <div className="overflow-hidden">
+              <Image
+                src="/assets/projects/Reverie/Reverie-Lofis.png"
+                alt="Low-fidelity wireframes for onboarding, homepage, recap, and analytics flows"
+                width={2000}
+                height={1000}
+              />
+            </div>
+          </div>
+        </section>
+
+        {/* The VR Experience */}
+        <section
+          className="project-card mb-12 pt-8 border-t border-faded-white"
+          style={{ '--card-index': cardIndex++ } as React.CSSProperties}
+        >
+          <h2 className="text-2xl md:text-3xl bit-apple-font text-white mb-6">The VR Experience</h2>
+          <div className="space-y-4 text-white-muted leading-relaxed">
+            <p>
+              The Reverie Mask is a dual-purpose device. During sleep, its sensors map brain activity to capture dream data. When you wake, it becomes a high-resolution VR headset — letting you step back into a 360° reconstruction of your dreams from the night before.
+            </p>
+          </div>
+          <div className="overflow-hidden mt-4">
+            <Image
+              src="/assets/projects/Reverie/Reverie-VR.png"
+              alt="VR experience mockup showing immersive dream replay through the Reverie mask"
+              width={2000}
+              height={1000}
+            />
+          </div>
+        </section>
+
+        {/* Edge Cases */}
+        <section
+          className="project-card mb-12 pt-8 border-t border-faded-white"
+          style={{ '--card-index': cardIndex++ } as React.CSSProperties}
+        >
+          <h2 className="text-2xl md:text-3xl bit-apple-font text-white mb-6">Edge Cases</h2>
+          <div className="space-y-6">
+            <p className="text-white-muted leading-relaxed">
+              Extra perception comes with responsibility. We identified several scenarios where Reverie could cause real harm — and designed around them.
+            </p>
+
+            <div className="space-y-4">
+              <div className="border border-faded-white p-6 bg-surface">
+                <div className="flex items-start gap-4">
+                  <div className="flex-shrink-0 w-8 h-8 border border-faded-white flex items-center justify-center">
+                    <span className="text-white geist-mono-font text-sm">1</span>
+                  </div>
+                  <div>
+                    <h4 className="text-lg text-white mb-2">Misinterpreted data</h4>
+                    <p className="text-white-muted leading-relaxed">
+                      Dreams are subjective, and users may treat analytics as definitive psychological insights. Reverie presents insights as suggestive patterns — never conclusions — and allows users to edit tags and add their own interpretations.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="border border-faded-white p-6 bg-surface">
+                <div className="flex items-start gap-4">
+                  <div className="flex-shrink-0 w-8 h-8 border border-faded-white flex items-center justify-center">
+                    <span className="text-white geist-mono-font text-sm">2</span>
+                  </div>
+                  <div>
+                    <h4 className="text-lg text-white mb-2">Privacy and exposure</h4>
+                    <p className="text-white-muted leading-relaxed">
+                      A breakup dream surfaced in a monthly pattern while someone&apos;s new partner is holding their phone. Dream data is deeply personal — privacy controls need to be aggressive and visible, not hidden in settings.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="border border-faded-white p-6 bg-surface">
+                <div className="flex items-start gap-4">
+                  <div className="flex-shrink-0 w-8 h-8 border border-faded-white flex items-center justify-center">
+                    <span className="text-white geist-mono-font text-sm">3</span>
+                  </div>
+                  <div>
+                    <h4 className="text-lg text-white mb-2">Trauma resurfacing</h4>
+                    <p className="text-white-muted leading-relaxed">
+                      A recurring nightmare cluster surfaced as an &quot;insight&quot; at exactly the wrong moment, with no support infrastructure around it. Naming these scenarios explicitly is what separates a concept from a product someone would actually trust.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <h3 className="text-xl md:text-2xl text-white mb-4">Future goals</h3>
+              <ul className="arrow-list">
+                <li className="text-white-muted leading-relaxed">Expanded privacy transparency — homepage indicators, clear data storage explanations, greater user control over deletion</li>
+                <li className="text-white-muted leading-relaxed">A journal feature where users can revisit past entries, star meaningful ones, and reflect over time</li>
+                <li className="text-white-muted leading-relaxed">A community space for discussing dreams and sharing insights</li>
+                <li className="text-white-muted leading-relaxed">Dreamlike navigation animations that align with the core concept while making the app rewarding to explore</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        {/* Presentation */}
+        <section
+          className="project-card mb-12 pt-8 border-t border-faded-white"
+          style={{ '--card-index': cardIndex++ } as React.CSSProperties}
+        >
+          <h2 className="text-2xl md:text-3xl bit-apple-font text-white mb-6">Presentation</h2>
+          <p className="text-white-muted leading-relaxed mb-6">
+            Our final slide deck for FigBuild 2026.
+          </p>
+          <div className="overflow-hidden border border-faded-white">
+            <iframe
+              width="100%"
+              height="500"
+              src="https://embed.figma.com/slides/mEsZdJ3wh08gqVhQw4qJYM/Reverie-Slide-Deck?node-id=1-233&embed-host=share"
+              allowFullScreen
+            />
+          </div>
+        </section>
+
+        {/* Reflections */}
+        <section
+          className="project-card mb-8 pt-8 border-t border-faded-white"
+          style={{ '--card-index': cardIndex++ } as React.CSSProperties}
+        >
+          <h2 className="text-2xl md:text-3xl bit-apple-font text-white mb-6">Reflections</h2>
+          <div className="space-y-4">
+            <div className="border border-faded-white p-6 bg-surface">
+              <h3 className="text-lg text-white mb-3">
+                The metaphor shaped the architecture.
+              </h3>
+              <ul className="arrow-list">
+                <li className="text-white-muted leading-relaxed">
+                  Choosing the CD/album metaphor wasn&apos;t decoration — it determined the entire information hierarchy, the visual system, and how users emotionally relate to their own data. The best design metaphors do structural work, not just aesthetic work.
+                </li>
+              </ul>
+            </div>
+
+            <div className="border border-faded-white p-6 bg-surface">
+              <h3 className="text-lg text-white mb-3">
+                Speculative design requires real constraints.
+              </h3>
+              <ul className="arrow-list">
+                <li className="text-white-muted leading-relaxed">
+                  The hardest part wasn&apos;t imagining future sensors. It was designing appropriate humility into every insight line so users don&apos;t over-interpret patterns. The prompt asked for speculation, but the design decisions needed to be grounded.
+                </li>
+              </ul>
+            </div>
+
+            <div className="border border-faded-white p-6 bg-surface">
+              <h3 className="text-lg text-white mb-3">
+                Edge cases clarify the product.
+              </h3>
+              <ul className="arrow-list">
+                <li className="text-white-muted leading-relaxed">
+                  Addressing scenarios like trauma resurfacing and misinterpreted data forced us to define what Reverie is NOT — which made what it IS much sharper. The strongest products are shaped as much by what they refuse to do.
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        {/* Navigation */}
+        <nav
+          className="project-card pt-8 border-t border-faded-white"
+          style={{ '--card-index': cardIndex++ } as React.CSSProperties}
+        >
+          <div className="flex justify-between items-center">
+            <Link href="/" className="sidebar-link">
+              ← Back to projects
+            </Link>
+            <Link href="/projects/familyfridge" className="sidebar-link">
+              FamilyFridge →
+            </Link>
+          </div>
+        </nav>
+      </div>
+    </div>
+  );
+}
