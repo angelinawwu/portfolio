@@ -31,6 +31,52 @@ export default function ReveriePage() {
           cardIndex={cardIndex++}
         />
 
+        {/* The Challenge */}
+        <section
+          className="project-card mb-12 pt-8 border-t border-faded-white"
+          style={{ '--card-index': cardIndex++ } as React.CSSProperties}
+        >
+          <h2 className="text-2xl md:text-3xl bit-apple-font text-white mb-6">The Challenge</h2>
+          <div className="space-y-6">
+            <div className="space-y-4 text-white-muted leading-relaxed">
+              <p>
+                For FigBuild 2026, Figma&apos;s annual design hackathon, our team of four was given a speculative design prompt:
+              </p>
+              <div className="border border-faded-white p-6 bg-surface">
+                <p className="text-white text-lg md:text-xl italic text-center">
+                  &quot;Design a tool that tracks, measures, visualizes or quantifies an aspect of human sensory experience. Within the tool, provide the ability to detect, enhance, or manipulate those same sensory inputs.&quot;
+                </p>
+              </div>
+              <p>
+                The challenge asked us to identify something intangible or previously unmeasurable about human experience and design a speculative tool to track and influence it for wellness or behavioral change.
+              </p>
+            </div>
+
+            <div>
+              <h3 className="text-xl md:text-2xl text-white mb-4">Converging on dreams</h3>
+              <div className="space-y-4 text-white-muted leading-relaxed">
+                <p>
+                  We started by brainstorming independently on FigJam. Each team member explored different directions — dream recordings, emotional analytics, lucid dreaming control, VR replay. When we compared notes, a clear pattern emerged: all four of us had gravitated toward the subconscious.
+                </p>
+                <p>
+                  The insight that drove our concept: existing tools track sleep stages and heart rate, but no one has built infrastructure for what your brain actually does while you&apos;re dreaming. Dreams are the most emotionally honest experience we have — and we have zero tools to capture them.
+                </p>
+              </div>
+              <div className="overflow-hidden mt-4">
+                <Image
+                  src="/assets/projects/Reverie/Reverie-Brainstorming.png"
+                  alt="FigJam brainstorming board with sticky notes from all four team members, organized by themes"
+                  width={2000}
+                  height={1000}
+                />
+              </div>
+              <p className="text-xs geist-mono-font text-white-muted mt-2">
+                Our FigJam brainstorming board — each team member&apos;s independent ideation, then grouped by theme.
+              </p>
+            </div>
+          </div>
+        </section>
+
         {/* The Problem */}
         <section
           className="project-card mb-12 pt-8 border-t border-faded-white"
@@ -68,51 +114,6 @@ export default function ReveriePage() {
           </div>
         </section>
 
-        {/* The Challenge */}
-        <section
-          className="project-card mb-12 pt-8 border-t border-faded-white"
-          style={{ '--card-index': cardIndex++ } as React.CSSProperties}
-        >
-          <h2 className="text-2xl md:text-3xl bit-apple-font text-white mb-6">The Challenge</h2>
-          <div className="space-y-6">
-            <div className="space-y-4 text-white-muted leading-relaxed">
-              <p>
-                For FigBuild 2026, Figma&apos;s annual design hackathon, our team of four was given a speculative design prompt:
-              </p>
-              <div className="border border-faded-white p-6 bg-surface">
-                <p className="text-white text-lg md:text-xl italic text-center">
-                  &quot;Design a tool that tracks, measures, or visualizes an aspect of human sensory experience — and provides the ability to detect, enhance, or manipulate those same sensory inputs.&quot;
-                </p>
-              </div>
-              <p>
-                The challenge asked us to identify something intangible or previously unmeasurable about human experience and design a speculative tool to track and influence it for wellness or behavioral change.
-              </p>
-            </div>
-
-            <div>
-              <h3 className="text-xl md:text-2xl text-white mb-4">Converging on dreams</h3>
-              <div className="space-y-4 text-white-muted leading-relaxed">
-                <p>
-                  We started by brainstorming independently on FigJam. Each team member explored different directions — dream recordings, emotional analytics, lucid dreaming control, VR replay. When we compared notes, a clear pattern emerged: all four of us had gravitated toward the subconscious.
-                </p>
-                <p>
-                  The insight that drove our concept: existing tools track sleep stages and heart rate, but no one has built infrastructure for what your brain actually does while you&apos;re dreaming. Dreams are the most emotionally honest experience we have — and we have zero tools to capture them.
-                </p>
-              </div>
-              <div className="overflow-hidden mt-4">
-                <Image
-                  src="/assets/projects/Reverie/Reverie-Brainstorming.png"
-                  alt="FigJam brainstorming board with sticky notes from all four team members, organized by themes"
-                  width={2000}
-                  height={1000}
-                />
-              </div>
-              <p className="text-xs geist-mono-font text-white-muted mt-2">
-                Our FigJam brainstorming board — each team member&apos;s independent ideation, then grouped by theme.
-              </p>
-            </div>
-          </div>
-        </section>
 
         {/* The Solution */}
         <section

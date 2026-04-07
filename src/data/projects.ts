@@ -46,7 +46,7 @@ export const caseStudies: Project[] = [
     slug: 'goodreads-wrapped',
     title: 'Goodreads Wrapped',
     description: 'A playful reading year summary, delivered to 5000+ users.',
-    videoUrl: '/assets/playground/Goodreads-Video.mov',
+    thumbnail: '/assets/projects/Goodreads-Cover.png',
     context: 'Next.js + Web Scraping',
     type: 'case-study',
     projectType: 'PERSONAL PROJECT',
@@ -75,16 +75,6 @@ export const caseStudies: Project[] = [
     tags: ['UX Research', 'User Testing', 'Design System'],
     type: 'case-study'
   },
-  // {
-  //   slug: 'bookish',
-  //   title: 'Bookish',
-  //   description: 'Redesigning the reading experience with accessibility and sustainability in mind.',
-  //   thumbnail: '/assets/projects/Bookish-Cover.webp',
-  //   timeline: 'MAR-MAY 2024',
-  //   projectType: 'PERSONAL PROJECT',
-  //   tags: ['Mobile Design', 'UX Research', 'Figma'],
-  //   type: 'case-study'
-  // }
 ];
 
 export const playgroundProjects: Project[] = [
