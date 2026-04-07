@@ -26,7 +26,7 @@ export default function ReveriePage() {
             role: "Product Designer",
             timeline: ["March 2026", "(1 week)"],
             team: ["Ellie Huang", "Emily Shen", "Nancy Rios"],
-            tools: "Figma"
+            tools: "Figma, Midjourney, Cursor, Nano Banana"
           }}
           cardIndex={cardIndex++}
         />
@@ -44,12 +44,9 @@ export default function ReveriePage() {
               </p>
               <div className="border border-faded-white p-6 bg-surface">
                 <p className="text-white text-lg md:text-xl italic text-center">
-                  &quot;Design a tool that tracks, measures, visualizes or quantifies an aspect of human sensory experience. Within the tool, provide the ability to detect, enhance, or manipulate those same sensory inputs.&quot;
+                  &quot;Identify something intangible, invisible, or previously unmeasurable about the human sensory experience and design a speculative tool to track and influence it.&quot;
                 </p>
               </div>
-              <p>
-                The challenge asked us to identify something intangible or previously unmeasurable about human experience and design a speculative tool to track and influence it for wellness or behavioral change.
-              </p>
             </div>
 
             <div>
@@ -85,31 +82,31 @@ export default function ReveriePage() {
           <h2 className="text-2xl md:text-3xl bit-apple-font text-white mb-6">The Problem</h2>
           <div className="space-y-6">
             <div className="space-y-4 text-white-muted leading-relaxed">
+              <h3 className="text-xl md:text-2xl text-white mb-4">Every night, your brain tells you a story. You almost never remember it.</h3>
               <p>
-                We spend roughly a third of our lives asleep. During REM sleep, the brain enters its most unfiltered state — processing emotional memory, forging creative connections, and rehearsing responses to threats. The periodic table, the double helix, the opening of Frankenstein — all originated in dreams.
+                We spend roughly a third of our lives asleep. During REM sleep, the brain enters its most unfiltered state — processing emotional memory, forging creative connections, and rehearsing responses to threats.
               </p>
               <p>
-                Yet we&apos;ve built an entire industry around optimizing sleep — tracking heart rate, breathing, and sleep stages — while completely ignoring what actually happens inside it. We&apos;ve optimized the container and ignored the contents.
+                However, research shows that only about 5-10% of dreams are actually remembered. Think about it: We have apps that track everything about sleep—the quantity of sleep, your resting heartbeat, the different stages of sleep—everything except what happens during sleep itself. We&apos;ve optimized the container and ignored its contents entirely.
               </p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div className="border border-faded-white p-6 bg-surface">
+                <p className="text-white-muted leading-relaxed mb-2">You forget</p>
                 <p className="text-3xl text-white mb-2 geist-mono-font">90%</p>
                 <p className="text-white-muted leading-relaxed">
-                  of dreams are forgotten within 10 minutes of waking up (Mark Solms)
+                of your dreams in the first 10 minutes of waking up
                 </p>
+                <p className="text-white-muted leading-relaxed">(Mark Solms, 2000).</p>
               </div>
               <div className="border border-faded-white p-6 bg-surface">
+                <p className="text-white-muted leading-relaxed mb-2">Only</p>
                 <p className="text-3xl text-white mb-2 geist-mono-font">1 in 10</p>
                 <p className="text-white-muted leading-relaxed">
-                  people say they always remember their dreams (CBS News / SSRS, 2021)
+                people say they always remember their dreams
                 </p>
+                <p className="text-white-muted leading-relaxed">(CBS News / SSRS, 2021).</p>
               </div>
-            </div>
-            <div className="border border-faded-white p-6 bg-surface">
-              <p className="text-white text-lg md:text-xl italic text-center">
-                &quot;Individuals lack the tools to access and understand their own dreams, leaving the most honest source of self-knowledge completely unexplored each night.&quot;
-              </p>
             </div>
           </div>
         </section>
@@ -120,25 +117,15 @@ export default function ReveriePage() {
           className="project-card mb-12 pt-8 border-t border-faded-white"
           style={{ '--card-index': cardIndex++ } as React.CSSProperties}
         >
-          <h2 className="text-2xl md:text-3xl bit-apple-font text-white mb-6">The Solution</h2>
-          <div className="space-y-6">
-            <p className="text-white-muted leading-relaxed">
-              Reverie is a dream recording and self-discovery platform consisting of two parts: a smart sleep mask and a companion mobile app.
+          <h2 className="text-2xl md:text-3xl bit-apple-font text-white mb-6">Reverie is a two-part product.</h2>
+          <div className="space-y-4 text-white-muted leading-relaxed">
+            <h3 className="text-xl md:text-2xl text-white mb-4">The Reverie Eyemask</h3>
+            <p>
+              The Reverie Eyemask is a dual-purpose sleep wearable that records and replays your subconscious.
+              </p>
+            <p>
+              During the night, its sensors map your brain activity to capture the visuals and sounds of your dreams. When you wake, the mask becomes a high-resolution VR headset. Use the companion app to step back into a 360° reconstruction of your favorite dreams.
             </p>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div className="border border-faded-white p-6 bg-surface">
-                <h3 className="text-lg text-white mb-3">The Reverie Mask</h3>
-                <p className="text-white-muted leading-relaxed">
-                  A sleep wearable that captures physiological proxies for REM sleep — infrared eye tracking, EEG dry electrodes, HRV, and skin conductance — and uses Targeted Memory Reactivation to influence dream content. When you wake, it becomes a VR headset for immersive dream replay.
-                </p>
-              </div>
-              <div className="border border-faded-white p-6 bg-surface">
-                <h3 className="text-lg text-white mb-3">The Reverie App</h3>
-                <p className="text-white-muted leading-relaxed">
-                  A personal dream archive organized like a record collection. Each night becomes a CD. Each month becomes an album. Over time, patterns emerge — emotional themes, recurring imagery, the things your waking mind has been quietly avoiding.
-                </p>
-              </div>
-            </div>
             <div className="overflow-hidden">
               <Image
                 src="/assets/projects/Reverie/Reverie-Home.png"
