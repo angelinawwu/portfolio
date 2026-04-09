@@ -112,44 +112,107 @@ export default function ReveriePage() {
         </section>
 
 
-        {/* The Solution */}
+        {/* Reverie is a two-part product */}
         <section
           className="project-card mb-12 pt-8 border-t border-faded-white"
           style={{ '--card-index': cardIndex++ } as React.CSSProperties}
         >
           <h2 className="text-2xl md:text-3xl bit-apple-font text-white mb-6">Reverie is a two-part product.</h2>
-          <div className="space-y-4 text-white-muted leading-relaxed">
-            <h3 className="text-xl md:text-2xl text-white mb-4">The Reverie Eyemask</h3>
-            <p>
-              The Reverie Eyemask is a dual-purpose sleep wearable that records and replays your subconscious.
-              </p>
-            <p>
-              During the night, its sensors map your brain activity to capture the visuals and sounds of your dreams. When you wake, the mask becomes a high-resolution VR headset. Use the companion app to step back into a 360° reconstruction of your favorite dreams.
-            </p>
-            <div className="overflow-hidden">
-              <Image
-                src="/assets/projects/Reverie/Reverie-Home.png"
-                alt="Reverie app home screen showing morning recap, monthly insight, and recent dream CDs"
-                width={1000}
-                height={1000}
-              />
+          <div className="grid grid-cols-2 gap-6 mb-8">
+            <div>
+              <div className="overflow-hidden mb-3">
+                <Image
+                  src="/assets/projects/Reverie/Reverie-Graphic-1Mask.png"
+                  alt="The Reverie Eyemask — a sleep wearable that doubles as a VR headset"
+                  width={800}
+                  height={800}
+                />
+              </div>
+              <p className="text-sm geist-mono-font text-white-muted">The Reverie Eyemask</p>
             </div>
+            <div>
+              <div className="overflow-hidden mb-3">
+                <Image
+                  src="/assets/projects/Reverie/Reverie-Graphic-2App.png"
+                  alt="The Reverie App — a personal dream archive organized like a record collection"
+                  width={800}
+                  height={800}
+                />
+              </div>
+              <p className="text-sm geist-mono-font text-white-muted">The Reverie App</p>
+            </div>
+          </div>
+          <div className="space-y-4 text-white-muted leading-relaxed">
+            <p>
+              The mask captures dream data through physiological sensors while you sleep. The app organizes that data into a personal archive, surfaces patterns, and lets you revisit your dreams over time. The physical component builds trust — you own the device, your data stays on it. The digital component builds understanding — turning raw signal into something you can explore and learn from.
+            </p>
           </div>
         </section>
 
-        {/* Design Decisions */}
+        {/* The Reverie Eyemask */}
         <section
           className="project-card mb-12 pt-8 border-t border-faded-white space-y-12"
           style={{ '--card-index': cardIndex++ } as React.CSSProperties}
         >
-          <h2 className="text-2xl md:text-3xl bit-apple-font text-white mb-6">Design Decisions</h2>
+          <div>
+            <h2 className="text-2xl md:text-3xl bit-apple-font text-white mb-6">The Reverie Eyemask</h2>
+            <div className="space-y-4 text-white-muted leading-relaxed">
+              <p>
+                The Reverie Eyemask is a dual-purpose sleep wearable that records and replays your subconscious. During the night, its sensors — infrared eye tracking, EEG dry electrodes, heart rate variability, and skin conductance — map brain activity to capture the visuals and emotional tone of your dreams. It also uses Targeted Memory Reactivation: subtle audio cues played during REM sleep that can steer dream content toward themes you set the night before.
+              </p>
+            </div>
+          </div>
 
-          {/* CD Metaphor */}
+          <div>
+            <h3 className="text-xl md:text-2xl text-white mb-4">Dream replay in VR</h3>
+            <div className="space-y-4 text-white-muted leading-relaxed">
+              <p>
+                When you wake, the mask transforms. Flip it into display mode and it becomes a high-resolution VR headset. Using the companion app, you can step back into a 360° reconstruction of your dreams from the night before — scrubbing through scenes, pausing on moments, searching across nights.
+              </p>
+              <p>
+                The VR experience is designed around the way dreams actually feel: non-linear, emotionally vivid, and spatially surreal. Rather than playing back a flat video, Reverie reconstructs a navigable environment from the sensor data, letting you move through your dream the way you moved through it while asleep.
+              </p>
+            </div>
+            <div className="overflow-hidden mt-4">
+              <Image
+                src="/assets/projects/Reverie/Reverie-VR.png"
+                alt="VR experience mockup showing immersive dream replay through the Reverie mask"
+                width={2000}
+                height={1000}
+              />
+            </div>
+            <div className="overflow-hidden border border-faded-white mt-6">
+              <iframe
+                width="100%"
+                height="500"
+                src="https://embed.figma.com/make/Z8Ei0RD9TGPumqRUEIyoE9/Rotate-Snapshots-Layout?embed-host=share"
+                allowFullScreen
+              />
+            </div>
+            <p className="text-xs geist-mono-font text-white-muted mt-2">
+              Interactive prototype of the VR dream replay interface, built in Figma Make.
+            </p>
+          </div>
+        </section>
+
+        {/* The Reverie App */}
+        <section
+          className="project-card mb-12 pt-8 border-t border-faded-white space-y-12"
+          style={{ '--card-index': cardIndex++ } as React.CSSProperties}
+        >
+          <div>
+            <h2 className="text-2xl md:text-3xl bit-apple-font text-white mb-6">The Reverie App</h2>
+            <p className="text-white-muted leading-relaxed">
+              The app is a personal dream archive — organized like a record collection, designed to surface patterns without over-interpreting them. Each feature was shaped by a specific user need we identified during research.
+            </p>
+          </div>
+
+          {/* The CD Metaphor */}
           <div>
             <h3 className="text-xl md:text-2xl text-white mb-4">The CD metaphor</h3>
             <div className="space-y-4 text-white-muted leading-relaxed">
               <p>
-                Dreams needed a container that felt personal and collectible — not like health data. We chose a vinyl record library as the organizing metaphor. Each night of dreams is represented as a CD, and each month&apos;s collection becomes an album.
+                Dreams needed a container that felt personal and collectible — not like health data. We chose a record library as the organizing metaphor. Each night of dreams is represented as a CD, and each month&apos;s collection becomes an album.
               </p>
               <p>
                 The metaphor does real functional work: ring density encodes dream vividness, color encodes the dominant emotion, and an arc around the center hole indicates a lucid dream. You can read a CD at a glance before tapping into it. This visual system — paired with a warm neutral background, serif italic for emotional content, and monospaced type for metadata — creates an interface that feels intimate rather than clinical.
@@ -196,15 +259,67 @@ export default function ReveriePage() {
             </div>
           </div>
 
+          {/* Morning Recap */}
+          <div>
+            <h3 className="text-xl md:text-2xl text-white mb-4">Morning Recap</h3>
+            <div className="space-y-4 text-white-muted leading-relaxed">
+              <p>
+                Emily is an undergrad who frequently wakes up with the feeling that she had a vivid, important dream — but it slips away within minutes. She wanted a way to hold onto that feeling and actually understand what her brain was doing all night.
+              </p>
+              <p>
+                Reverie&apos;s Morning Recap is designed for her. Every morning, the app surfaces a Spotify-Wrapped-style summary of the night before — how many dreams you had, their dominant emotions, and which ones Reverie thinks would interest you most based on your set intentions. It&apos;s the first thing you see when you open the app, and it&apos;s designed to feel like a gift, not a data dump.
+              </p>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+              <div className="overflow-hidden">
+                <Image
+                  src="/assets/projects/Reverie/Reverie-Home.png"
+                  alt="Home screen showing last night's recap card, monthly insight, and recent dream CDs"
+                  width={1000}
+                  height={1000}
+                />
+              </div>
+              <div className="overflow-hidden">
+                <Image
+                  src="/assets/projects/Reverie/Reverie-Recap.png"
+                  alt="Morning recap screen — Last night, you had 4 dreams"
+                  width={1000}
+                  height={1000}
+                />
+              </div>
+            </div>
+          </div>
+
+          {/* Dream Gallery & Albums */}
+          <div>
+            <h3 className="text-xl md:text-2xl text-white mb-4">Dream Gallery and Albums</h3>
+            <div className="space-y-4 text-white-muted leading-relaxed">
+              <p>
+                Ryan is a filmmaker who&apos;s been stuck on the opening sequence for his short film for three months. He reads that many well-known supernatural works — Frankenstein, Twilight — were inspired by dreams. He sets an intention before sleep. In the morning, Reverie surfaces a fragment he didn&apos;t even know he had. He films it the next week.
+              </p>
+              <p>
+                The Dream Gallery is Ryan&apos;s view into Reverie. It organizes months of recorded dreams chronologically — each month an album cover, each night a searchable, filterable entry. Snapshots represent quick visual insights, while full recordings appear as continuous circles for deeper exploration. Instead of a blank page, Ryan now has a personal archive of vivid material from his unconscious.
+              </p>
+            </div>
+            <div className="overflow-hidden mt-4">
+              <Image
+                src="/assets/projects/Reverie/Reverie-Gallery.png"
+                alt="Dream Gallery view showing monthly album covers organized chronologically"
+                width={1000}
+                height={1000}
+              />
+            </div>
+          </div>
+
           {/* Patterns, Not Diagnoses */}
           <div>
             <h3 className="text-xl md:text-2xl text-white mb-4">Patterns, not diagnoses</h3>
             <div className="space-y-4 text-white-muted leading-relaxed">
               <p>
-                Dreams are not a direct window into the psyche. A single night tells you almost nothing. But patterns over 6-8 weeks tell you something real. Resisting the temptation to over-interpret — and designing an app that communicates appropriate humility without feeling cold — was a constant tension.
+                Priya has been in therapy for a year, struggling to articulate her relationship with her parents. After six weeks of wearing the mask, Reverie&apos;s Analytics view shows her something she couldn&apos;t see on her own: 70% of her high-anxiety dreams cluster on Sunday nights — the night before her weekly call home. Her subconscious already knew.
               </p>
               <p>
-                Every insight line is carefully worded to describe a pattern without diagnosing a cause. &quot;Anxiety has surfaced 6 times this month — often near familiar places&quot; describes what the data shows. It doesn&apos;t tell you why. That distinction took longer to get right than almost any other part of the app.
+                But dreams are not a direct window into the psyche. A single night tells you almost nothing. Patterns over 6-8 weeks tell you something real. Every insight line in Reverie is carefully worded to describe a pattern without diagnosing a cause. &quot;Anxiety has surfaced 6 times this month — often near familiar places&quot; describes what the data shows. It doesn&apos;t tell you why. That distinction took longer to get right than almost any other part of the app.
               </p>
             </div>
             <div className="overflow-hidden mt-4">
@@ -214,77 +329,6 @@ export default function ReveriePage() {
                 width={1000}
                 height={2000}
               />
-            </div>
-          </div>
-
-          {/* Three Use Cases */}
-          <div>
-            <h3 className="text-xl md:text-2xl text-white mb-4">Designing for three use cases</h3>
-            <p className="text-white-muted leading-relaxed mb-6">
-              We identified three core motivations for dream exploration and designed distinct flows to serve each one.
-            </p>
-
-            <div className="space-y-8">
-              <div className="border border-faded-white p-6 bg-surface">
-                <div className="flex items-start gap-4">
-                  <div className="flex-shrink-0 w-8 h-8 border border-faded-white flex items-center justify-center">
-                    <span className="text-white geist-mono-font text-sm">1</span>
-                  </div>
-                  <div>
-                    <h4 className="text-lg text-white mb-2">Curiosity — Emily, the undergrad</h4>
-                    <p className="text-white-muted leading-relaxed">
-                      Emily frequently wakes up with the feeling that she had a vivid, important dream, but it slips away within minutes. Reverie&apos;s <span className="text-white">Morning Recap</span> gives her immediate insight into the night before with a Spotify-Wrapped-inspired interface — a quick summary of her dreams, dominant emotions, and key imagery.
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="border border-faded-white p-6 bg-surface">
-                <div className="flex items-start gap-4">
-                  <div className="flex-shrink-0 w-8 h-8 border border-faded-white flex items-center justify-center">
-                    <span className="text-white geist-mono-font text-sm">2</span>
-                  </div>
-                  <div>
-                    <h4 className="text-lg text-white mb-2">Creative breakthrough — Ryan, the filmmaker</h4>
-                    <p className="text-white-muted leading-relaxed">
-                      Ryan has been stuck on an opening sequence for his short film for three months. He sets an intention before sleep. In the morning, Reverie surfaces a fragment from his <span className="text-white">Dream Gallery</span> — and he films it the next week. The album view lets him browse months of recorded dreams, each tagged with emotions and visual snapshots.
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="border border-faded-white p-6 bg-surface">
-                <div className="flex items-start gap-4">
-                  <div className="flex-shrink-0 w-8 h-8 border border-faded-white flex items-center justify-center">
-                    <span className="text-white geist-mono-font text-sm">3</span>
-                  </div>
-                  <div>
-                    <h4 className="text-lg text-white mb-2">Self-discovery — Priya, the therapy patient</h4>
-                    <p className="text-white-muted leading-relaxed">
-                      Priya has been in therapy for a year, struggling to articulate her relationship with her parents. After six weeks of recordings, Reverie&apos;s <span className="text-white">Analytics</span> view shows that 70% of her high-anxiety dreams cluster on Sunday nights — the night before her weekly call home. Her subconscious already knew.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
-              <div className="overflow-hidden">
-                <Image
-                  src="/assets/projects/Reverie/Reverie-Recap.png"
-                  alt="Morning recap screen — Last night, you had 4 dreams"
-                  width={1000}
-                  height={1000}
-                />
-              </div>
-              <div className="overflow-hidden">
-                <Image
-                  src="/assets/projects/Reverie/Reverie-Gallery.png"
-                  alt="Dream Gallery view showing monthly album covers organized chronologically"
-                  width={1000}
-                  height={1000}
-                />
-              </div>
             </div>
           </div>
 
@@ -302,27 +346,6 @@ export default function ReveriePage() {
                 height={1000}
               />
             </div>
-          </div>
-        </section>
-
-        {/* The VR Experience */}
-        <section
-          className="project-card mb-12 pt-8 border-t border-faded-white"
-          style={{ '--card-index': cardIndex++ } as React.CSSProperties}
-        >
-          <h2 className="text-2xl md:text-3xl bit-apple-font text-white mb-6">The VR Experience</h2>
-          <div className="space-y-4 text-white-muted leading-relaxed">
-            <p>
-              The Reverie Mask is a dual-purpose device. During sleep, its sensors map brain activity to capture dream data. When you wake, it becomes a high-resolution VR headset — letting you step back into a 360° reconstruction of your dreams from the night before.
-            </p>
-          </div>
-          <div className="overflow-hidden mt-4">
-            <Image
-              src="/assets/projects/Reverie/Reverie-VR.png"
-              alt="VR experience mockup showing immersive dream replay through the Reverie mask"
-              width={2000}
-              height={1000}
-            />
           </div>
         </section>
 
