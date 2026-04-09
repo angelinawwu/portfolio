@@ -24,7 +24,7 @@ export default function ReveriePage() {
           slug="reverie"
           details={{
             role: "Product Designer",
-            timeline: ["March 2026", "(1 week)"],
+            timeline: ["March 2026", "(3 days)"],
             team: ["Ellie Huang", "Emily Shen", "Nancy Rios"],
             tools: "Figma, Midjourney, Cursor, Nano Banana"
           }}
