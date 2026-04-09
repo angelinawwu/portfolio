@@ -67,7 +67,7 @@ export default function ReveriePage() {
                   height={1000}
                 />
               </div>
-              <p className="text-xs geist-mono-font text-white-muted mt-2">
+              <p className="text-xs text-white-muted mt-2">
                 Our FigJam brainstorming board.
               </p>
             </div>
@@ -119,26 +119,28 @@ export default function ReveriePage() {
           <h2 className="text-2xl md:text-3xl bit-apple-font text-white mb-6">Reverie is a two-part product.</h2>
           <div className="grid grid-cols-2 gap-6 mb-8">
             <div>
-              <div className="overflow-hidden mb-3">
+              <div className="relative mb-3 aspect-square w-full overflow-hidden">
                 <Image
                   src="/assets/projects/Reverie/Reverie-Graphic-1Mask.png"
                   alt="The Reverie Eyemask — a sleep wearable that doubles as a VR headset"
-                  width={800}
-                  height={800}
+                  fill
+                  sizes="(max-width: 768px) 45vw, min(400px, 42vw)"
+                  className="object-contain px-2 md:px-4"
                 />
               </div>
-              <p className="text-sm geist-mono-font text-white-muted">The Reverie Eyemask</p>
+              <p className="text-sm text-white-muted">The Reverie Eyemask</p>
             </div>
             <div>
-              <div className="overflow-hidden mb-3">
+              <div className="relative mb-3 aspect-square w-full overflow-hidden">
                 <Image
                   src="/assets/projects/Reverie/Reverie-Graphic-2App.png"
                   alt="The Reverie App — a personal dream archive organized like a record collection"
-                  width={800}
-                  height={800}
+                  fill
+                  sizes="(max-width: 768px) 45vw, min(400px, 42vw)"
+                  className="object-contain"
                 />
               </div>
-              <p className="text-sm geist-mono-font text-white-muted">The Reverie App</p>
+              <p className="text-sm text-white-muted">The Reverie App</p>
             </div>
           </div>
           <div className="space-y-4 text-white-muted leading-relaxed">
