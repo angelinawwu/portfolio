@@ -68,7 +68,7 @@ export default function ReveriePage() {
                 />
               </div>
               <p className="text-xs geist-mono-font text-white-muted mt-2">
-                Our FigJam brainstorming board — each team member&apos;s independent ideation, then grouped by theme.
+                Our FigJam brainstorming board.
               </p>
             </div>
           </div>
@@ -111,7 +111,6 @@ export default function ReveriePage() {
           </div>
         </section>
 
-
         {/* Reverie is a two-part product */}
         <section
           className="project-card mb-12 pt-8 border-t border-faded-white"
@@ -149,6 +148,25 @@ export default function ReveriePage() {
           </div>
         </section>
 
+        {/* From lo-fi to hi-fi */}
+        <section
+          className="project-card mb-12 pt-8 border-t border-faded-white"
+          style={{ '--card-index': cardIndex++ } as React.CSSProperties}
+        >
+          <h2 className="text-2xl md:text-3xl bit-apple-font text-white mb-6">From lo-fi to hi-fi</h2>
+          <p className="text-white-muted leading-relaxed mb-4">
+            Each team member owned a different flow — onboarding, home/recap, album, and analytics — and iterated from rough wireframes to polished screens. The lo-fi phase was where we worked out the CD metaphor, the information hierarchy, and the emotional tone of each interaction.
+          </p>
+          <div className="overflow-hidden">
+            <Image
+              src="/assets/projects/Reverie/Reverie-Lofis.png"
+              alt="Low-fidelity wireframes for onboarding, homepage, recap, and analytics flows"
+              width={2000}
+              height={1000}
+            />
+          </div>
+        </section>
+
         {/* The Reverie Eyemask */}
         <section
           className="project-card mb-12 pt-8 border-t border-faded-white space-y-12"
@@ -174,24 +192,15 @@ export default function ReveriePage() {
               </p>
             </div>
             <div className="overflow-hidden mt-4">
-              <Image
-                src="/assets/projects/Reverie/Reverie-VR.png"
-                alt="VR experience mockup showing immersive dream replay through the Reverie mask"
-                width={2000}
-                height={1000}
-              />
+              <video
+                  src="/assets/projects/Reverie/Reverie-VR.mp4"
+                  className="w-full h-auto"
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                />
             </div>
-            <div className="overflow-hidden border border-faded-white mt-6">
-              <iframe
-                width="100%"
-                height="500"
-                src="https://embed.figma.com/make/Z8Ei0RD9TGPumqRUEIyoE9/Rotate-Snapshots-Layout?embed-host=share"
-                allowFullScreen
-              />
-            </div>
-            <p className="text-xs geist-mono-font text-white-muted mt-2">
-              Interactive prototype of the VR dream replay interface, built in Figma Make.
-            </p>
           </div>
         </section>
 
@@ -205,37 +214,6 @@ export default function ReveriePage() {
             <p className="text-white-muted leading-relaxed">
               The app is a personal dream archive — organized like a record collection, designed to surface patterns without over-interpreting them. Each feature was shaped by a specific user need we identified during research.
             </p>
-          </div>
-
-          {/* The CD Metaphor */}
-          <div>
-            <h3 className="text-xl md:text-2xl text-white mb-4">The CD metaphor</h3>
-            <div className="space-y-4 text-white-muted leading-relaxed">
-              <p>
-                Dreams needed a container that felt personal and collectible — not like health data. We chose a record library as the organizing metaphor. Each night of dreams is represented as a CD, and each month&apos;s collection becomes an album.
-              </p>
-              <p>
-                The metaphor does real functional work: ring density encodes dream vividness, color encodes the dominant emotion, and an arc around the center hole indicates a lucid dream. You can read a CD at a glance before tapping into it. This visual system — paired with a warm neutral background, serif italic for emotional content, and monospaced type for metadata — creates an interface that feels intimate rather than clinical.
-              </p>
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
-              <div className="overflow-hidden">
-                <Image
-                  src="/assets/projects/Reverie/Reverie-Album.png"
-                  alt="March Album view showing dream CDs with varying ring density and color"
-                  width={1000}
-                  height={1000}
-                />
-              </div>
-              <div className="overflow-hidden">
-                <Image
-                  src="/assets/projects/Reverie/Reverie-CDDetail.png"
-                  alt="CD detail view for March 12th showing dream summary, tags, and visual replay"
-                  width={1000}
-                  height={1000}
-                />
-              </div>
-            </div>
           </div>
 
           {/* Privacy-First Onboarding */}
@@ -269,16 +247,6 @@ export default function ReveriePage() {
               <p>
                 Reverie&apos;s Morning Recap is designed for her. Every morning, the app surfaces a Spotify-Wrapped-style summary of the night before — how many dreams you had, their dominant emotions, and which ones Reverie thinks would interest you most based on your set intentions. It&apos;s the first thing you see when you open the app, and it&apos;s designed to feel like a gift, not a data dump.
               </p>
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
-              <div className="overflow-hidden">
-                <Image
-                  src="/assets/projects/Reverie/Reverie-Home.png"
-                  alt="Home screen showing last night's recap card, monthly insight, and recent dream CDs"
-                  width={1000}
-                  height={1000}
-                />
-              </div>
               <div className="overflow-hidden">
                 <Image
                   src="/assets/projects/Reverie/Reverie-Recap.png"
@@ -295,15 +263,15 @@ export default function ReveriePage() {
             <h3 className="text-xl md:text-2xl text-white mb-4">Dream Gallery and Albums</h3>
             <div className="space-y-4 text-white-muted leading-relaxed">
               <p>
-                Ryan is a filmmaker who&apos;s been stuck on the opening sequence for his short film for three months. He reads that many well-known supernatural works — Frankenstein, Twilight — were inspired by dreams. He sets an intention before sleep. In the morning, Reverie surfaces a fragment he didn&apos;t even know he had. He films it the next week.
+                Dreams needed a container that felt personal and collectible. We chose a record library as the organizing metaphor. Each night of dreams is represented as a CD, and each month's collection becomes an album.
               </p>
               <p>
-                The Dream Gallery is Ryan&apos;s view into Reverie. It organizes months of recorded dreams chronologically — each month an album cover, each night a searchable, filterable entry. Snapshots represent quick visual insights, while full recordings appear as continuous circles for deeper exploration. Instead of a blank page, Ryan now has a personal archive of vivid material from his unconscious.
+                The Dream Gallery is the user&apos;s view into Reverie. It organizes months of recorded dreams chronologically — each month an album cover, each night a searchable, filterable entry. Snapshots represent quick visual insights, while full recordings appear as continuous circles for deeper exploration. Instead of a blank page, the user now has a personal archive of vivid material from their unconscious.
               </p>
             </div>
             <div className="overflow-hidden mt-4">
               <Image
-                src="/assets/projects/Reverie/Reverie-Gallery.png"
+                src="/assets/projects/Reverie/Reverie-DreamGallery.png"
                 alt="Dream Gallery view showing monthly album covers organized chronologically"
                 width={1000}
                 height={1000}
@@ -328,22 +296,6 @@ export default function ReveriePage() {
                 alt="Analytics screen showing dream emotion analysis, themes and symbols, and sleep cycle insights"
                 width={1000}
                 height={2000}
-              />
-            </div>
-          </div>
-
-          {/* Lo-fi to Hi-fi */}
-          <div>
-            <h3 className="text-xl md:text-2xl text-white mb-4">From lo-fi to hi-fi</h3>
-            <p className="text-white-muted leading-relaxed mb-4">
-              Each team member owned a different flow — onboarding, home/recap, album, and analytics — and iterated from rough wireframes to polished screens. The lo-fi phase was where we worked out the CD metaphor, the information hierarchy, and the emotional tone of each interaction.
-            </p>
-            <div className="overflow-hidden">
-              <Image
-                src="/assets/projects/Reverie/Reverie-Lofis.png"
-                alt="Low-fidelity wireframes for onboarding, homepage, recap, and analytics flows"
-                width={2000}
-                height={1000}
               />
             </div>
           </div>
@@ -402,16 +354,6 @@ export default function ReveriePage() {
                   </div>
                 </div>
               </div>
-            </div>
-
-            <div>
-              <h3 className="text-xl md:text-2xl text-white mb-4">Future goals</h3>
-              <ul className="arrow-list">
-                <li className="text-white-muted leading-relaxed">Expanded privacy transparency — homepage indicators, clear data storage explanations, greater user control over deletion</li>
-                <li className="text-white-muted leading-relaxed">A journal feature where users can revisit past entries, star meaningful ones, and reflect over time</li>
-                <li className="text-white-muted leading-relaxed">A community space for discussing dreams and sharing insights</li>
-                <li className="text-white-muted leading-relaxed">Dreamlike navigation animations that align with the core concept while making the app rewarding to explore</li>
-              </ul>
             </div>
           </div>
         </section>
