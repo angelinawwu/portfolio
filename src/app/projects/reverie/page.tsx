@@ -145,27 +145,52 @@ export default function ReveriePage() {
           </div>
           <div className="space-y-4 text-white-muted leading-relaxed">
             <p>
-              The mask captures dream data through physiological sensors while you sleep. The app organizes that data into a personal archive, surfaces patterns, and lets you revisit your dreams over time. The physical component builds trust — you own the device, your data stays on it. The digital component builds understanding — turning raw signal into something you can explore and learn from.
+              The prompt was open-ended by design — "design a tool for human flourishing." We took that openness seriously. Dreams are one of the last truly private spaces left, and we wanted to build something that could actually live there. A purely digital product felt thin; a purely physical one, incomplete. Two components let us match the texture of the problem: something you wear, and something you return to.
             </p>
           </div>
         </section>
 
         {/* From lo-fi to hi-fi */}
         <section
-          className="project-card mb-12 pt-8 border-t border-faded-white"
+          className="project-card mb-12 pt-8 border-t border-faded-white space-y-12"
           style={{ '--card-index': cardIndex++ } as React.CSSProperties}
         >
-          <h2 className="text-2xl md:text-3xl bit-apple-font text-white mb-6">From lo-fi to hi-fi</h2>
-          <p className="text-white-muted leading-relaxed mb-4">
-            Each team member owned a different flow — onboarding, home/recap, album, and analytics — and iterated from rough wireframes to polished screens. The lo-fi phase was where we worked out the CD metaphor, the information hierarchy, and the emotional tone of each interaction.
-          </p>
-          <div className="overflow-hidden">
-            <Image
-              src="/assets/projects/Reverie/Reverie-Lofis.png"
-              alt="Low-fidelity wireframes for onboarding, homepage, recap, and analytics flows"
-              width={2000}
-              height={1000}
-            />
+          <h2 className="text-2xl md:text-3xl bit-apple-font text-white !mb-6">3 days of Iteration</h2>
+          <div className="space-y-4">
+            <h3 className="text-xl md:text-2xl text-white mb-4">Converging on dreams</h3>
+            <div className="space-y-4 text-white-muted leading-relaxed">
+              <p>
+                We started by brainstorming independently on FigJam. Each team member explored different directions — dream recordings, emotional analytics, lucid dreaming control, VR replay. When we compared notes, a clear pattern emerged: all four of us had gravitated toward the subconscious.
+              </p>
+              <p>
+                The insight that drove our concept: existing tools track sleep stages and heart rate, but no one has built infrastructure for what your brain actually does while you&apos;re dreaming. Dreams are the most emotionally honest experience we have — and we have zero tools to capture them.                </p>
+              </div>
+             <div className="overflow-hidden mt-4">
+              <Image
+                src="/assets/projects/Reverie/Reverie-Brainstorming.png"
+                alt="FigJam brainstorming board with sticky notes from all four team members, organized by themes"
+                width={2000}
+                height={1000}
+              />
+            </div>
+            <p className="text-xs text-white-muted mt-2">
+              Our FigJam brainstorming board.
+            </p>
+          </div>
+          
+          <div>
+            <h3 className="text-xl md:text-2xl text-white mb-4">From lo-fi to hi-fi</h3>
+            <p className="text-white-muted leading-relaxed mb-4">
+              Each team member owned a different flow — onboarding, home/recap, album, and analytics — and iterated from rough wireframes to polished screens. The lo-fi phase was where we worked out the CD metaphor, the information hierarchy, and the emotional tone of each interaction.
+            </p>
+            <div className="overflow-hidden">
+              <Image
+                src="/assets/projects/Reverie/Reverie-Lofis.png"
+                alt="Low-fidelity wireframes for onboarding, homepage, recap, and analytics flows"
+                width={2000}
+                height={1000}
+              />
+            </div>
           </div>
         </section>
 
