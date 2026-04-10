@@ -47,30 +47,11 @@ export default function ReveriePage() {
                   &quot;Identify something intangible, invisible, or previously unmeasurable about the human sensory experience and design a speculative tool to track and influence it.&quot;
                 </p>
               </div>
-            </div>
-
-            <div>
-              <h3 className="text-xl md:text-2xl text-white mb-4">Converging on dreams</h3>
-              <div className="space-y-4 text-white-muted leading-relaxed">
-                <p>
-                  We started by brainstorming independently on FigJam. Each team member explored different directions — dream recordings, emotional analytics, lucid dreaming control, VR replay. When we compared notes, a clear pattern emerged: all four of us had gravitated toward the subconscious.
-                </p>
-                <p>
-                  The insight that drove our concept: existing tools track sleep stages and heart rate, but no one has built infrastructure for what your brain actually does while you&apos;re dreaming. Dreams are the most emotionally honest experience we have — and we have zero tools to capture them.
-                </p>
-              </div>
-              <div className="overflow-hidden mt-4">
-                <Image
-                  src="/assets/projects/Reverie/Reverie-Brainstorming.png"
-                  alt="FigJam brainstorming board with sticky notes from all four team members, organized by themes"
-                  width={2000}
-                  height={1000}
-                />
-              </div>
-              <p className="text-xs text-white-muted mt-2">
-                Our FigJam brainstorming board.
+              <p>
+                With my team, Ellie Huang, Emily Shen, and Nancy Rios, we spent 3 days brainstorming, iterating, and prototyping on our solution.
               </p>
             </div>
+
           </div>
         </section>
 
@@ -79,7 +60,7 @@ export default function ReveriePage() {
           className="project-card mb-12 pt-8 border-t border-faded-white"
           style={{ '--card-index': cardIndex++ } as React.CSSProperties}
         >
-          <h2 className="text-2xl md:text-3xl bit-apple-font text-white mb-6">The Problem</h2>
+          <h2 className="text-2xl md:text-3xl bit-apple-font text-white mb-6">Understanding the Problem</h2>
           <div className="space-y-6">
             <div className="space-y-4 text-white-muted leading-relaxed">
               <h3 className="text-xl md:text-2xl text-white mb-4">Every night, your brain tells you a story. You almost never remember it.</h3>
@@ -145,7 +126,7 @@ export default function ReveriePage() {
           </div>
           <div className="space-y-4 text-white-muted leading-relaxed">
             <p>
-              The prompt was open-ended by design — "design a tool for human flourishing." We took that openness seriously. Dreams are one of the last truly private spaces left, and we wanted to build something that could actually live there. A purely digital product felt thin; a purely physical one, incomplete. Two components let us match the texture of the problem: something you wear, and something you return to.
+              The prompt was open-ended by design, and actively encouraged fantastical, future-forward solutions. Dreams are one of the last truly private spaces left, and we wanted to build something that could actually live there. A purely digital product felt thin; a purely physical one, incomplete. Two components let us match the texture of the problem: something you wear, and something you return to.
             </p>
           </div>
         </section>
@@ -155,9 +136,8 @@ export default function ReveriePage() {
           className="project-card mb-12 pt-8 border-t border-faded-white space-y-12"
           style={{ '--card-index': cardIndex++ } as React.CSSProperties}
         >
-          <h2 className="text-2xl md:text-3xl bit-apple-font text-white !mb-6">3 days of Iteration</h2>
+          <h2 className="text-2xl md:text-3xl bit-apple-font text-white !mb-6">3 Days of Iteration</h2>
           <div className="space-y-4">
-            <h3 className="text-xl md:text-2xl text-white mb-4">Converging on dreams</h3>
             <div className="space-y-4 text-white-muted leading-relaxed">
               <p>
                 We started by brainstorming independently on FigJam. Each team member explored different directions — dream recordings, emotional analytics, lucid dreaming control, VR replay. When we compared notes, a clear pattern emerged: all four of us had gravitated toward the subconscious.
@@ -165,23 +145,53 @@ export default function ReveriePage() {
               <p>
                 The insight that drove our concept: existing tools track sleep stages and heart rate, but no one has built infrastructure for what your brain actually does while you&apos;re dreaming. Dreams are the most emotionally honest experience we have — and we have zero tools to capture them.                </p>
               </div>
-             <div className="overflow-hidden mt-4">
-              <Image
-                src="/assets/projects/Reverie/Reverie-Brainstorming.png"
-                alt="FigJam brainstorming board with sticky notes from all four team members, organized by themes"
-                width={2000}
-                height={1000}
-              />
+             <div className="grid grid-cols-2 gap-4 mt-4">
+              <div className="relative aspect-video w-full overflow-hidden">
+                <Image
+                  src="/assets/projects/Reverie/Reverie-Process-1.png"
+                  alt="FigJam brainstorming board with sticky notes from all four team members, organized by themes"
+                  fill
+                  sizes="(max-width: 768px) 50vw, 42vw"
+                  className="object-cover"
+                />
+              </div>
+              <div className="relative aspect-video w-full overflow-hidden">
+                <Image
+                  src="/assets/projects/Reverie/Reverie-Process-2.png"
+                  alt="FigJam brainstorming board with sticky notes from all four team members, organized by themes"
+                  fill
+                  sizes="(max-width: 768px) 50vw, 42vw"
+                  className="object-cover"
+                />
+              </div>
+              <div className="relative aspect-video w-full overflow-hidden">
+                <Image
+                  src="/assets/projects/Reverie/Reverie-Process-3.png"
+                  alt="FigJam brainstorming board with sticky notes from all four team members, organized by themes"
+                  fill
+                  sizes="(max-width: 768px) 50vw, 42vw"
+                  className="object-cover"
+                />
+              </div>
+              <div className="relative aspect-video w-full overflow-hidden">
+                <Image
+                  src="/assets/projects/Reverie/Reverie-Process-4.png"
+                  alt="FigJam brainstorming board with sticky notes from all four team members, organized by themes"
+                  fill
+                  sizes="(max-width: 768px) 50vw, 42vw"
+                  className="object-cover"
+                />
+              </div>
             </div>
             <p className="text-xs text-white-muted mt-2">
-              Our FigJam brainstorming board.
+              Left to right, top to bottom: our initial Figjam brainstorm, our moodboards, low-fidelity wireframes, and prototyping.
             </p>
           </div>
           
           <div>
             <h3 className="text-xl md:text-2xl text-white mb-4">From lo-fi to hi-fi</h3>
             <p className="text-white-muted leading-relaxed mb-4">
-              Each team member owned a different flow — onboarding, home/recap, album, and analytics — and iterated from rough wireframes to polished screens. The lo-fi phase was where we worked out the CD metaphor, the information hierarchy, and the emotional tone of each interaction.
+              Each team member owned a different flow — onboarding, home/recap, album, and analytics — and iterated from rough wireframes to polished screens. In this process, we found that our individual, unique design sensibilities approached each problem differently. When we came back together, we were able to combine our strengths and create a cohesive product that addressed the problem holistically.
             </p>
             <div className="overflow-hidden">
               <Image
