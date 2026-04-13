@@ -23,7 +23,7 @@ export const caseStudies: Project[] = [
   {
     slug: 'reverie',
     title: 'Reverie',
-    description: 'Honorable Mention @ FigBuild 2026 | Every dream, a revelation.',
+    description: 'Honorable Mention @ FigBuild 2026. Every dream, a revelation.',
     thumbnail: '/assets/projects/Reverie-Cover.png',
     timeline: 'MAR 2026',
     projectType: 'HACKATHON',
@@ -34,7 +34,7 @@ export const caseStudies: Project[] = [
   {
     slug: 'familyfridge',
     title: 'FamilyFridge',
-    description: '2nd Place @ Rice Designathon 2026 | Where everyday moments bring us together.',
+    description: '2nd Place @ Rice Designathon 2026. Where everyday moments bring us together.',
     thumbnail: '/assets/projects/FamilyFridge-Cover.png',
     timeline: 'JAN 2026',
     projectType: 'HACKATHON',
