@@ -125,13 +125,6 @@ export const playgroundProjects: Project[] = [
     type: 'playground',
   },
   {
-    title: 'Hero (Treehacks 2026)',
-    context: 'React Native',
-    thumbnail: '/assets/playground/Hero-Cover.webp',
-    type: 'playground',
-    devpostUrl: 'https://devpost.com/software/organmatch',
-  },
-  {
     title: 'VEST glass experiment',
     context: 'Figma',
     thumbnail: '/assets/playground/VESTGlass-Cover.webp',
@@ -145,14 +138,28 @@ export const playgroundProjects: Project[] = [
     type: 'playground',
   },
   {
+    title: 'VEST t-shirts',
+    context: 'Adobe Illustrator',
+    thumbnail: '/assets/playground/VESTShirt-Cover.jpeg',
+    type: 'playground',
+  },
+  {
+    title: 'Hero (Treehacks 2026)',
+    context: 'React Native',
+    thumbnail: '/assets/playground/Hero-Cover.webp',
+    type: 'playground',
+    devpostUrl: 'https://devpost.com/software/organmatch',
+  },
+  
+  {
     title: 'VEST recruitment graphic',
-    context: 'Figma, Photoshop',
+    context: 'Figma, Adobe Photoshop',
     thumbnail: '/assets/playground/VESTKeyboard-Cover.webp',
     type: 'playground',
   },
   {
     title: 'Team t-shirt design',
-    context: 'Figma, Photoshop',
+    context: 'Figma, Adobe Photoshop',
     thumbnail: '/assets/playground/TeddiesTee-Cover.jpg',
     type: 'playground',
   },
