@@ -285,11 +285,13 @@ export default function ReveriePage() {
                 Reverie&apos;s Morning Recap is designed for her. Every morning, the app surfaces a Spotify-Wrapped-style summary of the night before — how many dreams you had, their dominant emotions, and which ones Reverie thinks would interest you most based on your set intentions. It&apos;s the first thing you see when you open the app, and it&apos;s designed to feel like a gift, not a data dump.
               </p>
               <div className="overflow-hidden">
-                <Image
-                  src="/assets/projects/Reverie/Reverie-Recap.png"
-                  alt="Morning recap screen — Last night, you had 4 dreams"
-                  width={1000}
-                  height={1000}
+                <video
+                  src="/assets/projects/Reverie/Reverie-Final-2.mp4"
+                  className="w-full h-auto"
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
                 />
               </div>
             </div>
