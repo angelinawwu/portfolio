@@ -140,10 +140,8 @@ export default function ReveriePage() {
           <div className="space-y-4">
             <div className="space-y-4 text-white-muted leading-relaxed">
               <p>
-                We started by brainstorming independently on FigJam. Each team member explored different directions — dream recordings, emotional analytics, lucid dreaming control, VR replay. When we compared notes, a clear pattern emerged: all four of us had gravitated toward the subconscious.
+                We spent 3 days brainstorming, iterating, and prototyping on our solution.
               </p>
-              <p>
-                The insight that drove our concept: existing tools track sleep stages and heart rate, but no one has built infrastructure for what your brain actually does while you&apos;re dreaming. Dreams are the most emotionally honest experience we have — and we have zero tools to capture them.                </p>
               </div>
              <div className="grid grid-cols-2 gap-4 mt-4">
               <div className="relative aspect-video w-full overflow-hidden">
@@ -191,7 +189,7 @@ export default function ReveriePage() {
           <div>
             <h3 className="text-xl md:text-2xl text-white mb-4">From lo-fi to hi-fi</h3>
             <p className="text-white-muted leading-relaxed mb-4">
-              Each team member owned a different flow — onboarding, home/recap, album, and analytics — and iterated from rough wireframes to polished screens. In this process, we found that our individual, unique design sensibilities approached each problem differently. When we came back together, we were able to combine our strengths and create a cohesive product that addressed the problem holistically.
+              Each team member owned a different flow and iterated from rough wireframes to mid-fidelity prototypes. In this process, we discovered the difference between our unique approaches to design. When we came back together, we were able to combine our strengths and create a final cohesive product that addressed the problem from all angles.
             </p>
             <div className="overflow-hidden">
               <Image
@@ -200,6 +198,40 @@ export default function ReveriePage() {
                 width={2000}
                 height={1000}
               />
+            </div>
+          </div>
+        </section>
+
+        {/* AI Tools */}
+        <section
+          className="project-card mb-12 pt-8 border-t border-faded-white"
+          style={{ '--card-index': cardIndex++ } as React.CSSProperties}
+        >
+          <h2 className="text-2xl md:text-3xl bit-apple-font text-white mb-6">AI-Accelerated Prototyping</h2>
+          <p className="text-white-muted leading-relaxed mb-6">
+            A 3-day timeline required aggressive use of AI tools to prototype at production quality.
+          </p>
+          
+          <div className="space-y-4">
+            <div className="border border-faded-white p-6 bg-surface">
+              <h3 className="text-lg text-white mb-3">Midjourney for dream imagery</h3>
+              <p className="text-white-muted leading-relaxed">
+                Midjourney images from <a href="https://x.com/ciguleva" target="_blank" rel="noopener noreferrer" className="sidebar-link">Tatiana Tsiguleva</a> represented dream states throughout the app. Her surreal, ethereal aesthetic matched the tone we needed. We confirmed permission before using her work.
+              </p>
+            </div>
+
+            <div className="border border-faded-white p-6 bg-surface">
+              <h3 className="text-lg text-white mb-3">Figma Make + Cursor for VR prototype</h3>
+              <p className="text-white-muted leading-relaxed">
+                Figma Make handled layout and mockups, while Cursor generated React and Three.js logic for the navigable 360° VR environment.
+              </p>
+            </div>
+
+            <div className="border border-faded-white p-6 bg-surface">
+              <h3 className="text-lg text-white mb-3">Google AI Studio: Nano Banana and Veo</h3>
+              <p className="text-white-muted leading-relaxed">
+                Nano Banana generated custom imagery for onboarding and empty states. Veo created video assets for dream-like transitions and ambient elements.
+              </p>
             </div>
           </div>
         </section>
@@ -249,22 +281,17 @@ export default function ReveriePage() {
           <div>
             <h2 className="text-2xl md:text-3xl bit-apple-font text-white mb-6">The Reverie App</h2>
             <p className="text-white-muted leading-relaxed">
-              The app is a personal dream archive — organized like a record collection, designed to surface patterns without over-interpreting them. Each feature was shaped by a specific user need we identified during research.
+              A personal dream archive organized like a record collection, designed to surface patterns without over-interpreting them.
             </p>
           </div>
 
           {/* Privacy-First Onboarding */}
           <div>
             <h3 className="text-xl md:text-2xl text-white mb-4">Privacy-first onboarding</h3>
-            <div className="space-y-4 text-white-muted leading-relaxed">
-              <p>
-                We&apos;re asking users to wear a recording device on their face while they sleep — the most intimate ask any product has ever made. That meant privacy couldn&apos;t be an afterthought or a settings toggle buried three screens deep.
-              </p>
-              <p>
-                We designed the privacy and consent screen to appear <span className="italic">before</span> mask pairing, not after. Users choose their recording level — full recording, emotions only, or minimal — before giving Reverie anything. The copy leads with what matters most: &quot;Your dreams belong to you. Always.&quot;
-              </p>
-            </div>
-            <div className="overflow-hidden mt-4">
+            <p className="text-white-muted leading-relaxed mb-4">
+              Privacy controls appear before mask pairing, not after. Users choose their recording level — full recording, emotions only, or minimal — before giving Reverie any access.
+            </p>
+            <div className="overflow-hidden">
               <Image
                 src="/assets/projects/Reverie/Reverie-Onboarding.png"
                 alt="Onboarding flow showing the Reverie landing screen with sign-up and privacy-first design decisions"
@@ -277,23 +304,18 @@ export default function ReveriePage() {
           {/* Morning Recap */}
           <div>
             <h3 className="text-xl md:text-2xl text-white mb-4">Morning Recap</h3>
-            <div className="space-y-4 text-white-muted leading-relaxed">
-              <p>
-                Emily is an undergrad who frequently wakes up with the feeling that she had a vivid, important dream — but it slips away within minutes. She wanted a way to hold onto that feeling and actually understand what her brain was doing all night.
-              </p>
-              <p>
-                Reverie&apos;s Morning Recap is designed for her. Every morning, the app surfaces a Spotify-Wrapped-style summary of the night before — how many dreams you had, their dominant emotions, and which ones Reverie thinks would interest you most based on your set intentions. It&apos;s the first thing you see when you open the app, and it&apos;s designed to feel like a gift, not a data dump.
-              </p>
-              <div className="overflow-hidden">
-                <video
-                  src="/assets/projects/Reverie/Reverie-Final-2.mp4"
-                  className="w-full h-auto"
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
-                />
-              </div>
+            <p className="text-white-muted leading-relaxed mb-4">
+              Every morning, the app surfaces a Spotify-Wrapped-style summary of the night before based on what Reverie thinks would interest you most based on your set intentions. It&apos;s the first thing you see when you open the app, and it&apos;s designed to feel approachable and relevant.
+            </p>
+            <div className="overflow-hidden">
+              <video
+                src="/assets/projects/Reverie/Reverie-Final-2.mp4"
+                className="w-full h-auto"
+                autoPlay
+                loop
+                muted
+                playsInline
+              />
             </div>
           </div>
 
@@ -303,9 +325,6 @@ export default function ReveriePage() {
             <div className="space-y-4 text-white-muted leading-relaxed">
               <p>
                 Dreams needed a container that felt personal and collectible. We chose a record library as the organizing metaphor. Each night of dreams is represented as a CD, and each month's collection becomes an album.
-              </p>
-              <p>
-                The Dream Gallery is the user&apos;s view into Reverie. It organizes months of recorded dreams chronologically — each month an album cover, each night a searchable, filterable entry. Snapshots represent quick visual insights, while full recordings appear as continuous circles for deeper exploration. Instead of a blank page, the user now has a personal archive of vivid material from their unconscious.
               </p>
             </div>
             <div className="overflow-hidden mt-4">
@@ -321,15 +340,10 @@ export default function ReveriePage() {
           {/* Patterns, Not Diagnoses */}
           <div>
             <h3 className="text-xl md:text-2xl text-white mb-4">Patterns, not diagnoses</h3>
-            <div className="space-y-4 text-white-muted leading-relaxed">
-              <p>
-                Priya has been in therapy for a year, struggling to articulate her relationship with her parents. After six weeks of wearing the mask, Reverie&apos;s Analytics view shows her something she couldn&apos;t see on her own: 70% of her high-anxiety dreams cluster on Sunday nights — the night before her weekly call home. Her subconscious already knew.
-              </p>
-              <p>
-                But dreams are not a direct window into the psyche. A single night tells you almost nothing. Patterns over 6-8 weeks tell you something real. Every insight line in Reverie is carefully worded to describe a pattern without diagnosing a cause. &quot;Anxiety has surfaced 6 times this month — often near familiar places&quot; describes what the data shows. It doesn&apos;t tell you why. That distinction took longer to get right than almost any other part of the app.
-              </p>
-            </div>
-            <div className="overflow-hidden mt-4">
+            <p className="text-white-muted leading-relaxed mb-4">
+              The Analytics feature of the app highlights patterns across dreams, helping users uncover emotional trends and recurring symbols without over-interpreting them as diagnoses.
+            </p>
+            <div className="overflow-hidden">
               <Image
                 src="/assets/projects/Reverie/Reverie-Analytics.png"
                 alt="Analytics screen showing dream emotion analysis, themes and symbols, and sleep cycle insights"
@@ -348,7 +362,7 @@ export default function ReveriePage() {
           <h2 className="text-2xl md:text-3xl bit-apple-font text-white mb-6">Edge Cases</h2>
           <div className="space-y-6">
             <p className="text-white-muted leading-relaxed">
-              Extra perception comes with responsibility. We identified several scenarios where Reverie could cause real harm — and designed around them.
+              Extra perception comes with responsibility. We identified several scenarios where Reverie could cause real harm, and designed around them.
             </p>
 
             <div className="space-y-4">
@@ -366,34 +380,34 @@ export default function ReveriePage() {
                 </div>
               </div>
 
-              <div className="border border-faded-white p-6 bg-surface">
-                <div className="flex items-start gap-4">
-                  <div className="flex-shrink-0 w-8 h-8 border border-faded-white flex items-center justify-center">
-                    <span className="text-white geist-mono-font text-sm">2</span>
-                  </div>
-                  <div>
-                    <h4 className="text-lg text-white mb-2">Privacy and exposure</h4>
-                    <p className="text-white-muted leading-relaxed">
-                      A breakup dream surfaced in a monthly pattern while someone&apos;s new partner is holding their phone. Dream data is deeply personal — privacy controls need to be aggressive and visible, not hidden in settings.
-                    </p>
-                  </div>
+            <div className="border border-faded-white p-6 bg-surface">
+              <div className="flex items-start gap-4">
+                <div className="flex-shrink-0 w-8 h-8 border border-faded-white flex items-center justify-center">
+                  <span className="text-white geist-mono-font text-sm">2</span>
                 </div>
-              </div>
-
-              <div className="border border-faded-white p-6 bg-surface">
-                <div className="flex items-start gap-4">
-                  <div className="flex-shrink-0 w-8 h-8 border border-faded-white flex items-center justify-center">
-                    <span className="text-white geist-mono-font text-sm">3</span>
-                  </div>
-                  <div>
-                    <h4 className="text-lg text-white mb-2">Trauma resurfacing</h4>
-                    <p className="text-white-muted leading-relaxed">
-                      A recurring nightmare cluster surfaced as an &quot;insight&quot; at exactly the wrong moment, with no support infrastructure around it. Naming these scenarios explicitly is what separates a concept from a product someone would actually trust.
-                    </p>
-                  </div>
+                <div>
+                  <h4 className="text-lg text-white mb-2">Privacy and exposure</h4>
+                  <p className="text-white-muted leading-relaxed">
+                    Dream data is deeply personal. Privacy controls are aggressive and visible, not hidden in settings.
+                  </p>
                 </div>
               </div>
             </div>
+
+            <div className="border border-faded-white p-6 bg-surface">
+              <div className="flex items-start gap-4">
+                <div className="flex-shrink-0 w-8 h-8 border border-faded-white flex items-center justify-center">
+                  <span className="text-white geist-mono-font text-sm">3</span>
+                </div>
+                <div>
+                  <h4 className="text-lg text-white mb-2">Trauma resurfacing</h4>
+                  <p className="text-white-muted leading-relaxed">
+                    Nightmare clusters require support infrastructure. Naming these scenarios explicitly separates concept from trustworthy product.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
           </div>
         </section>
 
