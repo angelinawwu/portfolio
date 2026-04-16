@@ -69,7 +69,7 @@ export default function ReveriePage() {
                 We spend roughly a third of our lives asleep. During REM sleep, the brain enters its most unfiltered state — processing emotional memory, forging creative connections, and rehearsing responses to threats.
               </p>
               <p>
-                However, research shows that only about 5-10% of dreams are actually remembered. Think about it: We have apps that track everything about sleep—the quantity of sleep, your resting heartbeat, the different stages of sleep—everything except what happens during sleep itself. We&apos;ve optimized the container and ignored its contents entirely.
+                However, research shows that only about 5-10% of dreams are actually remembered. Think about it: We have apps that track everything about sleep — the quantity of sleep, your resting heartbeat, its different stages — everything <span className="italic">except</span> what actually happens during sleep itself. We&apos;ve optimized the container and ignored its contents entirely.
               </p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -99,9 +99,9 @@ export default function ReveriePage() {
           style={{ '--card-index': cardIndex++ } as React.CSSProperties}
         >
           <h2 className="text-2xl md:text-3xl bit-apple-font text-white mb-6">Reverie is a two-part product.</h2>
-          <div className="space-y-4 text-white-muted leading-relaxed">
+          <div className="space-y-4 text-white-muted leading-relaxed mb-6">
             <p>
-              The prompt was open-ended by design, and actively encouraged fantastical, future-forward solutions. Dreams are one of the last truly private spaces left, and we wanted to build something that could actually live there. A purely digital product felt thin; a purely physical one, incomplete. Two components let us match the texture of the problem: something you wear, and something you return to.
+              The prompt was open-ended by design, and actively encouraged fantastical, future-forward solutions. Dreams are one of the last truly private spaces left, and we wanted to build something that could actually live there. Having a purely digital product felt incomplete. Two components let us match the texture of the problem: something you wear, and something you return to.
             </p>
           </div>
           <div className="grid grid-cols-2 gap-6 mb-8">
@@ -184,7 +184,7 @@ export default function ReveriePage() {
               </div>
             </div>
             <p className="text-xs text-white-muted mt-2">
-              Left to right, top to bottom: our initial Figjam brainstorm, our moodboards, low-fidelity wireframes, and prototyping.
+              Left to right, top to bottom: our initial Figjam brainstorm, moodboards, low-fidelity wireframes, and prototyping.
             </p>
           </div>
           
@@ -206,46 +206,45 @@ export default function ReveriePage() {
 
         {/* AI Tools */}
         <section
-          className="project-card mb-12 pt-8 border-t border-faded-white"
+          className="project-card mb-12 pt-8 border-t border-faded-white space-y-12"
           style={{ '--card-index': cardIndex++ } as React.CSSProperties}
         >
-          <h2 className="text-2xl md:text-3xl bit-apple-font text-white mb-6">AI-Accelerated Prototyping</h2>
-          <p className="text-white-muted leading-relaxed mb-6">
-            With only 3 days to design an entire product, we needed to move fast. Our team used a combination of AI tools to prototype quickly and creatively.
-          </p>
-          
-          <div className="space-y-8">
-            <div>
-              <h3 className="text-xl md:text-2xl text-white mb-4">Midjourney for dream imagery</h3>
-              <p className="text-white-muted leading-relaxed mb-4">
-                Midjourney images from <a href="https://x.com/ciguleva" target="_blank" rel="noopener noreferrer" className="sidebar-link accent-text">Tatiana Tsiguleva <ArrowUpRight size={16} className="inline" /></a> represented dream states throughout the app. Her surreal, ethereal aesthetic matched the tone we needed. We confirmed permission before using her work.
-              </p>
-              <div>
-                <div className="overflow-hidden">
-                  <Image
-                    src="/assets/projects/Reverie/Reverie-Midjourney.png"
-                    alt="Midjourney image of a dream state"
-                    width={2000}
-                    height={1000}
-                    className="w-full h-auto"
-                  />
-                </div>
-                <p className="text-xs text-white-muted mt-2">Images created by Tatiana Tsiguleva using Midjourney</p>
-              </div>
-            </div>
+          <div>
+            <h2 className="text-2xl md:text-3xl bit-apple-font text-white mb-6">AI-Accelerated Prototyping</h2>
+            <p className="text-white-muted leading-relaxed">
+              With only 3 days to design an entire product, we needed to move fast. Our team used a combination of AI tools to both speed up and enhance our process. These tools helped us design solutions that we wouldn't have been able to accomplish on our own.
+            </p>
+          </div>
 
-            <div>
-              <h3 className="text-xl md:text-2xl text-white mb-4">Prototyping in code with Figma Make + Cursor</h3>
-              <p className="text-white-muted leading-relaxed mb-4">
-                Figma Make handled layout and mockups, while Cursor generated React and Three.js logic for the navigable 360° VR environment.
-              </p>
+          <div>
+            <h3 className="text-xl md:text-2xl text-white mb-4">Midjourney for dream imagery</h3>
+            <p className="text-white-muted leading-relaxed mb-4">
+              The dream-like imagery in the app came to life through the work of <a href="https://x.com/ciguleva" target="_blank" rel="noopener noreferrer" className="sidebar-link accent-text">Tatiana Tsiguleva <ArrowUpRight size={16} className="inline" /></a>. We felt that the surreal aesthetic of her Midjourney-generated images was the perfect match for Reverie's creative direction, so we reached out for permission to feature her images in our designs.
+            </p>
+            <div className="overflow-hidden">
+              <Image
+                src="/assets/projects/Reverie/Reverie-Midjourney.png"
+                alt="Midjourney image of a dream state"
+                width={2000}
+                height={1000}
+                className="w-full h-auto"
+              />
             </div>
+            <p className="text-xs text-white-muted mt-2">Images created by Tatiana Tsiguleva using Midjourney</p>
+          </div>
 
-            <div>
-              <h3 className="text-xl md:text-2xl text-white mb-4">Google AI Studio: Nano Banana and Veo</h3>
-              <p className="text-white-muted leading-relaxed mb-4">
-                Nano Banana generated custom imagery for onboarding and empty states. Veo created video assets for dream-like transitions and ambient elements.
-              </p>
+          <div>
+            <h3 className="text-xl md:text-2xl text-white mb-4">Prototyping in code with Figma Make and Cursor</h3>
+            <p className="text-white-muted leading-relaxed mb-4">
+              To create the prototype for Reverie's VR features, we used Figma Make. This allowed us to quickly create an interactive mockup of the AR interface that was consistent with the rest of the app's design. For more the complex interactions, we brought the repository into Cursor.
+            </p>
+            <div className="overflow-hidden">
+              <Image
+                src="/assets/projects/Reverie/Reverie-AI-VR.png"
+                alt="Figma Make screenshot of the Reverie VR prototype"
+                width={2000}
+                height={1000}
+              />
             </div>
           </div>
         </section>
@@ -296,8 +295,8 @@ export default function ReveriePage() {
           className="project-card mb-12 pt-8 border-t border-faded-white space-y-12"
           style={{ '--card-index': cardIndex++ } as React.CSSProperties}
         >
-          <div>
-            <h2 className="text-2xl md:text-3xl bit-apple-font text-white mb-6">The Reverie App</h2>
+          <div className="mb-6">
+            <h2 className="text-2xl md:text-3xl bit-apple-font text-white">The Reverie App</h2>
           </div>
 
           {/* Privacy-First Onboarding */}
@@ -320,7 +319,7 @@ export default function ReveriePage() {
           <div>
             <h3 className="text-xl md:text-2xl text-white mb-4">Morning Recap</h3>
             <p className="text-white-muted leading-relaxed mb-4">
-              Every morning, the app surfaces a Spotify-Wrapped-style summary of the night before based on what Reverie thinks would interest you most based on your set intentions. It&apos;s the first thing you see when you open the app, and it&apos;s designed to feel approachable and relevant.
+              Every morning, the app surfaces a Spotify-Wrapped-style summary of the night before, based on what Reverie thinks would interest you most. It&apos;s the first thing you see when you open the app, and is designed to feel approachable and relevant.
             </p>
             <div className="overflow-hidden">
               <video
