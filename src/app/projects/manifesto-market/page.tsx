@@ -3,11 +3,6 @@ import Image from 'next/image';
 import { LanguageChart, DeviceChart, ReservationFunnelChart } from '@/components/ManifestoCharts';
 import CaseStudyHero from '@/components/CaseStudyHero';
 
-export const metadata = {
-  title: 'Manifesto Market ＊ Angelina Wu',
-  description: 'A mobile-first redesign to streamline booking and drive reservations by 121%',
-};
-
 export default function ManifestoMarketPage() {
   let cardIndex = 0;
   

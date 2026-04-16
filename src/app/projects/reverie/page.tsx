@@ -481,7 +481,7 @@ export default function ReveriePage() {
               className="w-full aspect-3/2 object-cover"
             />
             <p className="text-sm text-white-muted mt-2">
-              Thank you to my amazing team for such a great Figbuild experience!! :)
+              Thank you to my amazing team for such a memorable Figbuild experience (Ellie not pictured, but in spirit)! :)
             </p>
           </div>
         </section>

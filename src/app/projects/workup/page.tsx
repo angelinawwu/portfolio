@@ -2,11 +2,6 @@ import Link from 'next/link';
 import Image from 'next/image';
 import CaseStudyHero from '@/components/CaseStudyHero';
 
-export const metadata = {
-  title: 'Workup ＊ Angelina Wu',
-  description: 'Restructuring an AI-powered interview tool to empower students to prepare with confidence',
-};
-
 export default function WorkupPage() {
   let cardIndex = 0;
   
