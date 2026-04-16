@@ -209,27 +209,39 @@ export default function ReveriePage() {
         >
           <h2 className="text-2xl md:text-3xl bit-apple-font text-white mb-6">AI-Accelerated Prototyping</h2>
           <p className="text-white-muted leading-relaxed mb-6">
-            A 3-day timeline required aggressive use of AI tools to prototype at production quality.
+            With only 3 days to design an entire product, we needed to move fast. Our team used a combination of AI tools to prototype quickly and creatively.
           </p>
           
-          <div className="space-y-4">
-            <div className="border border-faded-white p-6 bg-surface">
-              <h3 className="text-lg text-white mb-3">Midjourney for dream imagery</h3>
-              <p className="text-white-muted leading-relaxed">
+          <div className="space-y-8">
+            <div>
+              <h3 className="text-xl md:text-2xl text-white mb-4">Midjourney for dream imagery</h3>
+              <p className="text-white-muted leading-relaxed mb-4">
                 Midjourney images from <a href="https://x.com/ciguleva" target="_blank" rel="noopener noreferrer" className="sidebar-link">Tatiana Tsiguleva</a> represented dream states throughout the app. Her surreal, ethereal aesthetic matched the tone we needed. We confirmed permission before using her work.
               </p>
+              <div>
+                <div className="overflow-hidden">
+                  <Image
+                    src="/assets/projects/Reverie/Reverie-Midjourney.png"
+                    alt="Midjourney image of a dream state"
+                    width={2000}
+                    height={1000}
+                    className="w-full h-auto"
+                  />
+                </div>
+                <p className="text-xs text-white-muted mt-2">Images created by Tatiana Tsiguleva using Midjourney</p>
+              </div>
             </div>
 
-            <div className="border border-faded-white p-6 bg-surface">
-              <h3 className="text-lg text-white mb-3">Figma Make + Cursor for VR prototype</h3>
-              <p className="text-white-muted leading-relaxed">
+            <div>
+              <h3 className="text-xl md:text-2xl text-white mb-4">Figma Make + Cursor for VR prototype</h3>
+              <p className="text-white-muted leading-relaxed mb-4">
                 Figma Make handled layout and mockups, while Cursor generated React and Three.js logic for the navigable 360° VR environment.
               </p>
             </div>
 
-            <div className="border border-faded-white p-6 bg-surface">
-              <h3 className="text-lg text-white mb-3">Google AI Studio: Nano Banana and Veo</h3>
-              <p className="text-white-muted leading-relaxed">
+            <div>
+              <h3 className="text-xl md:text-2xl text-white mb-4">Google AI Studio: Nano Banana and Veo</h3>
+              <p className="text-white-muted leading-relaxed mb-4">
                 Nano Banana generated custom imagery for onboarding and empty states. Veo created video assets for dream-like transitions and ambient elements.
               </p>
             </div>
