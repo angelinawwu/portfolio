@@ -189,7 +189,7 @@ export default function ReveriePage() {
           <div>
             <h3 className="text-xl md:text-2xl text-white mb-4">From lo-fi to hi-fi</h3>
             <p className="text-white-muted leading-relaxed mb-4">
-              Each team member owned a different flow and iterated from rough wireframes to mid-fidelity prototypes. In this process, we discovered the difference between our unique approaches to design. When we came back together, we were able to combine our strengths and create a final cohesive product that addressed the problem from all angles.
+              Each team member owned a different flow. In this process, we discovered the difference between our unique approaches to design. When we came back together, we were able to combine our strengths and create a final cohesive product that addressed the problem from all angles.
             </p>
             <div className="overflow-hidden">
               <Image
@@ -245,7 +245,7 @@ export default function ReveriePage() {
             <h2 className="text-2xl md:text-3xl bit-apple-font text-white mb-6">The Reverie Eyemask</h2>
             <div className="space-y-4 text-white-muted leading-relaxed">
               <p>
-                The Reverie Eyemask is a dual-purpose sleep wearable that records and replays your subconscious. During the night, its sensors — infrared eye tracking, EEG dry electrodes, heart rate variability, and skin conductance — map brain activity to capture the visuals and emotional tone of your dreams. It also uses Targeted Memory Reactivation: subtle audio cues played during REM sleep that can steer dream content toward themes you set the night before.
+                The Reverie Eyemask is a dual-purpose sleep wearable that records and replays your subconscious. During the night, its sensors map brain activity to capture your dreams. By day, the mask becomes a high-resolution VR headset, where users can step back into a realistic 360° reconstruction of their favorite dreams from the night before.
               </p>
             </div>
           </div>
@@ -253,9 +253,7 @@ export default function ReveriePage() {
           <div>
             <h3 className="text-xl md:text-2xl text-white mb-4">Dream replay in VR</h3>
             <div className="space-y-4 text-white-muted leading-relaxed">
-              <p>
-                When you wake, the mask transforms. Flip it into display mode and it becomes a high-resolution VR headset. Using the companion app, you can step back into a 360° reconstruction of your dreams from the night before — scrubbing through scenes, pausing on moments, searching across nights.
-              </p>
+
               <p>
                 The VR experience is designed around the way dreams actually feel: non-linear, emotionally vivid, and spatially surreal. Rather than playing back a flat video, Reverie reconstructs a navigable environment from the sensor data, letting you move through your dream the way you moved through it while asleep.
               </p>
@@ -280,9 +278,6 @@ export default function ReveriePage() {
         >
           <div>
             <h2 className="text-2xl md:text-3xl bit-apple-font text-white mb-6">The Reverie App</h2>
-            <p className="text-white-muted leading-relaxed">
-              A personal dream archive organized like a record collection, designed to surface patterns without over-interpreting them.
-            </p>
           </div>
 
           {/* Privacy-First Onboarding */}
