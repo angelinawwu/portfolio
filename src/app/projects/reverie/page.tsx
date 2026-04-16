@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import CaseStudyHero from '@/components/CaseStudyHero';
+import { ArrowUpRight } from '@phosphor-icons/react';
 
 export default function ReveriePage() {
   let cardIndex = 0;
@@ -98,18 +99,23 @@ export default function ReveriePage() {
           style={{ '--card-index': cardIndex++ } as React.CSSProperties}
         >
           <h2 className="text-2xl md:text-3xl bit-apple-font text-white mb-6">Reverie is a two-part product.</h2>
+          <div className="space-y-4 text-white-muted leading-relaxed">
+            <p>
+              The prompt was open-ended by design, and actively encouraged fantastical, future-forward solutions. Dreams are one of the last truly private spaces left, and we wanted to build something that could actually live there. A purely digital product felt thin; a purely physical one, incomplete. Two components let us match the texture of the problem: something you wear, and something you return to.
+            </p>
+          </div>
           <div className="grid grid-cols-2 gap-6 mb-8">
             <div>
               <div className="relative mb-3 aspect-square w-full overflow-hidden">
                 <Image
                   src="/assets/projects/Reverie/Reverie-Graphic-1Mask.png"
-                  alt="The Reverie Eyemask — a sleep wearable that doubles as a VR headset"
+                  alt="The Reverie VR Eyemask — a sleep wearable that doubles as a VR headset"
                   fill
                   sizes="(max-width: 768px) 45vw, min(400px, 42vw)"
                   className="object-contain px-2 md:px-4"
                 />
               </div>
-              <p className="text-sm text-white-muted">The Reverie Eyemask</p>
+              <p className="text-sm text-white-muted">The Reverie VR Eyemask</p>
             </div>
             <div>
               <div className="relative mb-3 aspect-square w-full overflow-hidden">
@@ -124,11 +130,7 @@ export default function ReveriePage() {
               <p className="text-sm text-white-muted">The Reverie App</p>
             </div>
           </div>
-          <div className="space-y-4 text-white-muted leading-relaxed">
-            <p>
-              The prompt was open-ended by design, and actively encouraged fantastical, future-forward solutions. Dreams are one of the last truly private spaces left, and we wanted to build something that could actually live there. A purely digital product felt thin; a purely physical one, incomplete. Two components let us match the texture of the problem: something you wear, and something you return to.
-            </p>
-          </div>
+          
         </section>
 
         {/* From lo-fi to hi-fi */}
@@ -140,7 +142,7 @@ export default function ReveriePage() {
           <div className="space-y-4">
             <div className="space-y-4 text-white-muted leading-relaxed">
               <p>
-                We spent 3 days brainstorming, iterating, and prototyping on our solution.
+                Our iteration process was quick, efficient, and intentional. As we worked through our ideas, we addressed the project with a product-thinking mindset. It was important for us to focus on not just the features or visual design of the app, but also the core problems we were actually solving for the user.
               </p>
               </div>
              <div className="grid grid-cols-2 gap-4 mt-4">
@@ -216,7 +218,7 @@ export default function ReveriePage() {
             <div>
               <h3 className="text-xl md:text-2xl text-white mb-4">Midjourney for dream imagery</h3>
               <p className="text-white-muted leading-relaxed mb-4">
-                Midjourney images from <a href="https://x.com/ciguleva" target="_blank" rel="noopener noreferrer" className="sidebar-link">Tatiana Tsiguleva</a> represented dream states throughout the app. Her surreal, ethereal aesthetic matched the tone we needed. We confirmed permission before using her work.
+                Midjourney images from <a href="https://x.com/ciguleva" target="_blank" rel="noopener noreferrer" className="sidebar-link accent-text">Tatiana Tsiguleva <ArrowUpRight size={16} className="inline" /></a> represented dream states throughout the app. Her surreal, ethereal aesthetic matched the tone we needed. We confirmed permission before using her work.
               </p>
               <div>
                 <div className="overflow-hidden">
@@ -233,7 +235,7 @@ export default function ReveriePage() {
             </div>
 
             <div>
-              <h3 className="text-xl md:text-2xl text-white mb-4">Figma Make + Cursor for VR prototype</h3>
+              <h3 className="text-xl md:text-2xl text-white mb-4">Prototyping in code with Figma Make + Cursor</h3>
               <p className="text-white-muted leading-relaxed mb-4">
                 Figma Make handled layout and mockups, while Cursor generated React and Three.js logic for the navigable 360° VR environment.
               </p>
@@ -254,11 +256,17 @@ export default function ReveriePage() {
           style={{ '--card-index': cardIndex++ } as React.CSSProperties}
         >
           <div>
-            <h2 className="text-2xl md:text-3xl bit-apple-font text-white mb-6">The Reverie Eyemask</h2>
+            <h2 className="text-2xl md:text-3xl bit-apple-font text-white mb-6">The Reverie VR Eyemask</h2>
             <div className="space-y-4 text-white-muted leading-relaxed">
               <p>
-                The Reverie Eyemask is a dual-purpose sleep wearable that records and replays your subconscious. During the night, its sensors map brain activity to capture your dreams. By day, the mask becomes a high-resolution VR headset, where users can step back into a realistic 360° reconstruction of their favorite dreams from the night before.
+                The Reverie VR Eyemask is a dual-purpose sleep wearable that records and replays your subconscious. During the night, its sensors map brain activity to capture your dreams. By day, the mask becomes a high-resolution VR headset, where users can step back into a realistic 360° reconstruction of their favorite dreams from the night before.
               </p>
+              <Image
+                src="/assets/projects/Reverie/Reverie-Mask.png"
+                alt="The Reverie VR Eyemask"
+                width={2000}
+                height={1000}
+              />
             </div>
           </div>
 
