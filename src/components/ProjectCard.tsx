@@ -42,7 +42,7 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
             alt={project.title}
             width={800}
             height={600}
-            className="object-cover w-full h-auto group-hover:scale-105 transition-all duration-200 ease-out"
+            className="object-cover w-full h-auto group-hover:scale-103 transition-all duration-200"
             sizes="(max-width: 768px) 100vw, 50vw"
           />
         ) : (
@@ -59,10 +59,10 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
         <div 
           className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none"
           style={{
-            backdropFilter: 'blur(12px)',
-            WebkitBackdropFilter: 'blur(12px)',
-            maskImage: 'linear-gradient(to bottom, transparent 0%, transparent 60%, black 100%)',
-            WebkitMaskImage: 'linear-gradient(to bottom, transparent 0%, transparent 60%, black 100%)',
+            backdropFilter: 'blur(15px)',
+            WebkitBackdropFilter: 'blur(15px)',
+            maskImage: 'linear-gradient(to bottom, transparent 0%, transparent 50%, black 100%)',
+            WebkitMaskImage: 'linear-gradient(to bottom, transparent 0%, transparent 50%, black 100%)',
           }}
         />
       </div>
