@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useState, useRef } from 'react';
-import { ArrowRight, ArrowUpRight, BookOpen } from '@phosphor-icons/react';
+import { ArrowRight, ArrowUpRight, BookOpen, Globe } from '@phosphor-icons/react';
 import { motion } from 'framer-motion';
 import { useTheme } from './ThemeProvider';
 
@@ -126,7 +126,7 @@ export default function CustomCursor() {
         {cursorState === 'playground-link' && (
           <>
             <span className="text-xs font-mono geist-mono-font">OPEN WEBSITE</span>
-            <ArrowUpRight className="w-3.5 h-3.5 flex-shrink-0" />
+            <Globe className="w-3.5 h-3.5 flex-shrink-0" />
           </>
         )}
         {cursorState === 'devpost' && (
@@ -184,7 +184,18 @@ export default function CustomCursor() {
               {text}
             </motion.span>
           )}
-          {(cursorState === 'playground-link' || cursorState === 'devpost') && (
+          {cursorState === 'playground-link' && (
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={contentTransition}
+              className="flex-shrink-0"
+            >
+              <Globe className="w-3.5 h-3.5" />
+            </motion.div>
+          )}
+          {cursorState === 'devpost' && (
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}

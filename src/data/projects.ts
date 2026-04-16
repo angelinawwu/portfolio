@@ -21,9 +21,20 @@ export type Project = {
 
 export const caseStudies: Project[] = [
   {
+    slug: 'reverie',
+    title: 'Reverie',
+    description: 'Honorable Mention @ FigBuild 2026. Every dream, a revelation.',
+    thumbnail: '/assets/projects/Reverie-Cover.png',
+    timeline: 'MAR 2026',
+    projectType: 'HACKATHON',
+    tags: ['Speculative Design', 'Product Design', 'Figma'],
+    type: 'case-study',
+    devpostUrl: 'https://devpost.com/software/reverie-auf3w8'
+  },
+  {
     slug: 'familyfridge',
     title: 'FamilyFridge',
-    description: '2nd Place @ Rice Designathon 2026 | Where everyday moments bring us together.',
+    description: '2nd Place @ Rice Designathon 2026. Where everyday moments bring us together.',
     thumbnail: '/assets/projects/FamilyFridge-Cover.png',
     timeline: 'JAN 2026',
     projectType: 'HACKATHON',
@@ -35,7 +46,7 @@ export const caseStudies: Project[] = [
     slug: 'goodreads-wrapped',
     title: 'Goodreads Wrapped',
     description: 'A playful reading year summary, delivered to 5000+ users.',
-    videoUrl: '/assets/playground/Goodreads-Video.mov',
+    thumbnail: '/assets/projects/Goodreads-Cover.png',
     context: 'Next.js + Web Scraping',
     type: 'case-study',
     projectType: 'PERSONAL PROJECT',
@@ -64,16 +75,6 @@ export const caseStudies: Project[] = [
     tags: ['UX Research', 'User Testing', 'Design System'],
     type: 'case-study'
   },
-  // {
-  //   slug: 'bookish',
-  //   title: 'Bookish',
-  //   description: 'Redesigning the reading experience with accessibility and sustainability in mind.',
-  //   thumbnail: '/assets/projects/Bookish-Cover.webp',
-  //   timeline: 'MAR-MAY 2024',
-  //   projectType: 'PERSONAL PROJECT',
-  //   tags: ['Mobile Design', 'UX Research', 'Figma'],
-  //   type: 'case-study'
-  // }
 ];
 
 export const playgroundProjects: Project[] = [
@@ -124,13 +125,6 @@ export const playgroundProjects: Project[] = [
     type: 'playground',
   },
   {
-    title: 'Hero (Treehacks 2026)',
-    context: 'React Native',
-    thumbnail: '/assets/playground/Hero-Cover.webp',
-    type: 'playground',
-    devpostUrl: 'https://devpost.com/software/organmatch',
-  },
-  {
     title: 'VEST glass experiment',
     context: 'Figma',
     thumbnail: '/assets/playground/VESTGlass-Cover.webp',
@@ -144,14 +138,28 @@ export const playgroundProjects: Project[] = [
     type: 'playground',
   },
   {
+    title: 'VEST t-shirts',
+    context: 'Adobe Illustrator',
+    thumbnail: '/assets/playground/VESTShirt-Cover.jpeg',
+    type: 'playground',
+  },
+  {
+    title: 'Hero (Treehacks 2026)',
+    context: 'React Native',
+    thumbnail: '/assets/playground/Hero-Cover.webp',
+    type: 'playground',
+    devpostUrl: 'https://devpost.com/software/organmatch',
+  },
+  
+  {
     title: 'VEST recruitment graphic',
-    context: 'Figma, Photoshop',
+    context: 'Figma, Adobe Photoshop',
     thumbnail: '/assets/playground/VESTKeyboard-Cover.webp',
     type: 'playground',
   },
   {
     title: 'Team t-shirt design',
-    context: 'Figma, Photoshop',
+    context: 'Figma, Adobe Photoshop',
     thumbnail: '/assets/playground/TeddiesTee-Cover.jpg',
     type: 'playground',
   },
@@ -164,13 +172,13 @@ export const playgroundProjects: Project[] = [
 ];
 
 // All projects for Work page (all case studies)
-// Order: FamilyFridge -> Goodreads Wrapped -> Manifesto Market -> Workup -> Bookish
+// Order: Reverie -> FamilyFridge -> Goodreads Wrapped -> Manifesto Market -> Workup
 export const workProjects: Project[] = [
-  caseStudies[0], // FamilyFridge
-  caseStudies[1], // Goodreads Wrapped
-  caseStudies[2], // Manifesto Market
-  caseStudies[3], // Workup
-  caseStudies[4], // Bookish
+  caseStudies[0], // Reverie
+  caseStudies[1], // FamilyFridge
+  caseStudies[2], // Goodreads Wrapped
+  caseStudies[3], // Manifesto Market
+  caseStudies[4], // Workup
 ];
 
 // Combined projects for backward compatibility

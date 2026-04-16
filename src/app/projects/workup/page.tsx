@@ -2,11 +2,6 @@ import Link from 'next/link';
 import Image from 'next/image';
 import CaseStudyHero from '@/components/CaseStudyHero';
 
-export const metadata = {
-  title: 'Workup ＊ Angelina Wu',
-  description: 'Restructuring an AI-powered interview tool to empower students to prepare with confidence',
-};
-
 export default function WorkupPage() {
   let cardIndex = 0;
   
@@ -531,12 +526,9 @@ export default function WorkupPage() {
           className="project-card pt-8 border-t border-faded-white"
           style={{ '--card-index': cardIndex++ } as React.CSSProperties}
         >
-          <div className="flex justify-between items-center">
+          <div className="flex justify-start items-center">
             <Link href="/projects/manifesto-market" className="sidebar-link">
               ← Manifesto Market
-            </Link>
-            <Link href="/projects/bookish" className="sidebar-link">
-              Bookish →
             </Link>
           </div>
         </nav>

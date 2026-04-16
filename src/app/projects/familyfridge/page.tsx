@@ -476,9 +476,12 @@ export default function FamilyFridge2Page() {
           className="project-card pt-8 border-t border-faded-white"
           style={{ '--card-index': cardIndex++ } as React.CSSProperties}
         >
-          <div className="flex justify-start items-center">
-            <Link href="/" className="sidebar-link">
-              ← Back to projects
+          <div className="flex justify-between items-center">
+            <Link href="/projects/reverie" className="sidebar-link">
+              ← Reverie
+            </Link>
+            <Link href="/projects/manifesto-market" className="sidebar-link">
+              Manifesto Market →
             </Link>
           </div>
         </nav>
