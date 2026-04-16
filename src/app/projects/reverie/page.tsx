@@ -49,7 +49,7 @@ export default function ReveriePage() {
                 </p>
               </div>
               <p>
-                With my team, Ellie Huang, Emily Shen, and Nancy Rios, we spent 3 days brainstorming, iterating, and prototyping on our solution.
+                With my teammates Ellie, Emily, and Nancy, we spent 3 days brainstorming, iterating, and prototyping on our solution.
               </p>
             </div>
 
@@ -101,7 +101,7 @@ export default function ReveriePage() {
           <h2 className="text-2xl md:text-3xl bit-apple-font text-white mb-6">Reverie is a two-part product.</h2>
           <div className="space-y-4 text-white-muted leading-relaxed mb-6">
             <p>
-              The prompt was open-ended by design, and actively encouraged fantastical, future-forward solutions. Dreams are one of the last truly private spaces left, and we wanted to build something that could actually live there. Having a purely digital product felt incomplete. Two components let us match the texture of the problem: something you wear, and something you return to.
+              The prompt was open-ended by design, and actively encouraged fantastical, future-forward solutions. Having a purely digital product, especially for something as personal and sensorial as dreams, felt incomplete. A two-part solution let us match the texture of the problem: something you wear, and something you return to.
             </p>
           </div>
           <div className="grid grid-cols-2 gap-6 mb-8">
@@ -236,7 +236,7 @@ export default function ReveriePage() {
           <div>
             <h3 className="text-xl md:text-2xl text-white mb-4">Prototyping in code with Figma Make and Cursor</h3>
             <p className="text-white-muted leading-relaxed mb-4">
-              To create the prototype for Reverie's VR features, we used Figma Make. This allowed us to quickly create an interactive mockup of the AR interface that was consistent with the rest of the app's design. For more the complex interactions, we brought the repository into Cursor.
+              To create the prototype for Reverie's VR features, we primarily used Figma Make. This allowed us to quickly create an interactive mockup of the AR interface that was consistent with the rest of the app's design. For more the complex interactions, we brought the code into Cursor.
             </p>
             <div className="overflow-hidden">
               <Image
@@ -274,7 +274,7 @@ export default function ReveriePage() {
             <div className="space-y-4 text-white-muted leading-relaxed">
 
               <p>
-                The VR experience is designed around the way dreams actually feel: non-linear, emotionally vivid, and spatially surreal. Rather than playing back a flat video, Reverie reconstructs a navigable environment from the sensor data, letting you move through your dream the way you moved through it while asleep.
+                The VR experience was designed to feel like a natural extension of the app. With the VR Eyemask, users can relive their dreams in vivid, immersive detail.
               </p>
             </div>
             <div className="overflow-hidden mt-4">
@@ -303,7 +303,7 @@ export default function ReveriePage() {
           <div>
             <h3 className="text-xl md:text-2xl text-white mb-4">Privacy-first onboarding</h3>
             <p className="text-white-muted leading-relaxed mb-4">
-              Privacy controls appear before mask pairing, not after. Users choose their recording level — full recording, emotions only, or minimal — before giving Reverie any access.
+              Privacy settings appear before anything else. Users can control the amount of data that gets recorded before giving Reverie any access to their dreams.
             </p>
             <div className="overflow-hidden">
               <Image
@@ -404,7 +404,7 @@ export default function ReveriePage() {
                 <div>
                   <h4 className="text-lg text-white mb-2">Privacy and exposure</h4>
                   <p className="text-white-muted leading-relaxed">
-                    Dreams are deeply personal, so privacy is central to the Reverie experience. While privacy is currently introduced during onboarding, future iterations could integrate visible privacy assurances throughout the product.
+                    Dreams are deeply personal, so privacy is central to the Reverie experience. While privacy is currently introduced during onboarding, future iterations could potentially integrate visible privacy assurances throughout the product.
                   </p>
                 </div>
               </div>
@@ -438,39 +438,51 @@ export default function ReveriePage() {
           style={{ '--card-index': cardIndex++ } as React.CSSProperties}
         >
           <h2 className="text-2xl md:text-3xl bit-apple-font text-white mb-6">Reflections</h2>
-          <div className="space-y-4">
+          <div className="space-y-4 mb-8">
             <div className="border border-faded-white p-6 bg-surface">
               <h3 className="text-lg text-white mb-3">
-                The metaphor shaped the architecture.
+                The solution should be defined by the problem.
               </h3>
               <ul className="arrow-list">
                 <li className="text-white-muted leading-relaxed">
-                  Choosing the CD/album metaphor wasn&apos;t decoration — it determined the entire information hierarchy, the visual system, and how users emotionally relate to their own data. The best design metaphors do structural work, not just aesthetic work.
+                  Sleep is physical and personal, so a purely digital product would have felt incongruent. Making Reverie a combination of a wearable and an app was a design instinct that was ambitious, but ultimately worth following.
                 </li>
               </ul>
             </div>
 
             <div className="border border-faded-white p-6 bg-surface">
               <h3 className="text-lg text-white mb-3">
-                Speculative design requires real constraints.
+                AI tools expand what&apos;s possible, not just what&apos;s fast.
               </h3>
               <ul className="arrow-list">
                 <li className="text-white-muted leading-relaxed">
-                  The hardest part wasn&apos;t imagining future sensors. It was designing appropriate humility into every insight line so users don&apos;t over-interpret patterns. The prompt asked for speculation, but the design decisions needed to be grounded.
+                  Without Midjourney, Figma Make, and Cursor, a polished prototype with a cohesive visual language wouldn&apos;t have been feasible in 3 days. Using AI tools didn&apos;t just speed things up, but also unlocked new potential outcomes.
                 </li>
               </ul>
             </div>
 
             <div className="border border-faded-white p-6 bg-surface">
               <h3 className="text-lg text-white mb-3">
-                Edge cases clarify the product.
+                Growth under constraints.
               </h3>
               <ul className="arrow-list">
                 <li className="text-white-muted leading-relaxed">
-                  Addressing scenarios like trauma resurfacing and misinterpreted data forced us to define what Reverie is NOT — which made what it IS much sharper. The strongest products are shaped as much by what they refuse to do.
+                  The time pressure forced our team to divide and own, then converge and combine. We left with a product none of us could have made alone, and a much stronger sense of how to move fast with people you trust.
                 </li>
               </ul>
             </div>
+          </div>
+          <div>
+            <Image
+              src="/assets/projects/Reverie/Reverie-Team.jpeg"
+              alt="Team photo"
+              width={1000}
+              height={1000}
+              className="w-full aspect-3/2 object-cover"
+            />
+            <p className="text-sm text-white-muted mt-2">
+              Thank you to my amazing team for such a great Figbuild experience!! :)
+            </p>
           </div>
         </section>
 
