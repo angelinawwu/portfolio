@@ -339,11 +339,13 @@ export default function ReveriePage() {
               The Analytics feature of the app highlights patterns across dreams, helping users uncover emotional trends and recurring symbols without over-interpreting them as diagnoses.
             </p>
             <div className="overflow-hidden">
-              <Image
-                src="/assets/projects/Reverie/Reverie-Analytics.png"
-                alt="Analytics screen showing dream emotion analysis, themes and symbols, and sleep cycle insights"
-                width={1000}
-                height={2000}
+              <video
+                src="/assets/projects/Reverie/Reverie-Final-4.mp4"
+                className="w-full h-auto"
+                autoPlay
+                loop
+                muted
+                playsInline
               />
             </div>
           </div>
@@ -357,7 +359,7 @@ export default function ReveriePage() {
           <h2 className="text-2xl md:text-3xl bit-apple-font text-white mb-6">Edge Cases</h2>
           <div className="space-y-6">
             <p className="text-white-muted leading-relaxed">
-              Extra perception comes with responsibility. We identified several scenarios where Reverie could cause real harm, and designed around them.
+              Extra perception comes with responsibility. We identified several edge case scenarios where Reverie could potentially cause harm to users.
             </p>
 
             <div className="space-y-4">
@@ -369,7 +371,7 @@ export default function ReveriePage() {
                   <div>
                     <h4 className="text-lg text-white mb-2">Misinterpreted data</h4>
                     <p className="text-white-muted leading-relaxed">
-                      Dreams are subjective, and users may treat analytics as definitive psychological insights. Reverie presents insights as suggestive patterns — never conclusions — and allows users to edit tags and add their own interpretations.
+                      Dreams are subjective, and users may treat analytics as definitive psychological insights. Reverie aims to present insights as suggestive patterns instead of conclusions, and allows users add their own interpretations.
                     </p>
                   </div>
                 </div>
@@ -383,21 +385,7 @@ export default function ReveriePage() {
                 <div>
                   <h4 className="text-lg text-white mb-2">Privacy and exposure</h4>
                   <p className="text-white-muted leading-relaxed">
-                    Dream data is deeply personal. Privacy controls are aggressive and visible, not hidden in settings.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div className="border border-faded-white p-6 bg-surface">
-              <div className="flex items-start gap-4">
-                <div className="flex-shrink-0 w-8 h-8 border border-faded-white flex items-center justify-center">
-                  <span className="text-white geist-mono-font text-sm">3</span>
-                </div>
-                <div>
-                  <h4 className="text-lg text-white mb-2">Trauma resurfacing</h4>
-                  <p className="text-white-muted leading-relaxed">
-                    Nightmare clusters require support infrastructure. Naming these scenarios explicitly separates concept from trustworthy product.
+                    Dreams are deeply personal, so privacy is central to the Reverie experience. While privacy is currently introduced during onboarding, future iterations could integrate visible privacy assurances throughout the product.
                   </p>
                 </div>
               </div>
