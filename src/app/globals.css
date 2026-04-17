@@ -8,7 +8,8 @@
   --black: #121213;
   --accent: #F3EDF5;
   --surface: #212123;
-  
+  --neutral: #626064;
+
   /* Derived colors */
   --white-muted: rgba(243, 237, 245, 0.6);
   --accent-muted: rgba(243, 237, 245, 0.6);
@@ -21,6 +22,7 @@
   --black: #0E2309;
   --accent: #D4EC21;
   --surface: #29351C;
+  --neutral: #556111;
   --white-muted: rgba(248, 250, 233, 0.6);
   --accent-muted: rgba(212, 236, 33, 0.5);
 }
@@ -32,6 +34,7 @@
   --black: #071327;
   --accent: #7ABDF0;
   --surface: #182233;
+  --neutral: #31516d;
   --white-muted: rgba(227, 234, 246, 0.6);
   --accent-muted: rgba(111, 167, 231, 0.5);
 }
@@ -43,6 +46,7 @@
   --black: #270726;
   --accent: #EC6CF1;
   --surface: #391B38;
+  --neutral: #683069;
   --white-muted: rgba(246, 227, 245, 0.6);
   --accent-muted: rgba(236, 108, 241, 0.5);
 }
@@ -54,6 +58,7 @@
   --black: #271507;
   --accent: #E3743D;
   --surface: #36231A;
+  --neutral: #643720;
   --white-muted: rgba(246, 236, 227, 0.6);
   --accent-muted: rgba(227, 116, 61, 0.6);
 }
@@ -65,6 +70,7 @@
   --color-black: var(--black);
   --color-accent: var(--accent);
   --color-surface: var(--surface);
+  --color-neutral: var(--neutral);
   --color-white-muted: var(--white-muted);
   --color-accent-muted: var(--accent-muted);
   
@@ -418,9 +424,14 @@ html.theme-transition * {
 /* ========== COMMUNITY CANVAS FOOTER ========== */
 /* Main slides up on scroll to reveal the fixed footer beneath.
    Using margin-bottom (not padding) so main's opaque box ends above the
-   footer area — otherwise main's bg-black would cover the footer. */
+   footer area — otherwise main's bg-black would cover the footer.
+   The border-bottom acts as a dividing line that becomes visible as the
+   footer is revealed, matching the faded-white strokes used site-wide. */
 .community-canvas-main {
-  margin-bottom: 33.333vh;
+  /* --community-canvas-height is set in JS from the computed footer height
+     (rows × cellSize). Fallback keeps the reveal working during SSR. */
+  margin-bottom: var(--community-canvas-height, 280px);
+  border-bottom: 1px solid var(--faded-white);
 }
 
 .community-canvas {
@@ -435,7 +446,10 @@ html.theme-transition * {
   align-content: center;
   width: 100%;
   height: 100%;
-  gap: 0;
+  /* 1px gap + faded-white background = true 1px grid lines, same weight as
+     the `border border-faded-white` used on project cards. */
+  gap: 1px;
+  background-color: color-mix(in srgb, var(--faded-white) 30%, transparent);
 }
 
 .community-canvas-cell {
@@ -443,15 +457,34 @@ html.theme-transition * {
   height: 100%;
   padding: 0;
   margin: 0;
-  border: 1px solid var(--surface);
+  border: none;
   background-color: var(--cell-color, var(--black));
-  transition: background-color 200ms ease;
+  transition: background-color;
   will-change: background-color;
 }
 
 @media (hover: hover) and (pointer: fine) {
+  /* Brush: accent at 50% opacity blended with the cell's color in `screen`,
+     so hovers lighten toward the accent. `background-image` stacks above
+     `background-color`, and `background-blend-mode` blends the two. */
   .community-canvas-cell:hover {
-    background-color: var(--accent-muted);
+    background-color: var(--cell-color, var(--black));
+    background-image: linear-gradient(
+      rgb(from var(--accent) r g b / 0.7),
+      rgb(from var(--accent) r g b / 0.7)
+    );
+    background-blend-mode: screen;
+  }
+
+  /* Eraser: accent at 95% opacity blended in `multiply`, so hovers darken
+     painted cells — previewing the erased state. */
+  .community-canvas-grid[data-tool='eraser'] .community-canvas-cell:hover {
+    background-color: var(--cell-color, var(--black));
+    background-image: linear-gradient(
+      rgb(from var(--neutral) r g b / 0.7),
+      rgb(from var(--neutral) r g b / 0.7)
+    );
+    background-blend-mode: normal;
   }
 }
 
@@ -478,6 +511,23 @@ html.theme-transition * {
   transition: color 200ms ease, border-color 200ms ease, background-color 200ms ease;
 }
 
+.community-canvas-prompt {
+  height: 32px;
+  display: inline-flex;
+  align-items: center;
+  padding: 0 10px;
+  border: 1px solid var(--faded-white);
+  background-color: var(--black);
+  color: var(--white);
+  font-family: var(--font-geist-mono), monospace;
+  font-weight: 300;
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+  user-select: none;
+  pointer-events: none;
+}
+
 @media (hover: hover) and (pointer: fine) {
   .community-canvas-tool-button:hover {
     color: var(--accent);
@@ -496,11 +546,13 @@ html.theme-transition * {
   top: calc(100% + 6px);
   left: 50%;
   transform: translateX(-50%);
-  padding: 4px 8px;
-  font-size: 10px;
-  letter-spacing: 0.08em;
+  padding: 3px 6px;
+  font-size: 0.75rem; /* text-xs */
+  font-family: var(--font-geist-mono), monospace;
+  font-weight: 300;
+  letter-spacing: 0.05em;
   color: var(--white);
-  background-color: var(--surface);
+  background-color: var(--black);
   border: 1px solid var(--faded-white);
   white-space: nowrap;
   pointer-events: none;
