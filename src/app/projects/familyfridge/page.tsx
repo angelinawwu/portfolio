@@ -63,7 +63,7 @@ export default function FamilyFridge2Page() {
           <div className="space-y-6">
             <div>
               <Image
-                src="/assets/projects/FamilyFridge/FamilyFridge-ProblemStatement.png"
+                src="/assets/projects/FamilyFridge/FamilyFridge-ProblemStatement.webp"
                 alt="Conversations feel like check-ins and status updates"
                 width={700}
                 height={200}
@@ -85,7 +85,7 @@ export default function FamilyFridge2Page() {
               <div className="overflow-hidden flex flex-row space-x-4 mt-4">
                 <div className="relative w-1/2 aspect-[4/3]">
                   <Image
-                    src="/assets/projects/FamilyFridge/FamilyFridge-Fridge-1.png"
+                    src="/assets/projects/FamilyFridge/FamilyFridge-Fridge-1.webp"
                     alt="Fridge door with notes and photos"
                     fill
                     className="object-cover"
@@ -93,7 +93,7 @@ export default function FamilyFridge2Page() {
                 </div>
                 <div className="relative w-1/2 aspect-[4/3]">
                   <Image
-                    src="/assets/projects/FamilyFridge/FamilyFridge-Fridge-2.png"
+                    src="/assets/projects/FamilyFridge/FamilyFridge-Fridge-2.webp"
                     alt="Fridge door with notes and photos"
                     fill
                     className="object-cover"
@@ -121,7 +121,7 @@ export default function FamilyFridge2Page() {
 
               <div className="overflow-hidden">
                 <Image
-                  src="/assets/projects/FamilyFridge/FamilyFridge-Brainstorming.png"
+                  src="/assets/projects/FamilyFridge/FamilyFridge-Brainstorming.webp"
                   alt="Research synthesis: survey data, affinity mapping, user flows, and feature prioritization"
                   width={2000}
                   height={2000}
@@ -142,14 +142,14 @@ export default function FamilyFridge2Page() {
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
                 <div className="space-y-4">
                   <Image
-                    src="/assets/projects/FamilyFridge/FamilyFridge-QuotePic-1.jpg"
+                    src="/assets/projects/FamilyFridge/FamilyFridge-QuotePic-1.webp"
                     alt="Family hiking together"
                     width={400}
                     height={300}
                     className="w-full h-auto"
                   />
                   <Image
-                    src="/assets/projects/FamilyFridge/FamilyFridge-Quote-1.png"
+                    src="/assets/projects/FamilyFridge/FamilyFridge-Quote-1.webp"
                     alt="Some of our best memories were when we went on hikes together and just got to talk."
                     width={400}
                     height={300}
@@ -158,14 +158,14 @@ export default function FamilyFridge2Page() {
                 </div>
                 <div className="space-y-4">
                   <Image
-                    src="/assets/projects/FamilyFridge/FamilyFridge-QuotePic-2.jpg"
+                    src="/assets/projects/FamilyFridge/FamilyFridge-QuotePic-2.webp"
                     alt="FaceTime call screenshot"
                     width={400}
                     height={300}
                     className="w-full h-auto"
                   />
                   <Image
-                    src="/assets/projects/FamilyFridge/FamilyFridge-Quote-2.png"
+                    src="/assets/projects/FamilyFridge/FamilyFridge-Quote-2.webp"
                     alt="My mom screenshots FaceTime calls during special moments, so in 20 years, she can see how silly I was."
                     width={400}
                     height={300}
@@ -174,14 +174,14 @@ export default function FamilyFridge2Page() {
                 </div>
                 <div className="space-y-4">
                   <Image
-                    src="/assets/projects/FamilyFridge/FamilyFridge-QuotePic-3.jpg"
+                    src="/assets/projects/FamilyFridge/FamilyFridge-QuotePic-3.webp"
                     alt="Grandma sharing old photos"
                     width={400}
                     height={300}
                     className="w-full h-auto"
                   />
                   <Image
-                    src="/assets/projects/FamilyFridge/FamilyFridge-Quote-3.png"
+                    src="/assets/projects/FamilyFridge/FamilyFridge-Quote-3.webp"
                     alt="My grandma had so much fun telling me the stories behind old photos."
                     width={400}
                     height={300}
@@ -254,7 +254,7 @@ export default function FamilyFridge2Page() {
                 <div className="flex-1">
                   <div className="relative w-full aspect-[4/3]">
                     <Image
-                      src="/assets/projects/FamilyFridge/FamilyFridge-Process-1.png"
+                      src="/assets/projects/FamilyFridge/FamilyFridge-Process-1.webp"
                       alt="Lo-fi wireframes"
                       fill
                       className="object-cover"
@@ -265,7 +265,7 @@ export default function FamilyFridge2Page() {
                 <div className="flex-1">
                   <div className="relative w-full aspect-[4/3]">
                     <Image
-                      src="/assets/projects/FamilyFridge/FamilyFridge-Process-2.png"
+                      src="/assets/projects/FamilyFridge/FamilyFridge-Process-2.webp"
                       alt="Prototyping"
                       fill
                       className="object-cover"
@@ -348,7 +348,7 @@ export default function FamilyFridge2Page() {
               </p>
               <div className="overflow-hidden">
                 <Image
-                  src="/assets/projects/FamilyFridge/FamilyFridge-Final-2.png"
+                  src="/assets/projects/FamilyFridge/FamilyFridge-Final-2.webp"
                   alt="Three different family fridges showing customization options"
                   width={1000}
                   height={1000}
@@ -403,7 +403,7 @@ export default function FamilyFridge2Page() {
             After the event, I reached out to the judges to get their thoughts on our project. From this feedback, I gained significant and valuable insight into where we did well, and where we could have potentially done better. Here are some things they said!
           </p>
           <Image
-            src="/assets/projects/FamilyFridge/FamilyFridge-Feedback.png"
+            src="/assets/projects/FamilyFridge/FamilyFridge-Feedback.webp"
             alt="“FamilyFridge stood out because the prompt genuinely shaped the solution, rather than being applied after the fact.” 
             “There are opportunities for even greater adoption if the product were device-agnostic, rather than tied to iOS devices.”
             “FamilyFridge is a very compelling product with a clear path to commercial viability.”
@@ -459,7 +459,7 @@ export default function FamilyFridge2Page() {
 
           <div>
             <Image
-              src="/assets/projects/FamilyFridge/FamilyFridge-Team.png"
+              src="/assets/projects/FamilyFridge/FamilyFridge-Team.webp"
               alt="Team photo"
               width={1000}
               height={1000}

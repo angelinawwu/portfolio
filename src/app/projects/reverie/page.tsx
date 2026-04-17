@@ -108,7 +108,7 @@ export default function ReveriePage() {
             <div>
               <div className="relative mb-3 aspect-square w-full overflow-hidden">
                 <Image
-                  src="/assets/projects/Reverie/Reverie-Graphic-1Mask.png"
+                  src="/assets/projects/Reverie/Reverie-Graphic-1Mask.webp"
                   alt="The Reverie VR Eyemask — a sleep wearable that doubles as a VR headset"
                   fill
                   sizes="(max-width: 768px) 45vw, min(400px, 42vw)"
@@ -120,7 +120,7 @@ export default function ReveriePage() {
             <div>
               <div className="relative mb-3 aspect-square w-full overflow-hidden">
                 <Image
-                  src="/assets/projects/Reverie/Reverie-Graphic-2App.png"
+                  src="/assets/projects/Reverie/Reverie-Graphic-2App.webp"
                   alt="The Reverie App — a personal dream archive organized like a record collection"
                   fill
                   sizes="(max-width: 768px) 45vw, min(400px, 42vw)"
@@ -148,7 +148,7 @@ export default function ReveriePage() {
              <div className="grid grid-cols-2 gap-4 mt-4">
               <div className="relative aspect-video w-full overflow-hidden">
                 <Image
-                  src="/assets/projects/Reverie/Reverie-Process-1.png"
+                  src="/assets/projects/Reverie/Reverie-Process-1.webp"
                   alt="FigJam brainstorming board with sticky notes from all four team members, organized by themes"
                   fill
                   sizes="(max-width: 768px) 50vw, 42vw"
@@ -157,7 +157,7 @@ export default function ReveriePage() {
               </div>
               <div className="relative aspect-video w-full overflow-hidden">
                 <Image
-                  src="/assets/projects/Reverie/Reverie-Process-2.png"
+                  src="/assets/projects/Reverie/Reverie-Process-2.webp"
                   alt="FigJam brainstorming board with sticky notes from all four team members, organized by themes"
                   fill
                   sizes="(max-width: 768px) 50vw, 42vw"
@@ -166,7 +166,7 @@ export default function ReveriePage() {
               </div>
               <div className="relative aspect-video w-full overflow-hidden">
                 <Image
-                  src="/assets/projects/Reverie/Reverie-Process-3.png"
+                  src="/assets/projects/Reverie/Reverie-Process-3.webp"
                   alt="FigJam brainstorming board with sticky notes from all four team members, organized by themes"
                   fill
                   sizes="(max-width: 768px) 50vw, 42vw"
@@ -175,7 +175,7 @@ export default function ReveriePage() {
               </div>
               <div className="relative aspect-video w-full overflow-hidden">
                 <Image
-                  src="/assets/projects/Reverie/Reverie-Process-4.png"
+                  src="/assets/projects/Reverie/Reverie-Process-4.webp"
                   alt="FigJam brainstorming board with sticky notes from all four team members, organized by themes"
                   fill
                   sizes="(max-width: 768px) 50vw, 42vw"
@@ -195,7 +195,7 @@ export default function ReveriePage() {
             </p>
             <div className="overflow-hidden">
               <Image
-                src="/assets/projects/Reverie/Reverie-Lofis.png"
+                src="/assets/projects/Reverie/Reverie-Lofis.webp"
                 alt="Low-fidelity wireframes for onboarding, homepage, recap, and analytics flows"
                 width={2000}
                 height={1000}
@@ -223,7 +223,7 @@ export default function ReveriePage() {
             </p>
             <div className="overflow-hidden">
               <Image
-                src="/assets/projects/Reverie/Reverie-Midjourney.png"
+                src="/assets/projects/Reverie/Reverie-Midjourney.webp"
                 alt="Midjourney image of a dream state"
                 width={2000}
                 height={1000}
@@ -240,7 +240,7 @@ export default function ReveriePage() {
             </p>
             <div className="overflow-hidden">
               <Image
-                src="/assets/projects/Reverie/Reverie-AI-VR.png"
+                src="/assets/projects/Reverie/Reverie-AI-VR.webp"
                 alt="Figma Make screenshot of the Reverie VR prototype"
                 width={2000}
                 height={1000}
@@ -261,7 +261,7 @@ export default function ReveriePage() {
                 The Reverie VR Eyemask is a dual-purpose sleep wearable that records and replays your subconscious. During the night, its sensors map brain activity to capture your dreams. By day, the mask becomes a high-resolution VR headset, where users can step back into a realistic 360° reconstruction of their favorite dreams from the night before.
               </p>
               <Image
-                src="/assets/projects/Reverie/Reverie-Mask.png"
+                src="/assets/projects/Reverie/Reverie-Mask.webp"
                 alt="The Reverie VR Eyemask"
                 width={2000}
                 height={1000}
@@ -307,7 +307,7 @@ export default function ReveriePage() {
             </p>
             <div className="overflow-hidden">
               <Image
-                src="/assets/projects/Reverie/Reverie-Onboarding.png"
+                src="/assets/projects/Reverie/Reverie-Onboarding.webp"
                 alt="Onboarding flow showing the Reverie landing screen with sign-up and privacy-first design decisions"
                 width={2000}
                 height={1000}
@@ -343,7 +343,7 @@ export default function ReveriePage() {
             </div>
             <div className="overflow-hidden mt-4">
               <Image
-                src="/assets/projects/Reverie/Reverie-DreamGallery.png"
+                src="/assets/projects/Reverie/Reverie-DreamGallery.webp"
                 alt="Dream Gallery view showing monthly album covers organized chronologically"
                 width={1000}
                 height={1000}
@@ -474,7 +474,7 @@ export default function ReveriePage() {
           </div>
           <div>
             <Image
-              src="/assets/projects/Reverie/Reverie-Team.jpeg"
+              src="/assets/projects/Reverie/Reverie-Team.webp"
               alt="Team photo"
               width={1000}
               height={1000}

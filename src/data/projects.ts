@@ -24,7 +24,7 @@ export const caseStudies: Project[] = [
     slug: 'reverie',
     title: 'Reverie',
     description: 'Honorable Mention @ FigBuild 2026. Every dream, a revelation.',
-    thumbnail: '/assets/projects/Reverie-Cover.png',
+    thumbnail: '/assets/projects/Reverie-Cover.webp',
     timeline: 'MAR 2026',
     projectType: 'HACKATHON',
     tags: ['Speculative Design', 'Product Design', 'Figma'],
@@ -35,7 +35,7 @@ export const caseStudies: Project[] = [
     slug: 'familyfridge',
     title: 'FamilyFridge',
     description: '2nd Place @ Rice Designathon 2026. Where everyday moments bring us together.',
-    thumbnail: '/assets/projects/FamilyFridge-Cover.png',
+    thumbnail: '/assets/projects/FamilyFridge-Cover.webp',
     timeline: 'JAN 2026',
     projectType: 'HACKATHON',
     tags: ['UX Research', 'Mobile Design', 'Figma'],
@@ -46,7 +46,7 @@ export const caseStudies: Project[] = [
     slug: 'goodreads-wrapped',
     title: 'Goodreads Wrapped',
     description: 'A playful reading year summary, delivered to 5000+ users.',
-    thumbnail: '/assets/projects/Goodreads-Cover.png',
+    thumbnail: '/assets/projects/Goodreads-Cover.webp',
     context: 'Next.js + Web Scraping',
     type: 'case-study',
     projectType: 'PERSONAL PROJECT',
@@ -140,7 +140,7 @@ export const playgroundProjects: Project[] = [
   {
     title: 'VEST t-shirts',
     context: 'Adobe Illustrator',
-    thumbnail: '/assets/playground/VESTShirt-Cover.jpeg',
+    thumbnail: '/assets/playground/VESTShirt-Cover.webp',
     type: 'playground',
   },
   {
@@ -160,13 +160,13 @@ export const playgroundProjects: Project[] = [
   {
     title: 'Team t-shirt design',
     context: 'Figma, Adobe Photoshop',
-    thumbnail: '/assets/playground/TeddiesTee-Cover.jpg',
+    thumbnail: '/assets/playground/TeddiesTee-Cover.webp',
     type: 'playground',
   },
   {
     title: 'Piece of Cake app (concept)',
     context: 'Figma',
-    thumbnail: '/assets/playground/PieceOfCake-Cover.jpg',
+    thumbnail: '/assets/playground/PieceOfCake-Cover.webp',
     type: 'playground',
   },
 ];
