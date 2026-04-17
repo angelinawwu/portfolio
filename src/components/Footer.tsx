@@ -16,7 +16,7 @@ const TARGET_PIXEL_DESKTOP = 20;
 const TARGET_PIXEL_MOBILE = 16;
 // Footer height is a fixed number of cells, so cells always fit end-to-end.
 const ROWS_DESKTOP = 14;
-const ROWS_MOBILE = 10;
+const ROWS_MOBILE = 18;
 const SIDEBAR_WIDTH_LG = 288;
 const LG_BREAKPOINT = 1024;
 const POLL_INTERVAL_MS = 5000;
@@ -342,7 +342,7 @@ export default function Footer() {
     >
       {/* Prompt — top-left corner. */}
       <div className="community-canvas-prompt absolute top-3 left-3 z-10">
-        LET&apos;S DRAW A PICTURE TOGETHER IN THIS FOOTER :)
+        LET&apos;S DRAW TOGETHER IN THIS FOOTER :)
       </div>
 
       {/* Tool buttons — top-right corner. */}
