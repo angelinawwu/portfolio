@@ -8,7 +8,8 @@
   --black: #121213;
   --accent: #F3EDF5;
   --surface: #212123;
-  
+  --neutral: #626064;
+
   /* Derived colors */
   --white-muted: rgba(243, 237, 245, 0.6);
   --accent-muted: rgba(243, 237, 245, 0.6);
@@ -21,6 +22,7 @@
   --black: #0E2309;
   --accent: #D4EC21;
   --surface: #29351C;
+  --neutral: #556111;
   --white-muted: rgba(248, 250, 233, 0.6);
   --accent-muted: rgba(212, 236, 33, 0.5);
 }
@@ -32,6 +34,7 @@
   --black: #071327;
   --accent: #7ABDF0;
   --surface: #182233;
+  --neutral: #31516d;
   --white-muted: rgba(227, 234, 246, 0.6);
   --accent-muted: rgba(111, 167, 231, 0.5);
 }
@@ -43,6 +46,7 @@
   --black: #270726;
   --accent: #EC6CF1;
   --surface: #391B38;
+  --neutral: #683069;
   --white-muted: rgba(246, 227, 245, 0.6);
   --accent-muted: rgba(236, 108, 241, 0.5);
 }
@@ -54,6 +58,7 @@
   --black: #271507;
   --accent: #E3743D;
   --surface: #36231A;
+  --neutral: #643720;
   --white-muted: rgba(246, 236, 227, 0.6);
   --accent-muted: rgba(227, 116, 61, 0.6);
 }
@@ -65,6 +70,7 @@
   --color-black: var(--black);
   --color-accent: var(--accent);
   --color-surface: var(--surface);
+  --color-neutral: var(--neutral);
   --color-white-muted: var(--white-muted);
   --color-accent-muted: var(--accent-muted);
   
@@ -412,6 +418,235 @@ html.theme-transition * {
 @media (hover: hover) and (pointer: fine) {
   .iridescent-glow:hover::before {
     left: 100%;
+  }
+}
+
+/* ========== COMMUNITY CANVAS FOOTER ========== */
+/* Main slides up on scroll to reveal the fixed footer beneath.
+   Using margin-bottom (not padding) so main's opaque box ends above the
+   footer area — otherwise main's bg-black would cover the footer.
+   The border-bottom acts as a dividing line that becomes visible as the
+   footer is revealed, matching the faded-white strokes used site-wide. */
+.community-canvas-main {
+  /* --community-canvas-height is set in JS from the computed footer height
+     (rows × cellSize). Fallback keeps the reveal working during SSR. */
+  margin-bottom: var(--community-canvas-height, 280px);
+  border-bottom: 1px solid var(--faded-white);
+}
+
+.community-canvas {
+  /* Ensure the canvas draws edge-to-edge with no scrollbar artifacts. */
+  overscroll-behavior: contain;
+  touch-action: none;
+}
+
+.community-canvas-grid {
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  width: 100%;
+  height: 100%;
+  /* 1px gap + faded-white background = true 1px grid lines, same weight as
+     the `border border-faded-white` used on project cards. */
+  gap: 1px;
+  background-color: color-mix(in srgb, var(--faded-white) 30%, transparent);
+}
+
+/* Decorative blurred copy of the grid stacked on top of the interactive one.
+   The mask carves out a soft horizontal band whose top edge tracks
+   `--canvas-fold` — the offset (in px) of <main>'s bottom edge inside the
+   footer's local coordinate space, written by Footer's scroll handler.
+   The band starts sharp at the fold (max blur right at the seam) and tapers
+   to transparent over `--canvas-blur-band` so the sharp grid underneath
+   shows through below the band. Pointer events fall through everywhere so
+   the canvas stays paintable. */
+/* `--canvas-fold-overshoot` extends the opaque region of the band UPWARD,
+   above the rendered fold position. The scroll handler runs once per rAF,
+   so during fast scrolls `--canvas-fold` can be a frame stale and the
+   actual bottom-of-main has already moved further up than what we painted.
+   Painting extra opacity above the fold covers that lag — the area between
+   (fold − overshoot) and fold is normally hidden behind <main>'s opaque
+   bg-black, so the overshoot is invisible until it's needed. The footer's
+   `overflow: hidden` clips anything that goes past the footer's top edge. */
+.community-canvas-grid--blurred {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  filter: blur(20px);
+  --canvas-blur-band: 100px;
+  --canvas-fold-overshoot: 40px;
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    transparent calc(var(--canvas-fold, 0px) - var(--canvas-fold-overshoot) - 1px),
+    black calc(var(--canvas-fold, 0px) - var(--canvas-fold-overshoot)),
+    black var(--canvas-fold, 0px),
+    transparent calc(var(--canvas-fold, 0px) + var(--canvas-blur-band))
+  );
+  mask-image: linear-gradient(
+    to bottom,
+    transparent calc(var(--canvas-fold, 0px) - var(--canvas-fold-overshoot) - 1px),
+    black calc(var(--canvas-fold, 0px) - var(--canvas-fold-overshoot)),
+    black var(--canvas-fold, 0px),
+    transparent calc(var(--canvas-fold, 0px) + var(--canvas-blur-band))
+  );
+  /* Hide the grid-line background on the blurred copy so we don't double
+     the 1px grid lines on top of the sharp grid below. */
+  background-color: transparent;
+  /* Fade out over the last sliver of reveal — driven by Footer's scroll
+     handler. Both this and the dark overlay disappear once the footer is
+     fully shown so the canvas is uninterrupted. */
+  opacity: var(--canvas-overlay-opacity, 1);
+  will-change: filter, mask-image, opacity;
+}
+
+/* Dark gradient overlay sharing the same fold-tracking shape as the blur.
+   Sits above the blurred grid (later in DOM, no z-index needed) and below
+   the tool buttons (z-10), so it darkens the canvas at the fold without
+   affecting the prompt or brush/eraser controls. Same overshoot trick as
+   the blur to mask any rAF lag during fast scrolls. */
+.community-canvas-fold-darken {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  --canvas-fold-overshoot: 40px;
+  background: linear-gradient(
+    to bottom,
+    transparent calc(var(--canvas-fold, 0px) - var(--canvas-fold-overshoot) - 1px),
+    var(--black) calc(var(--canvas-fold, 0px) - var(--canvas-fold-overshoot)),
+    var(--black) var(--canvas-fold, 0px),
+    transparent calc(var(--canvas-fold, 0px) + 100px)
+  );
+  opacity: var(--canvas-overlay-opacity, 1);
+  will-change: background, opacity;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .community-canvas-grid--blurred,
+  .community-canvas-fold-darken {
+    display: none;
+  }
+}
+
+.community-canvas-cell {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  border: none;
+  background-color: var(--cell-color, var(--black));
+  transition: background-color;
+  will-change: background-color;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  /* Brush: accent at 50% opacity blended with the cell's color in `screen`,
+     so hovers lighten toward the accent. `background-image` stacks above
+     `background-color`, and `background-blend-mode` blends the two. */
+  .community-canvas-cell:hover {
+    background-color: var(--cell-color, var(--black));
+    background-image: linear-gradient(
+      rgb(from var(--accent) r g b / 0.6),
+      rgb(from var(--accent) r g b / 0.6)
+    );
+    background-blend-mode: screen;
+  }
+
+  /* Eraser: accent at 95% opacity blended in `multiply`, so hovers darken
+     painted cells — previewing the erased state. */
+  .community-canvas-grid[data-tool='eraser'] .community-canvas-cell:hover {
+    background-color: var(--cell-color, var(--black));
+    background-image: linear-gradient(
+      rgb(from var(--neutral) r g b / 0.7),
+      rgb(from var(--neutral) r g b / 0.7)
+    );
+    background-blend-mode: normal;
+  }
+}
+
+.community-canvas-cell:focus-visible {
+  outline: 1px solid var(--accent);
+  outline-offset: -1px;
+}
+
+/* Tool buttons */
+.community-canvas-tool-wrapper {
+  position: relative;
+  display: inline-flex;
+}
+
+.community-canvas-tool-button {
+  width: 32px;
+  height: 32px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--faded-white);
+  background-color: var(--black);
+  color: var(--white-muted);
+  transition: color 200ms ease, border-color 200ms ease, background-color 200ms ease;
+}
+
+.community-canvas-prompt {
+  height: 32px;
+  display: inline-flex;
+  align-items: center;
+  padding: 0 10px;
+  border: 1px solid var(--faded-white);
+  background-color: var(--black);
+  color: var(--white);
+  font-family: var(--font-geist-mono), monospace;
+  font-weight: 300;
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+  user-select: none;
+  pointer-events: none;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .community-canvas-tool-button:hover {
+    color: var(--accent);
+    border-color: var(--accent);
+  }
+}
+
+.community-canvas-tool-button.is-active {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+/* Tooltip */
+.community-canvas-tooltip {
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 3px 6px;
+  font-size: 0.75rem; /* text-xs */
+  font-family: var(--font-geist-mono), monospace;
+  font-weight: 300;
+  letter-spacing: 0.05em;
+  color: var(--white);
+  background-color: var(--black);
+  border: 1px solid var(--faded-white);
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 150ms ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .community-canvas-tool-wrapper:hover .community-canvas-tooltip,
+  .community-canvas-tool-button:focus-visible + .community-canvas-tooltip {
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .community-canvas-cell,
+  .community-canvas-tool-button,
+  .community-canvas-tooltip {
+    transition: none;
   }
 }
 
