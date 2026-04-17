@@ -6,6 +6,7 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import Sidebar from "@/components/Sidebar";
 import CustomCursor from "@/components/CustomCursor";
+import CommunityCanvas from "@/components/CommunityCanvas";
 import Script from "next/script";
 
 const geistSans = Geist({
@@ -103,13 +104,16 @@ export default function RootLayout({
           <CustomCursor />
           <Sidebar />
           
-          {/* Main content area - offset by sidebar on desktop */}
-          <main className="lg:ml-72 min-h-screen pt-14 lg:pt-0 relative z-10">
+          {/* Main content area - offset by sidebar on desktop.
+              Slides up on scroll to reveal the community canvas footer underneath. */}
+          <main className="lg:ml-72 min-h-screen pt-14 lg:pt-0 relative z-10 bg-black community-canvas-main">
             <div className="page-transition">
               {children}
             </div>
           </main>
-          
+
+          <CommunityCanvas />
+
           <Analytics />
           <SpeedInsights />
         </ThemeProvider>

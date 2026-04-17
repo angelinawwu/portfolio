@@ -415,6 +415,114 @@ html.theme-transition * {
   }
 }
 
+/* ========== COMMUNITY CANVAS FOOTER ========== */
+/* Main slides up on scroll to reveal the fixed footer beneath.
+   Using margin-bottom (not padding) so main's opaque box ends above the
+   footer area — otherwise main's bg-black would cover the footer. */
+.community-canvas-main {
+  margin-bottom: 33.333vh;
+}
+
+.community-canvas {
+  /* Ensure the canvas draws edge-to-edge with no scrollbar artifacts. */
+  overscroll-behavior: contain;
+  touch-action: none;
+}
+
+.community-canvas-grid {
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  width: 100%;
+  height: 100%;
+  gap: 0;
+}
+
+.community-canvas-cell {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  border: 1px solid var(--surface);
+  background-color: var(--cell-color, var(--black));
+  transition: background-color 200ms ease;
+  will-change: background-color;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .community-canvas-cell:hover {
+    background-color: var(--accent-muted);
+  }
+}
+
+.community-canvas-cell:focus-visible {
+  outline: 1px solid var(--accent);
+  outline-offset: -1px;
+}
+
+/* Tool buttons */
+.community-canvas-tool-wrapper {
+  position: relative;
+  display: inline-flex;
+}
+
+.community-canvas-tool-button {
+  width: 32px;
+  height: 32px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--faded-white);
+  background-color: var(--black);
+  color: var(--white-muted);
+  transition: color 200ms ease, border-color 200ms ease, background-color 200ms ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .community-canvas-tool-button:hover {
+    color: var(--accent);
+    border-color: var(--accent);
+  }
+}
+
+.community-canvas-tool-button.is-active {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+/* Tooltip */
+.community-canvas-tooltip {
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 4px 8px;
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  color: var(--white);
+  background-color: var(--surface);
+  border: 1px solid var(--faded-white);
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 150ms ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .community-canvas-tool-wrapper:hover .community-canvas-tooltip,
+  .community-canvas-tool-button:focus-visible + .community-canvas-tooltip {
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .community-canvas-cell,
+  .community-canvas-tool-button,
+  .community-canvas-tooltip {
+    transition: none;
+  }
+}
+
 /* ========== BASE LAYER ========== */
 @layer base {
   * {
