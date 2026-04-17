@@ -80,30 +80,20 @@ export const caseStudies: Project[] = [
 export const playgroundProjects: Project[] = [
 
   {
-    title: 'Communal typewriter',
-    description: 'Typewriter captures the nostalgic feel of mechanical typewriters. No backspace, no copy-paste, no takebacks.',
-    paragraph: 'Typewriter captures the nostalgic feel of mechanical typewriters. No backspace, no copy-paste, no takebacks. Type anything and publish it to the gallery.',
+    title: 'Digital typewriter',
     thumbnail: '/assets/playground/Typewriter-Cover.webp',
     videoUrl: '/assets/playground/Typewriter-Video.mov',
     context: 'React/Vite, Google Sheets API',
     type: 'playground',
-    projectType: 'PERSONAL PROJECT',
-    timeline: 'OCT 2025',
     demoUrl: 'https://digitaltypewriter.vercel.app/',
-    githubUrl: 'https://github.com/angelinawwu/typewriter'
   },
   {
     title: 'A love letter to the Voyager Golden Record',
-    description: 'A love letter to the Voyager Golden Record, and what it means to be human.',
-    paragraph: 'A love letter to the Voyager Golden Record, and what it means to be human and alive on Earth. Turn your sound on!',
     thumbnail: '/assets/playground/Voyager-Cover.webp',
     videoUrl: '/assets/playground/Voyager-Video.mov',
     context: 'Next.js, Framer Motion',
     type: 'playground',
-    projectType: 'PERSONAL PROJECT',
-    timeline: 'NOV 2025',
     demoUrl: 'https://thegoldenrecord.vercel.app/',
-    githubUrl: 'https://github.com/angelinawwu/voyager'
   },
   {
     title: 'poems-i-love',
