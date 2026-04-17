@@ -1,6 +1,6 @@
 'use client';
 
-import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState, type ComponentType } from 'react';
 import { Eraser, PaintBrush } from '@phosphor-icons/react';
 import { useTheme, type Theme } from './ThemeProvider';
 
@@ -57,7 +57,7 @@ function computeLayout(viewportWidth: number) {
   return { cellSize, cols, rows, colStart, rowStart, footerHeight };
 }
 
-export default function CommunityCanvas() {
+export default function Footer() {
   const { theme } = useTheme();
   const [tool, setTool] = useState<Tool>('brush');
   const [pixels, setPixels] = useState<Map<string, Theme>>(new Map());
@@ -239,6 +239,101 @@ export default function CommunityCanvas() {
     document.documentElement.style.setProperty('--community-canvas-height', `${footerHeight}px`);
   }, [footerHeight]);
 
+  // Track the "fold" — where <main>'s bottom edge sits inside the footer's
+  // local coordinate space. The blurred decoration grid uses this to mask
+  // its opaque region to a band starting at the fold and tapering down,
+  // so the blur is always pinned to the topmost visible slice of footer.
+  //   foldOffset = 0           → footer fully revealed (fold at top)
+  //   foldOffset = footerHeight → footer just about to peek (fold at bottom)
+  // Driven through a CSS variable so React doesn't re-render on every frame.
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+
+    let rafId = 0;
+
+    const update = () => {
+      rafId = 0;
+      const scrollY = window.scrollY;
+      const vh = window.innerHeight;
+      const docHeight = document.documentElement.scrollHeight;
+      const maxScroll = docHeight - vh;
+      const fh = footerHeight;
+
+      const foldOffset = Math.max(0, Math.min(fh, maxScroll - scrollY));
+      document.documentElement.style.setProperty('--canvas-fold', `${foldOffset}px`);
+
+      // Fade the blur + darken overlays out over the last 15% of the footer
+      // reveal so they disappear entirely once the footer is fully shown.
+      // foldRatio = 1 (footer hidden) → opacity 1; foldRatio = 0 (revealed) → 0.
+      const foldRatio = fh > 0 ? foldOffset / fh : 0;
+      const FADE_RANGE = 0.15;
+      const overlayOpacity = Math.min(1, foldRatio / FADE_RANGE);
+      document.documentElement.style.setProperty(
+        '--canvas-overlay-opacity',
+        String(overlayOpacity),
+      );
+    };
+
+    const schedule = () => {
+      if (rafId !== 0) return;
+      rafId = window.requestAnimationFrame(update);
+    };
+
+    window.addEventListener('scroll', schedule, { passive: true });
+    window.addEventListener('resize', schedule, { passive: true });
+    update();
+
+    return () => {
+      window.removeEventListener('scroll', schedule);
+      window.removeEventListener('resize', schedule);
+      if (rafId !== 0) window.cancelAnimationFrame(rafId);
+    };
+  }, [footerHeight]);
+
+  // Render the cells once and reuse the array for both grid layers — the
+  // blurred decoration layer and the sharp interactive layer must paint the
+  // exact same content. Buttons in the decoration layer carry tabIndex={-1}
+  // and no event handlers so they're inert; pointer-events: none on the
+  // decoration container makes clicks fall through to the interactive layer.
+  const renderCells = (interactive: boolean) =>
+    cells.map(({ key, col, row }) => {
+      const painted = pixels.get(key);
+      const cellStyle = {
+        ['--cell-color' as string]: painted ? THEME_HEX[painted] : 'var(--black)',
+      };
+      if (!interactive) {
+        return (
+          <span
+            key={key}
+            aria-hidden="true"
+            className="community-canvas-cell"
+            style={cellStyle}
+          />
+        );
+      }
+      return (
+        <button
+          key={key}
+          type="button"
+          aria-label={painted ? `Painted pixel at ${col}, ${row}` : `Empty pixel at ${col}, ${row}`}
+          className="community-canvas-cell"
+          style={cellStyle}
+          onPointerDown={(e) => {
+            e.preventDefault();
+            handleCellPointerDown(col, row);
+          }}
+          onPointerEnter={() => handleCellPointerEnter(col, row)}
+        />
+      );
+    });
+
+  const gridStyle = {
+    // `1fr` guarantees end-to-end fit with no half-cells on the edges,
+    // even when availableWidth / cols is not an integer.
+    gridTemplateColumns: `repeat(${cols}, 1fr)`,
+    gridAutoRows: `${cellSize}px`,
+  } as const;
+
   return (
     <footer
       aria-label="Community pixel canvas"
@@ -267,44 +362,44 @@ export default function CommunityCanvas() {
       </div>
 
       {mounted && (
-        <div
-          className="community-canvas-grid"
-          data-tool={tool}
-          style={{
-            // `1fr` guarantees end-to-end fit with no half-cells on the edges,
-            // even when availableWidth / cols is not an integer.
-            gridTemplateColumns: `repeat(${cols}, 1fr)`,
-            gridAutoRows: `${cellSize}px`,
-          }}
-          onPointerLeave={() => {
-            if (isDragging) {
-              setIsDragging(false);
-              paintedInDragRef.current.clear();
-            }
-          }}
-        >
-          {cells.map(({ key, col, row }) => {
-            const painted = pixels.get(key);
-            return (
-              <button
-                key={key}
-                type="button"
-                aria-label={painted ? `Painted pixel at ${col}, ${row}` : `Empty pixel at ${col}, ${row}`}
-                className="community-canvas-cell"
-                style={{
-                  // Use a CSS variable so the :hover rule can override without !important.
-                  ['--cell-color' as string]: painted ? THEME_HEX[painted] : 'var(--black)',
-                }}
-                onPointerDown={(e) => {
-                  e.preventDefault();
-                  handleCellPointerDown(col, row);
-                }}
-                onPointerEnter={() => handleCellPointerEnter(col, row)}
-              />
-            );
-          })}
-        </div>
+        <>
+          {/* Sharp interactive grid — receives all pointer events and renders
+              the actual buttons users paint with. */}
+          <div
+            className="community-canvas-grid"
+            data-tool={tool}
+            style={gridStyle}
+            onPointerLeave={() => {
+              if (isDragging) {
+                setIsDragging(false);
+                paintedInDragRef.current.clear();
+              }
+            }}
+          >
+            {renderCells(true)}
+          </div>
+
+          {/* Blurred decoration layer — same cells, uniformly blurred, masked
+              so the blur is fully opaque at the top edge and fades to clear
+              by the bottom. Stacked on top of the sharp grid; the mask's
+              transparent regions reveal the sharp version underneath, giving
+              the perception of a vertical progressive blur strongest at the
+              fold between page content and the canvas. */}
+          <div
+            className="community-canvas-grid community-canvas-grid--blurred"
+            style={gridStyle}
+            aria-hidden="true"
+          >
+            {renderCells(false)}
+          </div>
+
+          {/* Dark gradient overlay — same fold-tracking band as the blur,
+              but a flat `var(--black)` → transparent gradient that darkens
+              the canvas at the fold. Sits above the blur, below the tools. */}
+          <div className="community-canvas-fold-darken" aria-hidden="true" />
+        </>
       )}
+
     </footer>
   );
 }
@@ -313,7 +408,7 @@ interface ToolButtonProps {
   label: string;
   active: boolean;
   onClick: () => void;
-  Icon: React.ComponentType<{ size?: number; weight?: 'regular' | 'bold' | 'fill' }>;
+  Icon: ComponentType<{ size?: number; weight?: 'regular' | 'bold' | 'fill' }>;
 }
 
 function ToolButton({ label, active, onClick, Icon }: ToolButtonProps) {

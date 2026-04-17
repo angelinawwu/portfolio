@@ -6,7 +6,7 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import Sidebar from "@/components/Sidebar";
 import CustomCursor from "@/components/CustomCursor";
-import CommunityCanvas from "@/components/CommunityCanvas";
+import Footer from "@/components/Footer";
 import Script from "next/script";
 
 const geistSans = Geist({
@@ -112,7 +112,7 @@ export default function RootLayout({
             </div>
           </main>
 
-          <CommunityCanvas />
+          <Footer />
 
           <Analytics />
           <SpeedInsights />
