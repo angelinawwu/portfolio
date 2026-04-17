@@ -422,20 +422,15 @@ html.theme-transition * {
 }
 
 /* ========== COMMUNITY CANVAS FOOTER ========== */
-/* Main slides up on scroll to reveal the fixed footer beneath.
-   Using margin-bottom (not padding) so main's opaque box ends above the
-   footer area — otherwise main's bg-black would cover the footer.
-   The border-bottom acts as a dividing line that becomes visible as the
-   footer is revealed, matching the faded-white strokes used site-wide. */
+/* Main uses margin-bottom (not padding) so its opaque bg-black ends above
+   the footer area; otherwise it would cover the fixed footer beneath. */
 .community-canvas-main {
-  /* --community-canvas-height is set in JS from the computed footer height
-     (rows × cellSize). Fallback keeps the reveal working during SSR. */
+  /* --community-canvas-height is set in JS from the computed footer height. */
   margin-bottom: var(--community-canvas-height, 280px);
   border-bottom: 1px solid var(--faded-white);
 }
 
 .community-canvas {
-  /* Ensure the canvas draws edge-to-edge with no scrollbar artifacts. */
   overscroll-behavior: contain;
   touch-action: none;
 }
@@ -446,28 +441,17 @@ html.theme-transition * {
   align-content: center;
   width: 100%;
   height: 100%;
-  /* 1px gap + faded-white background = true 1px grid lines, same weight as
-     the `border border-faded-white` used on project cards. */
+  /* 1px gap + faded-white background = true 1px grid lines. */
   gap: 1px;
   background-color: color-mix(in srgb, var(--faded-white) 30%, transparent);
 }
 
-/* Decorative blurred copy of the grid stacked on top of the interactive one.
-   The mask carves out a soft horizontal band whose top edge tracks
-   `--canvas-fold` — the offset (in px) of <main>'s bottom edge inside the
-   footer's local coordinate space, written by Footer's scroll handler.
-   The band starts sharp at the fold (max blur right at the seam) and tapers
-   to transparent over `--canvas-blur-band` so the sharp grid underneath
-   shows through below the band. Pointer events fall through everywhere so
-   the canvas stays paintable. */
-/* `--canvas-fold-overshoot` extends the opaque region of the band UPWARD,
-   above the rendered fold position. The scroll handler runs once per rAF,
-   so during fast scrolls `--canvas-fold` can be a frame stale and the
-   actual bottom-of-main has already moved further up than what we painted.
-   Painting extra opacity above the fold covers that lag — the area between
-   (fold − overshoot) and fold is normally hidden behind <main>'s opaque
-   bg-black, so the overshoot is invisible until it's needed. The footer's
-   `overflow: hidden` clips anything that goes past the footer's top edge. */
+/* Blurred copy of the grid, masked to a fold-tracking band.
+   `--canvas-fold` is set by Footer's scroll handler (px offset of <main>'s
+   bottom edge inside the footer). The band is opaque at the fold and tapers
+   to transparent over `--canvas-blur-band`.
+   `--canvas-fold-overshoot` extends opacity upward to hide rAF lag during
+   fast scrolls — the overshoot area is normally behind <main>'s bg-black. */
 .community-canvas-grid--blurred {
   position: absolute;
   inset: 0;
@@ -489,21 +473,15 @@ html.theme-transition * {
     black var(--canvas-fold, 0px),
     transparent calc(var(--canvas-fold, 0px) + var(--canvas-blur-band))
   );
-  /* Hide the grid-line background on the blurred copy so we don't double
-     the 1px grid lines on top of the sharp grid below. */
+  /* Hide grid-line background so we don't double lines over the sharp grid. */
   background-color: transparent;
-  /* Fade out over the last sliver of reveal — driven by Footer's scroll
-     handler. Both this and the dark overlay disappear once the footer is
-     fully shown so the canvas is uninterrupted. */
+  /* Fade out over the last sliver of reveal so the canvas is uninterrupted once fully shown. */
   opacity: var(--canvas-overlay-opacity, 1);
   will-change: filter, mask-image, opacity;
 }
 
-/* Dark gradient overlay sharing the same fold-tracking shape as the blur.
-   Sits above the blurred grid (later in DOM, no z-index needed) and below
-   the tool buttons (z-10), so it darkens the canvas at the fold without
-   affecting the prompt or brush/eraser controls. Same overshoot trick as
-   the blur to mask any rAF lag during fast scrolls. */
+/* Dark gradient sharing the blur's fold-tracking shape; darkens the canvas
+   at the fold. Stacked above the blurred grid, below the tool buttons. */
 .community-canvas-fold-darken {
   position: absolute;
   inset: 0;
@@ -539,9 +517,7 @@ html.theme-transition * {
 }
 
 @media (hover: hover) and (pointer: fine) {
-  /* Brush: accent at 50% opacity blended with the cell's color in `screen`,
-     so hovers lighten toward the accent. `background-image` stacks above
-     `background-color`, and `background-blend-mode` blends the two. */
+  /* Brush hover: lighten toward accent via screen blend. */
   .community-canvas-cell:hover {
     background-color: var(--cell-color, var(--black));
     background-image: linear-gradient(
@@ -551,8 +527,7 @@ html.theme-transition * {
     background-blend-mode: screen;
   }
 
-  /* Eraser: accent at 95% opacity blended in `multiply`, so hovers darken
-     painted cells — previewing the erased state. */
+  /* Eraser hover: darken to preview the erased state. */
   .community-canvas-grid[data-tool='eraser'] .community-canvas-cell:hover {
     background-color: var(--cell-color, var(--black));
     background-image: linear-gradient(

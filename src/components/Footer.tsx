@@ -14,15 +14,13 @@ interface PixelRecord {
 
 const TARGET_PIXEL_DESKTOP = 20;
 const TARGET_PIXEL_MOBILE = 16;
-// Footer height is a fixed number of cells, so cells always fit end-to-end.
-const ROWS_DESKTOP = 14;
+const ROWS_DESKTOP = 16;
 const ROWS_MOBILE = 18;
 const SIDEBAR_WIDTH_LG = 288;
 const LG_BREAKPOINT = 1024;
 const POLL_INTERVAL_MS = 5000;
-// How long a locally-drawn pixel keeps priority over polled server state.
-// This prevents the next poll from briefly wiping an optimistic paint while
-// Google Sheets is still catching up on the POST.
+// Local writes win over polled server state for this long, so the next poll
+// doesn't briefly wipe an optimistic paint while Sheets catches up.
 const PENDING_WRITE_TTL_MS = 15000;
 
 const THEME_HEX: Record<Theme, string> = {
@@ -43,14 +41,12 @@ function computeLayout(viewportWidth: number) {
   const rows = isDesktop ? ROWS_DESKTOP : ROWS_MOBILE;
   const availableWidth = isDesktop ? viewportWidth - SIDEBAR_WIDTH_LG : viewportWidth;
 
-  // Pick a column count close to the target pixel size, then divide evenly.
-  // The cell size is (availableWidth / cols) exactly, so cells fit end-to-end
-  // with no half-cells. Square cells make the row height the same.
+  // Round to a whole number of cols so cells fit end-to-end with no half-cells.
   const cols = Math.max(1, Math.round(availableWidth / targetPixel));
   const cellSize = availableWidth / cols;
   const footerHeight = cellSize * rows;
 
-  // Center the grid on (0, 0): origin sits at the middle cell for every user.
+  // Center the grid on (0, 0) so the origin is the middle cell for every user.
   const colStart = -Math.floor(cols / 2);
   const rowStart = -Math.floor(rows / 2);
 
@@ -61,15 +57,12 @@ export default function Footer() {
   const { theme } = useTheme();
   const [tool, setTool] = useState<Tool>('brush');
   const [pixels, setPixels] = useState<Map<string, Theme>>(new Map());
-  // Use a stable default for SSR so server/client HTML match; the real
-  // viewport-dependent layout is computed after mount.
+  // Stable SSR default; real viewport-dependent layout is computed after mount.
   const [layout, setLayout] = useState(() => computeLayout(1440));
   const [mounted, setMounted] = useState(false);
   const [isDragging, setIsDragging] = useState(false);
   const paintedInDragRef = useRef<Set<string>>(new Set());
-  // Local writes that should win over whatever the server polls back until
-  // the backend has had time to persist them. Each entry expires after
-  // PENDING_WRITE_TTL_MS.
+  // Local writes that win over polled server state until PENDING_WRITE_TTL_MS expires.
   const pendingWritesRef = useRef<Map<string, { theme: Theme | null; expireAt: number }>>(
     new Map(),
   );
@@ -78,7 +71,6 @@ export default function Footer() {
     setMounted(true);
   }, []);
 
-  // Recompute grid dimensions on resize (debounced).
   useEffect(() => {
     let timeout: number | null = null;
     const onResize = () => {
@@ -109,8 +101,7 @@ export default function Footer() {
         for (const p of data.pixels) {
           next.set(keyOf(p.col, p.row), p.theme);
         }
-        // Overlay any still-fresh local writes so the user's own paints
-        // are never briefly wiped by a stale poll response.
+        // Overlay still-fresh local writes so stale polls can't clobber them.
         const now = Date.now();
         for (const [k, v] of pendingWritesRef.current) {
           if (v.expireAt <= now) {
@@ -125,7 +116,7 @@ export default function Footer() {
         }
         setPixels(next);
       } catch {
-        // Silent — network blip; we'll try again on next poll.
+        // Network blip — next poll will reconcile.
       }
     };
 
@@ -142,7 +133,7 @@ export default function Footer() {
       const key = keyOf(col, row);
       const nextTheme: Theme | null = tool === 'brush' ? theme : null;
 
-      // 1. Optimistic UI — update immediately so the cell paints on this frame.
+      // Optimistic paint.
       setPixels((prev) => {
         const existing = prev.get(key);
         if (nextTheme === null && !existing) return prev;
@@ -156,15 +147,12 @@ export default function Footer() {
         return next;
       });
 
-      // 2. Record in the pending-writes layer so upcoming polls don't clobber it.
       pendingWritesRef.current.set(key, {
         theme: nextTheme,
         expireAt: Date.now() + PENDING_WRITE_TTL_MS,
       });
 
-      // 3. Fire-and-forget to the backend — we never await, so drags stay snappy
-      // even if Google Sheets is slow. If it fails, the optimistic state still
-      // shows and the next poll will reconcile.
+      // Fire-and-forget so drags stay snappy even if Sheets is slow.
       void fetch('/api/pixels', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -172,21 +160,18 @@ export default function Footer() {
         keepalive: true,
       }).then((res) => {
         if (res.ok) {
-          // Refresh the TTL so later polls still trust the local value until
-          // Sheets has had a chance to include it.
+          // Refresh TTL so polls keep trusting the local value until Sheets catches up.
           const entry = pendingWritesRef.current.get(key);
           if (entry && entry.theme === nextTheme) {
             entry.expireAt = Date.now() + PENDING_WRITE_TTL_MS;
           }
         }
-      }).catch(() => {
-        // Silent — optimistic state remains.
-      });
+      }).catch(() => {});
     },
     [theme, tool],
   );
 
-  // Build grid cells. Memoized so we don't rebuild on every pixel update.
+  // Memoized so we don't rebuild the grid on every pixel update.
   const cells = useMemo(() => {
     const { cols, rows, colStart, rowStart } = layout;
     const out: Array<{ key: string; col: number; row: number }> = [];
@@ -200,7 +185,7 @@ export default function Footer() {
     return out;
   }, [layout]);
 
-  // Cancel global drag state on pointer up anywhere.
+  // Cancel drag state on pointer up anywhere.
   useEffect(() => {
     if (!isDragging) return;
     const stop = () => {
@@ -231,21 +216,18 @@ export default function Footer() {
 
   const { cellSize, cols, footerHeight } = layout;
 
-  // Sync footer height to <main>'s margin-bottom via a CSS custom property
-  // on the document root, so the scroll reveal matches the new pixel-based
-  // height exactly (not a fixed vh).
+  // Sync footer height to <main>'s margin-bottom via a CSS variable so the
+  // scroll reveal matches the pixel-based height exactly.
   useEffect(() => {
     if (typeof document === 'undefined') return;
     document.documentElement.style.setProperty('--community-canvas-height', `${footerHeight}px`);
   }, [footerHeight]);
 
   // Track the "fold" — where <main>'s bottom edge sits inside the footer's
-  // local coordinate space. The blurred decoration grid uses this to mask
-  // its opaque region to a band starting at the fold and tapering down,
-  // so the blur is always pinned to the topmost visible slice of footer.
-  //   foldOffset = 0           → footer fully revealed (fold at top)
-  //   foldOffset = footerHeight → footer just about to peek (fold at bottom)
-  // Driven through a CSS variable so React doesn't re-render on every frame.
+  // local coordinate space. The blurred decoration grid masks its opaque
+  // region to a band starting at the fold, so the blur is pinned to the
+  // topmost visible slice of footer. Driven via a CSS variable so React
+  // doesn't re-render on every scroll frame.
   useEffect(() => {
     if (typeof window === 'undefined') return;
 
@@ -262,9 +244,7 @@ export default function Footer() {
       const foldOffset = Math.max(0, Math.min(fh, maxScroll - scrollY));
       document.documentElement.style.setProperty('--canvas-fold', `${foldOffset}px`);
 
-      // Fade the blur + darken overlays out over the last 15% of the footer
-      // reveal so they disappear entirely once the footer is fully shown.
-      // foldRatio = 1 (footer hidden) → opacity 1; foldRatio = 0 (revealed) → 0.
+      // Fade blur + darken overlays out over the last 15% of the reveal.
       const foldRatio = fh > 0 ? foldOffset / fh : 0;
       const FADE_RANGE = 0.15;
       const overlayOpacity = Math.min(1, foldRatio / FADE_RANGE);
@@ -290,11 +270,9 @@ export default function Footer() {
     };
   }, [footerHeight]);
 
-  // Render the cells once and reuse the array for both grid layers — the
-  // blurred decoration layer and the sharp interactive layer must paint the
-  // exact same content. Buttons in the decoration layer carry tabIndex={-1}
-  // and no event handlers so they're inert; pointer-events: none on the
-  // decoration container makes clicks fall through to the interactive layer.
+  // Same cells rendered twice: once interactively, once as inert decoration
+  // for the blurred layer. The decoration layer has pointer-events: none so
+  // clicks fall through to the interactive grid.
   const renderCells = (interactive: boolean) =>
     cells.map(({ key, col, row }) => {
       const painted = pixels.get(key);
@@ -328,8 +306,7 @@ export default function Footer() {
     });
 
   const gridStyle = {
-    // `1fr` guarantees end-to-end fit with no half-cells on the edges,
-    // even when availableWidth / cols is not an integer.
+    // `1fr` guarantees end-to-end fit with no half-cells on the edges.
     gridTemplateColumns: `repeat(${cols}, 1fr)`,
     gridAutoRows: `${cellSize}px`,
   } as const;
@@ -340,12 +317,10 @@ export default function Footer() {
       className="community-canvas fixed bottom-0 right-0 left-0 lg:left-72 z-0 overflow-hidden select-none"
       style={{ height: `${footerHeight}px`, backgroundColor: 'var(--black)' }}
     >
-      {/* Prompt — top-left corner. */}
       <div className="community-canvas-prompt absolute top-3 left-3 z-10">
         LET&apos;S DRAW TOGETHER IN THIS FOOTER :)
       </div>
 
-      {/* Tool buttons — top-right corner. */}
       <div className="community-canvas-tools absolute top-3 right-3 z-10 flex items-center gap-2">
         <ToolButton
           label="Brush"
@@ -363,8 +338,6 @@ export default function Footer() {
 
       {mounted && (
         <>
-          {/* Sharp interactive grid — receives all pointer events and renders
-              the actual buttons users paint with. */}
           <div
             className="community-canvas-grid"
             data-tool={tool}
@@ -379,12 +352,6 @@ export default function Footer() {
             {renderCells(true)}
           </div>
 
-          {/* Blurred decoration layer — same cells, uniformly blurred, masked
-              so the blur is fully opaque at the top edge and fades to clear
-              by the bottom. Stacked on top of the sharp grid; the mask's
-              transparent regions reveal the sharp version underneath, giving
-              the perception of a vertical progressive blur strongest at the
-              fold between page content and the canvas. */}
           <div
             className="community-canvas-grid community-canvas-grid--blurred"
             style={gridStyle}
@@ -393,13 +360,9 @@ export default function Footer() {
             {renderCells(false)}
           </div>
 
-          {/* Dark gradient overlay — same fold-tracking band as the blur,
-              but a flat `var(--black)` → transparent gradient that darkens
-              the canvas at the fold. Sits above the blur, below the tools. */}
           <div className="community-canvas-fold-darken" aria-hidden="true" />
         </>
       )}
-
     </footer>
   );
 }

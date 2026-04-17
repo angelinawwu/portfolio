@@ -103,17 +103,12 @@ export default function RootLayout({
         <ThemeProvider>
           <CustomCursor />
           <Sidebar />
-          
-          {/* Main content area - offset by sidebar on desktop.
-              Slides up on scroll to reveal the community canvas footer underneath. */}
           <main className="lg:ml-72 min-h-screen pt-14 lg:pt-0 relative z-10 bg-black community-canvas-main">
             <div className="page-transition">
               {children}
             </div>
           </main>
-
           <Footer />
-
           <Analytics />
           <SpeedInsights />
         </ThemeProvider>

@@ -161,15 +161,4 @@ export const playgroundProjects: Project[] = [
   },
 ];
 
-// All projects for Work page (all case studies)
-// Order: Reverie -> FamilyFridge -> Goodreads Wrapped -> Manifesto Market -> Workup
-export const workProjects: Project[] = [
-  caseStudies[0], // Reverie
-  caseStudies[1], // FamilyFridge
-  caseStudies[2], // Goodreads Wrapped
-  caseStudies[3], // Manifesto Market
-  caseStudies[4], // Workup
-];
-
-// Combined projects for backward compatibility
-export const projects: Project[] = [...caseStudies, ...playgroundProjects];
+export const workProjects: Project[] = [...caseStudies];
