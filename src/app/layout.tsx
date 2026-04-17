@@ -24,7 +24,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://angelinawwu.com"),
   title: "Angelina Wu's Portfolio",
   description: "designing to delight",
-  keywords: ["design", "development", "UX", "UI", "frontend", "data science", "UCLA", "portfolio", "design engineer", "product design", "design media arts"],
+  keywords: ["design", "development", "UX", "UI", "frontend", "applied math", "UCLA", "portfolio", "design engineer", "product design", "design media arts"],
   authors: [{ name: "Angelina Wu" }],
   creator: "Angelina Wu",
   icons: {

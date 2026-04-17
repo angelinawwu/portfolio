@@ -14,7 +14,7 @@ export type BioData = {
 
 export const bio: BioData = {
   accentWords: ['delight', 'connection'],
-  paragraph: "Hey, I'm Angelina! I'm a designer who's passionate about creating channels for {delight} and {connection}. I see design as a way to build tiny bridges between people. I'm currently at UCLA studying Design Media Arts and Statistics/Data Science.",
+  paragraph: "Hey, I'm Angelina! I'm a designer who's passionate about creating channels for {delight} and {connection}. I see design as a way to build tiny bridges between people. I'm currently at UCLA studying Design Media Arts and Applied Math.",
   hobbies: [
     'Reading tearjerker novels about friendship and family',
     'Going down Wikipedia rabbit holes',
