@@ -120,27 +120,35 @@ export const playgroundProjects: Project[] = [
     thumbnail: '/assets/playground/VESTGlass-Cover.webp',
     type: 'playground',
   },
-
+  {
+    title: 'Chengdu supermarket',
+    context: 'Procreate',
+    thumbnail: '/assets/playground/Supermarket-Cover.webp',
+    type: 'playground',
+  },
   {
     title: 'Bookish app (concept)',
     context: 'Figma, Flutter',
     thumbnail: '/assets/playground/Bookish-Cover.webp',
     type: 'playground',
   },
+
+{
+  title: 'Drawing the moon',
+  context: 'Procreate',
+  thumbnail: '/assets/playground/Moontree-Cover.webp',
+  type: 'playground',
+},
+  
+
+  
   {
     title: 'VEST t-shirts',
     context: 'Adobe Illustrator',
     thumbnail: '/assets/playground/VESTShirt-Cover.webp',
     type: 'playground',
   },
-  {
-    title: 'Hero (Treehacks 2026)',
-    context: 'React Native',
-    thumbnail: '/assets/playground/Hero-Cover.webp',
-    type: 'playground',
-    devpostUrl: 'https://devpost.com/software/organmatch',
-  },
-  
+ 
   {
     title: 'VEST recruitment graphic',
     context: 'Figma, Adobe Photoshop',
@@ -148,15 +156,15 @@ export const playgroundProjects: Project[] = [
     type: 'playground',
   },
   {
-    title: 'Team t-shirt design',
-    context: 'Figma, Adobe Photoshop',
-    thumbnail: '/assets/playground/TeddiesTee-Cover.webp',
+    title: 'Meeting a past self',
+    context: 'Procreate',
+    thumbnail: '/assets/playground/Meeting-a-Past-Self-Cover.webp',
     type: 'playground',
   },
   {
-    title: 'Piece of Cake app (concept)',
-    context: 'Figma',
-    thumbnail: '/assets/playground/PieceOfCake-Cover.webp',
+    title: 'Team t-shirt design',
+    context: 'Figma, Adobe Photoshop',
+    thumbnail: '/assets/playground/TeddiesTee-Cover.webp',
     type: 'playground',
   },
 ];
