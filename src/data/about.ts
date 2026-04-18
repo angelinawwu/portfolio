@@ -113,8 +113,8 @@ export const albums: About[] = [
   },
   { 
     id: 5, 
-    title: "BADLANDS", 
-    url: "https://open.spotify.com/album/5U5rt98q8Jqx4lP3RdqYfO?si=WAvfrhl6RgSzqWwH3VoQ-w", 
+    title: "Spring Forward", 
+    url: "https://open.spotify.com/album/61NGKj9SdXHHxDWU8ZsnaS?si=GvJ9AOUPT-SvKm7c7DibHg", 
     image: "/assets/About/Songs/Song-5.webp",
     type: 'album'
   },
