@@ -422,11 +422,10 @@ html.theme-transition * {
 }
 
 /* ========== COMMUNITY CANVAS FOOTER ========== */
-/* Main uses margin-bottom (not padding) so its opaque bg-black ends above
-   the footer area; otherwise it would cover the fixed footer beneath. */
+/* Footer is position: sticky so it participates in the document's scroll
+   surface — that lets it move with horizontal rubber-band overscroll
+   alongside <main>, instead of staying pinned to the viewport like fixed. */
 .community-canvas-main {
-  /* --community-canvas-height is set in JS from the computed footer height. */
-  margin-bottom: var(--community-canvas-height, 280px);
   border-bottom: 1px solid var(--faded-white);
 }
 
@@ -457,7 +456,7 @@ html.theme-transition * {
   inset: 0;
   pointer-events: none;
   filter: blur(20px);
-  --canvas-blur-band: 100px;
+  --canvas-blur-band: 80px;
   --canvas-fold-overshoot: 40px;
   -webkit-mask-image: linear-gradient(
     to bottom,
@@ -481,12 +480,16 @@ html.theme-transition * {
 }
 
 /* Dark gradient sharing the blur's fold-tracking shape; darkens the canvas
-   at the fold. Stacked above the blurred grid, below the tool buttons. */
+   at the fold. Stacked above the blurred grid, below the tool buttons.
+   `--canvas-overlay-opacity` is set on :root by Footer (scroll-driven), so it
+   always wins over a fallback here — tune strength with
+   `--canvas-fold-darken-strength` instead. */
 .community-canvas-fold-darken {
   position: absolute;
   inset: 0;
   pointer-events: none;
   --canvas-fold-overshoot: 40px;
+  --canvas-fold-darken-strength: 0;
   background: linear-gradient(
     to bottom,
     transparent calc(var(--canvas-fold, 0px) - var(--canvas-fold-overshoot) - 1px),
@@ -494,7 +497,9 @@ html.theme-transition * {
     var(--black) var(--canvas-fold, 0px),
     transparent calc(var(--canvas-fold, 0px) + 100px)
   );
-  opacity: var(--canvas-overlay-opacity, 1);
+  opacity: calc(
+    var(--canvas-overlay-opacity, 1) * var(--canvas-fold-darken-strength, 1)
+  );
   will-change: background, opacity;
 }
 

@@ -216,13 +216,6 @@ export default function Footer() {
 
   const { cellSize, cols, footerHeight } = layout;
 
-  // Sync footer height to <main>'s margin-bottom via a CSS variable so the
-  // scroll reveal matches the pixel-based height exactly.
-  useEffect(() => {
-    if (typeof document === 'undefined') return;
-    document.documentElement.style.setProperty('--community-canvas-height', `${footerHeight}px`);
-  }, [footerHeight]);
-
   // Track the "fold" — where <main>'s bottom edge sits inside the footer's
   // local coordinate space. The blurred decoration grid masks its opaque
   // region to a band starting at the fold, so the blur is pinned to the
@@ -314,7 +307,7 @@ export default function Footer() {
   return (
     <footer
       aria-label="Community pixel canvas"
-      className="community-canvas fixed bottom-0 right-0 left-0 lg:left-72 z-0 overflow-hidden select-none"
+      className="community-canvas sticky bottom-0 lg:ml-72 z-0 overflow-hidden select-none"
       style={{ height: `${footerHeight}px`, backgroundColor: 'var(--black)' }}
     >
       <div className="community-canvas-prompt absolute top-3 left-3 z-10">
