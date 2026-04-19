@@ -430,7 +430,9 @@ html.theme-transition * {
 }
 
 .community-canvas {
-  overscroll-behavior: contain;
+  /* Drawing on touch needs `none` so a finger drag paints instead of scrolls.
+     Wheel/trackpad scrolling is forwarded to the page in Footer.tsx so the
+     `overflow: hidden` scroll container doesn't swallow wheel deltas. */
   touch-action: none;
 }
 
