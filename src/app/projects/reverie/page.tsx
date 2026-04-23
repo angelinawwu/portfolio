@@ -49,7 +49,7 @@ export default function ReveriePage() {
                 </p>
               </div>
               <p>
-                With my teammates Ellie, Emily, and Nancy, we spent 3 days brainstorming, iterating, and prototyping on our solution.
+                With my teammates Ellie, Emily, and Nancy, we spent 3 days brainstorming, iterating, and prototyping on our solution. Out of 690 total teams, we were selected as 1 of 5 teams to win the $1000 Honorable Mention Prize, and placed in the Top 13 Overall.
               </p>
             </div>
 
