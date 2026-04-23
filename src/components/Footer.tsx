@@ -62,7 +62,6 @@ export default function Footer() {
   const [mounted, setMounted] = useState(false);
   const [isDragging, setIsDragging] = useState(false);
   const paintedInDragRef = useRef<Set<string>>(new Set());
-  const footerRef = useRef<HTMLElement>(null);
   // Local writes that win over polled server state until PENDING_WRITE_TTL_MS expires.
   const pendingWritesRef = useRef<Map<string, { theme: Theme | null; expireAt: number }>>(
     new Map(),
@@ -217,29 +216,6 @@ export default function Footer() {
 
   const { cellSize, cols, footerHeight } = layout;
 
-  // Forward wheel/trackpad deltas from the footer up to the document so
-  // scrolling works while the cursor is over the canvas. The footer is an
-  // `overflow: hidden` scroll container, which makes some browsers swallow
-  // wheel events instead of chaining them to the window. React attaches
-  // onWheel as a passive listener (preventDefault is a no-op there), so we
-  // bind a native non-passive listener directly to the footer element.
-  useEffect(() => {
-    const el = footerRef.current;
-    if (!el) return;
-
-    const onWheel = (e: WheelEvent) => {
-      // Let pinch-zoom (ctrlKey) and modified gestures pass through untouched.
-      if (e.ctrlKey) return;
-      e.preventDefault();
-      window.scrollBy({ top: e.deltaY, left: e.deltaX, behavior: 'auto' });
-    };
-
-    el.addEventListener('wheel', onWheel, { passive: false });
-    return () => {
-      el.removeEventListener('wheel', onWheel);
-    };
-  }, []);
-
   // Track the "fold" — where <main>'s bottom edge sits inside the footer's
   // local coordinate space. The blurred decoration grid masks its opaque
   // region to a band starting at the fold, so the blur is pinned to the
@@ -330,7 +306,6 @@ export default function Footer() {
 
   return (
     <footer
-      ref={footerRef}
       aria-label="Community pixel canvas"
       className="community-canvas sticky bottom-0 lg:ml-72 z-0 overflow-hidden select-none"
       style={{ height: `${footerHeight}px`, backgroundColor: 'var(--black)' }}
