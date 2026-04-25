@@ -146,14 +146,14 @@ export default function FamilyFridge2Page() {
                     alt="Family hiking together"
                     width={400}
                     height={300}
-                    className="w-full h-auto"
+                    className="w-full h-auto hidden md:block"
                   />
                   <Image
                     src="/assets/projects/FamilyFridge/FamilyFridge-Quote-1.webp"
                     alt="Some of our best memories were when we went on hikes together and just got to talk."
                     width={400}
                     height={300}
-                    className="w-full h-auto"
+                    className="w-full h-auto pl-12 md:px-0"
                   />
                 </div>
                 <div className="space-y-4">
@@ -162,14 +162,14 @@ export default function FamilyFridge2Page() {
                     alt="FaceTime call screenshot"
                     width={400}
                     height={300}
-                    className="w-full h-auto"
+                    className="w-full h-auto hidden md:block"
                   />
                   <Image
                     src="/assets/projects/FamilyFridge/FamilyFridge-Quote-2.webp"
                     alt="My mom screenshots FaceTime calls during special moments, so in 20 years, she can see how silly I was."
                     width={400}
                     height={300}
-                    className="w-full h-auto"
+                    className="w-full h-auto pr-12 md:px-0"
                   />
                 </div>
                 <div className="space-y-4">
@@ -178,14 +178,14 @@ export default function FamilyFridge2Page() {
                     alt="Grandma sharing old photos"
                     width={400}
                     height={300}
-                    className="w-full h-auto"
+                    className="w-full h-auto hidden md:block"
                   />
                   <Image
                     src="/assets/projects/FamilyFridge/FamilyFridge-Quote-3.webp"
                     alt="My grandma had so much fun telling me the stories behind old photos."
                     width={400}
                     height={300}
-                    className="w-full h-auto"
+                    className="w-full h-auto pl-12 md:px-0"
                   />
                 </div>
               </div>
@@ -411,7 +411,7 @@ export default function FamilyFridge2Page() {
             “The FaceTime‑style call element actively detracts from the experience. It introduces additional complexity that isn’t needed, feels clunky in execution, and pulls attention away from the quieter, more differentiated core idea.”"
             width={800}
             height={300}
-            className="w-full h-auto px-24"
+            className="w-full h-auto md:px-24"
           />
         </section>
 
