@@ -109,6 +109,13 @@ export const playgroundProjects: Project[] = [
     type: 'playground',
   },
   {
+    title: 'Polaris (LAHacks 2026 Winner)',
+    context: 'Next.js, Fetch.ai UAgents',
+    videoUrl: '/assets/playground/Polaris-Video.mp4',
+    type: 'playground',
+    devpostUrl: 'https://devpost.com/software/polaris-mh7rd8',
+  },
+  {
     title: 'Rug store (concept)',
     context: 'Figma, Veo',
     videoUrl: '/assets/playground/Rug-Video.mov',
