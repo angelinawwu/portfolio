@@ -102,12 +102,7 @@ export const playgroundProjects: Project[] = [
     type: 'playground',
     demoUrl: 'https://poems-i-love.vercel.app/',
   },
-  {
-    title: 'Thistle (healthtech concept)',
-    context: 'Figma, Nano Banana',
-    thumbnail: '/assets/playground/Thistle-Cover.webp',
-    type: 'playground',
-  },
+
   {
     title: 'Polaris (LAHacks 2026 Winner)',
     context: 'Next.js, Fetch.ai UAgents',
@@ -119,6 +114,19 @@ export const playgroundProjects: Project[] = [
     title: 'Rug store (concept)',
     context: 'Figma, Veo',
     videoUrl: '/assets/playground/Rug-Video.mov',
+    type: 'playground',
+  },
+  {
+    title: 'Fluted glass video generation (internal tool)',
+    context: 'Next.js, Prisma, Postgres, Vercel',
+    type: 'playground',
+    videoUrl: '/assets/playground/FlutedGlass-Video.mp4',
+    demoUrl: 'https://uclaarts-videogen.vercel.app/',
+  },
+    {
+    title: 'Thistle (healthtech concept)',
+    context: 'Figma, Nano Banana',
+    thumbnail: '/assets/playground/Thistle-Cover.webp',
     type: 'playground',
   },
   {
