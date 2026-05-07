@@ -117,7 +117,7 @@ export const playgroundProjects: Project[] = [
     type: 'playground',
   },
   {
-    title: 'Fluted glass video generation (internal tool)',
+    title: 'Creative tool for generating abstract glass videos',
     context: 'Next.js, Prisma, Postgres, Vercel',
     type: 'playground',
     videoUrl: '/assets/playground/FlutedGlass-Video.mp4',
