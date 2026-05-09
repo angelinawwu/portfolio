@@ -7,6 +7,8 @@ import { ThemeProvider } from "@/components/ThemeProvider";
 import Sidebar from "@/components/Sidebar";
 import CustomCursor from "@/components/CustomCursor";
 import Footer from "@/components/Footer";
+import CanvasToolbar from "@/components/CanvasToolbar";
+import { CanvasToolProvider } from "@/components/CanvasToolContext";
 import Script from "next/script";
 
 const geistSans = Geist({
@@ -101,14 +103,17 @@ export default function RootLayout({
           }}
         />
         <ThemeProvider>
-          <CustomCursor />
-          <Sidebar />
-          <main className="lg:ml-72 min-h-screen pt-14 lg:pt-0 relative z-10 bg-black community-canvas-main">
-            <div className="page-transition">
-              {children}
-            </div>
-          </main>
-          <Footer />
+          <CanvasToolProvider>
+            <CustomCursor />
+            <Sidebar />
+            <main className="lg:ml-72 min-h-screen pt-14 lg:pt-0 relative z-10 bg-black community-canvas-main">
+              <div className="page-transition">
+                {children}
+              </div>
+              <CanvasToolbar />
+            </main>
+            <Footer />
+          </CanvasToolProvider>
           <Analytics />
           <SpeedInsights />
         </ThemeProvider>

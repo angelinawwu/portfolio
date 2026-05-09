@@ -1,8 +1,10 @@
 'use client';
 
 import Image from 'next/image';
+import { useState } from 'react';
 import { Project } from '@/data/projects';
 import { useVideoPlayback } from '@/hooks/useVideoPlayback';
+import { getThumbhash } from '@/lib/thumbhash';
 
 interface PlaygroundCardProps {
   project: Project;
@@ -12,6 +14,9 @@ interface PlaygroundCardProps {
 
 export default function PlaygroundCard({ project, index, onExpand }: PlaygroundCardProps) {
   const videoRef = useVideoPlayback();
+  const [videoLoaded, setVideoLoaded] = useState(false);
+  const [imageLoaded, setImageLoaded] = useState(false);
+  const thumb = getThumbhash(project.videoUrl ?? project.thumbnail);
   const hasDevpost = !!project.devpostUrl;
   const hasLink = !!project.demoUrl;
   const hasMedia = !!(project.thumbnail || project.videoUrl);
@@ -32,29 +37,66 @@ export default function PlaygroundCard({ project, index, onExpand }: PlaygroundC
       data-cursor={cursorType}
     >
       {/* Image/Video Container */}
-      <div className="relative w-full overflow-hidden bg-faded-white">
+      <div
+        className="relative w-full overflow-hidden bg-faded-white"
+        style={thumb ? { aspectRatio: thumb.aspectRatio } : undefined}
+      >
         {project.videoUrl ? (
-          <video
-            ref={videoRef}
-            src={project.videoUrl}
-            className="object-cover w-full h-auto group-hover:scale-103 transition-all duration-200 ease-out"
-            muted
-            loop
-            playsInline
-            preload="metadata"
-            autoPlay
-          />
+          <>
+            {thumb && (
+              <img
+                src={thumb.dataUrl}
+                alt=""
+                aria-hidden="true"
+                className="absolute inset-0 w-full h-full object-cover"
+                style={{
+                  imageRendering: 'pixelated',
+                  opacity: videoLoaded ? 0 : 1,
+                  transition: 'opacity 300ms cubic-bezier(.215, .61, .355, 1)',
+                }}
+              />
+            )}
+            <video
+              ref={videoRef}
+              src={project.videoUrl}
+              className="relative object-cover w-full h-auto group-hover:scale-103 transition-all duration-200 ease-out"
+              muted
+              loop
+              playsInline
+              preload="metadata"
+              autoPlay
+              onLoadedData={() => setVideoLoaded(true)}
+              style={{ opacity: videoLoaded ? 1 : 0, transition: 'opacity 200ms ease' }}
+            />
+          </>
         ) : project.thumbnail ? (
-          <Image
-            src={project.thumbnail}
-            alt={project.title}
-            width={800}
-            height={600}
-            className="object-cover w-full h-auto group-hover:scale-103 transition-all duration-200 ease-out"
-            sizes="(max-width: 768px) 100vw, 50vw"
-            loading={index === 0 ? "eager" : "lazy"}
-            priority={index === 0}
-          />
+          <>
+            {thumb && (
+              <img
+                src={thumb.dataUrl}
+                alt=""
+                aria-hidden="true"
+                className="absolute inset-0 w-full h-full object-cover"
+                style={{
+                  imageRendering: 'pixelated',
+                  opacity: imageLoaded ? 0 : 1,
+                  transition: 'opacity 300ms cubic-bezier(.215, .61, .355, 1)',
+                }}
+              />
+            )}
+            <Image
+              src={project.thumbnail}
+              alt={project.title}
+              width={800}
+              height={600}
+              className="relative object-cover w-full h-auto group-hover:scale-103 transition-all duration-200 ease-out"
+              sizes="(max-width: 768px) 100vw, 50vw"
+              loading={index === 0 ? "eager" : "lazy"}
+              priority={index === 0}
+              onLoad={() => setImageLoaded(true)}
+              style={{ opacity: imageLoaded ? 1 : 0, transition: 'opacity 200ms ease' }}
+            />
+          </>
         ) : (
           <div className="w-full aspect-video bg-faded-white" />
         )}

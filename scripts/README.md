@@ -13,3 +13,15 @@ npm run convert-images -- --dry-run
 # Run for real
 npm run convert-images
 ```
+
+## generate-thumbhashes
+
+Generates [ThumbHash](https://github.com/evanw/thumbhash) blur placeholders for every project thumbnail and the first frame of every project video referenced in `src/data/projects.ts`. Output is written to `src/data/thumbhashes.json` and consumed by `src/lib/thumbhash.ts` to render an instant blurred preview while the real image/video loads.
+
+Requires `ffmpeg` on PATH (used to extract the video first frame).
+
+```bash
+npm run generate-thumbhashes
+```
+
+Re-run after adding or replacing any thumbnail/video asset.

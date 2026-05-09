@@ -1,10 +1,8 @@
 'use client';
 
-import { useCallback, useEffect, useMemo, useRef, useState, type ComponentType } from 'react';
-import { Eraser, PaintBrush } from '@phosphor-icons/react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { useTheme, type Theme } from './ThemeProvider';
-
-type Tool = 'brush' | 'eraser';
+import { useCanvasTool } from './CanvasToolContext';
 
 interface PixelRecord {
   col: number;
@@ -55,7 +53,7 @@ function computeLayout(viewportWidth: number) {
 
 export default function Footer() {
   const { theme } = useTheme();
-  const [tool, setTool] = useState<Tool>('brush');
+  const { tool } = useCanvasTool();
   const [pixels, setPixels] = useState<Map<string, Theme>>(new Map());
   // Stable SSR default; real viewport-dependent layout is computed after mount.
   const [layout, setLayout] = useState(() => computeLayout(1440));
@@ -310,25 +308,6 @@ export default function Footer() {
       className="community-canvas sticky bottom-0 lg:ml-72 z-0 overflow-hidden select-none"
       style={{ height: `${footerHeight}px`, backgroundColor: 'var(--black)' }}
     >
-      <div className="community-canvas-prompt absolute top-3 left-3 z-10">
-        LET&apos;S DRAW TOGETHER IN THIS FOOTER :)
-      </div>
-
-      <div className="community-canvas-tools absolute top-3 right-3 z-10 flex items-center gap-2">
-        <ToolButton
-          label="Brush"
-          active={tool === 'brush'}
-          onClick={() => setTool('brush')}
-          Icon={PaintBrush}
-        />
-        <ToolButton
-          label="Eraser"
-          active={tool === 'eraser'}
-          onClick={() => setTool('eraser')}
-          Icon={Eraser}
-        />
-      </div>
-
       {mounted && (
         <>
           <div
@@ -360,28 +339,3 @@ export default function Footer() {
   );
 }
 
-interface ToolButtonProps {
-  label: string;
-  active: boolean;
-  onClick: () => void;
-  Icon: ComponentType<{ size?: number; weight?: 'regular' | 'bold' | 'fill' }>;
-}
-
-function ToolButton({ label, active, onClick, Icon }: ToolButtonProps) {
-  return (
-    <div className="community-canvas-tool-wrapper">
-      <button
-        type="button"
-        onClick={onClick}
-        aria-label={label}
-        aria-pressed={active}
-        className={`community-canvas-tool-button${active ? ' is-active' : ''}`}
-      >
-        <Icon size={16} weight="regular" />
-      </button>
-      <span role="tooltip" className="community-canvas-tooltip">
-        {label.toUpperCase()}
-      </span>
-    </div>
-  );
-}

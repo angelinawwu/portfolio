@@ -2,8 +2,10 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
+import { useState } from 'react';
 import { Project } from '@/data/projects';
 import { useVideoPlayback } from '@/hooks/useVideoPlayback';
+import { getThumbhash } from '@/lib/thumbhash';
 
 interface ProjectCardProps {
   project: Project;
@@ -12,6 +14,9 @@ interface ProjectCardProps {
 
 export default function ProjectCard({ project, index }: ProjectCardProps) {
   const videoRef = useVideoPlayback();
+  const [videoLoaded, setVideoLoaded] = useState(false);
+  const [imageLoaded, setImageLoaded] = useState(false);
+  const thumb = getThumbhash(project.videoUrl ?? project.thumbnail);
 
   // Determine if this is an internal case study or external link
   const isInternalLink = project.slug && project.type === 'case-study' && project.slug !== 'goodreads-wrapped';
@@ -24,27 +29,64 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
       data-cursor={project.demoUrl && !isInternalLink ? 'playground-link' : 'project-card'}
     >
       {/* Image/Video Container - natural height */}
-      <div className="relative w-full overflow-hidden bg-faded-white">
+      <div
+        className="relative w-full overflow-hidden bg-faded-white"
+        style={thumb ? { aspectRatio: thumb.aspectRatio } : undefined}
+      >
         {project.videoUrl ? (
-          <video
-            ref={videoRef}
-            src={project.videoUrl}
-            className="object-cover w-full h-auto group-hover:scale-105 transition-all duration-200 ease-out"
-            muted
-            loop
-            playsInline
-            preload="metadata"
-            autoPlay
-          />
+          <>
+            {thumb && (
+              <img
+                src={thumb.dataUrl}
+                alt=""
+                aria-hidden="true"
+                className="absolute inset-0 w-full h-full object-cover"
+                style={{
+                  imageRendering: 'pixelated',
+                  opacity: videoLoaded ? 0 : 1,
+                  transition: 'opacity 300ms cubic-bezier(.215, .61, .355, 1)',
+                }}
+              />
+            )}
+            <video
+              ref={videoRef}
+              src={project.videoUrl}
+              className="relative object-cover w-full h-auto group-hover:scale-105 transition-all duration-200 ease-out"
+              muted
+              loop
+              playsInline
+              preload="metadata"
+              autoPlay
+              onLoadedData={() => setVideoLoaded(true)}
+              style={{ opacity: videoLoaded ? 1 : 0, transition: 'opacity 200ms ease' }}
+            />
+          </>
         ) : project.thumbnail ? (
-          <Image
-            src={project.thumbnail}
-            alt={project.title}
-            width={800}
-            height={600}
-            className="object-cover w-full h-auto group-hover:scale-103 transition-all duration-200"
-            sizes="(max-width: 768px) 100vw, 50vw"
-          />
+          <>
+            {thumb && (
+              <img
+                src={thumb.dataUrl}
+                alt=""
+                aria-hidden="true"
+                className="absolute inset-0 w-full h-full object-cover"
+                style={{
+                  imageRendering: 'pixelated',
+                  opacity: imageLoaded ? 0 : 1,
+                  transition: 'opacity 300ms cubic-bezier(.215, .61, .355, 1)',
+                }}
+              />
+            )}
+            <Image
+              src={project.thumbnail}
+              alt={project.title}
+              width={800}
+              height={600}
+              className="relative object-cover w-full h-auto group-hover:scale-103 transition-all duration-200"
+              sizes="(max-width: 768px) 100vw, 50vw"
+              onLoad={() => setImageLoaded(true)}
+              style={{ opacity: imageLoaded ? 1 : 0, transition: 'opacity 200ms ease' }}
+            />
+          </>
         ) : (
           <div className="w-full aspect-video bg-faded-white" />
         )}
