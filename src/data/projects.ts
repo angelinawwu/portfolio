@@ -83,7 +83,7 @@ export const playgroundProjects: Project[] = [
     title: 'Digital typewriter',
     thumbnail: '/assets/playground/Typewriter-Cover.webp',
     videoUrl: '/assets/playground/Typewriter-Video.mov',
-    context: 'React/Vite, Google Sheets API',
+    context: 'React + Vite, Google Sheets API',
     type: 'playground',
     demoUrl: 'https://digitaltypewriter.vercel.app/',
   },
