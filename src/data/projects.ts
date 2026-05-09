@@ -118,7 +118,7 @@ export const playgroundProjects: Project[] = [
   },
   {
     title: 'Creative tool for generating abstract glass videos',
-    context: 'Next.js, Prisma, Postgres, Vercel',
+    context: 'React + Vite, Paper Design',
     type: 'playground',
     videoUrl: '/assets/playground/FlutedGlass-Video.mp4',
     demoUrl: 'https://uclaarts-videogen.vercel.app/',
