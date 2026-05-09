@@ -31,9 +31,9 @@ export const experience: ExperienceItem[] = [
 ]
 
 export const orgs: ExperienceItem[] = [
+  { org: 'Sundays in LA', role: 'Host', period: '2026–PRESENT' },
   { org: 'VEST', role: 'Head of Design & Media', period: '2025–PRESENT' },
-  { org: 'ACM at UCLA', role: 'Design Committee President', period: '2024–PRESENT' },
-  { org: 'Campus Events Commission', role: 'Designer', period: '2024–PRESENT' },
+  { org: 'ACM at UCLA', role: 'Design President', period: '2024–PRESENT' },
 ]
 
 export type About = {
