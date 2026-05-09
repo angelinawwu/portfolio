@@ -7,11 +7,14 @@
 // src/data/thumbhashes.json as { [assetPath]: { hash, width, height } }.
 
 import sharp from 'sharp';
-import { rgbaToThumbHash } from 'thumbhash';
+import { rgbaToThumbHash, thumbHashToRGBA } from 'thumbhash';
 import { execSync } from 'node:child_process';
 import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
+
+// Longest-edge size of the pre-pixelated placeholder. Smaller = chunkier pixels.
+const PIXEL_TARGET = 16;
 
 const PROJECT_ROOT = path.resolve(path.dirname(new URL(import.meta.url).pathname), '..');
 const PROJECTS_FILE = path.join(PROJECT_ROOT, 'src/data/projects.ts');
@@ -36,10 +39,25 @@ async function hashImageBuffer(buffer) {
     .ensureAlpha()
     .raw();
   const { data, info } = await resized.toBuffer({ resolveWithObject: true });
-  const hash = rgbaToThumbHash(info.width, info.height, data);
+  const hashBytes = rgbaToThumbHash(info.width, info.height, data);
+
+  // Decode the hash back to RGBA, then downsample to PIXEL_TARGET via
+  // nearest-neighbor so the placeholder has visibly chunky pixels.
+  const decoded = thumbHashToRGBA(hashBytes);
+  const scale = PIXEL_TARGET / Math.max(decoded.w, decoded.h);
+  const dw = Math.max(2, Math.round(decoded.w * scale));
+  const dh = Math.max(2, Math.round(decoded.h * scale));
+  const pngBuffer = await sharp(Buffer.from(decoded.rgba), {
+    raw: { width: decoded.w, height: decoded.h, channels: 4 },
+  })
+    .resize(dw, dh, { kernel: 'nearest' })
+    .png({ compressionLevel: 9 })
+    .toBuffer();
+  const dataUrl = `data:image/png;base64,${pngBuffer.toString('base64')}`;
+
   const meta = await sharp(buffer).metadata();
   return {
-    hash: Buffer.from(hash).toString('base64'),
+    dataUrl,
     width: meta.width ?? info.width,
     height: meta.height ?? info.height,
   };
@@ -84,7 +102,7 @@ async function main() {
       const buffer = isVideo ? extractVideoFrame(fullPath) : fs.readFileSync(fullPath);
       const entry = await hashImageBuffer(buffer);
       result[asset] = entry;
-      console.log(`[ok]   ${asset} -> ${entry.hash.length} chars (${entry.width}x${entry.height})`);
+      console.log(`[ok]   ${asset} -> ${entry.dataUrl.length} chars (${entry.width}x${entry.height})`);
     } catch (err) {
       console.error(`[fail] ${asset}:`, err.message);
     }
