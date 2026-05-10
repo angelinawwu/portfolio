@@ -118,7 +118,7 @@ export const playgroundProjects: Project[] = [
   },
   {
     title: 'Creative tool for generating abstract glass videos',
-    context: 'React + Vite, Paper Design',
+    context: 'React + Vite, Paper Shaders',
     type: 'playground',
     videoUrl: '/assets/playground/FlutedGlass-Video.mp4',
     demoUrl: 'https://uclaarts-videogen.vercel.app/',
@@ -128,6 +128,13 @@ export const playgroundProjects: Project[] = [
     context: 'Figma, Nano Banana',
     thumbnail: '/assets/playground/Thistle-Cover.webp',
     type: 'playground',
+  },
+  {
+    title: ' Blackout poetry',
+    context: 'Next.js, Gutendex API, Paper Shaders',
+    videoUrl: '/assets/playground/BlackoutPoetry-Video.mov',
+    type: 'playground',
+    demoUrl: 'https://blackedout-poetry.vercel.app/',
   },
   {
     title: 'VEST glass experiment',
