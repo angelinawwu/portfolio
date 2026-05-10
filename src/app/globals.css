@@ -94,6 +94,9 @@
 html {
   background: var(--black);
   scroll-behavior: smooth;
+  /* `clip` (not `hidden`) avoids creating a scroll container, which would
+     break the sticky footer + window-scroll-driven blur fold in Footer.tsx. */
+  overflow-x: clip;
 }
 
 body {
@@ -102,6 +105,7 @@ body {
   min-height: 100vh;
   background: var(--black);
   color: var(--white);
+  overflow-x: clip;
 }
 
 /* ========== THEME TRANSITION ========== */
