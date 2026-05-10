@@ -419,21 +419,6 @@ export default function WorkupPage() {
                 />
               </div>
             </div>
-
-            <div>
-              <h3 className="text-lg text-white mb-4">Feedback that drives improvement</h3>
-              <p className="text-white-muted leading-relaxed mb-4">
-                I reorganized the structure of the AI-generated feedback page, categorizing feedback into different facets of proficiency. Segmenting the feedback improved readability and provided the user with a more precise metric to empower growth.
-              </p>
-              <div className="overflow-hidden">
-                <Image
-                  src="/assets/projects/Workup/Workup-InterviewFeedback.webp"
-                  alt="Interview Feedback"
-                  width={1000}
-                  height={1000}
-                />
-              </div>
-            </div>
           </div>
         </section>
 
