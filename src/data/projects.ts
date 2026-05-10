@@ -117,7 +117,7 @@ export const playgroundProjects: Project[] = [
     type: 'playground',
   },
   {
-    title: 'Creative tool for generating abstract glass videos',
+    title: 'Internal tool for generating abstract glass videos (UCLA Arts)',
     context: 'React + Vite, Paper Shaders',
     type: 'playground',
     videoUrl: '/assets/playground/FlutedGlass-Video.mp4',
