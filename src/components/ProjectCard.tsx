@@ -58,7 +58,7 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
               preload="metadata"
               autoPlay
               onLoadedData={() => setVideoLoaded(true)}
-              style={{ opacity: videoLoaded ? 1 : 0, transition: 'opacity 200ms ease' }}
+              style={{ opacity: videoLoaded ? 1 : 0, transition: 'opacity 200ms ease, scale 200ms cubic-bezier(.25, .46, .45, .94)' }}
             />
           </>
         ) : project.thumbnail ? (
@@ -84,7 +84,7 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
               className="relative object-cover w-full h-auto group-hover:scale-103 transition-all duration-200"
               sizes="(max-width: 768px) 100vw, 50vw"
               onLoad={() => setImageLoaded(true)}
-              style={{ opacity: imageLoaded ? 1 : 0, transition: 'opacity 200ms ease' }}
+              style={{ opacity: imageLoaded ? 1 : 0, transition: 'opacity 200ms ease, scale 200ms cubic-bezier(.25, .46, .45, .94)' }}
             />
           </>
         ) : (

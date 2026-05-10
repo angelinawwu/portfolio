@@ -66,7 +66,7 @@ export default function PlaygroundCard({ project, index, onExpand }: PlaygroundC
               preload="metadata"
               autoPlay
               onLoadedData={() => setVideoLoaded(true)}
-              style={{ opacity: videoLoaded ? 1 : 0, transition: 'opacity 200ms ease' }}
+              style={{ opacity: videoLoaded ? 1 : 0, transition: 'opacity 200ms ease, scale 200ms cubic-bezier(.25, .46, .45, .94)' }}
             />
           </>
         ) : project.thumbnail ? (
@@ -94,7 +94,7 @@ export default function PlaygroundCard({ project, index, onExpand }: PlaygroundC
               loading={index === 0 ? "eager" : "lazy"}
               priority={index === 0}
               onLoad={() => setImageLoaded(true)}
-              style={{ opacity: imageLoaded ? 1 : 0, transition: 'opacity 200ms ease' }}
+              style={{ opacity: imageLoaded ? 1 : 0, transition: 'opacity 200ms ease, scale 200ms cubic-bezier(.25, .46, .45, .94)' }}
             />
           </>
         ) : (
