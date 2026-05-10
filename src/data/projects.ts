@@ -134,7 +134,7 @@ export const playgroundProjects: Project[] = [
     context: 'Next.js, Gutendex API, Paper Shaders',
     videoUrl: '/assets/playground/BlackoutPoetry-Video.mov',
     type: 'playground',
-    demoUrl: 'https://blackedout-poetry.vercel.app/',
+    demoUrl: 'https://digitalblackoutpoetry.vercel.app/',
   },
   {
     title: 'VEST glass experiment',
