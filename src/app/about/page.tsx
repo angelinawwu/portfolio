@@ -163,7 +163,7 @@ export default function About() {
           className="project-card mb-12"
           style={{ '--card-index': cardIndex++ } as React.CSSProperties}
         >
-          <h3 className="text-xl text-white mb-4">Books that changed me</h3>
+          <h3 className="text-xs geist-mono-font text-white mb-2 tracking-wider uppercase">Books that changed me</h3>
           
           <div className="grid grid-cols-5 gap-2">
             {books.map((book) => {
@@ -207,7 +207,7 @@ export default function About() {
           className="project-card"
           style={{ '--card-index': cardIndex++ } as React.CSSProperties}
         >
-          <h3 className="text-xl text-white mb-4">Albums on repeat</h3>
+          <h3 className="text-xs geist-mono-font text-white mb-2 tracking-wider uppercase">Albums on repeat</h3>
           
           <div className="grid grid-cols-5 gap-2">
             {albums.map((album) => {
