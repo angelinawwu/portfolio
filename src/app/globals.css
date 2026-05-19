@@ -12,7 +12,7 @@
 
   /* Derived colors */
   --white-muted: rgba(243, 237, 245, 0.6);
-  --accent-muted: rgba(243, 237, 245, 0.6);
+  --accent-muted: rgba(243, 237, 245, 0.5);
 }
 
 /* Green theme */
@@ -106,6 +106,17 @@ body {
   background: var(--black);
   color: var(--white);
   overflow-x: clip;
+}
+
+/* ========== TEXT SELECTION ========== */
+::selection {
+  background-color: var(--accent-muted);
+  color: var(--white);
+}
+
+::-moz-selection {
+  background-color: var(--accent-muted);
+  color: var(--white);
 }
 
 /* ========== THEME TRANSITION ========== */
