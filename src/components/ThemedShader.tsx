@@ -119,12 +119,15 @@ export default function ThemedShader({
 }
 
 /**
- * Read theme color hexes off `<html>` and assemble a dark-dominant
- * 7-slot palette. Slot 4 is the highlight (also used by the reveal
- * animation's `shaderColor4` mask), so the accent gets the most
- * visible role; black/surface/neutral fill the remaining slots.
+ * Read theme color hexes off `<html>` and assemble a heavily dark
+ * 7-slot palette. The bundled `pixels-organic` preset boosts slot 4 as
+ * a luminance peak (`highlight`, `shaderColor4` mask), so we put the
+ * accent there but drop its alpha so it reads as a sparse spark
+ * instead of a wash. Most cells stay on `--black` / `--surface`.
  *
- * Distribution: 2x black, 2x surface, 2x neutral, 1x accent.
+ * Distribution: 4x black, 2x surface, 1x accent (low alpha).
+ * Brightness knobs (`intensity`, `highlight`, `shaderOpacity`) are
+ * pulled down so the overall canvas reads close to `--black`.
  */
 function buildPresetMode(name: PresetName): PresetMode {
   const base = PRESETS[name].modes.dark;
@@ -139,6 +142,12 @@ function buildPresetMode(name: PresetName): PresetMode {
   return {
     ...base,
     cardBg: black,
-    colors: [black, surface, neutral, surface, accent, black, neutral],
+    colors: [black, black, surface, black, accent, black, neutral],
+    alphas: [1, 1, 1, 1, 0.35, 1, 0.7],
+    intensity: 0.55,
+    highlight: 0,
+    shaderOpacity: 0.9,
+    vignette: 0.5,
+    vigOpacity: 1,
   };
 }
