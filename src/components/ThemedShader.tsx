@@ -145,7 +145,7 @@ function buildPresetMode(name: PresetName): PresetMode {
   return {
     ...base,
     cardBg: black,
-    colors: [black, neutral, accentMuted, black, accent, black, surface],
+    colors: [black, black, accent, black, accent, black, surface],
     alphas: [1, 1, 0.55, 1, 0.3, 1, 1],
   };
 }
