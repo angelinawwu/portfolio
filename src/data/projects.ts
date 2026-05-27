@@ -117,24 +117,31 @@ export const playgroundProjects: Project[] = [
     type: 'playground',
   },
   {
-    title: 'Internal tool for generating abstract glass videos (UCLA Arts)',
+    title: ' Blackout poetry',
+    context: 'Next.js, Gutendex API, Paper Shaders',
+    videoUrl: '/assets/playground/BlackoutPoetry-Video.mov',
+    type: 'playground',
+    demoUrl: 'https://digitalblackoutpoetry.vercel.app/',
+  },
+  {
+    title: 'Personal tool: Abstract fluted glass video generator',
     context: 'React + Vite, Paper Shaders',
     type: 'playground',
     videoUrl: '/assets/playground/FlutedGlass-Video.mp4',
-    demoUrl: 'https://uclaarts-videogen.vercel.app/',
+    demoUrl: 'https://x.com/angelinawuuu/status/2049894184283451511?s=20',
   },
-    {
+  {
     title: 'Thistle (healthtech concept)',
     context: 'Figma, Nano Banana',
     thumbnail: '/assets/playground/Thistle-Cover.webp',
     type: 'playground',
   },
   {
-    title: ' Blackout poetry',
-    context: 'Next.js, Gutendex API, Paper Shaders',
-    videoUrl: '/assets/playground/BlackoutPoetry-Video.mov',
+    title: 'Personal tool: Grainy gradient generator',
+    context: 'React + Vite',
     type: 'playground',
-    demoUrl: 'https://digitalblackoutpoetry.vercel.app/',
+    videoUrl: '/assets/playground/GrainyGrad-Video.mp4',
+    demoUrl: 'https://x.com/angelinawuuu/status/2059663763037655208?s=20',
   },
   {
     title: 'VEST glass experiment',
