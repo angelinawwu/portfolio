@@ -3,6 +3,7 @@
 import { ImageGeneration } from 'img-fx';
 import { useEffect, useState } from 'react';
 import type { CSSProperties } from 'react';
+import { useTheme } from './ThemeProvider';
 
 interface MediaLoaderProps {
   /** When the underlying media has finished loading. Triggers fade-out. */
@@ -31,6 +32,7 @@ export default function MediaLoader({
   minDurationMs = 400,
   borderRadius,
 }: MediaLoaderProps) {
+  const { theme, accentColor } = useTheme();
   const [mounted, setMounted] = useState(false);
   const [mountTime, setMountTime] = useState(0);
   const [hidden, setHidden] = useState(false);
@@ -72,14 +74,29 @@ export default function MediaLoader({
       }}
     >
       {mounted && (
-        <ImageGeneration
-          preset={preset}
-          borderRadius={borderRadius}
-          paused={hidden}
-          style={{ width: '100%', height: '100%' }}
-        >
-          <div style={{ width: '100%', height: '100%' }} />
-        </ImageGeneration>
+        <div style={{ position: 'relative', width: '100%', height: '100%' }}>
+          <ImageGeneration
+            preset={preset}
+            borderRadius={borderRadius}
+            paused={hidden}
+            style={{ width: '100%', height: '100%' }}
+          >
+            <div style={{ width: '100%', height: '100%' }} />
+          </ImageGeneration>
+          {theme !== 'default' && (
+            <div
+              aria-hidden
+              style={{
+                position: 'absolute',
+                inset: 0,
+                background: accentColor,
+                mixBlendMode: 'color',
+                pointerEvents: 'none',
+                borderRadius,
+              }}
+            />
+          )}
+        </div>
       )}
     </div>
   );
