@@ -1,10 +1,11 @@
 'use client';
 
-import Image from 'next/image';
 import { useState } from 'react';
 import { Project } from '@/data/projects';
 import { useVideoPlayback } from '@/hooks/useVideoPlayback';
 import { getThumbhash } from '@/lib/thumbhash';
+import LoadedImage from './LoadedImage';
+import LoadedVideo from './LoadedVideo';
 
 interface PlaygroundCardProps {
   project: Project;
@@ -42,61 +43,33 @@ export default function PlaygroundCard({ project, index, onExpand }: PlaygroundC
         style={thumb ? { aspectRatio: thumb.aspectRatio } : undefined}
       >
         {project.videoUrl ? (
-          <>
-            {thumb && (
-              <img
-                src={thumb.dataUrl}
-                alt=""
-                aria-hidden="true"
-                className="absolute inset-0 w-full h-full object-cover"
-                style={{
-                  imageRendering: 'pixelated',
-                  opacity: videoLoaded ? 0 : 1,
-                  transition: 'opacity 300ms cubic-bezier(.215, .61, .355, 1)',
-                }}
-              />
-            )}
-            <video
-              ref={videoRef}
-              src={project.videoUrl}
-              className="relative object-cover w-full h-auto group-hover:scale-103 transition-all duration-200 ease-out"
-              muted
-              loop
-              playsInline
-              preload="metadata"
-              autoPlay
-              onLoadedData={() => setVideoLoaded(true)}
-              style={{ opacity: videoLoaded ? 1 : 0, transition: 'opacity 200ms ease, scale 200ms cubic-bezier(.25, .46, .45, .94)' }}
-            />
-          </>
+          <LoadedVideo
+            ref={videoRef}
+            src={project.videoUrl}
+            className="relative object-cover w-full h-auto group-hover:scale-103 transition-all duration-200 ease-out"
+            wrapperStyle={{ width: '100%' }}
+            muted
+            loop
+            playsInline
+            preload="metadata"
+            autoPlay
+            onLoadedData={() => setVideoLoaded(true)}
+            style={{ transition: 'scale 200ms cubic-bezier(.25, .46, .45, .94)' }}
+          />
         ) : project.thumbnail ? (
-          <>
-            {thumb && (
-              <img
-                src={thumb.dataUrl}
-                alt=""
-                aria-hidden="true"
-                className="absolute inset-0 w-full h-full object-cover"
-                style={{
-                  imageRendering: 'pixelated',
-                  opacity: imageLoaded ? 0 : 1,
-                  transition: 'opacity 300ms cubic-bezier(.215, .61, .355, 1)',
-                }}
-              />
-            )}
-            <Image
-              src={project.thumbnail}
-              alt={project.title}
-              width={800}
-              height={600}
-              className="relative object-cover w-full h-auto group-hover:scale-103 transition-all duration-200 ease-out"
-              sizes="(max-width: 768px) 100vw, 50vw"
-              loading={index === 0 ? "eager" : "lazy"}
-              priority={index === 0}
-              onLoad={() => setImageLoaded(true)}
-              style={{ opacity: imageLoaded ? 1 : 0, transition: 'opacity 200ms ease, scale 200ms cubic-bezier(.25, .46, .45, .94)' }}
-            />
-          </>
+          <LoadedImage
+            src={project.thumbnail}
+            alt={project.title}
+            width={800}
+            height={600}
+            className="relative object-cover w-full h-auto group-hover:scale-103 transition-all duration-200 ease-out"
+            wrapperStyle={{ width: '100%' }}
+            sizes="(max-width: 768px) 100vw, 50vw"
+            loading={index === 0 ? "eager" : "lazy"}
+            priority={index === 0}
+            onLoad={() => setImageLoaded(true)}
+            style={{ transition: 'scale 200ms cubic-bezier(.25, .46, .45, .94)' }}
+          />
         ) : (
           <div className="w-full aspect-video bg-faded-white" />
         )}

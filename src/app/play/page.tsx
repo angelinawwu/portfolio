@@ -2,7 +2,8 @@
 
 import { useState, useEffect, useCallback, useMemo } from 'react';
 import { createPortal } from 'react-dom';
-import Image from 'next/image';
+import LoadedImage from '@/components/LoadedImage';
+import LoadedVideo from '@/components/LoadedVideo';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X } from '@phosphor-icons/react';
 import PlaygroundCard from '@/components/PlaygroundCard';
@@ -134,7 +135,7 @@ export default function PlayPage() {
                 onClick={handleClose}
               >
                 {expandedProject.videoUrl ? (
-                  <video
+                  <LoadedVideo
                     src={expandedProject.videoUrl}
                     className="max-w-full max-h-full object-contain rounded-sm pointer-events-none"
                     autoPlay
@@ -143,7 +144,7 @@ export default function PlayPage() {
                     playsInline
                   />
                 ) : expandedProject.thumbnail ? (
-                  <Image
+                  <LoadedImage
                     src={expandedProject.thumbnail}
                     alt={expandedProject.title}
                     width={1920}
