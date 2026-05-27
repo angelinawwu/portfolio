@@ -142,12 +142,12 @@ function buildPresetMode(name: PresetName): PresetMode {
   return {
     ...base,
     cardBg: black,
-    colors: [black, black, surface, black, accent, black, neutral],
-    alphas: [1, 1, 1, 1, 0.35, 1, 0.7],
-    intensity: 0.55,
-    highlight: 0,
-    shaderOpacity: 0.9,
-    vignette: 0.5,
-    vigOpacity: 1,
+    // Slot positions roughly mirror the bundled grayscale ramp
+    // (#0f0f0f, #4a4949, #b9b9b9, #0f0f0f, #d8d8d8, #0f0f0f, #2f2f2f)
+    // but darkened: replace the two bright-gray peaks (slots 2 & 4)
+    // with surface and accent, and downweight the accent's alpha so
+    // it reads as a sparse spark rather than a wash.
+    colors: [black, surface, surface, black, accent, black, neutral],
+    alphas: [1, 1, 1, 1, 0.4, 1, 1],
   };
 }
