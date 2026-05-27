@@ -13,7 +13,7 @@ import {
   type PresetMode,
   type PresetName,
 } from 'img-fx';
-import { useTheme, type Theme } from './ThemeProvider';
+import { useTheme } from './ThemeProvider';
 
 interface ThemedShaderProps {
   preset?: PresetName;
@@ -25,8 +25,13 @@ interface ThemedShaderProps {
 
 /**
  * Direct `img-fx` instance host that swaps the bundled preset's `colors`
- * array for one derived from the active portfolio theme accent. Falls
- * back to the bundled grayscale palette when the `default` theme is on.
+ * array for one sampled from the active portfolio theme's CSS custom
+ * properties (`--black`, `--surface`, `--neutral`, `--accent`).
+ *
+ * The 7-slot palette mirrors the bundled `pixels-organic` distribution
+ * (3x dark base, 2x mid, 1x bright highlight at slot 4 — which is also
+ * the `maskShape: 'shaderColor4'` slot used by the reveal animation),
+ * so the loader stays mostly dark with accent highlights.
  */
 export default function ThemedShader({
   preset = 'pixels-organic',
@@ -38,7 +43,7 @@ export default function ThemedShader({
   const wrapRef = useRef<HTMLDivElement>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const instRef = useRef<Instance | null>(null);
-  const { theme, accentColor } = useTheme();
+  const { theme } = useTheme();
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -48,7 +53,7 @@ export default function ThemedShader({
     const rect = wrap.getBoundingClientRect();
     const cssWidth = Math.max(1, Math.round(rect.width));
     const cssHeight = Math.max(1, Math.round(rect.height));
-    const presetMode = buildPresetMode(preset, theme, accentColor);
+    const presetMode = buildPresetMode(preset);
     const inst = createInstance({ canvas, cssWidth, cssHeight, preset: presetMode });
     instRef.current = inst;
 
@@ -77,8 +82,14 @@ export default function ThemedShader({
   useEffect(() => {
     const inst = instRef.current;
     if (!inst) return;
-    setInstancePreset(inst, buildPresetMode(preset, theme, accentColor));
-  }, [theme, accentColor, preset]);
+    // Defer one frame so the parent ThemeProvider's effect has updated the
+    // `data-theme` attribute on `<html>` before we sample CSS variables.
+    const id = requestAnimationFrame(() => {
+      if (!instRef.current) return;
+      setInstancePreset(instRef.current, buildPresetMode(preset));
+    });
+    return () => cancelAnimationFrame(id);
+  }, [theme, preset]);
 
   useEffect(() => {
     const inst = instRef.current;
@@ -107,62 +118,27 @@ export default function ThemedShader({
   );
 }
 
-function buildPresetMode(name: PresetName, theme: Theme, accent: string): PresetMode {
+/**
+ * Read theme color hexes off `<html>` and assemble a dark-dominant
+ * 7-slot palette. Slot 4 is the highlight (also used by the reveal
+ * animation's `shaderColor4` mask), so the accent gets the most
+ * visible role; black/surface/neutral fill the remaining slots.
+ *
+ * Distribution: 2x black, 2x surface, 2x neutral, 1x accent.
+ */
+function buildPresetMode(name: PresetName): PresetMode {
   const base = PRESETS[name].modes.dark;
-  if (theme === 'default') return base;
-  return { ...base, colors: deriveColors(accent), cardBg: '#0a0a0a' };
-}
+  if (typeof window === 'undefined') return base;
 
-/** Map an accent hex color into a 7-stop dark→light palette around its hue. */
-function deriveColors(
-  accent: string,
-): [string, string, string, string, string, string, string] {
-  const [h, s] = hexToHsl(accent);
-  // Clamp saturation so very pastel accents still produce visible tint
-  // and very saturated accents don't overwhelm the shader.
-  const sat = Math.max(0.35, Math.min(0.85, s));
-  const lightnesses = [0.04, 0.1, 0.2, 0.34, 0.52, 0.74, 0.95] as const;
-  const stops = lightnesses.map((l) => hslToHex(h, sat, l));
-  return stops as unknown as [
-    string,
-    string,
-    string,
-    string,
-    string,
-    string,
-    string,
-  ];
-}
+  const css = getComputedStyle(document.documentElement);
+  const black = css.getPropertyValue('--black').trim() || '#0f0f0f';
+  const surface = css.getPropertyValue('--surface').trim() || '#2f2f2f';
+  const neutral = css.getPropertyValue('--neutral').trim() || '#4a4949';
+  const accent = css.getPropertyValue('--accent').trim() || '#d8d8d8';
 
-function hexToHsl(hex: string): [number, number, number] {
-  const v = hex.replace('#', '');
-  const r = parseInt(v.slice(0, 2), 16) / 255;
-  const g = parseInt(v.slice(2, 4), 16) / 255;
-  const b = parseInt(v.slice(4, 6), 16) / 255;
-  const max = Math.max(r, g, b);
-  const min = Math.min(r, g, b);
-  const l = (max + min) / 2;
-  let h = 0;
-  let s = 0;
-  if (max !== min) {
-    const d = max - min;
-    s = l > 0.5 ? d / (2 - max - min) : d / (max + min);
-    if (max === r) h = (g - b) / d + (g < b ? 6 : 0);
-    else if (max === g) h = (b - r) / d + 2;
-    else h = (r - g) / d + 4;
-    h *= 60;
-  }
-  return [h, s, l];
-}
-
-function hslToHex(h: number, s: number, l: number): string {
-  const a = s * Math.min(l, 1 - l);
-  const f = (n: number) => {
-    const k = (n + h / 30) % 12;
-    const c = l - a * Math.max(-1, Math.min(k - 3, Math.min(9 - k, 1)));
-    return Math.round(c * 255)
-      .toString(16)
-      .padStart(2, '0');
+  return {
+    ...base,
+    cardBg: black,
+    colors: [black, surface, neutral, surface, accent, black, neutral],
   };
-  return `#${f(0)}${f(8)}${f(4)}`;
 }
