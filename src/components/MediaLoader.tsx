@@ -1,8 +1,9 @@
 'use client';
 
+import { ImageGeneration } from 'img-fx';
 import { useEffect, useState } from 'react';
 import type { CSSProperties } from 'react';
-import ThemedShader from './ThemedShader';
+import { useTheme } from './ThemeProvider';
 
 interface MediaLoaderProps {
   /** When the underlying media has finished loading. Triggers fade-out. */
@@ -31,6 +32,8 @@ export default function MediaLoader({
   minDurationMs = 400,
   borderRadius,
 }: MediaLoaderProps) {
+  const { theme } = useTheme();
+  const [cardBg, setCardBg] = useState<string | undefined>(undefined);
   const [mounted, setMounted] = useState(false);
   const [mountTime, setMountTime] = useState(0);
   const [hidden, setHidden] = useState(false);
@@ -40,6 +43,19 @@ export default function MediaLoader({
     setMounted(true);
     setMountTime(performance.now());
   }, []);
+
+  useEffect(() => {
+    if (!mounted) return;
+    // Defer one frame so the parent ThemeProvider's effect has applied
+    // `data-theme` to `<html>` before we sample CSS variables.
+    const id = requestAnimationFrame(() => {
+      const v = getComputedStyle(document.documentElement)
+        .getPropertyValue('--black')
+        .trim();
+      setCardBg(v || undefined);
+    });
+    return () => cancelAnimationFrame(id);
+  }, [mounted, theme]);
 
   useEffect(() => {
     if (!loaded || !mounted) return;
@@ -72,11 +88,16 @@ export default function MediaLoader({
       }}
     >
       {mounted && (
-        <ThemedShader
+        <ImageGeneration
           preset={preset}
+          theme="dark"
           paused={hidden}
           borderRadius={borderRadius}
-        />
+          cardBg={cardBg}
+          style={{ width: '100%', height: '100%' }}
+        >
+          <div style={{ width: '100%', height: '100%' }} />
+        </ImageGeneration>
       )}
     </div>
   );
