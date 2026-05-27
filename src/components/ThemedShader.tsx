@@ -140,11 +140,12 @@ function buildPresetMode(name: PresetName): PresetMode {
   const surface = css.getPropertyValue('--surface').trim() || '#2f2f2f';
   const neutral = css.getPropertyValue('--neutral').trim() || '#4a4949';
   const white = css.getPropertyValue('--white').trim() || '#d8d8d8';
+  const accent = css.getPropertyValue('--accent').trim() || '#ff6b6b';
 
   return {
     ...base,
-    cardBg: white,
-    colors: [white, surface, black, white, black, white, neutral],
-    alphas: [1, 1, 0.55, 1, 1, 1, 1],
+    cardBg: black,
+    colors: [black, neutral, white, black, accent, black, surface],
+    alphas: [1, 1, 0.55, 1, 0.3, 1, 1],
   };
 }
