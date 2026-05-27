@@ -139,13 +139,13 @@ function buildPresetMode(name: PresetName): PresetMode {
   const black = css.getPropertyValue('--black').trim() || '#0f0f0f';
   const surface = css.getPropertyValue('--surface').trim() || '#2f2f2f';
   const neutral = css.getPropertyValue('--neutral').trim() || '#4a4949';
-  const white = css.getPropertyValue('--white').trim() || '#d8d8d8';
   const accent = css.getPropertyValue('--accent').trim() || '#ff6b6b';
+  const accentMuted = css.getPropertyValue('--accent-muted').trim() || 'rgba(255, 107, 107, 0.5)';
 
   return {
     ...base,
     cardBg: black,
-    colors: [black, neutral, white, black, accent, black, surface],
+    colors: [black, neutral, accentMuted, black, accent, black, surface],
     alphas: [1, 1, 0.55, 1, 0.3, 1, 1],
   };
 }
