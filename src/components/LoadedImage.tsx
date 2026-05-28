@@ -46,7 +46,9 @@ export default function LoadedImage({
       style={{
         ...style,
         opacity: loaded ? undefined : 0,
-        transition: 'opacity 300ms cubic-bezier(.215, .61, .355, 1)',
+        transition: style?.transition
+          ? `opacity 300ms cubic-bezier(.215, .61, .355, 1), ${style.transition}`
+          : 'opacity 300ms cubic-bezier(.215, .61, .355, 1)',
       }}
       onLoad={(e) => {
         setLoaded(true);

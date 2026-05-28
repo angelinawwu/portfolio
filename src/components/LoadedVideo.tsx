@@ -35,6 +35,27 @@ const LoadedVideo = forwardRef<HTMLVideoElement, LoadedVideoProps>(function Load
   ref,
 ) {
   const [loaded, setLoaded] = useState(false);
+  const [revealSrc, setRevealSrc] = useState<string | undefined>(undefined);
+
+  const handleLoadedData = (e: React.SyntheticEvent<HTMLVideoElement>) => {
+    const v = e.currentTarget;
+    if (v.videoWidth && v.videoHeight) {
+      try {
+        const canvas = document.createElement('canvas');
+        canvas.width = v.videoWidth;
+        canvas.height = v.videoHeight;
+        const ctx = canvas.getContext('2d');
+        if (ctx) {
+          ctx.drawImage(v, 0, 0);
+          setRevealSrc(canvas.toDataURL('image/png'));
+        }
+      } catch {
+        // Tainted canvas or other failure — fall back to plain opacity fade.
+      }
+    }
+    setLoaded(true);
+    onLoadedData?.(e);
+  };
 
   const video = (
     <video
@@ -44,12 +65,11 @@ const LoadedVideo = forwardRef<HTMLVideoElement, LoadedVideoProps>(function Load
       style={{
         ...style,
         opacity: loaded ? undefined : 0,
-        transition: 'opacity 300ms cubic-bezier(.215, .61, .355, 1)',
+        transition: style?.transition
+          ? `opacity 300ms cubic-bezier(.215, .61, .355, 1), ${style.transition}`
+          : 'opacity 300ms cubic-bezier(.215, .61, .355, 1)',
       }}
-      onLoadedData={(e) => {
-        setLoaded(true);
-        onLoadedData?.(e);
-      }}
+      onLoadedData={handleLoadedData}
     />
   );
 
@@ -62,6 +82,7 @@ const LoadedVideo = forwardRef<HTMLVideoElement, LoadedVideoProps>(function Load
           preset={loaderPreset}
           minDurationMs={loaderMinMs}
           className={wrapperClassName}
+          revealSrc={revealSrc}
         />
       </>
     );
@@ -73,7 +94,12 @@ const LoadedVideo = forwardRef<HTMLVideoElement, LoadedVideoProps>(function Load
       style={{ position: 'relative', display: 'block', ...wrapperStyle }}
     >
       {video}
-      <MediaLoader loaded={loaded} preset={loaderPreset} minDurationMs={loaderMinMs} />
+      <MediaLoader
+        loaded={loaded}
+        preset={loaderPreset}
+        minDurationMs={loaderMinMs}
+        revealSrc={revealSrc}
+      />
     </span>
   );
 });
