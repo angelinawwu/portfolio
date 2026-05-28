@@ -4,7 +4,9 @@ import { useEffect, useRef } from 'react';
 import {
   PRESETS,
   createInstance,
+  createReveal,
   destroyInstance,
+  loadImage,
   setInstancePaused,
   setInstancePreset,
   setInstanceVisible,
@@ -12,6 +14,7 @@ import {
   type Instance,
   type PresetMode,
   type PresetName,
+  type RevealState,
 } from 'img-fx';
 import { useTheme } from './ThemeProvider';
 
@@ -21,6 +24,12 @@ interface ThemedShaderProps {
   borderRadius?: number;
   style?: React.CSSProperties;
   className?: string;
+  /** When set to true, kicks off the chunky-pixel reveal animation using `revealSrc`. */
+  revealActive?: boolean;
+  /** URL of the image to dissolve into when `revealActive` flips true. */
+  revealSrc?: string;
+  /** Fires once the reveal animation has finished painting the image. */
+  onRevealComplete?: () => void;
 }
 
 /**
@@ -51,11 +60,22 @@ export default function ThemedShader({
   borderRadius,
   style,
   className,
+  revealActive,
+  revealSrc,
+  onRevealComplete,
 }: ThemedShaderProps) {
   const wrapRef = useRef<HTMLDivElement>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  const overlayRef = useRef<HTMLCanvasElement>(null);
   const instRef = useRef<Instance | null>(null);
+  const revealRef = useRef<RevealState | null>(null);
+  const revealStartedRef = useRef(false);
+  const onRevealCompleteRef = useRef(onRevealComplete);
   const { theme } = useTheme();
+
+  useEffect(() => {
+    onRevealCompleteRef.current = onRevealComplete;
+  }, [onRevealComplete]);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -73,6 +93,18 @@ export default function ThemedShader({
     });
     instRef.current = inst;
 
+    const overlay = overlayRef.current;
+    if (overlay) {
+      const reveal = createReveal({
+        canvas: overlay,
+        cssWidth,
+        cssHeight,
+        shaderCanvas: canvas,
+      });
+      inst.reveal = reveal;
+      revealRef.current = reveal;
+    }
+
     const ro = new ResizeObserver(([entry]) => {
       const { width, height } = entry.contentRect;
       updateInstanceSize(inst, Math.max(1, Math.round(width)), Math.max(1, Math.round(height)));
@@ -87,11 +119,48 @@ export default function ThemedShader({
     return () => {
       ro.disconnect();
       io.disconnect();
+      revealRef.current?.dispose();
+      revealRef.current = null;
       destroyInstance(inst);
       instRef.current = null;
+      revealStartedRef.current = false;
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [preset]);
+
+  useEffect(() => {
+    if (!revealActive || !revealSrc) return;
+    if (revealStartedRef.current) return;
+    const reveal = revealRef.current;
+    const wrap = wrapRef.current;
+    if (!reveal || !wrap) return;
+
+    let cancelled = false;
+    revealStartedRef.current = true;
+    loadImage(revealSrc)
+      .then((image) => {
+        if (cancelled) return;
+        const rect = wrap.getBoundingClientRect();
+        reveal.startReveal({
+          image,
+          cssWidth: Math.max(1, Math.round(rect.width)),
+          cssHeight: Math.max(1, Math.round(rect.height)),
+          onRevealComplete: () => {
+            onRevealCompleteRef.current?.();
+          },
+        });
+      })
+      .catch(() => {
+        // Image failed to load — fall back to immediate completion so the
+        // outer loader still unmounts gracefully.
+        if (cancelled) return;
+        onRevealCompleteRef.current?.();
+      });
+
+    return () => {
+      cancelled = true;
+    };
+  }, [revealActive, revealSrc]);
 
   useEffect(() => {
     if (!instRef.current) return;
@@ -125,7 +194,12 @@ export default function ThemedShader({
     >
       <canvas
         ref={canvasRef}
-        style={{ display: 'block', width: '100%', height: '100%' }}
+        style={{ display: 'block', width: '100%', height: '100%', position: 'absolute', inset: 0, zIndex: 1 }}
+      />
+      <canvas
+        ref={overlayRef}
+        aria-hidden
+        style={{ display: 'block', width: '100%', height: '100%', position: 'absolute', inset: 0, zIndex: 2, pointerEvents: 'none' }}
       />
     </div>
   );
@@ -145,7 +219,7 @@ function buildPresetMode(name: PresetName): PresetMode {
   return {
     ...base,
     cardBg: white,
-    colors: [white, neutral, white, white, accent, accent, surface],
+    colors: [white, neutral, black, white, black, white, surface],
     alphas: [1, 1, 0.55, 1, 0.75, 0.5, 0.3],
   };
 }

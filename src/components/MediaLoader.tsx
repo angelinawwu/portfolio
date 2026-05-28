@@ -17,6 +17,12 @@ interface MediaLoaderProps {
   minDurationMs?: number;
   /** Optional explicit corner radius (CSS px). */
   borderRadius?: number;
+  /**
+   * URL of the image to dissolve into. When provided, the loader runs the
+   * img-fx `startReveal` animation (chunky pixel dissolve) instead of a
+   * plain opacity fade.
+   */
+  revealSrc?: string;
 }
 
 /**
@@ -30,11 +36,14 @@ export default function MediaLoader({
   preset = 'pixels-organic',
   minDurationMs = 400,
   borderRadius,
+  revealSrc,
 }: MediaLoaderProps) {
   const [mounted, setMounted] = useState(false);
   const [mountTime, setMountTime] = useState(0);
+  const [revealActive, setRevealActive] = useState(false);
   const [hidden, setHidden] = useState(false);
   const [unmount, setUnmount] = useState(false);
+  const usingReveal = Boolean(revealSrc);
 
   useEffect(() => {
     setMounted(true);
@@ -45,9 +54,15 @@ export default function MediaLoader({
     if (!loaded || !mounted) return;
     const elapsed = performance.now() - mountTime;
     const remaining = Math.max(0, minDurationMs - elapsed);
-    const t = window.setTimeout(() => setHidden(true), remaining);
+    const t = window.setTimeout(() => {
+      if (usingReveal) {
+        setRevealActive(true);
+      } else {
+        setHidden(true);
+      }
+    }, remaining);
     return () => window.clearTimeout(t);
-  }, [loaded, mounted, mountTime, minDurationMs]);
+  }, [loaded, mounted, mountTime, minDurationMs, usingReveal]);
 
   useEffect(() => {
     if (!hidden) return;
@@ -65,7 +80,9 @@ export default function MediaLoader({
         position: 'absolute',
         inset: 0,
         opacity: hidden ? 0 : 1,
-        transition: 'opacity 800ms cubic-bezier(.215, .61, .355, 1)',
+        transition: usingReveal
+          ? 'opacity 200ms linear'
+          : 'opacity 400ms cubic-bezier(.215, .61, .355, 1)',
         pointerEvents: 'none',
         zIndex: 1,
         ...style,
@@ -76,6 +93,9 @@ export default function MediaLoader({
           preset={preset}
           paused={hidden}
           borderRadius={borderRadius}
+          revealActive={revealActive}
+          revealSrc={revealSrc}
+          onRevealComplete={() => setHidden(true)}
         />
       )}
     </div>

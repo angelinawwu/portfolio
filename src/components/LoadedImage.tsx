@@ -36,6 +36,7 @@ export default function LoadedImage({
   ...rest
 }: LoadedImageProps) {
   const [loaded, setLoaded] = useState(false);
+  const revealSrc = typeof rest.src === 'string' ? rest.src : undefined;
 
   const img = (
     <Image
@@ -63,6 +64,7 @@ export default function LoadedImage({
           preset={loaderPreset}
           minDurationMs={loaderMinMs}
           className={wrapperClassName}
+          revealSrc={revealSrc}
         />
       </>
     );
@@ -78,7 +80,12 @@ export default function LoadedImage({
       }}
     >
       {img}
-      <MediaLoader loaded={loaded} preset={loaderPreset} minDurationMs={loaderMinMs} />
+      <MediaLoader
+        loaded={loaded}
+        preset={loaderPreset}
+        minDurationMs={loaderMinMs}
+        revealSrc={revealSrc}
+      />
     </span>
   );
 }
