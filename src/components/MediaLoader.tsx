@@ -36,7 +36,7 @@ export default function MediaLoader({
   className,
   style,
   preset = 'pixels-organic',
-  minDurationMs = 500,
+  minDurationMs = 400,
   borderRadius,
   pixelCellSize = 0.18,
   revealSrc,
