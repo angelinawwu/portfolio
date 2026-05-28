@@ -31,7 +31,7 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
     >
       {/* Image/Video Container - natural height */}
       <div
-        className="relative w-full overflow-hidden bg-faded-white"
+        className="relative w-full overflow-hidden bg-black"
         style={thumb ? { aspectRatio: thumb.aspectRatio } : undefined}
       >
         {project.videoUrl ? (
