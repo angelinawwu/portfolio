@@ -51,7 +51,7 @@ export default function MediaLoader({
 
   useEffect(() => {
     if (!hidden) return;
-    const t = window.setTimeout(() => setUnmount(true), 500);
+    const t = window.setTimeout(() => setUnmount(true), 1000);
     return () => window.clearTimeout(t);
   }, [hidden]);
 
@@ -65,7 +65,7 @@ export default function MediaLoader({
         position: 'absolute',
         inset: 0,
         opacity: hidden ? 0 : 1,
-        transition: 'opacity 400ms cubic-bezier(.215, .61, .355, 1)',
+        transition: 'opacity 800ms cubic-bezier(.215, .61, .355, 1)',
         pointerEvents: 'none',
         zIndex: 1,
         ...style,
