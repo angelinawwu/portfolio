@@ -29,6 +29,7 @@ export default function About() {
                     src={image.image}
                     alt={image.alt}
                     fill
+                    priority
                     className="object-cover"
                     sizes="(max-width: 768px) 50vw, 20vw"
                   />
