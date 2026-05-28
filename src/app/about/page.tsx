@@ -1,6 +1,6 @@
 'use client';
 
-import Image from 'next/image';
+import LoadedImage from '@/components/LoadedImage';
 import { ArrowUpRight } from '@phosphor-icons/react';
 import { books, albums, images, bio, experience, orgs } from '@/data/about';
 
@@ -25,10 +25,11 @@ export default function About() {
                   data-cursor="image"
                   data-caption={image.caption}
                 >
-                  <Image
+                  <LoadedImage
                     src={image.image}
                     alt={image.alt}
                     fill
+                    priority
                     className="object-cover"
                     sizes="(max-width: 768px) 50vw, 20vw"
                   />
@@ -178,7 +179,7 @@ export default function About() {
                   style={{ '--card-index': currentIndex } as React.CSSProperties}
                 >
                   <div className="relative aspect-[2/3] overflow-hidden">
-                    <Image
+                    <LoadedImage
                       src={book.image}
                       alt={book.title}
                       fill
@@ -222,7 +223,7 @@ export default function About() {
                   style={{ '--card-index': currentIndex } as React.CSSProperties}
                 >
                   <div className="relative aspect-square overflow-hidden">
-                    <Image
+                    <LoadedImage
                       src={album.image}
                       alt={album.title}
                       fill

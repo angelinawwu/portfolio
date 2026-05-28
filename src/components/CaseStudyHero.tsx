@@ -1,6 +1,6 @@
 'use client';
 
-import Image from 'next/image';
+import LoadedImage from './LoadedImage';
 import { ArrowUpRight } from '@phosphor-icons/react';
 import { caseStudies } from '@/data/projects';
 
@@ -90,7 +90,7 @@ export default function CaseStudyHero({
 
       {project.thumbnail && (
         <div className="overflow-hidden mb-8">
-          <Image
+          <LoadedImage
             src={project.thumbnail}
             alt={`${project.title} — cover image`}
             width={1200}

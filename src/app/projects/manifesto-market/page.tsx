@@ -1,5 +1,6 @@
 import Link from 'next/link';
-import Image from 'next/image';
+import LoadedImage from '@/components/LoadedImage';
+import LoadedVideo from '@/components/LoadedVideo';
 import { LanguageChart, DeviceChart, ReservationFunnelChart } from '@/components/ManifestoCharts';
 import CaseStudyHero from '@/components/CaseStudyHero';
 
@@ -119,7 +120,7 @@ export default function ManifestoMarketPage() {
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div className="overflow-hidden">
-                  <Image
+                  <LoadedImage
                     src="/assets/projects/Manifesto/Manifesto-UserPersona-1.webp"
                     alt="User persona 1"
                     width={1000}
@@ -128,7 +129,7 @@ export default function ManifestoMarketPage() {
                   />
                 </div>
                 <div className="overflow-hidden">
-                  <Image
+                  <LoadedImage
                     src="/assets/projects/Manifesto/Manifesto-UserPersona-2.webp"
                     alt="User persona 2"
                     width={1000}
@@ -146,7 +147,7 @@ export default function ManifestoMarketPage() {
               </p>
               
               <div className="overflow-hidden">
-                <Image
+                <LoadedImage
                   src="/assets/projects/Manifesto/Manifesto-Analysis.webp"
                   alt="Website audit"
                   width={1000}
@@ -222,7 +223,7 @@ export default function ManifestoMarketPage() {
                 With insights from research, personas, and audit findings, I moved into ideation and prototyping. My design approach was conversion-driven, removing obstacles discovered in earlier stages.
               </p>
               <div className="overflow-hidden mb-6">
-                <video
+                <LoadedVideo
                   src="/assets/projects/Manifesto/manifesto-demo.mp4"
                   className="w-full h-auto"
                   controls
@@ -239,7 +240,7 @@ export default function ManifestoMarketPage() {
                 For the hero section&apos;s CTAs, I focused on intentional, actionable language.
               </p>
               <div className="overflow-hidden">
-                <Image
+                <LoadedImage
                   src="/assets/projects/Manifesto/Manifesto-DP-1.webp"
                   alt="CTA Design"
                   width={1000}
@@ -254,7 +255,7 @@ export default function ManifestoMarketPage() {
                 I reorganized the website&apos;s navigation menu, minimizing content obstruction and highlighting the most relevant pages.
               </p>
               <div className="overflow-hidden">
-                <Image
+                <LoadedImage
                   src="/assets/projects/Manifesto/Manifesto-DP-2.webp"
                   alt="Navigation Design"
                   width={1000}
@@ -272,7 +273,7 @@ export default function ManifestoMarketPage() {
                 With this in mind, I refocused my goal to what I could improve: call-to-action text. I shortened my pitch, highlighting UX writing issues and identifying problematic button text to improve reservation conversion.
               </p>
               <div className="overflow-hidden">
-                <Image
+                <LoadedImage
                   src="/assets/projects/Manifesto/Manifesto-DP-3.webp"
                   alt="UX Writing"
                   width={1000}
