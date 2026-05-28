@@ -17,6 +17,8 @@ interface MediaLoaderProps {
   minDurationMs?: number;
   /** Optional explicit corner radius (CSS px). */
   borderRadius?: number;
+  /** Override MosaicConfig cellSize (0..1). Lower = bigger pixels. Defaults to preset value (~0.22). */
+  pixelCellSize?: number;
   /**
    * URL of the image to dissolve into. When provided, the loader runs the
    * img-fx `startReveal` animation (chunky pixel dissolve) instead of a
@@ -36,6 +38,7 @@ export default function MediaLoader({
   preset = 'pixels-organic',
   minDurationMs = 500,
   borderRadius,
+  pixelCellSize = 0.18,
   revealSrc,
 }: MediaLoaderProps) {
   const [mounted, setMounted] = useState(false);
@@ -93,6 +96,7 @@ export default function MediaLoader({
           preset={preset}
           paused={hidden}
           borderRadius={borderRadius}
+          pixelCellSize={pixelCellSize}
           revealActive={revealActive}
           revealSrc={revealSrc}
           onRevealComplete={() => setHidden(true)}

@@ -13,6 +13,8 @@ interface LoadedImageProps extends ImageProps {
   loaderPreset?: 'pixels-organic' | 'pixels-mechanic';
   /** Minimum loader display time (ms). */
   loaderMinMs?: number;
+  /** Override MosaicConfig cellSize (0..1). Lower = bigger pixels. Defaults to ~0.22. */
+  loaderPixelCellSize?: number;
 }
 
 /**
@@ -33,6 +35,7 @@ export default function LoadedImage({
   wrapperStyle,
   loaderPreset,
   loaderMinMs,
+  loaderPixelCellSize,
   ...rest
 }: LoadedImageProps) {
   const [loaded, setLoaded] = useState(false);
@@ -65,6 +68,7 @@ export default function LoadedImage({
           loaded={loaded}
           preset={loaderPreset}
           minDurationMs={loaderMinMs}
+          pixelCellSize={loaderPixelCellSize}
           className={wrapperClassName}
           revealSrc={revealSrc}
         />
@@ -86,6 +90,7 @@ export default function LoadedImage({
         loaded={loaded}
         preset={loaderPreset}
         minDurationMs={loaderMinMs}
+        pixelCellSize={loaderPixelCellSize}
         revealSrc={revealSrc}
       />
     </span>

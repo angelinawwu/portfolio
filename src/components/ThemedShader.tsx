@@ -30,6 +30,8 @@ interface ThemedShaderProps {
   revealSrc?: string;
   /** Fires once the reveal animation has finished painting the image. */
   onRevealComplete?: () => void;
+  /** Override MosaicConfig cellSize (0..1). Lower = bigger pixels. Defaults to preset value (~0.22). */
+  pixelCellSize?: number;
 }
 
 /**
@@ -63,6 +65,7 @@ export default function ThemedShader({
   revealActive,
   revealSrc,
   onRevealComplete,
+  pixelCellSize,
 }: ThemedShaderProps) {
   const wrapRef = useRef<HTMLDivElement>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -89,7 +92,7 @@ export default function ThemedShader({
       canvas,
       cssWidth,
       cssHeight,
-      preset: buildPresetMode(preset),
+      preset: buildPresetMode(preset, pixelCellSize),
     });
     instRef.current = inst;
 
@@ -168,10 +171,10 @@ export default function ThemedShader({
     // `data-theme` to `<html>` before we sample CSS variables.
     const id = requestAnimationFrame(() => {
       if (!instRef.current) return;
-      setInstancePreset(instRef.current, buildPresetMode(preset));
+      setInstancePreset(instRef.current, buildPresetMode(preset, pixelCellSize));
     });
     return () => cancelAnimationFrame(id);
-  }, [theme, preset]);
+  }, [theme, preset, pixelCellSize]);
 
   useEffect(() => {
     const inst = instRef.current;
@@ -205,7 +208,7 @@ export default function ThemedShader({
   );
 }
 
-function buildPresetMode(name: PresetName): PresetMode {
+function buildPresetMode(name: PresetName, pixelCellSize?: number): PresetMode {
   const base = PRESETS[name].modes.dark;
   if (typeof window === 'undefined') return base;
 
@@ -221,5 +224,6 @@ function buildPresetMode(name: PresetName): PresetMode {
     cardBg: white,
     colors: [white, neutral, black, white, black, white, surface],
     alphas: [1, 1, 0.55, 1, 0.75, 0.5, 0.3],
+    ...(pixelCellSize !== undefined && { pixelConfig: { ...base.pixelConfig, cellSize: pixelCellSize } }),
   };
 }
