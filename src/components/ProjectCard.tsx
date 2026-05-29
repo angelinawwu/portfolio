@@ -1,7 +1,6 @@
 'use client';
 
 import Link from 'next/link';
-import { useState } from 'react';
 import { Project } from '@/data/projects';
 import { useVideoPlayback } from '@/hooks/useVideoPlayback';
 import { getThumbhash } from '@/lib/thumbhash';
@@ -15,8 +14,6 @@ interface ProjectCardProps {
 
 export default function ProjectCard({ project, index }: ProjectCardProps) {
   const videoRef = useVideoPlayback();
-  const [videoLoaded, setVideoLoaded] = useState(false);
-  const [imageLoaded, setImageLoaded] = useState(false);
   const thumb = getThumbhash(project.videoUrl ?? project.thumbnail);
 
   // Determine if this is an internal case study or external link
@@ -46,7 +43,6 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
               playsInline
               preload="metadata"
               autoPlay
-              onLoadedData={() => setVideoLoaded(true)}
               style={{ transition: 'scale 200ms cubic-bezier(.25, .46, .45, .94)' }}
             />
           </>
@@ -60,7 +56,6 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
               className="relative object-cover w-full h-auto group-hover:scale-103 transition-all duration-200"
               wrapperStyle={{ width: '100%' }}
               sizes="(max-width: 768px) 100vw, 50vw"
-              onLoad={() => setImageLoaded(true)}
               style={{ transition: 'scale 200ms cubic-bezier(.25, .46, .45, .94)' }}
             />
           </>

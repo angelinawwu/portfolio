@@ -1,6 +1,5 @@
 'use client';
 
-import { useState } from 'react';
 import { Project } from '@/data/projects';
 import { useVideoPlayback } from '@/hooks/useVideoPlayback';
 import { getThumbhash } from '@/lib/thumbhash';
@@ -15,8 +14,6 @@ interface PlaygroundCardProps {
 
 export default function PlaygroundCard({ project, index, onExpand }: PlaygroundCardProps) {
   const videoRef = useVideoPlayback();
-  const [videoLoaded, setVideoLoaded] = useState(false);
-  const [imageLoaded, setImageLoaded] = useState(false);
   const thumb = getThumbhash(project.videoUrl ?? project.thumbnail);
   const hasDevpost = !!project.devpostUrl;
   const hasLink = !!project.demoUrl;
@@ -27,8 +24,6 @@ export default function PlaygroundCard({ project, index, onExpand }: PlaygroundC
     ? 'devpost'
     : hasLink
       ? 'playground-link'
-      // : hasMedia
-      //   ? 'playground-expand'
       : undefined;
 
   const CardContent = (
@@ -53,7 +48,6 @@ export default function PlaygroundCard({ project, index, onExpand }: PlaygroundC
             playsInline
             preload="metadata"
             autoPlay
-            onLoadedData={() => setVideoLoaded(true)}
             style={{ transition: 'scale 200ms cubic-bezier(.25, .46, .45, .94)' }}
           />
         ) : project.thumbnail ? (
@@ -67,7 +61,6 @@ export default function PlaygroundCard({ project, index, onExpand }: PlaygroundC
             sizes="(max-width: 768px) 100vw, 50vw"
             loading={index === 0 ? "eager" : "lazy"}
             priority={index === 0}
-            onLoad={() => setImageLoaded(true)}
             style={{ transition: 'scale 200ms cubic-bezier(.25, .46, .45, .94)' }}
           />
         ) : (

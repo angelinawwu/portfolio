@@ -13,9 +13,8 @@ export function useVideoPlayback() {
     const playVideo = async () => {
       try {
         await video.play();
-      } catch (error) {
+      } catch {
         // Autoplay might be blocked, but that's okay
-        console.log('Autoplay prevented:', error);
       }
     };
 
