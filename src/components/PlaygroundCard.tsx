@@ -34,21 +34,20 @@ export default function PlaygroundCard({ project, index, onExpand }: PlaygroundC
     >
       {/* Image/Video Container */}
       <div
-        className="relative w-full overflow-hidden bg-black"
+        className="relative w-full overflow-hidden bg-black group-hover:scale-103 transition-transform duration-200 ease-out"
         style={thumb ? { aspectRatio: thumb.aspectRatio } : undefined}
       >
         {project.videoUrl ? (
           <LoadedVideo
             ref={videoRef}
             src={project.videoUrl}
-            className="relative object-cover w-full h-full group-hover:scale-103 transition-all duration-200 ease-out"
+            className="relative object-cover w-full h-full"
             wrapperStyle={thumb ? { width: '100%', aspectRatio: thumb.aspectRatio } : { width: '100%' }}
             muted
             loop
             playsInline
             preload="metadata"
             autoPlay
-            style={{ transition: 'scale 200ms cubic-bezier(.25, .46, .45, .94)' }}
           />
         ) : project.thumbnail ? (
           <LoadedImage
@@ -56,12 +55,11 @@ export default function PlaygroundCard({ project, index, onExpand }: PlaygroundC
             alt={project.title}
             width={800}
             height={600}
-            className="relative object-cover w-full h-full group-hover:scale-103 transition-all duration-200 ease-out"
+            className="relative object-cover w-full h-full"
             wrapperStyle={thumb ? { width: '100%', aspectRatio: thumb.aspectRatio } : { width: '100%' }}
             sizes="(max-width: 768px) 100vw, 50vw"
             loading={index === 0 ? "eager" : "lazy"}
             priority={index === 0}
-            style={{ transition: 'scale 200ms cubic-bezier(.25, .46, .45, .94)' }}
           />
         ) : (
           <div className="w-full aspect-video bg-faded-white" />
