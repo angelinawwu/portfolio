@@ -2,6 +2,7 @@
 
 import { Project } from '@/data/projects';
 import { useVideoPlayback } from '@/hooks/useVideoPlayback';
+import { useIntersectionObserver } from '@/hooks/useIntersectionObserver';
 import { getThumbhash } from '@/lib/thumbhash';
 import LoadedImage from './LoadedImage';
 import LoadedVideo from './LoadedVideo';
@@ -13,7 +14,8 @@ interface PlaygroundCardProps {
 }
 
 export default function PlaygroundCard({ project, index, onExpand }: PlaygroundCardProps) {
-  const videoRef = useVideoPlayback();
+  const { targetRef, isIntersecting } = useIntersectionObserver<HTMLDivElement>();
+  const videoRef = useVideoPlayback(isIntersecting);
   const thumb = getThumbhash(project.videoUrl ?? project.thumbnail);
   const hasDevpost = !!project.devpostUrl;
   const hasLink = !!project.demoUrl;
@@ -28,6 +30,7 @@ export default function PlaygroundCard({ project, index, onExpand }: PlaygroundC
 
   const CardContent = (
     <div
+      ref={targetRef}
       className="project-card group relative overflow-hidden border border-faded-white"
       style={{ '--card-index': index } as React.CSSProperties}
       data-cursor={cursorType}
@@ -46,7 +49,7 @@ export default function PlaygroundCard({ project, index, onExpand }: PlaygroundC
             muted
             loop
             playsInline
-            preload="metadata"
+            preload="none"
             autoPlay
           />
         ) : project.thumbnail ? (

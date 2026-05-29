@@ -2,14 +2,13 @@
 
 import { useEffect, useRef } from 'react';
 
-export function useVideoPlayback() {
+export function useVideoPlayback(shouldPlay: boolean = true) {
   const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
     const video = videoRef.current;
     if (!video) return;
 
-    // Start playing automatically when component mounts
     const playVideo = async () => {
       try {
         await video.play();
@@ -18,28 +17,36 @@ export function useVideoPlayback() {
       }
     };
 
+    const pauseVideo = () => {
+      video.pause();
+    };
+
     // Handle visibility change
     const handleVisibilityChange = () => {
       if (document.hidden) {
-        video.pause();
-      } else {
+        pauseVideo();
+      } else if (shouldPlay) {
         playVideo();
       }
     };
 
     // Handle page focus/blur
     const handleFocus = () => {
-      if (!document.hidden) {
+      if (!document.hidden && shouldPlay) {
         playVideo();
       }
     };
 
     const handleBlur = () => {
-      video.pause();
+      pauseVideo();
     };
 
-    // Start playing immediately
-    playVideo();
+    // Play/pause based on shouldPlay prop
+    if (shouldPlay) {
+      playVideo();
+    } else {
+      pauseVideo();
+    }
 
     // Add event listeners
     document.addEventListener('visibilitychange', handleVisibilityChange);
@@ -51,9 +58,9 @@ export function useVideoPlayback() {
       document.removeEventListener('visibilitychange', handleVisibilityChange);
       window.removeEventListener('focus', handleFocus);
       window.removeEventListener('blur', handleBlur);
-      video.pause();
+      pauseVideo();
     };
-  }, []);
+  }, [shouldPlay]);
 
   return videoRef;
 }
