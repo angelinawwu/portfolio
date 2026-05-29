@@ -36,7 +36,7 @@ export default function MediaLoader({
   className,
   style,
   preset = 'pixels-organic',
-  minDurationMs = 400,
+  minDurationMs = 0,
   borderRadius,
   pixelCellSize = 0.18,
   revealSrc,
@@ -82,9 +82,9 @@ export default function MediaLoader({
       style={{
         position: 'absolute',
         inset: 0,
-        opacity: hidden ? 0 : 1,
+        opacity: usingReveal ? 1 : (hidden ? 0 : 1),
         transition: usingReveal
-          ? 'opacity 200ms linear'
+          ? 'none'
           : 'opacity 400ms cubic-bezier(.215, .61, .355, 1)',
         pointerEvents: 'none',
         zIndex: 1,
