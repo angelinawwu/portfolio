@@ -28,7 +28,7 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
     >
       {/* Image/Video Container - natural height */}
       <div
-        className="relative w-full overflow-hidden bg-black group-hover:scale-105 transition-transform duration-200 ease-out"
+        className="relative w-full overflow-hidden bg-black"
         style={thumb ? { aspectRatio: thumb.aspectRatio } : undefined}
       >
         {project.videoUrl ? (
@@ -37,6 +37,7 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
               ref={videoRef}
               src={project.videoUrl}
               className="relative object-cover w-full h-auto"
+              wrapperClassName="group-hover:scale-103 transition-transform duration-200 ease-out"
               wrapperStyle={{ width: '100%' }}
               muted
               loop
@@ -53,6 +54,7 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
               width={800}
               height={600}
               className="relative object-cover w-full h-auto"
+              wrapperClassName="group-hover:scale-103 transition-transform duration-200 ease-out"
               wrapperStyle={{ width: '100%' }}
               sizes="(max-width: 768px) 100vw, 50vw"
             />
