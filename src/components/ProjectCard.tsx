@@ -62,14 +62,14 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
         )}
         
         {/* Dimming overlay on hover */}
-        <div className="absolute inset-0 bg-[var(--black)] opacity-0 group-hover:opacity-50 transition-opacity duration-200 pointer-events-none" />
+        <div className="absolute inset-0 bg-[var(--black)] opacity-0 group-hover:opacity-50 transition-opacity duration-200 pointer-events-none z-10" />
         
         {/* Black overlay gradient */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-200 z-10" />
         
         {/* Progressive blur overlay on hover */}
         <div 
-          className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none"
+          className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none z-10"
           style={{
             backdropFilter: 'blur(15px)',
             WebkitBackdropFilter: 'blur(15px)',
