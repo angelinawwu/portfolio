@@ -124,20 +124,20 @@ export const playgroundProjects: Project[] = [
     demoUrl: 'https://digitalblackoutpoetry.vercel.app/',
   },
   {
-    title: 'Personal tool: Abstract fluted glass video generator',
+    title: 'Abstract fluted glass video generator (personal tool)',
     context: 'React + Vite, Paper Shaders',
     type: 'playground',
     videoUrl: '/assets/playground/FlutedGlass-Video.mp4',
     demoUrl: 'https://x.com/angelinawuuu/status/2049894184283451511?s=20',
   },
   {
-    title: 'Thistle (healthtech concept)',
+    title: 'Thistle Health (concept)',
     context: 'Figma, Nano Banana',
     thumbnail: '/assets/playground/Thistle-Cover.webp',
     type: 'playground',
   },
   {
-    title: 'Personal tool: Grainy gradient generator',
+    title: 'Grainy gradient generator (personal tool)',
     context: 'React + Vite',
     type: 'playground',
     videoUrl: '/assets/playground/GrainyGrad-Video.mp4',
