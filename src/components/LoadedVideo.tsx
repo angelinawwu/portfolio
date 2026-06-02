@@ -1,7 +1,10 @@
 'use client';
 
+import { usePathname } from 'next/navigation';
 import { forwardRef, useState, type CSSProperties, type VideoHTMLAttributes } from 'react';
 import MediaLoader from './MediaLoader';
+
+const LOADER_ROUTES = ['/', '/play', '/about'];
 
 interface LoadedVideoProps extends VideoHTMLAttributes<HTMLVideoElement> {
   /** Treat layout the same way `next/image` `fill` does — overlay sibling. */
@@ -36,6 +39,8 @@ const LoadedVideo = forwardRef<HTMLVideoElement, LoadedVideoProps>(function Load
 ) {
   const [loaded, setLoaded] = useState(false);
   const [revealSrc, setRevealSrc] = useState<string | undefined>(undefined);
+  const pathname = usePathname();
+  const showLoader = LOADER_ROUTES.includes(pathname ?? '');
 
   const handleLoadedData = (e: React.SyntheticEvent<HTMLVideoElement>) => {
     const v = e.currentTarget;
@@ -62,16 +67,32 @@ const LoadedVideo = forwardRef<HTMLVideoElement, LoadedVideoProps>(function Load
       ref={ref}
       {...rest}
       className={className}
-      style={{
-        ...style,
-        opacity: loaded ? undefined : 0,
-        transition: style?.transition
-          ? `opacity 300ms cubic-bezier(.215, .61, .355, 1), ${style.transition}`
-          : 'opacity 300ms cubic-bezier(.215, .61, .355, 1)',
-      }}
+      style={
+        showLoader
+          ? {
+              ...style,
+              opacity: loaded ? undefined : 0,
+              transition: style?.transition
+                ? `opacity 300ms cubic-bezier(.215, .61, .355, 1), ${style.transition}`
+                : 'opacity 300ms cubic-bezier(.215, .61, .355, 1)',
+            }
+          : style
+      }
       onLoadedData={handleLoadedData}
     />
   );
+
+  if (!showLoader) {
+    if (fill) return video;
+    return (
+      <span
+        className={wrapperClassName}
+        style={{ position: 'relative', display: 'block', ...wrapperStyle }}
+      >
+        {video}
+      </span>
+    );
+  }
 
   if (fill) {
     return (
