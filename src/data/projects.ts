@@ -102,7 +102,6 @@ export const playgroundProjects: Project[] = [
     type: 'playground',
     demoUrl: 'https://poems-i-love.vercel.app/',
   },
-
   {
     title: 'Polaris (LAHacks 2026 Winner)',
     context: 'Next.js, Fetch.ai UAgents',
@@ -123,6 +122,26 @@ export const playgroundProjects: Project[] = [
     type: 'playground',
     demoUrl: 'https://digitalblackoutpoetry.vercel.app/',
   },
+    {
+    title: 'Grainy gradient generator (personal tool)',
+    context: 'React + Vite',
+    type: 'playground',
+    videoUrl: '/assets/playground/GrainyGrad-Video.mp4',
+    demoUrl: 'https://x.com/angelinawuuu/status/2059663763037655208?s=20',
+  },
+    {
+    title: 'Thistle (concept)',
+    context: 'Figma, Nano Banana',
+    thumbnail: '/assets/playground/Thistle-Cover.webp',
+    type: 'playground',
+  },
+    {
+    title: 'UCLA Arts tickers',
+    context: 'Figma, Personal tools',
+    thumbnail: '/assets/playground/Donorstickers-Cover.png',
+    type: 'playground',
+  },
+
   {
     title: 'Abstract fluted glass video generator (personal tool)',
     context: 'React + Vite, Paper Shaders',
@@ -130,19 +149,8 @@ export const playgroundProjects: Project[] = [
     videoUrl: '/assets/playground/FlutedGlass-Video.mp4',
     demoUrl: 'https://x.com/angelinawuuu/status/2049894184283451511?s=20',
   },
-  {
-    title: 'Thistle Health (concept)',
-    context: 'Figma, Nano Banana',
-    thumbnail: '/assets/playground/Thistle-Cover.webp',
-    type: 'playground',
-  },
-  {
-    title: 'Grainy gradient generator (personal tool)',
-    context: 'React + Vite',
-    type: 'playground',
-    videoUrl: '/assets/playground/GrainyGrad-Video.mp4',
-    demoUrl: 'https://x.com/angelinawuuu/status/2059663763037655208?s=20',
-  },
+
+
   {
     title: 'VEST glass experiment',
     context: 'Figma',

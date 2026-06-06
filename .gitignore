@@ -39,3 +39,9 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# rate sheet artifacts
+/rate-sheet
+/rate-sheet/*.pdf
+/rate-sheet/preview.html
+

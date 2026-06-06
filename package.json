@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "eslint",
     "convert-images": "node scripts/convert-to-webp.mjs",
-    "generate-thumbhashes": "node scripts/generate-thumbhashes.mjs"
+    "generate-thumbhashes": "node scripts/generate-thumbhashes.mjs",
+    "rate-sheet": "node rate-sheet/generate.mjs"
   },
   "dependencies": {
     "@phosphor-icons/react": "^2.1.10",
@@ -34,6 +35,7 @@
     "baseline-browser-mapping": "^2.10.17",
     "eslint": "^9",
     "eslint-config-next": "^16.0.7",
+    "puppeteer": "^24.43.1",
     "sharp": "^0.34.5",
     "tailwindcss": "^4",
     "typescript": "^5"
