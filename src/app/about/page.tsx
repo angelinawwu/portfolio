@@ -179,13 +179,15 @@ export default function About() {
                   style={{ '--card-index': currentIndex } as React.CSSProperties}
                 >
                   <div className="relative aspect-[2/3] overflow-hidden">
-                    <LoadedImage
-                      src={book.image}
-                      alt={book.title}
-                      fill
-                      className="object-cover group-hover:scale-104 transition-transform duration-200 ease-out"
-                      sizes="(max-width: 768px) 20vw, 15vw"
-                    />
+                    <div className="absolute inset-0 group-hover:scale-104 transition-transform duration-200 ease-out">
+                      <LoadedImage
+                        src={book.image}
+                        alt={book.title}
+                        fill
+                        className="object-cover"
+                        sizes="(max-width: 768px) 20vw, 15vw"
+                      />
+                    </div>
                     {/* Progressive blur overlay on hover */}
                     <div 
                       className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-100 pointer-events-none"
@@ -223,13 +225,15 @@ export default function About() {
                   style={{ '--card-index': currentIndex } as React.CSSProperties}
                 >
                   <div className="relative aspect-square overflow-hidden">
-                    <LoadedImage
-                      src={album.image}
-                      alt={album.title}
-                      fill
-                      className="object-cover group-hover:scale-104 transition-transform duration-200 ease-out"
-                      sizes="(max-width: 768px) 20vw, 15vw"
-                    />
+                    <div className="absolute inset-0 group-hover:scale-104 transition-transform duration-200 ease-out">
+                      <LoadedImage
+                        src={album.image}
+                        alt={album.title}
+                        fill
+                        className="object-cover"
+                        sizes="(max-width: 768px) 20vw, 15vw"
+                      />
+                    </div>
                     {/* Progressive blur overlay on hover */}
                     <div 
                       className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-100 pointer-events-none"
