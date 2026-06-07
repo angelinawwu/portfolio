@@ -114,7 +114,7 @@ export const albums: About[] = [
   { 
     id: 5, 
     title: "Spring Forward", 
-    url: "https://open.spotify.com/album/61NGKj9SdXHHxDWU8ZsnaS?si=GvJ9AOUPT-SvKm7c7DibHg", 
+    url: "https://open.spotify.com/album/2fYhqwDWXjbpjaIJPEfKFw?si=2LiDp-GITG2tvZdoJnICAQ", 
     image: "/assets/About/Songs/Song-5.webp",
     type: 'album'
   },

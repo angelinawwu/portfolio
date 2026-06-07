@@ -138,7 +138,7 @@ export const playgroundProjects: Project[] = [
     {
     title: 'UCLA Arts stickers',
     context: 'Figma, Personal tools',
-    thumbnail: '/assets/playground/Donorstickers-Cover.png',
+    thumbnail: '/assets/playground/Donorstickers-Cover.webp',
     type: 'playground',
   },
 
