@@ -1,11 +1,14 @@
 'use client';
 
 import LoadedImage from '@/components/LoadedImage';
+import LetterShuffle from '@/components/LetterShuffle';
 import { ArrowUpRight } from '@phosphor-icons/react';
+import React from 'react';
 import { books, albums, images, bio, experience, orgs } from '@/data/about';
 
 export default function About() {
   let cardIndex = 0;
+  const [hoveredId, setHoveredId] = React.useState<string | null>(null);
   
   return (
     <div className="min-h-screen bg-black">
@@ -177,6 +180,8 @@ export default function About() {
                   rel="noopener noreferrer" 
                   className="project-card group block"
                   style={{ '--card-index': currentIndex } as React.CSSProperties}
+                  onMouseEnter={() => setHoveredId(`book-${book.id}`)}
+                  onMouseLeave={() => setHoveredId(null)}
                 >
                   <div className="relative aspect-[2/3] overflow-hidden">
                     <div className="absolute inset-0 group-hover:scale-104 transition-transform duration-200 ease-out">
@@ -199,6 +204,11 @@ export default function About() {
                       }}
                     />
                   </div>
+                  <LetterShuffle
+                    text={book.title}
+                    isVisible={hoveredId === `book-${book.id}`}
+                    className="mt-1.5"
+                  />
                 </a>
               );
             })}
@@ -223,6 +233,8 @@ export default function About() {
                   rel="noopener noreferrer" 
                   className="project-card group block"
                   style={{ '--card-index': currentIndex } as React.CSSProperties}
+                  onMouseEnter={() => setHoveredId(`album-${album.id}`)}
+                  onMouseLeave={() => setHoveredId(null)}
                 >
                   <div className="relative aspect-square overflow-hidden">
                     <div className="absolute inset-0 group-hover:scale-104 transition-transform duration-200 ease-out">
@@ -245,6 +257,11 @@ export default function About() {
                       }}
                     />
                   </div>
+                  <LetterShuffle
+                    text={album.title}
+                    isVisible={hoveredId === `album-${album.id}`}
+                    className="mt-1.5"
+                  />
                 </a>
               );
             })}
