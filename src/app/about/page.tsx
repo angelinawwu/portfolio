@@ -164,7 +164,7 @@ export default function About() {
         
         {/* Books Section */}
         <div 
-          className="project-card mb-12"
+          className="project-card mb-8"
           style={{ '--card-index': cardIndex++ } as React.CSSProperties}
         >
           <h3 className="text-xs geist-mono-font text-white mb-2 tracking-wider uppercase">Books that changed me</h3>
@@ -205,7 +205,8 @@ export default function About() {
                     />
                   </div>
                   <LetterShuffle
-                    text={book.title}
+                    title={book.title}
+                    author={book.author}
                     isVisible={hoveredId === `book-${book.id}`}
                     className="mt-1.5"
                   />
@@ -258,7 +259,8 @@ export default function About() {
                     />
                   </div>
                   <LetterShuffle
-                    text={album.title}
+                    title={album.title}
+                    author={album.author}
                     isVisible={hoveredId === `album-${album.id}`}
                     className="mt-1.5"
                   />

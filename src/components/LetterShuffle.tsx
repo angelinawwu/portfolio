@@ -5,14 +5,18 @@ import { useEffect, useRef, useState } from 'react';
 const CHARS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 
 interface LetterShuffleProps {
-  text: string;
+  title: string;
+  author: string;
   isVisible: boolean;
   className?: string;
 }
 
-export default function LetterShuffle({ text, isVisible, className }: LetterShuffleProps) {
+export default function LetterShuffle({ title, author, isVisible, className }: LetterShuffleProps) {
   const [displayText, setDisplayText] = useState('');
   const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
+
+  const target = `${title.toUpperCase()}, ${author.toUpperCase()}`;
+  const splitIndex = title.toUpperCase().length;
 
   useEffect(() => {
     if (timerRef.current) clearInterval(timerRef.current);
@@ -22,7 +26,6 @@ export default function LetterShuffle({ text, isVisible, className }: LetterShuf
       return;
     }
 
-    const target = text.toUpperCase();
     const duration = 400;
     const intervalMs = 30;
     const startTime = Date.now();
@@ -34,7 +37,7 @@ export default function LetterShuffle({ text, isVisible, className }: LetterShuf
       const next = target
         .split('')
         .map((char, i) => {
-          if (char === ' ') return ' ';
+          if (char === ' ' || char === ',') return char;
           if (progress > i / target.length) return char;
           return CHARS[Math.floor(Math.random() * CHARS.length)];
         })
@@ -51,15 +54,18 @@ export default function LetterShuffle({ text, isVisible, className }: LetterShuf
     return () => {
       if (timerRef.current) clearInterval(timerRef.current);
     };
-  }, [isVisible, text]);
+  }, [isVisible, target]);
+
+  const display = (isVisible && displayText) ? displayText : target;
 
   return (
     <p
-      className={`text-[10px] geist-mono-font text-white-muted tracking-wider truncate select-none transition-opacity duration-200 ease-out ${isVisible ? 'opacity-100' : 'opacity-0'} ${className ?? ''}`}
+      className={`text-sm geist-mono-font text-white-muted select-none transition-opacity duration-200 ease-out line-clamp-2 ${isVisible ? 'opacity-100' : 'opacity-0'} ${className ?? ''}`}
       style={{ willChange: 'opacity' }}
-      aria-label={text}
+      aria-label={`${title}, ${author}`}
     >
-      {isVisible && displayText ? displayText : text.toUpperCase()}
+      <em>{display.slice(0, splitIndex)}</em>
+      {display.slice(splitIndex)}
     </p>
   );
 }
