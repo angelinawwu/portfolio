@@ -13,7 +13,7 @@ export default function About() {
   return (
     <div className="min-h-screen bg-black">
       {/* Images Section */}
-      <section className="p-4 md:p-6 lg:p-8">
+      <section className="p-4 md:p-6 lg:p-8 mb-4 md:mb-0">
         <div className="grid grid-cols-2 md:grid-cols-5 gap-2">
           {images.map((image, index) => {
             const currentIndex = cardIndex++;
@@ -189,7 +189,7 @@ export default function About() {
                   onMouseLeave={() => setHoveredId(null)}
                 >
                   <div className="relative aspect-[2/3] overflow-hidden">
-                    <div className="absolute inset-0 group-hover:scale-104 transition-transform duration-200 ease-out">
+                    <div className="absolute inset-0 transition-transform duration-200 ease-out">
                       <LoadedImage
                         src={book.image}
                         alt={book.title}
@@ -243,7 +243,7 @@ export default function About() {
                   onMouseLeave={() => setHoveredId(null)}
                 >
                   <div className="relative aspect-square overflow-hidden">
-                    <div className="absolute inset-0 group-hover:scale-104 transition-transform duration-200 ease-out">
+                    <div className="absolute inset-0 transition-transform duration-200 ease-out">
                       <LoadedImage
                         src={album.image}
                         alt={album.title}

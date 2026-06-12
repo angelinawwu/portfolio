@@ -62,7 +62,7 @@ export default function LetterShuffle({ title, author, isVisible, className }: L
 
   return (
     <p
-      className={`text-sm geist-mono-font text-white-muted select-none transition-opacity duration-200 ease-out line-clamp-2 ${isVisible ? 'opacity-100' : 'opacity-0'} ${className ?? ''}`}
+      className={`letter-shuffle-caption hidden md:block text-xs geist-mono-font text-white-muted select-none transition-opacity duration-200 ease-out line-clamp-2 ${isVisible ? 'opacity-100' : 'opacity-0'} ${className ?? ''}`}
       style={{ willChange: 'opacity' }}
       aria-label={`${title}, ${author}`}
     >

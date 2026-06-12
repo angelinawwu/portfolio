@@ -203,6 +203,13 @@ html.theme-transition * {
   }
 }
 
+/* ========== LETTER SHUFFLE ========== */
+@media not all and (hover: hover) {
+  .letter-shuffle-caption {
+    display: none;
+  }
+}
+
 /* ========== ACCENT TEXT ========== */
 .accent-text {
   color: var(--accent);
