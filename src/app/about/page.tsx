@@ -36,7 +36,7 @@ export default function About() {
                   />
                   {/* Progressive blur overlay on hover */}
                   <div 
-                    className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-100 pointer-events-none"
+                    className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-100 pointer-events-none z-10"
                     style={{
                       backdropFilter: 'blur(12px)',
                       WebkitBackdropFilter: 'blur(12px)',
@@ -200,7 +200,7 @@ export default function About() {
                     </div>
                     {/* Progressive blur overlay on hover */}
                     <div 
-                      className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-100 pointer-events-none"
+                      className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-100 pointer-events-none z-10"
                       style={{
                         backdropFilter: 'blur(12px)',
                         WebkitBackdropFilter: 'blur(12px)',
@@ -254,7 +254,7 @@ export default function About() {
                     </div>
                     {/* Progressive blur overlay on hover */}
                     <div 
-                      className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-100 pointer-events-none"
+                      className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-100 pointer-events-none z-10"
                       style={{
                         backdropFilter: 'blur(12px)',
                         WebkitBackdropFilter: 'blur(12px)',
