@@ -66,7 +66,7 @@ export default function LetterShuffle({ title, author, isVisible, className }: L
       style={{ willChange: 'opacity' }}
       aria-label={`${title}, ${author}`}
     >
-      <em>{display.slice(0, splitIndex)}</em>
+      {author ? <em>{display.slice(0, splitIndex)}</em> : display.slice(0, splitIndex)}
       {display.slice(splitIndex)}
     </p>
   );

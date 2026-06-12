@@ -13,7 +13,7 @@ export default function About() {
   return (
     <div className="min-h-screen bg-black">
       {/* Images Section */}
-      <section className="p-4 md:p-6 lg:p-8 mb-4">
+      <section className="p-4 md:p-6 lg:p-8">
         <div className="grid grid-cols-2 md:grid-cols-5 gap-2">
           {images.map((image, index) => {
             const currentIndex = cardIndex++;
