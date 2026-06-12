@@ -39,6 +39,7 @@ export const orgs: ExperienceItem[] = [
 export type About = {
   id: number;
   title: string;
+  author: string;
   url: string;
   image: string;
   type: 'book' | 'album';
@@ -48,6 +49,7 @@ export const books: About[] = [
   { 
     id: 1, 
     title: "Beartown", 
+    author: "Fredrik Backman",
     url: "https://www.goodreads.com/book/show/33413128-beartown", 
     image: "/assets/About/Books/Book-1.webp",
     type: 'book'
@@ -55,6 +57,7 @@ export const books: About[] = [
   { 
     id: 2, 
     title: "Stay True", 
+    author: "Hua Hsu",
     url: "https://www.goodreads.com/book/show/59900070-stay-true", 
     image: "/assets/About/Books/Book-2.webp",
     type: 'book'
@@ -62,6 +65,7 @@ export const books: About[] = [
   { 
     id: 3, 
     title: "Harrow the Ninth", 
+    author: "Tamsyn Muir",
     url: "https://www.goodreads.com/book/show/39325105-harrow-the-ninth", 
     image: "/assets/About/Books/Book-3.webp",
     type: 'book'
@@ -69,6 +73,7 @@ export const books: About[] = [
   { 
     id: 4, 
     title: "Immaculate Conception", 
+    author: "Ling Ling Huang",
     url: "https://www.goodreads.com/book/show/217453576-immaculate-conception", 
     image: "/assets/About/Books/Book-4.webp",
     type: 'book'
@@ -76,6 +81,7 @@ export const books: About[] = [
   { 
     id: 5, 
     title: "Beloved", 
+    author: "Toni Morrison",
     url: "https://www.goodreads.com/book/show/6149.Beloved", 
     image: "/assets/About/Books/Book-5.webp",
     type: 'book'
@@ -86,6 +92,7 @@ export const albums: About[] = [
   { 
     id: 1, 
     title: "FISSION", 
+    author: "Dead Poet Society",
     url: "https://open.spotify.com/album/6PUmlxsIK7Z2Gr5OSTa5YA?si=SaT-4iJPSUeuG0gozIi98g", 
     image: "/assets/About/Songs/Song-1.webp",
     type: 'album'
@@ -93,6 +100,7 @@ export const albums: About[] = [
   { 
     id: 2, 
     title: "GUTS", 
+    author: "Olivia Rodrigo",
     url: "https://open.spotify.com/album/1xJHno7SmdVtZAtXbdbDZp?si=GTBG02hiRyiRVMAyrtQdHQ", 
     image: "/assets/About/Songs/Song-2.webp",
     type: 'album'
@@ -100,6 +108,7 @@ export const albums: About[] = [
   { 
     id: 3, 
     title: "i feel everything", 
+    author: "Maggie Lindemann",
     url: "https://open.spotify.com/album/2WbgQIggT3i5OUr94vlcUT?si=AsDBpduDQAmptgtKvR6aJg", 
     image: "/assets/About/Songs/Song-3.webp",
     type: 'album'
@@ -107,13 +116,15 @@ export const albums: About[] = [
   { 
     id: 4, 
     title: "Water the Flowers, Pray for a Garden", 
+    author: "Valley",
     url: "https://open.spotify.com/album/2AUF4A04JUP4xaSUmFjJnK?si=ZQHqd8vTSdendgK1mMuIgg", 
     image: "/assets/About/Songs/Song-4.webp",
     type: 'album'
   },
   { 
     id: 5, 
-    title: "Spring Forward", 
+    title: "thank u, next", 
+    author: "Ariana Grande",
     url: "https://open.spotify.com/album/2fYhqwDWXjbpjaIJPEfKFw?si=2LiDp-GITG2tvZdoJnICAQ", 
     image: "/assets/About/Songs/Song-5.webp",
     type: 'album'
