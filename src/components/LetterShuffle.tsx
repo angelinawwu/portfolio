@@ -6,7 +6,7 @@ const CHARS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 
 interface LetterShuffleProps {
   title: string;
-  author: string;
+  author?: string;
   isVisible: boolean;
   className?: string;
 }
@@ -15,7 +15,9 @@ export default function LetterShuffle({ title, author, isVisible, className }: L
   const [displayText, setDisplayText] = useState('');
   const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
-  const target = `${title.toUpperCase()}, ${author.toUpperCase()}`;
+  const target = author
+    ? `${title.toUpperCase()}, ${author.toUpperCase()}`
+    : title.toUpperCase();
   const splitIndex = title.toUpperCase().length;
 
   useEffect(() => {
@@ -37,7 +39,7 @@ export default function LetterShuffle({ title, author, isVisible, className }: L
       const next = target
         .split('')
         .map((char, i) => {
-          if (char === ' ' || char === ',') return char;
+          if (!/[A-Z]/.test(char)) return char;
           if (progress > i / target.length) return char;
           return CHARS[Math.floor(Math.random() * CHARS.length)];
         })

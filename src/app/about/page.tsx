@@ -22,12 +22,10 @@ export default function About() {
                 key={image.id} 
                 className={`project-card group ${index === 4 ? 'hidden md:block' : ''}`}
                 style={{ '--card-index': currentIndex } as React.CSSProperties}
+                onMouseEnter={() => setHoveredId(`image-${image.id}`)}
+                onMouseLeave={() => setHoveredId(null)}
               >
-                <div 
-                  className="relative aspect-square overflow-hidden"
-                  data-cursor="image"
-                  data-caption={image.caption}
-                >
+                <div className="relative aspect-square overflow-hidden">
                   <LoadedImage
                     src={image.image}
                     alt={image.alt}
@@ -47,6 +45,13 @@ export default function About() {
                     }}
                   />
                 </div>
+                {image.caption && (
+                  <LetterShuffle
+                    title={image.caption}
+                    isVisible={hoveredId === `image-${image.id}`}
+                    className="mt-1.5"
+                  />
+                )}
               </div>
             );
           })}
