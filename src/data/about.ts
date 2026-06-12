@@ -22,7 +22,7 @@ export const bio: BioData = {
     '(Unsuccessfully) learning how to whistle',
   ],
   email: 'angelinawwu@ucla.edu',
-  resumeUrl: 'https://drive.google.com/file/d/1MM9_woyppaYnxLGiA5FSjqrlQrstwFeN/view?usp=sharing',
+  resumeUrl: 'https://drive.google.com/file/d/1l2vRJOnZCCVSD31dFwnHOP0QY0UjV5TJ/view?usp=sharing',
 }
 
 export const experience: ExperienceItem[] = [
