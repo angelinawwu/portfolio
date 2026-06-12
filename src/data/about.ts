@@ -99,17 +99,17 @@ export const albums: About[] = [
   },
   { 
     id: 2, 
-    title: "GUTS", 
-    author: "Olivia Rodrigo",
-    url: "https://open.spotify.com/album/1xJHno7SmdVtZAtXbdbDZp?si=GTBG02hiRyiRVMAyrtQdHQ", 
+    title: "Cruel World", 
+    author: "Holly Humberstone",
+    url: "https://open.spotify.com/album/43TBVIMYFCJNsKSJK6H6TU?si=HG0iePoxTqCtaW3ivErvxg", 
     image: "/assets/About/Songs/Song-2.webp",
     type: 'album'
   },
   { 
     id: 3, 
-    title: "i feel everything", 
-    author: "Maggie Lindemann",
-    url: "https://open.spotify.com/album/2WbgQIggT3i5OUr94vlcUT?si=AsDBpduDQAmptgtKvR6aJg", 
+    title: "you seem pretty sad for a girl so in love", 
+    author: "Olivia Rodrigo",
+    url: "https://open.spotify.com/album/3WZZF72ihlKPZBS4zSsNHl?si=_gcsVAtpSA-if82JSDAV2Q", 
     image: "/assets/About/Songs/Song-3.webp",
     type: 'album'
   },
