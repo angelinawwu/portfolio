@@ -23,10 +23,10 @@ export default function GoodreadsWrappedPage() {
         <CaseStudyHero
           slug="goodreads-wrapped"
           details={{
-            role: "Designer & Developer",
+            role: "Designer, Engineer",
             timeline: ["August – December 2025"],
-            team: ["Solo"],
-            tools: "Next.js, TypeScript, Tailwind, Vercel"
+            team: ["Myself!"],
+            tools: "Next.js (TypeScript, Tailwind, Motion.dev), Figma, Vercel"
           }}
           cardIndex={cardIndex++}
         />
@@ -63,36 +63,17 @@ export default function GoodreadsWrappedPage() {
           className="project-card mb-12 pt-8 border-t border-faded-white"
           style={{ '--card-index': cardIndex++ } as React.CSSProperties}
         >
-          <h2 className="text-2xl md:text-3xl bit-apple-font text-white mb-6">The Challenge</h2>
+          <h2 className="text-2xl md:text-3xl bit-apple-font text-white mb-6">Why build this?</h2>
           <div className="space-y-4 text-white-muted leading-relaxed">
             <p>
-              Goodreads — the largest reading community on the internet — has no native year-in-review.
-              Meanwhile, every December, Spotify Wrapped and Letterboxd&apos;s year-end recaps flood our
-              feeds. Readers were left without a shareable way to celebrate the year they just spent
-              with books.
+              Every December, year-end recaps from Spotify, YouTube, and other platforms flood our social feeds.
+              But not for Goodreads, the largest reading community on the internet: its attempt at a year-end summary, the "Year in Books," 
+              is a simple static webpage, lacking both the shareability and design polish of its competitors. 
             </p>
             <p>
-              I built Goodreads Wrapped as a solo side project to fill that gap: a playful, Spotify-style
-              recap that turns a Goodreads profile into a personalized reading summary in seconds.
-            </p>
-          </div>
-        </section>
-
-        {/* Why this project */}
-        <section
-          className="project-card mb-12 pt-8 border-t border-faded-white"
-          style={{ '--card-index': cardIndex++ } as React.CSSProperties}
-        >
-          <h2 className="text-2xl md:text-3xl bit-apple-font text-white mb-6">Why this project</h2>
-          <div className="space-y-4 text-white-muted leading-relaxed">
-            <p>
-              I&apos;m an avid reader, and every year I find myself manually scrolling through my
-              Goodreads to remember what I read. I wanted something that surfaced those stats for
-              me — and felt designed for sharing.
-            </p>
-            <p>
-              The bigger question I was curious about: could a single person, working nights and
-              weekends, ship something the book community actually wanted to use?
+              I&apos;m an avid reader myself, and every year I&apos;d find myself manually scrolling
+              through my Goodreads trying to remember what I read. I wanted something that celebrated a year of reading,
+              surfaced those stats, and felt designed for sharing. So... I built it!
             </p>
           </div>
         </section>
