@@ -26,7 +26,7 @@ export const bio: BioData = {
 }
 
 export const experience: ExperienceItem[] = [
-  { org: 'Sephora', role: 'Product Design Intern', period: 'INCOMING' },
+  { org: 'Sephora', role: 'Product Design Intern', period: 'SUMMER 2026' },
   { org: 'Manifesto Market', role: 'UX Intern', period: 'SUMMER 2025' },
 ]
 

@@ -16,7 +16,7 @@ const navItems = [
 const connectLinks = [
   { href: 'mailto:angelinawwu@ucla.edu', label: 'EMAIL' },
   { href: 'https://linkedin.com/in/angelinawwu', label: 'LINKEDIN' },
-  { href: 'https://x.com/angelinawuuu', label: 'TWITTER/X' },
+  { href: 'https://x.com/angelinawuuu', label: 'X/TWITTER' },
   { href: 'https://github.com/angelinawwu', label: 'GITHUB' },
   { href: 'https://drive.google.com/file/d/1l2vRJOnZCCVSD31dFwnHOP0QY0UjV5TJ/view?usp=sharing', label: 'RESUME' },
 ];
