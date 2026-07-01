@@ -2,7 +2,32 @@
 
 import Link from 'next/link';
 import CaseStudyHero from '@/components/CaseStudyHero';
+import LoadedImage from '@/components/LoadedImage';
 import { ArrowUpRight } from '@phosphor-icons/react';
+
+function ImagePlaceholder({
+  label,
+  aspect,
+  fill = false,
+}: {
+  label: string;
+  aspect?: string;
+  fill?: boolean;
+}) {
+  const base =
+    'flex items-center justify-center border border-dashed border-faded-white bg-surface text-xs text-white-muted geist-mono-font uppercase text-center px-4';
+  if (fill) {
+    return <div className={`absolute inset-0 ${base}`}>{label}</div>;
+  }
+  return (
+    <div
+      className={`w-full ${base}`}
+      style={{ aspectRatio: aspect ?? '5 / 3' }}
+    >
+      {label}
+    </div>
+  );
+}
 
 export default function GoodreadsWrappedPage() {
   let cardIndex = 0;
@@ -63,7 +88,7 @@ export default function GoodreadsWrappedPage() {
           className="project-card mb-12 pt-8 border-t border-faded-white"
           style={{ '--card-index': cardIndex++ } as React.CSSProperties}
         >
-          <h2 className="text-2xl md:text-3xl bit-apple-font text-white mb-6">Why build this?</h2>
+          <h2 className="text-2xl md:text-3xl bit-apple-font text-white mb-6">The Vision</h2>
           <div className="space-y-4 text-white-muted leading-relaxed">
             <p>
               Every December, year-end recaps from Spotify, YouTube, and other platforms flood our social feeds.
@@ -76,6 +101,63 @@ export default function GoodreadsWrappedPage() {
               surfaced those stats, and felt designed for sharing. So... I built it!
             </p>
           </div>
+
+          {/* The "before": Goodreads' existing Year in Books page */}
+          <div className="mt-8">
+            <div className="flex gap-2">
+                <LoadedImage
+                  src="/assets/projects/GoodreadsWrapped/Goodreads-Current-1.png"
+                  alt="Screenshot of Goodreads' existing Year in Books page — a static, text-heavy webpage with no shareable graphics"
+                  width={2000}
+                  height={1200}
+                  className="w-full h-auto"
+                />
+                <LoadedImage
+                  src="/assets/projects/GoodreadsWrapped/Goodreads-Current-2.png"
+                  alt="Screenshot of Goodreads' existing Year in Books page — a static, text-heavy webpage with no shareable graphics"
+                  width={2000}
+                  height={1200}
+                  className="w-full h-auto"
+                />
+                <LoadedImage
+                  src="/assets/projects/GoodreadsWrapped/Goodreads-Current-3.png"
+                  alt="Screenshot of Goodreads' existing Year in Books page — a static, text-heavy webpage with no shareable graphics"
+                  width={2000}
+                  height={1200}
+                  className="w-full h-auto"
+                />
+            </div>
+            <p className="text-xs text-white-muted mt-2">
+              Goodreads&apos; current &quot;Year in Books&quot; — a static webpage that feels more like a receipt than a recap.
+            </p>
+          </div>
+        </section>
+
+        {/* The Final Product — hook readers early with the shipped result */}
+        <section
+          className="project-card mb-12 pt-8 border-t border-faded-white space-y-8"
+          style={{ '--card-index': cardIndex++ } as React.CSSProperties}
+        >
+          <div>
+            <h2 className="text-2xl md:text-3xl bit-apple-font text-white mb-6">The result</h2>
+            <div className="space-y-4 text-white-muted leading-relaxed">
+              <p>
+                Goodreads Wrapped turns any public Goodreads profile into a scrollable, screenshot-ready
+                recap in seconds — with vintage-book illustrations, a story-driven sequence of stats, and
+                a downloadable share card at the end.
+              </p>
+            </div>
+          </div>
+
+          {/* TODO: Hero product shot — full-width hero video or mockup of recap cards on a phone.
+              Suggested: `/assets/projects/GoodreadsWrapped/Hero-Product.webp` or `.mp4` via LoadedVideo. */}
+          <div className="overflow-hidden">
+            <ImagePlaceholder label="Hero product shot" aspect="5 / 3" />
+          </div>
+          <p className="text-xs text-white-muted mt-2">
+            {/* TODO: caption once final hero image is in. */}
+            Final recap flow, delivered to 5000+ readers.
+          </p>
         </section>
 
         {/* How it works */}
@@ -143,30 +225,167 @@ export default function GoodreadsWrappedPage() {
             </div>
           </div>
 
-          {/* TODO: <LoadedImage src="/assets/projects/GoodreadsWrapped/Flow.webp" ... /> */}
+          {/* Flow diagram: ID input → scraper → aggregated data → recap cards */}
+          <div>
+            <div className="overflow-hidden">
+              <ImagePlaceholder label="Flow diagram" aspect="5 / 2" />
+            </div>
+            <p className="text-xs text-white-muted mt-2">
+              {/* TODO: build this diagram in Figma and export. */}
+              End-to-end flow, from ID entry to shareable recap.
+            </p>
+          </div>
         </section>
 
-        {/* Design */}
+        {/* Design decisions — the visual heart of the case study */}
         <section
-          className="project-card mb-12 pt-8 border-t border-faded-white space-y-8"
+          className="project-card mb-12 pt-8 border-t border-faded-white space-y-12"
           style={{ '--card-index': cardIndex++ } as React.CSSProperties}
         >
           <div>
-            <h2 className="text-2xl md:text-3xl bit-apple-font text-white mb-6">Design</h2>
+            <h2 className="text-2xl md:text-3xl bit-apple-font text-white mb-6">Design decisions</h2>
             <div className="space-y-4 text-white-muted leading-relaxed">
               <p>
-                The design language leans into the warmth and tactility of physical books — typographic,
-                slightly editorial, with print-inspired flourishes. The recap cards are mobile-first and
-                deliberately screenshotable, because sharing was always the point.
-              </p>
-              <p>
-                {/* TODO: expand on color, type, and the card system once final screenshots are in. */}
-                More on the type system, color palette, and card composition coming soon.
+                Every design choice traced back to one goal: make a year of reading feel worth
+                celebrating — and worth sharing. That meant leaning hard into a distinct visual
+                world, and treating every screen as a poster before it was a UI.
               </p>
             </div>
           </div>
 
-          {/* TODO: <LoadedImage src="/assets/projects/GoodreadsWrapped/Cards.webp" ... /> */}
+          {/* 1. Visual direction — vintage book illustrations */}
+          <div>
+            <h3 className="text-xl md:text-2xl text-white mb-4">A world built from vintage book illustrations</h3>
+            <div className="space-y-4 text-white-muted leading-relaxed mb-6">
+              <p>
+                Most Wrapped-style recaps default to bold, modern gradients. I wanted Goodreads
+                Wrapped to feel like something you&apos;d find inside a book, not on a streaming
+                app — warm, tactile, and a little nostalgic. I pulled from public-domain
+                illustrations, old bookplates, and vintage botanical prints to build a small
+                library of motifs that could carry the whole product.
+              </p>
+            </div>
+
+            {/* Moodboard — 4-up grid of inspiration references */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+              <div className="relative aspect-square overflow-hidden border border-faded-white">
+                <ImagePlaceholder label="Moodboard 1" fill />
+              </div>
+              <div className="relative aspect-square overflow-hidden border border-faded-white">
+                <ImagePlaceholder label="Moodboard 2" fill />
+              </div>
+              <div className="relative aspect-square overflow-hidden border border-faded-white">
+                <ImagePlaceholder label="Moodboard 3" fill />
+              </div>
+              <div className="relative aspect-square overflow-hidden border border-faded-white">
+                <ImagePlaceholder label="Moodboard 4" fill />
+              </div>
+            </div>
+            <p className="text-xs text-white-muted mt-2">
+              {/* TODO: replace with 4 real moodboard tiles — vintage illustrations, botanical prints, bookplates, paper textures. */}
+              Moodboard of vintage book illustrations that seeded the visual direction.
+            </p>
+
+            {/* Motif spot: how the illustrations show up in the product */}
+            <div className="overflow-hidden mt-6">
+              <ImagePlaceholder label="Illustrations in product" aspect="5 / 3" />
+            </div>
+            <p className="text-xs text-white-muted mt-2">
+              {/* TODO: side-by-side of raw illustration → styled card. */}
+              From raw reference to in-product motif.
+            </p>
+          </div>
+
+          {/* 2. Type & color system */}
+          <div>
+            <h3 className="text-xl md:text-2xl text-white mb-4">Type and color, tuned like a book jacket</h3>
+            <div className="space-y-4 text-white-muted leading-relaxed mb-6">
+              <p>
+                The type pairs a serif display face with a clean sans for stats — the same
+                hierarchy you&apos;d find on a book cover. The palette is warm and muted (cream,
+                ink, faded reds and greens) so the illustrations can breathe and screenshots
+                still read on a bright social feed.
+              </p>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              {/* Type specimen */}
+              <div className="relative aspect-4/3 overflow-hidden border border-faded-white bg-surface">
+                <ImagePlaceholder label="Type specimen" fill />
+              </div>
+              {/* Color palette */}
+              <div className="relative aspect-4/3 overflow-hidden border border-faded-white bg-surface">
+                <ImagePlaceholder label="Palette" fill />
+              </div>
+            </div>
+            <p className="text-xs text-white-muted mt-2">
+              {/* TODO: export type specimen and palette swatch tiles from Figma. */}
+              Left: type specimen. Right: core palette.
+            </p>
+          </div>
+
+          {/* 3. Designing for shareability */}
+          <div>
+            <h3 className="text-xl md:text-2xl text-white mb-4">Designed for the screenshot</h3>
+            <div className="space-y-4 text-white-muted leading-relaxed mb-6">
+              <p>
+                Sharing was the whole point, so every card was designed as a self-contained
+                poster first, screen second. That meant a fixed portrait aspect ratio, generous
+                margins so nothing gets cropped by Instagram Stories, and a final downloadable
+                summary card that stitches the highlights together in a single image.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
+              {/* Portrait recap cards — each one a "poster" */}
+              <div className="relative aspect-[9/16] overflow-hidden border border-faded-white">
+                <ImagePlaceholder label="Card: Books read" fill />
+              </div>
+              <div className="relative aspect-[9/16] overflow-hidden border border-faded-white">
+                <ImagePlaceholder label="Card: Top book" fill />
+              </div>
+              <div className="relative aspect-[9/16] overflow-hidden border border-faded-white">
+                <ImagePlaceholder label="Card: Genres" fill />
+              </div>
+            </div>
+            <p className="text-xs text-white-muted mt-2">
+              {/* TODO: swap in 3 real card exports at 9:16. */}
+              Each card is a self-contained poster at 9:16 — screenshot, crop, done.
+            </p>
+
+            {/* Downloadable share card */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6 items-center">
+              <div className="relative aspect-[4/5] overflow-hidden border border-faded-white">
+                <ImagePlaceholder label="Downloadable share card" fill />
+              </div>
+              <div className="space-y-4 text-white-muted leading-relaxed">
+                <p>
+                  The last card is a single downloadable image that captures the whole year at a
+                  glance — the artifact users actually screenshot, post, and text to their
+                  friends. It doubles as free organic marketing for the site.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* 4. Narrative sequence — story arc across cards */}
+          <div>
+            <h3 className="text-xl md:text-2xl text-white mb-4">A story, not a dashboard</h3>
+            <div className="space-y-4 text-white-muted leading-relaxed mb-6">
+              <p>
+                The card order was as important as the cards themselves. Instead of dumping every
+                stat on one screen, the recap builds like a short story — opening with volume
+                (books, pages), moving into taste (genres, top titles), then landing on a personal
+                closer. Each card earns the next.
+              </p>
+            </div>
+            <div className="overflow-hidden">
+              <ImagePlaceholder label="Card sequence storyboard" aspect="8 / 3" />
+            </div>
+            <p className="text-xs text-white-muted mt-2">
+              {/* TODO: export all cards as a horizontal filmstrip in Figma. */}
+              Full card sequence, left to right — volume → taste → personal closer.
+            </p>
+          </div>
         </section>
 
         {/* Engineering highlights */}
@@ -228,14 +447,48 @@ export default function GoodreadsWrappedPage() {
                 through book communities on TikTok, Instagram, and Reddit — exactly the kind of
                 word-of-mouth I was hoping for.
               </p>
-              <p>
-                {/* TODO: drop in traffic graph, social posts, and standout quotes. */}
-                Traffic snapshots and favorite community reactions coming soon.
-              </p>
             </div>
           </div>
 
-          {/* TODO: <LoadedImage src="/assets/projects/GoodreadsWrapped/Traffic.webp" ... /> */}
+          {/* Traffic graph — Vercel Analytics or GA screenshot */}
+          <div>
+            <div className="overflow-hidden border border-faded-white">
+              <ImagePlaceholder label="Traffic graph" aspect="20 / 9" />
+            </div>
+            <p className="text-xs text-white-muted mt-2">
+              {/* TODO: export analytics chart for the launch window. */}
+              Launch-week traffic, December 2025.
+            </p>
+          </div>
+
+          {/* Social proof — 3-up grid of posts / screenshots */}
+          <div>
+            <h3 className="text-xl md:text-2xl text-white mb-4">In the wild</h3>
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
+              <div className="relative aspect-[9/16] overflow-hidden border border-faded-white">
+                <ImagePlaceholder label="Social share 1" fill />
+              </div>
+              <div className="relative aspect-[9/16] overflow-hidden border border-faded-white">
+                <ImagePlaceholder label="Social share 2" fill />
+              </div>
+              <div className="relative aspect-[9/16] overflow-hidden border border-faded-white">
+                <ImagePlaceholder label="Social share 3" fill />
+              </div>
+            </div>
+            <p className="text-xs text-white-muted mt-2">
+              {/* TODO: collect 3 favorite user posts (with permission) and drop them in. */}
+              Readers posting their recaps across TikTok, Instagram, and Reddit.
+            </p>
+          </div>
+
+          {/* Standout quote */}
+          <div className="border border-faded-white p-6 bg-surface">
+            <p className="text-white text-lg md:text-xl italic">
+              {/* TODO: replace with a real standout quote from a user. */}
+              &quot;Finally, a Goodreads Wrapped that actually feels like it belongs on my feed.&quot;
+            </p>
+            <p className="text-xs text-white-muted mt-2 geist-mono-font uppercase">— A user, somewhere on the internet</p>
+          </div>
         </section>
 
         {/* Reflections */}
