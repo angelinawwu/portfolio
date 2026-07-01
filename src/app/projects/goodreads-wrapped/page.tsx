@@ -271,36 +271,9 @@ export default function GoodreadsWrappedPage() {
               {/* TODO: side-by-side of raw illustration → styled card. */}
               From raw reference to in-product motif.
             </p>
-          </div>
+          </div>          
 
-          {/* 2. Type & color system */}
-          <div>
-            <h3 className="text-xl md:text-2xl text-white mb-4">Type and color, tuned like a book jacket</h3>
-            <div className="space-y-4 text-white-muted leading-relaxed mb-6">
-              <p>
-                The type pairs a serif display face with a clean sans for stats — the same
-                hierarchy you&apos;d find on a book cover. The palette is warm and muted (cream,
-                ink, faded reds and greens) so the illustrations can breathe and screenshots
-                still read on a bright social feed.
-              </p>
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              {/* Type specimen */}
-              <div className="relative aspect-4/3 overflow-hidden border border-faded-white bg-surface">
-                <ImagePlaceholder label="Type specimen" fill />
-              </div>
-              {/* Color palette */}
-              <div className="relative aspect-4/3 overflow-hidden border border-faded-white bg-surface">
-                <ImagePlaceholder label="Palette" fill />
-              </div>
-            </div>
-            <p className="text-xs text-white-muted mt-2">
-              {/* TODO: export type specimen and palette swatch tiles from Figma. */}
-              Left: type specimen. Right: core palette.
-            </p>
-          </div>
-
-          {/* 3. Designing for shareability */}
+          {/* 2. Designing for shareability */}
           <div>
             <h3 className="text-xl md:text-2xl text-white mb-4">Designed for the screenshot</h3>
             <div className="space-y-4 text-white-muted leading-relaxed mb-6">
@@ -344,7 +317,7 @@ export default function GoodreadsWrappedPage() {
             </div>
           </div>
 
-          {/* 4. Narrative sequence — story arc across cards */}
+          {/* 3. Narrative sequence — story arc across cards */}
           <div>
             <h3 className="text-xl md:text-2xl text-white mb-4">A story, not a dashboard</h3>
             <div className="space-y-4 text-white-muted leading-relaxed mb-6">
