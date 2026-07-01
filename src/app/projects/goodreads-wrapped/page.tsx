@@ -65,7 +65,7 @@ export default function GoodreadsWrappedPage() {
           className="project-card mb-12 pt-8 border-t border-faded-white"
           style={{ '--card-index': cardIndex++ } as React.CSSProperties}
         >
-          <h2 className="text-2xl md:text-3xl bit-apple-font text-white mb-6">The Vision</h2>
+          <h2 className="text-2xl md:text-3xl bit-apple-font text-white mb-6">Why build this?</h2>
           <div className="space-y-4 text-white-muted leading-relaxed">
             <p>
               Every December, year-end recaps from Spotify, YouTube, and other platforms flood our social feeds.
@@ -116,7 +116,7 @@ export default function GoodreadsWrappedPage() {
           style={{ '--card-index': cardIndex++ } as React.CSSProperties}
         >
           <div>
-            <h2 className="text-2xl md:text-3xl bit-apple-font text-white mb-6">The result</h2>
+            <h2 className="text-2xl md:text-3xl bit-apple-font text-white mb-6">The Result</h2>
             <div className="space-y-4 text-white-muted leading-relaxed">
               <p>
                 Goodreads Wrapped turns any public Goodreads profile into a scrollable, screenshot-ready
@@ -220,7 +220,7 @@ export default function GoodreadsWrappedPage() {
           style={{ '--card-index': cardIndex++ } as React.CSSProperties}
         >
           <div>
-            <h2 className="text-2xl md:text-3xl bit-apple-font text-white mb-6">Design decisions</h2>
+            <h2 className="text-2xl md:text-3xl bit-apple-font text-white mb-6">Design Decisions</h2>
             <div className="space-y-4 text-white-muted leading-relaxed">
               <p>
                 Every design choice traced back to one goal: make a year of reading feel worth
@@ -344,7 +344,7 @@ export default function GoodreadsWrappedPage() {
           style={{ '--card-index': cardIndex++ } as React.CSSProperties}
         >
           <div>
-            <h2 className="text-2xl md:text-3xl bit-apple-font text-white mb-6">Engineering highlights</h2>
+            <h2 className="text-2xl md:text-3xl bit-apple-font text-white mb-6">Engineering Highlights</h2>
             <div className="space-y-4 text-white-muted leading-relaxed">
               <p>
                 Goodreads Wrapped is a Next.js app deployed on Vercel. Since Goodreads doesn&apos;t
@@ -389,13 +389,13 @@ export default function GoodreadsWrappedPage() {
           style={{ '--card-index': cardIndex++ } as React.CSSProperties}
         >
           <div>
-            <h2 className="text-2xl md:text-3xl bit-apple-font text-white mb-6">Launch & impact</h2>
+            <h2 className="text-2xl md:text-3xl bit-apple-font text-white mb-6">Launch & Impact</h2>
             <div className="space-y-4 text-white-muted leading-relaxed">
               <p>
-                Goodreads Wrapped launched in December 2025 and has been used by{' '}
-                <span className="text-white">5,000+ readers</span> and counting. It spread organically
-                through book communities on TikTok, Instagram, and Reddit — exactly the kind of
-                word-of-mouth I was hoping for.
+                Goodreads Wrapped launched in December 2025 and reached{' '}
+                <span className="accent-text">5,000+ users</span> within its first 30 days. It spread organically
+                through book communities on social platforms like Instagram, as well as through word-of-mouth
+                recommendations from early adopters.
               </p>
             </div>
           </div>
@@ -429,15 +429,6 @@ export default function GoodreadsWrappedPage() {
               {/* TODO: collect 3 favorite user posts (with permission) and drop them in. */}
               Readers posting their recaps across TikTok, Instagram, and Reddit.
             </p>
-          </div>
-
-          {/* Standout quote */}
-          <div className="border border-faded-white p-6 bg-surface">
-            <p className="text-white text-lg md:text-xl italic">
-              {/* TODO: replace with a real standout quote from a user. */}
-              &quot;Finally, a Goodreads Wrapped that actually feels like it belongs on my feed.&quot;
-            </p>
-            <p className="text-xs text-white-muted mt-2 geist-mono-font uppercase">— A user, somewhere on the internet</p>
           </div>
         </section>
 
