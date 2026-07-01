@@ -13,12 +13,14 @@ interface CaseStudyHeroProps {
     tools: string | string[];
   };
   cardIndex: number;
+  links?: { label: string; href: string }[];
 }
 
 export default function CaseStudyHero({
   slug,
   details,
   cardIndex,
+  links,
 }: CaseStudyHeroProps) {
   const project = caseStudies.find(p => p.slug === slug);
   
@@ -68,7 +70,26 @@ export default function CaseStudyHero({
       className="project-card mb-12"
       style={{ '--card-index': cardIndex } as React.CSSProperties}
     >
-      <h1 className="text-4xl md:text-6xl bit-apple-font text-white mb-6">{project.title}</h1>
+      <div className="flex flex-wrap items-baseline justify-between gap-4 mb-6">
+        <h1 className="text-4xl md:text-6xl bit-apple-font text-white">{project.title}</h1>
+
+        {links && links.length > 0 && (
+          <div className="flex flex-wrap gap-4 text-sm geist-mono-font uppercase">
+            {links.map((link) => (
+              <a
+                key={link.href}
+                href={link.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="sidebar-link"
+              >
+                {link.label}
+                <ArrowUpRight size={16} className="inline ml-1" />
+              </a>
+            ))}
+          </div>
+        )}
+      </div>
 
       <p className="text-lg text-white-muted leading-relaxed mb-4">
         {project.description}

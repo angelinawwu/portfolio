@@ -48,40 +48,17 @@ export default function GoodreadsWrappedPage() {
         <CaseStudyHero
           slug="goodreads-wrapped"
           details={{
-            role: "Designer, Engineer",
+            role: "Product Designer & Full-Stack Engineer",
             timeline: ["August – December 2025"],
             team: ["Myself!"],
             tools: "Next.js (TypeScript, Tailwind, Motion.dev), Figma, Vercel"
           }}
           cardIndex={cardIndex++}
+          links={[
+            { label: "Live site", href: "https://goodreadswrapped.com" },
+            { label: "GitHub", href: "https://github.com/angelinawwu/goodreads-wrapped" },
+          ]}
         />
-
-        {/* Quick Links */}
-        <section
-          className="project-card mb-12"
-          style={{ '--card-index': cardIndex++ } as React.CSSProperties}
-        >
-          <div className="flex flex-wrap gap-4 text-sm geist-mono-font uppercase">
-            <a
-              href="https://goodreadswrapped.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="sidebar-link"
-            >
-              Live site
-              <ArrowUpRight size={16} className="inline ml-1" />
-            </a>
-            <a
-              href="https://github.com/angelinawwu/goodreads-wrapped"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="sidebar-link"
-            >
-              GitHub
-              <ArrowUpRight size={16} className="inline ml-1" />
-            </a>
-          </div>
-        </section>
 
         {/* The Challenge */}
         <section
@@ -260,9 +237,9 @@ export default function GoodreadsWrappedPage() {
               <p>
                 Most Wrapped-style recaps default to bold, modern gradients. I wanted Goodreads
                 Wrapped to feel like something you&apos;d find inside a book, not on a streaming
-                app — warm, tactile, and a little nostalgic. I pulled from public-domain
-                illustrations, old bookplates, and vintage botanical prints to build a small
-                library of motifs that could carry the whole product.
+                app: warm, tactile, and a little nostalgic. I pulled public-domain scans of vintage book
+                illustrations from <a href="https://www.oldbookillustrations.com/" target="_blank" rel="noopener noreferrer" className="sidebar-link accent-text">Old Book Illustrations<ArrowUpRight size={16} className="inline" /></a> 
+                &nbsp;to build a small library of motifs that could carry the whole product.
               </p>
             </div>
 
