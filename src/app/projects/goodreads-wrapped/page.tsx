@@ -105,7 +105,7 @@ export default function GoodreadsWrappedPage() {
                 />
             </div>
             <p className="text-xs text-white-muted mt-2">
-              Goodreads&apos; current &quot;Year in Books&quot; — a static webpage that feels more like a receipt than a recap.
+              Goodreads&apos; current &quot;Year in Books&quot;.
             </p>
           </div>
         </section>
