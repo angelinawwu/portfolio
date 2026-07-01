@@ -224,8 +224,7 @@ export default function GoodreadsWrappedPage() {
             <div className="space-y-4 text-white-muted leading-relaxed">
               <p>
                 Every design choice traced back to one goal: make a year of reading feel worth
-                celebrating — and worth sharing. That meant leaning hard into a distinct visual
-                world, and treating every screen as a poster before it was a UI.
+                celebrating and worth sharing.
               </p>
             </div>
           </div>
@@ -235,9 +234,9 @@ export default function GoodreadsWrappedPage() {
             <h3 className="text-xl md:text-2xl text-white mb-4">A world built from vintage book illustrations</h3>
             <div className="space-y-4 text-white-muted leading-relaxed mb-6">
               <p>
-                Most Wrapped-style recaps default to bold, modern gradients. I wanted Goodreads
+                Most Wrapped-style recaps default to bold, modern design patterns. But I wanted Goodreads
                 Wrapped to feel like something you&apos;d find inside a book, not on a streaming
-                app: warm, tactile, and a little nostalgic. I pulled public-domain scans of vintage book
+                app. I pulled public-domain scans of vintage book
                 illustrations from <a href="https://www.oldbookillustrations.com/" target="_blank" rel="noopener noreferrer" className="sidebar-link accent-text">Old Book Illustrations<ArrowUpRight size={16} className="inline" /></a> 
                 &nbsp;to build a small library of motifs that could carry the whole product.
               </p>
@@ -278,8 +277,8 @@ export default function GoodreadsWrappedPage() {
             <h3 className="text-xl md:text-2xl text-white mb-4">Designed for the screenshot</h3>
             <div className="space-y-4 text-white-muted leading-relaxed mb-6">
               <p>
-                Sharing was the whole point, so every card was designed as a self-contained
-                poster first, screen second. That meant a fixed portrait aspect ratio, generous
+                To encourage shareability, every card was designed as a self-contained
+                poster first, and a screen second. That meant bold typography for smaller devices, generous
                 margins so nothing gets cropped by Instagram Stories, and a final downloadable
                 summary card that stitches the highlights together in a single image.
               </p>
@@ -299,7 +298,7 @@ export default function GoodreadsWrappedPage() {
             </div>
             <p className="text-xs text-white-muted mt-2">
               {/* TODO: swap in 3 real card exports at 9:16. */}
-              Each card is a self-contained poster at 9:16 — screenshot, crop, done.
+              Each card is a self-contained poster.
             </p>
 
             {/* Downloadable share card */}
@@ -310,7 +309,7 @@ export default function GoodreadsWrappedPage() {
               <div className="space-y-4 text-white-muted leading-relaxed">
                 <p>
                   The last card is a single downloadable image that captures the whole year at a
-                  glance — the artifact users actually screenshot, post, and text to their
+                  glance, which users can screenshot, post, and text to their
                   friends. It doubles as free organic marketing for the site.
                 </p>
               </div>
@@ -323,7 +322,7 @@ export default function GoodreadsWrappedPage() {
             <div className="space-y-4 text-white-muted leading-relaxed mb-6">
               <p>
                 The card order was as important as the cards themselves. Instead of dumping every
-                stat on one screen, the recap builds like a short story — opening with volume
+                stat on one screen, the recap builds like a short story -- opening with volume
                 (books, pages), moving into taste (genres, top titles), then landing on a personal
                 closer. Each card earns the next.
               </p>
@@ -333,7 +332,7 @@ export default function GoodreadsWrappedPage() {
             </div>
             <p className="text-xs text-white-muted mt-2">
               {/* TODO: export all cards as a horizontal filmstrip in Figma. */}
-              Full card sequence, left to right — volume → taste → personal closer.
+              The full card sequence, from left to right: volume → taste → personal closer.
             </p>
           </div>
         </section>
@@ -394,8 +393,8 @@ export default function GoodreadsWrappedPage() {
               <p>
                 Goodreads Wrapped launched in December 2025 and reached{' '}
                 <span className="accent-text">5,000+ users</span> within its first 30 days. It spread organically
-                through book communities on social platforms like Instagram, as well as through word-of-mouth
-                recommendations from early adopters.
+                through book communities on social platforms such as Instagram, as well as through word-of-mouth
+                recommendations.
               </p>
             </div>
           </div>
