@@ -5,6 +5,7 @@ import CaseStudyHero from '@/components/CaseStudyHero';
 import Image from 'next/image';
 import LoadedVideo from '@/components/LoadedVideo';
 import { ArrowUpRight } from '@phosphor-icons/react';
+import { h2 } from 'framer-motion/client';
 
 function ImagePlaceholder({
   label,
@@ -82,7 +83,7 @@ export default function GoodreadsWrappedPage() {
 
           {/* The "before": Goodreads' existing Year in Books page */}
           <div className="mt-8">
-            <div className="grid grid-cols-3 gap-2">
+            <div className="grid grid-cols-3 gap-4">
                 <Image
                   src="/assets/projects/GoodreadsWrapped/Goodreads-Current-1.webp"
                   alt="Screenshot of Goodreads' existing Year in Books page — a static webpage with no shareable graphics"
@@ -107,6 +108,50 @@ export default function GoodreadsWrappedPage() {
             </div>
             <p className="text-xs text-white-muted mt-2">
               Goodreads&apos; current &quot;Year in Books&quot;.
+            </p>
+          </div>
+        </section>
+
+        {/* How I approached it */}
+        <section
+          className="project-card mb-12 pt-8 border-t border-faded-white"
+          style={{ '--card-index': cardIndex++ } as React.CSSProperties}
+        >
+          <h2 className="text-2xl md:text-3xl bit-apple-font text-white mb-6">Design-code collaboration</h2>
+          <div className="space-y-4 text-white-muted leading-relaxed">
+            <p>
+              Goodreads Wrapped was built with an AI-integrated approach. Rather than a linear design-to-code pipeline, I iterated fluidly between design
+              and engineering: sketching layouts in Figma and Paper while agents
+              built components in code, then refining the live product as I saw how the designs
+              actually felt on a phone screen.
+            </p>
+            <p>
+              Working this way let me explore more ideas faster. The ability to immediately
+              test components with real Goodreads data allowed me to iterate quickly and see where the design
+              needed adjustment.
+            </p>
+          </div>
+          <div className="mt-8">
+            <div className="grid grid-cols-2 gap-4">
+              <div className="relative aspect-[3/2] overflow-hidden">
+                <Image
+                  src="/assets/projects/GoodreadsWrapped/Goodreads-Process-1.png"
+                  alt="Design process"
+                  fill
+                  style={{ objectFit: 'cover', objectPosition: 'bottom right' }}
+                />
+              </div>
+              <div className="relative aspect-[3/2] overflow-hidden">
+                <Image
+                  src="/assets/projects/GoodreadsWrapped/Goodreads-Process-2.png"
+                  alt="Coding process"
+                  fill
+                  style={{ objectFit: 'cover' }}
+                />
+              </div>
+            </div>
+            <p className="text-xs text-white-muted mt-2">
+              Working in parallel with design (in Figma) and code (in Cursor).
             </p>
           </div>
         </section>
@@ -136,7 +181,7 @@ export default function GoodreadsWrappedPage() {
               <h4 className="text-lg text-white mb-2">Pull the public shelf</h4>
               <p className="text-white-muted leading-relaxed">
                 A server-side job reads the user&apos;s public &quot;read&quot; shelf via RSS, 
-                extracting books, ratings, dates, page counts, and genres for the current year.
+                extracting personal reading stats for the current year.
                 Then it does light, targeted scraping for genre data RSS doesn&apos;t include.
               </p>
             </div>
@@ -193,7 +238,7 @@ export default function GoodreadsWrappedPage() {
               />
             </div>
             <p className="text-xs text-white-muted mt-2">
-              Vintage illustrations used in the final product.
+              Real vintage illustrations used in the final product.
             </p>
           </div>          
 
@@ -209,7 +254,7 @@ export default function GoodreadsWrappedPage() {
               </p>
             </div>
 
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
+            <div className="grid grid-cols-3 gap-4">
               {/* Portrait recap cards — each one a "poster" */}
               <div className="relative overflow-hidden">
                 <Image
@@ -245,7 +290,7 @@ export default function GoodreadsWrappedPage() {
             </p>
 
             {/* Downloadable share card */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6 items-center">
+            <div className="grid grid-cols-2 gap-4 mt-6 items-center">
               <div className="relative aspect-[4/5] overflow-hidden">
                 <Image src="/assets/projects/GoodreadsWrapped/Goodreads-FinalCard.webp" alt="Downloadable share card" fill />
               </div>
@@ -339,8 +384,9 @@ export default function GoodreadsWrappedPage() {
             <h2 className="text-2xl md:text-3xl bit-apple-font text-white mb-6">The Result</h2>
             <div className="space-y-4 text-white-muted leading-relaxed">
               <p>
-                Goodreads Wrapped turns any public Goodreads profile into a scrollable, screenshot-ready
-                recap in seconds, with a story-driven sequence of stats and a downloadable share card at the end.
+                Goodreads Wrapped turns any public Goodreads profile into a story-format, screenshot-ready
+                recap in seconds, with a fun sequence of personal stats and a downloadable share card at the end.
+                Try it yourself at <a href="https://goodreadswrapped.com" className="accent-text sidebar-link">goodreadswrapped.com!<ArrowUpRight size={16} className="inline" /></a>
               </p>
             </div>
           </div>
@@ -367,14 +413,14 @@ export default function GoodreadsWrappedPage() {
             <div className="space-y-4 text-white-muted leading-relaxed">
               <p>
                 Goodreads Wrapped launched in December 2025 and reached{' '}
-                <span className="accent-text">5,000+ users</span> within its first 30 days. It spread organically
+                5,000+ users within its first 30 days. It spread organically
                 through book communities on social platforms such as Instagram, Twitter, and Reddit, as well as 
                 through word-of-mouth.
               </p>
             </div>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
+          <div className="grid grid-cols-3 gap-3">
             <div className="relative block overflow-hidden">
               <LoadedVideo src="/assets/projects/GoodreadsWrapped/Goodreads-Testimonial-1.MP4" className="w-full h-full object-cover" autoPlay loop muted playsInline />
             </div>

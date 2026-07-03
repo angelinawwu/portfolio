@@ -231,7 +231,7 @@ export default function ReveriePage() {
                 className="w-full h-auto"
               />
             </div>
-            <p className="text-xs text-white-muted mt-2">Images created by Tatiana Tsiguleva using Midjourney</p>
+            <p className="text-xs text-white-muted mt-2">Images created by Tatiana Tsiguleva using Midjourney.</p>
           </div>
 
           <div>
