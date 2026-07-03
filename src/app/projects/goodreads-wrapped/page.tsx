@@ -51,7 +51,7 @@ export default function GoodreadsWrappedPage() {
           details={{
             role: "Product Designer & Full-Stack Engineer",
             timeline: ["August – December 2025"],
-            team: ["Myself!"],
+            team: ["Me!"],
             tools: "Next.js (TypeScript, Tailwind, Motion.dev), Figma, Paper, Vercel"
           }}
           cardIndex={cardIndex++}
@@ -85,21 +85,21 @@ export default function GoodreadsWrappedPage() {
             <div className="grid grid-cols-3 gap-2">
                 <Image
                   src="/assets/projects/GoodreadsWrapped/Goodreads-Current-1.webp"
-                  alt="Screenshot of Goodreads' existing Year in Books page — a static, text-heavy webpage with no shareable graphics"
+                  alt="Screenshot of Goodreads' existing Year in Books page — a static webpage with no shareable graphics"
                   width={2000}
                   height={1200}
                   className="block w-full h-auto"
                 />
                 <Image
                   src="/assets/projects/GoodreadsWrapped/Goodreads-Current-2.webp"
-                  alt="Screenshot of Goodreads' existing Year in Books page — a static, text-heavy webpage with no shareable graphics"
+                  alt="Screenshot of Goodreads' existing Year in Books page — a static webpage with no shareable graphics"
                   width={2000}
                   height={1200}
                   className="block w-full h-auto"
                 />
                 <Image
                   src="/assets/projects/GoodreadsWrapped/Goodreads-Current-3.webp"
-                  alt="Screenshot of Goodreads' existing Year in Books page — a static, text-heavy webpage with no shareable graphics"
+                  alt="Screenshot of Goodreads' existing Year in Books page — a static webpage with no shareable graphics"
                   width={2000}
                   height={1200}
                   className="block w-full h-auto"
@@ -107,34 +107,6 @@ export default function GoodreadsWrappedPage() {
             </div>
             <p className="text-xs text-white-muted mt-2">
               Goodreads&apos; current &quot;Year in Books&quot;.
-            </p>
-          </div>
-        </section>
-
-        {/* The Final Product — hook readers early with the shipped result */}
-        <section
-          className="project-card mb-12 pt-8 border-t border-faded-white space-y-8"
-          style={{ '--card-index': cardIndex++ } as React.CSSProperties}
-        >
-          <div>
-            <h2 className="text-2xl md:text-3xl bit-apple-font text-white mb-6">The Result</h2>
-            <div className="space-y-4 text-white-muted leading-relaxed">
-              <p>
-                Goodreads Wrapped turns any public Goodreads profile into a scrollable, screenshot-ready
-                recap in seconds — with vintage-book illustrations, a story-driven sequence of stats, and
-                a downloadable share card at the end.
-              </p>
-            </div>
-          </div>
-
-          {/* TODO: Hero product shot — full-width hero video or mockup of recap cards on a phone.
-              Suggested: `/assets/projects/GoodreadsWrapped/Hero-Product.webp` or `.mp4` via LoadedVideo. */}
-          <div className="flex flex-col items-start">
-            <div className="overflow-hidden">
-              <LoadedVideo src="/assets/projects/GoodreadsWrapped/Goodreads-Demo.mp4" className="w-full h-auto" autoPlay loop />
-            </div>
-            <p className="text-xs text-white-muted mt-2">
-              My own 2025 Goodreads Wrapped (don't judge!)
             </p>
           </div>
         </section>
@@ -161,11 +133,11 @@ export default function GoodreadsWrappedPage() {
               <div className="flex-shrink-0 w-8 h-8 border border-faded-white flex items-center justify-center mb-4">
                 <span className="text-white geist-mono-font text-sm">2</span>
               </div>
-              <h4 className="text-lg text-white mb-2">Scrape the public profile</h4>
+              <h4 className="text-lg text-white mb-2">Pull the public shelf</h4>
               <p className="text-white-muted leading-relaxed">
-                A server-side scraper paginates through the user&apos;s &quot;read&quot; shelf,
-                parses the HTML, and extracts books, ratings, dates, page counts, and genres for
-                the current year.
+                A server-side job reads the user&apos;s public &quot;read&quot; shelf via RSS, 
+                extracting books, ratings, dates, page counts, and genres for the current year.
+                Then it does light, targeted scraping for genre data RSS doesn&apos;t include.
               </p>
             </div>
 
@@ -284,7 +256,7 @@ export default function GoodreadsWrappedPage() {
                   friends.
                 </p>
                 <p>
-                  This designed card was optimized for social sharing, ensuring it looked great whether shared on social media or sent via text message.
+                  This card was designed for social sharing, ensuring it looked great whether shared on social media or sent via text message.
                 </p>
               </div>
             </div>
@@ -296,9 +268,8 @@ export default function GoodreadsWrappedPage() {
             <div className="space-y-4 text-white-muted leading-relaxed mb-6">
               <p>
                 The card order was as important as the cards themselves. Instead of dumping every
-                stat on one screen, the recap builds like a short story -- opening with volume
-                (books, pages), moving into taste (genres, top titles), then landing on a personal
-                closer. Each card earns the next.
+                stat on one screen, the recap builds like a short story, opening with more general stats and 
+                closing with more personal ones. Each card earns the next.
               </p>
             </div>
             <div className="overflow-hidden">
@@ -326,38 +297,63 @@ export default function GoodreadsWrappedPage() {
             <div className="space-y-4 text-white-muted leading-relaxed">
               <p>
                 Goodreads Wrapped is a Next.js app deployed on Vercel. Since Goodreads doesn&apos;t
-                offer a public API anymore, the heart of the project is a server-side scraping
-                pipeline that politely walks each user&apos;s public shelves.
+                offer a public API anymore, the heart of the project is a server-side
+                pipeline that reads each user&apos;s public shelves via RSS.
               </p>
             </div>
           </div>
 
           <div className="space-y-4">
             <div className="border border-faded-white p-6 bg-surface">
-              <h3 className="text-lg text-white mb-2">Server-side scraping pipeline</h3>
+              <h3 className="text-lg text-white mb-2">Zero-API data pipeline</h3>
               <p className="text-white-muted leading-relaxed">
-                {/* TODO: confirm specifics from the repo (cheerio? fetch + regex? Playwright?). */}
-                Pagination, HTML parsing, and normalization happen on the server so the client only
-                receives clean, structured data.
+                Pulls public Goodreads RSS feeds for book metadata, then augments with targeted page scraping 
+                for genre classification. Staggered request delays are used to stay respectful of server load.
               </p>
             </div>
 
             <div className="border border-faded-white p-6 bg-surface">
-              <h3 className="text-lg text-white mb-2">Rate limiting and caching</h3>
+              <h3 className="text-lg text-white mb-2">Native-quality sharing</h3>
               <p className="text-white-muted leading-relaxed">
-                {/* TODO: confirm caching layer + rate-limit approach. */}
-                To stay a good citizen of Goodreads (and survive launch traffic), results are cached
-                per user ID and requests are throttled.
+                Exports the final recap card as a high-res image, using navigator.share on mobile for 
+                native save-to-Photos behavior.
               </p>
             </div>
 
             <div className="border border-faded-white p-6 bg-surface">
-              <h3 className="text-lg text-white mb-2">Edge-friendly delivery</h3>
+              <h3 className="text-lg text-white mb-2">Personality-driven analytics</h3>
               <p className="text-white-muted leading-relaxed">
-                Deployed on Vercel with the App Router; static shells stream in instantly while the
-                recap data loads in the background.
+                Derives metrics like a "dependability" score (how often you read what you save) and 
+                "biggest fan/hater" moments by comparing user ratings against global averages.
               </p>
             </div>
+          </div>
+        </section>
+
+        {/* The Final Product — hook readers early with the shipped result */}
+        <section
+          className="project-card mb-12 pt-8 border-t border-faded-white space-y-8"
+          style={{ '--card-index': cardIndex++ } as React.CSSProperties}
+        >
+          <div>
+            <h2 className="text-2xl md:text-3xl bit-apple-font text-white mb-6">The Result</h2>
+            <div className="space-y-4 text-white-muted leading-relaxed">
+              <p>
+                Goodreads Wrapped turns any public Goodreads profile into a scrollable, screenshot-ready
+                recap in seconds, with a story-driven sequence of stats and a downloadable share card at the end.
+              </p>
+            </div>
+          </div>
+
+          {/* TODO: Hero product shot — full-width hero video or mockup of recap cards on a phone.
+              Suggested: `/assets/projects/GoodreadsWrapped/Hero-Product.webp` or `.mp4` via LoadedVideo. */}
+          <div className="flex flex-col items-start">
+            <div className="overflow-hidden">
+              <LoadedVideo src="/assets/projects/GoodreadsWrapped/Goodreads-Demo.mp4" className="w-full h-auto" autoPlay loop />
+            </div>
+            <p className="text-xs text-white-muted mt-2">
+              My own 2025 Goodreads Wrapped (don't judge!)
+            </p>
           </div>
         </section>
 
@@ -372,8 +368,8 @@ export default function GoodreadsWrappedPage() {
               <p>
                 Goodreads Wrapped launched in December 2025 and reached{' '}
                 <span className="accent-text">5,000+ users</span> within its first 30 days. It spread organically
-                through book communities on social platforms such as Instagram, Twitter, and Reddit, as well as through word-of-mouth
-                recommendations.
+                through book communities on social platforms such as Instagram, Twitter, and Reddit, as well as 
+                through word-of-mouth.
               </p>
             </div>
           </div>
@@ -429,9 +425,10 @@ export default function GoodreadsWrappedPage() {
               </h3>
               <ul className="arrow-list">
                 <li className="text-white-muted leading-relaxed">
-                  Scraping a third party means thinking about rate limits, fragility, and user
-                  privacy from day one. Public data, polite traffic, and clear messaging when a
-                  profile is private kept the project honest.
+                  Relying on a third party&apos;s public data means thinking about fragility,
+                  rate limits, and user privacy from day one. Leaning on RSS wherever possible,
+                  keeping the remaining scraping minimal and rate-limited, and messaging clearly
+                  when a profile is private kept the project honest.
                 </li>
               </ul>
             </div>
