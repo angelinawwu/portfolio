@@ -134,7 +134,7 @@ export default function GoodreadsWrappedPage() {
             <div className="grid grid-cols-2 gap-4">
               <div className="relative aspect-[3/2] overflow-hidden">
                 <Image
-                  src="/assets/projects/GoodreadsWrapped/Goodreads-Process-1.png"
+                  src="/assets/projects/GoodreadsWrapped/Goodreads-Process-1.webp"
                   alt="Design process"
                   fill
                   style={{ objectFit: 'cover', objectPosition: 'bottom right' }}
@@ -142,7 +142,7 @@ export default function GoodreadsWrappedPage() {
               </div>
               <div className="relative aspect-[3/2] overflow-hidden">
                 <Image
-                  src="/assets/projects/GoodreadsWrapped/Goodreads-Process-2.png"
+                  src="/assets/projects/GoodreadsWrapped/Goodreads-Process-2.webp"
                   alt="Coding process"
                   fill
                   style={{ objectFit: 'cover' }}
