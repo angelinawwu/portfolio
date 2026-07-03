@@ -1,6 +1,6 @@
 'use client';
 
-import LoadedImage from './LoadedImage';
+import Image from 'next/image';
 import { ArrowUpRight } from '@phosphor-icons/react';
 import { caseStudies } from '@/data/projects';
 
@@ -13,12 +13,14 @@ interface CaseStudyHeroProps {
     tools: string | string[];
   };
   cardIndex: number;
+  links?: { label: string; href: string }[];
 }
 
 export default function CaseStudyHero({
   slug,
   details,
   cardIndex,
+  links,
 }: CaseStudyHeroProps) {
   const project = caseStudies.find(p => p.slug === slug);
   
@@ -88,9 +90,26 @@ export default function CaseStudyHero({
         </p>
       )}
 
+      {links && links.length > 0 && (
+        <p className="flex flex-wrap gap-4 text-sm geist-mono-font uppercase text-white-muted mb-8">
+          {links.map((link) => (
+            <a
+              key={link.href}
+              href={link.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="sidebar-link"
+            >
+              {link.label}
+              <ArrowUpRight size={16} className="inline ml-1" />
+            </a>
+          ))}
+        </p>
+      )}
+
       {project.thumbnail && (
         <div className="overflow-hidden mb-8">
-          <LoadedImage
+          <Image
             src={project.thumbnail}
             alt={`${project.title} — cover image`}
             width={1200}

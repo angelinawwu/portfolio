@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import LoadedImage from '@/components/LoadedImage';
+import Image from 'next/image';
 import LoadedVideo from '@/components/LoadedVideo';
 import CaseStudyHero from '@/components/CaseStudyHero';
 
@@ -92,7 +92,7 @@ export default function WorkupPage() {
                 We started with competitive analysis to compare existing platforms that also offered social networking and career development features.
               </p>
               <div className="overflow-hidden">
-                <LoadedImage
+                <Image
                   src="/assets/projects/Workup/Workup-CompetitiveAnalysis.webp"
                   alt="Competitive Analysis"
                   width={1000}
@@ -154,7 +154,7 @@ export default function WorkupPage() {
               </p>
               
               <div className="overflow-hidden">
-                <LoadedImage
+                <Image
                   src="/assets/projects/Workup/Workup-Audit.webp"
                   alt="Website audit"
                   width={1000}
@@ -219,7 +219,7 @@ export default function WorkupPage() {
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div className="overflow-hidden">
-                  <LoadedImage
+                  <Image
                     src="/assets/projects/Workup/Workup-UserPersona1.webp"
                     alt="User persona 1"
                     width={1000}
@@ -228,7 +228,7 @@ export default function WorkupPage() {
                   />
                 </div>
                 <div className="overflow-hidden">
-                  <LoadedImage
+                  <Image
                     src="/assets/projects/Workup/Workup-UserPersona2.webp"
                     alt="User persona 2"
                     width={1000}
@@ -288,7 +288,7 @@ export default function WorkupPage() {
                 <div className="border border-faded-white p-4 bg-surface">
                   <h4 className="text-white mb-2">Problem Group 1</h4>
                   <p className="text-white-muted text-sm mb-4">Redundant empty pages disrupt interview setup</p>
-                  <LoadedImage
+                  <Image
                     src="/assets/projects/Workup/Workup-ProblemGroup-1.webp"
                     alt="Problem Group 1"
                     width={1000}
@@ -299,7 +299,7 @@ export default function WorkupPage() {
                 <div className="border border-faded-white p-4 bg-surface">
                   <h4 className="text-white mb-2">Problem Group 2</h4>
                   <p className="text-white-muted text-sm mb-4">Customization features feel disconnected</p>
-                  <LoadedImage
+                  <Image
                     src="/assets/projects/Workup/Workup-ProblemGroup-2.webp"
                     alt="Problem Group 2"
                     width={1000}
@@ -310,7 +310,7 @@ export default function WorkupPage() {
                 <div className="border border-faded-white p-4 bg-surface">
                   <h4 className="text-white mb-2">Problem Group 3</h4>
                   <p className="text-white-muted text-sm mb-4">Lengthy offboarding creates friction</p>
-                  <LoadedImage
+                  <Image
                     src="/assets/projects/Workup/Workup-ProblemGroup-3.webp"
                     alt="Problem Group 3"
                     width={1000}
@@ -329,7 +329,7 @@ export default function WorkupPage() {
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div className="overflow-hidden">
-                  <LoadedImage
+                  <Image
                     src="/assets/projects/Workup/Workup-Lofis-2.webp"
                     alt="Low-Fi 1"
                     width={1000}
@@ -337,7 +337,7 @@ export default function WorkupPage() {
                   />
                 </div>
                 <div className="overflow-hidden">
-                  <LoadedImage
+                  <Image
                     src="/assets/projects/Workup/Workup-Lofis-3.webp"
                     alt="Low-Fi 2"
                     width={1000}
@@ -354,7 +354,7 @@ export default function WorkupPage() {
               </p>
               
               <div className="overflow-hidden">
-                <LoadedImage
+                <Image
                   src="/assets/projects/Workup/Workup-DesignSystem.webp"
                   alt="Design System"
                   width={1000}
@@ -382,7 +382,7 @@ export default function WorkupPage() {
                 To make the interview creation process as intuitive as possible, I took inspiration from video calling platforms such as Zoom and Google Meet to create an interface that felt like second nature. For the user, this helps make the practice round feel as close as possible to the real thing.
               </p>
               <div className="overflow-hidden">
-                <LoadedImage
+                <Image
                   src="/assets/projects/Workup/Workup-CreateInterview.webp"
                   alt="Interview Creation"
                   width={1000}
@@ -397,7 +397,7 @@ export default function WorkupPage() {
                 By replacing uncertainty with structure, we turned interview scheduling into a feature that actually supports both candidates and recruiters. For the user, this helps make the practice round feel as close as possible to the real thing.
               </p>
               <div className="overflow-hidden">
-                <LoadedImage
+                <Image
                   src="/assets/projects/Workup/Workup-InterviewSched.webp"
                   alt="Interview Scheduling"
                   width={1000}
@@ -412,7 +412,7 @@ export default function WorkupPage() {
                 Our team built a single "hub" for practice question sets, helping users track progress, stay organized, and prepare for interviews with purpose.
               </p>
               <div className="overflow-hidden">
-                <LoadedImage
+                <Image
                   src="/assets/projects/Workup/Workup-QuestionSets.webp"
                   alt="Question Sets Hub"
                   width={1000}

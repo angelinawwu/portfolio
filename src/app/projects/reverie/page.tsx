@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import LoadedImage from '@/components/LoadedImage';
+import Image from 'next/image';
 import LoadedVideo from '@/components/LoadedVideo';
 import CaseStudyHero from '@/components/CaseStudyHero';
 import { ArrowUpRight } from '@phosphor-icons/react';
@@ -108,7 +108,7 @@ export default function ReveriePage() {
           <div className="grid grid-cols-2 gap-6 mb-8">
             <div>
               <div className="relative mb-3 aspect-square w-full overflow-hidden">
-                <LoadedImage
+                <Image
                   src="/assets/projects/Reverie/Reverie-Graphic-1Mask.webp"
                   alt="The Reverie VR Eyemask — a sleep wearable that doubles as a VR headset"
                   fill
@@ -120,7 +120,7 @@ export default function ReveriePage() {
             </div>
             <div>
               <div className="relative mb-3 aspect-square w-full overflow-hidden">
-                <LoadedImage
+                <Image
                   src="/assets/projects/Reverie/Reverie-Graphic-2App.webp"
                   alt="The Reverie App — a personal dream archive organized like a record collection"
                   fill
@@ -148,7 +148,7 @@ export default function ReveriePage() {
               </div>
              <div className="grid grid-cols-2 gap-4 mt-4">
               <div className="relative aspect-video w-full overflow-hidden">
-                <LoadedImage
+                <Image
                   src="/assets/projects/Reverie/Reverie-Process-1.webp"
                   alt="FigJam brainstorming board with sticky notes from all four team members, organized by themes"
                   fill
@@ -157,7 +157,7 @@ export default function ReveriePage() {
                 />
               </div>
               <div className="relative aspect-video w-full overflow-hidden">
-                <LoadedImage
+                <Image
                   src="/assets/projects/Reverie/Reverie-Process-2.webp"
                   alt="FigJam brainstorming board with sticky notes from all four team members, organized by themes"
                   fill
@@ -166,7 +166,7 @@ export default function ReveriePage() {
                 />
               </div>
               <div className="relative aspect-video w-full overflow-hidden">
-                <LoadedImage
+                <Image
                   src="/assets/projects/Reverie/Reverie-Process-3.webp"
                   alt="FigJam brainstorming board with sticky notes from all four team members, organized by themes"
                   fill
@@ -175,7 +175,7 @@ export default function ReveriePage() {
                 />
               </div>
               <div className="relative aspect-video w-full overflow-hidden">
-                <LoadedImage
+                <Image
                   src="/assets/projects/Reverie/Reverie-Process-4.webp"
                   alt="FigJam brainstorming board with sticky notes from all four team members, organized by themes"
                   fill
@@ -195,7 +195,7 @@ export default function ReveriePage() {
               Each team member owned a different flow. In this process, we discovered the difference between our unique approaches to design. When we came back together, we were able to combine our strengths and create a final cohesive product that addressed the problem from all angles.
             </p>
             <div className="overflow-hidden">
-              <LoadedImage
+              <Image
                 src="/assets/projects/Reverie/Reverie-Lofis.webp"
                 alt="Low-fidelity wireframes for onboarding, homepage, recap, and analytics flows"
                 width={2000}
@@ -223,7 +223,7 @@ export default function ReveriePage() {
               The dream-like imagery in the app came to life through the work of <a href="https://x.com/ciguleva" target="_blank" rel="noopener noreferrer" className="sidebar-link accent-text">Tatiana Tsiguleva <ArrowUpRight size={16} className="inline" /></a>. We felt that the surreal aesthetic of her Midjourney-generated images was the perfect match for Reverie's creative direction, so we reached out for permission to feature her images in our designs.
             </p>
             <div className="overflow-hidden">
-              <LoadedImage
+              <Image
                 src="/assets/projects/Reverie/Reverie-Midjourney.webp"
                 alt="Midjourney image of a dream state"
                 width={2000}
@@ -231,7 +231,7 @@ export default function ReveriePage() {
                 className="w-full h-auto"
               />
             </div>
-            <p className="text-xs text-white-muted mt-2">Images created by Tatiana Tsiguleva using Midjourney</p>
+            <p className="text-xs text-white-muted mt-2">Images created by Tatiana Tsiguleva using Midjourney.</p>
           </div>
 
           <div>
@@ -240,7 +240,7 @@ export default function ReveriePage() {
               To create the prototype for Reverie's VR features, we primarily used Figma Make. This allowed us to quickly create an interactive mockup of the AR interface that was consistent with the rest of the app's design. For more the complex interactions, we brought the code into Cursor.
             </p>
             <div className="overflow-hidden">
-              <LoadedImage
+              <Image
                 src="/assets/projects/Reverie/Reverie-AI-VR.webp"
                 alt="Figma Make screenshot of the Reverie VR prototype"
                 width={2000}
@@ -261,7 +261,7 @@ export default function ReveriePage() {
               <p>
                 The Reverie VR Eyemask is a dual-purpose sleep wearable that records and replays your subconscious. During the night, its sensors map brain activity to capture your dreams. By day, the mask becomes a high-resolution VR headset, where users can step back into a realistic 360° reconstruction of their favorite dreams from the night before.
               </p>
-              <LoadedImage
+              <Image
                 src="/assets/projects/Reverie/Reverie-Mask.webp"
                 alt="The Reverie VR Eyemask"
                 width={2000}
@@ -307,7 +307,7 @@ export default function ReveriePage() {
               Privacy settings appear before anything else. Users can control the amount of data that gets recorded before giving Reverie any access to their dreams.
             </p>
             <div className="overflow-hidden">
-              <LoadedImage
+              <Image
                 src="/assets/projects/Reverie/Reverie-Onboarding.webp"
                 alt="Onboarding flow showing the Reverie landing screen with sign-up and privacy-first design decisions"
                 width={2000}
@@ -343,7 +343,7 @@ export default function ReveriePage() {
               </p>
             </div>
             <div className="overflow-hidden mt-4">
-              <LoadedImage
+              <Image
                 src="/assets/projects/Reverie/Reverie-DreamGallery.webp"
                 alt="Dream Gallery view showing monthly album covers organized chronologically"
                 width={1000}
@@ -474,7 +474,7 @@ export default function ReveriePage() {
             </div>
           </div>
           <div>
-            <LoadedImage
+            <Image
               src="/assets/projects/Reverie/Reverie-Team.webp"
               alt="Team photo"
               width={1000}
