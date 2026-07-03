@@ -383,7 +383,7 @@ export default function GoodreadsWrappedPage() {
               <LoadedVideo src="/assets/projects/GoodreadsWrapped/Goodreads-Testimonial-1.MP4" className="w-full h-full object-cover" autoPlay loop muted playsInline />
             </div>
             <div className="relative block overflow-hidden">
-              <Image src="/assets/projects/GoodreadsWrapped/Goodreads-Testimonial-2.png" alt="Social share 3" width={1080} height={1920} className="w-full h-full object-cover" />
+              <Image src="/assets/projects/GoodreadsWrapped/Goodreads-Testimonial-2.webp" alt="Social share 3" width={1080} height={1920} className="w-full h-full object-cover" />
             </div>
             <div className="relative block overflow-hidden">
               <LoadedVideo src="/assets/projects/GoodreadsWrapped/Goodreads-Testimonial-3.mov" className="w-full h-full object-cover" autoPlay loop muted playsInline />
