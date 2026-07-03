@@ -83,21 +83,21 @@ export default function GoodreadsWrappedPage() {
           <div className="mt-8">
             <div className="flex gap-2">
                 <LoadedImage
-                  src="/assets/projects/GoodreadsWrapped/Goodreads-Current-1.png"
+                  src="/assets/projects/GoodreadsWrapped/Goodreads-Current-1.webp"
                   alt="Screenshot of Goodreads' existing Year in Books page — a static, text-heavy webpage with no shareable graphics"
                   width={2000}
                   height={1200}
                   className="w-full h-auto"
                 />
                 <LoadedImage
-                  src="/assets/projects/GoodreadsWrapped/Goodreads-Current-2.png"
+                  src="/assets/projects/GoodreadsWrapped/Goodreads-Current-2.webp"
                   alt="Screenshot of Goodreads' existing Year in Books page — a static, text-heavy webpage with no shareable graphics"
                   width={2000}
                   height={1200}
                   className="w-full h-auto"
                 />
                 <LoadedImage
-                  src="/assets/projects/GoodreadsWrapped/Goodreads-Current-3.png"
+                  src="/assets/projects/GoodreadsWrapped/Goodreads-Current-3.webp"
                   alt="Screenshot of Goodreads' existing Year in Books page — a static, text-heavy webpage with no shareable graphics"
                   width={2000}
                   height={1200}
@@ -314,7 +314,7 @@ export default function GoodreadsWrappedPage() {
             </div>
             <div className="overflow-hidden">
               <LoadedImage
-                src="/assets/projects/GoodreadsWrapped/Goodreads-FullFlow.png"
+                src="/assets/projects/GoodreadsWrapped/Goodreads-FullFlow.webp"
                 alt="Card sequence storyboard"
                 width={1200}
                 height={400}
