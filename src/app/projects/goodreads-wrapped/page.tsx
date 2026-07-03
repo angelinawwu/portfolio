@@ -253,14 +253,32 @@ export default function GoodreadsWrappedPage() {
 
             <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
               {/* Portrait recap cards — each one a "poster" */}
-              <div className="relative aspect-[9/16] overflow-hidden border border-faded-white">
-                <ImagePlaceholder label="Card: Books read" fill />
+              <div className="relative overflow-hidden">
+                <LoadedImage
+                  src="/assets/projects/GoodreadsWrapped/Goodreads-CardEx-1.webp"
+                  alt="Card: Books read"
+                  width={414}
+                  height={896}
+                  className="w-full h-auto"
+                />
               </div>
-              <div className="relative aspect-[9/16] overflow-hidden border border-faded-white">
-                <ImagePlaceholder label="Card: Top book" fill />
+              <div className="relative overflow-hidden">
+                <LoadedImage
+                  src="/assets/projects/GoodreadsWrapped/Goodreads-CardEx-2.webp"
+                  alt="Card: Top books"
+                  width={414}
+                  height={896}
+                  className="w-full h-auto"
+                />
               </div>
-              <div className="relative aspect-[9/16] overflow-hidden border border-faded-white">
-                <ImagePlaceholder label="Card: Genres" fill />
+              <div className="relative overflow-hidden">
+                <LoadedImage
+                  src="/assets/projects/GoodreadsWrapped/Goodreads-CardEx-3.webp"
+                  alt="Card: Genres"
+                  width={414}
+                  height={896}
+                  className="w-full h-auto"
+                />
               </div>
             </div>
             <p className="text-xs text-white-muted mt-2">
@@ -270,8 +288,8 @@ export default function GoodreadsWrappedPage() {
 
             {/* Downloadable share card */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6 items-center">
-              <div className="relative aspect-[4/5] overflow-hidden border border-faded-white">
-                <ImagePlaceholder label="Downloadable share card" fill />
+              <div className="relative aspect-[4/5] overflow-hidden">
+                <LoadedImage src="/assets/projects/GoodreadsWrapped/Goodreads-FinalCard.webp" alt="Downloadable share card" fill />
               </div>
               <div className="space-y-4 text-white-muted leading-relaxed">
                 <p>
