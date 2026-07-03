@@ -129,13 +129,14 @@ export default function GoodreadsWrappedPage() {
 
           {/* TODO: Hero product shot — full-width hero video or mockup of recap cards on a phone.
               Suggested: `/assets/projects/GoodreadsWrapped/Hero-Product.webp` or `.mp4` via LoadedVideo. */}
-          <div className="overflow-hidden">
-            <LoadedVideo src="/assets/projects/GoodreadsWrapped/Goodreads-Demo.mp4" className="w-full h-auto" autoPlay loop />
+          <div className="flex flex-col items-start">
+            <div className="overflow-hidden">
+              <LoadedVideo src="/assets/projects/GoodreadsWrapped/Goodreads-Demo.mp4" className="w-full h-auto" autoPlay loop />
+            </div>
+            <p className="text-xs text-white-muted mt-2">
+              My own 2025 Goodreads Wrapped (don't judge!)
+            </p>
           </div>
-          <p className="text-xs text-white-muted mt-2">
-            {/* TODO: caption once final hero image is in. */}
-            Final recap flow, delivered to 5000+ readers.
-          </p>
         </section>
 
         {/* How it works */}
@@ -191,14 +192,15 @@ export default function GoodreadsWrappedPage() {
             <div className="space-y-4 text-white-muted leading-relaxed">
               <p>
                 Every design choice traced back to one goal: make a year of reading feel worth
-                celebrating and worth sharing.
+                celebrating and worth sharing. That meant a visual identity that felt personal
+                rather than corporate, and a format built to travel well outside the app itself.
               </p>
             </div>
           </div>
 
           {/* 1. Visual direction — vintage book illustrations */}
           <div>
-            <h3 className="text-xl md:text-2xl text-white mb-4">A world built from vintage book illustrations</h3>
+            <h3 className="text-xl md:text-2xl text-white mb-4">Pictures worth a thousand words</h3>
             <div className="space-y-4 text-white-muted leading-relaxed mb-6">
               <p>
                 Most Wrapped-style recaps default to bold, modern design patterns. But I wanted Goodreads
@@ -209,33 +211,17 @@ export default function GoodreadsWrappedPage() {
               </p>
             </div>
 
-            {/* Moodboard — 4-up grid of inspiration references */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
-              <div className="relative aspect-square overflow-hidden border border-faded-white">
-                <ImagePlaceholder label="Moodboard 1" fill />
-              </div>
-              <div className="relative aspect-square overflow-hidden border border-faded-white">
-                <ImagePlaceholder label="Moodboard 2" fill />
-              </div>
-              <div className="relative aspect-square overflow-hidden border border-faded-white">
-                <ImagePlaceholder label="Moodboard 3" fill />
-              </div>
-              <div className="relative aspect-square overflow-hidden border border-faded-white">
-                <ImagePlaceholder label="Moodboard 4" fill />
-              </div>
-            </div>
-            <p className="text-xs text-white-muted mt-2">
-              {/* TODO: replace with 4 real moodboard tiles — vintage illustrations, botanical prints, bookplates, paper textures. */}
-              Moodboard of vintage book illustrations that seeded the visual direction.
-            </p>
-
             {/* Motif spot: how the illustrations show up in the product */}
             <div className="overflow-hidden mt-6">
-              <ImagePlaceholder label="Illustrations in product" aspect="5 / 3" />
+              <Image 
+                src="/assets/projects/GoodreadsWrapped/Goodreads-Illustrations.webp"
+                alt="Illustrations used in the product"
+                width={1200}
+                height={800}
+              />
             </div>
             <p className="text-xs text-white-muted mt-2">
-              {/* TODO: side-by-side of raw illustration → styled card. */}
-              From raw reference to in-product motif.
+              Vintage illustrations used in the final product.
             </p>
           </div>          
 
@@ -296,6 +282,9 @@ export default function GoodreadsWrappedPage() {
                   The last card is a single downloadable image that captures the whole year at a
                   glance, which users can screenshot, post, and text to their
                   friends.
+                </p>
+                <p>
+                  This designed card was optimized for social sharing, ensuring it looked great whether shared on social media or sent via text message.
                 </p>
               </div>
             </div>
@@ -383,42 +372,24 @@ export default function GoodreadsWrappedPage() {
               <p>
                 Goodreads Wrapped launched in December 2025 and reached{' '}
                 <span className="accent-text">5,000+ users</span> within its first 30 days. It spread organically
-                through book communities on social platforms such as Instagram, as well as through word-of-mouth
+                through book communities on social platforms such as Instagram, Twitter, and Reddit, as well as through word-of-mouth
                 recommendations.
               </p>
             </div>
           </div>
 
-          {/* Traffic graph — Vercel Analytics or GA screenshot */}
-          <div>
-            <div className="overflow-hidden border border-faded-white">
-              <ImagePlaceholder label="Traffic graph" aspect="20 / 9" />
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
+            <div className="relative block overflow-hidden">
+              <LoadedVideo src="/assets/projects/GoodreadsWrapped/Goodreads-Testimonial-1.MP4" className="w-full h-full object-cover" autoPlay loop muted playsInline />
             </div>
-            <p className="text-xs text-white-muted mt-2">
-              {/* TODO: export analytics chart for the launch window. */}
-              Launch-week traffic, December 2025.
-            </p>
+            <div className="relative block overflow-hidden">
+              <Image src="/assets/projects/GoodreadsWrapped/Goodreads-Testimonial-2.png" alt="Social share 3" width={1080} height={1920} className="w-full h-full object-cover" />
+            </div>
+            <div className="relative block overflow-hidden">
+              <LoadedVideo src="/assets/projects/GoodreadsWrapped/Goodreads-Testimonial-3.mov" className="w-full h-full object-cover" autoPlay loop muted playsInline />
+            </div>
           </div>
 
-          {/* Social proof — 3-up grid of posts / screenshots */}
-          <div>
-            <h3 className="text-xl md:text-2xl text-white mb-4">In the wild</h3>
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
-              <div className="relative aspect-[9/16] overflow-hidden border border-faded-white">
-                <ImagePlaceholder label="Social share 1" fill />
-              </div>
-              <div className="relative aspect-[9/16] overflow-hidden border border-faded-white">
-                <ImagePlaceholder label="Social share 2" fill />
-              </div>
-              <div className="relative aspect-[9/16] overflow-hidden border border-faded-white">
-                <ImagePlaceholder label="Social share 3" fill />
-              </div>
-            </div>
-            <p className="text-xs text-white-muted mt-2">
-              {/* TODO: collect 3 favorite user posts (with permission) and drop them in. */}
-              Readers posting their recaps across TikTok, Instagram, and Reddit.
-            </p>
-          </div>
         </section>
 
         {/* Reflections */}
@@ -435,8 +406,7 @@ export default function GoodreadsWrappedPage() {
               <ul className="arrow-list">
                 <li className="text-white-muted leading-relaxed">
                   Owning design, engineering, and launch end-to-end forced me to scope ruthlessly.
-                  Every feature had to earn its place, which made the final product sharper than any
-                  spec doc could have.
+                  Every feature had to earn its place, which made the final product tighter and more intentional.
                 </li>
               </ul>
             </div>
@@ -447,8 +417,8 @@ export default function GoodreadsWrappedPage() {
               </h3>
               <ul className="arrow-list">
                 <li className="text-white-muted leading-relaxed">
-                  The recap exists to be shared. Treating each card as a poster — not a screen —
-                  changed how I thought about hierarchy, type scale, and white space.
+                  The recap exists to be shared. I had to adjust my typical design strategy to ensure that every page 
+                  looked good not just on a screen, but also on social media.
                 </li>
               </ul>
             </div>
