@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import CaseStudyHero from '@/components/CaseStudyHero';
-import LoadedImage from '@/components/LoadedImage';
+import Image from 'next/image';
 import LoadedVideo from '@/components/LoadedVideo';
 import { ArrowUpRight } from '@phosphor-icons/react';
 
@@ -82,27 +82,27 @@ export default function GoodreadsWrappedPage() {
 
           {/* The "before": Goodreads' existing Year in Books page */}
           <div className="mt-8">
-            <div className="flex gap-2">
-                <LoadedImage
+            <div className="grid grid-cols-3 gap-2">
+                <Image
                   src="/assets/projects/GoodreadsWrapped/Goodreads-Current-1.webp"
                   alt="Screenshot of Goodreads' existing Year in Books page — a static, text-heavy webpage with no shareable graphics"
                   width={2000}
                   height={1200}
-                  className="w-full h-auto"
+                  className="block w-full h-auto"
                 />
-                <LoadedImage
+                <Image
                   src="/assets/projects/GoodreadsWrapped/Goodreads-Current-2.webp"
                   alt="Screenshot of Goodreads' existing Year in Books page — a static, text-heavy webpage with no shareable graphics"
                   width={2000}
                   height={1200}
-                  className="w-full h-auto"
+                  className="block w-full h-auto"
                 />
-                <LoadedImage
+                <Image
                   src="/assets/projects/GoodreadsWrapped/Goodreads-Current-3.webp"
                   alt="Screenshot of Goodreads' existing Year in Books page — a static, text-heavy webpage with no shareable graphics"
                   width={2000}
                   height={1200}
-                  className="w-full h-auto"
+                  className="block w-full h-auto"
                 />
             </div>
             <p className="text-xs text-white-muted mt-2">
@@ -254,7 +254,7 @@ export default function GoodreadsWrappedPage() {
             <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
               {/* Portrait recap cards — each one a "poster" */}
               <div className="relative overflow-hidden">
-                <LoadedImage
+                <Image
                   src="/assets/projects/GoodreadsWrapped/Goodreads-CardEx-1.webp"
                   alt="Card: Books read"
                   width={414}
@@ -263,7 +263,7 @@ export default function GoodreadsWrappedPage() {
                 />
               </div>
               <div className="relative overflow-hidden">
-                <LoadedImage
+                <Image
                   src="/assets/projects/GoodreadsWrapped/Goodreads-CardEx-2.webp"
                   alt="Card: Top books"
                   width={414}
@@ -272,7 +272,7 @@ export default function GoodreadsWrappedPage() {
                 />
               </div>
               <div className="relative overflow-hidden">
-                <LoadedImage
+                <Image
                   src="/assets/projects/GoodreadsWrapped/Goodreads-CardEx-3.webp"
                   alt="Card: Genres"
                   width={414}
@@ -289,13 +289,13 @@ export default function GoodreadsWrappedPage() {
             {/* Downloadable share card */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6 items-center">
               <div className="relative aspect-[4/5] overflow-hidden">
-                <LoadedImage src="/assets/projects/GoodreadsWrapped/Goodreads-FinalCard.webp" alt="Downloadable share card" fill />
+                <Image src="/assets/projects/GoodreadsWrapped/Goodreads-FinalCard.webp" alt="Downloadable share card" fill />
               </div>
               <div className="space-y-4 text-white-muted leading-relaxed">
                 <p>
                   The last card is a single downloadable image that captures the whole year at a
                   glance, which users can screenshot, post, and text to their
-                  friends. It doubles as free organic marketing for the site.
+                  friends.
                 </p>
               </div>
             </div>
@@ -313,7 +313,7 @@ export default function GoodreadsWrappedPage() {
               </p>
             </div>
             <div className="overflow-hidden">
-              <LoadedImage
+              <Image
                 src="/assets/projects/GoodreadsWrapped/Goodreads-FullFlow.webp"
                 alt="Card sequence storyboard"
                 width={1200}
@@ -474,8 +474,8 @@ export default function GoodreadsWrappedPage() {
           style={{ '--card-index': cardIndex++ } as React.CSSProperties}
         >
           <div className="flex justify-between items-center">
-            <Link href="/" className="sidebar-link">
-              ← Back to projects
+            <Link href="/projects/familyfridge" className="sidebar-link">
+              ← FamilyFridge
             </Link>
             <Link href="/projects/manifesto-market" className="sidebar-link">
               Manifesto Market →
