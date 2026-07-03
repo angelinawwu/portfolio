@@ -52,7 +52,7 @@ export default function GoodreadsWrappedPage() {
             role: "Product Designer & Full-Stack Engineer",
             timeline: ["August – December 2025"],
             team: ["Myself!"],
-            tools: "Next.js (TypeScript, Tailwind, Motion.dev), Figma, Vercel"
+            tools: "Next.js (TypeScript, Tailwind, Motion.dev), Figma, Paper, Vercel"
           }}
           cardIndex={cardIndex++}
           links={[
