@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import CaseStudyHero from '@/components/CaseStudyHero';
 import LoadedImage from '@/components/LoadedImage';
+import LoadedVideo from '@/components/LoadedVideo';
 import { ArrowUpRight } from '@phosphor-icons/react';
 
 function ImagePlaceholder({
@@ -129,7 +130,7 @@ export default function GoodreadsWrappedPage() {
           {/* TODO: Hero product shot — full-width hero video or mockup of recap cards on a phone.
               Suggested: `/assets/projects/GoodreadsWrapped/Hero-Product.webp` or `.mp4` via LoadedVideo. */}
           <div className="overflow-hidden">
-            <ImagePlaceholder label="Hero product shot" aspect="5 / 3" />
+            <LoadedVideo src="/assets/projects/GoodreadsWrapped/Goodreads-Demo.mp4" className="w-full h-auto" autoPlay loop />
           </div>
           <p className="text-xs text-white-muted mt-2">
             {/* TODO: caption once final hero image is in. */}
@@ -142,16 +143,7 @@ export default function GoodreadsWrappedPage() {
           className="project-card mb-12 pt-8 border-t border-faded-white space-y-8"
           style={{ '--card-index': cardIndex++ } as React.CSSProperties}
         >
-          <div>
-            <h2 className="text-2xl md:text-3xl bit-apple-font text-white mb-6">How it works</h2>
-            <div className="space-y-4 text-white-muted leading-relaxed">
-              <p>
-                The flow is intentionally minimal. A user lands on the homepage, enters their 8- or
-                9-digit Goodreads ID (pulled from their profile URL), and within a few seconds gets a
-                full personalized recap.
-              </p>
-            </div>
-          </div>
+          <h2 className="text-2xl md:text-3xl bit-apple-font text-white mb-6">How it works</h2>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             <div className="border border-faded-white p-6 bg-surface">
@@ -186,17 +178,7 @@ export default function GoodreadsWrappedPage() {
               </p>
             </div>
           </div>
-
-          {/* Flow diagram: ID input → scraper → aggregated data → recap cards */}
-          <div>
-            <div className="overflow-hidden">
-              <ImagePlaceholder label="Flow diagram" aspect="5 / 2" />
-            </div>
-            <p className="text-xs text-white-muted mt-2">
-              {/* TODO: build this diagram in Figma and export. */}
-              End-to-end flow, from ID entry to shareable recap.
-            </p>
-          </div>
+          
         </section>
 
         {/* Design decisions — the visual heart of the case study */}
@@ -322,7 +304,7 @@ export default function GoodreadsWrappedPage() {
             </div>
             <p className="text-xs text-white-muted mt-2">
               {/* TODO: export all cards as a horizontal filmstrip in Figma. */}
-              The full card sequence, from left to right: volume → taste → personal closer.
+              The full card sequence, in order: volume → taste → personal closer.
             </p>
           </div>
         </section>
