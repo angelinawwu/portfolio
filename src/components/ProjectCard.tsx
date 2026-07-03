@@ -17,7 +17,7 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
   const thumb = getThumbhash(project.videoUrl ?? project.thumbnail);
 
   // Determine if this is an internal case study or external link
-  const isInternalLink = project.slug && project.type === 'case-study' && project.slug !== 'goodreads-wrapped';
+  const isInternalLink = project.slug && project.type === 'case-study';
   const href = isInternalLink ? `/projects/${project.slug}` : project.demoUrl || '#';
 
   const CardContent = (
