@@ -153,52 +153,37 @@ export default function GoodreadsWrappedPage() {
             </div>
           </div>
 
-          <div className="space-y-4">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             <div className="border border-faded-white p-6 bg-surface">
-              <div className="flex items-start gap-4">
-                <div className="flex-shrink-0 w-8 h-8 border border-faded-white flex items-center justify-center">
-                  <span className="text-white geist-mono-font text-sm">1</span>
-                </div>
-                <div>
-                  <h4 className="text-lg text-white mb-2">Enter a Goodreads ID</h4>
-                  <p className="text-white-muted leading-relaxed">
-                    Users provide the numeric ID from their public Goodreads profile URL. No login,
-                    no OAuth, no account required.
-                  </p>
-                </div>
+              <div className="flex-shrink-0 w-8 h-8 border border-faded-white flex items-center justify-center mb-4">
+                <span className="text-white geist-mono-font text-sm">1</span>
               </div>
+              <h4 className="text-lg text-white mb-2">Enter a Goodreads ID</h4>
+              <p className="text-white-muted leading-relaxed">
+                Users provide the numeric ID from their public Goodreads profile URL.
+              </p>
             </div>
 
             <div className="border border-faded-white p-6 bg-surface">
-              <div className="flex items-start gap-4">
-                <div className="flex-shrink-0 w-8 h-8 border border-faded-white flex items-center justify-center">
-                  <span className="text-white geist-mono-font text-sm">2</span>
-                </div>
-                <div>
-                  <h4 className="text-lg text-white mb-2">Scrape the public profile</h4>
-                  <p className="text-white-muted leading-relaxed">
-                    A server-side scraper paginates through the user&apos;s &quot;read&quot; shelf,
-                    parses the HTML, and extracts books, ratings, dates, page counts, and genres for
-                    the current year.
-                  </p>
-                </div>
+              <div className="flex-shrink-0 w-8 h-8 border border-faded-white flex items-center justify-center mb-4">
+                <span className="text-white geist-mono-font text-sm">2</span>
               </div>
+              <h4 className="text-lg text-white mb-2">Scrape the public profile</h4>
+              <p className="text-white-muted leading-relaxed">
+                A server-side scraper paginates through the user&apos;s &quot;read&quot; shelf,
+                parses the HTML, and extracts books, ratings, dates, page counts, and genres for
+                the current year.
+              </p>
             </div>
 
             <div className="border border-faded-white p-6 bg-surface">
-              <div className="flex items-start gap-4">
-                <div className="flex-shrink-0 w-8 h-8 border border-faded-white flex items-center justify-center">
-                  <span className="text-white geist-mono-font text-sm">3</span>
-                </div>
-                <div>
-                  <h4 className="text-lg text-white mb-2">Generate the recap</h4>
-                  <p className="text-white-muted leading-relaxed">
-                    The data is aggregated into a sequence of Spotify-Wrapped-style cards: total
-                    books, pages read, top genres, longest book, average rating, and more — designed
-                    to feel like a story.
-                  </p>
-                </div>
+              <div className="flex-shrink-0 w-8 h-8 border border-faded-white flex items-center justify-center mb-4">
+                <span className="text-white geist-mono-font text-sm">3</span>
               </div>
+              <h4 className="text-lg text-white mb-2">Generate the recap</h4>
+              <p className="text-white-muted leading-relaxed">
+                The data is aggregated into a sequence of Spotify-Wrapped-style cards.
+              </p>
             </div>
           </div>
 
@@ -328,7 +313,12 @@ export default function GoodreadsWrappedPage() {
               </p>
             </div>
             <div className="overflow-hidden">
-              <ImagePlaceholder label="Card sequence storyboard" aspect="8 / 3" />
+              <LoadedImage
+                src="/assets/projects/GoodreadsWrapped/Goodreads-FullFlow.png"
+                alt="Card sequence storyboard"
+                width={1200}
+                height={400}
+              />
             </div>
             <p className="text-xs text-white-muted mt-2">
               {/* TODO: export all cards as a horizontal filmstrip in Figma. */}
