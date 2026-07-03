@@ -57,8 +57,7 @@ export default function GoodreadsWrappedPage() {
           }}
           cardIndex={cardIndex++}
           links={[
-            { label: "Live site", href: "https://goodreadswrapped.com" },
-            { label: "GitHub", href: "https://github.com/angelinawwu/goodreads-wrapped" },
+            { label: "View live site", href: "https://goodreadswrapped.com" },
           ]}
         />
 
