@@ -179,9 +179,8 @@ export default function GoodreadsWrappedPage() {
               </div>
               <h4 className="text-lg text-white mb-2">Pull the public shelf</h4>
               <p className="text-white-muted leading-relaxed">
-                A server-side job reads the user&apos;s public &quot;read&quot; shelf via RSS, 
+                A server-side job reads the user&apos;s public &quot;read&quot; shelf, 
                 extracting personal reading stats for the current year.
-                Then it does light, targeted scraping for genre data RSS doesn&apos;t include.
               </p>
             </div>
 
@@ -191,7 +190,7 @@ export default function GoodreadsWrappedPage() {
               </div>
               <h4 className="text-lg text-white mb-2">Generate the recap</h4>
               <p className="text-white-muted leading-relaxed">
-                The data is aggregated into a sequence of Spotify-Wrapped-style cards.
+                The data is aggregated into a sequence of Instagram-story-style slides.
               </p>
             </div>
           </div>
@@ -246,7 +245,7 @@ export default function GoodreadsWrappedPage() {
             <h3 className="text-xl md:text-2xl text-white mb-4">Designed for the screenshot</h3>
             <div className="space-y-4 text-white-muted leading-relaxed mb-6">
               <p>
-                To encourage shareability, every card was designed as a self-contained
+                To encourage shareability, every slide was designed as a self-contained
                 poster first, and a screen second. That meant bold typography for smaller devices, generous
                 margins so nothing gets cropped by Instagram Stories, and a final downloadable
                 summary card that stitches the highlights together in a single image.
@@ -284,8 +283,7 @@ export default function GoodreadsWrappedPage() {
               </div>
             </div>
             <p className="text-xs text-white-muted mt-2">
-              {/* TODO: swap in 3 real card exports at 9:16. */}
-              Each card is a self-contained poster.
+              Each slide is a self-contained poster.
             </p>
 
             {/* Downloadable share card */}
@@ -295,7 +293,7 @@ export default function GoodreadsWrappedPage() {
               </div>
               <div className="space-y-4 text-white-muted leading-relaxed">
                 <p>
-                  The last card is a single downloadable image that captures the whole year at a
+                  The last slide is a single downloadable image that captures the whole year at a
                   glance, which users can screenshot, post, and text to their
                   friends.
                 </p>
@@ -311,22 +309,22 @@ export default function GoodreadsWrappedPage() {
             <h3 className="text-xl md:text-2xl text-white mb-4">A story, not a dashboard</h3>
             <div className="space-y-4 text-white-muted leading-relaxed mb-6">
               <p>
-                The card order was as important as the cards themselves. Instead of dumping every
+                The slide order was as important as the slides themselves. Instead of dumping every
                 stat on one screen, the recap builds like a short story, opening with more general stats and 
-                closing with more personal ones. Each card earns the next.
+                closing with more personal ones. Each slide earns the next.
               </p>
             </div>
             <div className="overflow-hidden">
               <Image
                 src="/assets/projects/GoodreadsWrapped/Goodreads-FullFlow.webp"
-                alt="Card sequence storyboard"
+                alt="Slide sequence storyboard"
                 width={1200}
                 height={400}
               />
             </div>
             <p className="text-xs text-white-muted mt-2">
               {/* TODO: export all cards as a horizontal filmstrip in Figma. */}
-              The full card sequence, in order: volume → taste → personal closer.
+              The full slide sequence, in order: volume → taste → personal closer.
             </p>
           </div>
         </section>
