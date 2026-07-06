@@ -122,26 +122,31 @@ export const playgroundProjects: Project[] = [
     type: 'playground',
     demoUrl: 'https://digitalblackoutpoetry.vercel.app/',
   },
-    {
+  {
     title: 'Grainy gradient generator (personal tool)',
     context: 'React + Vite',
     type: 'playground',
     videoUrl: '/assets/playground/GrainyGrad-Video.mp4',
     demoUrl: 'https://x.com/angelinawuuu/status/2059663763037655208?s=20',
   },
-    {
-    title: 'Thistle (concept)',
-    context: 'Figma, Nano Banana',
-    thumbnail: '/assets/playground/Thistle-Cover.webp',
+  {
+    title: 'Olé, Olé, Olé!',
+    context: 'Figma Motion + Generative Plugins',
+    videoUrl: '/assets/playground/OleOleOle-Video.mp4',
     type: 'playground',
   },
-    {
+  {
     title: 'UCLA Arts stickers',
     context: 'Figma, Personal tools',
     thumbnail: '/assets/playground/Donorstickers-Cover.webp',
     type: 'playground',
   },
-
+  {
+    title: 'Thistle (concept)',
+    context: 'Figma, Nano Banana',
+    thumbnail: '/assets/playground/Thistle-Cover.webp',
+    type: 'playground',
+  },
   {
     title: 'Abstract fluted glass video generator (personal tool)',
     context: 'React + Vite, Paper Shaders',
@@ -149,8 +154,6 @@ export const playgroundProjects: Project[] = [
     videoUrl: '/assets/playground/FlutedGlass-Video.mp4',
     demoUrl: 'https://x.com/angelinawuuu/status/2049894184283451511?s=20',
   },
-
-
   {
     title: 'VEST glass experiment',
     context: 'Figma',
@@ -164,38 +167,15 @@ export const playgroundProjects: Project[] = [
     type: 'playground',
   },
   {
-    title: 'Bookish app (concept)',
-    context: 'Figma, Flutter',
-    thumbnail: '/assets/playground/Bookish-Cover.webp',
+    title: 'Drawing the moon',
+    context: 'Procreate',
+    thumbnail: '/assets/playground/Moontree-Cover.webp',
     type: 'playground',
   },
-
-{
-  title: 'Drawing the moon',
-  context: 'Procreate',
-  thumbnail: '/assets/playground/Moontree-Cover.webp',
-  type: 'playground',
-},
-  
-
-  
-  {
-    title: 'VEST t-shirts',
-    context: 'Adobe Illustrator',
-    thumbnail: '/assets/playground/VESTShirt-Cover.webp',
-    type: 'playground',
-  },
- 
   {
     title: 'VEST recruitment graphic',
     context: 'Figma, Adobe Photoshop',
     thumbnail: '/assets/playground/VESTKeyboard-Cover.webp',
-    type: 'playground',
-  },
-  {
-    title: 'Meeting a past self',
-    context: 'Procreate',
-    thumbnail: '/assets/playground/Meeting-a-Past-Self-Cover.webp',
     type: 'playground',
   },
   {
@@ -204,6 +184,25 @@ export const playgroundProjects: Project[] = [
     thumbnail: '/assets/playground/TeddiesTee-Cover.webp',
     type: 'playground',
   },
+  {
+    title: 'VEST t-shirts',
+    context: 'Adobe Illustrator',
+    thumbnail: '/assets/playground/VESTShirt-Cover.webp',
+    type: 'playground',
+  },
+  {
+    title: 'Bookish app (concept)',
+    context: 'Figma, Flutter',
+    thumbnail: '/assets/playground/Bookish-Cover.webp',
+    type: 'playground',
+  },
+  {
+    title: 'Meeting a past self',
+    context: 'Procreate',
+    thumbnail: '/assets/playground/Meeting-a-Past-Self-Cover.webp',
+    type: 'playground',
+  },
+
 ];
 
 export const workProjects: Project[] = [...caseStudies];

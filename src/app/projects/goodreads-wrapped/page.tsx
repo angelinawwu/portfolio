@@ -324,7 +324,7 @@ export default function GoodreadsWrappedPage() {
             </div>
             <p className="text-xs text-white-muted mt-2">
               {/* TODO: export all cards as a horizontal filmstrip in Figma. */}
-              The full slide sequence, in order: volume → taste → personal closer.
+              The full slide sequence, in order.
             </p>
           </div>
         </section>

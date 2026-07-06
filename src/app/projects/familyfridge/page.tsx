@@ -117,7 +117,7 @@ export default function FamilyFridge2Page() {
           <div className="space-y-12">
             <div>
               <p className="text-white-muted leading-relaxed mb-6">
-                We gathered 50 <a href="https://docs.google.com/forms/d/e/1FAIpQLScwCZq-4SF8tR-3VnUmTMufTaVh5ObqB5orauxC5ytzk2XerA/viewform" target="_blank" rel="noopener noreferrer" className="accent-text sidebar-link">survey responses<ArrowUpRight size={16} className="inline" /></a>, conducted 3 <a href="https://docs.google.com/document/d/16boHvnQWm6cVXiji85t96WY-uINIT5c1fdZBpGqoe8s/edit?usp=sharing" target="_blank" rel="noopener noreferrer" className="accent-text sidebar-link">user interviews<ArrowUpRight size={16} className="inline" /></a>, and performed secondary research to understand how young adults interact with older family members. Our research process was fast and intentional — given the time constraints of the designathon, we needed to move from research to design within the span of a few hours.
+                We gathered 50 <a href="https://docs.google.com/forms/d/e/1FAIpQLScwCZq-4SF8tR-3VnUmTMufTaVh5ObqB5orauxC5ytzk2XerA/viewform" target="_blank" rel="noopener noreferrer" className="accent-text sidebar-link">survey responses<ArrowUpRight size={16} className="inline" /></a>, conducted 3 <a href="https://docs.google.com/document/d/16boHvnQWm6cVXiji85t96WY-uINIT5c1fdZBpGqoe8s/edit?usp=sharing" target="_blank" rel="noopener noreferrer" className="accent-text sidebar-link">user interviews<ArrowUpRight size={16} className="inline" /></a>, and performed secondary research to understand how young adults interact with older family members. Our research process was fast and intentional, given the time constraints of the designathon.
               </p>
 
               <div className="overflow-hidden">
@@ -345,7 +345,7 @@ export default function FamilyFridge2Page() {
             <div>
               <h3 className="text-xl md:text-2xl text-white mb-4">A Fridge for every family</h3>
               <p className="text-white-muted leading-relaxed mb-4">
-                Customize your Fridge to your own unique family. Each family gets their own color theme, name decorations, and layout — making every Fridge feel like home.
+                Customize your Fridge to your own unique family. Each family gets their own color theme, name decorations, and layout, making every Fridge feel like home.
               </p>
               <div className="overflow-hidden">
                 <Image
@@ -360,7 +360,7 @@ export default function FamilyFridge2Page() {
             <div>
               <h3 className="text-xl md:text-2xl text-white mb-4">Post-call capture</h3>
               <p className="text-white-muted leading-relaxed mb-4">
-                After a FaceTime call ends, a translucent liquid glass overlay appears on your home screen. It surfaces screenshots taken during the conversation, lets you select which ones to pin to the Fridge, and prompts for a quick note — like &quot;Ask about grandparents&apos; tomato garden.&quot; The entire flow takes seconds, and the Fridge grows richer with every call.
+                FamilyFridge is integrated with FaceTime. An overlay surfaces screenshots taken during the conversation, lets you select which ones to pin to the Fridge, and prompts for a quick note. This way, the Fridge grows richer with every call.
               </p>
               <LoadedVideo
                   src="/assets/projects/FamilyFridge/FamilyFridge-Final-3.mp4"
