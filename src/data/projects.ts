@@ -124,7 +124,7 @@ export const playgroundProjects: Project[] = [
   },
   {
     title: 'Grainy gradient generator (personal tool)',
-    context: 'React + Vite',
+    context: 'Next.js',
     type: 'playground',
     videoUrl: '/assets/playground/GrainyGrad-Video.mp4',
     demoUrl: 'https://x.com/angelinawuuu/status/2059663763037655208?s=20',
