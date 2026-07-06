@@ -150,8 +150,8 @@ export default function Sidebar() {
       </div>
 
       {/* Location & Time */}
-      <div className="text-xs geist-mono-font text-white-muted mb-2">
-        LOS ANGELES, CA. <LiveClock />
+      <div className="text-xs geist-mono-font uppercase text-white-muted mb-2">
+        San Francisco, CA. <LiveClock />
       </div>
 
       {/* Footer */}
