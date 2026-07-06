@@ -1,4 +1,4 @@
-export type ProjectType = 'PERSONAL PROJECT' | 'INTERNSHIP' | 'CONTRACT' | 'SCHOOL PROJECT' | 'HACKATHON';
+export type ProjectType = 'PERSONAL PROJECT' | 'INTERNSHIP' | 'CONTRACT' | 'SCHOOL PROJECT' | 'HACKATHON' | 'UCLA ARTS';
 
 export type Project = {
   slug?: string;
@@ -20,6 +20,16 @@ export type Project = {
 };
 
 export const caseStudies: Project[] = [
+  {
+    slug: 'ucla-arts',
+    title: 'UCLA Arts Summer Programs',
+    description: 'Building a summer brand identity from scratch — powered by custom AI tools.',
+    thumbnail: '/assets/projects/UCLAArts/UCLAArts-KeyArt-1.webp',
+    timeline: '2026',
+    projectType: 'UCLA ARTS',
+    tags: ['Brand Identity', 'Design System', 'AI Tools'],
+    type: 'case-study'
+  },
   {
     slug: 'reverie',
     title: 'Reverie',
