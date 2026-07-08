@@ -21,6 +21,19 @@ export type Project = {
 
 export const caseStudies: Project[] = [
   {
+    slug: 'goodreads-wrapped',
+    title: 'Goodreads Wrapped',
+    description: 'A playful reading year summary, delivered to 5000+ users.',
+    thumbnail: '/assets/projects/Goodreads-Cover.webp',
+    context: 'Next.js + Web Scraping',
+    type: 'case-study',
+    projectType: 'PERSONAL PROJECT',
+    timeline: 'AUG-DEC 2025',
+    tags: ['Next.js', 'Web Scraping', 'Data Visualization'],
+    demoUrl: 'https://goodreadswrapped.com',
+    githubUrl: 'https://github.com/angelinawwu/goodreads-wrapped'
+  },
+  {
     slug: 'reverie',
     title: 'Reverie',
     description: 'Honorable Mention @ FigBuild 2026. Every dream, a revelation.',
@@ -41,19 +54,6 @@ export const caseStudies: Project[] = [
     tags: ['UX Research', 'Mobile Design', 'Figma'],
     type: 'case-study',
     devpostUrl: 'https://devpost.com/software/tba-bo8jku'
-  },
-  {
-    slug: 'goodreads-wrapped',
-    title: 'Goodreads Wrapped',
-    description: 'A playful reading year summary, delivered to 5000+ users.',
-    thumbnail: '/assets/projects/Goodreads-Cover.webp',
-    context: 'Next.js + Web Scraping',
-    type: 'case-study',
-    projectType: 'PERSONAL PROJECT',
-    timeline: 'AUG-DEC 2025',
-    tags: ['Next.js', 'Web Scraping', 'Data Visualization'],
-    demoUrl: 'https://goodreadswrapped.com',
-    githubUrl: 'https://github.com/angelinawwu/goodreads-wrapped'
   },
   {
     slug: 'manifesto-market',

@@ -4,8 +4,8 @@ import { workProjects } from '@/data/projects';
 export default function WorkPage() {
   const orderedProjects = [
     workProjects.find(p => p.slug === 'reverie'),
+    workProjects.find(p => p.slug === 'goodreads-wrapped'),
     workProjects.find(p => p.slug === 'familyfridge'),
-    workProjects.find(p => p.title === 'Goodreads Wrapped'),
     workProjects.find(p => p.slug === 'manifesto-market'),
     workProjects.find(p => p.slug === 'workup'),
   ].filter(Boolean) as typeof workProjects;
