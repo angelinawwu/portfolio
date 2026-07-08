@@ -26,34 +26,50 @@ function ImagePlaceholder({
   );
 }
 
-const brandColors = [
-  { name: 'Sunbeam', hex: '#F2D43A', dark: true },
-  { name: 'Poppy', hex: '#EE3E24', dark: false },
-  { name: 'Seafoam', hex: '#73C9BF', dark: true },
-  { name: 'Magenta', hex: '#DA4B9B', dark: false },
-  { name: 'UCLA Navy', hex: '#1D4481', dark: false },
-  { name: 'Grape', hex: '#811D76', dark: false },
-  { name: 'Mist', hex: '#D3DCE1', dark: true },
-  { name: 'Meadow', hex: '#1D8128', dark: false },
+// The four key-art concepts I proposed, each with its own guiding ethos
+const concepts = [
+  { n: '01', name: 'Color Panels', ethos: 'diverse', words: 'variety · choice · possibility · breadth' },
+  { n: '02', name: 'CMY Orbs', ethos: 'interdisciplinary', words: 'union · combination · convergence · intersection' },
+  { n: '03', name: 'Grainy Blobs', ethos: 'dynamic', words: 'flexibility · movement · fluidity · energy' },
+  { n: '04', name: 'Fluted Glass', ethos: 'multifaceted', words: 'dimension · futurism · transparency · intricacy' },
 ];
+
+// Base 4-tone "Fluted Glass" color scheme — sourced from the concept deck
+const flutedGlassColors = [
+  { name: 'Sunflower', hex: '#F1D439' },
+  { name: 'Peony', hex: '#DE1B63' },
+  { name: 'Delphinium', hex: '#96D4E4' },
+  { name: 'Iris', hex: '#5640C4' },
+];
+
+// Each department draws its own primary/secondary/tertiary from the 4-tone base;
+// each course within a department gets a distinct glass pattern (e.g. Angular, Waves, Streaks)
+const departments = [
+  'Art',
+  'Design | Media Arts',
+  'World Arts & Cultures / Dance',
+  'Architecture & Urban Design',
+];
+
+const glassPatterns = ['Angular', 'Waves', 'Streaks'];
 
 const customTools = [
   {
     name: 'Grainy Gradient Generator',
     blurb:
-      'A custom generator for the soft, grainy gradients at the heart of the summer look — tuned to the exact brand palette so every asset stayed on-system.',
+      'A grainy-gradient generator I built to spin up the soft, textured color fields the identity leans on — on-palette every time, in seconds instead of by hand.',
     href: 'https://uclaarts-grainygrad.vercel.app/',
   },
   {
     name: 'Key-Art Video Generator',
     blurb:
-      'A tool that animated the static key art into looping motion graphics for reels and stories — turning one poster into an entire content library in minutes.',
+      'A tool that turns static key art into the fast-paced, liquid-motion sequences used for the Instagram ad reels — one design becomes an entire content library.',
     href: 'https://uclaarts-videogen.vercel.app/',
   },
   {
     name: 'Fluted Glass Prototype',
     blurb:
-      'A shader-based web prototype exploring refracted, fluted-glass textures — a live sandbox for pushing the identity somewhere print alone could not go.',
+      'A shader-based web prototype that codes the Fluted Glass concept into a live, interactive effect — proof it could scale past static key art into the website itself.',
     href: 'https://flutedglass-example.vercel.app/',
   },
 ];
@@ -77,8 +93,8 @@ export default function UCLAArtsPage() {
         <CaseStudyHero
           slug="ucla-arts"
           details={{
-            role: ['Design Lead', '(Summer Programs)'],
-            timeline: ['2026', '(fast-turnaround)'],
+            role: ['Designer'],
+            timeline: ['October 2025 – May 2026'],
             team: ['Me', '+ UCLA Arts Comms'],
             tools: 'Figma, Paper, custom AI tools, Cursor',
           }}
@@ -155,95 +171,106 @@ export default function UCLAArtsPage() {
           style={{ '--card-index': cardIndex++ } as React.CSSProperties}
         >
           <div>
-            <h2 className="text-2xl md:text-3xl bit-apple-font text-white mb-6">Building the brand identity</h2>
+            <h2 className="text-2xl md:text-3xl bit-apple-font text-white mb-6">Exploring key-art concepts</h2>
             <div className="space-y-4 text-white-muted leading-relaxed">
               <p>
-                I wanted the summer identity to feel like the opposite of institutional: warm, saturated, and
-                alive with the energy of a studio in full swing. I started by gathering a visual direction —
-                organic, generative textures, soft grain, and unexpected color — then distilled it into a
-                system that could scale from a phone screen to a printed sticker.
+                I started by proposing four distinct key-art directions, each with its own guiding ethos for what
+                UCLA Arts Summer Programs <span className="italic">are</span>. I sketched explorations in Figma
+                and used Paper to animate them quickly — a way to test how each concept felt in motion before
+                committing to one.
               </p>
             </div>
-            <div className="mt-8 overflow-hidden">
-              <Image
-                src="/assets/projects/UCLAArts/UCLAArts-KeyArt-1.webp"
-                alt="Visual direction moodboard — vibrant, organic, generative art references for the UCLA Arts summer identity"
-                width={1420}
-                height={778}
-                className="w-full h-auto"
-              />
-              <p className="text-xs text-white-muted mt-2">
-                Visual direction: grainy gradients, generative texture, and saturated color.
-              </p>
-            </div>
-          </div>
 
-          {/* Color system */}
-          <div>
-            <h3 className="text-xl md:text-2xl text-white mb-4">A color system built for range</h3>
-            <div className="space-y-4 text-white-muted leading-relaxed mb-6">
-              <p>
-                The palette anchors on UCLA&apos;s navy but pushes into a bright, playful spectrum — poppy red,
-                magenta, sunbeam yellow, seafoam, grape, and meadow green. Eight core colors gave every
-                program its own accent while still reading as one family, and the wide range meant the identity
-                never felt repetitive across dozens of deliverables.
-              </p>
-            </div>
-            <div className="grid grid-cols-4 md:grid-cols-8 gap-2 md:gap-3 mb-4">
-              {brandColors.map((c) => (
-                <div key={c.hex}>
-                  <div
-                    className="w-full aspect-square"
-                    style={{ backgroundColor: c.hex }}
-                  />
-                  <p className="text-[10px] geist-mono-font text-white-muted mt-2 leading-tight">
-                    {c.name}
-                    <br />
-                    {c.hex}
+            {/* 4 concepts grid */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              {concepts.map((c) => (
+                <div key={c.name} className="border border-faded-white p-6 bg-surface">
+                  <div className="flex items-baseline gap-2 mb-2">
+                    <span className="text-xs geist-mono-font text-white-muted">{c.n}</span>
+                    <h4 className="text-lg text-white">{c.name}</h4>
+                  </div>
+                  <p className="text-sm text-white-muted mb-2 italic">
+                    UCLA Arts Summer Programs are {c.ethos}.
                   </p>
+                  <p className="text-xs text-white-muted geist-mono-font">{c.words}</p>
                 </div>
               ))}
             </div>
           </div>
 
-          {/* Design system / logo motif */}
+          {/* Fluted Glass — the chosen direction */}
           <div>
-            <h3 className="text-xl md:text-2xl text-white mb-4">One motif, endless variations</h3>
+            <h3 className="text-xl md:text-2xl text-white mb-4">Developing &quot;Fluted Glass&quot; into a system</h3>
             <div className="space-y-4 text-white-muted leading-relaxed mb-6">
               <p>
-                At the core of the design system is the <span className="text-white">ARTS</span> wordmark paired
-                with a stacked-circle mark — a simple, modular shape that could be filled with gradients,
-                photography, or flat color. Standardizing type, layout, and that logo lockup meant the comms
-                team and I could produce dozens of on-brand pieces quickly, without redrawing the identity each
-                time.
+                I chose <span className="text-white">Fluted Glass</span> as the direction to develop into a full
+                design system. Its ethos — multifaceted, dimensional, futuristic, transparent, intricate —
+                gave me enough range to build out a documented concept that could scale across departments,
+                courses, and deliverables.
+              </p>
+              <p>
+                I laid the system out in a working deck: a four-tone base palette, department and course-level
+                logic, key art formats, and applications. The deck became the source of truth for the comms
+                team.{' '}
+                <a
+                  href="https://docs.google.com/presentation/d/1oanpzou3j0upYEZJgvZ2dbHyfQ7zy7gZquLpPliDhKk/edit?usp=sharing"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="sidebar-link"
+                >
+                  View the Fluted Glass concept deck
+                  <ArrowUpRight size={16} className="inline ml-1" />
+                </a>
               </p>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div className="overflow-hidden">
-                <Image
-                  src="/assets/projects/UCLAArts/UCLAArts-Social-Ads.webp"
-                  alt="The summer brand applied across Instagram — Summer Art Institute, Design Media Arts, and JumpStart program posts"
-                  width={416}
-                  height={900}
-                  className="w-full h-auto"
-                />
-                <p className="text-xs text-white-muted mt-2">
-                  The system applied across the UCLA Arts social feed.
-                </p>
+
+            {/* Base 4-tone color scheme */}
+            <div className="mb-8">
+              <h4 className="text-lg text-white mb-3">A four-tone base palette</h4>
+              <p className="text-white-muted leading-relaxed mb-4 text-sm">
+                Vibrant, youthful, and diverse — and directly referential to UCLA Arts&apos; existing brand
+                colors. Every department and course palette is derived from these four tones.
+              </p>
+              <div className="grid grid-cols-4 gap-2 md:gap-3">
+                {flutedGlassColors.map((c) => (
+                  <div key={c.hex}>
+                    <div className="w-full aspect-square" style={{ backgroundColor: c.hex }} />
+                    <p className="text-[10px] geist-mono-font text-white-muted mt-2 leading-tight">
+                      {c.name}
+                      <br />
+                      {c.hex}
+                    </p>
+                  </div>
+                ))}
               </div>
-              <div className="flex flex-col gap-4">
-                <div className="overflow-hidden">
-                  <Image
-                    src="/assets/projects/UCLAArts/UCLAArts-KeyArt-2.webp"
-                    alt="The core UCLA Arts summer color palette with CMYK, RGB, and HEX values"
-                    width={1024}
-                    height={1030}
-                    className="w-full h-auto"
-                  />
-                </div>
-                <p className="text-xs text-white-muted">
-                  Documented color tokens — specced for both screen and print.
+            </div>
+
+            {/* Department + course logic */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
+              <div className="border border-faded-white p-6 bg-surface">
+                <h4 className="text-lg text-white mb-2">Color by department</h4>
+                <p className="text-white-muted leading-relaxed text-sm mb-4">
+                  Each of the four departments draws its own primary, secondary, and tertiary color from the
+                  base palette — distinct enough to tell departments apart at a glance, while staying inside one
+                  family.
                 </p>
+                <ul className="space-y-1 text-sm text-white-muted geist-mono-font">
+                  {departments.map((d) => (
+                    <li key={d}>· {d}</li>
+                  ))}
+                </ul>
+              </div>
+              <div className="border border-faded-white p-6 bg-surface">
+                <h4 className="text-lg text-white mb-2">Pattern by course</h4>
+                <p className="text-white-muted leading-relaxed text-sm mb-4">
+                  Within each department, individual courses (e.g. Painting, Photography, Sculpture in Art) get
+                  their own fluted-glass pattern, so every program has a unique but on-system look.
+                </p>
+                <ul className="space-y-1 text-sm text-white-muted geist-mono-font">
+                  {glassPatterns.map((p) => (
+                    <li key={p}>· {p}</li>
+                  ))}
+                </ul>
               </div>
             </div>
           </div>
@@ -390,6 +417,29 @@ export default function UCLAArtsPage() {
                 height={781}
                 className="w-full h-auto"
               />
+            </div>
+          </div>
+
+          {/* Instagram Ads */}
+          <div>
+            <h3 className="text-xl md:text-2xl text-white mb-4">Instagram ads</h3>
+            <p className="text-white-muted leading-relaxed mb-6">
+              I designed a full Instagram campaign with both video reels and static posts. The video structure
+              followed a three-part arc: a liquid-motion intro with program info, a fast-paced sequence of
+              individual programs, and a branded outro. Static posts used the Fluted Glass gradients to make
+              text overlays readable while staying on-brand.
+            </p>
+            <div className="overflow-hidden">
+              <Image
+                src="/assets/projects/UCLAArts/UCLAArts-Social-Ads.webp"
+                alt="Instagram ad designs for UCLA Arts summer programs, showing both video reel structure and static post designs"
+                width={416}
+                height={900}
+                className="w-full h-auto"
+              />
+              <p className="text-xs text-white-muted mt-2">
+                Instagram ad campaign — video reels and static posts.
+              </p>
             </div>
           </div>
 

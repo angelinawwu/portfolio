@@ -25,7 +25,7 @@ export const caseStudies: Project[] = [
     title: 'UCLA Arts Summer Programs',
     description: 'Building a summer brand identity from scratch — powered by custom AI tools.',
     thumbnail: '/assets/projects/UCLAArts/UCLAArts-KeyArt-1.webp',
-    timeline: '2026',
+    timeline: 'OCT 2025 – MAY 2026',
     projectType: 'UCLA ARTS',
     tags: ['Brand Identity', 'Design System', 'AI Tools'],
     type: 'case-study'
