@@ -392,7 +392,7 @@ export default function GoodreadsWrappedPage() {
               Suggested: `/assets/projects/GoodreadsWrapped/Hero-Product.webp` or `.mp4` via LoadedVideo. */}
           <div className="flex flex-col items-start">
             <div className="overflow-hidden">
-              <LoadedVideo src="/assets/projects/GoodreadsWrapped/Goodreads-Demo.mp4" className="w-full h-auto" autoPlay loop />
+              <LoadedVideo src="/assets/projects/GoodreadsWrapped/Goodreads-Demo.mp4" className="w-full h-auto" autoPlay loop muted playsInline />
             </div>
             <p className="text-xs text-white-muted mt-2">
               My own 2025 Goodreads Wrapped (don't judge!)
