@@ -23,7 +23,7 @@ export const caseStudies: Project[] = [
   {
     slug: 'goodreads-wrapped',
     title: 'Goodreads Wrapped',
-    description: 'A playful reading year summary, delivered to 5000+ users.',
+    description: 'Designing, devving, and delivering a playful reading year summary to 5000+ users.',
     thumbnail: '/assets/projects/Goodreads-Cover.webp',
     context: 'Next.js + Web Scraping',
     type: 'case-study',
