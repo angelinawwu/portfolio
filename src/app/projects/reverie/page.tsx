@@ -496,8 +496,8 @@ export default function ReveriePage() {
             <Link href="/" className="sidebar-link">
               ← Back to projects
             </Link>
-            <Link href="/projects/familyfridge" className="sidebar-link">
-              FamilyFridge →
+            <Link href="/projects/goodreads-wrapped" className="sidebar-link">
+              Goodreads Wrapped →
             </Link>
           </div>
         </nav>

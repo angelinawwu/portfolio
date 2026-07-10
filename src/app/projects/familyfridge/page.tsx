@@ -478,11 +478,11 @@ export default function FamilyFridge2Page() {
           style={{ '--card-index': cardIndex++ } as React.CSSProperties}
         >
           <div className="flex justify-between items-center">
-            <Link href="/projects/reverie" className="sidebar-link">
-              ← Reverie
-            </Link>
             <Link href="/projects/goodreads-wrapped" className="sidebar-link">
-              Goodreads Wrapped →
+              ← Goodreads Wrapped
+            </Link>
+            <Link href="/projects/manifesto-market" className="sidebar-link">
+              Manifesto Market →
             </Link>
           </div>
         </nav>

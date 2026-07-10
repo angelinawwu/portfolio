@@ -484,11 +484,11 @@ export default function GoodreadsWrappedPage() {
           style={{ '--card-index': cardIndex++ } as React.CSSProperties}
         >
           <div className="flex justify-between items-center">
-            <Link href="/projects/familyfridge" className="sidebar-link">
-              ← FamilyFridge
+            <Link href="/projects/reverie" className="sidebar-link">
+              ← Reverie
             </Link>
-            <Link href="/projects/manifesto-market" className="sidebar-link">
-              Manifesto Market →
+            <Link href="/projects/familyfridge" className="sidebar-link">
+              FamilyFridge →
             </Link>
           </div>
         </nav>
