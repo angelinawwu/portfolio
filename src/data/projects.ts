@@ -123,24 +123,34 @@ export const playgroundProjects: Project[] = [
     demoUrl: 'https://digitalblackoutpoetry.vercel.app/',
   },
   {
+    title: 'Mahjong point tracker',
+    context: 'Figma, Procreate, Next.js',
+    videoUrl: '/assets/playground/Mahjong-Video.mp4',
+    type: 'playground',
+    demoUrl: 'https://mahjong-pt-tracker.vercel.app/',
+  },
+   {
     title: 'Grainy gradient generator (personal tool)',
     context: 'Next.js',
     type: 'playground',
     videoUrl: '/assets/playground/GrainyGrad-Video.mp4',
     demoUrl: 'https://x.com/angelinawuuu/status/2059663763037655208?s=20',
   },
-  {
-    title: 'Olé, Olé, Olé!',
-    context: 'Figma Motion + Generative Plugins',
-    videoUrl: '/assets/playground/OleOleOle-Video.mp4',
-    type: 'playground',
-  },
-  {
+   {
     title: 'UCLA Arts stickers',
     context: 'Figma, Personal tools',
     thumbnail: '/assets/playground/Donorstickers-Cover.webp',
     type: 'playground',
   },
+   {
+    title: 'Olé, Olé, Olé!',
+    context: 'Figma Motion + Generative Plugins',
+    videoUrl: '/assets/playground/OleOleOle-Video.mp4',
+    type: 'playground',
+  },
+  
+
+ 
   {
     title: 'Thistle (concept)',
     context: 'Figma, Nano Banana',
