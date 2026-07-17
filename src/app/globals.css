@@ -572,11 +572,34 @@ html.theme-transition * {
   }
 }
 
+/* Fades in once the pixel wave (last delay ~250ms + 300ms duration) settles. */
+.not-found-footer-in {
+  animation: not-found-footer-in 300ms cubic-bezier(0.23, 1, 0.32, 1) 550ms both;
+}
+
+@keyframes not-found-footer-in {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .not-found-footer-in {
+    animation: none;
+  }
+}
+
 .not-found-badge {
-  height: 32px;
+  min-height: 32px;
   display: inline-flex;
   align-items: center;
-  padding: 0 10px;
+  justify-content: center;
+  padding: 6px 12px;
   border: 1px solid var(--faded-white);
   background-color: var(--black);
   color: var(--white-muted);
@@ -584,7 +607,8 @@ html.theme-transition * {
   font-weight: 300;
   font-size: 0.75rem;
   letter-spacing: 0.05em;
-  white-space: nowrap;
+  text-align: center;
+  white-space: normal;
   user-select: none;
 }
 

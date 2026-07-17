@@ -12,38 +12,61 @@ const THEME_HEX: Record<Theme, string> = {
   orange: '#E3743D',
 };
 
-const GRID_COLS = 17;
-const GRID_ROWS = 7;
+const DIGIT_COLS = 9;
+const DIGIT_ROWS = 13;
+const DIGIT_GAP = 2;
+const GRID_COLS = DIGIT_COLS * 3 + DIGIT_GAP * 2;
+const GRID_ROWS = DIGIT_ROWS;
 const SIDEBAR_WIDTH = 288;
 const LG_BREAKPOINT = 1024;
+// Exactly matches Footer's target pixel size so both canvases read as the
+// same grid system — the "404" gets bigger by adding more small squares
+// (higher-resolution digits), never by scaling the squares themselves up.
+const TARGET_CELL_DESKTOP = 20;
+const TARGET_CELL_MOBILE = 16;
+const STAGGER_MS = 6;
 
-// 5×7 pixel bitmaps for each digit
+// 9×13 bold pixel bitmaps (2-cell-thick strokes) for each digit.
 const DIGIT_4 = [
-  [0, 0, 1, 0, 0],
-  [0, 1, 0, 1, 0],
-  [0, 1, 0, 1, 0],
-  [1, 0, 0, 0, 1],
-  [1, 1, 1, 1, 1],
-  [0, 0, 0, 0, 1],
-  [0, 0, 0, 0, 1],
+  [1, 1, 0, 0, 0, 0, 0, 1, 1],
+  [1, 1, 0, 0, 0, 0, 0, 1, 1],
+  [1, 1, 0, 0, 0, 0, 0, 1, 1],
+  [1, 1, 0, 0, 0, 0, 0, 1, 1],
+  [1, 1, 0, 0, 0, 0, 0, 1, 1],
+  [1, 1, 0, 0, 0, 0, 0, 1, 1],
+  [1, 1, 1, 1, 1, 1, 1, 1, 1],
+  [1, 1, 1, 1, 1, 1, 1, 1, 1],
+  [0, 0, 0, 0, 0, 0, 0, 1, 1],
+  [0, 0, 0, 0, 0, 0, 0, 1, 1],
+  [0, 0, 0, 0, 0, 0, 0, 1, 1],
+  [0, 0, 0, 0, 0, 0, 0, 1, 1],
+  [0, 0, 0, 0, 0, 0, 0, 1, 1],
 ];
 
 const DIGIT_0 = [
-  [1, 1, 1, 1, 1],
-  [1, 0, 0, 0, 1],
-  [1, 0, 0, 0, 1],
-  [1, 0, 0, 0, 1],
-  [1, 0, 0, 0, 1],
-  [1, 0, 0, 0, 1],
-  [1, 1, 1, 1, 1],
+  [1, 1, 1, 1, 1, 1, 1, 1, 1],
+  [1, 1, 1, 1, 1, 1, 1, 1, 1],
+  [1, 1, 0, 0, 0, 0, 0, 1, 1],
+  [1, 1, 0, 0, 0, 0, 0, 1, 1],
+  [1, 1, 0, 0, 0, 0, 0, 1, 1],
+  [1, 1, 0, 0, 0, 0, 0, 1, 1],
+  [1, 1, 0, 0, 0, 0, 0, 1, 1],
+  [1, 1, 0, 0, 0, 0, 0, 1, 1],
+  [1, 1, 0, 0, 0, 0, 0, 1, 1],
+  [1, 1, 0, 0, 0, 0, 0, 1, 1],
+  [1, 1, 0, 0, 0, 0, 0, 1, 1],
+  [1, 1, 1, 1, 1, 1, 1, 1, 1],
+  [1, 1, 1, 1, 1, 1, 1, 1, 1],
 ];
 
-// "404" with 1-col gaps between digits → 17 cols × 7 rows
+const DIGIT_GAP_ROW = Array.from({ length: DIGIT_GAP }, () => 0);
+
+// "404" → DIGIT_COLS*3 + DIGIT_GAP*2 cols × DIGIT_ROWS rows
 const BITMAP_404: number[][] = DIGIT_4.map((row4, r) => [
   ...row4,
-  0,
+  ...DIGIT_GAP_ROW,
   ...DIGIT_0[r],
-  0,
+  ...DIGIT_GAP_ROW,
   ...row4,
 ]);
 
@@ -54,8 +77,11 @@ function keyOf(col: number, row: number): string {
 function computeCellSize(viewportWidth: number) {
   const isDesktop = viewportWidth >= LG_BREAKPOINT;
   const availableWidth = isDesktop ? viewportWidth - SIDEBAR_WIDTH : viewportWidth;
-  const targetWidth = availableWidth * 0.7;
-  return Math.min(56, Math.max(16, targetWidth / GRID_COLS));
+  const target = isDesktop ? TARGET_CELL_DESKTOP : TARGET_CELL_MOBILE;
+  // Never let the grid exceed ~85% of the available width, but otherwise
+  // stay pinned to the target size instead of scaling up on wide viewports.
+  const maxCellSize = (availableWidth * 0.85) / GRID_COLS;
+  return Math.min(target, maxCellSize);
 }
 
 export default function NotFound() {
@@ -104,10 +130,11 @@ export default function NotFound() {
   );
 
   const cells = useMemo(() => {
-    const out: Array<{ key: string; col: number; row: number; active: boolean }> = [];
+    const out: Array<{ key: string; col: number; row: number; active: boolean; delay: number }> = [];
     for (let r = 0; r < GRID_ROWS; r++) {
       for (let c = 0; c < GRID_COLS; c++) {
-        out.push({ key: keyOf(c, r), col: c, row: r, active: BITMAP_404[r][c] === 1 });
+        // Diagonal wave so the "404" draws itself in from the top-left.
+        out.push({ key: keyOf(c, r), col: c, row: r, active: BITMAP_404[r][c] === 1, delay: (c + r) * STAGGER_MS });
       }
     }
     return out;
@@ -160,20 +187,21 @@ export default function NotFound() {
           }
         }}
       >
-        {cells.map(({ key, col, row, active }) => {
+        {cells.map(({ key, col, row, active, delay }) => {
           if (!active) {
             return <span key={key} aria-hidden="true" />;
           }
           const painted = pixels.get(key);
           const cellStyle = {
             ['--cell-color' as string]: painted ? THEME_HEX[painted] : 'var(--white)',
+            ['--pixel-delay' as string]: delay,
           };
           return (
             <button
               key={key}
               type="button"
               aria-label={painted ? `Painted pixel at ${col}, ${row}` : `Empty pixel at ${col}, ${row}`}
-              className="community-canvas-cell"
+              className="community-canvas-cell not-found-cell"
               style={cellStyle}
               onPointerDown={(e) => {
                 e.preventDefault();
@@ -185,15 +213,12 @@ export default function NotFound() {
         })}
       </div>
 
-      <p className="mt-8 font-mono text-sm tracking-wider text-[var(--white-muted)]">
-        page not found — color me in
-      </p>
-      <a
-        href="/"
-        className="mt-4 font-mono text-sm tracking-wider text-[var(--accent)] transition-colors duration-200 hover:text-[var(--white)]"
-      >
-        ← back home
-      </a>
+      <div className="not-found-footer-in mt-8 flex flex-col items-center gap-3">
+        <span className="not-found-badge">page not found — color me in</span>
+        <a href="/" className="not-found-back-link">
+          ← back home
+        </a>
+      </div>
     </div>
   );
 }
