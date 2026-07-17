@@ -170,7 +170,7 @@ export default function NotFound() {
           }
           const painted = pixels.get(key);
           const cellStyle = {
-            ['--cell-color' as string]: painted ? THEME_HEX[painted] : 'var(--white)',
+            ['--cell-color' as string]: painted ? THEME_HEX[painted] : 'var(--black)',
             ['--pixel-delay' as string]: delay,
           };
           return (
