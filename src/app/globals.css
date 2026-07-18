@@ -542,6 +542,11 @@ html.theme-transition * {
      never draw their own lines. Deactivated cells (.not-found-void) cover
      the tint — including the gaps around themselves — so lines are only
      visible between glyph cells. */
+  /* 1px padding = a tint band along the container's outer boundary, so glyph
+     cells touching the grid edge still get their outer stroke. Edge voids
+     bleed -1px outward (out-of-bounds counts as void) and cover the band
+     everywhere else. */
+  padding: 1px;
 }
 
 /* Deactivated cell: an opaque black patch covering the container's grid-line
