@@ -1,8 +1,11 @@
 'use client';
 
+import Link from 'next/link';
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { useTheme, type Theme } from '@/components/ThemeProvider';
 import { useCanvasTool } from '@/components/CanvasToolContext';
+import { House, ArrowLeft } from '@phosphor-icons/react';
+
 
 const THEME_HEX: Record<Theme, string> = {
   default: '#F3EDF5',
@@ -212,11 +215,19 @@ export default function NotFound() {
         })}
       </div>
 
-      <div className="not-found-footer-in mt-8 flex flex-col items-center gap-3">
-        <span className="not-found-badge">page not found — color me in</span>
-        <a href="/" className="not-found-back-link">
-          ← back home
-        </a>
+      <div className="not-found-footer-in mt-12 flex flex-col items-center gap-3">
+        <h3 className="text-xs geist-mono-font text-white mb-3 tracking-wide uppercase">
+          Huh, this page doesn't exist. Color me in?
+        </h3>
+      <div className="community-canvas-tool-wrapper">
+      
+      <div className="flex justify-start items-center border border-faded-white p-4 bg-surface">
+        <Link href="/" className="sidebar-link geist-mono-font text-sm uppercase !text-white">
+          <ArrowLeft className="mr-2 w-3 h-3 inline-block" />
+          Back to home
+        </Link>
+      </div>
+      </div>
       </div>
     </div>
   );
