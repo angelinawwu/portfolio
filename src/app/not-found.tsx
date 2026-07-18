@@ -107,11 +107,27 @@ export default function NotFound() {
   );
 
   const cells = useMemo(() => {
-    const out: Array<{ key: string; col: number; row: number; active: boolean; delay: number }> = [];
+    const out: Array<{
+      key: string;
+      col: number;
+      row: number;
+      active: boolean;
+      delay: number;
+      voidMargin: string;
+    }> = [];
+    const isVoid = (r: number, c: number) =>
+      r < 0 || r >= GRID_ROWS || c < 0 || c >= GRID_COLS || BITMAP_404[r][c] === 0;
     for (let r = 0; r < GRID_ROWS; r++) {
       for (let c = 0; c < GRID_COLS; c++) {
         // Diagonal wave so the "404" draws itself in from the top-left.
-        out.push({ key: keyOf(c, r), col: c, row: r, active: BITMAP_404[r][c] === 1, delay: (c + r) * STAGGER_MS });
+        const active = BITMAP_404[r][c] === 1;
+        // Voids bleed 1px over the grid gap only toward other voids (or the
+        // grid edge). Gaps bordering a glyph cell stay uncovered so the
+        // container tint shows through as the glyph's outer stroke.
+        const voidMargin = active
+          ? '0'
+          : `${isVoid(r - 1, c) ? -1 : 0}px ${isVoid(r, c + 1) ? -1 : 0}px ${isVoid(r + 1, c) ? -1 : 0}px ${isVoid(r, c - 1) ? -1 : 0}px`;
+        out.push({ key: keyOf(c, r), col: c, row: r, active, delay: (c + r) * STAGGER_MS, voidMargin });
       }
     }
     return out;
@@ -170,9 +186,9 @@ export default function NotFound() {
           }
         }}
       >
-        {cells.map(({ key, col, row, active, delay }) => {
+        {cells.map(({ key, col, row, active, delay, voidMargin }) => {
           if (!active) {
-            return <span key={key} aria-hidden="true" />;
+            return <span key={key} aria-hidden="true" className="not-found-void" style={{ margin: voidMargin }} />;
           }
           const painted = pixels.get(key);
           const cellStyle = {

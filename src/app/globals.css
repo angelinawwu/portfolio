@@ -537,11 +537,19 @@ html.theme-transition * {
 .not-found-grid {
   width: auto;
   height: auto;
-  /* Inherit .community-canvas-grid's 1px gap + faded-white tint background —
-     same mechanism Footer uses: opaque cells sit in grid tracks separated by
-     a 1px gap, and the container's own background shows through that gap as
-     the grid line. Empty (inactive) cells stay transparent, so this tint
-     also reads through their body, softly framing the "404" shape. */
+  /* Same technique as Footer: 1px gap + the container's faded-white tint
+     showing through the gap = true, flat, uniform 1px grid lines. Cells
+     never draw their own lines. Deactivated cells (.not-found-void) cover
+     the tint — including the gaps around themselves — so lines are only
+     visible between glyph cells. */
+}
+
+/* Deactivated cell: an opaque black patch covering the container's grid-line
+   tint. Its margins are set inline (not-found.tsx): it bleeds -1px over the
+   gap only toward neighboring voids, leaving gaps that border a glyph cell
+   uncovered so the glyph keeps its outer stroke. */
+.not-found-void {
+  background-color: var(--black);
 }
 
 .not-found-cell {
