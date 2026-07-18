@@ -146,9 +146,15 @@ export default function NotFound() {
   };
 
   const gridStyle = {
-    gridTemplateColumns: `repeat(${GRID_COLS}, ${cellSize}px)`,
-    gridTemplateRows: `repeat(${GRID_ROWS}, ${cellSize}px)`,
-    height: 'auto',
+    // Match Footer's strategy exactly: give the grid a fixed pixel box and
+    // let `1fr` tracks divide it in one pass. Repeating a fixed `${cellSize}px`
+    // per track instead (cellSize is rarely a whole number) makes the browser
+    // round each column/row boundary independently, which drifts out of sync
+    // and doubles up some grid lines while dropping others.
+    width: `${cellSize * GRID_COLS}px`,
+    height: `${cellSize * GRID_ROWS}px`,
+    gridTemplateColumns: `repeat(${GRID_COLS}, 1fr)`,
+    gridTemplateRows: `repeat(${GRID_ROWS}, 1fr)`,
   } as const;
 
   return (

@@ -537,20 +537,17 @@ html.theme-transition * {
 .not-found-grid {
   width: auto;
   height: auto;
-  /* Unlike Footer, most cells here are empty negative space around the "404"
-     glyphs — the shared grid's gap tint would wash that space grey, so we
-     drop it and let the page's own background show through instead. */
-  background-color: transparent;
+  /* Inherit .community-canvas-grid's 1px gap + faded-white tint background —
+     same mechanism Footer uses: opaque cells sit in grid tracks separated by
+     a 1px gap, and the container's own background shows through that gap as
+     the grid line. Empty (inactive) cells stay transparent, so this tint
+     also reads through their body, softly framing the "404" shape. */
 }
 
 .not-found-cell {
   animation: not-found-pixel-in 300ms cubic-bezier(0.23, 1, 0.32, 1) both;
   animation-delay: calc(var(--pixel-delay, 0) * 1ms);
   transition: transform 120ms cubic-bezier(0.25, 0.46, 0.45, 0.94), background-color 160ms ease;
-  /* The not-found grid drops the shared gap tint (empty negative space would
-     wash grey), so replicate Footer's 1px grid line as a per-cell stroke —
-     same faded-white 30% tint — to keep the black squares readable. */
-  box-shadow: 0 0 0 1px color-mix(in srgb, var(--faded-white) 30%, transparent);
 }
 
 @media (hover: hover) and (pointer: fine) {
