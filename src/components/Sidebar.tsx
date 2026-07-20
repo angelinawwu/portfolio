@@ -5,6 +5,7 @@ import { usePathname } from 'next/navigation';
 import { useState, useEffect } from 'react';
 import { List, X } from '@phosphor-icons/react';
 import ThemeSwitcher from './ThemeSwitcher';
+import BioText from './BioText';
 import { ArrowUpRight } from '@phosphor-icons/react';
 
 const navItems = [
@@ -95,15 +96,11 @@ export default function Sidebar() {
           <span className="geist-mono-font text-sm mr-2 ">✱</span>{' '}
           <span className="geist-mono-font text-sm tracking-wide">ANGELINA WU</span>
         </Link>
-        <p className="text-sm leading-relaxed text-white-muted">
-          Angelina Wu is a designer, builder, and doer who&apos;s passionate about creating channels for{' '}
-          <span className="accent-text">delight</span> and{' '}
-          <span className="accent-text">human connection</span>. She is currently studying Design & Applied Math at UCLA and can be found building cute websites, reading speculative fiction, or finding a new favorite color.
-        </p>
+        <BioText className="hidden lg:block" />
       </div>
 
       {/* Navigation */}
-      <div className="mb-8 border-t border-faded-white pt-8">
+      <div className="mb-8 md:border-t md:border-faded-white md:pt-8">
         <h3 className="text-xs geist-mono-font text-white mb-3 tracking-wider">NAVIGATION</h3>
         <nav className="flex flex-col gap-1">
           {navItems.map((item) => (
@@ -169,7 +166,10 @@ export default function Sidebar() {
       </aside>
 
       {/* Mobile Header */}
-      <header className="lg:hidden fixed top-0 left-0 right-0 h-14 bg-black border-b border-faded-white z-50 flex items-center px-4">
+      <header className="lg:hidden fixed top-0 left-0 right-0 h-14 bg-black border-b border-faded-white z-50 flex items-center justify-between px-4">
+        <Link href="/" className="geist-mono-font text-sm text-white">
+          ✱ ANGELINA WU
+        </Link>
         <button
           onClick={() => isMenuOpen ? handleCloseMenu() : handleOpenMenu()}
           className="p-2 text-white"
@@ -177,19 +177,16 @@ export default function Sidebar() {
         >
           {isMenuOpen ? <X size={24} /> : <List size={24} />}
         </button>
-        <Link href="/" className="ml-2 geist-mono-font text-sm text-white">
-          ✱ ANGELINA WU
-        </Link>
       </header>
 
       {/* Mobile Menu Overlay */}
       {isMenuOpen && (
         <div 
-          className={`lg:hidden fixed inset-0 z-40 bg-black/90 mobile-menu-overlay ${isExiting ? 'mobile-menu-exit' : ''}`}
+          className={`lg:hidden fixed inset-0 top-14 z-40 bg-black/50 mobile-menu-overlay ${isExiting ? 'mobile-menu-exit' : ''}`}
           onClick={handleCloseMenu}
         >
           <div 
-            className={`mobile-menu-content absolute top-14 left-0 right-0 bottom-0 bg-black p-6 overflow-y-auto flex flex-col ${isExiting ? 'mobile-menu-content-exit' : ''}`}
+            className={`mobile-menu-content border-b border-faded-white absolute top-0 left-0 right-0 max-h-[calc(100vh-3.5rem)] bg-black px-6 pb-6 overflow-y-auto flex flex-col ${isExiting ? 'mobile-menu-content-exit' : ''}`}
             onClick={(e) => e.stopPropagation()}
           >
             <SidebarContent />

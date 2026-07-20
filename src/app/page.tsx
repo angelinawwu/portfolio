@@ -1,4 +1,5 @@
 import ProjectCard from '@/components/ProjectCard';
+import BioText from '@/components/BioText';
 import { workProjects } from '@/data/projects';
 
 export default function WorkPage() {
@@ -15,6 +16,11 @@ export default function WorkPage() {
 
   return (
     <div className="min-h-screen bg-black p-4 md:p-6 lg:p-8">
+      {/* Bio: shown above cards on mobile/tablet, hidden on desktop where sidebar shows it */}
+      <div className="lg:hidden ">
+        <BioText className="mb-4 md:mb-6" />
+      </div>
+
       {/* Mobile: single column in correct order */}
       <div className="flex flex-col gap-4 md:hidden">
         {orderedProjects.map((project, index) => (
